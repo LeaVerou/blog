@@ -1,0 +1,27 @@
+---
+title: "Blog"
+override:tags: []
+layout: "page.njk"
+pagination: {
+	data: collections.blog,
+	size: 20,
+	reverse: true
+}
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
+---
+
+<main class="index">
+
+{% for post in pagination.items %}
+	{% include "_post-list.njk" %}
+{% endfor %}
+
+<footer class="pagination">
+{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="previous">← Previous</a>{% endif %}
+<div class="current">
+	pagination.pages
+</div>
+{% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="next">Next →</a>{% endif %}
+</footer>
+
+</main>
