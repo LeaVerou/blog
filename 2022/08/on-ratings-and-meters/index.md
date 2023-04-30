@@ -54,7 +54,7 @@ The other problem was related to **semantics**. Is it still semantically a `<met
 
 Anyhow, you can find my experiments at [nudeui.com](https://nudeui.com/):
 
-- `[<meter-discrete>](https://nudeui.com/meter-discrete/)`
-- `[<nd-rating>](https://nudeui.com/nd-rating/)`
+- [`<meter-discrete>`](https://nudeui.com/meter-discrete/)
+- [`<nd-rating>`](https://nudeui.com/nd-rating/)
 
 **All NudeUI components are very much works in progress** and mainly my personal experiments, but if you feel like it, please report issues in [the repo](https://github.com/LeaVerou/nudeui/tree/main/). I can't promise I'll get to them though!

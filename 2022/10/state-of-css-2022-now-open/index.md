@@ -1,9 +1,9 @@
 ---
 title: "State of CSS 2022 now open!"
 date: "2022-10-03"
-categories: 
+categories:
   - "news"
-tags: 
+tags:
   - "css"
   - "state-of-css"
 ---
@@ -30,9 +30,14 @@ A focus of this year's State of CSS survey is to reach a broader range of develo
 
 Another thing I’m excited about in this year's survey is the ability to add freeform comments to _any_ question.
 
-![](https://lea.verou.me/wp-content/uploads/2022/10/comments.gif)
+<figure>
 
-Adding freeform comments to a question
+![](https://lea.verou.me/wp-content/uploads/2022/10/comments.gif)
+<figcaption>Adding freeform comments to a question</figcaption>
+
+</figure>
+
+
 
 It's often hard to tell what the background is behind each of the three answers: are people not using a given feature due to poor browser support, poor ergonomics, or some other reason? When people _do_ use a feature, was their experience good or bad? Would they use it again?
 

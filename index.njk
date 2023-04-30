@@ -10,8 +10,6 @@ pagination: {
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---
 
-<main class="index">
-
 {% for post in pagination.items %}
 	{% include "_post-list.njk" %}
 {% endfor %}
@@ -23,5 +21,3 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 </div>
 {% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="next">Next →</a>{% endif %}
 </footer>
-
-</main>
