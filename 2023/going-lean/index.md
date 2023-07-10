@@ -58,6 +58,15 @@ While this importer is great, and allowed me to configure the file structure in 
 - "Read more" separators (filed it as [issue #93](https://github.com/lonekorean/wordpress-export-to-markdown/issues/93))
 - Figures (they are imported as just images with text underneath) (filed it as [issue #94](https://github.com/lonekorean/wordpress-export-to-markdown/issues/94))
 - Drafts ([#16](https://github.com/lonekorean/wordpress-export-to-markdown/issues/16))
+- Pages (I had to manually copy them over, but it was only a handful)
+
+## Hiatus
+
+More than two months passed between the previous and the next section.
+I got way too busy with other things, and I was also dreading the next step: migrating comments.
+However, I also didn’t want to post anything to the old WP instance, as I would have to then port it manually.
+This effectively meant I was stuck in a limbo, unable to post anything, despite the many ideas about blog posts that I had.
+Eventually, the desire to blog again prevailed, and I moved on to the next step.
 
 ## Migrating comments
 
