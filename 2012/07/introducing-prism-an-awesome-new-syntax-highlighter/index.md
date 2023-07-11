@@ -1,14 +1,14 @@
 ---
 title: "Introducing Prism: An awesome new syntax highlighter"
 date: "2012-07-31"
-categories: 
+categories:
   - "original"
   - "releases"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2012/07/Screen-Shot-2012-07-31-at-18.33.58--300x158.png "Screenshot from Prism’s homepage")](http://prismjs.com)For the past three weeks, on and off, I’ve been working on releasing [Dabblet](http://dabblet.com)’s syntax highlighter as standalone, since many people had requested it. Zachary Forrest  [suggested the name "Prism"](https://twitter.com/zdfs/statuses/217834980871639041) and I liked it so much I decided to go with it, even though there is [an abandoned Mozilla project with the same name](https://wiki.mozilla.org/Prism). I ended up refactoring and extending it so much that I will need to backport it to Dabblet one of these days! This doesn’t mean I bloated it, the core is still a tiny 1.5KB minified & gzipped. It just means it’s more awesome. :)
+[![](images/Screen-Shot-2012-07-31-at-18.33.58--300x158.png "Screenshot from Prism’s homepage")](http://prismjs.com)For the past three weeks, on and off, I’ve been working on releasing [Dabblet](http://dabblet.com)’s syntax highlighter as standalone, since many people had requested it. Zachary Forrest  [suggested the name "Prism"](https://twitter.com/zdfs/statuses/217834980871639041) and I liked it so much I decided to go with it, even though there is [an abandoned Mozilla project with the same name](https://wiki.mozilla.org/Prism). I ended up refactoring and extending it so much that I will need to backport it to Dabblet one of these days! This doesn’t mean I bloated it, the core is still a tiny 1.5KB minified & gzipped. It just means it’s more awesome. :)
 
-[![](http://lea.verou.me/wp-content/uploads/2012/07/Screen-Shot-2012-07-31-at-18.31.22-.png "Prism’s first themes")](http://prismjs.com)
+[![](images/Screen-Shot-2012-07-31-at-18.31.22-.png "Prism’s first themes")](http://prismjs.com)
 
 ## Seriously? The world needs another syntax highlighter?
 

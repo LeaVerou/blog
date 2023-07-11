@@ -1,9 +1,9 @@
 ---
 title: "Developer priorities throughout their career"
 date: "2020-09-16"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "dry"
   - "maintainability"
   - "programming"
@@ -12,7 +12,7 @@ coverImage: "image-2.png"
 
 I made this chart in the amazing [Excalidraw](https://excalidraw.com/) about two weeks ago:
 
-![](https://lea.verou.me/wp-content/uploads/2020/09/image-2.png)
+![](images/image-2.png)
 
 It only took me 10 minutes! Shortly after, my laptop broke down into repeated kernel panics, and it spent about 10 days in service (I was in a remote place when it broke, so it took some time to get it to service). Yesterday, I was finally reunited with it, turned it on, launched Chrome, and saw it again. It gave me a smile, and I realized I never got to post it, so I [tweeted this](https://twitter.com/LeaVerou/status/1306001020636540934):
 

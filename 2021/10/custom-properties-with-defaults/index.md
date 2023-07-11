@@ -1,11 +1,11 @@
 ---
 title: "Custom properties with defaults: 3+1 strategies"
 date: "2021-10-15"
-categories: 
+categories:
   - "articles"
   - "original"
   - "tutorials"
-tags: 
+tags:
   - "css"
   - "css-custom-properties"
   - "css-variables"
@@ -18,7 +18,7 @@ _**Note:** I’m using "component" here broadly, as any reusable chunk of HTML/C
 
 Let's suppose we are designing a certain button styling, that looks like this:
 
-![](https://lea.verou.me/wp-content/uploads/2021/10/outlined-button.gif)
+![](images/outlined-button.gif)
 
 We want to support a `--color` custom property for creating color variations by setting multiple things internally:
 
@@ -37,7 +37,7 @@ We want to support a `--color` custom property for creating color variations by 
 
 Note that with the code above, if no `--color` is set, the three declarations using it will be [IACVT](https://www.w3.org/TR/css-variables-1/#invalid-at-computed-value-time) and thus we'll get a nearly unstyled text-only button with no background on hover (`transparent`), no border on hover, and the default black text color (`canvastext` to be precise).
 
-![](https://lea.verou.me/wp-content/uploads/2021/10/image.png)
+![](images/image.png)
 
 That's no good! IT's important that we set defaults. However, using the fallback parameter for this gets tedious, and [WET](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself):
 

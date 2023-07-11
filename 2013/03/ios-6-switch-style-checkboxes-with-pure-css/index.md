@@ -1,16 +1,16 @@
 ---
 title: "iOS 6 switch style checkboxes with pure CSS"
 date: "2013-03-15"
-categories: 
+categories:
   - "original"
-tags: 
+tags:
   - "css"
   - "forms"
 ---
 
 I recently found myself looking at the Tools switch in Espresso:
 
-![](http://lea.verou.me/wp-content/uploads/2013/03/Screen-Shot-2013-03-15-at-15.32.33-.png "Screen Shot 2013-03-15 at 15.32.33")
+![](images/Screen-Shot-2013-03-15-at-15.32.33-.png "Screen Shot 2013-03-15 at 15.32.33")
 
 Not because I was going to use it (I rarely do), but because I started wondering what would be the best way to replicate this effect in CSS. I set on to create something that adhered to the following rules:
 

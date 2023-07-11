@@ -1,16 +1,16 @@
 ---
 title: "Issue closing stats for any repo"
 date: "2019-12-13"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "github"
   - "mavo"
 ---
 
 **_tl;dr:_** _If you just want to quickly get stats for a repo, you can find the app_ [_here_](https://leaverou.github.io/issue-closing/)_. The rest of this post explains how it's built with Mavo HTML, CSS, and 0 lines of JS._ Or, if you'd prefer, you can just View Source — it's all there!
 
-![](https://lea.verou.me/wp-content/uploads/2019/12/image.png)
+![](images/image.png)
 
 The finished app we're going to make, find it at [https://leaverou.github.io/issue-closing](https://leaverou.github.io/issue-closing)
 

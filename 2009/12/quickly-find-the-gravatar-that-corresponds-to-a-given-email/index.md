@@ -1,9 +1,9 @@
 ---
 title: "Quickly find the Gravatar that cor­res­ponds to a given email"
 date: "2009-12-07"
-categories: 
+categories:
   - "original"
-tags: 
+tags:
   - "gravatar"
   - "php"
 ---
@@ -12,6 +12,6 @@ Today I needed to quickly find the Gravatars that corresponded to a bunch of ema
 
 Here it is, in case someone ever needs to do something similar: (click on the screenshot)
 
-[![Quickly find the Gravatar that cor­res­ponds to a given email](http://lea.verou.me/wp-content/uploads/2009/12/gravatar.png "Quickly find the Gravatar that cor­res­ponds to a given email")](http://lea.verou.me/demos/gravatar.php)
+[![Quickly find the Gravatar that cor­res­ponds to a given email](images/gravatar.png)](http://lea0.verou.me/demos/gravatar.php)
 
 (has anyone noticed my latest love affair with Helvetica/Arial? :P )

@@ -1,9 +1,9 @@
 ---
 title: "New version of rgba.php is out!"
 date: "2009-10-25"
-categories: 
+categories:
   - "original"
-tags: 
+tags:
   - "colors"
   - "css3"
   - "css3-values"
@@ -25,7 +25,7 @@ So, since it's release I've received suggestions from many people regarding this
 
 ### Links
 
-**[rgba.php](http://lea.verou.me/wp-content/uploads/2009/10/rgba.zip)**
+**[rgba.php](uploads/rgba.zip)**
 
 **[Demo](http://lea.verou.me/wp-content/themes/leaverou/images/rgba.php?r=255&g=0&b=100&a=80)**
 

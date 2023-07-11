@@ -1,7 +1,7 @@
 ---
 title: "Inherit ancestor font-size, for fun and profit"
 date: "2021-06-24"
-categories: 
+categories:
   - "articles"
   - "original"
   - "tutorials"
@@ -47,7 +47,7 @@ As you can see in [this pen](https://codepen.io/leaverou/pen/OJpexzE), neither `
 
 However, using `<optgroup>`, even without a `label` attribute inserts an ugly gap in the select menu, where the label would have gone ([pen](https://codepen.io/leaverou/pen/vYxoGpZ)):
 
-![](https://lea.verou.me/wp-content/uploads/2021/06/image-3.png)
+![](images/image-3.png)
 
 (There were also gaps on the left of the labels, but we applied some CSS to remove them)
 
@@ -94,7 +94,7 @@ optgroup:not([label]) > * {
 
 However this is [horribly broken](https://codepen.io/leaverou/pen/dyvxXyV):
 
-![](https://lea.verou.me/wp-content/uploads/2021/06/image-1.png)
+![](images/image-1.png)
 
 All the options have disappeared!!
 
@@ -146,7 +146,7 @@ And here is the same technique used for the speech bubble:
 
 This is all fine and dandy for the [68% (as of June 2021) of users that are using a browser that supports `@property`](https://caniuse.com/mdn-css_at-rules_property), but what happens in the remaining 32%? It's not pretty:
 
-![](https://lea.verou.me/wp-content/uploads/2021/06/image-1.png)
+![](images/image-1.png)
 
 We get the default behavior of an unregistered property, and thus none of our options show up! This is _bad_.
 
@@ -186,13 +186,13 @@ The theory was, if a browser supported any value to be assigned on a property re
 It turns out, registered properties do not validate their syntax at parse time, and thus are always valid for `@supports`. This is [explained in the spec](https://drafts.css-houdini.org/css-properties-values-api-1/#parsing-custom-properties):
 
 > When parsing a page’s CSS, UAs commonly make a number of optimizations to help with both speed and memory.
-> 
+>
 > One of those optimizations is that they only store the properties that will actually have an effect; they throw away invalid properties, and if you write the same property multiple times in a single declaration block, all but the last valid one will be thrown away. (This is an important part of CSS’s error-recovery and forward-compatibility behavior.)
-> 
+>
 > This works fine if the syntax of a property never changes over the lifetime of a page. If a custom property is registered, however, it can change its syntax, so that a property that was previously invalid suddenly becomes valid.
-> 
+>
 > The only ways to handle this are to either store every declaration, even those that were initially invalid (increasing the memory cost of pages), or to re-parse the entire page’s CSS with the new syntax rules (increasing the processing cost of registering a custom property). Neither of these are very desirable.
-> 
+>
 > Further, UA-defined properties have their syntax determined by the version of the UA the user is viewing the page with; this is out of the page author’s control, which is the entire reason for CSS’s error-recovery behavior and the practice of writing multiple declarations for varying levels of support. A custom property, on the other hand, has its syntax controlled by the page author, according to whatever stylesheet or script they’ve included in the page; there’s no unpredictability to be managed. Throwing away syntax-violating custom properties would thus only be, at best, a convenience for the page author, not a necessity like for UA-defined properties.
 
 Ok this is great, and totally makes sense, but what can we do? How can we provide a fallback?

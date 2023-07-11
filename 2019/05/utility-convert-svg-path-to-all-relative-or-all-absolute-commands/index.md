@@ -9,7 +9,7 @@ However, there was always a thing that was a PITA: modifying paths. Usually if I
 
 For example, this was today's result of trying to move an exported "a" glyph from [Raleway Bold](https://fonts.google.com/specimen/Raleway) by modifying its first [M](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#MoveTo_path_commands) command:
 
-![](http://lea.verou.me/wp-content/uploads/2019/05/image.png)
+![](images/image.png)
 
 Trying to move a path by changing its first M command when not all of its commands are relative.
 
@@ -21,7 +21,7 @@ I remembered I had come across that result before. Thankfully, there's also a [f
 
 So I created [this demo](https://codepen.io/leaverou/full/RmwzKv) which is also based on Snap.svg, but has a slightly more efficient UI. You just paste your path in a textarea and it both displays it and instantly converts it to all-relative and all-absolute paths (also using Snap.svg). It also displays both your original path and the two converted ones, so you can make sure they still look the same. It even follows a pending-delete pattern so you can just focus on the output textarea and hit Cmd-C in one fell swoop.
 
-![](http://lea.verou.me/wp-content/uploads/2019/05/image-1-1024x238.png)
+![](images/image-1-1024x238.png)
 
 I wasn't sure about posting this or just tweeting it (it literally took less than 30 minutes — including this blog post — and I tend to only post small things like that on [my twitter](https://twitter.com/leaverou)), but I thought it might be useful to others googling the same thing, so I may as well post it here for posterity. Enjoy!
 

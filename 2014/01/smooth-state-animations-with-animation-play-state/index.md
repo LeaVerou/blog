@@ -1,9 +1,9 @@
 ---
 title: "Smooth state animations with animation-play-state"
 date: "2014-01-09"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "css"
   - "css3-animations"
 ---
@@ -22,4 +22,4 @@ I figured this out when I was recently helping my good friend [Julian](http://tw
 
 \*Beware it’s still a bit rough around the edges, e.g. the result has some rendering bugs on Firefox & IE plus some unsupported features messing it up (e.g. baseline-shift in SVG), but those are for another day as I had work to do and this ended up taking longer than the few hours I expected. Beyond the animation, you might want to explore the CSS-only _buttons_ (see what I did there?) or the leather figure frame. Credits to [Laura Kalbag](https://twitter.com/laurakalbag) for the tweed background & color scheme. I also experimented with SASS on this one and found it much smoother to work with than LESS, so I might stick with it for those cases where I need a preprocessor.
 
-[![Screenshot](http://lea.verou.me/wp-content/uploads/2014/01/Screen-Shot-2014-01-09-at-14.45.40--1024x558.png)](http://juliancheal.co.uk)
+[![Screenshot](images/Screen-Shot-2014-01-09-at-14.45.40--1024x558.png)](http://juliancheal.co.uk)

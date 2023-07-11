@@ -1,14 +1,14 @@
 ---
 title: "New decade, new theme"
 date: "2020-06-03"
-categories: 
+categories:
   - "news"
   - "personal"
 ---
 
 It has been [almost a decade since this blog last saw a redesign](http://lea.verou.me/2011/01/yet-another-redesign/).
 
-![](https://lea.verou.me/wp-content/uploads/2020/06/image.png)
+![](images/image.png)
 
 This blog's theme 2011 - 2020. RIP!
 

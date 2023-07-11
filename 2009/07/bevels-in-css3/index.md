@@ -1,10 +1,10 @@
 ---
 title: "Bevels in CSS3"
 date: "2009-07-23"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
+tags:
   - "box-shadow"
   - "css3"
   - "css3-properties"
@@ -28,7 +28,7 @@ button {
 
 which produces this result:
 
-![css3bevel](http://lea.verou.me/wp-content/uploads/2009/07/css3bevel.png "css3bevel")
+![css3bevel](images/css3bevel.png)
 
 If we want, we can also create a "pressed" button state, in a similar fashion:
 
@@ -41,7 +41,7 @@ button::-moz-focus-inner { border: 0; }
 
 which produces this pressed state:
 
-![css3bevel_pressed](http://lea.verou.me/wp-content/uploads/2009/07/css3bevel_pressed.png "css3bevel_pressed")
+![css3bevel_pressed](images/css3bevel_pressed.png)
 
 See it in action here (only for Firefox 3.5): [http://lea.verou.me/demos/css3bevel.html](http://lea.verou.me/demos/css3bevel.html "Linkification: http://lea.verou.me/demos/css3bevel.html")
 

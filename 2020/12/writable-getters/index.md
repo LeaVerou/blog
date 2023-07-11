@@ -1,9 +1,9 @@
 ---
 title: "Writable getters"
 date: "2020-12-23"
-categories: 
+categories:
   - "tutorials"
-tags: 
+tags:
   - "accessors"
   - "ecmascript"
   - "javascript"
@@ -11,7 +11,7 @@ tags:
   - "js-patterns"
 ---
 
-![](https://lea.verou.me/wp-content/uploads/2020/12/ouroboros.jpg)
+![](images/ouroboros.jpg)
 
 Setters removing themselves are reminiscent of [Ouroboros](https://en.wikipedia.org/wiki/Ouroboros), the serpent eating its own tail, an ancient symbol. [Media credit](https://commons.wikimedia.org/wiki/File:The_serpent_Ouroboros,_from_Cyprianus,_18th_C_Wellcome_L0036620.jpg)
 

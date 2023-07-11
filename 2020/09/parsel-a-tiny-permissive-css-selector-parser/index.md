@@ -1,10 +1,10 @@
 ---
 title: "Parsel: A tiny, permissive CSS selector parser"
 date: "2020-09-07"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "css"
   - "web-almanac-2"
 ---
@@ -13,7 +13,7 @@ I've [posted before about my work for the Web Almanac](https://lea.verou.me/tag/
 
 You can find it [here](https://projects.verou.me/parsel/): [https://projects.verou.me/parsel/](https://projects.verou.me/parsel/)
 
-![](https://lea.verou.me/wp-content/uploads/2020/09/image.png)
+![](images/image.png)
 
 It not only parses CSS selectors, but also includes methods to walk the AST produced, as well as calculate specificity as an array and convert it to a number for easy comparison.
 

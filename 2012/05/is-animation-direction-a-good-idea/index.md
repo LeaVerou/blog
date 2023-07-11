@@ -26,17 +26,17 @@ div {
 
 If we linearize that animation, the progression over time goes like this (showing 3 iterations):
 
-[![](http://lea.verou.me/wp-content/uploads/2012/05/Screen-shot-2012-05-05-at-19.53.52-.png "No animation-direction specified")](http://lea.verou.me/wp-content/uploads/2012/05/Screen-shot-2012-05-05-at-19.53.52-.png)
+[![](images/Screen-shot-2012-05-05-at-19.53.52-.png "No animation-direction specified")](images/Screen-shot-2012-05-05-at-19.53.52-.png)
 
 As you can see, the change from the end state to the beginning state of a new iteration is quite abrupt. You could change your keyframes to mitigate this, but there’s a better way. A property with the name `animation-direction` gives a degree of control on the direction of the iterations to smooth this out. It also reverses your timing functions, which makes it even smoother.
 
 In early drafts, only the values `normal` and `alternate` were allowed. `normal` results in the behavior described above, whereas `alternate` flips every other iteration (the 2nd, the 4th, the 6th and so on), resulting in a progression like this (note how the 2nd iteration has been reversed):
 
-[![](http://lea.verou.me/wp-content/uploads/2012/05/Screen-shot-2012-05-05-at-20.04.21--1024x80.png "animation-direction: alternate;")](http://lea.verou.me/wp-content/uploads/2012/05/Screen-shot-2012-05-05-at-20.04.21-.png)
+[![](images/Screen-shot-2012-05-05-at-20.04.21--1024x80.png "animation-direction: alternate;")](images/Screen-shot-2012-05-05-at-20.04.21-.png)
 
 The latest draft also adds two more values: `reverse` which reverses **every** iteration and `alternate-reverse`, which is the combination of both `reverse` and `alternate`. Here is a summary of what kind of progression these four values would create for the animation above:
 
-[![](http://lea.verou.me/wp-content/uploads/2012/05/Screen-shot-2012-05-05-at-20.19.05--1024x362.png "animation-direction values")](http://lea.verou.me/wp-content/uploads/2012/05/Screen-shot-2012-05-05-at-20.19.05-.png)
+[![](images/Screen-shot-2012-05-05-at-20.19.05--1024x362.png "animation-direction values")](images/Screen-shot-2012-05-05-at-20.19.05-.png)
 
 ## The problem
 

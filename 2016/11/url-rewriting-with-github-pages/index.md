@@ -1,16 +1,16 @@
 ---
 title: "URL rewriting with Github Pages"
 date: "2016-11-26"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
+tags:
   - "css-secrets"
   - "github"
   - "github-pages"
 ---
 
-[![redirect](http://lea.verou.me/wp-content/uploads/2016/11/redirect-300x167.png)](http://lea.verou.me/wp-content/uploads/2016/11/redirect.png)I adore [Github Pages](https://pages.github.com/). I use them for everything I can, and try to avoid server-side code like the plague, exactly so that I can use them. The convenience of pushing to a repo and having the changes immediately reflected on the website with no commit hooks or any additional setup, is awesome. The free price tag is even more awesome. So, when the time came to publish [my book](https://www.amazon.com/CSS-Secrets-Solutions-Everyday-Problems/dp/1449372635/), naturally, I wanted the companion website to be on Github Pages.
+[![redirect](images/redirect-300x167.png)](images/redirect.png)I adore [Github Pages](https://pages.github.com/). I use them for everything I can, and try to avoid server-side code like the plague, exactly so that I can use them. The convenience of pushing to a repo and having the changes immediately reflected on the website with no commit hooks or any additional setup, is awesome. The free price tag is even more awesome. So, when the time came to publish [my book](https://www.amazon.com/CSS-Secrets-Solutions-Everyday-Problems/dp/1449372635/), naturally, I wanted the companion website to be on Github Pages.
 
 There was only one small problem: I wanted nice URLs, like [http://play.csssecrets.io/pie-animated](http://play.csssecrets.io/pie-animated), which would redirect to demos on [dabblet.com](http://dabblet.com). Any sane person would have likely bitten the bullet and used some kind of server-side language. However, I'm not a particularly sane person :D
 

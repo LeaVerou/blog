@@ -1,9 +1,9 @@
 ---
 title: "border-corner-shape is in danger, and you can help!"
 date: "2013-03-28"
-categories: 
+categories:
   - "news"
-tags: 
+tags:
   - "border-corner-shape"
   - "css4"
 ---
@@ -11,7 +11,7 @@ tags:
 Remember [my previous post about an app I made to preview border-corner-shape](http://lea.verou.me/2013/03/preview-border-corner-shape-before-implementations/)? It stirred a lot of discussion in the CSS WG, and [David Baron posted this](http://lists.w3.org/Archives/Public/www-style/2013Mar/0498.html):
 
 > http://dev.w3.org/csswg/css4-background/#border-corner-shape appears to me to be an example of a feature that's addressing a problem that we don't have -- or at least that we don't have enough to be worth adding such a feature. I think it should be removed.
-> 
+>
 > In particular, if there were demand for the bevel | curve | notch values, we'd be seeing authors using the equivalents of such values on significant numbers of Web sites. So before agreeing to accept this new feature, I'd like to see examples of Web sites that are doing what these values would do. Not something similar to what these values would do, but exactly what these values would do, or at least close enough that the author wouldn't care about the difference.
 
 You can read the whole discussion in the thread I linked to, above.
@@ -26,7 +26,7 @@ If you think it has merit but it could be improved, feel free to post about that
 
 Below are a few examples of shapes:
 
-[![bevel-1](http://lea.verou.me/wp-content/uploads/2013/03/bevel-1.png)](http://lea.verou.me/wp-content/uploads/2013/03/bevel-1.png)[![scoop-1](http://lea.verou.me/wp-content/uploads/2013/03/scoop-1.png)](http://lea.verou.me/wp-content/uploads/2013/03/scoop-1.png)[![notch-1](http://lea.verou.me/wp-content/uploads/2013/03/notch-1.png)](http://lea.verou.me/wp-content/uploads/2013/03/notch-1.png) [![notch-2](http://lea.verou.me/wp-content/uploads/2013/03/notch-2.png)](http://lea.verou.me/wp-content/uploads/2013/03/notch-2.png) [![scoop-2](http://lea.verou.me/wp-content/uploads/2013/03/scoop-2.png)](http://lea.verou.me/wp-content/uploads/2013/03/scoop-2.png) [![bevel-4](http://lea.verou.me/wp-content/uploads/2013/03/bevel-4.png)](http://lea.verou.me/wp-content/uploads/2013/03/bevel-4.png) [![bevel-3](http://lea.verou.me/wp-content/uploads/2013/03/bevel-3.png)](http://lea.verou.me/wp-content/uploads/2013/03/bevel-3.png) [![bevel-2](http://lea.verou.me/wp-content/uploads/2013/03/bevel-2.png)](http://lea.verou.me/wp-content/uploads/2013/03/bevel-2.png)
+[![bevel-1](images/bevel-1.png)](images/bevel-1.png)[![scoop-1](images/scoop-1.png)](images/scoop-1.png)[![notch-1](images/notch-1.png)](images/notch-1.png) [![notch-2](images/notch-2.png)](images/notch-2.png) [![scoop-2](images/scoop-2.png)](images/scoop-2.png) [![bevel-4](images/bevel-4.png)](images/bevel-4.png) [![bevel-3](images/bevel-3.png)](images/bevel-3.png) [![bevel-2](images/bevel-2.png)](images/bevel-2.png)
 
 I wanted to demo triangles and trapezoids as well, but it seems there’s a bug in my app, so I’ll have to debug it first :( If we allow border-corner-shape to have different values for all four corners, even more possibilites open (e.g. arrows).
 

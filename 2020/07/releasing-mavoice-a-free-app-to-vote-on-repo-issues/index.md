@@ -1,10 +1,10 @@
 ---
 title: "Releasing MaVoice: A free app to vote on repo issues"
 date: "2020-07-11"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "css"
   - "github"
   - "mavo"
@@ -19,7 +19,7 @@ I wanted to use [a repo](https://github.com/LeaVerou/css-almanac) to manage all 
 
 And then it dawned on me: I'll just build a [Mavo](https://mavo.io) app on top of the repo issues, that displays them as proposals to be voted on and sorts by 👍 reactions, UserVoice™️-style but without the UserVoice™️ price tag. 😎 In fact, I had started such a Mavo app a couple years ago, and never finished or released it. So, I just dug it up and resurrected it from its ashes! It’s — quite fittingly I think — called _MaVoice_.
 
-[![](https://lea.verou.me/wp-content/uploads/2020/07/image.png)](https://leaverou.github.io/mavoice)
+[![](images/image.png)](https://leaverou.github.io/mavoice)
 
 **You can set it to any repo via the `repo` URL parameter, and any label via the `labels` URL param** (defaults to `enhancement`) **to create a customized URL for any repo you want in seconds!** For example, here's the URL for the css-almanac repo, which only displays issues with the label "proposed stat": [https://leaverou.github.io/mavoice/?repo=leaverou/css-almanac&labels=proposed%20stat](https://leaverou.github.io/mavoice/?repo=leaverou/css-almanac&labels=proposed%20stat)
 

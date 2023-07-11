@@ -1,16 +1,16 @@
 ---
 title: "Introducing Multirange: A tiny polyfill for HTML5.1 two-handle sliders"
 date: "2016-05-31"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "html5"
   - "html5-1"
   - "sliders"
 ---
 
-[![multirange](http://lea.verou.me/wp-content/uploads/2016/05/multirange-300x206.png)](http://lea.verou.me/wp-content/uploads/2016/05/multirange.png)As part of my preparation for [my talk at CSSDay HTML Special](http://cssday.nl/2016/programme#lea-verou), I was perusing the most recent HTML specs ([WHATWG Living Standard](https://html.spec.whatwg.org/multipage/), [W3C HTML 5.1](https://www.w3.org/TR/html51/)) to see what undiscovered gems lay there. It turns out that HTML sliders have a lot of cool features specced that aren't very well implemented:
+[![multirange](images/multirange-300x206.png)](images/multirange.png)As part of my preparation for [my talk at CSSDay HTML Special](http://cssday.nl/2016/programme#lea-verou), I was perusing the most recent HTML specs ([WHATWG Living Standard](https://html.spec.whatwg.org/multipage/), [W3C HTML 5.1](https://www.w3.org/TR/html51/)) to see what undiscovered gems lay there. It turns out that HTML sliders have a lot of cool features specced that aren't very well implemented:
 
 - Ticks that snap via the `list` attribute and the `<datalist>` element. This is fairly decently implemented, except labelled ticks, which is not supported anywhere.
 - Vertical sliders when height > width, implemented nowhere (instead, browsers employ proprietary ways for making sliders vertical: An `orient=vertical` attribute in Gecko, `-webkit-appearance: slider-vertical;` in WebKit/Blink and `writing-mode: bt-lr;` in IE/Edge). Good ol' rotate transforms work too, but have the usual problems, such as layout not being affected by the transform.

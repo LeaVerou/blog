@@ -60,6 +60,10 @@ While this importer is great, and allowed me to configure the file structure in 
 - Drafts ([#16](https://github.com/lonekorean/wordpress-export-to-markdown/issues/16))
 - Pages (I had to manually copy them over, but it was only a handful)
 
+It downloaded all images, but did not update the URLs in the Markdown files.
+This was easy to fix with a regex find and replace from `https?://lea.verou.me/wp-content/uploads/(\d{4}/\d{2})/([\w\.-]+\.(?:png|gif|jpe?g))` to `images/$2`.
+It also did not download any other uploads, e.g. zip files. Thankfully, these were only a couple, so I could detect and port over manually.
+
 ## Hiatus
 
 More than two months passed between the previous and the next section.

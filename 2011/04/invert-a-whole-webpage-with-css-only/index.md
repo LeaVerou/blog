@@ -8,7 +8,7 @@ tags:
   - "css"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2011/04/Screen-shot-2011-04-14-at-22.24.18--300x199.png "Screenshot from the effect applied on my blog")](http://lea.verou.me/wp-content/uploads/2011/04/Screen-shot-2011-04-14-at-22.24.18-.png)I recently saw [Paul Irish's jQuery invert page plugin](https://gist.github.com/373253). It inverts every color on a webpage including images or CSS. This reminded me of the invert color keyword that's allowed on outlines (and sadly only supported by Opera and IE9+). So I wondered how it could be exploited to achieve the same effect through CSS alone. Turned out to be quite simple actually:
+[![](images/Screen-shot-2011-04-14-at-22.24.18--300x199.png "Screenshot from the effect applied on my blog")](images/Screen-shot-2011-04-14-at-22.24.18-.png)I recently saw [Paul Irish's jQuery invert page plugin](https://gist.github.com/373253). It inverts every color on a webpage including images or CSS. This reminded me of the invert color keyword that's allowed on outlines (and sadly only supported by Opera and IE9+). So I wondered how it could be exploited to achieve the same effect through CSS alone. Turned out to be quite simple actually:
 
 body:before {
 	content:"";

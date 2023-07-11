@@ -1,10 +1,10 @@
 ---
 title: "Introducing Whathecolor: A color game for web developers!"
 date: "2014-02-08"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "colors"
   - "css3-colors"
 ---
@@ -36,4 +36,4 @@ So I experimented a bit and ended up using an average of my original idea and a 
 - My original idea was to have “levels”, where the color would get increasingly more difficult to get. For example, in the first level, you'd only have to guess simple colors whose RGB coordinates were either 0, 128 or 255. So, my Color.random() method accepts an entropy parameter, for that level. However, when I tested the game with truly random colors (any integer from 0 to 255), it turned out it wasn't really that hard (it took me about a minute to guess each color), so I ditched the idea of levels early on. The code is still there though.
 - An idea about making it harder in the future would be to introduce semi-transparent (RGBA/HSLA) colors. That would be fun :evil\_grin:
 
-[![Screenshot](http://lea.verou.me/wp-content/uploads/2014/02/Screen-Shot-2014-02-08-at-02.36.12-.png)](http://lea.verou.me/wp-content/uploads/2014/02/Screen-Shot-2014-02-08-at-02.36.12-.png)PS: The times in this screenshot aren’t real, I wanted to take one quickly, so I used the dev tools.
+[![Screenshot](images/Screen-Shot-2014-02-08-at-02.36.12-.png)](images/Screen-Shot-2014-02-08-at-02.36.12-.png)PS: The times in this screenshot aren’t real, I wanted to take one quickly, so I used the dev tools.

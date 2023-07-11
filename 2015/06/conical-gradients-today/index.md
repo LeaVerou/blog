@@ -1,13 +1,13 @@
 ---
 title: "Conical gradients, today!"
 date: "2015-06-18"
-categories: 
+categories:
   - "csswg"
   - "original"
   - "releases"
 ---
 
-[![Screen Shot 2015-06-18 at 16.26.40](http://lea.verou.me/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-16.26.40-.png)](http://lea.verou.me/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-16.26.40-.png)It’s no secret that I like conical gradients. In as early as 2011, I wrote [a draft for conical-gradient() in CSS](http://lea.verou.me/specs/conical-gradient/), that [Tab](http://www.xanthir.com/blog/) later said helped him when he [added them in CSS Image Values Level 4](http://www.w3.org/TR/css4-images/#conic-gradients) in 2012. However, almost **three years later, no progress has been made** in implementing them. Sure, the spec is still relatively incomplete, but that’s not the reason conical gradients have gotten no traction. **Far more underspecified features have gotten experimental implementations in the past.** The reason conical gradients are still unimplemented, is because very few developers know they exist, so browsers see no demand.
+[![Screen Shot 2015-06-18 at 16.26.40](images/Screen-Shot-2015-06-18-at-16.26.40-.png)](images/Screen-Shot-2015-06-18-at-16.26.40-.png)It’s no secret that I like conical gradients. In as early as 2011, I wrote [a draft for conical-gradient() in CSS](http://lea.verou.me/specs/conical-gradient/), that [Tab](http://www.xanthir.com/blog/) later said helped him when he [added them in CSS Image Values Level 4](http://www.w3.org/TR/css4-images/#conic-gradients) in 2012. However, almost **three years later, no progress has been made** in implementing them. Sure, the spec is still relatively incomplete, but that’s not the reason conical gradients have gotten no traction. **Far more underspecified features have gotten experimental implementations in the past.** The reason conical gradients are still unimplemented, is because very few developers know they exist, so browsers see no demand.
 
 Another reason was that [Cairo](http://cairographics.org/), the graphics library used in Chrome and Firefox had no way of drawing a conical gradient. However, this changed a while ago, when [they supported mesh gradients](http://libregraphicsworld.org/blog/entry/mesh-gradients-in-cairo-now-official), of which conical gradients are a mere special case.
 
@@ -19,7 +19,7 @@ background: conic-gradient(gold 40%, #f06 0);
 border-radius: 50%; /* make it round */
 ```
 
-[![Screen Shot 2015-06-18 at 16.23.57](http://lea.verou.me/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-16.23.57-.png)](http://lea.verou.me/wp-content/uploads/2015/06/Screen-Shot-2015-06-18-at-16.23.57-.png) So, I decided to take matters in my own hands. I wrote [a polyfill](http://leaverou.github.io/conic-gradient/), which I also used in my talk to demonstrate how awesome conical gradients can be and what cool things they can do. Today, during my [CSSConf](http://cssconf.com) talk, I released it publicly.
+[![Screen Shot 2015-06-18 at 16.23.57](images/Screen-Shot-2015-06-18-at-16.23.57-.png)](images/Screen-Shot-2015-06-18-at-16.23.57-.png) So, I decided to take matters in my own hands. I wrote [a polyfill](http://leaverou.github.io/conic-gradient/), which I also used in my talk to demonstrate how awesome conical gradients can be and what cool things they can do. Today, during my [CSSConf](http://cssconf.com) talk, I released it publicly.
 
 In addition, I mention to developers how important speaking up is for getting their favorite features implemented. **Browsers prioritize which features to implement based on what developers ask for.** It’s a pity that so few of us realize how much of a say we collectively have in this. This is more obvious with Microsoft and [their Uservoice forum](https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer) where developers can vote on which features they want to see worked on, but pretty much every major browser works in a similar way. They monitor what developers request and what other browsers implement, and decide accordingly. The squeaky wheel will get the feature, so if you really want to see something implemented, **speak up**.
 

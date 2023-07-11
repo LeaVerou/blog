@@ -1,15 +1,15 @@
 ---
 title: "twee+: Longer tweets, no strings attached"
 date: "2011-08-14"
-categories: 
+categories:
   - "original"
   - "personal"
   - "releases"
-tags: 
+tags:
   - "twitter"
 ---
 
-![](http://lea.verou.me/wp-content/uploads/2011/08/tweeplus-300x200.png "tweeplus screenshot")As some people that have been following me for a while know, the 140 character limit on twitter bugs me a lot sometimes, and I've tried to find [a way to overcome it](http://lea.verou.me/2009/11/exploring-browser-supported-unicode-characters-and-a-tweet-shortening-experiment/) previously as well. The most common ways these days seems to be either cutting down the long tweet into multiple pieces (yuck) or using a service to host the longer tweet and post a summary with a link to it.
+![](images/tweeplus-300x200.png "tweeplus screenshot")As some people that have been following me for a while know, the 140 character limit on twitter bugs me a lot sometimes, and I've tried to find [a way to overcome it](http://lea.verou.me/2009/11/exploring-browser-supported-unicode-characters-and-a-tweet-shortening-experiment/) previously as well. The most common ways these days seems to be either cutting down the long tweet into multiple pieces (yuck) or using a service to host the longer tweet and post a summary with a link to it.
 
 The latter isn't an entirely horrible option. However, I see 3 big downsides:
 

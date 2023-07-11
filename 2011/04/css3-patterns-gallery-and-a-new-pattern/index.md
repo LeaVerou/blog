@@ -1,15 +1,15 @@
 ---
 title: "CSS3 patterns gallery and a new pattern"
 date: "2011-04-15"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "css3-gradients"
   - "patterns"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2011/04/csspatterns-300x177.png "Screenshot from the gallery")](http://lea.verou.me/wp-content/uploads/2011/04/csspatterns.png)I finally got around to doing what I wanted to do for quite a few months: Create a gallery with all the basic patterns I was able to create with CSS3 gradients. Here it is:  [CSS3 Pattern Gallery](http://lea.verou.me/css3patterns/)
+[![](images/csspatterns-300x177.png "Screenshot from the gallery")](images/csspatterns.png)I finally got around to doing what I wanted to do for quite a few months: Create a gallery with all the basic patterns I was able to create with CSS3 gradients. Here it is:  [CSS3 Pattern Gallery](http://lea.verou.me/css3patterns/)
 
 Also, it includes a brand new pattern, which is the hardest one I have ever made so far: Japanese cubes. Thanks to [David Storey](http://twitter.com/dstorey) for challenging me about it.
 

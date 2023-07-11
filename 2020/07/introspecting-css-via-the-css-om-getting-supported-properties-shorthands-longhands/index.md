@@ -1,9 +1,9 @@
 ---
 title: "Introspecting CSS via the CSS OM: Getting supported properties, shorthands, longhands"
 date: "2020-07-27"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "css"
   - "css-om"
   - "javascript"
@@ -27,7 +27,7 @@ In Chrome and Safari, this is as simple as `Object.getOwnPropertyNames(document.
 
 In Chrome and Safari, `element.style` is a `[CSSStyleDeclaration](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration)` instance. In Firefox however, it is a `[CSS2Properties](https://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSS2Properties)` instance, which inherits from `CSSStyleDeclaration`. [`CSS2Properties`](https://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSS2Properties) is an older interface, defined in [the DOM 2 Specification](https://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-CSS2Properties), which is now obsolete. In the [current relevant specification](https://drafts.csswg.org/cssom/#the-cssstyledeclaration-interface), `CSS2Properties` is gone, and has been merged with `CSSStyleDeclaration`. However, [Firefox hasn't caught up yet](https://bugzilla.mozilla.org/show_bug.cgi?id=1290786).
 
-![](https://lea.verou.me/wp-content/uploads/2020/07/image-2.png)
+![](images/image-2.png)
 
 Firefox on the left, Safari on the right. Chrome behaves like Safari.
 
@@ -97,7 +97,7 @@ There is one exception: [The `all` property](https://developer.mozilla.org/en-US
 
 Whereas in Safari and Firefox, it actually returns every single property _that is not a shorthand_!
 
-![](https://lea.verou.me/wp-content/uploads/2020/07/image-1.png)
+![](images/image-1.png)
 
 Firefox and Safari expand `all` to literally all non-shorthand properties.
 

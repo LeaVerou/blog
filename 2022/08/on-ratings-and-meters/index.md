@@ -13,7 +13,7 @@ tags:
 
 I always thought that the semantically appropriate way to represent a rating (e.g. a star rating) is a `<meter>` element. They essentially convey the same type of information, the star rating is just a different presentation.
 
-![](https://lea.verou.me/wp-content/uploads/2022/08/image.png)
+![](images/image.png)
 
 An example of a star rating widget, from Amazon
 

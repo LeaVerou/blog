@@ -1,9 +1,9 @@
 ---
 title: "The curious case of border-radius:50%"
 date: "2010-10-30"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "border-radius"
   - "browser-bugs"
   - "css3"
@@ -31,27 +31,27 @@ As noted in [this comment by David Baron](http://lea.verou.me/2010/10/the-curio
 
 ### Different implementations, different bugs
 
-\[caption id="attachment\_709" align="alignleft" width="200" caption="Firefox 4 beta 6"\]**[![Rendering of the testcases in Firefox 4 beta 6](http://lea.verou.me/wp-content/uploads/2010/10/Firefox4b6-300x187.png "Firefox 4 beta 6")](http://lea.verou.me/wp-content/uploads/2010/10/Firefox4b6.png)**\[/caption\]
+\[caption id="attachment\_709" align="alignleft" width="200" caption="Firefox 4 beta 6"\]**[![Rendering of the testcases in Firefox 4 beta 6](images/Firefox4b6-300x187.png "Firefox 4 beta 6")](images/Firefox4b6.png)**\[/caption\]
 
 As I mentioned above, **Gecko** up to Firefox version 4 beta 6 always draws a regular curve for the corners with the largest radii applicable, resulting in a shape that is either a perfect circle or a rectangle with a semicircle on top and bottom (if height > width) or right and left (if width > height).
 
-\[caption id="attachment\_711" align="alignright" width="200" caption="Minefield (latest Gecko nightlies)"\]**[![Rendering of the testcases in Minefield (latest Gecko nightlies)](http://lea.verou.me/wp-content/uploads/2010/10/Minefield-300x187.png "Minefield")](http://lea.verou.me/wp-content/uploads/2010/10/Minefield.png)**\[/caption\]
+\[caption id="attachment\_711" align="alignright" width="200" caption="Minefield (latest Gecko nightlies)"\]**[![Rendering of the testcases in Minefield (latest Gecko nightlies)](images/Minefield-300x187.png "Minefield")](images/Minefield.png)**\[/caption\]
 
 In the latest nightlies this bug is fixed, and it follows the spec to the letter. I can't help but wonder if this was a bug, a misinterpretation of the spec or a deliberate disagreement with it.
 
-\[caption id="attachment\_714" align="alignleft" width="200" caption="Webkit"\][![Rendering of the testcase in the latest Webkit nightlies](http://lea.verou.me/wp-content/uploads/2010/10/Webkit-300x187.png "Webkit")](http://lea.verou.me/wp-content/uploads/2010/10/Webkit.png)\[/caption\]
+\[caption id="attachment\_714" align="alignleft" width="200" caption="Webkit"\][![Rendering of the testcase in the latest Webkit nightlies](images/Webkit-300x187.png "Webkit")](images/Webkit.png)\[/caption\]
 
 **Webkit** was late to support percentages in border-radius, but it seems to be the first (it or IE9, I'm not sure) to follow the spec to the letter --concerning corner radii at least-- and renders an ellipse (horizontal radius = width/2, vertical radius = height/2) no matter what. Webkit however seems to be having serious trouble with borders, rendering them with variable width strokes (!).
 
-\[caption id="attachment\_717" align="alignright" width="200" caption="Opera 11"\][![Rendering of the testcases in Opera](http://lea.verou.me/wp-content/uploads/2010/10/Opera-300x187.png "Opera")](http://lea.verou.me/wp-content/uploads/2010/10/Opera.png)\[/caption\]
+\[caption id="attachment\_717" align="alignright" width="200" caption="Opera 11"\][![Rendering of the testcases in Opera](images/Opera-300x187.png "Opera")](images/Opera.png)\[/caption\]
 
 **Presto** (Opera) is the weirdest when it comes to rendering a percentage border-radius. I can't figure out the algorithm it uses to determine the radii of the corners even if it was to save my life, it even changes according to window size in my testcases! Since I've been using border-radius:50% regularly, I've had the pleasure of observing Opera's rendering in many different designs and I still can't find a pattern. It's particularly funny when rendering the little fuchsia comment bubbles in the homepage of my blog: Every one of them has a different radius, even if they are about the same size. It even got one of them right and rendered it as an ellipse once!
 
-\[caption id="attachment\_718" align="alignleft" width="200" caption="Internet Explorer 9"\][![Rendering of the testcases in IE9](http://lea.verou.me/wp-content/uploads/2010/10/IE9-300x243.png "IE9")](http://lea.verou.me/wp-content/uploads/2010/10/IE9.png)\[/caption\]
+\[caption id="attachment\_718" align="alignleft" width="200" caption="Internet Explorer 9"\][![Rendering of the testcases in IE9](images/IE9-300x243.png "IE9")](images/IE9.png)\[/caption\]
 
 **Trident (IE9)**, along with the latest Gecko nightly is the only 100% correct one when it comes to rendering the testcases, which is not surprising since the IE team boasted quite a lot for their bulletproof border-radius implementation. Well, their CSS3 support might be a bit lacking, but at least the bits they actually implement aren't buggy. Kudos for that.
 
-  
+
 [Link to testcases](http://lea.verou.me/demos/border-radius-50p.html)
 
 **Note:** Of course all bugs mentioned above have been reported to the respective browser vendors (except the Gecko one that is already fixed in the nightlies).

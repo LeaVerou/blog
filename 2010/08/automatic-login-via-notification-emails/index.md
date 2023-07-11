@@ -1,15 +1,15 @@
 ---
 title: "Automatic login via notification emails?"
 date: "2010-08-14"
-categories: 
+categories:
   - "thoughts"
-tags: 
+tags:
   - "security"
   - "usability"
   - "usability-vs-security"
 ---
 
-![Screenshot of a Twitter email notification](http://lea.verou.me/wp-content/uploads/2010/08/twitter-notification.png "Email notification example (via Twitter)")A couple hours ago, I received a notification email from [Goodreads](http://www.goodreads.com/) and unlike usually, I decided to actually visit the site (by the way, I believe that Goodreads, i.e. a last.fm for books, is an awesome idea but poorly implemented).When I did, I was quite annoyed to find out that I wasn't already logged in, so I had to remember which one of my many passwords I had used for it and try them one by one. This is not a Goodreads fail, but a fairly common nuisance, since most (if not all) social websites behave that way.
+![Screenshot of a Twitter email notification](images/twitter-notification.png "Email notification example (via Twitter)")A couple hours ago, I received a notification email from [Goodreads](http://www.goodreads.com/) and unlike usually, I decided to actually visit the site (by the way, I believe that Goodreads, i.e. a last.fm for books, is an awesome idea but poorly implemented).When I did, I was quite annoyed to find out that I wasn't already logged in, so I had to remember which one of my many passwords I had used for it and try them one by one. This is not a Goodreads fail, but a fairly common nuisance, since most (if not all) social websites behave that way.
 
 _"What if there was some magic involved?"_ Bill Scott & Theresa Neil advise interaction designers to ask themselves in [a book I'm currently reading](http://designingwebinterfaces.com/) (highly recommended by the way). Well, I guess, if there _was_ some magic involved, **the site would "understand" that my click was initiated from an email and would automatically log me in and let me view whatever I was trying to**.
 

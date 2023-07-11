@@ -18,13 +18,13 @@ However, CSS features are not the only — or even the most important questions 
 
 Last year, some of the freeform questions about pain points were particularly useful to browser vendors for prioritizing implementation and standards work, and we expect this to be true this year as well. We put considerable effort into [redesigning these freeform questions to make them more intuitive](https://github.com/Devographics/surveys/issues/36), while maintaining their helpfulness for browser vendors:
 
-![](https://lea.verou.me/wp-content/uploads/2022/10/image-3.png)
+![](images/image-3.png)
 
 We hope the new wording makes it more clear that these are mutually exclusive, so that respondents do not feel they need to duplicate their answers.
 
 One of the new questions I’m excited about is this question to gauge whether the respondent spends more time writing JS or CSS:
 
-![](https://lea.verou.me/wp-content/uploads/2022/10/image-1.png)
+![](images/image-1.png)
 
 A focus of this year's State of CSS survey is to reach a broader range of developers; a majority of respondents of past surveys has been JS developers who also write CSS, rather than developers that focus on CSS equally or even primarily. This is a natural consequence of this having been spun off the [State of JS survey](https://stateofjs.com/en-us/). To truly see what the _State of CSS_ is in 2022, we need input from all types of developers, as developers with different focus have different needs and priorities. This question will allow us to evaluate how well we have reached this goal, and going forward, whether we are improving every year.
 
@@ -32,7 +32,7 @@ Another thing I’m excited about in this year's survey is the ability to add fr
 
 <figure>
 
-![](https://lea.verou.me/wp-content/uploads/2022/10/comments.gif)
+![](images/comments.gif)
 <figcaption>Adding freeform comments to a question</figcaption>
 
 </figure>

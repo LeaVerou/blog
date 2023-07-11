@@ -1,16 +1,16 @@
 ---
 title: "Awesomplete: 2KB autocomplete with zero dependencies"
 date: "2015-02-19"
-categories: 
+categories:
   - "releases"
-tags: 
+tags:
   - "autocomplete"
   - "awesomplete"
   - "javascript"
   - "typeahead"
 ---
 
-[![awesomplete](http://lea.verou.me/wp-content/uploads/2015/02/awesomplete-300x248.png)](http://leaverou.github.io/awesomplete)Sorry for the lack of posts for the past 7 (!) months, I’ve been super busy working on [my book](http://shop.oreilly.com/product/0636920031123.do), which up to a certain point, I couldn’t even imagine finishing, but I’m finally there! I’ve basically tried to cram all the CSS wisdom I’ve accumulated over the years in it :P (which is partly why it took so long, I kept remembering more things that just \*had\* to be in it. Its page count on the O’Reilly website had to be updated 3 times, from 250 to 300 to 350 and it looks like the final is gonna be closer to 400 pages) and it’s gonna be super awesome ([preorder here!](http://shop.oreilly.com/product/0636920031123.do)) :D . I have been posting a few CSS tricks now and then on [my twitter account](http://twitter.com/leaverou), but haven’t found any time to write a proper blog post.
+[![awesomplete](images/awesomplete-300x248.png)](http://leaverou.github.io/awesomplete)Sorry for the lack of posts for the past 7 (!) months, I’ve been super busy working on [my book](http://shop.oreilly.com/product/0636920031123.do), which up to a certain point, I couldn’t even imagine finishing, but I’m finally there! I’ve basically tried to cram all the CSS wisdom I’ve accumulated over the years in it :P (which is partly why it took so long, I kept remembering more things that just \*had\* to be in it. Its page count on the O’Reilly website had to be updated 3 times, from 250 to 300 to 350 and it looks like the final is gonna be closer to 400 pages) and it’s gonna be super awesome ([preorder here!](http://shop.oreilly.com/product/0636920031123.do)) :D . I have been posting a few CSS tricks now and then on [my twitter account](http://twitter.com/leaverou), but haven’t found any time to write a proper blog post.
 
 Anyhow, despite being super busy with MIT (which btw is amazing, challenging in a good way, and full of fantastic people. So glad to be here!) and the book, I recently needed an autocomplete widget for something. Surprisingly, I don’t think I ever had needed to choose one in the past. I’ve worked with apps that had it, but in those cases it was already there.
 

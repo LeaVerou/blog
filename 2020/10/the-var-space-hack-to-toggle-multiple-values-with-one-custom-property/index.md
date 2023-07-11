@@ -1,10 +1,10 @@
 ---
 title: "The -​-var: ; hack to toggle multiple values with one custom property"
 date: "2020-10-12"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
+tags:
   - "css"
   - "css-variables"
 ---
@@ -13,7 +13,7 @@ What if I told you you could use a single property value to turn multiple differ
 
 What if I told you you could turn this flat button into a glossy skeuomorphic button by just tweaking one custom property `--is-raised`, and that would set its border, background image, box and text shadows in one fell swoop?
 
-![](https://lea.verou.me/wp-content/uploads/2020/10/image-1.png)
+![](images/image-1.png)
 
 <iframe src="https://dabblet.com/gist/055d4c1d9590250d6633bdf63e37f9ca" style="border: 0; width: 100%; min-height: 500px"></iframe>
 

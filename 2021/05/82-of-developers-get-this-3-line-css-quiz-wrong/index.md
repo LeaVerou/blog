@@ -38,7 +38,7 @@ https://twitter.com/LeaVerou/status/1395379573190168576
 
 These were the results after the 24 hours it ran for:
 
-![](https://lea.verou.me/wp-content/uploads/2021/05/image.png)
+![](images/image.png)
 
 `orange` was the clear winner, and the actual correct answer, `skyblue` only got 18.1%, nearly the same as `transparent`!
 

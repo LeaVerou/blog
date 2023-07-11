@@ -1,9 +1,9 @@
 ---
 title: "What is the best way to mark up an exclusive button group?"
 date: "2022-07-14"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "a11y"
   - "web-components"
 ---
@@ -40,7 +40,7 @@ In theory doing this in Shadow DOM and/or using ElementInternals implicit roles 
 
 Today I posted [my attempt to implement what we've discussed in a `<button-group>` component](https://projects.verou.me/nudeforms/button-group/), which restarted the discussion.
 
-![](https://lea.verou.me/wp-content/uploads/2022/07/image.png)
+![](images/image.png)
 
 Its [implementation is right here](https://github.com/LeaVerou/nudeforms/tree/main/button-group) if you want to improve it further! And make sure to [check out the actual Twitter thread](https://twitter.com/LeaVerou/status/1545712667515654144), as there is a lot of good stuff I couldn't include in this!
 

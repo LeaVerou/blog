@@ -1,17 +1,17 @@
 ---
 title: "Introducing Bliss: A 3KB library for happier Vanilla JS"
 date: "2015-12-04"
-categories: 
+categories:
   - "original"
   - "personal"
   - "releases"
 ---
 
-[![Screen Shot 2015-12-04 at 16.59.39](http://lea.verou.me/wp-content/uploads/2015/12/Screen-Shot-2015-12-04-at-16.59.39-300x127.png)](http://blissfuljs.com)Anyone who follows this blog, my twitter, or my work probably is aware that [I’m not a huge fan of big libraries](http://lea.verou.me/2015/04/jquery-considered-harmful/). I think wrapper objects are messy, and big libraries are overkill for smaller projects. On large projects, one uses frameworks like React or Angular anyway, not libraries.
+[![Screen Shot 2015-12-04 at 16.59.39](images/Screen-Shot-2015-12-04-at-16.59.39-300x127.png)](http://blissfuljs.com)Anyone who follows this blog, my twitter, or my work probably is aware that [I’m not a huge fan of big libraries](http://lea.verou.me/2015/04/jquery-considered-harmful/). I think wrapper objects are messy, and big libraries are overkill for smaller projects. On large projects, one uses frameworks like React or Angular anyway, not libraries.
 
 Anyone who writes [Vanilla JS](http://vanilla-js.com/) on a daily basis probably is aware that it can sometimes be, ahem, somewhat unpleasant to work with. Sure, the situation is orders of magnitude better than it was when I started. Back then, IE6 was the dominant browser and you needed a helper function to even add event listeners to an element (remember element.attachEvent?) or to get elements by a class!
 
-[![jasset-datepicker](http://lea.verou.me/wp-content/uploads/2015/12/jasset-datepicker-300x211.png "Ah, the memories!")](http://lea.verou.me/wp-content/uploads/2015/12/jasset-datepicker.png)
+[![jasset-datepicker](images/jasset-datepicker-300x211.png "Ah, the memories!")](images/jasset-datepicker.png)
 
 **Fun fact:** I learned JavaScript back then by writing my own library, called _jAsset_. I had not heard of jQuery when I started it in 2007, so I had even coded my own selector engine! (Anyone remember _slickspeed_?) jAssset had plenty of nice helper functions, its own UI library and a cool logo. I had even started to make a website for its UI components, seen on the right.
 

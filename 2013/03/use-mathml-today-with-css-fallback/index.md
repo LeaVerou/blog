@@ -1,9 +1,9 @@
 ---
 title: "Use MathML today, with CSS fallback!"
 date: "2013-03-21"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "css"
   - "fallback"
   - "mathml"
@@ -60,17 +60,17 @@ I was very proud of myself. My first MathML equation! It’s actually pretty sim
 
 It looked very nice on Firefox, especially after I applied Cambria Math to it instead of the default Times-ish font:
 
-[![MathML native support in Firefox](http://lea.verou.me/wp-content/uploads/2013/03/mathml-firefox.png)](http://lea.verou.me/wp-content/uploads/2013/03/mathml-firefox.png) [](http://lea.verou.me/wp-content/uploads/2013/03/mathml-chrome-withcss.png)
+[![MathML native support in Firefox](images/mathml-firefox.png)](images/mathml-firefox.png) [](images/mathml-chrome-withcss.png)
 
 However, I soon realized that as awesome as MathML might be, [not not all browsers had seen the light](http://docs.webplatform.org/wiki/mathml#Compatibility). IE10 and Chrome are the most notable offenders. It looked like an unreadable mess in Chrome:
 
-[![MathML in Chrome, with no CSS fallback](http://lea.verou.me/wp-content/uploads/2013/03/mathml-chrome-nocss.png)](http://lea.verou.me/wp-content/uploads/2013/03/mathml-chrome-nocss.png)
+[![MathML in Chrome, with no CSS fallback](images/mathml-chrome-nocss.png)](images/mathml-chrome-nocss.png)
 
 There are libraries to make it work cross-browser, the most popular of which is [MathJax](http://www.mathjax.org/). However, this was pretty big for my needs, I just wanted **one** simple equation in **one** goddamn slide. It would be like using a chainsaw to cut a slice of bread!
 
 The solution I decided to go with was to use [Modernizr](http://modernizr.com) to detect MathML support, since apparently [it’s not simple at all](https://github.com/Modernizr/Modernizr/blob/master/feature-detects/mathml.js). Then, I used the `.no-mathml` class in conjunction with selectors that target the MathML elements, to mimic proper styling with simple CSS. It’s not a complete CSS library by any means, I just covered what I needed for that particular equation and tried to write it in a generic way, so that if I need it in future equations, I only have to _add_ rules. Here’s a screenshot of the result in Chrome:
 
-[![MathML in Chrome with CSS fallback](http://lea.verou.me/wp-content/uploads/2013/03/mathml-chrome-withcss.png)](http://lea.verou.me/wp-content/uploads/2013/03/mathml-chrome-withcss.png)
+[![MathML in Chrome with CSS fallback](images/mathml-chrome-withcss.png)](images/mathml-chrome-withcss.png)
 
 It doesn’t look as good as Firefox, but it’s decent. You can see the CSS rules I used in the following Dabblet:
 

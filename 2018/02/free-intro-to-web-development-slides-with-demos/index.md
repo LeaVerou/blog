@@ -1,11 +1,11 @@
 ---
 title: "Free Intro to Web Development slides (with demos)"
 date: "2018-02-20"
-categories: 
+categories:
   - "original"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2018/02/Screen-Shot-2018-02-19-at-22.57.12-300x211.png)](https://leaverou.github.io/talks/intro/)This semester I’m teaching [6.813 User Interface Design and Implementation at MIT](http://web.mit.edu/6.813/www/sp18/), as an instructor.
+[![](images/Screen-Shot-2018-02-19-at-22.57.12-300x211.png)](https://leaverou.github.io/talks/intro/)This semester I’m teaching [6.813 User Interface Design and Implementation at MIT](http://web.mit.edu/6.813/www/sp18/), as an instructor.
 
 Many of the assignments of this course include Web development and the course included two 2-hour labs to introduce students to these technologies. Since I’m involved this year, I decided to make new labs from scratch and increase the number of labs from 2 to 3. Even so, trying to decide what to include and what not to from the entirety of web development in only 6 hours was really hard, and I still feel I failed to include important bits.
 

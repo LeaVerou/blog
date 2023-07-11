@@ -1,13 +1,13 @@
 ---
 title: "lea＠w3․org"
 date: "2012-08-01"
-categories: 
+categories:
   - "personal"
-tags: 
+tags:
   - "w3c"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2012/08/Screen-Shot-2012-08-01-at-14.55.40-.png ":)")](http://lea.verou.me/wp-content/uploads/2012/08/Screen-Shot-2012-08-01-at-14.55.40-.png)In my recent post describing [how I got into web development](http://lea.verou.me/2012/05/how-i-got-into-web-development-the-long-version/) I wrote that I’m in the verge of some big changes in my life. The main one of them starts tomorrow. As of tomorrow, the above will be my professional email. Yes, you guessed it right; I’m joining the [W3C](http://w3.org) [team](http://www.w3.org/People/)! Yes, the same [W3C](http://w3.org) you all know and love :) I decided to title this blog post with it, as I like how a 10 letter string manages to neatly summarize so much.
+[![](images/Screen-Shot-2012-08-01-at-14.55.40-.png ":)")](images/Screen-Shot-2012-08-01-at-14.55.40-.png)In my recent post describing [how I got into web development](http://lea.verou.me/2012/05/how-i-got-into-web-development-the-long-version/) I wrote that I’m in the verge of some big changes in my life. The main one of them starts tomorrow. As of tomorrow, the above will be my professional email. Yes, you guessed it right; I’m joining the [W3C](http://w3.org) [team](http://www.w3.org/People/)! Yes, the same [W3C](http://w3.org) you all know and love :) I decided to title this blog post with it, as I like how a 10 letter string manages to neatly summarize so much.
 
 Working at W3C had been a dream of mine ever since I learned what a web standard is. As you probably know if you've been following my work, I’m a strong believer in open web standards. Even though proprietary technology might offer some short term benefits, in the long run only open standards can allow the Web to reach its full potential.
 

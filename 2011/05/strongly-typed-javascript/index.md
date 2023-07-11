@@ -1,15 +1,15 @@
 ---
 title: "StronglyTyped: A library for strongly typed properties & constants in JavaScript"
 date: "2011-05-05"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "es5"
   - "javascript"
 ---
 
-[![StronglyTyped](http://lea.verou.me/wp-content/uploads/2011/05/strongly-typed-300x210.png "StronglyTyped logo")](http://www.flickr.com/photos/leaverou/5691500699/in/photostream)I'll start by saying I **love** the loosely typed nature of JavaScript. When I had to work with strongly typed languages like Java, it always seemed like an unnecessary hassle. On the contrary, my boyfriend even though very proficient with HTML, CSS and SVG, comes from a strong Java background and hates loosely typed scripting languages. So, to tempt him into JS and keep him away from heavy abstractions like Objective-J, I wrote a little library that allows you to specify strongly typed properties (and since global variables are also properties of the window object, those as well) of various types (real JS types like `Boolean`, `Number`, `String` etc or even made up ones like `Integer`) and constants (final properties in Java). It uses ES5 getters and setters to do that and falls back to regular, loosely typed properties in non-supporting browsers. 
+[![StronglyTyped](images/strongly-typed-300x210.png "StronglyTyped logo")](http://www.flickr.com/photos/leaverou/5691500699/in/photostream)I'll start by saying I **love** the loosely typed nature of JavaScript. When I had to work with strongly typed languages like Java, it always seemed like an unnecessary hassle. On the contrary, my boyfriend even though very proficient with HTML, CSS and SVG, comes from a strong Java background and hates loosely typed scripting languages. So, to tempt him into JS and keep him away from heavy abstractions like Objective-J, I wrote a little library that allows you to specify strongly typed properties (and since global variables are also properties of the window object, those as well) of various types (real JS types like `Boolean`, `Number`, `String` etc or even made up ones like `Integer`) and constants (final properties in Java). It uses ES5 getters and setters to do that and falls back to regular, loosely typed properties in non-supporting browsers.
 
 Also, as a bonus, you get cross-browser `Function.prototype.bind` and `Array.prototype.forEach` and a robust type checking function: `StronglyTyped.is(type, value)`.
 

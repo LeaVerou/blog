@@ -1,10 +1,10 @@
 ---
 title: "Preview corner-shape, before implementations!"
 date: "2013-03-24"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "border-radius"
   - "css4"
   - "svg"
@@ -14,7 +14,7 @@ As an editor of the [Backgrounds & Borders Level 4](http://dev.w3.org/csswg/css4
 
 Unfortunately, until it’s implemented in browsers, it’s hard to play with it. Or, is it? I spent the weekend creating an app in which you can enter values for corner-shape, border-radius, width, and height, and see the result, simulated through SVG, as well as the fallback in browsers that don’t support border-corner-radius (which is currently all browsers).
 
-[![corner-shape preview](http://lea.verou.me/wp-content/uploads/2013/03/Screen-Shot-2013-03-24-at-17.45.38-.png)](http://lea.verou.me/wp-content/uploads/2013/03/Screen-Shot-2013-03-24-at-17.45.38-.png)
+[![corner-shape preview](images/Screen-Shot-2013-03-24-at-17.45.38-.png)](images/Screen-Shot-2013-03-24-at-17.45.38-.png)
 
 Obviously, it’s not a full preview, since you can only play with a limited subset of CSS properties, but it should be good for seeing the kinds of shapes that will be possible.You could also copy the generated SVG from the Developer tools of your browser, and use it as a background in any website!
 

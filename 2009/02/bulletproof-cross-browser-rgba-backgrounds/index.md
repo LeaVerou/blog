@@ -1,11 +1,11 @@
 ---
 title: "Bulletproof, cross-browser RGBA backgrounds, today"
 date: "2009-02-15"
-categories: 
+categories:
   - "articles"
   - "original"
   - "releases"
-tags: 
+tags:
   - "colors"
   - "css3"
   - "php"
@@ -68,7 +68,7 @@ My favored approach is to use rgba() for all RGBA-capable browsers and fallback 
 - Stores the generated images on the server, so that they don't have to be created every time (generating images on the fly has quite an important performance impact).
 - Forces the images to be cached on the browser so that they don't have to be generated every time (even though their size is very small, about 73 bytes).
 
-Here it is: [rgba.php](http://lea.verou.me/wp-content/uploads/2009/02/rgba.zip)
+Here it is: [rgba.php](uploads/rgba.zip)
 
 You use it like this:
 

@@ -11,7 +11,7 @@ tags:
 
 A few days ago, the incredibly talented [Roman Komarov](https://twitter.com/kizmarh) posted an experiment of his with [pure CSS "scrolling shadows"](http://kizu.ru/en/fun/shadowscroll/). If you’re using Google Reader, you are probably familiar with the effect:
 
-[![Screenshot demonstrating the “scrolling shadows” in Google Reader](http://lea.verou.me/wp-content/uploads/2012/04/scrolling-shadows.png "“Scrolling shadows” in Google Reader")](http://lea.verou.me/wp-content/uploads/2012/04/scrolling-shadows.png)
+[![Screenshot demonstrating the “scrolling shadows” in Google Reader](images/scrolling-shadows.png "“Scrolling shadows” in Google Reader")](images/scrolling-shadows.png)
 
 In Roman’s experiment, he is using absolutely positioned pseudoelements to cover the shadows (which are basically radial gradients as background images), taking advantage of the fact that when you scroll a scrollable container, its background does not scroll with it, but absolutely positioned elements within do. Therefore, when you scroll, the shadows are no longer obscured and can show through. Furthermore, these pseudoelements are linear gradients from white to transparent, so that these shadows are uncovered smoothly.
 

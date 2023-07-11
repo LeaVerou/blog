@@ -1,10 +1,10 @@
 ---
 title: "A better tool for cubic-bezier() easing"
 date: "2011-09-14"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "css3"
   - "css3-transitions"
   - "cubic-bezier"
@@ -12,7 +12,7 @@ tags:
   - "html5"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2011/09/Screen-shot-2011-09-14-at-10.33.11--300x204.png "Screenshot of cubic-bezier.com")](http://lea.verou.me/wp-content/uploads/2011/09/Screen-shot-2011-09-14-at-10.33.11-.png)A few days ago, I had a talk at [a conference in Zurich](http://frontendconf.ch/) (I'm going to write more about it in another post). The talk was about "10 things you might not know about CSS3". The first of those things was how you can do bouncing transitions with cubic-bezier() instead of an easing keyword. As usual, my slides included a few live demos of the functionality, in which I edited the cubic-bezier() parameters and the audience could see the transition produced.
+[![](images/Screen-shot-2011-09-14-at-10.33.11--300x204.png "Screenshot of cubic-bezier.com")](images/Screen-shot-2011-09-14-at-10.33.11-.png)A few days ago, I had a talk at [a conference in Zurich](http://frontendconf.ch/) (I'm going to write more about it in another post). The talk was about "10 things you might not know about CSS3". The first of those things was how you can do bouncing transitions with cubic-bezier() instead of an easing keyword. As usual, my slides included a few live demos of the functionality, in which I edited the cubic-bezier() parameters and the audience could see the transition produced.
 
 However, in the case of cubic-bezier() that's not enough. No matter how much you see someone changing the parameters, if you don't picture it in a 2D plane, it's very hard to understand how it works. So, the night before, I searched for a tool I could use to show them how bezier curves are formed. I found plenty, but all of them restricted the the coordinates to the 0-1 range. I'm not sure if the cause is ignorance about the spec changes or that Webkit hasn't caught up with those changes yet ([but it will, soon](https://bugs.webkit.org/show_bug.cgi?id=45761)). The only one that supported values out of range was [this one](http://scope.bitbucket.org/ui-elements/bezier-control/index.xml) from the Opera Dragonfly developers, but I found it kinda impossible to adapt.
 

@@ -1,17 +1,17 @@
 ---
 title: "CSS.coloratum: Convert and share CSS colors"
 date: "2011-09-02"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "canvas"
   - "css3"
   - "css3-colors"
   - "html5"
 ---
 
-![](http://lea.verou.me/wp-content/uploads/2011/09/shot1-300x200.png "screenshot")Whenever I wanted to convert a CSS named color to RGB, I used to open [the CSS3 colors spec](http://www.w3.org/TR/css3-color/) in a new tab, search in the page and copied the values. Every time it felt even more tedious. I didn't want to search in long tables, I wanted to type the color somewhere and get the values back, in an easy to copy format. So, after yet another color lookup earlier today, I decided to scratch my own itch and do it myself.
+![](images/shot1-300x200.png "screenshot")Whenever I wanted to convert a CSS named color to RGB, I used to open [the CSS3 colors spec](http://www.w3.org/TR/css3-color/) in a new tab, search in the page and copied the values. Every time it felt even more tedious. I didn't want to search in long tables, I wanted to type the color somewhere and get the values back, in an easy to copy format. So, after yet another color lookup earlier today, I decided to scratch my own itch and do it myself.
 
 Of course, I didn't plan to include a whole database of CSS colors in the website. My idea was much simpler: Use the named color to draw a rectangle in a <canvas> and then read the R,G,B values through ctx.getImageData().
 

@@ -1,9 +1,9 @@
 ---
 title: "Tag editing UIs"
 date: "2010-11-14"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "ui-design"
   - "usability"
 ---
@@ -12,7 +12,7 @@ I had to build the edit tags interface for an application I'm working on, so I t
 
 ### Pattern #1: Input field to add new tags, delete button for existing ones
 
-Used by: Wordpress, flickr, foursquare![Screenshot of Wordpress' tagging UI](http://lea.verou.me/wp-content/uploads/2010/11/Screen-shot-2010-11-14-at-16.45.11-.png "Wordpress' tagging UI")
+Used by: Wordpress, flickr, foursquare![Screenshot of Wordpress' tagging UI](images/Screen-shot-2010-11-14-at-16.45.11-.png "Wordpress' tagging UI")
 
 Pros:
 
@@ -28,7 +28,7 @@ foursquare's implementation was the worst I've tested: There's no (discoverable?
 
 ### Pattern #2: One text field to edit, delete or add new tags
 
-Used by: delicious, Google reader, stackoverflow, reddit[![Screenshot of delicious' tagging UI](http://lea.verou.me/wp-content/uploads/2010/11/Screen-shot-2010-11-14-at-16.47.04-.png "Delicious' tagging UI")](http://lea.verou.me/wp-content/uploads/2010/11/Screen-shot-2010-11-14-at-16.47.04-.png)
+Used by: delicious, Google reader, stackoverflow, reddit[![Screenshot of delicious' tagging UI](images/Screen-shot-2010-11-14-at-16.47.04-.png "Delicious' tagging UI")](images/Screen-shot-2010-11-14-at-16.47.04-.png)
 
 Pros:
 
@@ -43,7 +43,7 @@ Cons:
 
 ### Pattern #3: Hybrid approach: Text field for all, existing tags seem to be inside and have a delete button
 
-Used by: last.fm![Screenshot of last.fm's tagging UI](http://lea.verou.me/wp-content/uploads/2010/11/Screen-shot-2010-11-14-at-16.54.45-.png "last.fm's tagging UI")
+Used by: last.fm![Screenshot of last.fm's tagging UI](images/Screen-shot-2010-11-14-at-16.54.45-.png "last.fm's tagging UI")
 
 Pros:
 

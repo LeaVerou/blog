@@ -1,10 +1,10 @@
 ---
 title: "CSS3 structural pseudo-class selector tester"
 date: "2010-03-14"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "css3-selectors"
   - "educational"
   - "nth-child"
@@ -13,7 +13,7 @@ tags:
   - "nth-of-type"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2010/03/Screen-shot-2011-09-20-at-14.13.13--300x187.png "Screen shot 2011-09-20 at 14.13.13")](http://lea.verou.me/wp-content/uploads/2010/03/Screen-shot-2011-09-20-at-14.13.13-.png)I was doing some research today about how people explain the CSS3 structural\* pseudo classes and I stumbled upon this demo by CSS tricks: [http://css-tricks.com/examples/nth-child-tester/](http://css-tricks.com/examples/nth-child-tester/)
+[![](images/Screen-shot-2011-09-20-at-14.13.13--300x187.png)](images/Screen-shot-2011-09-20-at-14.13.13-.png)I was doing some research today about how people explain the CSS3 structural\* pseudo classes and I stumbled upon this demo by CSS tricks: [http://css-tricks.com/examples/nth-child-tester/](http://css-tricks.com/examples/nth-child-tester/)
 
 I thought the idea is **awesome**, but lacks a few features:
 

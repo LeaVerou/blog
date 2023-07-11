@@ -23,7 +23,7 @@ I will let that sink in for a bit. **Private fields, proxies, pick one, you can'
 
 <!-- more -->
 
-![](https://lea.verou.me/wp-content/uploads/2023/04/image.png)
+![](images/image.png)
 
 Basically, because a Proxy creates a _different_ object, it breaks both strict equality (`obj1 === obj2`), as well as private properties. [MDN even has a whole section on this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#no_private_property_forwarding). Unfortunately, the workaround proposed is no help when proxies are used to implement reactivity, so when [I tried to report this as a Vue bug](https://github.com/vuejs/core/issues/8149), it was (rightly) closed as wontfix. It would not be possible to fix this in [Mavo](https://mavo.io) either, for the same reason.
 

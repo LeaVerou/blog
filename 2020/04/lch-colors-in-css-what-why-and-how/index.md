@@ -1,12 +1,12 @@
 ---
 title: "LCH colors in CSS: what, why, and how?"
 date: "2020-04-04"
-categories: 
+categories:
   - "articles"
   - "csswg"
   - "original"
   - "releases"
-tags: 
+tags:
   - "colors"
   - "css-color-4"
   - "css-color-5"
@@ -35,7 +35,7 @@ LCH is a color space that has several advantages over the RGB/HSL colors we're f
 
 This is huge. Currently, every CSS color we can specify, is [defined](https://www.w3.org/TR/css-color-3/#rgb-color) to be in the [sRGB color space](https://en.wikipedia.org/wiki/SRGB). This was more than sufficient a few years ago, since all but professional monitors had gamuts smaller than sRGB. However, that's not true any more. Today, the gamut (range of possible colors displayed) of most monitors is closer to [P3](https://en.wikipedia.org/wiki/DCI-P3), which has a [50% larger volume than sRGB](https://twitter.com/svgeesus/status/1220029106248716288). CSS right now **cannot access these colors at all**. Let me repeat: **We have no access to one third of the colors in most modern monitors.** And these are not just any colors, but the **most vivid colors the screen can display**. Our websites are washed out because monitor hardware evolved faster than CSS specs and browser implementations.
 
-![](http://lea.verou.me/wp-content/uploads/2020/04/srgb-vs-p3.png)
+![](images/srgb-vs-p3.png)
 
 Gamut volume of sRGB vs P3
 
@@ -43,7 +43,7 @@ Gamut volume of sRGB vs P3
 
 In LCH, the same numerical change in coordinates produces the same perceptual color difference. This property of a color space is called "perceptual uniformity". RGB or HSL are not perceptually uniform. A very illustrative [example](https://dabblet.com/gist/48ce387697106b845127d5cef5247a19) is the following \[[example source](https://www.boronine.com/2012/03/26/Color-Spaces-for-Human-Beings/?fbclid=IwAR0ztieCugTlncQH6FB7fqtr1NKaQjuAgwc5YzA75NPbLwH3Z5w1FBsdQQw)\]:
 
-[![](http://lea.verou.me/wp-content/uploads/2020/04/image-3.png)](https://dabblet.com/gist/48ce387697106b845127d5cef5247a19)
+[![](images/image-3.png)](https://dabblet.com/gist/48ce387697106b845127d5cef5247a19)
 
 Both the colors in the first row, as well as the colors in the second row, only differ by 20 degrees in hue. Is the perceptual difference between them equal?
 
@@ -51,13 +51,13 @@ Both the colors in the first row, as well as the colors in the second row, only 
 
 In HSL, lightness is meaningless. Colors can have the same lightness value, with wildly different perceptual lightness. My favorite examples are yellow and blue. Believe it or not, both have the same HSL lightness!
 
-[![](http://lea.verou.me/wp-content/uploads/2020/04/image-4.png)](https://dabblet.com/gist/a6eb208ae80780c55b443ddcd4ce842f)
+[![](images/image-4.png)](https://dabblet.com/gist/a6eb208ae80780c55b443ddcd4ce842f)
 
 Both of these colors have a lightness of 50%, but they are most certainly not equally light. What does HSL lightness actually mean then?
 
 You might argue that at least lightness means something for constant hue and saturation, i.e. for adjustments within the same color. It is true that we do get a lighter color if we increase the HSL lightness and a darker one if we decrease it, but it's not necessarily the same color:
 
-![](http://lea.verou.me/wp-content/uploads/2020/04/image-5.png)
+![](images/image-5.png)
 
 Both of these have the same hue and saturation, but do they really look like darker and lighter variants of the same color?
 
@@ -69,7 +69,7 @@ LCH stands for "Lightness Chroma Hue". The parameters loosely correspond to HSL'
 
 **The hue angles don't fully correspond to HSL's hues.** E.g. 0 is not red, but more of a magenta and 180 is not turquoise but more of a bluish green, and is exactly complementary.
 
-![](http://lea.verou.me/wp-content/uploads/2020/04/image-8.png)
+![](images/image-8.png)
 
 Note how these colors, while wildly different in hue, perceptually have the same lightness.
 
@@ -85,7 +85,7 @@ Hopefully, you are now somewhat excited about LCH, but how to visualize it?
 
 I actually made this a while ago, primarily to help me, [Chris](https://twitter.com/svgeesus), [Adam](https://twitter.com/argyleink), and [Una](https://twitter.com/una) in wrapping our heads around LCH sufficiently to edit [CSS Color 5](https://drafts.csswg.org/css-color-5/). It's different to know the theory, and it's different to be able to play with sliders and see the result. I even bought a domain, [css.land](https://css.land), to host similar demos eventually. We used it a fair bit, and Chris got me to add a few features too, but I never really posted about it, so it was only accessible to us, and anybody that noticed [its Github repo](https://github.com/LeaVerou/css.land/).
 
-[![](http://lea.verou.me/wp-content/uploads/2020/04/image-1.png)](https://css.land/lch)
+[![](images/image-1.png)](https://css.land/lch)
 
 Why not just use an existing LCH color picker?
 

@@ -1,12 +1,12 @@
 ---
 title: "Responsive tables, revisited"
 date: "2018-05-14"
-categories: 
+categories:
   - "original"
   - "tips"
 ---
 
-[![Screenshot showing a table with 3 rows turning into 3 sets of key-value pairs](http://lea.verou.me/wp-content/uploads/2018/05/Screen-Shot-2018-05-14-at-17.54.45-copy-1024x595.png)](http://lea.verou.me/wp-content/uploads/2018/05/Screen-Shot-2018-05-14-at-17.54.45-copy.png)
+[![Screenshot showing a table with 3 rows turning into 3 sets of key-value pairs](images/Screen-Shot-2018-05-14-at-17.54.45-copy-1024x595.png)](images/Screen-Shot-2018-05-14-at-17.54.45-copy.png)
 
 [Many people have explored responsive tables](https://css-tricks.com/responsive-data-tables/). The usual idea is turning the table into key-value pairs so that cells become rows and there are only 2 columns total, which fit in any screen. However, this means table headers need to now be repeated for every row. The current ways to do that are:
 
@@ -38,7 +38,7 @@ Each method has its own pros and cons, but the following pros and cons apply to 
 - **Additional Pros:** Works in every browser
 - **Additional Cons:** Max Number of rows needs to be hardcoded in the CSS, since each row needs another text shadow on `<thead>`. However, you can specify more shadows than needed, since overflow: hidden on the table prevents extra ones from showing up. Also, number of columns needs to be specified in the CSS (the `--cols` variable).
 
-[Demo](https://dabblet.com/gist/969a4aa9d53bf6893d72acd422b2e9a8)  
+[Demo](https://dabblet.com/gist/969a4aa9d53bf6893d72acd422b2e9a8)
 
 <iframe src="https://dabblet.com/gist/969a4aa9d53bf6893d72acd422b2e9a8" width="100%" height="500px"></iframe>
 
@@ -46,6 +46,6 @@ Each method has its own pros and cons, but the following pros and cons apply to 
 
 - **Additional Cons:** `element()` is currently only supported in Firefox :(
 
-[Demo](https://dabblet.com/gist/9bce82d186095d4d9b19a469085e9cb3)  
+[Demo](https://dabblet.com/gist/9bce82d186095d4d9b19a469085e9cb3)
 
 <iframe src="https://dabblet.com/gist/9bce82d186095d4d9b19a469085e9cb3" width="100%" height="500px"></iframe>

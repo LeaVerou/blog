@@ -1,12 +1,12 @@
 ---
 title: "Major update to Chainvas: modularity, a client side build script & more"
 date: "2011-09-18"
-categories: 
+categories:
   - "original"
   - "releases"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2011/09/Screen-shot-2011-11-15-at-14.57.17--300x187.png "Chainvas project page screenshot")](http://lea.verou.me/wp-content/uploads/2011/09/Screen-shot-2011-11-15-at-14.57.17-.png)A week ago, [I released Chainvas](http://lea.verou.me/2011/09/chainvas-make-apis-chainable-enhance-the-canvas-api/). It was a spin-off script I wrote while developing [my cubic-bezier tool](http://lea.verou.me/2011/09/a-better-tool-for-cubic-bezier-easing/), to make using the Canvas API a bit less painful. However, unlike similar attempts to make the Canvas API chainable, most of my code was written in a very generic manner, and was actually able to make every API chainable. However, when I released it, even though I mentioned that it can be used for other APIs and provided some examples, practically everyone that shared the link on twitter or other means (thank you .net magazine for the newsletter mention btw!) focused on what Chainvas did for Canvas.
+[![](images/Screen-shot-2011-11-15-at-14.57.17--300x187.png "Chainvas project page screenshot")](images/Screen-shot-2011-11-15-at-14.57.17-.png)A week ago, [I released Chainvas](http://lea.verou.me/2011/09/chainvas-make-apis-chainable-enhance-the-canvas-api/). It was a spin-off script I wrote while developing [my cubic-bezier tool](http://lea.verou.me/2011/09/a-better-tool-for-cubic-bezier-easing/), to make using the Canvas API a bit less painful. However, unlike similar attempts to make the Canvas API chainable, most of my code was written in a very generic manner, and was actually able to make every API chainable. However, when I released it, even though I mentioned that it can be used for other APIs and provided some examples, practically everyone that shared the link on twitter or other means (thank you .net magazine for the newsletter mention btw!) focused on what Chainvas did for Canvas.
 
 ![](http://lea.verou.me/chainvas/img/madewith.png)Actually, while using Chainvas myself, I found it immensely more useful for chaining DOM methods and setting multiple element properties at once. Chainvas had a lot of potential, that most people were missing. And then it dawned on me: I should modularize the library! A generic chaining library at its core and additional modules for making the different APIs chainable. And I did it.
 

@@ -1,16 +1,16 @@
 ---
 title: "Introducing dabblet: An interactive CSS playground"
 date: "2011-12-15"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "css"
   - "css3"
   - "dabblet"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2011/12/Screen-shot-2011-12-14-at-23.32.02--300x183.png "Dabblet screenshot")](http://lea.verou.me/wp-content/uploads/2011/12/Screen-shot-2011-12-14-at-23.32.02-.png)I loved [JSFiddle](http://jsfiddle.net) ever since I first used it. Being able to test something almost instantly and without littering my hard drive opened new possibilities for me. I use it daily for experiments, browser bug testcases, code snippet storage, code sharing and many other things. However, there were always a few things that bugged me:
+[![](images/Screen-shot-2011-12-14-at-23.32.02--300x183.png "Dabblet screenshot")](images/Screen-shot-2011-12-14-at-23.32.02-.png)I loved [JSFiddle](http://jsfiddle.net) ever since I first used it. Being able to test something almost instantly and without littering my hard drive opened new possibilities for me. I use it daily for experiments, browser bug testcases, code snippet storage, code sharing and many other things. However, there were always a few things that bugged me:
 
 - JSFiddle is very JS oriented, as you can tell even from the name itself
 - JSFiddle is heavily server-side so there's always at least the lag of an HTTP request every time you make an action. It makes sense not to run JS on every keystroke (JSBin does it and it's super annoying, even caused me to fall in an infinite loop once) but CSS and HTML could be updated without any such problems.

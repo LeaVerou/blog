@@ -1,10 +1,10 @@
 ---
 title: "Releasing Color.js: A library that takes color seriously"
 date: "2022-06-29"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "color"
   - "color-api"
   - "color-science"
@@ -17,7 +17,7 @@ tags:
   - "standards"
 ---
 
-![](https://lea.verou.me/wp-content/uploads/2022/06/image-2.png)
+![](images/image-2.png)
 
 _Related: [Chris’ blog post for the release of Color.js](https://svgees.us/blog/colorjs-release.html)_
 
@@ -31,7 +31,7 @@ _**Why can't we just standardize the API in Color.js?** While one is influenced 
 
 Work on Color.js as well as the Color API continued, on and off as time permitted, but no release. There were always things to do and bugs to fix before more eyes would look at it. Because eyes _were_ looking at it anyway, we even slapped a big fat warning on the homepage:
 
-![](https://lea.verou.me/wp-content/uploads/2022/06/image.png)
+![](images/image.png)
 
 Eventually a few days ago, I discovered that the [Color.js package we had published on npm](https://www.npmjs.com/package/colorjs.io) somehow has over 6000 downloads per week, nearly all of them direct. I would not bat an eyelid at those numbers if we had released Color.js into the wild, but for a library we actively avoided mentioning to anyone outside of standards groups, it was rather odd.
 
@@ -50,12 +50,12 @@ Enjoy: [Color.js](https://colorjs.io)
 
 There is also an entire (buggy, but usable) script in the website for realtime editable color demos that we call "Color Notebook". It looks like this:
 
-![](https://lea.verou.me/wp-content/uploads/2022/06/image-3.png)
+![](images/image-3.png)
 
-![](https://lea.verou.me/wp-content/uploads/2022/06/image-4.png)
+![](images/image-4.png)
 
 And you can [create and share your own documents with live Color.js demos](https://colorjs.io/notebook/). You log in with GitHub and the app saves in GitHub Gists.
 
-![](https://lea.verou.me/wp-content/uploads/2022/06/image-1.png)
+![](images/image-1.png)
 
 Color spaces presently supported by Color.js

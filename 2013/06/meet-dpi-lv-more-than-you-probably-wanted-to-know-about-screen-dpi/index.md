@@ -1,15 +1,15 @@
 ---
 title: "Meet dpi.lv: More than you probably wanted to know about screen DPI"
 date: "2013-06-10"
-categories: 
+categories:
   - "original"
   - "releases"
-tags: 
+tags:
   - "dpi-ppi"
 ---
 
-[  
-![Screen Shot 2013-06-10 at 13.41.39](http://lea.verou.me/wp-content/uploads/2013/06/Screen-Shot-2013-06-10-at-13.41.39--300x221.png)](http://lea.verou.me/wp-content/uploads/2013/06/Screen-Shot-2013-06-10-at-13.41.39-.png)
+[
+![Screen Shot 2013-06-10 at 13.41.39](images/Screen-Shot-2013-06-10-at-13.41.39--300x221.png)](images/Screen-Shot-2013-06-10-at-13.41.39-.png)
 
 Yesterday (Sunday) I was on a 9.5 hour flight from Canada with no inflight entertainment (well, thanks Air Canada), so I did what every bored human being would do instead of watching movies: I decided to code an app! And out of the infinite set of possible apps somebody can make, I decided to make an app to calculate screen DPI/PPI.
 

@@ -1,11 +1,11 @@
 ---
 title: "Dark mode in 5 minutes, with inverted lightness variables"
 date: "2021-03-30"
-categories: 
+categories:
   - "articles"
   - "original"
   - "tutorials"
-tags: 
+tags:
   - "css-variables"
   - "dark-mode"
   - "hsl"
@@ -115,19 +115,19 @@ footer {
 
 The result looks like this in light & dark mode:
 
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/hsl-normal.png)
-    
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/hsl-dm.png)
-    
+- ![](images/hsl-normal.png)
+
+- ![](images/hsl-dm.png)
+
 
 The light mode we designed and the auto-generated dark mode, side by side
 
 Note that here we indiscriminately replaced all lightnesses with lightness variables. In reality, we don't need to be quite as sweeping. For example, the article titles would actually look better and would have better contrast if we just kept them the same:
 
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/hsl-dm.png)
-    
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/hsl-dm-exception.png)
-    
+- ![](images/hsl-dm.png)
+
+- ![](images/hsl-dm-exception.png)
+
 
 Comparison of dark mode with every lightness becoming a variable versus a more refined approach, where we make exceptions as needed (in this case the background and text colors for `article > h2`).
 
@@ -153,7 +153,7 @@ This next example needs Safari TP 120+ . Compare these two gradients, the top on
 
 Here is a screenshot for those of you who don't have access to Safari TP 120+:
 
-![](https://lea.verou.me/wp-content/uploads/2021/03/image.png)
+![](images/image.png)
 
 Notice that in HSL, some colors (like yellow and cyan) are much lighter than others. In LCH, all colors at the same lightness are, well, the same lightness.
 
@@ -167,10 +167,10 @@ I used [this tool](https://css.land/lch/) to convert the existing HSL colors to 
 
 And here is a screenshot:
 
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/lch-normal.png)
-    
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/lch-dm.png)
-    
+- ![](images/lch-normal.png)
+
+- ![](images/lch-dm.png)
+
 
 Light mode and auto-generated dark mode via inverted lightness variables in LCH.
 
@@ -178,16 +178,16 @@ Not only does dark mode look a lot better, but even in light mode, our two alter
 
 Here is a comparison of the two dark modes:
 
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/hsl-dm.png)
-    
-- ![](https://lea.verou.me/wp-content/uploads/2021/03/lch-dm.png)
-    
+- ![](images/hsl-dm.png)
+
+- ![](images/lch-dm.png)
+
 
 Comparison of the two auto-generated dark modes, via HSL lightness on the left and LCH lightness on the right.
 
 Here you can see an animated comparison of them over each other:
 
-![](https://lea.verou.me/wp-content/uploads/2021/03/hsl-dm.png) ![](https://lea.verou.me/wp-content/uploads/2021/03/lch-dm.png)
+![](images/hsl-dm.png) ![](images/lch-dm.png)
 
 Note that in reality, until LCH colors are reliably supported everywhere you'd need to provide a fallback via `@supports`, but for brevity, I did not include one in this demo.
 

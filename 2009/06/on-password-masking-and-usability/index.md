@@ -1,10 +1,10 @@
 ---
 title: "On password masking and usability"
 date: "2009-06-28"
-categories: 
+categories:
   - "articles"
   - "tips"
-tags: 
+tags:
   - "internet-explorer-bugs"
   - "javascript"
   - "usability"
@@ -16,7 +16,7 @@ In most cases password masking is indeed useless, but still, there are several c
 
 I think the checkbox idea is really good, as long as it works in the opposite way: Password masking should **always** be the default and you should **check** the checkbox to **show** the characters you typed. This is in line with what Windows (Vista or newer) users are already accustomed to anyway:
 
-![Enter passphrase](http://lea.verou.me/wp-content/uploads/2009/06/vistawirelesspasscode.png "Enter passphrase")
+![Enter passphrase](images/vistawirelesspasscode.png "Enter passphrase")
 
 This can (and should) be done with JavaScript alone: if the user has it turned off, no problem, just a regular old password field. Of course the checkbox should also be dynamically added, to prevent users with disabled JS from viewing a checkbox that does nothing at all.
 
@@ -67,7 +67,7 @@ However, nothing is ever simple, when you also need to support our _beloved_ Int
 I've encountered this problem several times in the past as well, but I could always think of an alternative way to do what I wanted without having to work around it. In this case, I don't think there is one. So we're left with two possible scenarios:
 
 - Perform an easy test in the beginning to see whether this bug exists and proceed only if the browser isn't naughty. This could be done with the following:
-    
+
     var supportsChangingTypeAttribute = (function() {
     	var input = document.createElement('input');
     	try {
@@ -78,9 +78,9 @@ I've encountered this problem several times in the past as well, but I could alw
     	}
     	return input.type == 'text';
     })();
-    
+
     if(supportsChangingTypeAttribute) {
     	// do stuff...
     }
-    
+
 - Wrap the statement that IE chokes on in a try...catch construct and in the catch(e) {...} block create a new input element, copy **everything** (where everything is **at least**: attributes, properties, event handlers - both traditional ones **and** listeners) from the password field into it (except the type attribute of course!) and replace the original password field with it. After the first time, the text field could also be reused, to improve performance. If you have a shortage of trouble in your life, you may attempt it, I currently do not. :P It can be a **very** simple task for particular cases, but a generic solution that would work in any site (or even in most sites) seems a really daunting, tedious and downright boring task. I also hope there might be a better solution, that I haven't thought of. Any ideas?

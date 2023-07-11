@@ -1,13 +1,13 @@
 ---
 title: "Why I bought a high-end MacBook Air instead of the Retina MBP"
 date: "2012-06-17"
-categories: 
+categories:
   - "personal"
-tags: 
+tags:
   - "apple"
 ---
 
-[![](http://lea.verou.me/wp-content/uploads/2012/06/my-mba-300x224.jpg "My new MacBook Air")](http://lea.verou.me/wp-content/uploads/2012/06/my-mba.jpg)After the WWDC keynote, I was convinced I would buy a new MacBook Air. I was looking forward to any announcements about new hardware during the event, as my 13" 2010 MacBook Pro (Henceforth abbreviated as MBP) was becoming increasingly slow and dated. Also, I wanted to gift my MBP to my mother, who is currently using a horrible tiny Windows XP Netbook and every time I see her struggling to work on it, my insides hurt. All tweets about my shopping plans, or, later, about my new toy (I bought it yesterday) were met with surprise and bewilderment: I was repeatedly bombarded with questions asking why I’m not getting a Retina MacBook Pro, over and over again. The fact that I paid about $2200 + tax for it (it's the best 13" Air you can currently get) made it even more weird: **If you could afford that, why wouldn't you possibly get the Retina MBP at the exact same price?**
+[![](images/my-mba-300x224.jpg "My new MacBook Air")](images/my-mba.jpg)After the WWDC keynote, I was convinced I would buy a new MacBook Air. I was looking forward to any announcements about new hardware during the event, as my 13" 2010 MacBook Pro (Henceforth abbreviated as MBP) was becoming increasingly slow and dated. Also, I wanted to gift my MBP to my mother, who is currently using a horrible tiny Windows XP Netbook and every time I see her struggling to work on it, my insides hurt. All tweets about my shopping plans, or, later, about my new toy (I bought it yesterday) were met with surprise and bewilderment: I was repeatedly bombarded with questions asking why I’m not getting a Retina MacBook Pro, over and over again. The fact that I paid about $2200 + tax for it (it's the best 13" Air you can currently get) made it even more weird: **If you could afford that, why wouldn't you possibly get the Retina MBP at the exact same price?**
 
 At first, I tried to reply with individual tweets to everyone that asked. Then I got tired of that and started replying with links to the first tweets, then I decided to write a blog post. So, here are my reasons:
 
