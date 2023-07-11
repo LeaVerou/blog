@@ -5,6 +5,16 @@ module.exports = {
 		},
 		wpid: data => {
 			return data.wpids[data.postUrlStem];
+		},
+		disqus_id: data => {
+			let wpid = data.wpid;
+
+			if (wpid) {
+				return `${ wpid } https:\/\/lea.verou.me\/?p=${ wpid }`;
+			}
+			else if (data.disqus !== false) {
+				return data.disqus === true? data.postUrlStem : data.disqus;
+			}
 		}
 	}
 };
