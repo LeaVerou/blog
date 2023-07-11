@@ -1,9 +1,9 @@
 ---
 title: "iPhone keyboard with CSS3 -- no images"
 date: "2010-02-18"
-categories: 
+categories:
   - "original"
-tags: 
+tags:
   - "font-face"
   - "box-shadow"
   - "css-gradients"
@@ -24,9 +24,15 @@ It should look correct in **Firefox 3.6, Chrome 4 and Safari 4**. It looks best 
 
 For those of you that don't use one of the aforementioned browsers as your primary and are way too bored to switch (or don't even have them installed (!)), here are two screenshots from Firefox 3.6 (nicely cropped to only contain the keyboard):
 
-\[caption id="" align="aligncenter" width="480" caption="Screenshot of the wide version"\]![](http://lea.verou.me/demos/iphone-keyboard/css_wide_keyboard.png "Screenshot of the wide version")\[/caption\]
+<figure class="center">
+<img src="images/css_wide_keyboard.png" alt="" />
+<figcaption>Screenshot of the wide version</figcaption>
+</figure>
 
-\[caption id="" align="aligncenter" width="320" caption="Screenshot of the narrow version"\]![](http://lea.verou.me/demos/iphone-keyboard/css_narrow_keyboard.png "Screenshot of the narrow version")\[/caption\]
+<figure class="center">
+<img src="images/css_narrow_keyboard.png" alt="" />
+<figcaption>Screenshot of the narrow version</figcaption>
+</figure>
 
 As for how it's done, as you can easily see, most of it is run-of-the-mill for someone with a decent grasp on CSS3: media queries, CSS gradients, shadows, border-radiuses and RGBA. The only tricky part is the symbols for shift, backspace and international. I have to admit I cheated a bit here: I didn't use images, but I used @font-face with a custom font that just contains these 3 symbols. The reasons behind that are that this way I wouldn't have to create 2 versions of the symbols (light and dark, for pressed and normal states respectively) and that they are vector, so they scale (try zooming in).
 
