@@ -1,15 +1,15 @@
 ---
 title: "Pure CSS scrolling shadows with background-attachment: local"
 date: "2012-04-26"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "background-attachment"
   - "backgrounds-and-borders"
   - "css3"
 ---
 
-A few days ago, the incredibly talented [Roman Komarov](https://twitter.com/#!/kizmarh) posted an experiment of his with [pure CSS "scrolling shadows"](http://kizu.ru/en/fun/shadowscroll/). If you’re using Google Reader, you are probably familiar with the effect:
+A few days ago, the incredibly talented [Roman Komarov](https://twitter.com/kizmarh) posted an experiment of his with [pure CSS "scrolling shadows"](http://kizu.ru/en/fun/shadowscroll/). If you’re using Google Reader, you are probably familiar with the effect:
 
 [![Screenshot demonstrating the “scrolling shadows” in Google Reader](http://lea.verou.me/wp-content/uploads/2012/04/scrolling-shadows.png "“Scrolling shadows” in Google Reader")](http://lea.verou.me/wp-content/uploads/2012/04/scrolling-shadows.png)
 

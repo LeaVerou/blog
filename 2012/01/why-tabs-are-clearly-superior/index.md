@@ -1,13 +1,13 @@
 ---
 title: "Why tabs are clearly superior"
 date: "2012-01-17"
-categories: 
+categories:
   - "rants"
-tags: 
+tags:
   - "coding-standards"
 ---
 
-If you follow me [on twitter](https://twitter.com/#!/leaverou) or have heard one of my talks you'll probably know I despise spaces for indentation with a passion. However, I've never gone into the details of my opinion on stage, and twitter isn't really the right medium for advocacy. I always wanted to write a blog post about my take on this old debate, so here it is.
+If you follow me [on twitter](https://twitter.com/leaverou) or have heard one of my talks you'll probably know I despise spaces for indentation with a passion. However, I've never gone into the details of my opinion on stage, and twitter isn't really the right medium for advocacy. I always wanted to write a blog post about my take on this old debate, so here it is.
 
 ### Tabs take up less space
 
@@ -72,7 +72,7 @@ For example, coders that don't name their variables properly. Or the ones that
 
 Update: More reasons from commenters
 
-Thanks to [Oli](https://twitter.com/#!/boblet)  for his proofreading!
+Thanks to [Oli](https://twitter.com/boblet)  for his proofreading!
 
 ### Update: More reasons from commenters
 

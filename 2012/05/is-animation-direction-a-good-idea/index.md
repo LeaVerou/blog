@@ -1,9 +1,9 @@
 ---
 title: "Poll: ¿Is animation-direction a good idea?"
 date: "2012-05-06"
-categories: 
+categories:
   - "news"
-tags: 
+tags:
   - "css3-animations"
   - "poll"
   - "standards"
@@ -47,7 +47,7 @@ I was excited to see that `reverse` and `alternate-reverse` were finally added t
 
 so it's pointless cognitive overhead to remember four distinct values. [I proposed that they should be split in two keywords](http://lists.w3.org/Archives/Public/www-style/2012Apr/0799.html) instead, which would even result to [a simpler grammar](http://lists.w3.org/Archives/Public/www-style/2012Apr/0804.html) too.
 
-The proposal was well received by one of the co-editors of the animations spec ([Sylvain Galineau](https://twitter.com/#!/sgalineau)), but there was a dilemma as to whether mixing `normal` with `alternate` or `reverse` would make it easier to learn or more confusing. **This is a point where your opinion would be quite useful.** Would you expect the following to work, or would you find them confusing?
+The proposal was well received by one of the co-editors of the animations spec ([Sylvain Galineau](https://twitter.com/sgalineau)), but there was a dilemma as to whether mixing `normal` with `alternate` or `reverse` would make it easier to learn or more confusing. **This is a point where your opinion would be quite useful.** Would you expect the following to work, or would you find them confusing?
 
 - `animation-direction: normal alternate;` /\* Equivalent to animation-direction: alternate; \*/
 - `animation-direction: alternate normal;` /\* Equivalent to animation-direction: alternate; \*/
@@ -84,4 +84,4 @@ Unfortunately, it seems that only me and Sylvain thought it's better, and even h
 2. ¿If so, should redundant combinations of `normal` with `alternate` or `reverse` also be allowed, such as `normal alternate`?
 3. ¿Or maybe we should ditch it altogether and replace it with `animation-reverse`, accepting values of `none`, `all`, `even`, `odd`?
 
-**Side note:** If you’re wondering about the flipped question and exclamation marks (¿¡) it's because [I believe they improve the usability of the language](https://twitter.com/#!/LeaVerou/status/198556042387390464) if widely adopted, so [I'm doing my part](https://twitter.com/#!/LeaVerou/status/198559059346063360) for it ;) And no, I don’t speak Spanish.
+**Side note:** If you’re wondering about the flipped question and exclamation marks (¿¡) it's because [I believe they improve the usability of the language](https://twitter.com/LeaVerou/status/198556042387390464) if widely adopted, so [I'm doing my part](https://twitter.com/LeaVerou/status/198559059346063360) for it ;) And no, I don’t speak Spanish.

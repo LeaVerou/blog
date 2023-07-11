@@ -1,12 +1,12 @@
 ---
 title: "What makes speakers happy"
 date: "2013-07-19"
-categories: 
+categories:
   - "speaking"
   - "thoughts"
-tags: 
+tags:
   - "conferences"
-  - "speaking-2"
+  - "speaking"
 ---
 
 I wish I could speak at [CSSConf.eu](http://cssconf.eu), but unfortunately I had to decline the invitation, as it collided with a prior speaking engagement I had agreed on. I recently got another email from the organizers with an interesting question:

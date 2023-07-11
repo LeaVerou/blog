@@ -1,12 +1,12 @@
 ---
 title: "My experience from Fronteers, JSConf EU, Frontend and FromTheFront"
 date: "2011-10-21"
-categories: 
+categories:
   - "personal"
   - "speaking"
-tags: 
+tags:
   - "conferences"
-  - "speaking-2"
+  - "speaking"
 ---
 
 This month has been very busy conference-wise. I had 4 conferences in a row, so I was flying from country to country and giving talks for 2 weeks. As I usually do after conferences, this post sums up my experiences and feedback I got from these conferences, in chronological order.
@@ -17,7 +17,28 @@ This was a rather low-budget Italian conference that took place in Cesena, a cit
 
 My talk was right after [Jeremy Keith](http://adactio.com/)'s, who is a very well-known and experienced speaker that knows how to make audiences delirious (in a good way), so I was naturally a bit nervous about the unavoidable comparison. Despite my fears, my talk was very well received. Here's a sample of the twitter feedback I got:
 
-\[blackbirdpie url="http://twitter.com/#!/cedmax/status/119499350039740416"\] \[blackbirdpie url="http://twitter.com/#!/caludio/status/119500241358696448"\] \[blackbirdpie url="http://twitter.com/#!/andypanix/status/119502579943223296"\] \[blackbirdpie url="http://twitter.com/#!/verlok/status/119511814827556864"\] \[blackbirdpie url="http://twitter.com/#!/fburatti/status/119512158500433921"\] \[blackbirdpie url="http://twitter.com/#!/Facens/status/119513991616794624"\] \[blackbirdpie url="http://twitter.com/#!/matteocollina/status/119506533548699648"\]
+
+
+https://twitter.com/cedmax/status/119499350039740416
+
+
+https://twitter.com/caludio/status/119500241358696448
+
+
+https://twitter.com/andypanix/status/119502579943223296
+
+
+https://twitter.com/verlok/status/119511814827556864
+
+
+https://twitter.com/fburatti/status/119512158500433921
+
+
+https://twitter.com/Facens/status/119513991616794624
+
+
+https://twitter.com/matteocollina/status/119506533548699648
+
 
 ## [JSConf EU](http://jsconf.eu/2011/)
 
@@ -25,7 +46,31 @@ Next stop was Berlin and JSConf's European sister conference. This was one of th
 
 I was a bit more nervous about my talk for two reasons: Firstly, it was my first JavaScript talk, and secondly, it had no live demos like my CSS talks, which is a big part of why people like them. It went much better than I expected, and I got very good feedback and even though I went hugely overtime (I had 30 minutes and did 55!) nobody complained. Thankfully, it was right before lunch so I didn't eat up another speaker's time (which is part of the reason I love the pre-lunch spot so much).  I didn't get the super-enthusiastic feedback I get from my CSS talks, but it was good enough to not be disappointed. Here's a sample:
 
-\[blackbirdpie url="http://twitter.com/#!/codepo8/status/120450328318590976"\] \[blackbirdpie url="http://twitter.com/#!/WebReflection/status/120457934152007680"\] \[blackbirdpie url="http://twitter.com/#!/nddrylliog/status/120457956830621696"\] \[blackbirdpie url="http://twitter.com/#!/cramforce/status/120459076604928000"\] \[blackbirdpie url="http://twitter.com/#!/wpbasti/status/120462654316883968"\] \[blackbirdpie url="http://twitter.com/#!/claudiopro/status/120465480380203008"\] \[blackbirdpie url="http://twitter.com/#!/VeganBen/status/120466919001300992"\] \[blackbirdpie url="http://twitter.com/#!/nddrylliog/status/120469327110619137"\]
+
+
+https://twitter.com/codepo8/status/120450328318590976
+
+
+https://twitter.com/WebReflection/status/120457934152007680
+
+
+https://twitter.com/nddrylliog/status/120457956830621696
+
+
+https://twitter.com/cramforce/status/120459076604928000
+
+
+https://twitter.com/wpbasti/status/120462654316883968
+
+
+https://twitter.com/claudiopro/status/120465480380203008
+
+
+https://twitter.com/VeganBen/status/120466919001300992
+
+
+https://twitter.com/nddrylliog/status/120469327110619137
+
 
 You can find my slides on [Speakerdeck](http://speakerdeck.com/u/leaverou/p/polyfilling-the-gaps) , [Slideshare](http://www.slideshare.net/LeaVerou/polyfilling-the-gaps) or [the HTML version on my website](http://lea.verou.me/polyfilling-the-gaps).
 
@@ -35,9 +80,123 @@ I was looking forward to Fronteers the most, since it's my favorite conference. 
 
 But this time, I wasn't just an attendee. I wasn't a regular speaker either. I was also hosting a workshop, my first full day workshop. I was super stressed about that, and in retrospect, it was the most exhausting thing I have ever done. Some other speakers told me it felt so exhausting because it was my first, I really hope they're right. Luckily, attendees loved it, and they didn't seem to notice my progressively getting tired after the 4th hour. Here's some of the feedback I got:
 
-\[blackbirdpie url="http://twitter.com/#!/flyingpinguin/status/121507980964409346"\] \[blackbirdpie url="http://twitter.com/#!/V\_v\_V/status/121511282758258688"\] \[blackbirdpie url="http://twitter.com/#!/Jessman5/status/121519177977708547"\] \[blackbirdpie url="http://twitter.com/#!/tforza/status/121524521709744128"\] \[blackbirdpie url="http://twitter.com/#!/ronderksen/status/121531111665971200"\]
 
-My talk was the next day, and even though I was afraid it would be bad due to being tired from the workshop and the pre-party, I think it was my best talk ever. I was much more relaxed, and I got the most enthusiastic feedback I ever have. My hand literally got tired favoriting tweets, and I'm pretty sure I missed some. Here's a small sample: \[blackbirdpie url="http://twitter.com/#!/smashingmag/status/121881600366608384"\] \[blackbirdpie url="http://twitter.com/#!/ldebrouwer/status/121881926587002881"\] \[blackbirdpie url="http://twitter.com/#!/wnas/status/121882159756750848"\] \[blackbirdpie url="http://twitter.com/#!/FronteersConf/status/121883462251720704"\] \[blackbirdpie url="http://twitter.com/#!/ldebrouwer/status/121884227083042816"\] \[blackbirdpie url="http://twitter.com/#!/addy\_osmani/status/121885202581684224"\] \[blackbirdpie url="http://twitter.com/#!/LuukWilms/status/121887866258333697"\] \[blackbirdpie url="http://twitter.com/#!/Georg\_Tavonius/status/121888702678044672"\] \[blackbirdpie url="http://twitter.com/#!/okonetchnikov/status/121889094346350592"\] \[blackbirdpie url="http://twitter.com/#!/decthomas/status/121889393752543233"\] \[blackbirdpie url="http://twitter.com/#!/eising/status/121889474782314496"\] \[blackbirdpie url="http://twitter.com/#!/artjulian/status/121889486358589440"\] \[blackbirdpie url="http://twitter.com/#!/ronderksen/status/121889810230157312"\] \[blackbirdpie url="http://twitter.com/#!/dantz/status/121890121669804032"\] \[blackbirdpie url="http://twitter.com/#!/nerdismus/status/121890225273323520"\] \[blackbirdpie url="http://twitter.com/#!/okke29/status/121890604610355200"\] \[blackbirdpie url="http://twitter.com/#!/mylittletony/status/121891613139144704"\] \[blackbirdpie url="http://twitter.com/#!/LuukWilms/status/121893686874345472"\] \[blackbirdpie url="http://twitter.com/#!/soswow/status/121893745921769472"\] \[blackbirdpie url="http://twitter.com/#!/mennovanslooten/status/121893921394655232"\] \[blackbirdpie url="http://twitter.com/#!/FronteersConf/status/121894605963804673"\] \[blackbirdpie url="http://twitter.com/#!/edgarleijs/status/121894745596362752"\] \[blackbirdpie url="http://twitter.com/#!/usethetics/status/121894796573937664"\] \[blackbirdpie url="http://twitter.com/#!/peterpeerdeman/status/121895792301707264"\] \[blackbirdpie url="http://twitter.com/#!/bjornjohansen/status/121896246809083904"\] \[blackbirdpie url="http://twitter.com/#!/cruster/status/121896792873897984"\] \[blackbirdpie url="http://twitter.com/#!/decthomas/status/121911585227816960"\] \[blackbirdpie url="http://twitter.com/#!/aral/status/121920658778234880"\] \[blackbirdpie url="http://twitter.com/#!/ldebrouwer/status/121992421474177025"\] \[blackbirdpie url="http://twitter.com/#!/wiekatz/status/121992495436537856"\] \[blackbirdpie url="http://twitter.com/#!/GovertVerschuur/status/121993644482891776"\] \[blackbirdpie url="http://twitter.com/#!/johannesaxner/status/121999077859790849"\] \[blackbirdpie url="http://twitter.com/#!/flurin/status/122042528794017792"\]
+
+https://twitter.com/flyingpinguin/status/121507980964409346
+
+
+https://twitter.com/V\_v\_V/status/121511282758258688
+
+
+https://twitter.com/Jessman5/status/121519177977708547
+
+
+https://twitter.com/tforza/status/121524521709744128
+
+
+https://twitter.com/ronderksen/status/121531111665971200
+
+
+My talk was the next day, and even though I was afraid it would be bad due to being tired from the workshop and the pre-party, I think it was my best talk ever. I was much more relaxed, and I got the most enthusiastic feedback I ever have. My hand literally got tired favoriting tweets, and I'm pretty sure I missed some. Here's a small sample:
+
+https://twitter.com/smashingmag/status/121881600366608384
+
+
+https://twitter.com/ldebrouwer/status/121881926587002881
+
+
+https://twitter.com/wnas/status/121882159756750848
+
+
+https://twitter.com/FronteersConf/status/121883462251720704
+
+
+https://twitter.com/ldebrouwer/status/121884227083042816
+
+
+https://twitter.com/addy\_osmani/status/121885202581684224
+
+
+https://twitter.com/LuukWilms/status/121887866258333697
+
+
+https://twitter.com/Georg\_Tavonius/status/121888702678044672
+
+
+https://twitter.com/okonetchnikov/status/121889094346350592
+
+
+https://twitter.com/decthomas/status/121889393752543233
+
+
+https://twitter.com/eising/status/121889474782314496
+
+
+https://twitter.com/artjulian/status/121889486358589440
+
+
+https://twitter.com/ronderksen/status/121889810230157312
+
+
+https://twitter.com/dantz/status/121890121669804032
+
+
+https://twitter.com/nerdismus/status/121890225273323520
+
+
+https://twitter.com/okke29/status/121890604610355200
+
+
+https://twitter.com/mylittletony/status/121891613139144704
+
+
+https://twitter.com/LuukWilms/status/121893686874345472
+
+
+https://twitter.com/soswow/status/121893745921769472
+
+
+https://twitter.com/mennovanslooten/status/121893921394655232
+
+
+https://twitter.com/FronteersConf/status/121894605963804673
+
+
+https://twitter.com/edgarleijs/status/121894745596362752
+
+
+https://twitter.com/usethetics/status/121894796573937664
+
+
+https://twitter.com/peterpeerdeman/status/121895792301707264
+
+
+https://twitter.com/bjornjohansen/status/121896246809083904
+
+
+https://twitter.com/cruster/status/121896792873897984
+
+
+https://twitter.com/decthomas/status/121911585227816960
+
+
+https://twitter.com/aral/status/121920658778234880
+
+
+https://twitter.com/ldebrouwer/status/121992421474177025
+
+
+https://twitter.com/wiekatz/status/121992495436537856
+
+
+https://twitter.com/GovertVerschuur/status/121993644482891776
+
+
+https://twitter.com/johannesaxner/status/121999077859790849
+
+
+https://twitter.com/flurin/status/122042528794017792
+
 
 My slides are now online at [Speakerdeck](http://speakerdeck.com/u/leaverou/p/css3-secrets-10-things-you-might-not-know-about-css3), [Slideshare](http://www.slideshare.net/LeaVerou/css3-secrets-10-things-you-might-not-know-about-css3) and [the interactive version on my website](http://lea.verou.me/css3-secrets).
 
@@ -47,7 +206,34 @@ Oslo is a city I've been to many times in the past, so there was nothing new to 
 
 My talk went smoothly, and received very good feedback:
 
-\[blackbirdpie url="http://twitter.com/#!/iceMagic/status/123737225560199168"\] \[blackbirdpie url="http://twitter.com/#!/gustaff\_weldon/status/123741227563753472"\] \[blackbirdpie url="http://twitter.com/#!/kaelig/status/123741479142297601"\] \[blackbirdpie url="http://twitter.com/#!/orioltf/status/123742189896474624"\] \[blackbirdpie url="http://twitter.com/#!/chemikpil/status/123742210842820608"\] \[blackbirdpie url="http://twitter.com/#!/gav\_taylor/status/123742248646094848"\] \[blackbirdpie url="http://twitter.com/#!/mikaeljorhult/status/123742623524585473"\] \[blackbirdpie url="http://twitter.com/#!/ken\_guru/status/123744573666246656"\] \[blackbirdpie url="http://twitter.com/#!/cornae/status/123803246300114945"\]
+
+
+https://twitter.com/iceMagic/status/123737225560199168
+
+
+https://twitter.com/gustaff\_weldon/status/123741227563753472
+
+
+https://twitter.com/kaelig/status/123741479142297601
+
+
+https://twitter.com/orioltf/status/123742189896474624
+
+
+https://twitter.com/chemikpil/status/123742210842820608
+
+
+https://twitter.com/gav\_taylor/status/123742248646094848
+
+
+https://twitter.com/mikaeljorhult/status/123742623524585473
+
+
+https://twitter.com/ken\_guru/status/123744573666246656
+
+
+https://twitter.com/cornae/status/123803246300114945
+
 
 That's it. I now get to rest for a while. Next stop is [SWDC](http://swdc.se/2011/) in November, which will host the première of my new talk "CSS in the 4th dimension: Not your daddy's CSS animations" which will be about CSS transitions & animations, from the basics all way to badass secrets.
 

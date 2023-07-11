@@ -1,16 +1,16 @@
 ---
 title: "Hacking lookahead to mimic intersection, subtraction and negation"
 date: "2012-05-13"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "regexp"
   - "regular-expressions"
 ---
 
 _**Note:** To understand the following, I expect you to know how regex lookahead works. If you don’t, [read about it first](http://www.regular-expressions.info/lookaround.html) and return here after you’re done._
 
-I was quite excited to discover this, but to my dismay, [Steven Levithan assured me](https://twitter.com/#!/slevithan/status/201340048317227008) it’s actually well known. However, I felt it’s so useful and underdocumented (the only references to the technique I could find was several StackOverflow replies) that I decided to blog about it anyway.
+I was quite excited to discover this, but to my dismay, [Steven Levithan assured me](https://twitter.com/slevithan/status/201340048317227008) it’s actually well known. However, I felt it’s so useful and underdocumented (the only references to the technique I could find was several StackOverflow replies) that I decided to blog about it anyway.
 
 If you’ve been using regular expressions for a while, you surely have stumbled on a variation of the following problems:
 

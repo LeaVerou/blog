@@ -1,10 +1,10 @@
 ---
 title: "My experience from Frontendconf Zurich"
 date: "2011-09-20"
-categories: 
+categories:
   - "personal"
   - "speaking"
-tags: 
+tags:
   - "css3"
 ---
 
@@ -18,6 +18,93 @@ The conference itself was very nice, although small (only 200 people). Many insp
 
 My talk went great, although I had the most technical glitches I've ever faced in a talk. That was my fault, not the conference's. I guess I should learn to stop tweaking my slides at the last moment, cause things might break (and this time they did). Despite those glitches however, the audience loved it. Here's a small sample of the twitter feedback I got:
 
-\[blackbirdpie url="http://twitter.com/#!/frontendconfch/status/112089631616532480"\] \[blackbirdpie url="http://twitter.com/#!/FabianBeiner/status/112089949096001536"\] \[blackbirdpie url="http://twitter.com/#!/michalbe/status/112090281519751168"\] \[blackbirdpie url="http://twitter.com/#!/jfahrenkrug/status/112091377571074048"\] \[blackbirdpie url="http://twitter.com/#!/kcornelius/status/112091409833668608"\] \[blackbirdpie url="http://twitter.com/#!/backflip/status/112091599823056896"\] \[blackbirdpie url="http://twitter.com/#!/cainvommars/status/112091892581285888"\] \[blackbirdpie url="http://twitter.com/#!/euklid/status/112093174897459200"\] \[blackbirdpie url="http://twitter.com/#!/shvi/status/112095896040243200"\] \[blackbirdpie url="http://twitter.com/#!/lorentzforce/status/112096221350461441"\] \[blackbirdpie url="http://twitter.com/#!/mettlerd/status/112101440541032448"\] \[blackbirdpie url="http://twitter.com/#!/FabianBeiner/status/112101569058713600"\] \[blackbirdpie url="http://twitter.com/#!/jfahrenkrug/status/112101867424718848"\] \[blackbirdpie url="http://twitter.com/#!/jfahrenkrug/status/112103061736009729"\] \[blackbirdpie url="http://twitter.com/#!/Schnitzel/status/112103388187070464"\] \[blackbirdpie url="http://twitter.com/#!/marcoegli/status/112103726835175424"\] \[blackbirdpie url="http://twitter.com/#!/FabianBeiner/status/112103972227133440"\] \[blackbirdpie url="http://twitter.com/#!/mauricenaef/status/112104694171705344"\] \[blackbirdpie url="http://twitter.com/#!/lulezi/status/112105754789560320"\] \[blackbirdpie url="http://twitter.com/#!/smash\_it\_on/status/112107410155515904"\] \[blackbirdpie url="http://twitter.com/#!/walktheweb/status/112107790918615040"\] \[blackbirdpie url="http://twitter.com/#!/andypanix/status/112113881966579712"\] \[blackbirdpie url="http://twitter.com/#!/lorentzforce/status/112121470355914752"\] \[blackbirdpie url="http://twitter.com/#!/loleg/status/112126016213876738"\] \[blackbirdpie url="http://twitter.com/#!/whitefleaCH/status/112132969468137472"\] \[blackbirdpie url="http://twitter.com/#!/Juztin/status/112195913929326592"\] \[blackbirdpie url="http://twitter.com/#!/codepo8/status/112252082718916608"\] \[blackbirdpie url="http://twitter.com/#!/derSchepp/status/112275821703602176"\] \[blackbirdpie url="http://twitter.com/#!/susanjrobertson/status/112286939964641280"\]
+
+
+https://twitter.com/frontendconfch/status/112089631616532480
+
+
+https://twitter.com/FabianBeiner/status/112089949096001536
+
+
+https://twitter.com/michalbe/status/112090281519751168
+
+
+https://twitter.com/jfahrenkrug/status/112091377571074048
+
+
+https://twitter.com/kcornelius/status/112091409833668608
+
+
+https://twitter.com/backflip/status/112091599823056896
+
+
+https://twitter.com/cainvommars/status/112091892581285888
+
+
+https://twitter.com/euklid/status/112093174897459200
+
+
+https://twitter.com/shvi/status/112095896040243200
+
+
+https://twitter.com/lorentzforce/status/112096221350461441
+
+
+https://twitter.com/mettlerd/status/112101440541032448
+
+
+https://twitter.com/FabianBeiner/status/112101569058713600
+
+
+https://twitter.com/jfahrenkrug/status/112101867424718848
+
+
+https://twitter.com/jfahrenkrug/status/112103061736009729
+
+
+https://twitter.com/Schnitzel/status/112103388187070464
+
+
+https://twitter.com/marcoegli/status/112103726835175424
+
+
+https://twitter.com/FabianBeiner/status/112103972227133440
+
+
+https://twitter.com/mauricenaef/status/112104694171705344
+
+
+https://twitter.com/lulezi/status/112105754789560320
+
+
+https://twitter.com/smash\_it\_on/status/112107410155515904
+
+
+https://twitter.com/walktheweb/status/112107790918615040
+
+
+https://twitter.com/andypanix/status/112113881966579712
+
+
+https://twitter.com/lorentzforce/status/112121470355914752
+
+
+https://twitter.com/loleg/status/112126016213876738
+
+
+https://twitter.com/whitefleaCH/status/112132969468137472
+
+
+https://twitter.com/Juztin/status/112195913929326592
+
+
+https://twitter.com/codepo8/status/112252082718916608
+
+
+https://twitter.com/derSchepp/status/112275821703602176
+
+
+https://twitter.com/susanjrobertson/status/112286939964641280
+
 
 If you read the above carefully, you might have noticed that my talk was recorded, so you can see it too. :) Enjoy!

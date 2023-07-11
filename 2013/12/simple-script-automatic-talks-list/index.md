@@ -1,12 +1,12 @@
 ---
 title: "Simple script: Automatic talks list"
 date: "2013-12-28"
-categories: 
+categories:
   - "speaking"
-tags: 
+tags:
   - "javascript"
   - "json"
-  - "speaking-2"
+  - "speaking"
 ---
 
 I guess this will not be useful to many, but thought I'd open source it anyway, in case someone else finds it useful. I mostly wrote it because after 50+ conferences, I got seriously fed up updating [the list](http://lea.verou.me/speaking) by editing the HTML manually. Now I will only have to edit [a JSON file](http://leaverou.github.io/talks/talks.json) manually! :P

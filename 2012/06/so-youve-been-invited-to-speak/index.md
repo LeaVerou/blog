@@ -1,15 +1,15 @@
 ---
 title: "So, you’ve been invited to speak"
 date: "2012-06-25"
-categories: 
+categories:
   - "personal"
   - "speaking"
-tags: 
+tags:
   - "conferences"
-  - "speaking-2"
+  - "speaking"
 ---
 
-I’ve been lucky enough to be invited to do [about 25 talks](http://lea.verou.me/speaking/#past) over the course of the past few years and I have quite [a few upcoming gigs](http://lea.verou.me/speaking/#upcoming) as well, most of them at international conferences around Europe and the US. Despite my speaking experience, I’m still very reluctant to call myself a "professional speaker" or even a "speaker" at all. In case you [follow me on twitter](https://twitter.com/#!/leaverou), you might have noticed that my bio says "Often pretends to be a speaker", and that captures exactly how I feel. I’m not one of those confident performers that don’t just present interesting stuff, but also can blurt jokes one after the other, almost like stand-up comedians and never backtrack or go "ummm". I greatly admire these people and I aspire to become as confident as them on stage one day. People like [Aral Balkan](https://twitter.com/aral), [Christian Heilmann](https://twitter.com/#!/codepo8), [Nicole Sullivan](https://twitter.com/#!/stubbornella), [Jake Archibald](https://twitter.com/#!/jaffathecake) and many others. Unlike them, I often backtrack mid-sentence, say a lot of "ummmm"s and sometimes talk about stuff that was going to be later in my slides, all of which are very awkward.
+I’ve been lucky enough to be invited to do [about 25 talks](http://lea.verou.me/speaking/#past) over the course of the past few years and I have quite [a few upcoming gigs](http://lea.verou.me/speaking/#upcoming) as well, most of them at international conferences around Europe and the US. Despite my speaking experience, I’m still very reluctant to call myself a "professional speaker" or even a "speaker" at all. In case you [follow me on twitter](https://twitter.com/leaverou), you might have noticed that my bio says "Often pretends to be a speaker", and that captures exactly how I feel. I’m not one of those confident performers that don’t just present interesting stuff, but also can blurt jokes one after the other, almost like stand-up comedians and never backtrack or go "ummm". I greatly admire these people and I aspire to become as confident as them on stage one day. People like [Aral Balkan](https://twitter.com/aral), [Christian Heilmann](https://twitter.com/codepo8), [Nicole Sullivan](https://twitter.com/stubbornella), [Jake Archibald](https://twitter.com/jaffathecake) and many others. Unlike them, I often backtrack mid-sentence, say a lot of "ummmm"s and sometimes talk about stuff that was going to be later in my slides, all of which are very awkward.
 
 However, I’ve reached the conclusion that I must be doing something right. I do get a lot of overwhelmingly positive feedback after almost every talk, even by people I admire in the industry. I don’t think I’ve ever gotten a negative comment for a talk, even in cases that I thought I had screwed up. Naturally, after all these conferences, I’ve attended a lot of technical talks myself, and I’ve gathered some insight on what constitutes a technical talk the audience will enjoy. I’ve been pondering to write a post with advice about this for a long time, but my lack of confidence about my speaking abilities put me off the task. However, since people [seem](https://twitter.com/briangarcia/status/213321684890025984) [to](https://twitter.com/yaypie/status/213307187475386369) [consider](https://twitter.com/miketaylr/status/213299054166286337) [me](https://twitter.com/aral/status/210720110535651330) [good](https://twitter.com/aral/status/209580131470147585), I figured it might help others doing technical talks as well.
 

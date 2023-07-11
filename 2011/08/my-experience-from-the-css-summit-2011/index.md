@@ -1,12 +1,12 @@
 ---
 title: "My experience from the CSS Summit 2011"
 date: "2011-08-02"
-categories: 
+categories:
   - "personal"
   - "speaking"
-tags: 
+tags:
   - "conferences"
-  - "speaking-2"
+  - "speaking"
 ---
 
 It's been a few days since [this year's CSS Summit](http://environmentsforhumans.com/2011/css-summit/) and my talk there. Where most people would assume that public speaking in a "real" conference is more daunting, I was much more nervous about this one, since it was my first talk at an online conference. I wouldn't be able to see the faces of the audience, so how would I be able to tell if they like it or are bored shitless? Also, the whole idea of me, alone in a room, giving a talk to my laptop sounded kind of awkward, to say the very least.
@@ -19,7 +19,55 @@ Regarding my talk, it went surprisingly well. No technical hiccups like some of 
 
 Here's a small sample of the feedback I got:
 
-\[blackbirdpie url="http://twitter.com/#!/teleject/status/95872896257372161"\] \[blackbirdpie url="http://twitter.com/#!/boblet/status/95874502608691201"\] \[blackbirdpie url="http://twitter.com/#!/chriscoyier/status/95875236511236096"\] \[blackbirdpie url="http://twitter.com/#!/snookca/status/95875859579277312"\] \[blackbirdpie url="http://twitter.com/#!/elizabethyalkut/status/95876076647100416"\] \[blackbirdpie url="http://twitter.com/#!/wloescher/status/95877653730557952"\] \[blackbirdpie url="http://twitter.com/#!/martuishere/status/95878117872246784"\] \[blackbirdpie url="http://twitter.com/#!/PetraGregorova/status/95878976446271488"\] \[blackbirdpie url="http://twitter.com/#!/caffeinerush/status/95879094406873088"\] \[blackbirdpie url="http://twitter.com/#!/yodasw16/status/95879645743951872"\] \[blackbirdpie url="http://twitter.com/#!/matthewcarleton/status/95880868744278017"\] \[blackbirdpie url="http://twitter.com/#!/redcrew/status/95881025602863104"\] \[blackbirdpie url="http://twitter.com/#!/brandongcarroll/status/95881316796600320"\] \[blackbirdpie url="http://twitter.com/#!/digitalCULT/status/95884698315792384"\] \[blackbirdpie url="http://twitter.com/#!/candiRSX/status/95885394192769025"\] \[blackbirdpie url="http://twitter.com/#!/jewlofthelotus/status/95885472802422784"\] \[blackbirdpie url="http://twitter.com/#!/mortendk/status/95885749404176384"\] \[blackbirdpie url="http://twitter.com/#!/idoclosecuts/status/95886200342188032"\] \[blackbirdpie url="http://twitter.com/#!/megcarpen/status/95886211897495552"\] \[blackbirdpie url="http://twitter.com/#!/V\_v\_V/status/95886299902386176"\] \[blackbirdpie url="http://twitter.com/#!/iScreem/status/95886472934195200"\] \[blackbirdpie url="http://twitter.com/#!/pixelfuture/status/95886741176717312"\] \[blackbirdpie url="http://twitter.com/#!/suprMax/status/95887286369132544"\] \[blackbirdpie url="http://twitter.com/#!/PetraGregorova/status/95899659159080960"\]
+
+
+https://twitter.com/teleject/status/95872896257372161
+
+https://twitter.com/boblet/status/95874502608691201
+
+https://twitter.com/chriscoyier/status/95875236511236096
+
+https://twitter.com/snookca/status/95875859579277312
+
+https://twitter.com/elizabethyalkut/status/95876076647100416
+
+https://twitter.com/wloescher/status/95877653730557952
+
+https://twitter.com/martuishere/status/95878117872246784
+
+https://twitter.com/PetraGregorova/status/95878976446271488
+
+https://twitter.com/caffeinerush/status/95879094406873088
+
+https://twitter.com/yodasw16/status/95879645743951872
+
+https://twitter.com/matthewcarleton/status/95880868744278017
+
+https://twitter.com/redcrew/status/95881025602863104
+
+https://twitter.com/brandongcarroll/status/95881316796600320
+
+https://twitter.com/digitalCULT/status/95884698315792384
+
+https://twitter.com/candiRSX/status/95885394192769025
+
+https://twitter.com/jewlofthelotus/status/95885472802422784
+
+https://twitter.com/mortendk/status/95885749404176384
+
+https://twitter.com/idoclosecuts/status/95886200342188032
+
+https://twitter.com/megcarpen/status/95886211897495552
+
+https://twitter.com/V\_v\_V/status/95886299902386176
+
+https://twitter.com/iScreem/status/95886472934195200
+
+https://twitter.com/pixelfuture/status/95886741176717312
+
+https://twitter.com/suprMax/status/95887286369132544
+
+https://twitter.com/PetraGregorova/status/95899659159080960
 
 Deborah Edwards-Onoro also put together a [write-up](http://deboraheo.posterous.com/css-summit-2011-css3-and-gradients-by-lea-ver) for some parts of my presentation.
 

@@ -1,13 +1,13 @@
 ---
 title: "CSS3 for developers: My Fronteers 2011 workshop"
 date: "2011-08-06"
-categories: 
+categories:
   - "personal"
   - "speaking"
-tags: 
+tags:
   - "conferences"
   - "css3"
-  - "speaking-2"
+  - "speaking"
 ---
 
 In case you haven't noticed, in addition to my talk at [Fronteers 2011](http://fronteers.nl/congres/2011), I'll also be holding [a full day workshop](http://fronteers.nl/congres/2011/workshops/css3-for-web-developers-lea-verou) the day before the conference. The title of that workshop is "[CSS3 for developers](http://fronteers.nl/congres/2011/workshops/css3-for-web-developers-lea-verou)" and I wanted to explain a bit what it's going to be about and why I chose to target web developers only.
