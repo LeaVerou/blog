@@ -17,7 +17,7 @@ Contrary to my fears and insecurities, it went better than I could have ever hop
 
 At this point, I would like to thank [Christian Heilmann](http://www.wait-till-i.com/2010/10/25/fronttrends2010-in-warsaw-poland-my-impressions-slides-and-audio/) for helping me become less nervous before my talk by going through all my slides with me and offering his invaluable advice for every part (I forgot to follow most of it, but it really helped in my attitude). I can't thank you enough Christian!
 
-Many attendees asked me for my slides and presentation framework. You can find my slides [online here](http://lea.verou.me/ft2010/) or [download](uploads/ft2010.zip) them. However, **before you follow those links, read below**:
+Many attendees asked me for my slides and presentation framework. You can find my slides [online here](http://talks.verou.me/ft2010/) or [download](uploads/ft2010.zip) them. However, **before you follow those links, read below**:
 
 - I originally ran my presentation in **Firefox 4 beta** so I was testing mainly in that and Minefield (Firefox's nightly releases). It supports other browsers too (Chrome 7, Opera 10.6+), but it still displays better in Firefox or Minefield and is (surprisingly) faster in them.
 - **Opera** has issues with a few unicode characters I used in some places and won't display Helvetica Neue even if it's installed (@font-face is not an option with that font, for legal reasons)

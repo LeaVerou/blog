@@ -72,7 +72,7 @@ https://twitter.com/VeganBen/status/120466919001300992
 https://twitter.com/nddrylliog/status/120469327110619137
 
 
-You can find my slides on [Speakerdeck](http://speakerdeck.com/u/leaverou/p/polyfilling-the-gaps) , [Slideshare](http://www.slideshare.net/LeaVerou/polyfilling-the-gaps) or [the HTML version on my website](http://lea.verou.me/polyfilling-the-gaps).
+You can find my slides on [Speakerdeck](http://speakerdeck.com/u/leaverou/p/polyfilling-the-gaps) , [Slideshare](http://www.slideshare.net/LeaVerou/polyfilling-the-gaps) or [the HTML version on my website](http://talks.verou.me/polyfilling-the-gaps).
 
 ## [Fronteers](http://fronteers.nl/congres/2011)
 
@@ -198,7 +198,7 @@ https://twitter.com/johannesaxner/status/121999077859790849
 https://twitter.com/flurin/status/122042528794017792
 
 
-My slides are now online at [Speakerdeck](http://speakerdeck.com/u/leaverou/p/css3-secrets-10-things-you-might-not-know-about-css3), [Slideshare](http://www.slideshare.net/LeaVerou/css3-secrets-10-things-you-might-not-know-about-css3) and [the interactive version on my website](http://lea.verou.me/css3-secrets).
+My slides are now online at [Speakerdeck](http://speakerdeck.com/u/leaverou/p/css3-secrets-10-things-you-might-not-know-about-css3), [Slideshare](http://www.slideshare.net/LeaVerou/css3-secrets-10-things-you-might-not-know-about-css3) and [the interactive version on my website](http://talks.verou.me/css3-secrets).
 
 ## [Frontend 2011](http://www.frontend2011.com/)
 

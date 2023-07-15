@@ -61,7 +61,7 @@ https://twitter.com/anttio/status/74575465905520641
 
 https://twitter.com/sirbenjaminnunn/status/74900149448609792
 
-You can [play with the HTML version of my slides](http://lea.verou.me/css3-gradients/) or [view them on slideshare](http://www.slideshare.net/LeaVerou/mastering-css3-gradients):
+You can [play with the HTML version of my slides](http://talks.verou.me/css3-gradients/) or [view them on slideshare](http://www.slideshare.net/LeaVerou/mastering-css3-gradients):
 
 **[Mastering CSS3 gradients](http://www.slideshare.net/LeaVerou/mastering-css3-gradients "Mastering CSS3 gradients")**
 
