@@ -15,7 +15,7 @@ tags:
 
 [![Screenshot of the CSS3 patterns I came up with](images/css3-patterns-1024x480.png "The CSS3 patterns I came up with")](http://lea.verou.me/demos/css3-patterns.html)You're probably familiar with CSS3 gradients by now, including the closer to the standard Mozilla syntax and the ugly verbose Webkit one. I assume you know how to add multiple color stops, make your gradients angled or create radial gradients. What you might not be aware of, is that CSS3 gradients can be used to create many kinds of commonly needed patterns, including checkered patterns, stripes and more.
 
-[View demo](http://lea.verou.me/demos/css3-patterns.html) (Works in Webkit, Firefox 3.6+, Opera 11.50+ and IE10+)
+<a href="/demos/css3-patterns.html" class="call-to-action">View demo</a> (Works in Webkit, Firefox 3.6+, Opera 11.50+ and IE10+)
 
 The main idea behind the technique is the following, taken from the [CSS3 Images spec](http://dev.w3.org/csswg/css3-images/#color-stop-syntax):
 
