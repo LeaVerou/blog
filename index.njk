@@ -11,7 +11,9 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 ---
 
 {% for post in pagination.items %}
+	{% if not post.draft and not post.unlisted %}
 	{% include "_post-list.njk" %}
+	{% endif %}
 {% endfor %}
 
 <footer class="pagination">

@@ -1,6 +1,7 @@
 ---
 title: "Going Lean"
 date: "2023-07-10"
+draft: true
 ---
 
 {% raw %}
