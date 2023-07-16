@@ -1,10 +1,10 @@
 ---
 title: "Convert PHP serialized data to Unicode"
 date: "2011-02-13"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
+tags:
   - "latin1"
   - "php"
   - "serialized"
@@ -16,38 +16,40 @@ I recently had to convert a database of a large greek website from single-byte g
 
 I didn't want anyone to go through the frustration I went through while searching for a solution, so here is a little function I wrote to recount the string lengths, since I couldn't find anything on this:
 
-function recount\_serialized\_bytes($text) {
-	mb\_internal\_encoding("UTF-8");
-	mb\_regex\_encoding("UTF-8");
+```php
+function recount_serialized_bytes($text) {
+	mb_internal_encoding("UTF-8");
+	mb_regex_encoding("UTF-8");
 
-	mb\_ereg\_search\_init($text, 's:\[0-9\]+:"');
+	mb_ereg_search_init($text, 's:[0-9]+:"');
 
 	$offset = 0;
 
-	while(preg\_match('/s:(\[0-9\]+):"/u', $text, $matches, PREG\_OFFSET\_CAPTURE, $offset) ||
-		  preg\_match('/s:(\[0-9\]+):"/u', $text, $matches, PREG\_OFFSET\_CAPTURE, ++$offset)) {
-		$number = $matches\[1\]\[0\];
-		$pos = $matches\[1\]\[1\];
+	while(preg_match('/s:([0-9]+):"/u', $text, $matches, PREG_OFFSET_CAPTURE, $offset) ||
+		  preg_match('/s:([0-9]+):"/u', $text, $matches, PREG_OFFSET_CAPTURE, ++$offset)) {
+		$number = $matches[1][0];
+		$pos = $matches[1][1];
 
 		$digits = strlen("$number");
-		$pos\_chars = mb\_strlen(substr($text, 0, $pos)) + 2 + $digits;
+		$pos_chars = mb_strlen(substr($text, 0, $pos)) + 2 + $digits;
 
-		$str = mb\_substr($text, $pos\_chars, $number);
+		$str = mb_substr($text, $pos_chars, $number);
 
-		$new\_number = strlen($str);
-		$new\_digits = strlen($new\_number);
+		$new_number = strlen($str);
+		$new_digits = strlen($new_number);
 
-		if($number != $new\_number) {
+		if($number != $new_number) {
 			// Change stored number
-			$text = substr\_replace($text, $new\_number, $pos, $digits);
-			$pos += $new\_digits - $digits;
+			$text = substr_replace($text, $new_number, $pos, $digits);
+			$pos += $new_digits - $digits;
 		}
 
-		$offset = $pos + 2 + $new\_number;
+		$offset = $pos + 2 + $new_number;
 	}
 
 	return $text;
 }
+```
 
 My initial approach was to do it with regular expressions, but the PHP serialized data format is not a regular language and cannot be properly parsed with regular expressions. All approaches fail on edge cases, and I had lots of edge cases in my data (I even had nested serialized strings!).
 
