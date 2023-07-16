@@ -61,7 +61,7 @@ While this importer is great, and allowed me to configure the file structure in 
 - Figures (they are imported as just images with text underneath) (filed it as [issue #94](https://github.com/lonekorean/wordpress-export-to-markdown/issues/94))
 - Drafts ([#16](https://github.com/lonekorean/wordpress-export-to-markdown/issues/16))
 - Pages (I had to manually copy them over, but it was only a handful)
-- Any custom HTML (e.g. a `"view-demo"` class I used to create "call to action" links) was gone
+- Any custom classes were gone (e.g. a `"view-demo"` class I used to create "call to action" links)
 
 Also, it downloaded all images, but did not update the URLs in the Markdown files.
 This was easy to fix with a regex find and replace from `https?://lea.verou.me/wp-content/uploads/(\d{4}/\d{2})/([\w\.-]+\.(?:png|gif|jpe?g))` to `images/$2`.
