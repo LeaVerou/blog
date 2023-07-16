@@ -1,0 +1,14 @@
+---
+pagination:
+  data: collections.postsByYear
+  size: 1
+  alias: year
+permalink: /blog/{{ year }}/
+override:tags: []
+eleventyComputed:
+  title: "Posts from {{ year }}"
+---
+
+{% set postlist = collections.postsByYear[ year ] %}
+{% import "_posts.njk" as posts %}
+{{ posts.list(postlist, {style: "compact"}) }}
