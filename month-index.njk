@@ -1,0 +1,15 @@
+---
+pagination:
+  data: collections.postsByMonth
+  size: 1
+  alias: month
+permalink: /blog/{{ month | replace("-", "/") }}/
+override:tags: []
+eleventyComputed:
+  title: "Posts from {{ month | format_date({month: 'long', year: 'numeric'}) }}"
+---
+
+{% import "_posts.njk" as posts %}
+{% set postlist = collections.postsByMonth[ month ] %}
+
+{{ posts.list(postlist, {style: "compact"}) }}
