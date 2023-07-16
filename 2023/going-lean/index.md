@@ -36,6 +36,8 @@ They literally all fell in one of two categories:
 
 This could actually work!
 
+<!-- more -->
+
 ## Migrating content from WordPress to Markdown
 
 The title of this section says "to Markdown" because that’s one of the benefits of this approach:

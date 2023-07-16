@@ -6,7 +6,7 @@ override:tags: []
 
 {% import "_tags.njk" as tags %}
 
-<ol class="tags-index">
+<ol class="tags-index subtle-markers">
 {% for tag, posts in collections | taglist %}
 	<li>{{ tags.one(tag) | safe }}
 		<span class="post-count">({{ posts }} posts)</span>

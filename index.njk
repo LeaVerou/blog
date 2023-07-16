@@ -10,11 +10,9 @@ pagination: {
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---
 
-{% for post in pagination.items %}
-	{% if not post.draft and not post.unlisted %}
-	{% include "_post-list.njk" %}
-	{% endif %}
-{% endfor %}
+
+{% import "_posts.njk" as posts %}
+{{ posts.list(pagination.items) }}
 
 <footer class="pagination">
 {% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="previous">← Previous</a>{% endif %}

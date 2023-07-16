@@ -11,8 +11,7 @@ eleventyComputed:
 ---
 
 
-{% set taglist = collections[ tag ] %}
-{% for post in taglist | reverse %}
-	{% include "_post-list.njk" %}
-{% endfor %}
-
+{% set taglist = collections[ tag ] | reverse %}
+{% set post_style = "compact" if taglist.length > 10 %}
+{% import "_posts.njk" as posts %}
+{{ posts.list(taglist, {style: post_style }) }}
