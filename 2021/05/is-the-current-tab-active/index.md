@@ -1,8 +1,9 @@
 ---
 title: "Is the current tab active?"
 date: "2021-05-24"
-categories: 
+categories:
   - "rants"
+defaultLanguage: "js"
 ---
 
 Today I ran into an interesting problem. Interesting because it's one of those very straightforward, deceptively simple questions, that after a fair amount of digging, does not appear to have a definite answer (though I would love to be wrong!).

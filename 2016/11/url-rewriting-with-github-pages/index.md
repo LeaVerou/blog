@@ -18,7 +18,7 @@ Turns out [Github uses some URL rewriting of its own on Github Pages](https://he
 
 So, I created [a JSON file](https://github.com/LeaVerou/play.csssecrets.io/blob/gh-pages/secrets.json) with all demo ids and their dabblet URLs, a [404.html](https://github.com/LeaVerou/play.csssecrets.io/blob/gh-pages/404.html) that shows either a redirection or an error (JS decides which one) and [a tiny bit of Vanilla JS](https://github.com/LeaVerou/play.csssecrets.io/blob/gh-pages/redirect.js) that reads the current URL, fetches the JSON file, and redirects to the right dabblet. Here it is, without the helpers:
 
-```
+```js
 (function(){
 
 document.body.className = 'redirecting';

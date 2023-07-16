@@ -1,9 +1,9 @@
 ---
 title: "ReferenceError: x is not defined?"
 date: "2018-12-14"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "javascript"
 ---
 
@@ -31,7 +31,7 @@ I also did a little bit of testing with a different UI language (I picked Greek)
 
 In the end, I decided to go ahead with it, and time will tell if it was foolish to do so. For anyone wishing to also dabble in such dangerous waters, this was my checking code:
 
-```
+```js
 if (e instanceof ReferenceError
     && /is (not |un)defined$|^(Can't find|Undefined) variable/.test(e.message)) {
     // do stuff

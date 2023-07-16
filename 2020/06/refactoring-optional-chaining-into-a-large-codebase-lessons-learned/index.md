@@ -1,11 +1,12 @@
 ---
 title: "Refactoring optional chaining into a large codebase: lessons learned"
 date: "2020-06-18"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "javascript"
   - "refactoring"
+defaultLanguage: "js"
 ---
 
 [Chinese translation by Coink Wang](https://coink.wang/refactoring-optional-chaining-into-a-large-codebase-lessons-learned-chinese.html)

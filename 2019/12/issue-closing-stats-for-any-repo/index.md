@@ -6,6 +6,7 @@ categories:
 tags:
   - "github"
   - "mavo"
+defaultLanguage: "html"
 ---
 
 **_tl;dr:_** _If you just want to quickly get stats for a repo, you can find the app_ [_here_](https://leaverou.github.io/issue-closing/)_. The rest of this post explains how it's built with Mavo HTML, CSS, and 0 lines of JS._ Or, if you'd prefer, you can just View Source — it's all there!
@@ -191,7 +192,7 @@ Now that we got the functionality down, we can be a little playful and add some 
 
 Then, we draw our graphic:
 
-```
+```css
 summary::before {
 	content: "";
 	position: fixed;
@@ -206,7 +207,7 @@ summary::before {
 
 Now, wouldn't it be cool to also show a small pie chart next to the heading, if conic gradients are supported so we can draw it? The color stops would be the same, so we define a `--summary-stops` variable on `summary`, so we can reuse them across both gradients:
 
-```
+```css
 summary {
 	--summary-stops: var(--short-color) calc(var(--short, 0) / var(--total) * 100%), hsl(220, 10%, 75%) 0, hsl(220, 10%, 75%) calc(100% - var(--long, 0) / var(--total) * 100%), var(--long-color) 0;
 }

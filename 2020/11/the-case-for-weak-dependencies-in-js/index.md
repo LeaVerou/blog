@@ -1,9 +1,9 @@
 ---
 title: "The case for Weak Dependencies in JS"
 date: "2020-11-19"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "esm"
   - "js"
   - "software-engineering"
@@ -13,7 +13,7 @@ Earlier today, I was briefly entertaining the idea of writing a library to wrap 
 
 In the olden days, where every library introduced a global, I could just do:
 
-```
+```js
 if (window.Parsel) {
 	let ast = Parsel.parse();
 	// rewrite selector properly, with AST
@@ -80,7 +80,7 @@ Some people (mostly fellow library authors) \*did\* understand what I was talkin
 
 https://twitter.com/WebReflection/status/1329396560694796290
 
-**Idea 2:** A global registry where modules can register themselves on, either with an identifier, or a SHA hash  
+**Idea 2:** A global registry where modules can register themselves on, either with an identifier, or a SHA hash
 **Idea 3:** An `import.whenDefined(moduleURL)` promise, though that makes it difficult to deal with the module not being present at all, which is the whole point.
 
 https://twitter.com/WebReflection/status/1329420308491677696
@@ -93,7 +93,7 @@ https://twitter.com/getify/status/1329407281797222401
 
 **Idea 5:** I was thinking of a function like `import()` that resolves with the module (same as a regular dynamic import) only when the module is already loaded, or rejects when it's not (which can be caught). In fact, it could even use the same functional notation, with a second argument, like so:
 
-```
+```js
 import("https://cool-library", {weak: true});
 ```
 

@@ -54,7 +54,7 @@ Note that because `@supports` is only used for the pie and not the fallback, the
 
 If relatively modern browsers are all we care about, we could even use CSS variables for the percentage and the color stops, to avoid duplication, and to be able to set the percentage from the markup:
 
-```
+```html
 <div class="pie" style="--p: 40%"></div>
 ```
 

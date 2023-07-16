@@ -7,7 +7,8 @@ tags:
   - "css"
   - "css-om"
   - "javascript"
-  - "web-almanac-2"
+  - "web-almanac"
+defaultLanguage: "js"
 ---
 
 For [some of the statistics](https://github.com/LeaVerou/css-almanac/issues/10) we are going to study for this year's Web Almanac we may end up needing a list of CSS shorthands and their longhands. Now this is typically done by [maintaining a data structure by hand](https://github.com/LeaVerou/prefixfree/blob/gh-pages/prefixfree.js#L298) or [guessing based on property name structure](https://github.com/LeaVerou/prefixfree/blob/gh-pages/prefixfree.js#L298). But I knew that if we were going to do it by hand, it's very easy to miss a few of the less popular ones, and the naming rule where shorthands are a prefix of their longhands [has failed to get standardized](https://lists.w3.org/Archives/Public/www-style/2012Apr/0155.html) and now has even more exceptions than it used to. And even if we do an incredibly thorough job, next year the data structure will be inaccurate, because CSS and its implementations evolve fast. The browser knows what the shorthands are, surely we should be able to get the information from it ...right? Then we could use it directly if this is a client-side library, or in the case of the Almanac, where code needs to be fast because it will run on millions of websites, paste the precomputed result into whatever script we run.

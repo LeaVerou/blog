@@ -1,14 +1,15 @@
 ---
 title: "Mass function overloading: why and how?"
 date: "2021-02-10"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "api-design"
   - "bliss"
   - "esm"
   - "javascript"
   - "js"
+defaultLanguage: "js"
 ---
 
 One of the things I've been doing for the past few months (on and off—more off than on TBH) is rewriting [Bliss](http://blissfuljs.com/) to use [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) [1](#bliss-v2). Since Bliss v1 was not using a modular architecture at all, this introduced some interesting challenges.

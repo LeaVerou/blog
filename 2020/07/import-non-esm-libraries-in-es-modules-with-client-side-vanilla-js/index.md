@@ -1,11 +1,12 @@
 ---
 title: "Import non-ESM libraries in ES Modules, with client-side vanilla JS"
 date: "2020-07-20"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "esm"
   - "javascript"
+defaultLanguage: "js"
 ---
 
 In case you haven't heard, [ECMAScript modules (ESM) are now supported everywhere](https://caniuse.com/#search=modules)!

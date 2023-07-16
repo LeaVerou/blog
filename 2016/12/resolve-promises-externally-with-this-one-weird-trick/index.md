@@ -1,13 +1,14 @@
 ---
 title: "Resolve Promises externally with this one weird trick"
 date: "2016-12-14"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
+tags:
   - "es5"
   - "es6"
   - "javascript"
+defaultLanguage: "js"
 ---
 
 Those of us who use promises heavily, have often wished there was a `Promise.prototype.resolve()` method, that would force an existing Promise to resolve. However, for architectural reasons (throw safety), there is no such thing and probably never will be. Therefore, a Promise can only resolve or reject by calling the respective methods in its constructor:

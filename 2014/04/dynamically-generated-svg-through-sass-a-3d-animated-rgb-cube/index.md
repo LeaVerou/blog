@@ -25,7 +25,7 @@ tags:
 
 It seemed obvious that the best idea would be to use SVG background images. For example, here is [the SVG background needed for the top left one](http://dabblet.com/gist/9964928):
 
-```
+```markup
 <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px">
 
 <linearGradient id="yellow-white" x1="0" x2="0" y1="0" y2="1">

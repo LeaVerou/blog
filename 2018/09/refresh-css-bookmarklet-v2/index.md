@@ -1,12 +1,13 @@
 ---
 title: "Refresh CSS Bookmarklet v2"
 date: "2018-09-18"
-categories: 
+categories:
   - "articles"
   - "releases"
-tags: 
+tags:
   - "bookmarklets"
   - "javascript"
+defaultLanguage: "js"
 ---
 
 Almost 11 years ago, [Paul Irish posted this brilliant bookmarklet](https://www.paulirish.com/2008/how-to-iterate-quickly-when-debugging-css/) to refresh all stylesheets on the current page. Despite the amount of tools, plugins, servers to live reload that have been released over the years, I've always kept coming back to it. It's incredibly elegant in its simplicity. It works everywhere: locally or remotely, on any domain and protocol. No need to set up anything, no need to alter my process in any way, no need to use a specific local server or tool. It quietly just accepts your preferences and workflow instead of trying to change them. Sure, it doesn't automatically detect changes and reload, but in most cases, I don’t want it to.

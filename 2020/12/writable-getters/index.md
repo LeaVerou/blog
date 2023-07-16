@@ -9,6 +9,7 @@ tags:
   - "javascript"
   - "js"
   - "js-patterns"
+defaultLanguage: "js"
 ---
 
 ![](images/ouroboros.jpg)

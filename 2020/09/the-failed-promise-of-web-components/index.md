@@ -1,10 +1,10 @@
 ---
 title: "The failed promise of Web Components"
 date: "2020-09-24"
-categories: 
+categories:
   - "rants"
   - "thoughts"
-tags: 
+tags:
   - "html"
   - "js"
   - "usability"
@@ -25,7 +25,7 @@ Perusing the components on [webcomponents.org](https://www.webcomponents.org/) f
 
 Besides setup, the main problem is that HTML is not treated with the appropriate respect in the design of these components. They are not designed as closely as possible to standard HTML elements, but _expect_ JS to be written for them to do anything. HTML is simply treated as a shorthand, or worse, as merely a marker to indicate where the element goes in the DOM, with all parameters passed in via JS. I recall [a wonderful talk by Jeremy Keith](https://adactio.com/articles/12839#webcomponents) a few years ago about this very phenomenon, where he discussed [this e-shop Web components demo by Google](https://shop.polymer-project.org/), which is the poster child of this practice. These are the entire contents of its `<body>` element:
 
-```
+```html
 <body>
 	<shop-app unresolved="">SHOP</shop-app>
 	<script src="node_assets/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
