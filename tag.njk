@@ -1,0 +1,18 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter: ["blog", "all"]
+permalink: /blog/tag/{{ tag }}/
+override:tags: []
+eleventyComputed:
+  title: "Posts Tagged “{{ tag | format_tag }}”"
+---
+
+
+{% set taglist = collections[ tag ] %}
+{% for post in taglist | reverse %}
+	{% include "_post-list.njk" %}
+{% endfor %}
+
