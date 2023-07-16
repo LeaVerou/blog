@@ -25,6 +25,8 @@ So, I set out to create a proper web component for star ratings. The first conun
 - Option 2: Should it use a web component with a `<meter>` in Shadow DOM?
 - Option 3: Should it be an entirely separate web component that just uses a `meter` ARIA Role and related ARIA attributes?
 
+<!-- more -->
+
 This is what the code would look like:
 
 ```html
