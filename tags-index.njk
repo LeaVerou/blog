@@ -1,0 +1,15 @@
+---
+title: All tags
+permalink: "blog/tags/index.html"
+override:tags: []
+---
+
+{% import "_tags.njk" as tags %}
+
+<ol class="tags-index">
+{% for tag, posts in collections | taglist %}
+	<li>{{ tags.one(tag) | safe }}
+		<span class="post-count">({{ posts }} posts)</span>
+	</li>
+{% endfor %}
+</ol>
