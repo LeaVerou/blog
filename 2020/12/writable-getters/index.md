@@ -11,9 +11,14 @@ tags:
 defaultLanguage: "js"
 ---
 
+<figure>
+
 ![](images/ouroboros.jpg)
+<figcaption>
 
 Setters removing themselves are reminiscent of [Ouroboros](https://en.wikipedia.org/wiki/Ouroboros), the serpent eating its own tail, an ancient symbol. [Media credit](https://commons.wikimedia.org/wiki/File:The_serpent_Ouroboros,_from_Cyprianus,_18th_C_Wellcome_L0036620.jpg)
+</figcaption>
+</figure>
 
 A pattern that has come up a few times in my code is the following: an object has a property which defaults to an expression based on its other properties _unless_ it's explicitly set, in which case it functions like a normal property. Essentially, the expression functions as a default value.
 
