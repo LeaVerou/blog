@@ -2,7 +2,6 @@ name: Page regression
 description: A page/blog post has a problem that it didn’t have on the previous website
 title: 'Page regression: '
 labels: Page regression
-assignees: []
 body:
   - type: markdown
     attributes:
@@ -17,13 +16,13 @@ body:
     validations:
       required: true
   - type: checkboxes
-  id: is_regression
-  attributes:
-    label: The problem does not exist in the previous site
-    description: If the issue is present in the previous site as well, please file a [Broken Page]() report.
-    options:
-      - label: I have verified that the issue is not present in the [previous site](https://lea0.verou.me).
-        required: true
+    id: is_regression
+    attributes:
+      label: The problem does not exist in the previous site
+      description: If the issue is present in the previous site as well, please file a [Broken Page]() report.
+      options:
+        - label: I have verified that the issue is not present in the [previous site](https://lea0.verou.me).
+          required: true
   - type: dropdown
     id: issues
     attributes:
