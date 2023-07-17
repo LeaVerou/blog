@@ -4,46 +4,46 @@ title: 'Page regression: '
 labels: Page regression
 assignees: []
 body:
-	- type: markdown
-		attributes:
-			value: |
-				Thanks for taking the time to fill out this bug report!
-	- type: input
-		id: url
-		attributes:
-			label: "Page URL:"
-			description: URL of the page that is broken
-			placeholder: ex. https://lea.verou.me/blog/2020/12/writable-getters/
-		validations:
-			required: true
-	- type: checkboxes
-	id: is_regression
-	attributes:
-		label: The problem does not exist in the previous site
-		description: If the issue is present in the previous site as well, please file a [Broken Page]() report.
-		options:
-			- label: I have verified that the issue is not present in the [previous site](https://lea0.verou.me).
-				required: true
-	- type: dropdown
-		id: issues
-		attributes:
-			label: What issues do you see?
-			multiple: true
-			options:
-				- Broken syntax highlighting
-				- Broken image(s)
-				- Broken embed(s)
-				- Broken figures
-				- Broken styles
-				- Broken URLs
-				- Other
-	- type: textarea
-		id: details
-		attributes:
-			label: Description of issues
-			description: Please provide more details
-		validations:
-			required: false
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: url
+    attributes:
+      label: "Page URL:"
+      description: URL of the page that is broken
+      placeholder: ex. https://lea.verou.me/blog/2020/12/writable-getters/
+    validations:
+      required: true
+  - type: checkboxes
+  id: is_regression
+  attributes:
+    label: The problem does not exist in the previous site
+    description: If the issue is present in the previous site as well, please file a [Broken Page]() report.
+    options:
+      - label: I have verified that the issue is not present in the [previous site](https://lea0.verou.me).
+        required: true
+  - type: dropdown
+    id: issues
+    attributes:
+      label: What issues do you see?
+      multiple: true
+      options:
+        - Broken syntax highlighting
+        - Broken image(s)
+        - Broken embed(s)
+        - Broken figures
+        - Broken styles
+        - Broken URLs
+        - Other
+  - type: textarea
+    id: details
+    attributes:
+      label: Description of issues
+      description: Please provide more details
+    validations:
+      required: false
 
 
 
