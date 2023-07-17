@@ -8,6 +8,7 @@ tags:
   - "css"
   - "github"
   - "mavo"
+  - "data-analysis"
   - "web-almanac"
 ---
 

@@ -1,8 +1,10 @@
 ---
 title: "An easy notation for grayscale colors"
 date: "2014-07-27"
-categories: 
+tags:
   - "csswg"
+  - "web-standards"
+  - "surveys"
 ---
 
 These days, there is [a lengthy discussion in the CSS WG about how to name a function that produces shades of gray](http://lists.w3.org/Archives/Public/www-style/2014Jul/0432.html) (from white to black) with varying degrees of transparency, and we need your feedback about which name is easier to use.

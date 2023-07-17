@@ -1,13 +1,12 @@
 ---
 title: "CSS gradients are faster than SVG backgrounds"
 date: "2011-08-12"
-categories:
-  - "benchmarks"
 tags:
   - "css-gradients"
   - "css"
   - "experiments"
   - "performance"
+  - "benchmarks"
   - "svg"
 ---
 

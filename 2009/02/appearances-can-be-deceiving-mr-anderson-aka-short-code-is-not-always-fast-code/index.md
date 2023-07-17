@@ -3,11 +3,11 @@ title: "\"Appearances can be deceiving Mr. Anderson\" - a.k.a. short code is not
 date: "2009-02-25"
 categories:
   - "articles"
-  - "benchmarks"
 tags:
   - "js"
   - "jquery"
   - "performance"
+  - "benchmarks"
   - "type-checks"
 ---
 

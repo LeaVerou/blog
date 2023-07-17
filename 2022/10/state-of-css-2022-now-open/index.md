@@ -5,6 +5,8 @@ categories:
   - "news"
 tags:
   - "css"
+  - "surveys"
+  - "data-analysis"
   - "state-of-css"
 ---
 
