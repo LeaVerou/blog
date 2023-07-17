@@ -1,7 +1,8 @@
 name: Page regression
 description: A page/blog post has a problem that it didn’t have on the previous website
 title: 'Page regression: '
-labels: Page regression
+labels:
+  - Page regression
 body:
   - type: markdown
     attributes:
