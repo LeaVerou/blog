@@ -1,11 +1,11 @@
 ---
 title: "\"Wow, Mona Lisa with pure CSS!\""
 date: "2010-05-25"
-categories: 
+categories:
   - "rants"
   - "thoughts"
-tags: 
-  - "css3"
+tags:
+  - "css"
   - "svg"
   - "theoretical"
 ---

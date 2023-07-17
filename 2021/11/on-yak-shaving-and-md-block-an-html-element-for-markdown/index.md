@@ -1,11 +1,12 @@
 ---
-title: "On Yak Shaving and &lt;md-block>, a new HTML element for Markdown"
+title: "On Yak Shaving and <md-block>, a new HTML element for Markdown"
 date: "2021-11-26"
-categories: 
+categories:
   - "original"
   - "personal"
   - "releases"
-tags: 
+tags:
+  - "js"
   - "esm"
   - "markdown"
   - "stretchy"

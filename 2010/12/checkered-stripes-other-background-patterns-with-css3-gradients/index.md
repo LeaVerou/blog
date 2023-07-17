@@ -6,9 +6,9 @@ categories:
   - "tips"
 tags:
   - "background-size"
-  - "css3"
-  - "css3-gradients"
-  - "css3-values"
+  - "css"
+  - "css-images"
+  - "css-values"
   - "multiple-backgrounds"
   - "patterns"
 ---

@@ -1,10 +1,10 @@
 ---
 title: "Get your hash — the bulletproof way"
 date: "2011-05-23"
-categories: 
+categories:
   - "tips"
-tags: 
-  - "javascript"
+tags:
+  - "js"
   - "urls"
 ---
 

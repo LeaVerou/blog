@@ -5,14 +5,14 @@ categories:
   - "original"
   - "tips"
 tags:
-  - "latin1"
+  - "i18n"
   - "php"
-  - "serialized"
   - "unicode"
-  - "utf8"
+  - "php"
 ---
 
-I recently had to convert a database of a large greek website from single-byte greek to Unicode (UTF-8). One of the problems I faced was the stored PHP serialized data: As PHP stores the length of the data (in bytes) inside the serialized string, the stored serialized strings could not be unserialized after the conversion.
+I recently had to convert a database of a large Greek website from single-byte Greek to Unicode (UTF-8).
+One of the problems I faced was the stored PHP serialized data: As PHP stores the length of the data (in bytes) inside the serialized string, the stored serialized strings could not be unserialized after the conversion.
 
 I didn't want anyone to go through the frustration I went through while searching for a solution, so here is a little function I wrote to recount the string lengths, since I couldn't find anything on this:
 

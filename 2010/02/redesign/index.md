@@ -1,10 +1,10 @@
 ---
 title: "Redesign"
 date: "2010-02-13"
-categories: 
+categories:
   - "personal"
-tags: 
-  - "leaverou-me"
+tags:
+  - "meta"
 ---
 
 Was about time, wasn't it?

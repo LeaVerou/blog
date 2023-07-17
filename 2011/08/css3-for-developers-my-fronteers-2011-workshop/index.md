@@ -5,8 +5,8 @@ categories:
   - "personal"
   - "speaking"
 tags:
-  - "conferences"
-  - "css3"
+  - "speaking"
+  - "css"
   - "speaking"
 ---
 

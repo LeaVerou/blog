@@ -1,10 +1,10 @@
 ---
 title: "Extend Math.log to allow for bases != e"
 date: "2009-03-26"
-categories: 
+categories:
   - "tips"
-tags: 
-  - "javascript"
+tags:
+  - "js"
   - "math"
 ---
 

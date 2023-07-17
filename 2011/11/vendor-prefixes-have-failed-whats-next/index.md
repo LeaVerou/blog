@@ -1,11 +1,11 @@
 ---
 title: "Vendor prefixes have failed, what’s next?"
 date: "2011-11-18"
-categories: 
+categories:
   - "thoughts"
-tags: 
+tags:
   - "css"
-  - "standards"
+  - "web-standards"
   - "vendor-prefixes"
   - "w3c"
 ---

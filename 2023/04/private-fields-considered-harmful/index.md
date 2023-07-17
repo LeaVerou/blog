@@ -6,7 +6,6 @@ categories:
   - "thoughts"
 tags:
   - "architecture"
-  - "javascript"
   - "js"
   - "tc39"
 ---

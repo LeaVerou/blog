@@ -5,9 +5,8 @@ categories:
   - "original"
   - "tips"
 tags:
-  - "es5"
-  - "es6"
-  - "javascript"
+  - "es"
+  - "js"
 defaultLanguage: "js"
 ---
 

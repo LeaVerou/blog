@@ -6,9 +6,9 @@ categories:
 tags:
   - "border-radius"
   - "browser-bugs"
-  - "css3"
-  - "css3-properties"
-  - "css3-values"
+  - "css"
+  - "css-properties"
+  - "css-values"
 ---
 
 Admittedly, percentages in border-radius are not one of the most common use cases. Some even consider them an edge case, since most people seem to set border-radius in pixels or --rarely-- ems. And since it's not used very frequently, it's still quite buggy. A bit of a chicken and egg case actually: Is it buggy because it's used rarely or is it used rarely because it's buggy? My vote would go to the first, so the purpose of this post is to let people know about why percentages in border-radius are incredibly useful and to highlight the various browser whims when it comes to rendering them.

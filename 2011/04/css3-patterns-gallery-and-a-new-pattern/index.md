@@ -5,7 +5,7 @@ categories:
   - "original"
   - "releases"
 tags:
-  - "css3-gradients"
+  - "css-images"
   - "patterns"
 ---
 

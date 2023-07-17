@@ -6,8 +6,8 @@ categories:
   - "personal"
   - "releases"
 tags:
-  - "conferences"
-  - "css3"
+  - "speaking"
+  - "css"
   - "csss"
 ---
 

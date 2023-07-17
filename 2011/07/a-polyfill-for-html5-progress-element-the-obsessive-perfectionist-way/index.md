@@ -6,7 +6,8 @@ categories:
   - "releases"
 tags:
   - "html5"
-  - "shims-and-polyfills"
+  - "html"
+  - "polyfills"
 ---
 
 [![](images/Screen-shot-2011-11-15-at-15.02.37--300x219.png "Progress polyfill, project page screenshot")](images/Screen-shot-2011-11-15-at-15.02.37-.png)Yesterday, for some reason I don't remember, I was looking once more at [Paul Irish's excellent list of polyfills on Github](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills). I was really surprised to see that there are none for [the <progress> element](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-button-element.html#the-progress-element). It seemed really simple: Easy to fake with CSS and only 4 IDL attributes (value, max, position and labels). "Hey, it sounds fun and easy, I'll do it!", I thought. I have no idea how in only 1 day this turned into "OMG, my brain is going to explode". I've documented below all the pitfalls I faced. And don't worry, it has a happy ending: I did finish it. And [published it](https://github.com/LeaVerou/HTML5-Progress-polyfill). So, if you're not interested in long geeky stories, just jump straight to [its page](http://lea.verou.me/polyfills/progress/).

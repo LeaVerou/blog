@@ -1,12 +1,12 @@
 ---
 title: "Important -prefix-free update"
 date: "2012-07-24"
-categories: 
+categories:
   - "news"
-tags: 
+tags:
   - "prefix-free"
   - "css-gradients"
-  - "css3-gradients"
+  - "css-images"
   - "vendor-prefixes"
 ---
 

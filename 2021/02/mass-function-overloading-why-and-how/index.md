@@ -7,7 +7,6 @@ tags:
   - "api-design"
   - "bliss"
   - "esm"
-  - "javascript"
   - "js"
 defaultLanguage: "js"
 ---

@@ -6,8 +6,8 @@ categories:
   - "releases"
 tags:
   - "canvas"
-  - "css3"
-  - "css3-colors"
+  - "css"
+  - "css-color"
   - "html5"
 ---
 

@@ -1,14 +1,14 @@
 ---
 title: "CMYK colors in CSS: Useful or useless?"
 date: "2009-03-09"
-categories: 
+categories:
   - "thoughts"
-tags: 
+tags:
   - "cmyk"
   - "colors"
   - "css"
-  - "css3"
-  - "css3-values"
+  - "css"
+  - "css-values"
 ---
 
 As someone who dealed a bit with print design in the past, I consider CMYK colors the easiest color system for humen to understand and manipulate. It's very similar to what we used as children, when mixing watercolors for our drawings. It makes perfect sense, more than HSL and definately more than RGB. I understand that most of us are so accustomed to using RGB that can't realise that, but try to think for a moment: Which color system would make more sense to you if you had no idea and no experience at all with any of them?

@@ -6,6 +6,7 @@ categories:
 tags:
   - "a11y"
   - "colors"
+  - "contrast-ratio.com"
 ---
 
 [![](images/Screen-Shot-2012-10-14-at-06.08.41--300x254.png "Screenshot with semi transparent background")](images/Screen-Shot-2012-10-14-at-06.08.41-.png)I was always interested in accessibility, but I never had to comply with any guidelines before. [At W3C](http://lea.verou.me/2012/08/lea-at-w3-org/), accessibility is considered very important, so everything we make needs to pass [WCAG 2.0](http://www.w3.org/TR/WCAG/) AA level. Therefore, I found myself calculating color contrast ratios very frequently. It was a very enlightening experience. I used to think that WCAG-mandated contrast ratios were too restrictive and basically tried to force you to use black and white, a sentiment shared by many designers I’ve spoken to. Surprisingly, in practice, I found that in most cases they are very reasonable: When a color combination doesn’t pass WCAG, it usually \*is\* hard to read. After all, the possible range for a contrast ratio is 1-21 but only ratios lower than 3 don’t pass WCAG AA (4.5 if you have smaller, non-bold text). So, effectively 90% of combinations will pass (82.5% for smaller, non-bold text).

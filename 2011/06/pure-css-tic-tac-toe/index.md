@@ -1,11 +1,11 @@
 ---
 title: "Pure CSS Tic Tac Toe"
 date: "2011-06-17"
-categories: 
+categories:
   - "original"
-tags: 
-  - "css3"
-  - "css3-selectors"
+tags:
+  - "css"
+  - "selectors"
   - "indeterminate"
 ---
 
@@ -24,6 +24,6 @@ A <table> would be much more appropriate for the markup, but I decided to sacrif
 
 All modern browsers support the indeterminate state in checkboxes (for Opera you will need the latest Opera.Next), however **this demo doesn't work on old Webkit (Chrome and Safari) because of an old bug** that made the sibling combinators (+ and ~) static in some cases which has been fixed in the nightlies. **It should work in Firefox, Opera.next, Webkit nightlies and IE9, although I haven't tested in Opera.next and IE9 to verify.**
 
-Enjoy: 
+Enjoy:
 
 <iframe style="width: 100%; height: 350px" src="http://jsfiddle.net/leaverou/5X5Tq/embedded/result,css,html,js"></iframe>

@@ -1,11 +1,11 @@
 ---
 title: "Beveled corners & negative border-radius with CSS3 gradients"
 date: "2011-03-14"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
-  - "css3-gradients"
+tags:
+  - "css-images"
 ---
 
 Just found out how to do beveled corners and simulate negative border radius without images, by utilizing CSS gradients once again. It's amazing how many CSS problems can be solved with gradients alone. Read the text in the dabblet below to find out how (or just check the code):

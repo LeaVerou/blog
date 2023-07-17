@@ -6,10 +6,10 @@ categories:
   - "releases"
 tags:
   - "css"
-  - "web-almanac-2"
+  - "web-almanac"
 ---
 
-I've [posted before about my work for the Web Almanac](https://lea.verou.me/tag/web-almanac-2/) this year. To make it easier to calculate the stats about CSS selectors, we looked to use an existing selector parser, but most were too big and/or had dependencies or didn't account for all selectors we wanted to parse, and we'd need to write our own walk and specificity methods anyway. So I did what I usually do in these cases: I wrote my own!
+I've [posted before about my work for the Web Almanac](/tags/web-almanac/) this year. To make it easier to calculate the stats about CSS selectors, we looked to use an existing selector parser, but most were too big and/or had dependencies or didn't account for all selectors we wanted to parse, and we'd need to write our own walk and specificity methods anyway. So I did what I usually do in these cases: I wrote my own!
 
 You can find it [here](https://projects.verou.me/parsel/): [https://projects.verou.me/parsel/](https://projects.verou.me/parsel/)
 

@@ -1,12 +1,12 @@
 ---
 title: "Check whether a CSS property is supported"
 date: "2009-02-10"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "css-properties"
   - "feature-detection"
-  - "javascript"
+  - "js"
 ---
 
 Sometimes when using JavaScript, you need to determine whether a certain CSS property is supported by the current browser or not. For instance when setting opacity for an element, you need to find out whether the property that the browser supports is `opacity`, `-moz-opacity` (`MozOpacity`), `-khtml-opacity` (`KhtmlOpacity`) or the IE proprietary `filter`.

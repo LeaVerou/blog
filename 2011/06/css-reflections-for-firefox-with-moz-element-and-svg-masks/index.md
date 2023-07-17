@@ -1,17 +1,17 @@
 ---
 title: "CSS reflections for Firefox, with -moz-element() and SVG masks"
 date: "2011-06-29"
-categories: 
+categories:
   - "original"
-tags: 
-  - "css3"
-  - "css3-image-values"
+tags:
+  - "css"
+  - "css-images"
   - "svg"
 ---
 
 We all know about the proprietary (and imho, horrible) `-webkit-box-reflect.` However, you can create just as flexible reflections in Firefox as well, by utilizing [\-moz-element()](https://developer.mozilla.org/en/CSS/-moz-element), some CSS3 and Firefox's capability to apply [SVG effects to HTML elements](https://developer.mozilla.org/En/Applying_SVG_effects_to_HTML_content). And all these are actually standards, so eventually, this will work in all browsers, unlike `-webkit-box-reflect`, which was never accepted by the CSS WG.
 
-First and foremost, have a look at the [demo](http://lea.verou.me/demos/reflection/): 
+First and foremost, have a look at the [demo](http://lea.verou.me/demos/reflection/):
 
 <iframe src="http://lea.verou.me/demos/reflection/" width="100%" height="500px"></iframe>
 

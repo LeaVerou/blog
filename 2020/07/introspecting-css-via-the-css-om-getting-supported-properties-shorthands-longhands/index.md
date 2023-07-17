@@ -6,7 +6,7 @@ categories:
 tags:
   - "css"
   - "css-om"
-  - "javascript"
+  - "js"
   - "web-almanac"
 defaultLanguage: "js"
 ---

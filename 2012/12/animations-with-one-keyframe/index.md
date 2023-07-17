@@ -1,11 +1,11 @@
 ---
 title: "CSS Animations with only one keyframe"
 date: "2012-12-12"
-categories: 
+categories:
   - "tips"
-tags: 
-  - "css3"
-  - "css3-animations"
+tags:
+  - "css"
+  - "css-animations"
 ---
 
 This is a very quick tip, about a pet peeve of mine in almost every CSS animation I see. As you may know, I’m a sucker for reducing the amount of code (as long as it remains human readable of course). I demonstrated a very similar example in my “CSS in the 4th dimension” talk, but I recently realized I never blogged about it (or seen anyone else do so).

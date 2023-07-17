@@ -6,7 +6,7 @@ categories:
   - "releases"
 tags:
   - "colors"
-  - "css3-colors"
+  - "css-color"
 ---
 
 I’ve been interested in digital color for a long time, and this year I decided to risk giving a technical talk about color some of the conferences I’m speaking at. “Why is that risky?” you might ask. Well, it might end up being really interesting, or it may end up alienating both designers because it’s too technical and developers because it’s about a “designery” topic.

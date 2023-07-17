@@ -6,7 +6,7 @@ categories:
   - "thoughts"
 tags:
   - "html"
-  - "javascript"
+  - "js"
   - "ui"
   - "web-components"
 ---

@@ -4,7 +4,7 @@ date: "2018-12-14"
 categories:
   - "articles"
 tags:
-  - "javascript"
+  - "js"
 ---
 
 Today for a bit of code I was writing, I needed to be able to distinguish "x is not defined" `ReferenceError`s from any other error within a `try...catch` block and handle them differently.

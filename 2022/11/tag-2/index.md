@@ -1,10 +1,10 @@
 ---
 title: "Position Statement for the 2022 W3C TAG Election"
 date: "2022-11-07"
-categories: 
+categories:
   - "personal"
-tags: 
-  - "standards"
+tags:
+  - "web-standards"
   - "w3c"
 ---
 

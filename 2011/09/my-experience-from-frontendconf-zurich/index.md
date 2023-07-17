@@ -5,7 +5,7 @@ categories:
   - "personal"
   - "speaking"
 tags:
-  - "css3"
+  - "css"
 ---
 
 I'm writing this blog post while eating some of the amazing Lindt chocolates I got for free 10 days ago at [Frontend conference in Zurich](http://frontendconf.ch/). But it wasn't a good experience only because of them!

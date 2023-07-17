@@ -1,12 +1,12 @@
 ---
 title: "Easy Dynamic Regular Expressions with Tagged Template Literals and Proxies"
 date: "2018-06-04"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
-  - "es6"
-  - "javascript"
+tags:
+  - "es"
+  - "js"
 ---
 
 If you use regular expressions a lot, you probably also create them from existing strings that you first need to escape in case they contain special characters that need to be matched literally, like `$` or `+`. Usually, a helper function is defined (hopefully this will soon change as [RegExp.escape()](https://github.com/benjamingr/RegExp.escape/) is coming!) that basically looks like this:

@@ -7,7 +7,7 @@ tags:
   - "font-face"
   - "box-shadow"
   - "css-gradients"
-  - "css3"
+  - "css"
   - "iphone"
   - "media-queries"
   - "text-shadow"

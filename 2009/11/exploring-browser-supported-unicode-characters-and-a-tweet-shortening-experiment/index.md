@@ -1,11 +1,11 @@
 ---
 title: "Exploring browser-supported Unicode characters and a tweet shortening experiment"
 date: "2009-11-29"
-categories: 
+categories:
   - "articles"
   - "original"
-tags: 
-  - "javascript"
+tags:
+  - "js"
   - "ligatweet"
   - "twitter"
   - "unicode"

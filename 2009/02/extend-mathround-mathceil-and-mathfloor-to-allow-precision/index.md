@@ -1,10 +1,10 @@
 ---
 title: "Extend Math.round, Math.ceil and Math.floor to allow for precision"
 date: "2009-02-12"
-categories: 
+categories:
   - "original"
-tags: 
-  - "javascript"
+tags:
+  - "js"
   - "math"
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: "Quick & dirty way to run snippets of JavaScript anywhere"
 date: "2009-02-23"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "debugging"
-  - "javascript"
+  - "js"
 ---
 
 Ever wanted to run a snippet of JavaScript on a browser that doesn't support a console in order to debug something? (for instance, IE6, Opera etc)

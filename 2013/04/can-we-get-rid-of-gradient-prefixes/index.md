@@ -1,12 +1,12 @@
 ---
 title: "Can we get rid of gradient prefixes?"
 date: "2013-04-07"
-categories: 
+categories:
   - "news"
-tags: 
+tags:
   - "css"
   - "css-gradients"
-  - "css3"
+  - "css"
 ---
 
 I recently realized that unprefixed gradients finally propagated to stable Chrome, and after [tweeting about it](https://twitter.com/LeaVerou/status/320365600998305792), I decided to do some research on which browsers support unprefixed gradients, and what percentage of users needs them.

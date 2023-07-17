@@ -1,11 +1,11 @@
 ---
 title: "Yet another redesign"
 date: "2011-01-05"
-categories: 
+categories:
   - "personal"
   - "rants"
-tags: 
-  - "leaverou-me"
+tags:
+  - "meta"
 ---
 
 I had grown sick of my previous blog style and its various bugs (since it was put together in just a few hours), so I decided to make a new, more minimalistic one. Best viewed in browsers that support CSS gradients, like Firefox, Safari and Chrome. I also finally got around to making a logo for myself, although I'm not sure I'll keep it. I also switched to HTML5, using [Toolbox](http://wordpress.org/extend/themes/toolbox) as a base.

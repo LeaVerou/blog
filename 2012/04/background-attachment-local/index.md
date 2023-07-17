@@ -6,7 +6,7 @@ categories:
 tags:
   - "background-attachment"
   - "backgrounds-and-borders"
-  - "css3"
+  - "css"
 ---
 
 A few days ago, the incredibly talented [Roman Komarov](https://twitter.com/kizmarh) posted an experiment of his with [pure CSS "scrolling shadows"](http://kizu.ru/en/fun/shadowscroll/). If you’re using Google Reader, you are probably familiar with the effect:

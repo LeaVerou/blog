@@ -1,10 +1,10 @@
 ---
 title: "Advocacy of JavaScript"
 date: "2009-03-30"
-categories: 
+categories:
   - "rants"
-tags: 
-  - "javascript"
+tags:
+  - "js"
 ---
 
 I frequently meet these "hardcore" developers that deep (or not so deep) inside them, tend to underestimate JavaScript developers and boast about their own superiority. I'm sure that if you spent an important percentage of your career working with JavaScript and are even barely social, you definitely know what I'm talking about. It's those desktop application programmers or these back-end developers that tend to consider JavaScript a toy, and try to convince you to engage in "more serious stuff" (if they appreciate you even a little; if they don't they just mock you endlessly and/or look down on you).

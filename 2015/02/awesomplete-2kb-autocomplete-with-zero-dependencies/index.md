@@ -6,7 +6,7 @@ categories:
 tags:
   - "autocomplete"
   - "awesomplete"
-  - "javascript"
+  - "js"
   - "typeahead"
 ---
 

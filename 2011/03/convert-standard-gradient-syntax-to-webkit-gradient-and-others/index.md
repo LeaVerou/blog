@@ -5,7 +5,7 @@ categories:
   - "original"
 tags:
   - "css-gradients"
-  - "javascript"
+  - "js"
 ---
 
 ![Screenshot of the demo](images/cssgradientsplease-screenshot-300x148.png "cssgradientsplease - screenshot")I hate `-webkit-gradient()` with a passion. Its syntax is cumbersome and it's really limited: No angle support, no <length>s in color stop positions, no implied color stop positions, no elliptical gradients... So, I was really happy, when Webkit implemented the standard syntax this January. However, we're still stuck with the horrid `-webkit-gradient()` for quite a while, since older Webkit browsers that don't support it are widely used at this time.

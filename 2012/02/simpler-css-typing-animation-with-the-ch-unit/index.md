@@ -1,12 +1,12 @@
 ---
 title: "Simpler CSS typing animation, with the ch unit"
 date: "2012-02-05"
-categories: 
+categories:
   - "tips"
-tags: 
-  - "css3"
-  - "css3-animations"
-  - "css3-values"
+tags:
+  - "css"
+  - "css-animations"
+  - "css-values"
 ---
 
 A while ago, [I posted](http://lea.verou.me/2011/09/pure-css3-typing-animation-with-steps/) about how to use `steps()` as an easing function to create a typing animation that degrades gracefully.

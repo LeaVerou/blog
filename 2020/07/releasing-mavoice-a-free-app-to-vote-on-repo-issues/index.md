@@ -8,7 +8,7 @@ tags:
   - "css"
   - "github"
   - "mavo"
-  - "web-almanac-2"
+  - "web-almanac"
 ---
 
 First off, some news: [I agreed to be this year's CSS content lead for the Web Almanac](https://github.com/HTTPArchive/almanac.httparchive.org/issues/898)! One of the first things to do is to flesh out what statistics we should study to answer the question _“What is the state of CSS in 2020?”_. You can see [last year's chapter](https://almanac.httparchive.org/en/2019/css) to get an idea of what kind of statistics could help answer that question.

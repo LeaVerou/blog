@@ -1,10 +1,10 @@
 ---
 title: "Position Statement for the 2020 W3C TAG Election"
 date: "2020-11-30"
-categories: 
+categories:
   - "personal"
-tags: 
-  - "standards"
+tags:
+  - "web-standards"
   - "w3c"
 ---
 
@@ -39,7 +39,7 @@ _I would like to thank [Open JS Foundation](https://openjsf.org/) and [Bocoup](h
 [Tantek Çelik](https://en.wikipedia.org/wiki/Tantek_%C3%87elik), Mozilla’s AC representative, longtime CSS WG member, and [creator of many popular technologies](https://en.wikipedia.org/wiki/Tantek_%C3%87elik):
 
 > I have had the privilege of working with Lea in the CSS Working Group, and in the broader web development community for many years. Lea is an expert in the practical real-world-web technologies of the W3C, how they fit together, has put them into practice, has helped contribute to their evolution, directly in specs and in working groups. She's also a passionate user & developer advocate, both of which I think are excellent for the TAG.
-> 
+>
 > [Source](https://lists.w3.org/Archives/Member/w3c-ac-forum/2021JanMar/0015.html): https://lists.w3.org/Archives/Member/w3c-ac-forum/2021JanMar/0015.html
 
 [Florian Rivoal](https://florian.rivoal.net/), CSS WG Invited Expert and editor of [several specifications](https://florian.rivoal.net/cv.html#publications), elected [W3C AB member](https://www.w3.org/2002/ab/), ex-Opera:
@@ -48,16 +48,16 @@ https://twitter.com/frivoal/status/1336857605063417856
 
 [Elika Etemad aka fantasai](http://fantasai.inkedblade.net/), prolific editor of dozens of W3C specifications, CSS WG member for over 16 years, and elected [W3C AB member](https://www.w3.org/2002/ab/):
 
-> One TPAC long ago, several members of the TAG on a recruiting spree went around asking people to run for the TAG. I personally turned them down for multiple reasons (including that I'm only a very poor substitute for David Baron), but it occurred to me recently that there was a candidate that they do  
+> One TPAC long ago, several members of the TAG on a recruiting spree went around asking people to run for the TAG. I personally turned them down for multiple reasons (including that I'm only a very poor substitute for David Baron), but it occurred to me recently that there was a candidate that they do
 > need: Lea Verou.
-> 
-> Lea is one of those elite developers whose technical expertise ranges across the entire Web platform. She doesn't just use HTML, CSS, JS, and SVG, she pushes the boundaries of what they're capable of. Meanwhile her authoring experience spans JS libraries to small site design to CSS+HTML print publications, giving her a personal appreciation of a wide variety of use cases.  
+>
+> Lea is one of those elite developers whose technical expertise ranges across the entire Web platform. She doesn't just use HTML, CSS, JS, and SVG, she pushes the boundaries of what they're capable of. Meanwhile her authoring experience spans JS libraries to small site design to CSS+HTML print publications, giving her a personal appreciation of a wide variety of use cases.
 > Unlike most other developers in her class, however, Lea also brings her experience working within W3C as a longtime member of the CSS Working Group.
-> 
+>
 > I've seen firsthand that she is capable of participating at the deep and excruciatingly detailed level that we operate here, and that her attention is not just on the feature at hand but also the system and its usability and coherence as a whole. She knows how the standards process works, how use cases and implementation constraints drive our design decisions, and how participation in the arcane discussions at W3C can make a real difference in the future usability of the Web.
-> 
+>
 > I'm recommending her for the TAG because she's able to bring a perspective that is needed and frequently missing from our technical discussions which so often revolve around implementers, and because elevating her to TAG would give her both the opportunity and the empowerment to bring that perspective to more of our Web technology development here at W3C and beyond.
-> 
+>
 > [Source](https://lists.w3.org/Archives/Member/w3c-ac-forum/2020OctDec/0055.html): https://lists.w3.org/Archives/Member/w3c-ac-forum/2020OctDec/0055.html
 
 [Bruce Lawson](https://www.brucelawson.co.uk/), Opera alumni, world renowned accessibility expert, speaker, author:
@@ -67,9 +67,9 @@ https://twitter.com/brucel/status/1336260046691438594
 Brian Kardell, AC representative for both Open JS Foundation and Igalia:
 
 > The OpenJS Foundation is very pleased to nominate and offer our support for Lea Verou to the W3C TAG. We believe that she brings a fresh perspective, diverse background and several kinds of insight that would be exceptionally useful in the TAG's work. 
-> 
+>
 > [Source](https://www.w3.org/2020/12/07-tag-nominations#lv): https://www.w3.org/2020/12/07-tag-nominations#lv
 
 > Lea Verou is another easy choice for me. Lea brings a really diverse background, set of perspectives and skills to the table. She's worked for the W3C, she's a great communicator to developers (this is definitely a great skill in TAG whose outreach is important), she's worked with small teams, produced a number of popular libraries and helped drive some interesting standards. The OpenJS Foundation was pleased to nominate her, but Frontiers and several others were also supportive. Lea also deserves "high marks".
-> 
+>
 > [Source](https://bkardell.com/blog/TAG-2021.html): https://bkardell.com/blog/TAG-2021.html

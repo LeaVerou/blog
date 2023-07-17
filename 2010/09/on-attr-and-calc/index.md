@@ -1,13 +1,13 @@
 ---
 title: "On attr() and calc()"
 date: "2010-09-11"
-categories: 
+categories:
   - "thoughts"
-tags: 
-  - "attr"
-  - "calc"
-  - "css3"
-  - "css3-values"
+tags:
+  - "attr()"
+  - "calc()"
+  - "css"
+  - "css-values"
 ---
 
 I recently posted my first suggestion to [www-style](http://lists.w3.org/Archives/Public/www-style/), the official W3 mailing list for CSS development. It was about [allowing attr() values inside calc()](http://lists.w3.org/Archives/Public/www-style/2010Sep/0019.html). In this post I'll describe in greater detail why I believe this is necessary, since not everyone follows www-style. If anyone has something to add in the discussion, you may post in the list, it's public.

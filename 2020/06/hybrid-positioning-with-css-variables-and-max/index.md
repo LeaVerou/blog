@@ -1,14 +1,14 @@
 ---
 title: "Hybrid positioning with CSS variables and max()"
 date: "2020-06-05"
-categories: 
+categories:
   - "tips"
   - "tutorials"
-tags: 
+tags:
   - "css"
   - "css-values"
   - "css-variables"
-  - "javascript"
+  - "js"
 ---
 
 Notice how the navigation on the left behaves wrt scrolling: It's like absolute at first that becomes fixed once the header scrolls out of the viewport.

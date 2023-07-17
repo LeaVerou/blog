@@ -6,7 +6,7 @@ categories:
 tags:
   - "html"
   - "html-libraries"
-  - "javascript"
+  - "js"
 ---
 
 [![Screen Shot 2016-08-26 at 17.09.24](images/Screen-Shot-2016-08-26-at-17.09.24-300x234.png)](images/Screen-Shot-2016-08-26-at-17.09.24.png)I have often lamented how many JavaScript developers don't realize that a large percentage of HTML & CSS authors are not comfortable writing JS, and struggle to use their libraries.

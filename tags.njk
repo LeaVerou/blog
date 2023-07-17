@@ -7,9 +7,8 @@ pagination:
 permalink: /blog/tags/{{ tag }}/
 override:tags: []
 eleventyComputed:
-  title: "Posts Tagged “{{ tag | format_tag }}”"
+  title: "{{ collections[ tag ].length | pluralize('post') }} on {{ tag | format_tag }}"
 ---
-
 
 {% set taglist = collections[ tag ] | reverse %}
 {% set post_style = "compact" if taglist.length > 10 %}

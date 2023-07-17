@@ -1,11 +1,11 @@
 ---
 title: "Accessible star rating widget with pure CSS"
 date: "2011-08-18"
-categories: 
+categories:
   - "original"
-tags: 
-  - "css3"
-  - "css3-selectors"
+tags:
+  - "css"
+  - "selectors"
 ---
 
 For ages, we couldn’t utilize the sibling combinators (`~` and `+`) to ease the pain of creating star rating widgets, because of [this stupid Webkit bug](http://css-tricks.com/8439-webkit-sibling-bug/). Nowadays, not only it’s fixed, but the fix has already propagated to Chrome and Safari 5.1. So, we can at least use the sibling combinator to make coloring the stars easier.

@@ -8,7 +8,7 @@ tags:
   - "dojo"
   - "domassistant"
   - "extjs"
-  - "javascript"
+  - "js"
   - "javascript-libraries"
   - "jquery"
   - "mootools"

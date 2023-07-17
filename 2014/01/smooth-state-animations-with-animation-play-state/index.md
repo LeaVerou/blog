@@ -5,7 +5,7 @@ categories:
   - "tips"
 tags:
   - "css"
-  - "css3-animations"
+  - "css-animations"
 ---
 
 When a CSS animation is applied from the beginning of the page load, things are easy. You just use the animation property with appropriate parameters, and you’re done. However, what if the animation is applied on a certain state, e.g. :hover, :active, :focus or a JS-triggered class change?

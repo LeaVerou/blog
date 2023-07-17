@@ -1,11 +1,11 @@
 ---
 title: "\"Appearances can be deceiving Mr. Anderson\" - a.k.a. short code is not always fast code"
 date: "2009-02-25"
-categories: 
+categories:
   - "articles"
   - "benchmarks"
-tags: 
-  - "javascript"
+tags:
+  - "js"
   - "jquery"
   - "performance"
   - "type-checks"

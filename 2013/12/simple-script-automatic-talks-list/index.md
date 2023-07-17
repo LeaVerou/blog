@@ -4,7 +4,7 @@ date: "2013-12-28"
 categories:
   - "speaking"
 tags:
-  - "javascript"
+  - "js"
   - "json"
   - "speaking"
 ---

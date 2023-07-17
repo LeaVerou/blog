@@ -1,12 +1,12 @@
 ---
 title: "Introducing Rety: live coding, without the stress"
 date: "2022-07-13"
-categories: 
+categories:
   - "releases"
   - "speaking"
-tags: 
-  - "conferences"
-  - "javascript"
+tags:
+  - "speaking"
+  - "js"
 ---
 
 I recently spoke at CSS Day in Amsterdam. It was only my second f2f talk after the pandemic. It went down really well, both in person, and recently that the video was released:

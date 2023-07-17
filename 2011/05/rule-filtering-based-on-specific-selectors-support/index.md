@@ -1,11 +1,11 @@
 ---
 title: "Rule filtering based on specific selector(s) support"
 date: "2011-05-02"
-categories: 
+categories:
   - "tips"
-tags: 
-  - "css3"
-  - "css3-selectors"
+tags:
+  - "css"
+  - "selectors"
 ---
 
 I've been using this trick for quite a while, but I never thought to blog about it. However, I recently realized that it might not be as common as I thought, so it might be a good idea to document it in a blog post.

@@ -5,7 +5,7 @@ categories:
   - "original"
   - "releases"
 tags:
-  - "css3-selectors"
+  - "selectors"
   - "educational"
   - "nth-child"
   - "nth-last-child"

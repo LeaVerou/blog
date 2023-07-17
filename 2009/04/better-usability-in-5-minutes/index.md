@@ -1,14 +1,14 @@
 ---
 title: "Better usability in 5 minutes"
 date: "2009-04-10"
-categories: 
+categories:
   - "articles"
   - "original"
-tags: 
+tags:
   - "css"
-  - "css3"
-  - "css3-selectors"
-  - "css3-transitions"
+  - "css"
+  - "selectors"
+  - "css-transitions"
   - "usability"
   - "webkit"
 ---

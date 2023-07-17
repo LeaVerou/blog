@@ -1,13 +1,13 @@
 ---
 title: "CSS3 border-radius, today"
 date: "2009-02-13"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "border-radius"
   - "css"
-  - "css3"
-  - "css3-properties"
+  - "css"
+  - "css-properties"
 ---
 
 This is the first one from a series of articles I'm going to write about _using CSS3 properties or values **today**_. I'll cover everything I have found out while using them, including various browser quirks and bugs I know of or have personally filed regarding them. In this part I'll discuss ways to create rounded corners without images and if possible without JavaScript in the most cross-browser fashion.
@@ -27,7 +27,7 @@ This is effectively a shorthand for:
 \-moz-border-radius-bottomleft: \[Number\]\[unit\];
 -moz-border-radius-bottomright: \[Number\]\[unit\];
 -moz-border-radius-topleft: \[Number\]\[unit\];
--moz-border-radius-topright: \[Number\]\[unit\]; 
+-moz-border-radius-topright: \[Number\]\[unit\];
 
 You don't need to specify all these properties though, even if you wan't different measures per corner, as `-moz-border-radius` functions as a regular CSS shorthand, allowing us to specify all 4 corners at once. It can be used in the following ways:
 
@@ -50,7 +50,7 @@ So, you have to specify all four properties (or less if you want some of them to
 \-webkit-border-top-left-radius
 -webkit-border-top-right-radius
 -webkit-border-bottom-left-radius
--webkit-border-bottom-right-radius 
+-webkit-border-bottom-right-radius
 
 **Caution:** If the dimensions of your element are not enough to accomodate the rounded corners, they will be square in Webkit-based browsers. Specify a `min-width`/`min-height` or enough padding to avoid this.
 

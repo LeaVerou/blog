@@ -1,10 +1,10 @@
 ---
 title: "A different approach to elastic textareas"
 date: "2009-11-13"
-categories: 
+categories:
   - "original"
-tags: 
-  - "javascript"
+tags:
+  - "js"
   - "usability"
 ---
 

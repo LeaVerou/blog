@@ -4,6 +4,8 @@ date: "2020-06-03"
 categories:
   - "news"
   - "personal"
+tags:
+  - "meta"
 ---
 
 It has been [almost a decade since this blog last saw a redesign](http://lea.verou.me/2011/01/yet-another-redesign/).

@@ -1,17 +1,16 @@
 ---
 title: "Organizing a university course on modern Web development"
 date: "2010-07-26"
-categories: 
+categories:
   - "articles"
   - "original"
   - "personal"
-tags: 
+tags:
   - "css"
-  - "css3"
   - "education"
-  - "es5"
+  - "js"
   - "html"
-  - "html5"
+  - "web-standards"
   - "svg"
   - "teaching"
   - "xpath"

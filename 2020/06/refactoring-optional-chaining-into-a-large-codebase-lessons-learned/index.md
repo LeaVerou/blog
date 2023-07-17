@@ -4,7 +4,7 @@ date: "2020-06-18"
 categories:
   - "articles"
 tags:
-  - "javascript"
+  - "js"
   - "refactoring"
 defaultLanguage: "js"
 ---

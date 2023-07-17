@@ -5,9 +5,9 @@ categories:
   - "original"
   - "releases"
 tags:
-  - "css3"
-  - "css3-animations"
-  - "css3-transitions"
+  - "css"
+  - "css-animations"
+  - "css-transitions"
 ---
 
 [![](images/Screen-shot-2011-10-30-at-08.54.38--300x187.png "Screen shot 2011-10-30 at 08.54.38")](images/Screen-shot-2011-10-30-at-08.54.38-.png)What kind of transitions can you create with only one property? This is what my new experiment, [animatable](http://leaverou.github.com/animatable/) aims to explore.

@@ -7,7 +7,7 @@ categories:
   - "releases"
 tags:
   - "colors"
-  - "css3"
+  - "css"
   - "php"
   - "rgba"
 ---

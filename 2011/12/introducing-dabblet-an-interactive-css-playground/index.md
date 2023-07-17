@@ -6,7 +6,7 @@ categories:
   - "releases"
 tags:
   - "css"
-  - "css3"
+  - "css"
   - "dabblet"
 ---
 

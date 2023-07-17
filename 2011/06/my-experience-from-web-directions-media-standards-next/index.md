@@ -4,9 +4,9 @@ date: "2011-06-01"
 categories:
   - "speaking"
 tags:
-  - "css3"
-  - "css3-gradients"
-  - "css3-patterns"
+  - "css"
+  - "css-images"
+  - "speaking"
 ---
 
 Last week, I was in London to give 2 talks. The first one was last Thursday, in one of the conferences I wanted to go ever since I learned my first CSS properties: [Web directions @media](http://atmedia11.webdirections.org/). The second one was 2 days later in a smaller event called [Standards.next](http://standards-next.org/).

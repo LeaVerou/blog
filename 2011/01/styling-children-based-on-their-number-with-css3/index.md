@@ -1,12 +1,12 @@
 ---
 title: "Styling elements based on sibling count"
 date: "2011-01-17"
-categories: 
+categories:
   - "replies"
   - "tips"
-tags: 
-  - "css3"
-  - "css3-selectors"
+tags:
+  - "css"
+  - "selectors"
 ---
 
 The [original idea belongs to André Luís](http://andr3.net/blog/post/142), but I think it could be improved to be much less verbose.
@@ -68,7 +68,7 @@ li:first-child:nth-last-child(4) ~ li {
 	width: 25%;
 }
 
-And here's a fiddle to prove it: 
+And here's a fiddle to prove it:
 
 <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/leaverou/HdfaT/embedded/result,css,html"></iframe>
 

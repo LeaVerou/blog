@@ -5,7 +5,7 @@ categories:
   - "speaking"
   - "thoughts"
 tags:
-  - "conferences"
+  - "speaking"
   - "speaking"
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: "Flexible Google-style loader with CSS"
 date: "2013-11-11"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "css"
-  - "css3-animations"
+  - "css-animations"
 ---
 
 So, for a while I had noticed the nice sutble loader Google apps use and I was wondering if it would be easy to make with CSS and CSS animations: ![Google’s loader](https://maps.gstatic.com/tactile/omnibox/loading.gif)

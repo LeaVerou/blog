@@ -1,11 +1,11 @@
 ---
 title: "Pure CSS3 typing animation with steps()"
 date: "2011-09-05"
-categories: 
+categories:
   - "original"
-tags: 
-  - "css3"
-  - "css3-animations"
+tags:
+  - "css"
+  - "css-animations"
 ---
 
 [steps()](http://dev.w3.org/csswg/css3-animations/#animation-timing-function) is a relatively new addition to the CSS3 animations module. Instead of interpolating the values smoothly, it allows us to define the number of "frames" precisely. So I used it to create headers that have the well-known animated "typing effect":

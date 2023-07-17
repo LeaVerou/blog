@@ -6,7 +6,7 @@ categories:
   - "tips"
 tags:
   - "internet-explorer-bugs"
-  - "javascript"
+  - "js"
   - "usability"
 ---
 

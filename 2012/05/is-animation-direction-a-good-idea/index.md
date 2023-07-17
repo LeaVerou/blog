@@ -4,9 +4,9 @@ date: "2012-05-06"
 categories:
   - "news"
 tags:
-  - "css3-animations"
+  - "css-animations"
   - "poll"
-  - "standards"
+  - "web-standards"
 ---
 
 ## ¿animation-direction?

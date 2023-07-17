@@ -5,8 +5,7 @@ categories:
   - "tutorials"
 tags:
   - "accessors"
-  - "ecmascript"
-  - "javascript"
+  - "es"
   - "js"
   - "js-patterns"
 defaultLanguage: "js"

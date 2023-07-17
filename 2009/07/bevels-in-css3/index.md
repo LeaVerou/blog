@@ -6,8 +6,8 @@ categories:
   - "tips"
 tags:
   - "box-shadow"
-  - "css3"
-  - "css3-properties"
+  - "css"
+  - "css-properties"
 ---
 
 Yeah, yeah I know, bevels are soooo 1996. And I agree. However, it's always good to know the capabilities of your tools. Talented designers will know when it's suitable to use a certain effect and incapable ones will abuse whatever is given to them, so after a lot of thought, I decided to blog about my discovery.

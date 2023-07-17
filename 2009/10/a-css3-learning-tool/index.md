@@ -1,12 +1,12 @@
 ---
 title: "A CSS3 learning(?) tool"
 date: "2009-10-08"
-categories: 
+categories:
   - "releases"
   - "replies"
-tags: 
-  - "css3"
-  - "css3-properties"
+tags:
+  - "css"
+  - "css-properties"
 ---
 
 In case anyone is interested, [this is my take](http://lea.verou.me/scripts/css3learn.html) on the ["challenge" that Brad Neuberg posted today on Ajaxian](http://ajaxian.com/archives/interactive-css-3-generator). It needs more properties, but it's very easy to extend. I guess I should also add CSS3 values (RGBA/HSL(A) colors, CSS gradients etc) but oh well, I'm currently in a hurry. I will, if anyone actually finds it useful (?).

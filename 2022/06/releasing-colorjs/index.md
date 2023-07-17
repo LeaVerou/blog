@@ -5,16 +5,15 @@ categories:
   - "original"
   - "releases"
 tags:
-  - "color"
+  - "colors"
   - "color-api"
   - "color-science"
   - "colors"
   - "css-color-4"
   - "css-color-5"
   - "esm"
-  - "javascript"
   - "js"
-  - "standards"
+  - "web-standards"
 ---
 
 ![](images/image-2.png)

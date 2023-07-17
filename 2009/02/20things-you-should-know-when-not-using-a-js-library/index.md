@@ -1,12 +1,12 @@
 ---
 title: "20 things you should know when not using a JS library"
 date: "2009-02-22"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "browsers"
   - "feature-detection"
-  - "javascript"
+  - "js"
   - "javascript-libraries"
 ---
 
@@ -46,11 +46,11 @@ John Resig (of the jQuery fame), recently [posted a great presentation](http://e
 ### Type detection
 
 1. The `typeof` operator is almost useless:
-    
+
     - `typeof null == 'object'`
     - `typeof new String('foo') == 'object'`
     - `typeof [] == 'object'`
-    
+
     [Use Object.prototype.toString instead](http://thinkweb2.com/projects/prototype/instanceof-considered-harmful-or-how-to-write-a-robust-isarray/).
 
 ### CSS

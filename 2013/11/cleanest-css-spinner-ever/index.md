@@ -1,11 +1,11 @@
 ---
 title: "Cleanest CSS spinner, ever"
 date: "2013-11-29"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "css"
-  - "css3-animations"
+  - "css-animations"
 ---
 
 For some reason, I seem to have a fascination with CSS loaders these days. After [recreating the Google loader with clean CSS](http://lea.verou.me/2013/11/flexible-google-style-loader-with-css/) recently, I set off to recreate the classic spinner with CSS. Yes, I know this has been done zillions of times, but I wanted a clean, maintainable, reusable solution, not just a proof of concept. Something with not tons of CSS and/or HTML elements.

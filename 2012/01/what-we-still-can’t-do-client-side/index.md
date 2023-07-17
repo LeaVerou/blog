@@ -1,11 +1,11 @@
 ---
 title: "What we still can’t do client-side"
 date: "2012-01-09"
-categories: 
+categories:
   - "rants"
-tags: 
+tags:
   - "apis"
-  - "standards"
+  - "web-standards"
 ---
 
 With the rise of all these APIs and the browser race to implement them, you'd think that currently we can do pretty much everything in JavaScript and even if we currently can't due to browser support issues, we will once the specs are implemented. Unfortunately, that's not true. There are still things we can't do, and there's no specification to address them at the time of this writing and no way to do them with the APIs we already have (or if there is a way, it's unreasonably complicated).

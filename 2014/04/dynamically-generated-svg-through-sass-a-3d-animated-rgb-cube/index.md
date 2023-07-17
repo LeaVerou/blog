@@ -8,7 +8,7 @@ tags:
   - "css"
   - "css-3d-transforms"
   - "css-animations"
-  - "css3"
+  - "css"
   - "sass"
   - "svg"
 ---

@@ -1,12 +1,12 @@
 ---
 title: "Cross browser, imageless linear gradients"
 date: "2009-03-20"
-categories: 
+categories:
   - "original"
-tags: 
+tags:
   - "canvas"
   - "gradient"
-  - "javascript"
+  - "js"
 ---
 
 I have to write a color picker in the near future and I wanted it to have those little gradients on top of the sliders that show you the effect that a slider change will have on the selected color. Consequently, I needed to create imageless gradients, in order to easily change them. My very first thought was creating many div or span elements in order to show the gradient. I rejected it almost instantly, for ovbious reasons (\*cough\* performance \*cough\*). My second thought was SVG for the proper browsers, and gradient filters for IE. As it turned out, [inline SVG was too much of a hassle](http://wiki.svg.org/Inline_SVG) and I didn't want to use Data URIs. My final thought was canvas for the proper browsers and gradient filters for IE.

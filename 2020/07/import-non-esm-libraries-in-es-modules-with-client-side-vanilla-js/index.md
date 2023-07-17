@@ -5,7 +5,7 @@ categories:
   - "tips"
 tags:
   - "esm"
-  - "javascript"
+  - "js"
 defaultLanguage: "js"
 ---
 

@@ -1,17 +1,17 @@
 ---
 title: "CSS3 colors, today (MediaCampAthens session)"
 date: "2009-03-15"
-categories: 
+categories:
   - "news"
   - "personal"
-tags: 
+tags:
   - "cmyk"
   - "colors"
-  - "css3"
-  - "css3-values"
+  - "css"
+  - "css-values"
   - "feature-detection"
   - "hsla"
-  - "javascript"
+  - "js"
   - "php"
   - "rgba"
 ---

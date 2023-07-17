@@ -1,11 +1,11 @@
 ---
 title: "Vendor prefixes, the CSS WG and me"
 date: "2012-02-09"
-categories: 
+categories:
   - "personal"
-tags: 
+tags:
   - "css"
-  - "standards"
+  - "web-standards"
 ---
 
 The CSS Working Group is recently discussing the very serious problem that vendor prefixes have become. We have reached a point where **browsers are seriously considering to implement -webkit- prefixes**, just because authors won't bother using anything else. **This is just sad.** :( [Daniel Glazman](http://www.glazman.org/weblog/dotclear/index.php?post/2012/02/09/CALL-FOR-ACTION:-THE-OPEN-WEB-NEEDS-YOU-NOW), [Christian Heilmann](http://christianheilmann.com/2012/02/09/now-vendor-prefixes-have-become-a-problem-want-to-help-fix-it/) and others wrote about it, making very good points and hoping that authors will wake up and start behaving. If you haven't already, visit those links and read what they are saying. I'm not very optimistic about it, but I'll do whatever I can to support their efforts.

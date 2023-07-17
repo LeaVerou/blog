@@ -6,8 +6,8 @@ categories:
   - "original"
 tags:
   - "colors"
-  - "css3"
-  - "css3-values"
+  - "css"
+  - "css-values"
   - "php"
   - "rgba"
 ---

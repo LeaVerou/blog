@@ -5,7 +5,7 @@ categories:
   - "replies"
   - "tips"
 tags:
-  - "standards"
+  - "web-standards"
   - "svg"
 ---
 

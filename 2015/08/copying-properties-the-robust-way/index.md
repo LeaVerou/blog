@@ -1,10 +1,10 @@
 ---
 title: "Copying object properties, the robust way"
 date: "2015-08-16"
-categories: 
+categories:
   - "tips"
-tags: 
-  - "javascript"
+tags:
+  - "js"
 ---
 
 If, like me, you try to [avoid using heavy libraries when not needed](http://lea.verou.me/2015/04/jquery-considered-harmful/), you must have definitely written a helper to copy properties from one object to another at some point. It’s needed so often that it’s just silly to write the same loops over and over again.

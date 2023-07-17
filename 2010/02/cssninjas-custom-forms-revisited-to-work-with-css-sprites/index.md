@@ -1,10 +1,10 @@
 ---
 title: "CSSNinja's custom forms revisited to work with CSS sprites"
 date: "2010-02-19"
-categories: 
+categories:
   - "replies"
-tags: 
-  - "css3-selectors"
+tags:
+  - "selectors"
 ---
 
 I read today [CSS Ninja](http://www.thecssninja.com/)'s (Ryan Sheddon's) [brilliant new technique about the creation of custom checkboxes and radio buttons with CSS alone](http://www.thecssninja.com/css/custom-inputs-using-css).

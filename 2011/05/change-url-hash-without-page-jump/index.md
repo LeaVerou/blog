@@ -1,13 +1,13 @@
 ---
 title: "Change URL hash without page jump"
 date: "2011-05-13"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
+tags:
   - "history-api"
   - "html5"
-  - "javascript"
+  - "js"
 ---
 
 In modern complex layouts, sometimes the point where a hash will transport you to will be entirely different than the one you actually wanted. If you prevent the default event, you will save yourself from the page jump, but the hash won't change either. You can accept the regular behavior and change scrollTop after the jump, but the user will still see a distracting flicker. [Chris Coyier](http://css-tricks.com/) found [a great workaround](http://css-tricks.com/hash-tag-links-padding/) last year but it's not meant for every case.

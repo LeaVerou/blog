@@ -12,7 +12,7 @@ tags:
   - "css-color-5"
   - "csswg"
   - "lch"
-  - "specs"
+  - "web-standards"
 ---
 
 I was always interested in color science. In 2014, I gave a talk about CSS Color 4 at various conferences around the world called _["The Chroma Zone"](https://www.youtube.com/results?search_query=the+chroma+zone+lea+verou&page=&utm_source=opensearch)_. Even before that, in 2009, I wrote a color picker that used a hidden Java applet to support ICC color profiles to do CMYK properly, a first on the Web at the time (to my knowledge). I never released it, but it sparked [this angry rant](http://lea.verou.me/2009/03/100-cyan-in-cmyk-is-not-rgb0255255/).

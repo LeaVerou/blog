@@ -1,13 +1,13 @@
 ---
 title: "Checkerboard pattern with CSS3"
 date: "2011-02-16"
-categories: 
+categories:
   - "original"
   - "tips"
-tags: 
-  - "css3"
-  - "css3-gradients"
-  - "css3-values"
+tags:
+  - "css"
+  - "css-images"
+  - "css-values"
   - "multiple-backgrounds"
   - "patterns"
 ---

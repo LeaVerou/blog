@@ -1,11 +1,11 @@
 ---
 title: "Reading cookies the regular expression way"
 date: "2009-12-03"
-categories: 
+categories:
   - "tips"
-tags: 
+tags:
   - "cookies"
-  - "javascript"
+  - "js"
   - "regular-expressions"
 ---
 

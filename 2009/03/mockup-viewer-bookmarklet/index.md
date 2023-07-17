@@ -6,7 +6,7 @@ categories:
   - "tips"
 tags:
   - "bookmarklets"
-  - "javascript"
+  - "js"
 ---
 
 I usually view mockups in a browser, so that the impression I get is as close as possible to reality (I learned this the hard way: A mockup that seemed great in the neutral and minimalistic environment of a picture viewer, ended up looking way too fancy when viewed in a browser, something that I realized after having worked for 6 months on the site). If you do the same, I'm sure you'll feel my pain: Every time I do that, I have to carefully scroll down just as much as to hide the margin that the browser adds, and left just as much as to center the image. Not to mention the click required to enlarge the image to full-size.

@@ -5,7 +5,7 @@ categories:
   - "personal"
   - "speaking"
 tags:
-  - "conferences"
+  - "speaking"
   - "speaking"
 ---
 

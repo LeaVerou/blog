@@ -1,11 +1,11 @@
 ---
 title: "Slanted tabs with CSS 3D transforms"
 date: "2013-10-18"
-categories: 
+categories:
   - "tips"
-tags: 
-  - "css3"
-  - "css3-transforms"
+tags:
+  - "css"
+  - "css-transforms"
 ---
 
 Not sure if I'm the first to come up with this idea, but I searched and didn’t find anything. So, for a long time, I was wondering if there's an easy way to create trapezoid shapes in CSS, especially with borders etc. Eventually, I realized that I could use a pseudo-element for the background and 3D rotate it, so that it appears like a trapezoid. Then [@krofdrakula](https://twitter.com/krofdrakula) suggested on twitter that I could even add border-radius so that it looks like a tab, so I added that as well:

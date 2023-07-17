@@ -5,8 +5,8 @@ categories:
   - "original"
   - "releases"
 tags:
-  - "css3"
-  - "css3-transitions"
+  - "css"
+  - "css-transitions"
   - "cubic-bezier"
   - "easing"
   - "html5"

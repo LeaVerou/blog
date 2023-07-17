@@ -1,11 +1,10 @@
 ---
 title: "Idea: Extending native DOM prototypes without collisions"
 date: "2015-04-20"
-categories: 
+categories:
   - "thoughts"
-tags: 
-  - "es5"
-  - "javascript"
+tags:
+  - "js"
 ---
 
 As I pointed out in [yesterday’s blog post](http://lea.verou.me/2015/04/jquery-considered-harmful/), one of the reasons why I don’t like using jQuery is its wrapper objects. For jQuery, this was a wise decision: Back in 2006 when it was first developed, IE releases had a pretty icky **memory leak bug** that could be easily triggered when one added properties to elements. Oh, and we also didn’t have access to element prototypes on IE back then, so we had to add these properties manually on every element. [Prototype.js](http://prototypejs.org/) attempted to go that route and the result was such a mess that they decided to change their decision in Prototype 2.0 and go with wrapper objects too. There were even [long essays being written back then about how much of a monumentally bad idea it was to extend DOM elements](http://perfectionkills.com/whats-wrong-with-extending-the-dom/).

@@ -1,10 +1,10 @@
 ---
 title: "Today's Javascript, from an outsider's perspective"
 date: "2020-05-25"
-categories: 
+categories:
   - "rants"
-tags: 
-  - "javascript"
+tags:
+  - "js"
   - "usability"
 ---
 
@@ -18,7 +18,7 @@ Note: N_ames of packages and people have been changed to protect their identity.
 
 **Lea:** Sure, Node seems appropriate for this!
 
-John _runs `npm install packageName --save` as recommended by the package's README_  
+John _runs `npm install packageName --save` as recommended by the package's README_
 John _runs `node index.js`_
 
 **Node:**
@@ -26,10 +26,10 @@ John _runs `node index.js`_
 Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
 SyntaxError: Cannot use import statement outside a module
 
-**John:** But I don't have a package.json…  
+**John:** But I don't have a package.json…
 **Lea:** Run `npm init`, it will generate it for you!
 
-_John runs `npm init`, goes through the wizard, adds `type: "module"`_ manually to the generated package.json.  
+_John runs `npm init`, goes through the wizard, adds `type: "module"`_ manually to the generated package.json.
 John _runs `node index.js`_
 
 **Node:**
@@ -40,7 +40,7 @@ Oddly, the error was thrown from an internal module of the project this time. WA
 
 **Lea:** Ok, screw this, just run it in a browser, it's an ES6 module and it's just a pure JS algorithm that doesn't use any Node APIs, it should work.
 
-John _makes a simple index.html with a `<script type="module" src="index.js">`_  
+John _makes a simple index.html with a `<script type="module" src="index.js">`_
 John _loads index.html in a browser_
 
 Nothing in the console. Nada. Crickets. 🦗
@@ -55,7 +55,7 @@ _John runs `npm install packageName --save` again_
 
 **John:** Oh yeah, there is a node\_modules now!
 
-John _desperately looks in `node_modules` to find the entry point_  
+John _desperately looks in `node_modules` to find the entry point_
 John _edits his index.js accordingly, reloads index.html_
 
 **Firefox:**
@@ -72,7 +72,7 @@ John _starts localhost_, visits his index.html under http://localhost:80
 
 Incorrect MIME type: text/html
 
-**John:** Sigh. Do I need to configure my localhost to serve JS files with a `text/javascript` MIME type?  
+**John:** Sigh. Do I need to configure my localhost to serve JS files with a `text/javascript` MIME type?
 **Lea:** What? No! It knows this. Um… look at the Networks tab, I suspect it can't find your module, so it's returning an HTML page for the 404, then it complains because the MIME type of the error page is not `text/javascript`.
 
 _Looks at node\_modules again, corrects path. Turns out VS Code collapses folders with only 1 subfolder, which is why we hadn't noticed_.
@@ -87,7 +87,7 @@ SyntaxError: missing ) after formal parameters
 
 _John clicks at line throwing the error_
 
-**Lea:** Oh my goodness. This is not Javascript, it's Typescript!! With a .js extension!!  
+**Lea:** Oh my goodness. This is not Javascript, it's Typescript!! With a .js extension!!
 **John:** I just wanted to run one line of code to test this algorithm… 😭😭😭
 
 _John gives up_. _Concludes never to touch Node, npm, or ES6 modules with a barge pole._

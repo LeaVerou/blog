@@ -1,14 +1,14 @@
 ---
 title: "Exploring CSS3 text-shadow"
 date: "2009-09-13"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "browser-bugs"
   - "browsers"
   - "chrome-bugs"
-  - "css3"
-  - "css3-properties"
+  - "css"
+  - "css-properties"
   - "experiments"
   - "opera-bugs"
   - "safari-bugs"

@@ -6,7 +6,7 @@ categories:
   - "releases"
 tags:
   - "bookmarklets"
-  - "javascript"
+  - "js"
 defaultLanguage: "js"
 ---
 
