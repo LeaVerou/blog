@@ -9,6 +9,7 @@ tags:
   - "js"
   - "js-patterns"
 defaultLanguage: "js"
+toc: true
 ---
 
 <figure>
@@ -30,7 +31,10 @@ Some examples of use cases:
 - An object literal with date information, and a `readable` property which formats the date, but can be overwritten with a custom human-readable format.
 - An object representing parts of a Github URL (e.g. username, repo, branch) with an `apiCall` property which can be either customized or generated from the parts _(this is actually the [example](https://github.com/mavoweb/mavo/pull/670#issuecomment-749585736) which prompted this blog post)_
 
-Ok, so now that I convinced you about the utility of this pattern, how do we implement it in JS? Our first attempt may look something like this:
+Ok, so now that I convinced you about the utility of this pattern, how do we implement it in JS?
+<!-- more -->
+
+Our first attempt may look something like this:
 
 ```
 let lea = {
