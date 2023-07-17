@@ -1,6 +1,7 @@
 ---
 title: "Dark mode in 5 minutes, with inverted lightness variables"
 date: "2021-03-30"
+page_css: true
 categories:
   - "articles"
   - "original"
@@ -115,21 +116,25 @@ footer {
 
 The result looks like this in light & dark mode:
 
-- ![](images/hsl-normal.png)
-
-- ![](images/hsl-dm.png)
-
-
-The light mode we designed and the auto-generated dark mode, side by side
+<figure>
+	<img src="images/hsl-normal.png" alt="">
+	<img src="images/hsl-dm.png" alt="">
+	<figcaption>
+	The light mode we designed and the auto-generated dark mode, side by side
+	</figcaption>
+</figure>
 
 Note that here we indiscriminately replaced all lightnesses with lightness variables. In reality, we don't need to be quite as sweeping. For example, the article titles would actually look better and would have better contrast if we just kept them the same:
 
-- ![](images/hsl-dm.png)
+<figure>
+	<img src="images/hsl-dm.png" alt="">
+	<img src="images/hsl-dm-exception.png" alt="">
+	<figcaption>
 
-- ![](images/hsl-dm-exception.png)
+	Comparison of dark mode with every lightness becoming a variable versus a more refined approach, where we make exceptions as needed (in this case the background and text colors for `article > h2`).
+	</figcaption>
+</figure>
 
-
-Comparison of dark mode with every lightness becoming a variable versus a more refined approach, where we make exceptions as needed (in this case the background and text colors for `article > h2`).
 
 These are decisions that are easy to make while you go through your CSS replacing lightness percentages with variables and previewing the result.
 
@@ -167,27 +172,36 @@ I used [this tool](https://css.land/lch/) to convert the existing HSL colors to 
 
 And here is a screenshot:
 
-- ![](images/lch-normal.png)
+<figure>
+	<img src="images/lch-normal.png" alt="">
+	<img src="images/lch-dm.png" alt="">
+	<figcaption>
+	Light mode and auto-generated dark mode via inverted lightness variables in LCH.
+	</figcaption>
+</figure>
 
-- ![](images/lch-dm.png)
-
-
-Light mode and auto-generated dark mode via inverted lightness variables in LCH.
 
 Not only does dark mode look a lot better, but even in light mode, our two alternate colors actually look more uniform since they have the same LCH lightness.
 
 Here is a comparison of the two dark modes:
 
-- ![](images/hsl-dm.png)
-
-- ![](images/lch-dm.png)
+<figure>
+	<img src="images/hsl-dm.png" alt="">
+	<img src="images/lch-dm.png" alt="">
+	<figcaption>
+	Light mode and auto-generated dark mode via inverted lightness variables in LCH.
+	</figcaption>
+</figure>
 
 
 Comparison of the two auto-generated dark modes, via HSL lightness on the left and LCH lightness on the right.
 
 Here you can see an animated comparison of them over each other:
 
-![](images/hsl-dm.png) ![](images/lch-dm.png)
+<figure class="image-comparison">
+	<img src="images/hsl-dm.png" alt="">
+	<img src="images/lch-dm.png" alt="">
+</figure>
 
 Note that in reality, until LCH colors are reliably supported everywhere you'd need to provide a fallback via `@supports`, but for brevity, I did not include one in this demo.
 

@@ -1,0 +1,50 @@
+.image-comparison {
+	display: grid;
+	grid-template-columns: auto;
+}
+
+	.image-comparison > img {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.image-comparison > img {
+		animation: slide 10s 1s both infinite linear;
+	}
+
+	.image-comparison > img + img {
+		animation-name: slide-flip;
+	}
+
+	@keyframes slide {
+		from {
+			clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+		}
+
+		40%, 50% {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+
+		90%, to {
+			clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+		}
+	}
+
+	@keyframes slide-flip {
+		from {
+			clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+		}
+
+		40%, 50% {
+			clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
+		}
+
+		50.1% {
+			clip-path: polygon(0% 0, 0% 0, 0% 100%, 0% 100%);
+		}
+
+		90%, to {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+	}
