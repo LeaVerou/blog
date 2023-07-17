@@ -19,23 +19,24 @@ body:
   - type: checkboxes
     id: is_regression
     attributes:
-      label: The problem does not exist in the previous site
+      label: Does this problem exist in the previous site as well?
       description: If the issue is present in the previous site as well, please file a [Broken Page]() report.
       options:
-        - label: I have verified that the issue is not present in the [previous site](https://lea0.verou.me).
+        - label: I have verified that the issue is **not** present in the [previous site](https://lea0.verou.me).
           required: true
   - type: dropdown
     id: issues
     attributes:
       label: What issues do you see?
+      description: Please select all that apply
       multiple: true
       options:
-        - Broken syntax highlighting
         - Broken image(s)
         - Broken embed(s)
-        - Broken figures
+        - Figure caption not styled as a caption
         - Broken styles
         - Broken URLs
+        - Broken syntax highlighting
         - Other
   - type: textarea
     id: details
