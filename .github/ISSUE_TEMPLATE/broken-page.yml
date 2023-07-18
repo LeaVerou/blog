@@ -1,5 +1,5 @@
-name: Page regression
-description: A page/blog post has a problem that it didn’t have on the previous website
+name: Broken page
+description: A page/blog post has a problem, and it’s not a regression from the previous website
 title: 'Page regression: '
 labels: page-regression
 body:
@@ -7,6 +7,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
+        Please note that this is **not** for reporting regressions from the previous website. For that, please use the [Page regression](/new?template=page-regression) template.
   - type: input
     id: url
     attributes:
@@ -15,14 +16,6 @@ body:
       placeholder: ex. https://lea.verou.me/blog/2020/12/writable-getters/
     validations:
       required: true
-  - type: checkboxes
-    id: is_regression
-    attributes:
-      label: Does this problem exist in the previous site as well?
-      description: If the issue is present in the previous site as well or not relevant to it, please file a [Broken Page](/new?template=broken-page) report instead.
-      options:
-        - label: I have verified that the issue is **not** present in the [previous site](https://lea0.verou.me).
-          required: true
   - type: dropdown
     id: issues
     attributes:
