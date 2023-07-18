@@ -19,7 +19,7 @@ Unsurprisingly, [most](https://twitter.com/heydonworks/status/154571340618711449
 That's what I thought too. I had contorted my component to generate labels and radios in the Shadow DOM from buttons in the light DOM, which resulted in awkward code and awkward CSS, but I felt I was fighting the good fight and doing the best thing for accessibility.
 
 All this was challenged when the actual accessibility expert, [Léonie Watson](https://twitter.com/LeonieWatson) chimed in. For those of you who don’t know her, [she is pretty much _the_ expert](https://tink.uk/about-leonie/) when it comes to web accessibility and standards. She is also visually impaired herself, giving her a firsthand experience many other a11y aficionados lack. Her recommendation was contrary to what most others were saying:
-
+<!-- more -->
 https://twitter.com/LeonieWatson/status/1545745436740313089
 
 She went on to make the point that if a design _looks_ like buttons, it should _act_ like buttons, otherwise there are mismatched expectations and poor UX for AT users:

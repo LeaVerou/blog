@@ -40,8 +40,8 @@ Note that with the code above, if no `--color` is set, the three declarations us
 ![](images/image.png)
 
 That's no good! IT's important that we set defaults. However, using the fallback parameter for this gets tedious, and [WET](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself):
-
-```
+<!-- more -->
+```css
 .fancy-button {
 	border: .1em solid var(--color, black);
 	background: transparent;

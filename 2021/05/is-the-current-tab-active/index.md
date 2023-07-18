@@ -21,7 +21,7 @@ The way the plugin worked was that every time the slide changed in the presenter
 And this, my friends, is how I ended up in this rabbit hole.
 
 _(Yes, there are other solutions to this particular problem. I could just always propagate regardless and have checks in place to avoid infinite loops. But that's beside the point.)_
-
+<!-- more -->
 ## What about the Visibility API?
 
 In most resources around the Web, people were rejoicing about how the [Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API) makes this problem trivial. "Just use `document.hidden`!" people would gleefully recommend to others.

@@ -37,7 +37,7 @@ Eventually a few days ago, I discovered that the [Color.js package we had publis
 How did this happen? Maybe it was the [HTTP 203 episode that mentioned it in passing](https://web.dev/shows/http-203/Uh95jZPTDfw/)? Regardless, it gave us hope that it's filling a very real need in the pretty crowded space of color manipulation libraries and it gave us a push to finally get it out there.
 
 So here we are, releasing [Color.js](https://colorjs.io) into the wild. So what's cool about it?
-
+<!-- more -->
 - Completely color space agnostic, each `Color` object just has a reference to a color space, a list of coordinates,, and optionally an alpha.
 - Supports a large variety of color spaces including all color spaces from [CSS Color 4](https://drafts.csswg.org/css-color-4/), as well as the unofficial [CSS Color HDR](https://drafts.csswg.org/css-color-hdr) draft.
 - Supports interpolation as defined in CSS Color 4

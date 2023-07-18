@@ -16,7 +16,7 @@ However, I have often come across cases where you actually need to "circumvent" 
 _If you’re already familiar with the problem and just want [the solution](#the-solution), [skip ahead](#the-solution). The next few paragraphs are for those thinking "but when would you ever need this?"_
 
 Sometimes, there are workarounds, and it's just a matter of keeping DRY. For example, take a look at this speech bubble:
-
+<!-- more -->
 <iframe id="cp_embed_dyvxGLo" src="//codepen.io/anon/embed/dyvxGLo?height=410&amp;theme-id=1&amp;slug-hash=dyvxGLo&amp;default-tab=result" height="410" scrolling="no" frameborder="0" allowfullscreen allowpaymentrequest="" name="CodePen Embed dyvxGLo" title="CodePen Embed dyvxGLo" class="cp_embed_iframe" style="width:100%;overflow:hidden">CodePen Embed Fallback</iframe>
 
 Note this in the CSS:

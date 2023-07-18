@@ -3,7 +3,7 @@ title: "Introducing Rety: live coding, without the stress"
 date: "2022-07-13"
 categories:
   - "releases"
-  - "speaking"
+  - "news"
 tags:
   - "speaking"
   - "js"
@@ -14,7 +14,7 @@ I recently spoke at CSS Day in Amsterdam. It was only my second f2f talk after t
 https://www.youtube.com/watch?v=ZuZizqDF4q8
 
 Here is a sample of tweets about it that made me particularly warm and fuzzy inside:
-
+<!-- more -->
 https://twitter.com/CSSDayConf/status/1542778793219301376
 
 https://twitter.com/jonpearse/status/1542490268322103296

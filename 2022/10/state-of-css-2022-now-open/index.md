@@ -10,13 +10,15 @@ tags:
   - "state-of-css"
 ---
 
-[Take State of CSS 2022 survey](https://survey.devographics.com/survey/state-of-css/2022?source=leaverou)
+<a href="https://survey.devographics.com/survey/state-of-css/2022?source=leaverou" class="call-to-action">Take State of CSS 2022 survey</a>
 
 A while ago I posted a [call for feedback to inform the design of the State of CSS 2022 survey](https://lea.verou.me/2022/07/help-design-the-state-of-css-survey-2022/). The response has been overwhelming and it was glorious. We got quite a lot of [proposals](https://github.com/Devographics/surveys/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc), [feedback](https://github.com/Devographics/surveys/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc), [votes](https://projects.verou.me/mavoice/?repo=devographics/surveys&labels=State%20of%20CSS%202022). But that also meant we had to make some tough decisions about what gets in the survey and what doesn’t, otherwise we'd end up with a survey so long nobody would want to finish it!
 
 In the end we [added questions about 15 new CSS features based on proposals in that repo, and decided against adding 9](https://github.com/orgs/Devographics/projects/1/views/1). Overall, there are 30 new CSS features the 2022 survey asks about. To make space for all of that, we also [removed a few](https://github.com/Devographics/surveys/issues/37) that were not really shining much light into what developers do anymore, and also [a couple others that were not actually about CSS](https://github.com/Devographics/surveys/issues/11).
 
 However, CSS features are not the only — or even the most important questions being asked.
+
+<!-- more -->
 
 Last year, some of the freeform questions about pain points were particularly useful to browser vendors for prioritizing implementation and standards work, and we expect this to be true this year as well. We put considerable effort into [redesigning these freeform questions to make them more intuitive](https://github.com/Devographics/surveys/issues/36), while maintaining their helpfulness for browser vendors:
 
