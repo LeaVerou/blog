@@ -43,7 +43,7 @@ Then, I displayed a list of these issues with:
 
 This would work, but the way it displays results is not very user friendly (e.g. _"#542 took 149627000 ms"_). We need to display the result in a more readable way.
 
-We can use the `[duration()](https://mavo.io/docs/functions/#duration)` function to display a readable duration such as "1 day":
+We can use the [`duration()`](https://mavo.io/docs/functions/#duration) function to display a readable duration such as "1 day":
 
 ```
 <div mv-multiple property="issue">
@@ -156,7 +156,7 @@ Show:
 
 ## Adding label autocomplete
 
-Since we now allow filtering by a custom label, wouldn't it be cool to allow autocomplete too? HTML allows us to offer autocomplete in our forms via `[<datalist>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)` and we can use Mavo to populate the contents!
+Since we now allow filtering by a custom label, wouldn't it be cool to allow autocomplete too? HTML allows us to offer autocomplete in our forms via [`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) and we can use Mavo to populate the contents!
 
 First, we add a `<datalist>` and link it with our custom label input, like so:
 
@@ -166,7 +166,7 @@ First, we add a `<datalist>` and link it with our custom label input, like so:
 </datalist>
 ```
 
-Currently, our suggestion list is empty. How do we populate it with the labels that have actually been used in this repo? Looking at the [API documentation](https://developer.github.com/v3/issues/#response-1), we see that each returned issue has a `labels` field with its labels as an object, and each of these objects has a `name` field with the textual label. This means that if we use `issue.labels.name` in Mavo outside of the issues collection, we get a list with **all** of these values, which we can then use to populate our `<datalist>` by passing it on to `[mv-value](https://mavo.io/docs/expressions/#mv-value)` which allows us to create dynamic collections:
+Currently, our suggestion list is empty. How do we populate it with the labels that have actually been used in this repo? Looking at the [API documentation](https://developer.github.com/v3/issues/#response-1), we see that each returned issue has a `labels` field with its labels as an object, and each of these objects has a `name` field with the textual label. This means that if we use `issue.labels.name` in Mavo outside of the issues collection, we get a list with **all** of these values, which we can then use to populate our `<datalist>` by passing it on to [`mv-value`](https://mavo.io/docs/expressions/#mv-value) which allows us to create dynamic collections:
 
 ```
 <label><input type="radio" name="labels" value="[customLabel]"> Label <input property="customLabel" list="label-suggestions"></label>
@@ -175,7 +175,7 @@ Currently, our suggestion list is empty. How do we populate it with the labels t
 </datalist>
 ```
 
-Note that we also used `[unique()](https://mavo.io/docs/functions/#unique)` to eliminate duplicates, since otherwise each label would appear as many times as it is used.
+Note that we also used [`unique()`](https://mavo.io/docs/functions/#unique) to eliminate duplicates, since otherwise each label would appear as many times as it is used.
 
 <p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="leaverou" data-slug-hash="QWLGWXV" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Issue Closing App - Tutorial Step 6"><span>See the Pen <a href="https://codepen.io/leaverou/pen/QWLGWXV/">Issue Closing App - Tutorial Step 6</a> by Lea Verou (<a href="https://codepen.io/leaverou">@leaverou</a>) on <a href="https://codepen.io">CodePen</a>.</span></p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>

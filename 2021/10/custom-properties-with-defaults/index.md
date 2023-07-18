@@ -75,7 +75,7 @@ However, this is not ideal for a number of reasons:
 - It means that people cannot take advantage of inheritance to set `--color` on an ancestor.
 - It means that people need to use specificity that overrides your own rules to set these properties. In this case this may only be `0,1,0`, but if your selectors are complex, it could end up being quite annoying (and introduce tight couplings, because developers should not need to know what your selectors are).
 
-If you insist going that route, `[:where()](https://developer.mozilla.org/en-US/docs/Web/CSS/:where)` can be a useful tool to reduce specificity of your selectors while having as fine grained selection criteria as you want. It's also one of the features [I proposed](https://github.com/w3c/csswg-drafts/issues/1170) for CSS, so I'm very proud that it's now [supported everywhere](https://caniuse.com/mdn-css_selectors_where). `:where()` won't solve the inheritance problem, but at least it will solve the specificity problem.
+If you insist going that route, [`:where()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:where) can be a useful tool to reduce specificity of your selectors while having as fine grained selection criteria as you want. It's also one of the features [I proposed](https://github.com/w3c/csswg-drafts/issues/1170) for CSS, so I'm very proud that it's now [supported everywhere](https://caniuse.com/mdn-css_selectors_where). `:where()` won't solve the inheritance problem, but at least it will solve the specificity problem.
 
 What if we still use the fallback parameter and use a variable for the fallback?
 

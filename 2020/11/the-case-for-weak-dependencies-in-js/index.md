@@ -51,7 +51,7 @@ Some examples besides the one in the first paragraph:
 - A testing framework that uses [Tippy](https://atomiks.github.io/tippyjs/) for nice informational popups, when it's available
 - A code editor that shows code size (in KB) if a library to measure that is included. Same editor can also show gzipped code size if a gzip library is included.
 - A UI library that uses a custom element if it's available or the closest native one when it's not (e.g. a fancy date picker vs `<input type="date">` ) when it isn't. Or [Awesomplete](https://projects.verou.me/awesomplete/) for autocomplete when it's available, and fall back to a simple `<datalist>` when it isn't.
-- Code that uses a date formatting library when one is already loaded, and falls back to `[Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)` when it's not.
+- Code that uses a date formatting library when one is already loaded, and falls back to [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) when it's not.
 
 This pattern can even be **combined with conditional loading**: e.g. we check for all known syntax highlighters and load Prism if none are present.
 

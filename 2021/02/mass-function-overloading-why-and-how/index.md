@@ -15,7 +15,7 @@ One of the things I've been doing for the past few months (on and off—more off
 
 Bliss is essentially a collection of helper functions. Most of these functions have a number of different [signatures](https://en.wikipedia.org/wiki/Type_signature#Method_signature), to allow for more compact, readable code. The functions can be used for single things (one element, one set of arguments) or they can operate _en masse_ (arrays of elements, object literals with multiple key-value pairs). As you might guess, this practice has been strongly inspired by the heavy use of [overloading](https://en.wikipedia.org/wiki/Function_overloading) in jQuery, which was one of the driving factors behind its huge success.
 
-For example, let's take `[$.style()](https://blissfuljs.com/docs.html#fn-style)`. It can be used to set a single CSS property, on a single element, being a rather thin abstraction over `element.style`:
+For example, let's take [`$.style()`](https://blissfuljs.com/docs.html#fn-style). It can be used to set a single CSS property, on a single element, being a rather thin abstraction over `element.style`:
 
 ```
 $.style(element, "top", rect.top);

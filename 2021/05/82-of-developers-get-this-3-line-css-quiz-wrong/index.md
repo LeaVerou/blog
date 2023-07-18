@@ -5,7 +5,7 @@ date: "2021-05-21"
 
 (_I always wanted to do a clickbait title like this and when this chance came along I could not pass it up. 😅 Sorry!_)
 
-While putting my ideas into slides for my [Dynamic CSS workshop](https://smashingconf.com/online-workshops/workshops/lea-verou) for next week, I was working on a slide explaining how the CSS wide keywords work with custom properties. `inherit`, `initial`, `unset` I had used numerous times and knew well. But what about `[revert](https://developer.mozilla.org/en-US/docs/Web/CSS/revert)`? How did that work? I had an idea, but quickly coded up a demo to try it out.
+While putting my ideas into slides for my [Dynamic CSS workshop](https://smashingconf.com/online-workshops/workshops/lea-verou) for next week, I was working on a slide explaining how the CSS wide keywords work with custom properties. `inherit`, `initial`, `unset` I had used numerous times and knew well. But what about [`revert`](https://developer.mozilla.org/en-US/docs/Web/CSS/revert)? How did that work? I had an idea, but quickly coded up a demo to try it out.
 
 The code was:
 

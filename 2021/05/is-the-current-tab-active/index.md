@@ -34,7 +34,7 @@ In my use case, given that both the projector view and presenter view would be v
 
 ## What about focus and blur events on window?
 
-The other solution that was heavily recommended was using the `[focus](https://developer.mozilla.org/en-US/docs/Web/API/Window/focus_event)` and `[blur](https://developer.mozilla.org/en-US/docs/Web/API/Window/blur_event)` events on `window`. This does get us partway there. Indeed, when the current tab _becomes_ active, the `focus` event fires. When another tab becomes active, the `blur` event fires.
+The other solution that was heavily recommended was using the [`focus`](https://developer.mozilla.org/en-US/docs/Web/API/Window/focus_event) and [`blur`](https://developer.mozilla.org/en-US/docs/Web/API/Window/blur_event) events on `window`. This does get us partway there. Indeed, when the current tab _becomes_ active, the `focus` event fires. When another tab becomes active, the `blur` event fires.
 
 Notice the emphasis on "becomes". **Events notify us about a state change, but they are no help for determining the _current state_.** If we get a `focus` or `blur` event, we know whether our tab is active or not, but if we don't get any, we simply don't know. A tab can start off as active or not, and there is no way to tell.
 
@@ -42,7 +42,7 @@ _How can a tab possibly start off as inactive_? One easy way to reproduce this i
 
 ## What about document.activeElement?
 
-The `[document.activeElement](https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement)` property will always return the currently focused element in a page. Can we use it to determine if a window currently has focus? Nope, cause that would be too easy.
+The [`document.activeElement`](https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement) property will always return the currently focused element in a page. Can we use it to determine if a window currently has focus? Nope, cause that would be too easy.
 
 Run `setTimeout(() => console.log(document.activeElement), 2000)` in the console and quickly switch windows. Return >2 seconds later and see what was logged. It's the `<body>` element!
 
@@ -50,7 +50,7 @@ Wait, maybe we can assume that if the currently focused element is a `<body>` el
 
 ## What about document.hasFocus()?
 
-When I discovered `[document.hasFocus()](https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus)` I thought that was the end of it. Surely, this is exactly what I need?!? [The spec](https://html.spec.whatwg.org/multipage/interaction.html#dom-document-hasfocus) made it sound so promising. I quickly switched to my [about:blank](about:blank) tab that I use for trying things out, and ran it in the console.
+When I discovered [`document.hasFocus()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus) I thought that was the end of it. Surely, this is exactly what I need?!? [The spec](https://html.spec.whatwg.org/multipage/interaction.html#dom-document-hasfocus) made it sound so promising. I quickly switched to my [about:blank](about:blank) tab that I use for trying things out, and ran it in the console.
 
 ```
 > document.hasFocus()

@@ -40,7 +40,7 @@ Jeremy criticized this practice from the aspect of backwards compatibility: when
 
 If components are designed in a way that requires JS, this excludes thousands of people from using them. And even for those who _can_ write JS, HTML is often easier: you don't see many people rolling their own sliders or using JS-based ones once `<input type="range">` became widely supported, right?
 
-Even when JS is unavoidable, it's not black and white. A well designed HTML element can reduce the amount and complexity of JS needed to a minimum. Think of the `[<dialog>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog)` element: it usually does require \*some\* JS, but it's usually rather simple JS. Similarly, the `<video>` element is perfectly usable just by writing HTML, and has a comprehensive JS API for anyone who wants to do fancy custom things.
+Even when JS is unavoidable, it's not black and white. A well designed HTML element can reduce the amount and complexity of JS needed to a minimum. Think of the [`<dialog>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) element: it usually does require \*some\* JS, but it's usually rather simple JS. Similarly, the `<video>` element is perfectly usable just by writing HTML, and has a comprehensive JS API for anyone who wants to do fancy custom things.
 
 The other day I was looking for a simple, dependency free, tabs component. You know, the canonical example of something that is easy to do with Web Components, the example 50% of tutorials mention. I didn't even care what it looked like, it was for a testing interface. I just wanted something that is small and works like a normal HTML element. Yet, it proved so hard I ended up writing my own!
 
@@ -53,7 +53,7 @@ But if not, and if I'm not alone in feeling this way, we need a directory of web
 - **Plug and play.** No dependencies, no setup beyond including one `<script>` tag. If a dependency is absolutely _needed_ (e.g. in a map component it doesn't make sense to draw your own maps), the component loads it automatically if it's not already loaded.
 - Syntax and API follows [**conventions established by built-in HTML elements**](https://www.smashingmagazine.com/2017/02/designing-html-apis/) and anything that _can_ be done without the component user writing JS, _is_ doable without JS, per [the W3C principle of least power](https://www.w3.org/2001/tag/doc/leastPower.html).
 - **Accessible by default** via sensible ARIA defaults, just like normal HTML elements.
-- **Themable** via `[::part()](https://developer.mozilla.org/en-US/docs/Web/CSS/::part)`, selective inheritance and custom properties. Very minimal style by default. Normal CSS properties should just "work" to the the extent possible.
+- **Themable** via [`::part()`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part), selective inheritance and custom properties. Very minimal style by default. Normal CSS properties should just "work" to the the extent possible.
 - **Only one component of a given type** in the directory, that is **flexible** and **extensible** and continuously iterated on and improved by the community. Not 30 different sliders and 15 different tabs that users have to wade through. No branding, no silos of "component libraries". Only elements that are designed as closely as possible to what a browser would implement in every way the current technology allows.
 
 I would be up for working on this if others feel the same way, since that is not a project for one person to tackle. _Who's with me?_
