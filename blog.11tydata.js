@@ -15,6 +15,9 @@ module.exports = {
 			else if (data.disqus !== false) {
 				return typeof data.disqus !== "string"? data.postUrlStem : data.disqus;
 			}
+		},
+		is_post: data => {
+			return data.tags.includes("blog");
 		}
 	}
 };
