@@ -1,10 +1,9 @@
 ---
-name: Idea
+name: Enhancement
 about: Suggest an idea for this project
-title: 'Idea: [Title]'
+title: 'Enhancement: [Title]'
 labels: enhancement
 assignees: ''
-
 ---
 
 
