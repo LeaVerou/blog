@@ -33,4 +33,4 @@ As you can see I’ll be wearing many hats, which is exactly what I love about t
 
 I'm honored to be a part of [W3C](http://w3.org) and I'm looking forward to helping out.
 
-<voice type="fangirl">I have to admit I’m also really looking forward to meeting Sir [Tim Berners-Lee](http://www.w3.org/People/all#timbl) in person! :D</voice>
+`<voice type="fangirl">`I have to admit I’m also really looking forward to meeting Sir [Tim Berners-Lee](http://www.w3.org/People/all#timbl) in person! :D`</voice>`

@@ -22,6 +22,7 @@ This can (and should) be done with JavaScript alone: if the user has it turned o
 
 This seems easy at first, even without a library (although, in this particular case, a library would greatly reduce the amount of code required, so much that I'm tempted to include a jQuery version as well):
 
+```js
 window.onload = function() {
 	var passwords = document.getElementsByTagName('input');
 	for(var i=0; i<passwords.length; i++) {
@@ -53,21 +54,22 @@ window.onload = function() {
 		}
 	}
 }
+```
 
 However, nothing is ever simple, when you also need to support our _beloved_ Internet Explorer. Most moderately experienced JavaScript developers have probably already understood what I'm talking about: The all time classic IE bug (still present in IE8...) in regards to setting an <input /> element's type attribute. You can only set it once, for elements that are not already in the DOM. After that, it becomes read-only, and any attempt to set it results in a "The command is not supported" error. And when I say "any" attempt I mean it:
 
-- element.setAttribute()
-- element.type
-- element.setAttributeNode()
-- element.removeAttribute() and then element.setAttribute()
-- element.cloneNode(), then one of the above, then replacing the node with the clone
+- `element.setAttribute()`
+- `element.type`
+- `element.setAttributeNode()`
+- `element.removeAttribute()` and then `element.setAttribute()`
+- `element.cloneNode()`, then one of the above, then replacing the node with the clone
 
 **everything** fails miserably.
 
 I've encountered this problem several times in the past as well, but I could always think of an alternative way to do what I wanted without having to work around it. In this case, I don't think there is one. So we're left with two possible scenarios:
 
 - Perform an easy test in the beginning to see whether this bug exists and proceed only if the browser isn't naughty. This could be done with the following:
-
+	```js
     var supportsChangingTypeAttribute = (function() {
     	var input = document.createElement('input');
     	try {
@@ -82,5 +84,6 @@ I've encountered this problem several times in the past as well, but I could alw
     if(supportsChangingTypeAttribute) {
     	// do stuff...
     }
+	```
 
 - Wrap the statement that IE chokes on in a try...catch construct and in the catch(e) {...} block create a new input element, copy **everything** (where everything is **at least**: attributes, properties, event handlers - both traditional ones **and** listeners) from the password field into it (except the type attribute of course!) and replace the original password field with it. After the first time, the text field could also be reused, to improve performance. If you have a shortage of trouble in your life, you may attempt it, I currently do not. :P It can be a **very** simple task for particular cases, but a generic solution that would work in any site (or even in most sites) seems a really daunting, tedious and downright boring task. I also hope there might be a better solution, that I haven't thought of. Any ideas?

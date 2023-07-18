@@ -24,7 +24,7 @@ One issue was that this centered the baseline of the text, so I tried to find a 
 
 In addition, this method has the following drawbacks I can think of:
 
-- Extra markup (namely 2 elements: <svg> and [<text>](http://www.w3.org/TR/SVG/text.html#TextElement))
+- Extra markup (namely 2 elements: `<svg>` and [`<text>`](http://www.w3.org/TR/SVG/text.html#TextElement))
 - If the text is more than one line, it won’t automatically wrap, you have to do it manually.
 - Some new-ish CSS text properties may not be applied. For example, text-shadow is applied in Chrome but not in Firefox, since technically, it’s still not a part of the SVG spec.
 - You need to duplicate the text color as a fill property, since SVG does not understand the color CSS property. No need to duplicate anything, just use `fill: currentColor;` ([thanks GreLI!](http://lea.verou.me/2013/03/easily-center-text-vertically-with-svg/#comment-841846526))

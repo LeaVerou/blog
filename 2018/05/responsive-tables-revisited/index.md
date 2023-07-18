@@ -11,7 +11,7 @@ categories:
 [Many people have explored responsive tables](https://css-tricks.com/responsive-data-tables/). The usual idea is turning the table into key-value pairs so that cells become rows and there are only 2 columns total, which fit in any screen. However, this means table headers need to now be repeated for every row. The current ways to do that are:
 
 - Duplicating content in CSS or via a data-\* attribute, using generated content to insert it before every row.
-- Using a definition list which naturally has duplicated <dt>s, displaying it as a table in larger screens.
+- Using a definition list which naturally has duplicated `<dt>`s, displaying it as a table in larger screens.
 
 A few techniques that go in an entirely different direction are:
 
@@ -21,7 +21,7 @@ A few techniques that go in an entirely different direction are:
 
 I think the key-value display is probably best because it works for any kind of table, and provides the same information. So I wondered, is there any way to create it without duplicating content either in the markup or in the CSS? After a bit of thinking, I came up with two ways, each with their own pros and cons.
 
-Both techniques are very similar: They set table elements to display: block; so that they behave like normal elements and duplicate the <thead> contents in two different ways:
+Both techniques are very similar: They set table elements to display: block; so that they behave like normal elements and duplicate the `<thead>` contents in two different ways:
 
 1. Using text-shadow and creating one shadow for each row
 2. Using the element() function to duplicate the entire thead, styles and all.
@@ -42,7 +42,7 @@ Each method has its own pros and cons, but the following pros and cons apply to 
 
 <iframe src="https://dabblet.com/gist/969a4aa9d53bf6893d72acd422b2e9a8" width="100%" height="500px"></iframe>
 
-### Using element() to copy the entire <thead> to other rows
+### Using element() to copy the entire `<thead>` to other rows
 
 - **Additional Cons:** `element()` is currently only supported in Firefox :(
 

@@ -78,10 +78,10 @@ var o = {};
 
 StronglyTyped.property('Element', o, 'foo', document.body);
 
-console.log(o.foo); // prints a representation of the <body> element
+console.log(o.foo); // prints a representation of the `<body>` element
 
 o.foo = document.head;
-console.log(o.foo); // prints a representation of the <head> element
+console.log(o.foo); // prints a representation of the `<head>` element
 
 o.foo = 5; // **TypeError: foo must be of type Element. 5 is not.**
 

@@ -14,7 +14,7 @@ tags:
 
 As you can see, the number of characters is hardcoded in the steps() function, but that's the only place. Everything else is totally flexible. Apart from the font: It has to be monospace, so that every character has the same width.
 
-Also, this particular way requires a solid background and an extra <span>. You can avoid these limitations by directly animating the width of the heading itself, but this requires a fixed target width hardcoded in the animation, so 2 things that need to be changed for every heading:
+Also, this particular way requires a solid background and an extra `<span>`. You can avoid these limitations by directly animating the width of the heading itself, but this requires a fixed target width hardcoded in the animation, so 2 things that need to be changed for every heading:
 
 <iframe style="width: 100%; height: 160px" src="http://jsfiddle.net/leaverou/y8kNx/embedded/result%2Ccss%2Chtml"></iframe>
 

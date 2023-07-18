@@ -21,7 +21,7 @@ One of the cool things about [Mavo](https://mavo.io) is how it enables one to qu
 
 To render the last 100 closed issues in the Mavo app, I first looked up [the appropriate API call in Github's API documentation](https://developer.github.com/v3/issues/#list-issues-for-a-repository), then used it in the `mv-source` attribute on the _Mavo root_, i.e. the element with `mv-app` that encompasses everything in my app:
 
-```
+```html
 <div mv-app="issueClosing"
      mv-source="https://api.github.com/repos/mavoweb/mavo/issues?state=closed&sort=updated&per_page=100"
      mv-mode="read">
@@ -31,7 +31,7 @@ To render the last 100 closed issues in the Mavo app, I first looked up [the app
 
 Then, I displayed a list of these issues with:
 
-```
+```html
 <div mv-multiple property="issue">
 	<a class="issue-number" href="https://github.com/mavoweb/mavo/issues/[number]" title="[title]" target="_blank">#[number]</a>
 	took [closed_at - created_at] ms
@@ -45,7 +45,7 @@ This would work, but the way it displays results is not very user friendly (e.g.
 
 We can use the [`duration()`](https://mavo.io/docs/functions/#duration) function to display a readable duration such as "1 day":
 
-```
+```html
 <div mv-multiple property="issue">
 	<a class="issue-number" href="https://github.com/mavoweb/mavo/issues/[number]" title="[title]" target="_blank">#[number]</a>
 	took [duration(closed_at - created_at)]
@@ -61,13 +61,13 @@ However, a list of issues is not very easy to process. What's the overall pictur
 
 First, we need to give our calculation a name, so we can refer to its value in expressions:
 
-```
+```html
 <span property="timeToClose">[duration(closed_at - created_at)]</span>
 ```
 
 However, as it currently stands, the value of this property is text (e.g. "1 day", "2 months" etc). We cannot compute averages and medians on text! We need the property value to be a number. We can hide the actual raw value in an attribute and use the nicely formatted value as the visible content of the element, like so (we use the `content` attribute here but you can use any, e.g. a `data-*` attribute would work just as well):
 
-```
+```html
 <span property="timeToClose" mv-attribute="content" content="[closed_at - created_at]">[duration(timeToClose)]</span>
 ```
 
@@ -75,13 +75,13 @@ _Note: There is_ [_a data formatting feature in the works_](https://github.com/m
 
 We can also add a class to color it red, green, or black depending on whether the time is longer than a month, shorter than a day, or in-between respectively:
 
-```
+```html
 <span property="timeToClose" mv-attribute="content" content="[closed_at - created_at]" class="[if(timeToClose > month(), 'long', if (timeToClose < day(), 'short'))]">[duration(timeToClose)]</span>
 ```
 
 Now, on to calculate our statistics! We take advantage of the fact that `timeToClose` outside the `issue` collection gives us **all** the times, so we can compute aggregates on them. Therefore, the stats we want to calculate are simply `average(timeToClose)`, `median(timeToClose)`, `min(timeToclose)`, and `max(timeToClose)`. We put all these in a definition list:
 
-```
+```html
 <dl>
 	<dt>Median</dt>
 	<dd>[duration(median(timeToClose))]</dd>
@@ -122,7 +122,7 @@ At some point I wondered: What would the issue closing times be if we only count
 
 For that, I added a series of radio buttons:
 
-```
+```html
 Show:
 <label><input type="radio" property="labels" name="labels" checked value=""> All</label>
 <label><input type="radio" name="labels" value="bug"> Bugs only</label>
@@ -135,7 +135,7 @@ Note that when turning radio buttons into a Mavo property you only use the `prop
 
 Then I became greedy: Why not also allow filtering by custom labels too? So I added another radio with an input:
 
-```
+```html
 Show:
 <label><input type="radio" property="labels" name="labels" checked value=""> All</label>
 <label><input type="radio" name="labels" value="bug"> Bugs only</label>
@@ -145,7 +145,7 @@ Show:
 
 Note that since this is a text field, when the last value is selected, we'd have the same problem as we did with the repo input: Every keystroke would fire a new request. We can solve this in the same way as we solved it for the `repo` property, by having an intermediate property and only setting `labels` when the form is actually submitted:
 
-```
+```html
 Show:
 <label><input type="radio" property="labelFilter" name="labels" checked value=""> All</label>
 <label><input type="radio" name="labels" value="bug"> Bugs only</label>
@@ -160,7 +160,7 @@ Since we now allow filtering by a custom label, wouldn't it be cool to allow aut
 
 First, we add a `<datalist>` and link it with our custom label input, like so:
 
-```
+```html
 <label><input type="radio" name="labels" value="[customLabel]"> Label <input property="customLabel" list="label-suggestions"></label>
 <datalist id="label-suggestions">
 </datalist>
@@ -168,7 +168,7 @@ First, we add a `<datalist>` and link it with our custom label input, like so:
 
 Currently, our suggestion list is empty. How do we populate it with the labels that have actually been used in this repo? Looking at the [API documentation](https://developer.github.com/v3/issues/#response-1), we see that each returned issue has a `labels` field with its labels as an object, and each of these objects has a `name` field with the textual label. This means that if we use `issue.labels.name` in Mavo outside of the issues collection, we get a list with **all** of these values, which we can then use to populate our `<datalist>` by passing it on to [`mv-value`](https://mavo.io/docs/expressions/#mv-value) which allows us to create dynamic collections:
 
-```
+```html
 <label><input type="radio" name="labels" value="[customLabel]"> Label <input property="customLabel" list="label-suggestions"></label>
 <datalist id="label-suggestions">
 	<option mv-multiple mv-value="unique(issue.labels.name)"></option>
@@ -184,7 +184,7 @@ Note that we also used [`unique()`](https://mavo.io/docs/functions/#unique) to e
 
 Now that we got the functionality down, we can be a little playful and add some visual flourish. How about a bar chart that summarizes the proportion of long vs short vs normal closing times? We start by setting the CSS variables we are going to need for our graphic, i.e. the number of issues in each category:
 
-```
+```html
 <summary style="--short: [count(timeToClose < day())]; --long: [count(timeToClose > month())]; --total: [count(issue)];">
 	Based on [count(issue)] most recently updated issues
 </summary>

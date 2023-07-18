@@ -12,22 +12,27 @@ tags:
 
 CSS Counters have a lot more potential than most web developers seem to think. The common use case consists of something like:
 
+```css
 somecontainer { counter-reset: foocount; }
 Ε { counter-increment: foocount; }
 Ε::before { content: counter(foocount) ". "; }
+```
 
 commonly used to add numbering to section headings or re-create an <ol>'s counters in order to style them (since browser support for ::marker is ridiculous).
 
 Have you ever thought of applying the counter to **different** elements than the ones being counted? This way we're able to count elements and display their total count somewhere with CSS alone! (and with the variety of selectors in CSS3, I see great potential here...). I'm referring to something like:
 
+```css
 ul { counter-reset:foo; }
 li { counter-increment:foo; }
 p::after { content:counter(foo); }
+```
 
 From my tests, this works flawlessly in Firefox, Safari, Opera and Chrome (I've only checked the latest stable though), **as long as the element that displays the count comes after the elements being counted (in the markup)**.
 
 Another underutilized aspect of CSS counters (well, far less underused than the above, but still) is how we can combine multiple in the same pseudoelement. For instance, to count rows and cells of a table and display the count inside each cell:
 
+```css
 table {
 	counter-reset:row;
 }
@@ -44,6 +49,7 @@ td {
 td::after {
 	content:counter(row, upper-alpha) counter(cell);
 }
+```
 
 Which displays counters like A1, A2, A3, B1, B2, B3, etc in the cells. When the content property is more properly implemented, you wouldn't even need the last rule.
 

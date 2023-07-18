@@ -67,7 +67,7 @@ To sum up, the course content ended up being (I'm listing client-side matters mo
             - How forms work, GET vs POST
             - Form controls, shared attributes
             - The various input types (+ the new ones HTML5 brings)
-            - Other form controls (buttons, <select> lists, textareas)
+            - Other form controls (buttons, `<select>` lists, textareas)
             - Basic form accessibility (labels & fieldsets)
         - Working with Multimedia (old methods, HTML5 video & audio elements, comparison)
     - XML and XPath, XQuery, XSLT

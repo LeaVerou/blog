@@ -15,15 +15,21 @@ tags:
 
 If you are following the current news on web development, you probably heard that the new Safari 4 has a great feature: It natively allows the user to select multiple files via a single input control, if you specify a value for the attribute `multiple`:
 
+```html
 <input type="file" multiple>
+```
 
 or, in XHTML:
 
+```html
 <input type="file" multiple="multiple" />
+```
 
 You might not know that [Opera supported multiple file uploads for a while now, based on the earlier Web Forms 2.0 standard](http://ajaxian.com/archives/input-typefile-multiple-now-in-a-real-browser#comment-271852) in a slightly different (and more flexible) format:
 
+```html
 <input type="file" min="1" max="9999″ />
+```
 
 ### Can we use those currently?
 
@@ -35,11 +41,13 @@ Sure we can, but we should provide fallbacks for the other browsers. Using these
 
 Opera supports accessing those `min` and `max` properties as properties of the element. So, it's quite trivial to check whether Opera-style multiple inputs are supported:
 
+```js
 var supportsMin = (function(){
 	var fi = document.createElement('input');
 	fi.type = 'file';
 	return fi.min === '' && fi.max === '';
 })();
+```
 
 #### Safari 4
 

@@ -23,8 +23,10 @@ tantek: Their demos are filled with -webkit-. You will see presentations
 
 When Tantek realized he had falsely accused me of this, [he corrected himself](http://krijnhoetmer.nl/irc-logs/css/20120207#l-1066) in the #css IRC room on w3.org:
 
+```
 \[17:27\] <tantek> (ASIDE: regarding using -webkit- prefix, clarification re: Lea Verou - she's advocated using \*both\* vendor prefixed properties (multiple vendors) and the unprefixed version after them. See her talk http://www.slideshare.net/LeaVerou/css3-a-practical-introduction-ft2010-talk from Front-Trends 2010 for example. An actual example of -webkit- \*only\* prefix examples (thus implied advocacy) is Google's http://slides.html5rocks.com/ , e.g.
 \[17:27\] <tantek> http://slides.html5rocks.com/#css-columns has three -webkit- property declarations starting with -webkit-column-count )
+```
 
 That's nice of him, and it does help. At least I had a link to give to people who kept asking me on twitter if I was really the prefix monster he made me out to be. :P The problem is that not many read the IRC logs, but many more read the www-style archives. Especially since, with all this buzz, many people were directed into reading this discussion by the above articles. I don't know how many people will be misled by Tantek's uninformed comment without reading his correction, but I know for sure that the number is non-zero. And the worst of all is that many of them are people in the CSSWG or in the W3C in general,  people who I have great respect and admiration for. And quite frankly, that sucks.
 

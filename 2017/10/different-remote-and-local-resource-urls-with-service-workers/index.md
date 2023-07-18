@@ -66,8 +66,7 @@ This worked but I had to remember to run `gulp watch` every time I started work
 
 In April, after being fed up with having to deal with this problem for over a decade, I posted [a tweet](https://twitter.com/LeaVerou/status/857030863292436480):
 
-<blockquote class="twitter-tweet" data-lang="en"><p dir="ltr" lang="en">Bane of my existence: I want ../foo/bar.js on localhost and a diff URL when remotely. How do you deal? I use gulp to copy, but I hate it.</p>— Lea Verou (@LeaVerou) <a href="https://twitter.com/LeaVerou/status/857030863292436480?ref_src=twsrc%5Etfw">April 26, 2017</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/LeaVerou/status/857030863292436480?ref_src=twsrc%5Etfw
 
 [@MylesBorins](https://twitter.com/MylesBorins) replied (though his tweet seems to have disappeared) and suggested that perhaps Service Workers could help. In case you’ve been hiding under a rock for the past couple of years, [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are a new(ish) API that allows you to intercept requests from your website to the network and do whatever you want with them. They are mostly promoted for creating good offline experiences, though they can do a lot more.
 

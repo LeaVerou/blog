@@ -20,7 +20,7 @@ Basic idea:
 
 **As a bonus, it's perfectly accessible through the keyboard** (although I assume it's not screen reader accessible).
 
-A <table> would be much more appropriate for the markup, but I decided to sacrifice semantics in this case to make the demo simpler.
+A `<table>` would be much more appropriate for the markup, but I decided to sacrifice semantics in this case to make the demo simpler.
 
 All modern browsers support the indeterminate state in checkboxes (for Opera you will need the latest Opera.Next), however **this demo doesn't work on old Webkit (Chrome and Safari) because of an old bug** that made the sibling combinators (+ and ~) static in some cases which has been fixed in the nightlies. **It should work in Firefox, Opera.next, Webkit nightlies and IE9, although I haven't tested in Opera.next and IE9 to verify.**
 

@@ -16,7 +16,7 @@ The CSS3 Basic UI module defines [`pointer-events`](http://dev.w3.org/csswg/css3
 
 The property was originally SVG-only, but eventually browsers and the W3C adopted a more limited version for HTML elements too.
 
-It can be used in many use cases that weren't possible before (or the solution was overly complicated), one of them being to create custom-looking <select> drop downs, by overlaying an element over the native drop down arrow (to create the custom one) and disallowing pointer events on it. Here's a quick example:
+It can be used in many use cases that weren't possible before (or the solution was overly complicated), one of them being to create custom-looking `<select>` drop downs, by overlaying an element over the native drop down arrow (to create the custom one) and disallowing pointer events on it. Here's a quick example:
 
 <iframe style="width: 100%; height: 200px" src="http://jsfiddle.net/leaverou/XxkSC/embedded/result,css"></iframe>
 
@@ -28,7 +28,7 @@ if(!('pointerEvents' in document.body.style)) {
 
 However, there is one caveat in this: Opera does include pointerEvents in HTML elements as well, but it does not actually support the property on HTML. There's a more elaborate feature detection script [here](https://github.com/ausi/Feature-detection-technique-for-pointer-events/blob/master/modernizr-pointerevents.js) as a Modernizr plugin (but the code is quite short, so you can adapt it to your needs).
 
-Also, don't try to replicate the behavior in JavaScript for browsers that don't support this: it's impossible to open a <select> drop down with JavaScript. Or, to put it differently, if you manage to do it, you'll probably be the first to. Everything I could think of failed and I spent hours yesterday searching for a way, but no avail.
+Also, don't try to replicate the behavior in JavaScript for browsers that don't support this: it's impossible to open a `<select>` drop down with JavaScript. Or, to put it differently, if you manage to do it, you'll probably be the first to. Everything I could think of failed and I spent hours yesterday searching for a way, but no avail.
 
 ### References
 

@@ -69,6 +69,12 @@ Also, it downloaded all images, but did not update the URLs in the Markdown file
 This was easy to fix with a regex find and replace from `https?://lea.verou.me/wp-content/uploads/(\d{4}/\d{2})/([\w\.-]+\.(?:png|gif|jpe?g))` to `images/$2`.
 It also did not download any other uploads, e.g. zip files. Thankfully, these were only a couple, so I could detect and port over manually.
 
+There were also some issues only present in some of the posts, presumably due to how WP used to store them.
+For example:
+
+- Some posts (mainly old ones) were missing code blocks, and the code was just inline (which meant HTML markup was just interpreted!)
+- Some posts did not have all their images downloaded
+
 ## Hiatus
 
 More than two months passed between the previous and the next section.

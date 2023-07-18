@@ -31,7 +31,7 @@ So what does dabblet have that similar apps don't? Here's a list:
 - Many familiar keyboard shortcuts
 - Small inline previewers for many kinds of CSS values, in particular for: [colors](http://dribbble.com/shots/338667-Mystery-upcoming-project-UI-detail-CSS-color-preview), [absolute lengths](http://dribbble.com/shots/339917-Mystery-upcoming-project-UI-detail-Length-preview), durations, [angles](http://dribbble.com/shots/346253-Mystery-upcoming-project-UI-detail-Angle-preview), [easing functions](http://dribbble.com/shots/349045-Mystery-upcoming-project-UI-detail-Easing-previewer) and [gradients](http://dribbble.com/shots/346247-Mystery-upcoming-project-UI-detail-CSS-gradient-preview). Check them all in [this dabblet](http://dabblet.com/gist/1441328).
 - Automatically adds prefixes with [\-prefix-free](http://leaverou.github.com/prefixfree/), to speed up testing
-- Use the Alt key and the up/down arrows to increment/decrement <length>, <time> and <angle> values.
+- Use the Alt key and the up/down arrows to increment/decrement `<length>`, `<time>` and `<angle>` values.
 - Dabblet is [open source](https://github.com/LeaVerou/dabblet) under a NPOSL 3.0 license
 - You can save anonymously even when you are logged in
 - Multiple view modes: Result behind code, Split views (horizontal or vertical), separate tabs. View modes can be saved as a personal preference or in the gists (as different demos may look better with different view modes)

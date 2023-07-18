@@ -29,7 +29,9 @@ I consider CSS3's `text-shadow` one of the most exciting CSS3\* properties, whic
 
 The syntax is fairly simple:
 
+```css
 text-shadow: <offset-x> <offset-y> <blur-radius> <color>;
+```
 
 There are some variations (the color could be first instead of last, the blur radius can be omitted if it's equal to zero and the color may be omitted if it's the same as the text color) and you may include multiple comma delimited shadows.
 
@@ -46,7 +48,7 @@ It helps if you imagine the algorithm for drawing the text shadow as follows:
 
 ### The experiments
 
-You will find the experiments I performed [here](http://lea.verou.me/demos/text-shadow.html). I tried to come up with (or find) interesting uses of the property. I also tried to make some of them "pretty", so they could be useful to others, but given the fact that these were primarily created for testing purposes, this wasn't achievable for all of them. Next to each experiment is the CSS used to produce the effect (directly fetched from the <style> tag via JavaScript). You'd better not view it with IE until you read below or you might have some freaky nightmares tonight :P
+You will find the experiments I performed [here](http://lea.verou.me/demos/text-shadow.html). I tried to come up with (or find) interesting uses of the property. I also tried to make some of them "pretty", so they could be useful to others, but given the fact that these were primarily created for testing purposes, this wasn't achievable for all of them. Next to each experiment is the CSS used to produce the effect (directly fetched from the `<style>` tag via JavaScript). You'd better not view it with IE until you read below or you might have some freaky nightmares tonight :P
 
 Screenshots from various browsers: (mouse over the thumbnails to see which browser was used for each one)
 

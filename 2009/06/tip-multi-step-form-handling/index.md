@@ -1,10 +1,10 @@
 ---
 title: "Tip: Multi-step form handling"
 date: "2009-06-16"
-categories: 
+categories:
   - "articles"
   - "tips"
-tags: 
+tags:
   - "forms"
   - "html"
   - "usability"
@@ -24,23 +24,29 @@ What we have done this way is that we have effectively created a completely usel
 
 So, the right way is to pass step=2 via POST as well. This way, the URL stays as it was (register.php) and we avoid all the problems mentioned above. So, we end up doing something like this:
 
+```html
 ... form fields here ...
 <input type="hidden" name="step" value="2" />
 <input type="submit" value="Create my account" />
+```
 
 ### Now we're done. Or not?
 
 This works fine. However, there's still room for improvement. We could get rid of the extra input element by utilizing the submit button. Yeah, it's a form element too, even though we often overlook that and just focus on styling it. If we give it a name, it will get sent along with the other form fields. So instead of the html above, we can do that:
 
+```html
 ... form fields here ...
 <input type="submit" name="step" value="2" />
+```
 
 ### But wait! What the f\*ck is that ???
 
 Now usability suffers! Instead of our nice "Create my account" button, the user now sees a cryptic "2". Who cares if it works or if it requires less code, if nobody understands how to register, right? Luckily for us, we don't **have** to use the `<input />` tag to create submit buttons. A better (in terms of styling, semantics, markup clarity etc), albeit less known, alternative exists: The `<button />` tag. When using the `<button />` tag, the label of the button is derived from the markup within the start and end tags (yeah, we can also have html elements in there, not only text nodes, in case you're wondering), not from the value attribute. So, we can set it's name and value attributes to whatever we want, and the user won't notice a thing:
 
+```html
 ... form fields here ...
 <button type="submit" name="step" value="2">Create my account</button>
+```
 
 It's really simple, although not done often. I guess it's one of these "OMG how come I've never thought about this??" kind of things. :P
 

@@ -9,7 +9,7 @@ tags:
   - "js"
 ---
 
-[![](images/incrementable-demo-300x202.png "incrementable-demo")](images/incrementable-demo.png)I always loved that Firebug and Dragonfly feature that allows you to increment or decrement a <length> value by pressing the up and down keyboard arrows when the caret is over it. I wished my [Front Trends slides](http://lea.verou.me/2010/10/my-ft2010-slides-and-csss-my-presentation-framework/) supported it in the editable examples, it would make presenting so much easier. So, I decided to implement the functionality, to use it in my next talk.
+[![](images/incrementable-demo-300x202.png "incrementable-demo")](images/incrementable-demo.png)I always loved that Firebug and Dragonfly feature that allows you to increment or decrement a `<length>` value by pressing the up and down keyboard arrows when the caret is over it. I wished my [Front Trends slides](http://lea.verou.me/2010/10/my-ft2010-slides-and-csss-my-presentation-framework/) supported it in the editable examples, it would make presenting so much easier. So, I decided to implement the functionality, to use it in my next talk.
 
 If you still have no idea what I'm talking about, you can see a demo here: <a href="https://incrementable.verou.me/" class="call-to-action">View demo</a>
 

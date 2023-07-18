@@ -1,10 +1,10 @@
 ---
 title: "In defense of reinventing wheels"
 date: "2012-04-03"
-categories: 
+categories:
   - "articles"
   - "thoughts"
-tags: 
+tags:
   - "php"
   - "software-engineering"
 ---
@@ -25,6 +25,7 @@ My first thought was to use an existing library, which for PHP is [PHP Markdown]
 
 That's what I was planning to do. And then it struck me: I'm the only person writing these phrases. Even if more people write translations in the future, they will still go through me. So far, the only need for such formatting is links and bold. Everything else (e.g. lists) is handled by the HTML templates. That's literally **two lines of PHP**! So, I wrote my own function. It's a bit bigger, since I also added emphasis, just in case:
 
+```php
 function markdown($text) {
  // Links
  $text = preg\_replace('@\\\\\[(.+?)\\\\\]\\\\((#.+?)\\\\)@', '<a href="$2">$1</a>', $text);
@@ -37,6 +38,7 @@ function markdown($text) {
 
  return $text;
 }
+```
 
 Since PHP regular expressions also support negative lookbehind, I can even avoid escaped characters, in the same line. Unfortunately, since PHP lacks regular expression literals, backslashes have to be doubled (`\\` instead of `\` so `\\\\` instead of `\\`, which is pretty horrible).
 
