@@ -14,11 +14,11 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 {% import "_posts.njk" as posts %}
 {{ posts.list(pagination.items) }}
 
-<footer class="pagination">
-{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="previous">← Previous</a>{% endif %}
+<footer class="prev-next">
+{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" class="prev">Previous</a>{% endif %}
 <div class="current">
 	{{ pagination.pageNumber + 1 }}
 	of {{ pagination.pages.length }}
 </div>
-{% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="next">Next →</a>{% endif %}
+{% if pagination.href.next %}<a href="{{ pagination.href.next }}" class="next">Next</a>{% endif %}
 </footer>
