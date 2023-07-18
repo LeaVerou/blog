@@ -62,7 +62,7 @@ This is all fine and dandy, until dark mode comes into play. The idea of using c
 This is a fine approach, and you'll likely want to do that for at least part of your colors eventually. However, even in the most disciplined of designs, not every color is a CSS variable. You often have colors declared inline, especially grays (e.g. the footer color in our example). This means that adding a dark mode is taxing enough that you may put it off for later, especially on side projects.
 
 The trick I'm going to show you will make anyone who knows enough about color cringe (sorry Chris!) but it does help you create a dark mode that _works_ in minutes. It won't be great, and you should eventually tweak it to create a proper dark mode (also [dark mode is not just about swapping colors](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)) but it's better than nothing and can serve as a base.
-
+<!-- more -->
 The basic idea is to use custom properties for the _lightness_ of colors instead of the entire color. Then, in dark mode, you override these variables with `100% - lightness`. This generally produces light colors for dark colors, medium colors for medium colors, and dark colors for light colors, and still allows you to define colors inline, instead of forcing you to use a variable for every single color. This is what the code would look like for our example:
 
 ```

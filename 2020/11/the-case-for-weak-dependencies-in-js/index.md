@@ -36,7 +36,7 @@ I suspect it might be because my primary perspective for writing JS is that of a
 After [Kyle Simpson asked me to elaborate](https://twitter.com/LeaVerou/status/1329389035249422336) about the use case, I figured a blog post was in order.
 
 The use case is essentially **progressive enhancement** (in fact, I toyed with the idea of titling this blog post _**“Progressively Enhanced JS”**_). If library X is loaded already by other code, do a more elaborate thing and cover all the edge cases, otherwise do a more basic thing. It's for dependencies that are not really **depend**encies, but more like **nice-to-haves**.
-
+<!-- more -->
 We often see modules that do things really well, but use a ton of dependencies and add a lot of weight, even to the simplest of projects, because they need to cater to all the edge cases that we may not care about. We also see modules that are dependency free, but that's because lots of things are implemented more crudely, or certain features are not there.
 
 This paradigm gives you the best of both worlds: **Dependency free** (or low dependency) modules, that can use what's available to improve how they do things with **zero additional impact**.

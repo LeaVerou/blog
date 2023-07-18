@@ -31,7 +31,7 @@ Before you read on, take a moment to think about what you would vote. Warning: S
 🤔
 
 🤔
-
+<!-- more -->
 So I posted a quiz on Twitter:
 
 https://twitter.com/LeaVerou/status/1395379573190168576
