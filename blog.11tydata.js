@@ -13,7 +13,7 @@ module.exports = {
 				return `${ wpid } https:\/\/lea.verou.me\/?p=${ wpid }`;
 			}
 			else if (data.disqus !== false) {
-				return data.disqus === true? data.postUrlStem : data.disqus;
+				return typeof data.disqus !== "string"? data.postUrlStem : data.disqus;
 			}
 		}
 	}
