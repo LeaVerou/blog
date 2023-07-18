@@ -1,7 +1,7 @@
 name: Broken page
 description: A page/blog post has a problem, and it’s not a regression from the previous website
-title: 'Page regression: '
-labels: page-regression
+title: 'Broken page: [Page title]'
+labels: broken-page
 body:
   - type: markdown
     attributes:
