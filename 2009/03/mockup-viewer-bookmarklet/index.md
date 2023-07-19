@@ -14,12 +14,13 @@ I usually view mockups in a browser, so that the impression I get is as close as
 Not any more! I was so fed up today, that I wrote a little bookmarklet that does this. It enlarges the image to full size, removes the margins and scrolls the page left so that the image is centered. It works on any recent browser I've tested, and I think it will probably work in most browsers that web designers use (hint: not old IEs) :P
 
 Enjoy.
-{% raw %}
 
-<a href="javascript:(function(){%20document.body.style.margin%20=%200;%20var%20inner%20=%20window.innerWidth%20||%20document.body.clientWidth,%20img%20=%20document.getElementsByTagName('img')[0];%20img.removeAttribute('width');%20img.removeAttribute('height');%20document.body.scrollLeft%20=%20(img.offsetWidth%20-%20inner)/2;%20})();" class="call-to-action">javascript:(function(){%20document.body.style.margin%20=%200;%20var%20inner%20=%20window.innerWidth%20||%20document.body.clientWidth,%20img%20=%20document.getElementsByTagName('img')[0];%20img.removeAttribute('width');%20img.removeAttribute('height');%20document.body.scrollLeft%20=%20(img.offsetWidth%20-%20inner)/2;%20})();</a>
+{% raw %}
+<a href="javascript:(function(){%20document.body.style.margin%20=%200;%20var%20inner%20=%20window.innerWidth%20||%20document.body.clientWidth,%20img%20=%20document.getElementsByTagName('img')[0];%20img.removeAttribute('width');%20img.removeAttribute('height');%20document.body.scrollLeft%20=%20(img.offsetWidth%20-%20inner)/2;%20})();" class="call-to-action">Mockup viewer</a>
 {% endraw %}
 JS code:
 
+```js
 (function(){
 	document.body.style.margin = 0;
 	var inner = window.innerWidth || document.body.clientWidth, img = document.getElementsByTagName('img')\[0\];
@@ -27,5 +28,6 @@ JS code:
 	img.removeAttribute('height');
 	document.body.scrollLeft = (img.offsetWidth - inner)/2;
 })();
+```
 
 If only it could also write the XHTML & CSS for the site... :P

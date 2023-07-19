@@ -25,9 +25,10 @@ The technique I'm going to present is based on the fact that when we assign a no
 
 and it would result in the following code:
 
+```js
 function supportsRGBA()
 {
-	var scriptElement = document.getElementsByTagName('script')\[0\];
+	var scriptElement = document.getElementsByTagName('script')[0];
 	var prevColor = scriptElement.style.color;
 	try {
 		scriptElement.style.color = 'rgba(1,5,13,0.44)';
@@ -36,6 +37,7 @@ function supportsRGBA()
 	scriptElement.style.color = prevColor;
 	return result;
 }
+```
 
 ### Performance improvements
 
@@ -43,11 +45,12 @@ The code above works, but it wastes resources for no reason. Every time the func
 
 This can be achieved in many ways. My personal preference is to store the result as a property of the function called, named `'result'`:
 
+```js
 function supportsRGBA()
 {
 	if(!('result' in arguments.callee))
 	{
-		var scriptElement = document.getElementsByTagName('script')\[0\];
+		var scriptElement = document.getElementsByTagName('script')[0];
 		var prevColor = scriptElement.style.color;
 		try {
 			scriptElement.style.color = 'rgba(0, 0, 0, 0.5)';
@@ -57,16 +60,18 @@ function supportsRGBA()
 	}
 	return arguments.callee.result;
 }
+```
 
 ### Making it bulletproof
 
 There is a rare case where the script element might **already** have `rgba(0,0,0,0.5)` set as it's color value (don't ask me why would someone want to do that :P ), in which case our function will return `false` even if the browser actually supports RGBA. To prevent this, you might want to check whether the `color` property is already set to `rgba(0,0,0,0.5)` and return `true` if it is (because if the browser doesn't support rgba, it will be blank):
 
+```js
 function supportsRGBA()
 {
 	if(!('result' in arguments.callee))
 	{
-		var scriptElement = document.getElementsByTagName('script')\[0\];
+		var scriptElement = document.getElementsByTagName('script')[0];
 		var prevColor = scriptElement.style.color;
 		var testColor = 'rgba(0, 0, 0, 0.5)';
 		if(prevColor == testColor)
@@ -84,5 +89,6 @@ function supportsRGBA()
 	}
 	return arguments.callee.result;
 }
+```
 
 Done!

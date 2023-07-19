@@ -6,7 +6,6 @@ categories:
 tags:
   - "border-radius"
   - "css"
-  - "css"
   - "css-properties"
 ---
 
@@ -20,20 +19,25 @@ I will not cover irregular curves in this article, since I've yet to find any pe
 
 Firefox supports rounded corners since version 2. However incomplete support in version 2 made designers sceptical to use them. The problem was that the rounded corners created were aliased back then, and also did not crop the background image, so if you had one, no rounded corners for you. This was fixed in FF3, so now more and more designers are starting to use them. The syntax is
 
-\-moz-border-radius: \[Number\]\[unit\];
+```
+-moz-border-radius: [Number][unit];
+```
 
 This is effectively a shorthand for:
-
-\-moz-border-radius-bottomleft: \[Number\]\[unit\];
--moz-border-radius-bottomright: \[Number\]\[unit\];
--moz-border-radius-topleft: \[Number\]\[unit\];
--moz-border-radius-topright: \[Number\]\[unit\];
+```
+-moz-border-radius-bottomleft: [Number][unit];
+-moz-border-radius-bottomright: [Number][unit];
+-moz-border-radius-topleft: [Number][unit];
+-moz-border-radius-topright: [Number][unit];
+```
 
 You don't need to specify all these properties though, even if you wan't different measures per corner, as `-moz-border-radius` functions as a regular CSS shorthand, allowing us to specify all 4 corners at once. It can be used in the following ways:
 
-\-moz-border-radius: \[Top-left and Bottom-right\] \[Top-right and bottom-left\];
--moz-border-radius: \[Top-left\] \[Top-right and bottom-left\] \[Bottom-right\];
--moz-border-radius: \[Top-left\] \[Top-right\] \[Bottom-right\] \[Bottom-left\];
+```
+-moz-border-radius: [Top-left and Bottom-right] [Top-right and bottom-left];
+-moz-border-radius: [Top-left] [Top-right and bottom-left] [Bottom-right];
+-moz-border-radius: [Top-left] [Top-right] [Bottom-right] [Bottom-left];
+```
 
 A good mnemonic rule for the order of the values is that they are arranged clockwise, starting from Top left.
 
@@ -41,16 +45,20 @@ A good mnemonic rule for the order of the values is that they are arranged clock
 
 Safari also implements CSS3 border-radius, but in a quite different way. If you want to set all four corners to the same border-radius, the process is almost identical. The only thing needed is:
 
-\-webkit-border-radius: \[Number\]\[unit\]
+```
+-webkit-border-radius: [Number][unit]
+```
 
 However, things start to get tricky when you want to specify different radiuses per corner. Webkit does not support a shorthand syntax, since it chose to implement the spec closely, sacrifycing clarity but allowing for more flexibility. To cut a long story short, [Webkit supports irregular curves instead of just circle quarters on each corner](http://www.css3.info/border-radius-apple-vs-mozilla/ "Read more about the difference between Mozilla's and Webkit's implementations"), so if you try to add 2 values, the result will be  [horrendous](http://www.css3.info/wp-content/uploads/2007/06/border-radius.png).
 
-So, you have to specify all four properties (or less if you want some of them to be square). To make matters even worse, the way the names of the properties are structured is different. There is one more dash, and the position of the corner styled by each property is not at the end but before _\-radius_:
+So, you have to specify all four properties (or less if you want some of them to be square). To make matters even worse, the way the names of the properties are structured is different. There is one more dash, and the position of the corner styled by each property is not at the end but before _-radius_:
 
-\-webkit-border-top-left-radius
+```
+-webkit-border-top-left-radius
 -webkit-border-top-right-radius
 -webkit-border-bottom-left-radius
 -webkit-border-bottom-right-radius
+```
 
 **Caution:** If the dimensions of your element are not enough to accomodate the rounded corners, they will be square in Webkit-based browsers. Specify a `min-width`/`min-height` or enough padding to avoid this.
 

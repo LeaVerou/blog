@@ -30,11 +30,12 @@ Instead of iterating over all possible vendor prefixes every time to test if a p
 
 ### JavaScript code
 
+```js
 function getVendorPrefix()
 {
-	var regex = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=\[A-Z\])/;
+	var regex = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=[A-Z])/;
 
-	var someScript = document.getElementsByTagName('script')\[0\];
+	var someScript = document.getElementsByTagName('script')[0];
 
 	for(var prop in someScript.style)
 	{
@@ -42,7 +43,7 @@ function getVendorPrefix()
 		{
 			// test is faster than match, so it's better to perform
 			// that on the lot and match only when necessary
-			return prop.match(regex)\[0\];
+			return prop.match(regex)[0];
 		}
 
 	}
@@ -50,6 +51,7 @@ function getVendorPrefix()
 	// Nothing found so far?
 	return '';
 }
+```
 
 **Caution:** Don't try to use someScript.style.hasOwnProperty(prop). It's missing on purpose, since if these properties aren't set on the particular element, hasOwnProperty will return false and the property will not be checked.
 
@@ -57,11 +59,12 @@ function getVendorPrefix()
 
 In a perfect world we would be done by now. However, if you try running it in Webkit based browsers, you will notice that the empty string is returned. This is because for some reason, Webkit does not enumerate over empty CSS properties. To solve this, we'd have to check for the support of a property that exists in all webkit-based browsers. This property should be one of the oldest -webkit-something properties that were implemented in the browser, so that our function returns correct results for as old browser versions as possible. `-webkit-opacity` seems like a good candidate but I'd appreciate any better or more well-documented picks. We'd also have to test `-khtml-opacity` as [it seems that Safari had the -khtml- prefix before the -webkit- prefix](http://webkit.org/blog/22/css3-goodies-borders-and-backgrounds/#comment-121). So the updated code would be:
 
+```js
 function getVendorPrefix()
 {
-	var regex = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=\[A-Z\])/;
+	var regex = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=[A-Z])/;
 
-	var someScript = document.getElementsByTagName('script')\[0\];
+	var someScript = document.getElementsByTagName('script')[0];
 
 	for(var prop in someScript.style)
 	{
@@ -69,7 +72,7 @@ function getVendorPrefix()
 		{
 			// test is faster than match, so it's better to perform
 			// that on the lot and match only when necessary
-			return prop.match(regex)\[0\];
+			return prop.match(regex)[0];
 		}
 
 	}
@@ -82,6 +85,7 @@ function getVendorPrefix()
 
 	return '';
 }
+```
 
 By the way, if Webkit ever fixes that bug, the result will be returned straight from the loop, since we have added the Webkit prefix in the regexp as well.
 
@@ -89,13 +93,14 @@ By the way, if Webkit ever fixes that bug, the result will be returned straight 
 
 There is no need for all this code to run every time the function is called. The vendor prefix does not change, especially during the session :P Consequently, we can cache the result after the first time, and return the cached value afterwards:
 
+```js
 function getVendorPrefix()
 {
 	if('result' in arguments.callee) return arguments.callee.result;
 
-	var regex = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=\[A-Z\])/;
+	var regex = /^(Moz|Webkit|Khtml|O|ms|Icab)(?=[A-Z])/;
 
-	var someScript = document.getElementsByTagName('script')\[0\];
+	var someScript = document.getElementsByTagName('script')[0];
 
 	for(var prop in someScript.style)
 	{
@@ -103,7 +108,7 @@ function getVendorPrefix()
 		{
 			// test is faster than match, so it's better to perform
 			// that on the lot and match only when necessary
-			return arguments.callee.result = prop.match(regex)\[0\];
+			return arguments.callee.result = prop.match(regex)[0];
 		}
 
 	}
@@ -116,6 +121,7 @@ function getVendorPrefix()
 
 	return arguments.callee.result = '';
 }
+```
 
 ### Afterthoughts
 

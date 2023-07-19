@@ -16,47 +16,55 @@ Let's start with `Math.round`. It's the most needed one anyway.
 
 Firstly we'll have to store the native function somewhere, since we're going to replace it. So we do something along the lines of:
 
-Math.\_round = Math.round;
+```js
+Math._round = Math.round;
+```
 
-Now let's \*sigh\* replace the native `Math.round` with our own:
+Now let's **sigh** replace the native `Math.round` with our own:
 
+```js
 Math.round = function(number, precision)
 {
 	precision = Math.abs(parseInt(precision)) || 0;
 	var coefficient = Math.pow(10, precision);
-	return Math.\_round(number\*coefficient)/coefficient;
+	return Math._round(number*coefficient)/coefficient;
 }
+```
 
 And guess what? It still works the old way too, so your old scripts won't break.
 
 So now, let's go to `Math.ceil` and `Math.floor`. If you notice, the only thing that changes is the function name. Everything else is the same. So, even though we could copy-paste the code above and change the names, we would end up with triple the size of the code that we need and we would have also violated the [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself "Don't Repeat Yourself") principle. So we could put the names of the functions in an array, and loop over it instead:
 
+```js
 (function(){
-	var MathFns = \['round', 'floor', 'ceil' \];
+	var MathFns = ['round', 'floor', 'ceil' ];
 	for(var i = MathFns.length; i>-1; i--)
 	{
-		Math\['\_' + MathFns\[i\]\] = Math\[MathFns\[i\]\];
-		Math\[MathFns\[i\]\] = function(number, precision)
+		Math['_' + MathFns[i]] = Math[MathFns[i]];
+		Math[MathFns[i]] = function(number, precision)
 		{
 			precision = Math.abs(parseInt(precision)) || 0;
 			var coefficient = Math.pow(10, precision);
-			return Math\['\_' + MathFns\[i\]\](number\*coefficient)/coefficient;
+			return Math['_' + MathFns[i]](number*coefficient)/coefficient;
 		}
    }
 })();
+```
 
 Why the closure? To allow us to be free in defining our variables without polluting the global namespace. In case `Array.prototype.forEach()` was cross-browser or if you have mutated the `Array` prototype to add it for non-supporting ones, you could easily do that:
 
-\['round', 'floor', 'ceil' \].forEach(function(funcName){
-	Math\['\_' + funcName\] = Math\[funcName\];
-	Math\[funcName\] = function(number, precision)
+```js
+['round', 'floor', 'ceil' ].forEach(function(funcName){
+	Math['_' + funcName] = Math[funcName];
+	Math[funcName] = function(number, precision)
 	{
 		precision = Math.abs(parseInt(precision)) || 0;
 		var coefficient = Math.pow(10, precision);
-		return Math\['\_' + funcName\](number\*coefficient)/coefficient;
+		return Math['_' + funcName](number*coefficient)/coefficient;
 	}
 });
+```
 
 No closures and much easier to read code.
 
-However, nothing comes without a cost. In this case, the cost is performance. In my tests, the new function takes about twice the time of the native one. Adding a conditional to check if the precision is falsy and use the native function directly if so, doesn't improve the results much, and it would slow the function down for precision values > 0. Of course the speed would be just as much if the function was a normal one and not a replacement for Math\[something\], that doesn't have anything to do with it.
+However, nothing comes without a cost. In this case, the cost is performance. In my tests, the new function takes about twice the time of the native one. Adding a conditional to check if the precision is falsy and use the native function directly if so, doesn't improve the results much, and it would slow the function down for precision values > 0. Of course the speed would be just as much if the function was a normal one and not a replacement for Math[something], that doesn't have anything to do with it.

@@ -15,8 +15,10 @@ Since I consider such a script very entertaining, I didn't google it at all, I s
 
 The script is a class for the creation of linear 2-color gradients in any browser. It's used like this:
 
+```js
 var g = new Gradient(200, 100, '#000000', '#ff1166', true);
 document.body.appendChild(g.canvas);
+```
 
 You can create and manipulate the Gradient object at any point (during or after DOM parsing) but you have to insert the element somewhere in the DOM after the DOM has finished parsing (which is common sense).
 
@@ -25,7 +27,7 @@ All the parameters in the constructor are optional and can be manipulated later.
 Some notes:
 
 - Its object oriented and doesn't throw any strict warnings
-- Tested in IE6, IE7, IE8, Firefox 3, Safari 4b and Opera 9.6. Probably works with older versions of Firefox, Opera and Safari as well (as long as they support <canvas>), I'm just not able to test in them currently.
+- Tested in IE6, IE7, IE8, Firefox 3, Safari 4b and Opera 9.6. Probably works with older versions of Firefox, Opera and Safari as well (as long as they support `<canvas>`), I'm just not able to test in them currently.
 - All it's methods return the object, so they can be chained.
 - You can modify it to support RGBA as well, but you'd have to use a different format for IE (extended hex) and a different one for the proper browsers. I didn't need that and it would make the script unnecessarily complex, so I didn't implement it.
 
@@ -39,7 +41,7 @@ Limitations (**all** these limitations are enforced by IE's gradient filter):
 
 #### canvas (HTMLElement)
 
-The HTML Element that is being used to render the gradient. Either a <canvas> or a <span>. You have to use it at least once, in order to insert the element in the DOM. I preferred not to do this automatically, since it would be too restrictive.
+The HTML Element that is being used to render the gradient. Either a `<canvas>` or a `<span>`. You have to use it at least once, in order to insert the element in the DOM. I preferred not to do this automatically, since it would be too restrictive.
 
 #### startColor (String)
 
@@ -81,10 +83,8 @@ Rotates the gradient by 90 degrees clockwise (should I add CCW too?)
 
 ### Download
 
-[gradient.js (2.7 KB)](http://lea.verou.me/scripts/gradient/gradient.js)
-
-[gradient-min.js (1.4 KB)](http://lea.verou.me/scripts/gradient/gradient-min.js)
-
-[Test page](http://lea.verou.me/scripts/gradient/)
+- [gradient.js (2.7 KB)](http://lea.verou.me/scripts/gradient/gradient.js)
+- [gradient-min.js (1.4 KB)](http://lea.verou.me/scripts/gradient/gradient-min.js)
+- [Test page](http://lea.verou.me/scripts/gradient/)
 
 Hope you find it useful :)

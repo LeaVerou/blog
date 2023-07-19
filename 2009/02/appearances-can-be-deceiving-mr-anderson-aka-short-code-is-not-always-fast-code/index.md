@@ -13,11 +13,13 @@ tags:
 
 I used to take pride in my short, bulletproof and elegant String and Number type checks:
 
+```js
 // Check whether obj is a Number
 obj + 0 === obj
 
 // Check whether obj is a String
 obj + '' === obj
+```
 
 I always thought that apart from being short and elegant, they **should** be faster.
 
@@ -40,15 +42,19 @@ The moral: Never assume. Always test.
 
 The typeof method and my method fail for non-primitive String/Number objects, as you can easily observe if you type in the console:
 
+```js
 typeof new String('foo') // 'object'
 typeof new Number(5) // 'object'
 new String('foo') + '' === new String('foo') // false
+```
 
 This can easily be solved if you also check the type via instanceof (the decrease in speed is negligible):
 
+```js
 foo = new String('foo');
 typeof foo === 'string' || foo instanceof String
 foo + '' === foo || foo instanceof String
+```
 
 Don't use instanceof alone, since it fails for String and Number primitives. The instanceof method also fails for Strings and Numbers created in another window, since their constructor there is different. Same happens with the Constructor method mentioned above.
 

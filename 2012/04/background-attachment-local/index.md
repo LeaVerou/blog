@@ -5,7 +5,7 @@ categories:
   - "tips"
 tags:
   - "background-attachment"
-  - "backgrounds-and-borders"
+  - "css-backgrounds"
   - "css"
 ---
 

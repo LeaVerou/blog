@@ -53,6 +53,7 @@ var supportsMin = (function(){
 
 In Safari 4 the check would be equally simple, if it supported accessing the `multiple` attribute as a property. Then we could easily check whether it's boolean and conclude that Safari-style multiple inputs are supported:
 
+```js
 var supportsMultiple = (function(){
 	var fi = document.createElement('input');
 	fi.type = 'file';
@@ -61,6 +62,7 @@ var supportsMultiple = (function(){
 	// Yeah, it's not likely, but it's not entirely impossible.
 	return fi.multiple === false || fi.multiple === true;
 })();
+```
 
 However, that's currently not the case. The good news are that [I reported this as a bug today, and the Webkit team fixed it](https://bugs.webkit.org/show_bug.cgi?id=24444), so it will be possible in the next Webkit nightly!
 
@@ -68,6 +70,7 @@ However, that's currently not the case. The good news are that [I reported this 
 
 You can easily combine these two together with the workaround you prefer:
 
+```js
 // Create a file input that allows multiple file selection
 var fi = document.createElement('input');
 fi.type = 'file';
@@ -82,6 +85,7 @@ else if(fi.min === '' && fi.max === '') {
 else {
 	// Our preferred workaround here
 }
+```
 
 ### What about Mozilla?
 

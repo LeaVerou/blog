@@ -14,6 +14,7 @@ tags:
   - "js"
   - "php"
   - "rgba"
+  - "speaking"
 ---
 
 Yesterday, I had a session at [MediaCampAthens](http://mediacamp.gr) (a BarCamp-style event), regarding CSS3 colors. If you've followed [my earlier posts tagged with "colors"](http://lea.verou.me/tag/colors/), my presentation was mostly a sum-up of these.

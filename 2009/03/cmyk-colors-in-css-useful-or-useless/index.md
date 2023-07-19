@@ -30,15 +30,21 @@ To sum it up, the advantages that I think this option would provide us are:
 
 And the format is very easy to imagine:
 
+```
 background-color: cmyk(0, 100, 50, 0);
+```
 
 or
 
+```
 background-color: cmyk(0%, 100%, 50%, 0%);
+```
 
 or
 
+```
 background-color: cmyk(0, 1, 0.5, 0);
+```
 
 So, what do you think? Useful or useless?
 
