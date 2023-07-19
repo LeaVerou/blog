@@ -1,13 +1,27 @@
----
-pagination:
-  data: collections
-  size: 1
-  alias: tag
-  filter: ["blog", "all"]
-permalink: /blog/tags/{{ tag }}/
-override:tags: []
-eleventyComputed:
-  title: "{{ collections[ tag ].length | pluralize('post') }} on {{ tag | format_tag }}"
+---js
+{
+	pagination: {
+		data: "collections",
+		size: 1,
+		before: function(paginationData, fullData) {
+			// Filter out orphan tags and fake tags
+			return paginationData.filter(tag => {
+				return !["blog", "all"].includes(tag)
+					&& fullData.collections[tag].length > 1
+					&& !tag.startsWith("postsBy")
+					;
+			});
+		},
+		alias: "tag",
+	},
+	permalink: "/blog/tags/{{ tag }}/",
+	override: {
+		tags: []
+	},
+	eleventyComputed: {
+		title: "{{ collections[ tag ].length | pluralize('post') }} on {{ tag | format_tag }}"
+	}
+}
 ---
 
 {% set taglist = collections[ tag ] | reverse %}
