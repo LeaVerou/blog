@@ -1,7 +1,6 @@
 ---
 title: "Going Lean"
-date: "2023-07-18"
-draft: true
+date: "2023-07-20"
 toc: true
 tags:
   - meta
