@@ -1,10 +1,13 @@
 ---
 title: "Going Lean"
-date: "2023-07-10"
+date: "2023-07-18"
 draft: true
+toc: true
+tags:
+  - meta
+  - 11ty
 ---
 
-{% raw %}
 WordPress has always been with me since my very first post in 2009.
 There is a lot to love about it: It’s open source, it has a thriving ecosystem, a lovely default theme, and a block editor that makes my inner UX geek giddy.
 Plus, it makes building a website and publishing content accessible to everyone.
@@ -19,13 +22,13 @@ I was periodically getting "Error establishing a database connection" errors, wh
 It was time to move on.
 It’s not you WP, it’s me.
 
-I had been using Eleventy for a while at that point and loved it, so it was a no-brainer.
+I had been using [Eleventy](https://11ty.dev) for a while at that point and loved it, so it was a no-brainer.
 In fact, my blog was my last remaining non-JAMstack site.
 I had built a [simple 11ty blog for my husband](https://svgees.us/blog/) a year ago, and was almost jealous of the convenience and simplicity.
 There are so many conveniences that just come for free with this workflow: git, Markdown, custom components, even GitHub Copilot as you write your prose!
 And if you can make the repo public, oooooh, the possibilities! People could even file PRs and issues for your blog posts!
 
-However, I was dreading the amount of work it would take to migrate 13 years of content, plugins, and styling.
+However, I was dreading the amount of work it would take to migrate 14 years of content, plugins, and styling.
 The stroke that broke the camel’s back was a particularly bad db outage.
 I [tweeted](https://twitter.com/LeaVerou/status/1652166572335587329) about my frustration, but I had already made up my mind.
 
@@ -37,6 +40,39 @@ They literally all fell in one of two categories:
 This could actually work!
 
 <!-- more -->
+
+## Public or private repo?
+
+One of the hardest dilemmas was whether to (eventually) make the repo for this website public or private.
+
+Overall, I was happy to have most files be public, but there were a few things I wanted to keep private:
+- Drafts (some drafts I’m ok to share publicly, but not all)
+- Private pages (e.g. in the previous site I had a password-protected page with my details for conference organizers)
+
+Unfortunately, right now it’s all-or-nothing, even if only one file needs to be private, the whole repo needs to be private
+(I don’t think it has to be this way, and I [tweeted about this](https://twitter.com/LeaVerou/status/1652806575973605378))
+
+Making the repo public does have many advantages:
+- Transparency is one of my core values, and this is in line with it.
+- People can learn from my code and avoid going down the same rabbit holes I did.
+- People can file issues for problems.
+- People can send PRs to fix both content and functionality.
+- I wouldn’t need to use a separate public repo for the data that populates my [Speaking](/speaking/), [Publications](/publications/), and [Projects](/projects/) pages.
+
+I went back and forth quite a lot, but in the end I decided to make it public.
+In fact, I fully embraced it, by making it as easy as possible to file issues and submit PRs:
+- Each page has a link to report a problem with it, which prefills as many info as possible.
+- Each page has a link to edit it on GitHub
+
+Note that **a public repo is not automatically open source**.
+So far, I have not added a license, as I’m contemplating options.
+This is not as simple as licensing a library, as there are multiple components to it:
+(a) the website code (b) the content (c) the design (d) the images.
+As with most of my code, I’d be happy for the code here to be MIT-licensed.
+However, when it comes to content and images, I feel some kind of Creative Commons Attribtion license would be most appropriate (CC-BY? CC-BY-SA?).
+And when it comes to the design, I’m not sure I want to license it at all.
+It may be far from perfect, but it’s part of my own personal brand, which by definition needs to be unique.
+So, until I figure this out, I’m not including a license.
 
 ## Migrating content from WordPress to Markdown
 
@@ -75,149 +111,36 @@ For example:
 - Some posts (mainly old ones) were missing code blocks, and the code was just inline (which meant HTML markup was just interpreted!)
 - Some posts did not have all their images downloaded
 
-## Hiatus
-
-More than two months passed between the previous and the next section.
-I got way too busy with other things, and I was also dreading the next step: migrating comments.
-However, I also didn’t want to post anything to the old WP instance, as I would have to then port it manually.
-This effectively meant I was stuck in a limbo, unable to post anything, despite the many ideas about blog posts that I had.
-Eventually, the desire to blog again prevailed, and I moved on to the next step.
-
 ## Migrating comments
 
-I had been using Disqus for comments for years, so I didn’t want to lose them, even if I ended up using a different solution for the future (or no comments at all).
+Probably one of the hardest parts of this migration was preserving Disqus comments.
+In fact, it was so hard that I procrastinated on it for months,
+being stuck in a limbo where I couldn’t blog because I'd have to port the new post manually.
 
-Looking around for an existing solution did not yield many results.
-There’s Zach’s [eleventy-import-disqus](https://github.com/11ty/eleventy-import-disqus) but it's aimed at importing Disqus comments as static copies,
-but I wanted to have the option to continue using Disqus.
+I’ve documented the process in a [separate blog post](../preserve-disqus/), as it was quite involved,
+including some thoughts about what system to use in the future, as I eventually hope to migrate away from Disqus.
 
-Looking at the WP generated HTML source, I noticed that Disqus was using the WP post id (a number that is not displayed in the UI) to link its threads to the posts.
-However, the importer I used did not preserve the post ids as metadata (filed issue [#95](https://github.com/lonekorean/wordpress-export-to-markdown/issues/95)).
-What to do?
+## Keeping URLs cool
 
-### Getting the WP post id
+I wanted to preserve the URL structure of my old site as much as possible, both for SEO, but also because [cool URLs don’t change](https://www.w3.org/Provider/Style/URI).
+The WP importer I used allowed me to preserve the `/year/month/slug` structure of my URLs.
+I did want to have the blog in its own directory though, so I just added a [Netlify redirect](https://docs.netlify.com/routing/redirects/):
 
-My first thought was to add the post id to each post manually, but use a `HEAD` request to my existing blog to read it from the `Link` header, possibly en masse.
-My second thought was, if I can use JS to get it, maybe I can include Disqus dynamically, through JS, after it procures this number.
-Then I remembered that 11ty can handle any number of different data sources, and combines them all into a single data object.
-If I could build an index of slug → post id as another data file, I could add a post id via JS in the 11ty config.
-
-My last epiphany was realizing I didn’t need any HTTP requests to get the post id: it was all in the exported sitemap XML, just unused by the importer!
-Indeed, each `<item>` included a `<wp:post_id>` element with the post id and a `<link>` element with the URL.
-I tried to open it in Chrome so I could run some JS on it and build the index, but it complained of parse errors.
-When I fixed them, the tab crashed under its sheer size.
-
-I needed to remove non-relevant data, and I needed to do it fast.
-I copied it over to a separate file, and run a series of find & replaces:
-
-1. `^(?!.*(wp:post_id|wp:post_type|</?item>|</?link>)).+\n` (regex) with empty string
-2. `\n{3,}` (regex) with `\n` (to remove empty lines)
-3. `wp:post` with `post` to remove namespaces and make the XML easier to handle
-4. `https://lea.verou.me/` with empty string and `</link>` with `</link>` to keep just the `yyyy/mm/slug` part of the URL
-
-Then added `<?xml version="1.0" encoding="UTF-8" ?>` at the top and wrapped everything in a `<root>` element to make it valid XML.
-
-This resulted in a series of `<item>` elements that looked like this:
-
-```xml
-<item>
-	<link>2023/04/private-fields-considered-harmful</link>
-	<post_id>3599</post_id>
-	<post_type><![CDATA[post]]></post_type>
-</item>
-<item>
-	<link>2023/04/private-fields-considered-harmful/image-27</link>
-	<post_id>3600</post_id>
-	<post_type><![CDATA[attachment]]></post_type>
-</item>
+```
+/20* /blog/20:splat 301
 ```
 
-As you can see, this does not just contain posts, but also other types of content, such as attachments or custom blocks.
-This is exactly why we retained `<post_type>` (originally `<wp:post_type>`), which will help us filter non-posts out.
+Going forwards, I decided to do away with the month being part of the URL, as it complicates the file structure for no discernible benefit (and I don’t blog nearly as much now as I did in 2009).
 
-At this point, we have exuahsted the capabilities of find & replace; it’s time for some JS!
+I also wanted to have good, RESTful, [usable](https://www.nngroup.com/articles/url-as-ui/) URLs, which also requires:
 
-I opened the file in Chrome and ran:
+> URLs that are "hackable" to allow users to move to higher levels of the information architecture by hacking off the end of the URL
 
-```js
-copy(Object.assign({}, ...[...document.querySelectorAll("item")]
-			  .filter(item => item.querySelector("post_type").textContent === "post")
-			  .map(item => ({ [item.querySelector("link").textContent]: item.querySelector("post_id").textContent } ))));
-```
+In practice, this means it’s not enough if `tags/foo/` shows all posts tagged "foo", `tags/` should also show all tags.
+Similarly, it's not enough if `/blog/2023/04/private-fields-considered-harmful/` links to the [corresponding blog post](/blog/2023/04/private-fields-considered-harmful/),
+but also:
+- [`/blog/2023/04/`](/blog/2023/04/) should show all posts from April 2023
+- [`/blog/2023/`](/blog/2023/) should show all posts from 2023
+- and of course [`/blog/`](/blog/) should show all posts
 
-which copies JSON like this to the clipboard, ready to be pasted in a JSON file (I used `wpids.json`):
-
-```json
-{
-	...
-	"2022/11/tag-2": "3531",
-	"2023/03/contrast-ratio-new-home": "3592",
-	"2023/04/private-fields-considered-harmful": "3599"
-}
-```
-
-Some cleanup was still needed, but this was basically good to go.
-
-### Adding the post id to the posts
-
-To inject a `wpid` property to each post, I added a `blog.11tydata.js` file with the following:
-
-```js
-module.exports = {
-	eleventyComputed: {
-		postUrlStem: data => {
-			return data.page.filePathStem.replace(/^\/blog\/|\/index$/g, "");
-		},
-		wpid: data => {
-			return data.wpids[data.postUrlStem];
-		}
-	}
-};
-```
-
-### Linking to Disqus
-
-We now have the post id, and we can use it in our template.
-Adapting the code from the [Universal Embed Code](https://help.disqus.com/en/articles/1717112-universal-embed-code), we get:
-
-```html
-{% if wpid %}
-<div id="disqus_thread"></div>
-<script>
-    /**
-     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT
-     *  THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR
-     *  PLATFORM OR CMS.
-     *
-     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:
-     *  https://disqus.com/admin/universalcode/#configuration-variables
-     */
-
-    var disqus_config = function () {
-        // Replace PAGE_URL with your page's canonical URL variable
-        this.page.url = 'https://lea.verou.me/{{ postUrlStem }}/';
-
-        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        this.page.identifier = "{{ wpid }} https:\/\/lea.verou.me\/?p={{ wpid }}";
-    };
-
-    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-        var d = document, s = d.createElement('script');
-
-        // IMPORTANT: Replace EXAMPLE with your forum shortname!
-        s.src = 'https://leaverou.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-{% endif %}
-```
-
-That’s it! This now works and displays the Disqus threads correctly!
-
-Note that as it currently stands, this will not display the Disqus UI on new posts, since they won’t have a wpid.
-
-
-
-{% endraw %}
+This proved quite tricky to do with Eleventy, and spanned an entirely different [blog post](../11ty-indices/).

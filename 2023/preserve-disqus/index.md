@@ -3,7 +3,8 @@ title: Migrating Disqus from WP to 11ty
 date: 2023-07-18
 toc: true
 tags:
-	- meta
+  - meta
+  - 11ty
 ---
 
 So I recently [ported my 14 year old blog from WordPress to Eleventy](/blog/2023/going-lean/).
