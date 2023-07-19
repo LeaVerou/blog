@@ -4,12 +4,34 @@ permalink: "blog/tags/index.html"
 override:tags: []
 ---
 
-{% import "_tags.njk" as tags %}
+{% import "_tags.njk" as tags with context %}
 
 <ol class="tags-index subtle-markers">
+{% set orphan_count = 0 %}
 {% for tag, posts in collections.postsByTag %}
+	{% if posts.length > 1 %}
 	<li>{{ tags.one(tag) }}
 		<span class="post-count">({{ posts.length }} posts)</span>
 	</li>
+	{% else %}
+	{% set orphan_count = orphan_count + 1 %}
+	{% endif %}
 {% endfor %}
 </ol>
+
+<details>
+<summary>Also {{ orphan_count }} <a href="/blog/2023/rethinking-categorization">“orphan”</a> tags</summary>
+
+<p>The following tags are only used by a single post.</p>
+
+<ol class="tags-index subtle-markers">
+{% for tag, posts in collections.postsByTag %}
+	{% if posts.length === 1 %}
+	<li>
+		<a href="{{ posts[0].url }}">{{ tag | format_tag }}</a>
+	</li>
+	{% endif %}
+{% endfor %}
+</ol>
+
+</details>
