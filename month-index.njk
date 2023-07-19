@@ -10,6 +10,4 @@ eleventyComputed:
 ---
 
 {% import "_posts.njk" as posts %}
-{% set postlist = collections.postsByMonth[ month ] %}
-
-{{ posts.list(postlist, {style: "compact"}) }}
+{{ posts.list(collections.postsByMonth[month], {style: "compact"}) }}
