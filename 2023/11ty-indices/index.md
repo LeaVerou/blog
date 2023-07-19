@@ -1,6 +1,6 @@
 ---
 title: "11ty: Index ALL the things!"
-date: "2023-07-19"
+date: "2023-07-18"
 toc: true
 tags:
   - meta
@@ -23,7 +23,7 @@ but also:
 - [`/blog/2023/04/`](/blog/2023/04/) should show all posts from April 2023
 - [`/blog/2023/`](/blog/2023/) should show all posts from 2023
 - [`/blog/`](/blog/) should show all posts
-
+<!-- more -->
 ## Eleventy "Pagination" Primer
 
 Eleventy has a [pagination](https://www.11ty.dev/docs/pagination/) feature, which actually does a lot more than pagination:

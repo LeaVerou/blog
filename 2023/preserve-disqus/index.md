@@ -1,6 +1,6 @@
 ---
 title: Migrating Disqus from WP to 11ty
-date: 2023-07-18
+date: 2023-07-17
 toc: true
 tags:
   - meta
@@ -18,7 +18,7 @@ but I wanted to have the option to continue using Disqus.
 Looking at the WP generated HTML source, I noticed that Disqus was using the WP post id (a number that is not displayed in the UI) to link its threads to the posts.
 However, the importer I used did not preserve the post ids as metadata (filed issue [#95](https://github.com/lonekorean/wordpress-export-to-markdown/issues/95)).
 What to do?
-
+<!-- more -->
 ## Getting the WP post id
 
 My first thought was to add the post id to each post manually, but use a `HEAD` request to my existing blog to read it from the `Link` header, possibly en masse.

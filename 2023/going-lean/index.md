@@ -6,36 +6,46 @@ toc: true
 tags:
   - meta
   - 11ty
+  - ia
 ---
 
-WordPress has always been with me since my very first post in 2009.
-There is a lot to love about it: It’s open source, it has a thriving ecosystem, a lovely default theme, and a block editor that makes my inner UX geek giddy.
-Plus, it makes building a website and publishing content accessible to everyone.
+WordPress has been with me since [my very first post in 2009](/blog).
+There is a lot to love about it: It’s open source, it has a thriving ecosystem, a beautiful default theme, and a block editor that makes my inner UX geek giddy.
+Plus, it made building a website and publishing content accessible to everyone.
 No wonder it’s [the most popular CMS in the world](https://almanac.httparchive.org/en/2022/cms#most-popular-cmss), by a huge margin.
 
-However, for me, the bad had started to outweigh the good.
-Things I could do in minutes in a static site, required finding (or writing) a plugin in WP.
-It was slow and bloated.
-Getting a draft out of WP and into another medium was a pain.
-Despite having never been hacked, I was terrified about security, especially once it started demanding a higher PHP version than what I had.
-I was periodically getting "Error establishing a database connection" errors, whose frequency kept increasing.
-It was time to move on.
-It’s not you WP, it’s me.
+However, for me, the bad had started to outweigh the good:
 
-I had been using [Eleventy](https://11ty.dev) for a while at that point and loved it, so it was a no-brainer.
-In fact, my blog was my last remaining non-JAMstack site.
+- Things I could do in minutes in a static site, in WP required finding a plugin or tweaking PHP code.
+- It was slow and bloated.
+- Getting a draft out of it and into another medium was a pain.
+- Despite having never been hacked, I was terrified about security, especially once it started demanding a higher PHP version than what I had.
+- I was periodically getting "Error establishing a database connection" errors, whose frequency kept increasing.
+
+It was time to move on.
+*It’s not you WP, it’s me.*
+
+It seemed obvious that the next step would be a statically generated blog.
+I had been using [Eleventy](https://11ty.dev) for a while on a variety of sites at that point and loved it, so using that was a no-brainer.
+In fact, my blog was one of my last remaining non-JAMstack sites, and by far the biggest.
 I had built a [simple 11ty blog for my husband](https://svgees.us/blog/) a year ago, and was almost jealous of the convenience and simplicity.
 There are so many conveniences that just come for free with this workflow: git, Markdown, custom components, even GitHub Copilot as you write your prose!
 And if you can make the repo public, oooooh, the possibilities! People could even file PRs and issues for your blog posts!
+
+Using [Netlify](https://netlify.com) as a platform was also a no-brainer:
+I had been using it for years, and at this point host over 30 sites with them.
+I love their simplicity, their focus on developer experience, and their commitment to open source.
+I also happen to know a bunch of folks there, and they have a great culture too.
 
 However, I was dreading the amount of work it would take to migrate 14 years of content, plugins, and styling.
 The stroke that broke the camel’s back was a particularly bad db outage.
 I [tweeted](https://twitter.com/LeaVerou/status/1652166572335587329) about my frustration, but I had already made up my mind.
 
 I reviewed the list of plugins I had installed on WP to estimate the amount of work.
-They literally all fell in one of two categories:
-1. Solving problems I wouldn't have if I wasn't using WP (e.g. SVG support)
-2. Giving me benefits I could get with a single line of code in 11ty (e.g. Prism syntax highlighting)
+Nearly all fell in one of two categories:
+1. Solving problems I wouldn't have if I wasn't using WP (e.g. SVG support, Don’t Muck My Markup)
+2. Giving me benefits I could get in 11ty with very little code (e.g. Prism syntax highlighting, Custom Body Class, Disqus, Unlist Posts & Pages, Widget CSS classes)
+3. Giving me benefits I could get with existing Eleventy plugins (e.g. Add Anchor Links, Easy Table of Contents)
 
 This could actually work!
 
@@ -43,14 +53,14 @@ This could actually work!
 
 ## Public or private repo?
 
-One of the hardest dilemmas was whether to (eventually) make the repo for this website public or private.
+One of the hardest dilemmas was whether to make the repo for this website public or private.
 
 Overall, I was happy to have most files be public, but there were a few things I wanted to keep private:
 - Drafts (some drafts I’m ok to share publicly, but not all)
 - Private pages (e.g. in the previous site I had a password-protected page with my details for conference organizers)
 
 Unfortunately, right now it’s all-or-nothing, even if only one file needs to be private, the whole repo needs to be private
-(I don’t think it has to be this way, and I [tweeted about this](https://twitter.com/LeaVerou/status/1652806575973605378))
+(I don’t think it has to be this way, and I [tweeted about this](https://twitter.com/LeaVerou/status/1652806575973605378)).
 
 Making the repo public does have many advantages:
 - Transparency is one of my core values, and this is in line with it.
@@ -67,14 +77,14 @@ In fact, I fully embraced it, by making it as easy as possible to file issues an
 Note that **a public repo is not automatically open source**.
 So far, I have not added a license, as I’m contemplating options.
 This is not as simple as licensing a library, as there are multiple components to it:
-(a) the website code (b) the content (c) the design (d) the images.
+(a) the website code (b) the content and images (c) the design
 As with most of my code, I’d be happy for the code here to be MIT-licensed.
-However, when it comes to content and images, I feel some kind of Creative Commons Attribtion license would be most appropriate (CC-BY? CC-BY-SA?).
-And when it comes to the design, I’m not sure I want to license it at all.
+When it comes to content and images, I feel some kind of Creative Commons Attribtion license would be most appropriate (CC-BY? CC-BY-SA?).
+But when it comes to the design, I’m not sure I want to license it at all.
 It may be far from perfect, but it’s part of my own personal brand, which by definition needs to be unique.
-So, until I figure this out, I’m not including a license.
+So, adding a license will need to wait until I can figure out how to can license all three separately.
 
-## Migrating content from WordPress to Markdown
+## Migrating content to Markdown
 
 The title of this section says "to Markdown" because that’s one of the benefits of this approach:
 static site generators are largely compatible with each other, so if I ever needed to migrate again, it would be much easier.
@@ -89,8 +99,8 @@ I use Disqus for comments, but it mirrors comments in the internal WP system.
 Also, WP seems to continue recording trackbacks even if they are not displayed anywhere.
 Turns out I had hundreds of thousands of spam trackbacks, which I spent hours cleaning up (it was quite a meditative experience).
 In the end I got the total comments + trackbacks from 290K down to 26K which reduced the size of the XML export from 210 MB to a mere 31 MB.
-This did not fix the parsing issue, but allowed me to simply open the file and delete the problematic comments manually.
-It also fixed the uptime issues I was having: I never got another "Error establishing a database connection" error after that, despite taking my sweet time to migrate.
+This did not fix the parsing issue, but allowed me to simply open the file in VS Code and delete the problematic comments manually.
+It also fixed the uptime issues I was having: I never got another "Error establishing a database connection" error after that, despite taking my own sweet time to migrate (started in April 2023, and finished in July!).
 Ideally, I wish WP had an option to export without comments, but I guess that’s not a common use case.
 
 While this importer is great, and allowed me to configure the file structure in a way that preserved all my URLs, I did lose a few things:
@@ -101,15 +111,23 @@ While this importer is great, and allowed me to configure the file structure in 
 - Pages (I had to manually copy them over, but it was only a handful)
 - Any custom classes were gone (e.g. a `"view-demo"` class I used to create "call to action" links)
 
-Also, it downloaded all images, but did not update the URLs in the Markdown files.
+A few other issues:
+- It downloaded all images, but did not update the URLs in the Markdown files.
 This was easy to fix with a regex find and replace from `https?://lea.verou.me/wp-content/uploads/(\d{4}/\d{2})/([\w\.-]+\.(?:png|gif|jpe?g))` to `images/$2`.
-It also did not download any other uploads, e.g. zip files. Thankfully, these were only a couple, so I could detect and port over manually.
+- Some images from some posts were not downloaded -- I still have no idea why.
+- It did not download any non-media uploads, e.g. zip files.
+Thankfully, these were only a couple, so I could detect and port over manually.
+- Older posts included code directly in the content, without code blocks, which meant it was being parsed as HTML, often with disastrous results (e.g. the post just cutting off in the middle of a sentence because it mentioned `<script>`, which opened an actual `<script>` element and ate up the rest of the content).
+I fixed a few manually, but I’m sure there’s more left.
+- Because code was just included as content, the importer also escaped all Markdown special symbols, so adding code blocks around it was not enough, I also had to remove a bunch of backslashes manually.
 
-There were also some issues only present in some of the posts, presumably due to how WP used to store them.
-For example:
 
-- Some posts (mainly old ones) were missing code blocks, and the code was just inline (which meant HTML markup was just interpreted!)
-- Some posts did not have all their images downloaded
+## Rethinking Categorization
+
+While the importer preserved both tags and categories, this was a good opportunity to rethink whether I need them both,
+as well as how I use them.
+
+This spun off into a separate post: [Rethinking Categorization](../rethinking-categorization/).
 
 ## Migrating comments
 
