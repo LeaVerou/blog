@@ -1,6 +1,6 @@
 ---
 title: "Rethinking Categorization: Tags vs Categories, Folksonomies vs Taxonomies"
-date: "2023-07-18"
+date: "2023-07-19"
 toc: true
 tags:
   - meta
