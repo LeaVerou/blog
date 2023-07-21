@@ -16,7 +16,7 @@ So, today that I was too sad and furious to do anything productive, I spent a fe
 
 Here's a screenshot from the previous theme:
 
-![Screenshot of the old lea.verou.me theme](http://lea.verou.me/wp-content/themes/leaverou/screenshot.png "The old lea.verou.me theme")
+![Screenshot of the old lea.verou.me theme](images/screenshot.png "The old lea.verou.me theme")
 
 R.I.P. my first wordpress theme.
 
