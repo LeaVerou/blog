@@ -1,0 +1,17 @@
+---
+permalink: "blog/tags/index.json"
+layout: null
+override:tags: []
+---
+{% from "../blog/index-json.njk" import post_json %}
+{
+{% for tag, posts in collections.postsByTag %}
+	"{{ tag }}": {
+		"posts": [
+			{% for post in posts %}{{ post.url | jsonify | safe }}{% if not loop.last %},{% endif %}
+			{% endfor %}
+		]{% if posts.aliases %},
+		"aliases": [{% for alias in posts.aliases %}{{ alias | jsonify | safe }}{% endfor %}]{% endif %}
+	}{% if not loop.last %},{% endif %}
+{% endfor %}
+}

@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /blog/index.json
+override:tags: []
+---
+{% macro post_json(post) %}
+{
+	"title": "{{ post.data.title | escape }}",
+	"url": "{{ site.domain }}{{ post.url | url }}",
+	"date": "{{ post.date | format_date('iso') }}",
+	"tags": {{ post.data.tags | jsonify("") | safe }}
+}
+{% endmacro %}
+[
+{% for post in collections.blog %}
+	{{ post_json(post) }}{{ "," if not loop.last }}
+{% endfor %}
+]
