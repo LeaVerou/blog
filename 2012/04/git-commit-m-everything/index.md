@@ -3,6 +3,7 @@ title: "git commit -m \"EVERYTHING\""
 date: "2012-04-04"
 tags:
   - "git"
+  - "funny"
 ---
 
 I was working on a project today, when I realized that I had forgotten to commit for days (local only repo). I switched to my terminal, spent at least five minutes trying to decide on the commit message before settling to the completely uninformative "Another commit". Embarrassed with myself, I shared my frustration with twitter:
@@ -25,7 +26,7 @@ https://twitter.com/vmasto/status/187534173429448704
 https://twitter.com/GovertVerschuur/status/187534218790846466
 
 
-https://twitter.com/upperdog\_se/status/187534242182467584
+https://twitter.com/upperdog_se/status/187534242182467584
 
 
 https://twitter.com/brunoscheele/status/187534245437243392
@@ -61,7 +62,7 @@ https://twitter.com/omgmog/status/187537072213598209
 https://twitter.com/stevehickeydsgn/status/187538150007123969
 
 
-https://twitter.com/\_dte/status/187538777441452032
+https://twitter.com/_dte/status/187538777441452032
 
 
 https://twitter.com/nathandim/status/187538945305870336
@@ -112,5 +113,5 @@ https://twitter.com/michelegera/status/187542353446313984
 https://twitter.com/StuRobson/status/187543502538809344
 
 
-https://twitter.com/gmoulin\_dev/status/187544693779873792
+https://twitter.com/gmoulin_dev/status/187544693779873792
 

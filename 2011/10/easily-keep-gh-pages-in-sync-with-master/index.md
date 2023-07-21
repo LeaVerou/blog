@@ -4,6 +4,7 @@ date: "2011-10-13"
 tags:
   - "tips"
   - "github"
+  - "git"
 ---
 
 I always loved Github's ability to publish pages for a project and get the strain out of your server. However, every time I tried it, I struggled to keep the gh-pages branch up to date. Until I discovered the awesome `git rebase`.

@@ -1,6 +1,9 @@
 ---
 title: "Utility: Convert SVG path to all-relative or all-absolute commands"
 date: "2019-05-06"
+tags:
+- "releases"
+- "svg"
 ---
 
 I like hand-editing my SVGs. Often I will create an initial version in Illustrator, and then export and continue with hand editing. Not only is it a bit of a meditative experience and it satisfies my obsessive-compulsive tendencies to clean up the code, it has actual practical benefits when you need to make certain changes or introduce animation. Some things are easier to do in a GUI, and others are easier to do in code, and I like having the flexibility to pick which one fits my use case best.

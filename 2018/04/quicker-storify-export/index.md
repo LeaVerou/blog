@@ -1,6 +1,8 @@
 ---
 title: "Quicker Storify export"
 date: "2018-04-27"
+tags:
+- "tips"
 ---
 
 If you've used [Storify](http://storify.com), you probably know by now it's closing down soon. They have an [FAQ](https://storify.com/faq-eol) up to help people with the transition which explains that to export your content you need to…
