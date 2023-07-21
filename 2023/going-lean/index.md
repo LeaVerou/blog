@@ -18,11 +18,12 @@ However, for me, the bad had started to outweigh the good:
 - Things I could do in minutes in a static site, in WP required finding a plugin or tweaking PHP code.
 - It was slow and bloated.
 - Getting a draft out of it and into another medium was a pain.
-- Despite having never been hacked, I was terrified about security, especially once it started demanding a higher PHP version than what I had.
+- Despite having never been hacked, I was terrified about it, given all the horror stories.
 - I was periodically getting "Error establishing a database connection" errors, whose frequency kept increasing.
 
 It was time to move on.
 *It’s not you WP, it’s me.*
+<!-- more -->
 
 It seemed obvious that the next step would be a statically generated blog.
 I had been using [Eleventy](https://11ty.dev) for a while on a variety of sites at that point and loved it, so using that was a no-brainer.
@@ -47,8 +48,6 @@ Nearly all fell in one of two categories:
 3. Giving me benefits I could get with existing Eleventy plugins (e.g. Add Anchor Links, Easy Table of Contents)
 
 This could actually work!
-
-<!-- more -->
 
 ## Public or private repo?
 

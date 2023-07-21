@@ -1,7 +1,7 @@
 ---
 title: "JS private class fields considered harmful"
 date: "2023-04-28"
-categories:
+tags:
   - "articles"
   - "thoughts"
 tags:
