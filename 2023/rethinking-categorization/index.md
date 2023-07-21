@@ -43,6 +43,12 @@ I addressed this by defining [aliases]({{ site.repo_file }}/data/tag_aliases.jso
 {% endraw %}
 Turns out I’m not the first to think of building the Netlify `_redirects` file dynamically, some googling revealed [this blog post](https://www.aleksandrhovhannisyan.com/blog/eleventy-netlify-redirects/) from 2021 that does the same thing.
 
+<div class=warning>
+
+Sadly, unlike most build artifacts, it appears you need to commit the `_redirects` file to your repo for Netlify to pick it up.
+
+</div>
+
 I’ve also decided to expose these aliases in the [tags index](/blog/tags/):
 
 ![](images/aliases-tag-index.png)
