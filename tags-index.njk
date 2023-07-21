@@ -12,6 +12,7 @@ override:tags: []
 	{% if posts.length > 1 %}
 	<li>{{ tags.one(tag) }}
 		<span class="post-count">({{ posts.length }} posts)</span>
+		{% if posts.aliases %}<div class="aliases">+ {% for alias in posts.aliases %}{{ tags.one(alias) }}{% endfor %}</div>{% endif %}
 	</li>
 	{% else %}
 	{% set orphan_count = orphan_count + 1 %}
