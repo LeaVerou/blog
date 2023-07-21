@@ -11,7 +11,7 @@ permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 ---
 
 
-{% import "_posts.njk" as posts %}
+{% import "_posts.njk" as posts with context %}
 {{ posts.list(pagination.items) }}
 
 <footer class="prev-next">
