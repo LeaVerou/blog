@@ -21,10 +21,10 @@ body:
       label: Did this page work in the previous website?
       description: You can usually find the same page on the old website by using `lea0.verou.me` instead of `lea.verou.me` and replacing `/blog/` with `/`.
       options:
-        - Yes
-        - No
-      validations:
-        required: true
+        - "Yes"
+        - "No"
+    validations:
+      required: true
   - type: dropdown
     id: issues
     attributes:
