@@ -1,9 +1,8 @@
 ---
 title: "Redesign"
 date: "2010-02-13"
-categories:
-  - "personal"
 tags:
+  - "personal"
   - "meta"
 ---
 

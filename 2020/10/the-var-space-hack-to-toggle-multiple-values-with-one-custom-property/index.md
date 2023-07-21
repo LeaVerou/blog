@@ -1,10 +1,9 @@
 ---
 title: "The -​-var: ; hack to toggle multiple values with one custom property"
 date: "2020-10-12"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "css"
   - "css-variables"
 ---

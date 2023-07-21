@@ -1,10 +1,9 @@
 ---
 title: "CSS3 for developers: My Fronteers 2011 workshop"
 date: "2011-08-06"
-categories:
+tags:
   - "personal"
   - "speaking"
-tags:
   - "speaking"
   - "css"
   - "speaking"

@@ -1,9 +1,8 @@
 ---
 title: "WD @media talk subject change"
 date: "2011-03-08"
-categories:
-  - "personal"
 tags:
+  - "personal"
   - "speaking"
 ---
 

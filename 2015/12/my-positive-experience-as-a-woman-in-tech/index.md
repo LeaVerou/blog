@@ -1,7 +1,7 @@
 ---
 title: "My positive experience as a woman in tech"
 date: "2015-12-17"
-categories: 
+tags:
   - "personal"
 ---
 

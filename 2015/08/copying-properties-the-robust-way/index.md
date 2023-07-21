@@ -1,9 +1,8 @@
 ---
 title: "Copying object properties, the robust way"
 date: "2015-08-16"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "js"
 ---
 

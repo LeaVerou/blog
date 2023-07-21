@@ -1,10 +1,9 @@
 ---
 title: "Releasing Color.js: A library that takes color seriously"
 date: "2022-06-29"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "colors"
   - "color-api"
   - "color-science"

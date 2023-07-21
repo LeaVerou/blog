@@ -1,9 +1,8 @@
 ---
 title: "CSS reflections for Firefox, with -moz-element() and SVG masks"
 date: "2011-06-29"
-categories:
-  - "original"
 tags:
+  - "original"
   - "css"
   - "css-images"
   - "svg"

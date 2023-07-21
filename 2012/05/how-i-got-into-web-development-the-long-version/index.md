@@ -1,7 +1,7 @@
 ---
 title: "How I got into web development — the long version"
 date: "2012-05-01"
-categories: 
+tags:
   - "personal"
 ---
 

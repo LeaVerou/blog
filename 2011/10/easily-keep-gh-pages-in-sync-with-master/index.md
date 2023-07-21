@@ -1,9 +1,8 @@
 ---
 title: "Easily keep gh-pages in sync with master"
 date: "2011-10-13"
-categories: 
+tags:
   - "tips"
-tags: 
   - "github"
 ---
 

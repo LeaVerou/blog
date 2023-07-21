@@ -1,7 +1,7 @@
 ---
 title: "Dive deep into CSS3 (and Bolognese!) in Bologna, Italy"
 date: "2012-09-13"
-categories:
+tags:
   - "personal"
   - "speaking"
 ---

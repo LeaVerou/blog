@@ -1,9 +1,8 @@
 ---
 title: "Flexible Google-style loader with CSS"
 date: "2013-11-11"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-animations"
 ---

@@ -1,10 +1,9 @@
 ---
 title: "Different remote and local resource URLs, with Service Workers!"
 date: "2017-10-30"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "js"
   - "service-workers"
 ---

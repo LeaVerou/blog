@@ -1,9 +1,8 @@
 ---
 title: "Smooth state animations with animation-play-state"
 date: "2014-01-09"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-animations"
 ---

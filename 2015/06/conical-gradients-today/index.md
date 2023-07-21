@@ -1,7 +1,7 @@
 ---
 title: "Conical gradients, today!"
 date: "2015-06-18"
-categories:
+tags:
   - "csswg"
   - "original"
   - "releases"

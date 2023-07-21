@@ -1,9 +1,8 @@
 ---
 title: "Developer priorities throughout their career"
 date: "2020-09-16"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "dry"
   - "maintainability"
   - "programming"

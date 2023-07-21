@@ -1,9 +1,8 @@
 ---
 title: "Idea: The simplest registration form ever"
 date: "2009-07-23"
-categories:
-  - "thoughts"
 tags:
+  - "thoughts"
   - "registration-forms"
   - "ui"
   - "usability"

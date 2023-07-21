@@ -1,11 +1,10 @@
 ---
 title: "Organizing a university course on modern Web development"
 date: "2010-07-26"
-categories:
+tags:
   - "articles"
   - "original"
   - "personal"
-tags:
   - "css"
   - "education"
   - "js"

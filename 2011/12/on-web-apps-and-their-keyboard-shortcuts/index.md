@@ -1,9 +1,8 @@
 ---
 title: "On web apps and their keyboard shortcuts"
 date: "2011-12-17"
-categories:
-  - "thoughts"
 tags:
+  - "thoughts"
   - "usability"
   - "ux"
 ---

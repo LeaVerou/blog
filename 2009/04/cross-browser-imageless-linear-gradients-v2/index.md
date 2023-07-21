@@ -1,10 +1,9 @@
 ---
 title: "Cross-browser imageless linear gradients v2"
 date: "2009-04-24"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "gradient"
   - "js"
 ---

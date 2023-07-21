@@ -1,9 +1,8 @@
 ---
 title: "100% Cyan in CMYK is NOT rgb(0,255,255)!!"
 date: "2009-03-23"
-categories: 
+tags:
   - "rants"
-tags: 
   - "cmyk"
   - "colors"
   - "rgb"

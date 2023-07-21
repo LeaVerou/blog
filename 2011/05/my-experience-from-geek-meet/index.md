@@ -1,7 +1,7 @@
 ---
 title: "My experience from Geek Meet"
 date: "2011-05-13"
-categories: 
+tags:
   - "speaking"
 ---
 

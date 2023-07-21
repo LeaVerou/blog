@@ -1,9 +1,8 @@
 ---
 title: "Cleanest CSS spinner, ever"
 date: "2013-11-29"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-animations"
 ---

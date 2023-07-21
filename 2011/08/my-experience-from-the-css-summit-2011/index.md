@@ -1,10 +1,9 @@
 ---
 title: "My experience from the CSS Summit 2011"
 date: "2011-08-02"
-categories:
+tags:
   - "personal"
   - "speaking"
-tags:
   - "speaking"
   - "speaking"
 ---

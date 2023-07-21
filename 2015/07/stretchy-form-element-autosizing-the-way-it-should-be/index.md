@@ -1,7 +1,7 @@
 ---
 title: "Stretchy: Form element autosizing, the way it should be"
 date: "2015-07-26"
-categories:
+tags:
   - "original"
   - "releases"
 ---

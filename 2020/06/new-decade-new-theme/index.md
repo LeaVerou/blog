@@ -1,10 +1,9 @@
 ---
 title: "New decade, new theme"
 date: "2020-06-03"
-categories:
+tags:
   - "news"
   - "personal"
-tags:
   - "meta"
 ---
 

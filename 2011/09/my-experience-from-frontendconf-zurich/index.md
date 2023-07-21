@@ -1,10 +1,9 @@
 ---
 title: "My experience from Frontendconf Zurich"
 date: "2011-09-20"
-categories:
+tags:
   - "personal"
   - "speaking"
-tags:
   - "css"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "My new year’s resolution"
 date: "2012-01-13"
-categories: 
+tags:
   - "personal"
 ---
 

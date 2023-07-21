@@ -1,9 +1,8 @@
 ---
 title: "Never forget type=\"button\" on generated buttons!"
 date: "2018-05-19"
-categories:
-  - "personal"
 tags:
+  - "personal"
   - "html"
   - "js"
   - "wtf"

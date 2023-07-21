@@ -1,9 +1,8 @@
 ---
 title: "Slanted tabs with CSS 3D transforms"
 date: "2013-10-18"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-transforms"
 ---

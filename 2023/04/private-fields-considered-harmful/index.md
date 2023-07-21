@@ -4,7 +4,6 @@ date: "2023-04-28"
 tags:
   - "articles"
   - "thoughts"
-tags:
   - "architecture"
   - "js"
   - "tc39"

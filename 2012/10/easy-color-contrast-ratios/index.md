@@ -1,9 +1,8 @@
 ---
 title: "Easy color contrast ratios"
 date: "2012-10-14"
-categories:
-  - "releases"
 tags:
+  - "releases"
   - "a11y"
   - "colors"
   - "contrast-ratio.com"

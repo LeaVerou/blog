@@ -1,10 +1,9 @@
 ---
 title: "Introducing Multirange: A tiny polyfill for HTML5.1 two-handle sliders"
 date: "2016-05-31"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "html5"
   - "html5-1"
   - "sliders"

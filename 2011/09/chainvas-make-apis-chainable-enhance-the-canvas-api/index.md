@@ -1,9 +1,8 @@
 ---
 title: "Chainvas: Make APIs chainable, enhance the canvas API"
 date: "2011-09-11"
-categories:
-  - "original"
 tags:
+  - "original"
   - "canvas"
   - "html5"
 ---

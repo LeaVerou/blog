@@ -1,7 +1,7 @@
 ---
 title: "Is the current tab active?"
 date: "2021-05-24"
-categories:
+tags:
   - "rants"
 defaultLanguage: "js"
 ---

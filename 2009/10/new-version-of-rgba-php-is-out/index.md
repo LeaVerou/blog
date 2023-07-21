@@ -1,9 +1,8 @@
 ---
 title: "New version of rgba.php is out!"
 date: "2009-10-25"
-categories:
-  - "original"
 tags:
+  - "original"
   - "colors"
   - "css"
   - "css-values"

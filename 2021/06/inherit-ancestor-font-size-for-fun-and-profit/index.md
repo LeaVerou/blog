@@ -1,7 +1,7 @@
 ---
 title: "Inherit ancestor font-size, for fun and profit"
 date: "2021-06-24"
-categories:
+tags:
   - "articles"
   - "original"
   - "tutorials"

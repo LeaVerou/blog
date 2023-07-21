@@ -1,9 +1,8 @@
 ---
 title: "Mass function overloading: why and how?"
 date: "2021-02-10"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "api-design"
   - "bliss"
   - "esm"

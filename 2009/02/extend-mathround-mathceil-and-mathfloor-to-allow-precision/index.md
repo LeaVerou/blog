@@ -1,9 +1,8 @@
 ---
 title: "Extend Math.round, Math.ceil and Math.floor to allow for precision"
 date: "2009-02-12"
-categories:
-  - "original"
 tags:
+  - "original"
   - "js"
   - "math"
 ---

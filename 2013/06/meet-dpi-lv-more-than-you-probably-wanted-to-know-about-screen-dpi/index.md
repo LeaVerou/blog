@@ -1,10 +1,9 @@
 ---
 title: "Meet dpi.lv: More than you probably wanted to know about screen DPI"
 date: "2013-06-10"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "dpi-ppi"
 ---
 

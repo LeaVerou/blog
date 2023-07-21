@@ -1,9 +1,8 @@
 ---
 title: "Why I love our industry"
 date: "2011-08-17"
-categories: 
+tags:
   - "personal"
-tags: 
   - "community"
 ---
 

@@ -1,10 +1,9 @@
 ---
 title: "Styling elements based on sibling count"
 date: "2011-01-17"
-categories:
+tags:
   - "replies"
   - "tips"
-tags:
   - "css"
   - "selectors"
 ---

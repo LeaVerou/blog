@@ -1,9 +1,8 @@
 ---
 title: "CMYK colors in CSS: Useful or useless?"
 date: "2009-03-09"
-categories:
-  - "thoughts"
 tags:
+  - "thoughts"
   - "cmyk"
   - "colors"
   - "css"

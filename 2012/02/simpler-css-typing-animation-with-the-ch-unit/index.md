@@ -1,9 +1,8 @@
 ---
 title: "Simpler CSS typing animation, with the ch unit"
 date: "2012-02-05"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-animations"
   - "css-values"

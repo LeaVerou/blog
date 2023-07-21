@@ -1,9 +1,8 @@
 ---
 title: "On URL readability"
 date: "2011-08-30"
-categories: 
+tags:
   - "thoughts"
-tags: 
   - "urls"
 ---
 

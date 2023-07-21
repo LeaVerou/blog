@@ -1,9 +1,8 @@
 ---
 title: "Java pretty dates"
 date: "2009-04-21"
-categories: 
+tags:
   - "original"
-tags: 
   - "java"
 ---
 

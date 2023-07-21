@@ -1,7 +1,7 @@
 ---
 title: "Introducing Prism: An awesome new syntax highlighter"
 date: "2012-07-31"
-categories:
+tags:
   - "original"
   - "releases"
 ---

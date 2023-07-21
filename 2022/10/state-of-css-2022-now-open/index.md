@@ -1,9 +1,8 @@
 ---
 title: "State of CSS 2022 now open!"
 date: "2022-10-03"
-categories:
-  - "news"
 tags:
+  - "news"
   - "css"
   - "surveys"
   - "data-analysis"

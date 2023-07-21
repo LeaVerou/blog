@@ -1,10 +1,9 @@
 ---
 title: "Preview corner-shape, before implementations!"
 date: "2013-03-24"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "border-radius"
   - "css4"
   - "svg"

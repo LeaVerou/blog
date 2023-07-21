@@ -1,9 +1,8 @@
 ---
 title: "CSS3 border-radius, today"
 date: "2009-02-13"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "border-radius"
   - "css"
   - "css-properties"

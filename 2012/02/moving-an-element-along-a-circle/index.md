@@ -1,9 +1,8 @@
 ---
 title: "Moving an element along a circle"
 date: "2012-02-08"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-animations"
   - "css-transforms"

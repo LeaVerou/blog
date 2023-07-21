@@ -1,9 +1,8 @@
 ---
 title: "iPhone keyboard with CSS3 -- no images"
 date: "2010-02-18"
-categories:
-  - "original"
 tags:
+  - "original"
   - "font-face"
   - "box-shadow"
   - "css-gradients"

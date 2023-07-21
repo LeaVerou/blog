@@ -1,10 +1,9 @@
 ---
 title: "Introducing Whathecolor: A color game for web developers!"
 date: "2014-02-08"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "colors"
   - "css-color"
 ---

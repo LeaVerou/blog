@@ -1,10 +1,9 @@
 ---
 title: "What makes speakers happy"
 date: "2013-07-19"
-categories:
+tags:
   - "speaking"
   - "thoughts"
-tags:
   - "speaking"
   - "speaking"
 ---

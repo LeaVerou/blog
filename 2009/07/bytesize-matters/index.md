@@ -1,10 +1,9 @@
 ---
 title: "(byte)size matters"
 date: "2009-07-31"
-categories: 
+tags:
   - "personal"
   - "tips"
-tags: 
   - "bytesizematters"
 ---
 

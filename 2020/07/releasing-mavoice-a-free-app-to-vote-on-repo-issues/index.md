@@ -1,10 +1,9 @@
 ---
 title: "Releasing MaVoice: A free app to vote on repo issues"
 date: "2020-07-11"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "css"
   - "github"
   - "mavo"

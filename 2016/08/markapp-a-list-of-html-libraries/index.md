@@ -1,9 +1,8 @@
 ---
 title: "Markapp: A list of HTML libraries"
 date: "2016-08-26"
-categories:
-  - "original"
 tags:
+  - "original"
   - "html"
   - "html-libraries"
   - "js"

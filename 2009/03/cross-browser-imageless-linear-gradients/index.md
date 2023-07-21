@@ -1,9 +1,8 @@
 ---
 title: "Cross browser, imageless linear gradients"
 date: "2009-03-20"
-categories:
-  - "original"
 tags:
+  - "original"
   - "canvas"
   - "gradient"
   - "js"

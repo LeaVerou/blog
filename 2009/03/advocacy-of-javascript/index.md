@@ -1,9 +1,8 @@
 ---
 title: "Advocacy of JavaScript"
 date: "2009-03-30"
-categories:
-  - "rants"
 tags:
+  - "rants"
   - "js"
 ---
 

@@ -1,10 +1,9 @@
 ---
 title: "The Cicada Principle, revisited with CSS variables"
 date: "2020-07-07"
-categories: 
+tags:
   - "articles"
   - "original"
-tags: 
   - "css"
   - "css-variables"
 ---

@@ -1,9 +1,8 @@
 ---
 title: "Find the vendor prefix of the current browser"
 date: "2009-02-13"
-categories:
-  - "original"
 tags:
+  - "original"
   - "css-properties"
   - "js"
   - "vendor-prefixes"

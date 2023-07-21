@@ -1,11 +1,10 @@
 ---
 title: "My FT2010 slides and CSSS: My presentation framework"
 date: "2010-10-29"
-categories:
+tags:
   - "original"
   - "personal"
   - "releases"
-tags:
   - "speaking"
   - "css"
   - "csss"

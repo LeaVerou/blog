@@ -1,9 +1,8 @@
 ---
 title: "What is the best way to mark up an exclusive button group?"
 date: "2022-07-14"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "a11y"
   - "web-components"
 ---

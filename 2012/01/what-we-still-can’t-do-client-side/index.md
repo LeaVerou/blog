@@ -1,9 +1,8 @@
 ---
 title: "What we still can’t do client-side"
 date: "2012-01-09"
-categories:
-  - "rants"
 tags:
+  - "rants"
   - "apis"
   - "web-standards"
 ---

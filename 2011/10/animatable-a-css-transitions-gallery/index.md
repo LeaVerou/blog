@@ -1,10 +1,9 @@
 ---
 title: "Animatable: A CSS transitions gallery"
 date: "2011-10-30"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "css"
   - "css-animations"
   - "css-transitions"

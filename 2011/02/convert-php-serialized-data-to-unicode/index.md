@@ -1,10 +1,9 @@
 ---
 title: "Convert PHP serialized data to Unicode"
 date: "2011-02-13"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "i18n"
   - "php"
   - "unicode"

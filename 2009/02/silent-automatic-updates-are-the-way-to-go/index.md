@@ -1,9 +1,8 @@
 ---
 title: "Silent, automatic updates are the way to go"
 date: "2009-02-18"
-categories: 
+tags:
   - "thoughts"
-tags: 
   - "browsers"
   - "google-chrome"
 ---

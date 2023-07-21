@@ -1,10 +1,9 @@
 ---
 title: "Hybrid positioning with CSS variables and max()"
 date: "2020-06-05"
-categories:
+tags:
   - "tips"
   - "tutorials"
-tags:
   - "css"
   - "css-values"
   - "css-variables"

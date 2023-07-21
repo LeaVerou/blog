@@ -1,9 +1,8 @@
 ---
 title: "On attr() and calc()"
 date: "2010-09-11"
-categories:
-  - "thoughts"
 tags:
+  - "thoughts"
   - "attr()"
   - "calc()"
   - "css"

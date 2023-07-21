@@ -1,10 +1,9 @@
 ---
 title: "My experience from Fronteers, JSConf EU, Frontend and FromTheFront"
 date: "2011-10-21"
-categories:
+tags:
   - "personal"
   - "speaking"
-tags:
   - "speaking"
   - "speaking"
 ---

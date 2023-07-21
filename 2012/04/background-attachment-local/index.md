@@ -1,9 +1,8 @@
 ---
 title: "Pure CSS scrolling shadows with background-attachment: local"
 date: "2012-04-26"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "background-attachment"
   - "css-backgrounds"
   - "css"

@@ -1,11 +1,10 @@
 ---
 title: "Custom properties with defaults: 3+1 strategies"
 date: "2021-10-15"
-categories:
+tags:
   - "articles"
   - "original"
   - "tutorials"
-tags:
   - "css"
   - "css-custom-properties"
   - "css-variables"

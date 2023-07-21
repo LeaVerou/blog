@@ -1,9 +1,8 @@
 ---
 title: "The case for Weak Dependencies in JS"
 date: "2020-11-19"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "esm"
   - "js"
   - "software-engineering"

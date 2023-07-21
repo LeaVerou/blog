@@ -2,11 +2,10 @@
 title: "Dark mode in 5 minutes, with inverted lightness variables"
 date: "2021-03-30"
 page_css: true
-categories:
+tags:
   - "articles"
   - "original"
   - "tutorials"
-tags:
   - "css-variables"
   - "dark-mode"
   - "hsl"

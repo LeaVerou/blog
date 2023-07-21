@@ -1,9 +1,8 @@
 ---
 title: "Pure CSS3 typing animation with steps()"
 date: "2011-09-05"
-categories:
-  - "original"
 tags:
+  - "original"
   - "css"
   - "css-animations"
 ---

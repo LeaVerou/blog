@@ -1,7 +1,7 @@
 ---
 title: "Major update to Chainvas: modularity, a client side build script & more"
 date: "2011-09-18"
-categories:
+tags:
   - "original"
   - "releases"
 ---

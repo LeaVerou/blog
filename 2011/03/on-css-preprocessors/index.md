@@ -1,9 +1,8 @@
 ---
 title: "On CSS preprocessors"
 date: "2011-03-09"
-categories:
-  - "rants"
 tags:
+  - "rants"
   - "css-preprocessors"
   - "css"
   - "less"

@@ -1,10 +1,9 @@
 ---
 title: "On ratings and meters"
 date: "2022-08-12"
-categories:
+tags:
   - "original"
   - "thoughts"
-tags:
   - "html"
   - "js"
   - "ui"

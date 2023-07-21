@@ -1,9 +1,8 @@
 ---
 title: "Awesomplete: 2KB autocomplete with zero dependencies"
 date: "2015-02-19"
-categories:
-  - "releases"
 tags:
+  - "releases"
   - "autocomplete"
   - "awesomplete"
   - "js"

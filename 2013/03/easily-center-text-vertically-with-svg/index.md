@@ -1,10 +1,9 @@
 ---
 title: "Easily center text vertically, with SVG!"
 date: "2013-03-24"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "svg"
 ---
 

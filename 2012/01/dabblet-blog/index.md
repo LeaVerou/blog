@@ -1,10 +1,9 @@
 ---
 title: "Dabblet blog"
 date: "2012-01-05"
-categories: 
+tags:
   - "news"
   - "personal"
-tags: 
   - "dabblet"
 ---
 

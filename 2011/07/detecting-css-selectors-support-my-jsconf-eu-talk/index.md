@@ -1,11 +1,10 @@
 ---
 title: "Detecting CSS selectors support + my JSConf EU talk"
 date: "2011-07-21"
-categories:
+tags:
   - "news"
   - "original"
   - "personal"
-tags:
   - "feature-detection-css-selectors"
   - "js"
 ---

@@ -1,10 +1,9 @@
 ---
 title: "Better usability in 5 minutes"
 date: "2009-04-10"
-categories:
+tags:
   - "articles"
   - "original"
-tags:
   - "css"
   - "css"
   - "selectors"

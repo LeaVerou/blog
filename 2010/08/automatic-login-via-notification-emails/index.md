@@ -1,9 +1,8 @@
 ---
 title: "Automatic login via notification emails?"
 date: "2010-08-14"
-categories:
-  - "thoughts"
 tags:
+  - "thoughts"
   - "security"
   - "usability"
   - "ux"

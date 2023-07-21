@@ -1,10 +1,9 @@
 ---
 title: "On native, single-input, multiple file uploads"
 date: "2009-03-07"
-categories:
+tags:
   - "articles"
   - "news"
-tags:
   - "browsers"
   - "feature-detection"
   - "html"

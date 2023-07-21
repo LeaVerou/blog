@@ -1,9 +1,8 @@
 ---
 title: "Simple script: Automatic talks list"
 date: "2013-12-28"
-categories:
-  - "speaking"
 tags:
+  - "speaking"
   - "js"
   - "json"
   - "speaking"

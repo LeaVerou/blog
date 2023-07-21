@@ -1,9 +1,8 @@
 ---
 title: "jQuery Pure: Call for contributors"
 date: "2011-06-09"
-categories:
-  - "thoughts"
 tags:
+  - "thoughts"
   - "js"
   - "jquery"
 ---

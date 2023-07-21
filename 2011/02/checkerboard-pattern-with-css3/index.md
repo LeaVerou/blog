@@ -1,10 +1,9 @@
 ---
 title: "Checkerboard pattern with CSS3"
 date: "2011-02-16"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "css"
   - "css-images"
   - "css-values"

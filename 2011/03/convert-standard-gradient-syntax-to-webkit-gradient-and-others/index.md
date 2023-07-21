@@ -1,9 +1,8 @@
 ---
 title: "Convert standard gradient syntax to -webkit-gradient and others"
 date: "2011-03-26"
-categories:
-  - "original"
 tags:
+  - "original"
   - "css-gradients"
   - "js"
 ---

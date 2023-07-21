@@ -1,10 +1,9 @@
 ---
 title: "Yet another redesign"
 date: "2011-01-05"
-categories:
+tags:
   - "personal"
   - "rants"
-tags:
   - "meta"
 ---
 

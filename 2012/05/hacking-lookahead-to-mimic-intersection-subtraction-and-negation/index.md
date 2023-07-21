@@ -1,9 +1,8 @@
 ---
 title: "Hacking lookahead to mimic intersection, subtraction and negation"
 date: "2012-05-13"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "regexp"
   - "regular-expressions"
 ---

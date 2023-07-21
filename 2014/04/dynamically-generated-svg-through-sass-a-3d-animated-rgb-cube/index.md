@@ -1,10 +1,9 @@
 ---
 title: "Dynamically generated SVG through SASS + A 3D animated RGB cube!"
 date: "2014-04-04"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "css"
   - "css-3d-transforms"
   - "css-animations"

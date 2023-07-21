@@ -1,12 +1,11 @@
 ---
 title: "LCH colors in CSS: what, why, and how?"
 date: "2020-04-04"
-categories:
+tags:
   - "articles"
   - "csswg"
   - "original"
   - "releases"
-tags:
   - "colors"
   - "css-color-4"
   - "css-color-5"

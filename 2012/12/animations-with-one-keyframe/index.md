@@ -1,9 +1,8 @@
 ---
 title: "CSS Animations with only one keyframe"
 date: "2012-12-12"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-animations"
 ---

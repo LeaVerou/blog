@@ -1,10 +1,9 @@
 ---
 title: "Bevels in CSS3"
 date: "2009-07-23"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "box-shadow"
   - "css"
   - "css-properties"

@@ -1,11 +1,10 @@
 ---
 title: "twee+: Longer tweets, no strings attached"
 date: "2011-08-14"
-categories:
+tags:
   - "original"
   - "personal"
   - "releases"
-tags:
   - "twitter"
 ---
 

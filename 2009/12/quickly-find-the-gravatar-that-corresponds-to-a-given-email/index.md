@@ -1,9 +1,8 @@
 ---
 title: "Quickly find the Gravatar that cor­res­ponds to a given email"
 date: "2009-12-07"
-categories:
-  - "original"
 tags:
+  - "original"
   - "gravatar"
   - "php"
 ---

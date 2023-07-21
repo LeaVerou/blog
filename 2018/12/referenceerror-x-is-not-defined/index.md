@@ -1,9 +1,8 @@
 ---
 title: "ReferenceError: x is not defined?"
 date: "2018-12-14"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "js"
 ---
 

@@ -1,9 +1,8 @@
 ---
 title: "iOS 6 switch style checkboxes with pure CSS"
 date: "2013-03-15"
-categories:
-  - "original"
 tags:
+  - "original"
   - "css"
   - "forms"
 ---

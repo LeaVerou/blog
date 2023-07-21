@@ -1,9 +1,8 @@
 ---
 title: "Leaving W3C"
 date: "2013-07-11"
-categories: 
+tags:
   - "personal"
-tags: 
   - "w3c"
 ---
 

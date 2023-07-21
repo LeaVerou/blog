@@ -1,9 +1,8 @@
 ---
 title: "The curious case of border-radius:50%"
 date: "2010-10-30"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "border-radius"
   - "browser-bugs"
   - "css"

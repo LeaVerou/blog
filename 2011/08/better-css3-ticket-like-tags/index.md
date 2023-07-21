@@ -1,9 +1,8 @@
 ---
 title: "Better “CSS3 ticket-like tags”"
 date: "2011-08-15"
-categories:
-  - "replies"
 tags:
+  - "replies"
   - "css-gradients"
   - "css"
   - "generated-content"

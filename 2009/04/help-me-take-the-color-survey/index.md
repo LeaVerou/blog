@@ -1,9 +1,8 @@
 ---
 title: "Help me: take the color survey"
 date: "2009-04-06"
-categories: 
+tags:
   - "personal"
-tags: 
   - "colors"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Spot the unsubscribe (link)!"
 date: "2015-07-14"
-categories:
+tags:
   - "original"
   - "personal"
 ---

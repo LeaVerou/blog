@@ -1,9 +1,8 @@
 ---
 title: "CSS is for developers"
 date: "2013-12-05"
-categories: 
+tags:
   - "thoughts"
-tags: 
   - "css"
 ---
 

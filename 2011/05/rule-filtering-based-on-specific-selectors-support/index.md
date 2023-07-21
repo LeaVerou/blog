@@ -1,9 +1,8 @@
 ---
 title: "Rule filtering based on specific selector(s) support"
 date: "2011-05-02"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "selectors"
 ---

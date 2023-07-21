@@ -1,9 +1,8 @@
 ---
 title: "Extend Math.log to allow for bases != e"
 date: "2009-03-26"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "js"
   - "math"
 ---

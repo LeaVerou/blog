@@ -1,10 +1,9 @@
 ---
 title: "The failed promise of Web Components"
 date: "2020-09-24"
-categories:
+tags:
   - "rants"
   - "thoughts"
-tags:
   - "html"
   - "js"
   - "usability"

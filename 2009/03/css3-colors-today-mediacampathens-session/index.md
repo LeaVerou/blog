@@ -1,10 +1,9 @@
 ---
 title: "CSS3 colors, today (MediaCampAthens session)"
 date: "2009-03-15"
-categories:
+tags:
   - "news"
   - "personal"
-tags:
   - "cmyk"
   - "colors"
   - "css"

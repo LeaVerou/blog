@@ -1,7 +1,7 @@
 ---
 title: "I’m going to MIT!!"
 date: "2014-02-11"
-categories:
+tags:
   - "personal"
 ---
 

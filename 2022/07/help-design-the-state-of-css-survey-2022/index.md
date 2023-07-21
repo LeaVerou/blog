@@ -1,9 +1,8 @@
 ---
 title: "Help design the State of CSS Survey 2022!"
 date: "2022-07-28"
-categories:
-  - "news"
 tags:
+  - "news"
   - "css"
   - "surveys"
   - "data-analysis"

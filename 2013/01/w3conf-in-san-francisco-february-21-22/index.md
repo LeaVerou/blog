@@ -1,9 +1,8 @@
 ---
 title: "W3Conf in San Francisco, February 21-22"
 date: "2013-01-30"
-categories:
-  - "speaking"
 tags:
+  - "speaking"
   - "w3c"
 ---
 

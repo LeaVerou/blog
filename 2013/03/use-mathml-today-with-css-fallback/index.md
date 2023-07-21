@@ -1,9 +1,8 @@
 ---
 title: "Use MathML today, with CSS fallback!"
 date: "2013-03-21"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "fallback"
   - "mathml"

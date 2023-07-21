@@ -1,10 +1,9 @@
 ---
 title: "In defense of reinventing wheels"
 date: "2012-04-03"
-categories:
+tags:
   - "articles"
   - "thoughts"
-tags:
   - "php"
   - "software-engineering"
 ---

@@ -1,9 +1,8 @@
 ---
 title: "JS library detector"
 date: "2009-02-11"
-categories:
-  - "original"
 tags:
+  - "original"
   - "bookmarklets"
   - "dojo"
   - "domassistant"

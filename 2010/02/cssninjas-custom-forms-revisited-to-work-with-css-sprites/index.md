@@ -1,9 +1,8 @@
 ---
 title: "CSSNinja's custom forms revisited to work with CSS sprites"
 date: "2010-02-19"
-categories:
-  - "replies"
 tags:
+  - "replies"
   - "selectors"
 ---
 

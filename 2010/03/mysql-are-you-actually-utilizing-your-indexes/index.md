@@ -1,9 +1,8 @@
 ---
 title: "MySQL: Are you actually utilizing your indexes?"
 date: "2010-03-25"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "mysql"
   - "sql"
 ---

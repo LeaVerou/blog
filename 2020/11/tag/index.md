@@ -1,9 +1,8 @@
 ---
 title: "Position Statement for the 2020 W3C TAG Election"
 date: "2020-11-30"
-categories:
-  - "personal"
 tags:
+  - "personal"
   - "web-standards"
   - "w3c"
 ---

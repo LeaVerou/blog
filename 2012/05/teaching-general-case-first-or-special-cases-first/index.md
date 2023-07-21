@@ -1,9 +1,8 @@
 ---
 title: "Teaching: General case first or special cases first?"
 date: "2012-05-09"
-categories: 
+tags:
   - "thoughts"
-tags: 
   - "teaching"
 ---
 

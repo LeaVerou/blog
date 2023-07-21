@@ -1,7 +1,7 @@
 ---
 title: "A List Apart article: Every time you call a proprietary feature \"CSS3\", a kitten dies"
 date: "2012-02-14"
-categories:
+tags:
   - "articles"
 ---
 

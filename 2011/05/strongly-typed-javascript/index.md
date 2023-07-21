@@ -1,10 +1,9 @@
 ---
 title: "StronglyTyped: A library for strongly typed properties & constants in JavaScript"
 date: "2011-05-05"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "es"
   - "js"
 ---

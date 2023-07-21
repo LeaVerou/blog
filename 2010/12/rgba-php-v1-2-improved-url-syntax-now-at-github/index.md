@@ -1,10 +1,9 @@
 ---
 title: "rgba.php v1.2: Improved URL syntax, now at Github"
 date: "2010-12-08"
-categories:
+tags:
   - "news"
   - "original"
-tags:
   - "colors"
   - "css"
   - "css-values"

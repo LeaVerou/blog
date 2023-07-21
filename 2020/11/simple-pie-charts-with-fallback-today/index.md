@@ -1,9 +1,8 @@
 ---
 title: "Simple pie charts with fallback, today"
 date: "2020-11-12"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "conic-gradient"
   - "css"
   - "fallback"

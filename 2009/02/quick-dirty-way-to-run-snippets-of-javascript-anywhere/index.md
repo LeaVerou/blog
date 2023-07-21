@@ -1,9 +1,8 @@
 ---
 title: "Quick & dirty way to run snippets of JavaScript anywhere"
 date: "2009-02-23"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "debugging"
   - "js"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "One year of pastries"
 date: "2012-12-30"
-categories: 
+tags:
   - "articles"
   - "thoughts"
 ---

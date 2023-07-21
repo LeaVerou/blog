@@ -1,10 +1,9 @@
 ---
 title: "Text masking — The standards way"
 date: "2012-05-04"
-categories:
+tags:
   - "replies"
   - "tips"
-tags:
   - "web-standards"
   - "svg"
 ---

@@ -1,9 +1,8 @@
 ---
 title: "Accessible star rating widget with pure CSS"
 date: "2011-08-18"
-categories:
-  - "original"
 tags:
+  - "original"
   - "css"
   - "selectors"
 ---

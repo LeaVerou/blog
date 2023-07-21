@@ -1,10 +1,9 @@
 ---
 title: "PrefixFree: Break free from CSS prefix hell!"
 date: "2011-10-12"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "css"
   - "vendor-prefixes"
 ---

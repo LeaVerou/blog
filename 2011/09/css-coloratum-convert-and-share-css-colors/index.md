@@ -1,10 +1,9 @@
 ---
 title: "CSS.coloratum: Convert and share CSS colors"
 date: "2011-09-02"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "canvas"
   - "css"
   - "css-color"

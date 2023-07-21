@@ -1,9 +1,8 @@
 ---
 title: "20 things you should know when not using a JS library"
 date: "2009-02-22"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "browsers"
   - "feature-detection"
   - "js"

@@ -1,9 +1,8 @@
 ---
 title: "Check whether a CSS property is supported"
 date: "2009-02-10"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css-properties"
   - "feature-detection"
   - "js"

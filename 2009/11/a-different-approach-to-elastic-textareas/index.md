@@ -1,9 +1,8 @@
 ---
 title: "A different approach to elastic textareas"
 date: "2009-11-13"
-categories:
-  - "original"
 tags:
+  - "original"
   - "js"
   - "usability"
   - "ux"

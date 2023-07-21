@@ -1,10 +1,9 @@
 ---
 title: "A better tool for cubic-bezier() easing"
 date: "2011-09-14"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "css"
   - "css-transitions"
   - "cubic-bezier"

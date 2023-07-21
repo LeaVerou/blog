@@ -1,11 +1,10 @@
 ---
 title: "Bulletproof, cross-browser RGBA backgrounds, today"
 date: "2009-02-15"
-categories:
+tags:
   - "articles"
   - "original"
   - "releases"
-tags:
   - "colors"
   - "css"
   - "php"

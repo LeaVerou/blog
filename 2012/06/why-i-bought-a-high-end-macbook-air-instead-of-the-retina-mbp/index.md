@@ -1,9 +1,8 @@
 ---
 title: "Why I bought a high-end MacBook Air instead of the Retina MBP"
 date: "2012-06-17"
-categories:
-  - "personal"
 tags:
+  - "personal"
   - "apple"
 ---
 

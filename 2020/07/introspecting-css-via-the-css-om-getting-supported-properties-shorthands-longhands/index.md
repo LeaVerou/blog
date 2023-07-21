@@ -1,9 +1,8 @@
 ---
 title: "Introspecting CSS via the CSS OM: Getting supported properties, shorthands, longhands"
 date: "2020-07-27"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "css"
   - "css-om"
   - "js"

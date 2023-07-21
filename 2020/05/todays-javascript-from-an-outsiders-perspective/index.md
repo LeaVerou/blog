@@ -1,9 +1,8 @@
 ---
 title: "Today's Javascript, from an outsider's perspective"
 date: "2020-05-25"
-categories:
-  - "rants"
 tags:
+  - "rants"
   - "js"
   - "usability"
   - "dx"

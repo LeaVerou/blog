@@ -1,10 +1,9 @@
 ---
 title: "Easy Dynamic Regular Expressions with Tagged Template Literals and Proxies"
 date: "2018-06-04"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "es"
   - "js"
 ---

@@ -1,9 +1,8 @@
 ---
 title: "Issue closing stats for any repo"
 date: "2019-12-13"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "github"
   - "mavo"
 defaultLanguage: "html"

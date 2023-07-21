@@ -1,10 +1,9 @@
 ---
 title: "Exactly how much CSS3 does your browser support?"
 date: "2012-02-02"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "browsers"
   - "css"
   - "web-standards"

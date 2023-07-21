@@ -1,7 +1,7 @@
 ---
 title: "Introducing Bliss: A 3KB library for happier Vanilla JS"
 date: "2015-12-04"
-categories:
+tags:
   - "original"
   - "personal"
   - "releases"

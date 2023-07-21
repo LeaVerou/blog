@@ -1,7 +1,7 @@
 ---
 title: "Image comparison slider with pure CSS"
 date: "2014-07-25"
-categories: 
+tags:
   - "replies"
   - "tips"
 ---

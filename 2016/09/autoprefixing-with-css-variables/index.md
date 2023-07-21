@@ -1,10 +1,9 @@
 ---
 title: "Autoprefixing, with CSS variables!"
 date: "2016-09-07"
-categories: 
+tags:
   - "original"
   - "tips"
-tags: 
   - "css"
   - "css-variables"
 ---

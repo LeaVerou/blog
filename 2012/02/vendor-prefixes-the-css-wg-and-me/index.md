@@ -1,9 +1,8 @@
 ---
 title: "Vendor prefixes, the CSS WG and me"
 date: "2012-02-09"
-categories:
-  - "personal"
 tags:
+  - "personal"
   - "css"
   - "web-standards"
 ---

@@ -1,10 +1,9 @@
 ---
 title: "CSS3 structural pseudo-class selector tester"
 date: "2010-03-14"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "selectors"
   - "educational"
   - "nth-child"

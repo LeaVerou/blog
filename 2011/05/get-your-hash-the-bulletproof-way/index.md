@@ -1,9 +1,8 @@
 ---
 title: "Get your hash — the bulletproof way"
 date: "2011-05-23"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "js"
   - "urls"
 ---

@@ -1,9 +1,8 @@
 ---
 title: "Pure CSS Tic Tac Toe"
 date: "2011-06-17"
-categories:
-  - "original"
 tags:
+  - "original"
   - "css"
   - "selectors"
   - "indeterminate"

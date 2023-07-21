@@ -1,10 +1,9 @@
 ---
 title: "Refresh CSS Bookmarklet v2"
 date: "2018-09-18"
-categories:
+tags:
   - "articles"
   - "releases"
-tags:
   - "bookmarklets"
   - "js"
 defaultLanguage: "js"

@@ -1,9 +1,8 @@
 ---
 title: "border-corner-shape is in danger, and you can help!"
 date: "2013-03-28"
-categories:
-  - "news"
 tags:
+  - "news"
   - "border-corner-shape"
   - "css4"
 ---

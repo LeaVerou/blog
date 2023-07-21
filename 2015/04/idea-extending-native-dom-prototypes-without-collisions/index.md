@@ -1,9 +1,8 @@
 ---
 title: "Idea: Extending native DOM prototypes without collisions"
 date: "2015-04-20"
-categories:
-  - "thoughts"
 tags:
+  - "thoughts"
   - "js"
 ---
 

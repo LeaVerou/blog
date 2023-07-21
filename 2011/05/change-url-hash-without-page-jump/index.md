@@ -1,10 +1,9 @@
 ---
 title: "Change URL hash without page jump"
 date: "2011-05-13"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "history-api"
   - "html5"
   - "js"

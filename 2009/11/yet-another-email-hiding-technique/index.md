@@ -1,10 +1,9 @@
 ---
 title: "Yet another email hiding technique?"
 date: "2009-11-29"
-categories: 
+tags:
   - "original"
   - "tips"
-tags: 
   - "spam"
   - "unicode"
 ---

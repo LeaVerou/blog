@@ -1,7 +1,7 @@
 ---
 title: "Duoload: Simplest website load comparison tool, ever"
 date: "2017-02-03"
-categories:
+tags:
   - "releases"
 ---
 

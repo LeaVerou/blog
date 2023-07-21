@@ -1,9 +1,8 @@
 ---
 title: "Tag editing UIs"
 date: "2010-11-14"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "ui-design"
   - "usability"
   - "tags"

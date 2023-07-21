@@ -1,10 +1,9 @@
 ---
 title: "Resolve Promises externally with this one weird trick"
 date: "2016-12-14"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "es"
   - "js"
 defaultLanguage: "js"

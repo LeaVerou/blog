@@ -1,9 +1,8 @@
 ---
 title: "Import non-ESM libraries in ES Modules, with client-side vanilla JS"
 date: "2020-07-20"
-categories:
-  - "tips"
 tags:
+  - "tips"
   - "esm"
   - "js"
 defaultLanguage: "js"

@@ -1,10 +1,9 @@
 ---
 title: "Introducing Rety: live coding, without the stress"
 date: "2022-07-13"
-categories:
+tags:
   - "releases"
   - "news"
-tags:
   - "speaking"
   - "js"
 ---

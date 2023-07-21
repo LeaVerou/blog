@@ -1,7 +1,7 @@
 ---
 title: "Vote for me in the net awards 2014!"
 date: "2014-01-30"
-categories: 
+tags:
   - "personal"
 ---
 

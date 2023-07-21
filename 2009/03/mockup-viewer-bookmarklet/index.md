@@ -1,10 +1,9 @@
 ---
 title: "Mockup viewer bookmarklet"
 date: "2009-03-18"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "bookmarklets"
   - "js"
 ---

@@ -1,10 +1,9 @@
 ---
 title: "URL rewriting with Github Pages"
 date: "2016-11-26"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "css-secrets"
   - "github"
   - "github-pages"

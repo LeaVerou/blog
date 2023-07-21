@@ -1,10 +1,9 @@
 ---
 title: "A polyfill for HTML5 progress element, the obsessive perfectionist way"
 date: "2011-07-02"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "html5"
   - "html"
   - "polyfills"

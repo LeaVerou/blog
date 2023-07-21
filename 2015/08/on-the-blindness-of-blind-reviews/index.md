@@ -1,7 +1,7 @@
 ---
 title: "On the blindness of blind reviews"
 date: "2015-08-13"
-categories: 
+tags:
   - "rants"
   - "thoughts"
 ---

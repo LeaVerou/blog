@@ -1,7 +1,7 @@
 ---
 title: "Introducing Mavo: Create web apps entirely by writing HTML!"
 date: "2017-05-16"
-categories: 
+tags:
   - "original"
   - "releases"
 ---

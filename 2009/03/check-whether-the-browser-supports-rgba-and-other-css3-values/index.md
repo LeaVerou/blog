@@ -1,10 +1,9 @@
 ---
 title: "Check whether the browser supports RGBA (and other CSS3 values)"
 date: "2009-03-01"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "colors"
   - "css"
   - "css-values"

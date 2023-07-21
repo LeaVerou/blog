@@ -1,10 +1,9 @@
 ---
 title: "CSS3 patterns gallery and a new pattern"
 date: "2011-04-15"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "css-images"
   - "patterns"
 ---

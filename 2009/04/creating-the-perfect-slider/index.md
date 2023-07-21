@@ -1,9 +1,8 @@
 ---
 title: "Creating the perfect slider"
 date: "2009-04-24"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "forms"
   - "usability"
   - "ux"

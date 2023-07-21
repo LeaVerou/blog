@@ -1,9 +1,8 @@
 ---
 title: "My experience from Web Directions @media & Standards.next"
 date: "2011-06-01"
-categories:
-  - "speaking"
 tags:
+  - "speaking"
   - "css"
   - "css-images"
   - "speaking"

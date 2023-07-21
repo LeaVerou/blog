@@ -1,10 +1,9 @@
 ---
 title: "Parsel: A tiny, permissive CSS selector parser"
 date: "2020-09-07"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "css"
   - "web-almanac"
 ---

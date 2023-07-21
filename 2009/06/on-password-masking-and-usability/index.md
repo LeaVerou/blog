@@ -1,10 +1,9 @@
 ---
 title: "On password masking and usability"
 date: "2009-06-28"
-categories:
+tags:
   - "articles"
   - "tips"
-tags:
   - "internet-explorer-bugs"
   - "js"
   - "usability"

@@ -1,7 +1,7 @@
 ---
 title: "Free Intro to Web Development slides (with demos)"
 date: "2018-02-20"
-categories:
+tags:
   - "original"
 ---
 

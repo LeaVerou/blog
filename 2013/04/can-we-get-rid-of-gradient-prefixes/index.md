@@ -1,9 +1,8 @@
 ---
 title: "Can we get rid of gradient prefixes?"
 date: "2013-04-07"
-categories:
-  - "news"
 tags:
+  - "news"
   - "css"
   - "css-gradients"
   - "css"

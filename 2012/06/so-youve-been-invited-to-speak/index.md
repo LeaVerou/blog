@@ -1,10 +1,9 @@
 ---
 title: "So, you’ve been invited to speak"
 date: "2012-06-25"
-categories:
+tags:
   - "personal"
   - "speaking"
-tags:
   - "speaking"
   - "speaking"
 ---

@@ -1,9 +1,8 @@
 ---
 title: "Poll: ¿Is animation-direction a good idea?"
 date: "2012-05-06"
-categories:
-  - "news"
 tags:
+  - "news"
   - "css-animations"
   - "poll"
   - "web-standards"

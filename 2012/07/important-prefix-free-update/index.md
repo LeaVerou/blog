@@ -1,9 +1,8 @@
 ---
 title: "Important -prefix-free update"
 date: "2012-07-24"
-categories:
-  - "news"
 tags:
+  - "news"
   - "prefix-free"
   - "css-gradients"
   - "css-images"

@@ -1,10 +1,9 @@
 ---
 title: "9 reasons why I prefer MySQL to MS SQL Server"
 date: "2009-05-16"
-categories: 
+tags:
   - "rants"
   - "thoughts"
-tags: 
   - "ms-sql-server"
   - "mysql"
 ---

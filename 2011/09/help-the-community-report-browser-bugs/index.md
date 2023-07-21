@@ -1,7 +1,7 @@
 ---
 title: "Help the community: report browser bugs"
 date: "2011-09-07"
-categories: 
+tags:
   - "articles"
   - "personal"
 ---

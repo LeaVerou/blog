@@ -1,9 +1,8 @@
 ---
 title: "Flexible multiline definition lists with 2 lines of CSS 2.1"
 date: "2012-02-24"
-categories: 
+tags:
   - "tips"
-tags: 
   - "css"
   - "generated-content"
 ---
@@ -28,7 +27,7 @@ Of course, if you have multiple `<dd>`s for every `<dt>`, you will need to alter
 
 **Edit:** As [Christian Heilmann pointed out](https://twitter.com/codepo8/status/173148263124451328), HTML3 (!) [used to have a compact attribute](http://www.w3.org/MarkUp/html3/deflists.html) on `<dl>` elements, which basically did this. It is now obsolete in HTML5, like every other presentational HTML feature.
 
-You can see a live result here: 
+You can see a live result here:
 
 <iframe style="width: 100%; height: 800px;" src="http://dabblet.com/gist/1901867" width="320" height="240"></iframe>
 

@@ -1,10 +1,9 @@
 ---
 title: "I'm speaking at @media Web Directions ’11!"
 date: "2011-01-05"
-categories:
+tags:
   - "news"
   - "personal"
-tags:
   - "speaking"
   - "css"
   - "css-transforms"

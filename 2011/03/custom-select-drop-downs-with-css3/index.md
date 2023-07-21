@@ -1,10 +1,9 @@
 ---
 title: "Custom &lt;select&gt; drop downs with CSS3"
 date: "2011-03-04"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "css-properties"
   - "opera-bugs"
   - "pointer-events"

@@ -1,10 +1,9 @@
 ---
 title: "Invert a whole webpage with CSS only"
 date: "2011-04-14"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "css"
 ---
 

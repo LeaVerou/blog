@@ -1,9 +1,8 @@
 ---
 title: "Contrast Ratio has a new home — and this is great news!"
 date: "2023-03-18"
-categories: 
+tags:
   - "news"
-tags: 
   - "a11y"
   - "colors"
   - "contrast-ratio-com"

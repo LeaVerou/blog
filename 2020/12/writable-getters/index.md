@@ -1,9 +1,8 @@
 ---
 title: "Writable getters"
 date: "2020-12-23"
-categories:
-  - "tutorials"
 tags:
+  - "tutorials"
   - "accessors"
   - "es"
   - "js"

@@ -1,9 +1,8 @@
 ---
 title: "Refactoring optional chaining into a large codebase: lessons learned"
 date: "2020-06-18"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "js"
   - "refactoring"
 defaultLanguage: "js"

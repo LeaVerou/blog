@@ -1,9 +1,8 @@
 ---
 title: "Why tabs are clearly superior"
 date: "2012-01-17"
-categories:
-  - "rants"
 tags:
+  - "rants"
   - "coding-standards"
 ---
 

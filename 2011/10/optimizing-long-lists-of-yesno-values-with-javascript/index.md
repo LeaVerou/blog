@@ -1,9 +1,8 @@
 ---
 title: "Optimizing long lists of yes/no values with JavaScript"
 date: "2011-10-19"
-categories:
-  - "articles"
 tags:
+  - "articles"
   - "js"
 ---
 

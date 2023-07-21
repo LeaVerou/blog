@@ -1,7 +1,7 @@
 ---
 title: "jQuery considered harmful"
 date: "2015-04-19"
-categories: 
+tags:
   - "rants"
 ---
 

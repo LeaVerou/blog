@@ -1,10 +1,9 @@
 ---
 title: "Checkerboard, striped & other background patterns with CSS3 gradients"
 date: "2010-12-22"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "background-size"
   - "css"
   - "css-images"

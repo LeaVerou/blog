@@ -1,10 +1,9 @@
 ---
 title: "On CSS counters plus a CSS3 Reversi UI"
 date: "2010-04-01"
-categories:
+tags:
   - "articles"
   - "original"
-tags:
   - "css-counters"
   - "css"
   - "user-interfaces-in-css"

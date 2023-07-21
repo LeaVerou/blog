@@ -1,10 +1,9 @@
 ---
 title: "A CSS3 learning(?) tool"
 date: "2009-10-08"
-categories:
+tags:
   - "releases"
   - "replies"
-tags:
   - "css"
   - "css-properties"
 ---

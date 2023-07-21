@@ -1,10 +1,9 @@
 ---
 title: "Incrementable length values in text fields"
 date: "2011-02-14"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "incrementable"
   - "js"
 ---

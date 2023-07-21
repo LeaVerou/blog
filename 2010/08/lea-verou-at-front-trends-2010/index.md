@@ -1,10 +1,9 @@
 ---
 title: "Lea Verou @ Front-Trends 2010"
 date: "2010-08-03"
-categories:
+tags:
   - "news"
   - "personal"
-tags:
   - "speaking"
   - "css"
 ---

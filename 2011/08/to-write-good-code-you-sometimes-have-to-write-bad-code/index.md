@@ -1,9 +1,8 @@
 ---
 title: "To write good code, you sometimes have to write bad code"
 date: "2011-08-20"
-categories: 
+tags:
   - "tips"
-tags: 
   - "programming"
 ---
 

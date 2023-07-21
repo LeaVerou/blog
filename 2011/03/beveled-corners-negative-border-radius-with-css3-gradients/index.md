@@ -1,10 +1,9 @@
 ---
 title: "Beveled corners & negative border-radius with CSS3 gradients"
 date: "2011-03-14"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "css-images"
 ---
 

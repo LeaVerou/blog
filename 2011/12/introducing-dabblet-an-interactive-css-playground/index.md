@@ -1,10 +1,9 @@
 ---
 title: "Introducing dabblet: An interactive CSS playground"
 date: "2011-12-15"
-categories:
+tags:
   - "original"
   - "releases"
-tags:
   - "css"
   - "css"
   - "dabblet"

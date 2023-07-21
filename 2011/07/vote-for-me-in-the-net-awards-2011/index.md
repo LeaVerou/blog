@@ -1,9 +1,8 @@
 ---
 title: "Vote for me in The .net awards 2011!"
 date: "2011-07-25"
-categories: 
+tags:
   - "personal"
-tags: 
   - "shameless-plug"
 ---
 

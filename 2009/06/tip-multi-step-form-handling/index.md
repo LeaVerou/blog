@@ -1,10 +1,9 @@
 ---
 title: "Tip: Multi-step form handling"
 date: "2009-06-16"
-categories:
+tags:
   - "articles"
   - "tips"
-tags:
   - "forms"
   - "html"
   - "usability"

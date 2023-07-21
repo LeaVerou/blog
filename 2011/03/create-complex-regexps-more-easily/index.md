@@ -1,10 +1,9 @@
 ---
 title: "Create complex RegExps more easily"
 date: "2011-03-28"
-categories:
+tags:
   - "original"
   - "tips"
-tags:
   - "js"
   - "regexp"
   - "regular-expressions"
