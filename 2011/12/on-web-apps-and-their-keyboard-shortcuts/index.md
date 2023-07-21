@@ -1,10 +1,11 @@
 ---
 title: "On web apps and their keyboard shortcuts"
 date: "2011-12-17"
-categories: 
+categories:
   - "thoughts"
-tags: 
+tags:
   - "usability"
+  - "ux"
 ---
 
 Yesterday, [I released dabblet.](http://lea.verou.me/2011/12/introducing-dabblet-an-interactive-css-playground/) One of its aspects that I took extra care of, is it's keyboard navigation. I used many of the commonly established application shortcuts to navigate and perform actions in it. Some of these naturally collided with the native browser shortcuts and I got [a few bug reports](https://github.com/LeaVerou/dabblet/issues/54) about that. Actually, overriding the browser shortcuts was by design, and I'll explain my point of view below.
@@ -24,7 +25,7 @@ So, what are your thoughts? Play it safe and be polite to the host or take advan
 **Edit:** [Johnathan Snook](http://snook.ca) posted these thoughts in the comments, and I thought his suggested approach is pure genius and every web UX person should read it:
 
 > On Yahoo! Mail, we have this same problem. It's an application with many of the same affordances of a desktop application. As a result, we want to have the same usability of a desktop application—including with keyboard shortcuts. In some cases, like Cmd-P for printing, we'll override the browser default because the browser will not have the correct output.
-> 
+>
 > For something like tab selection/editing, we don't override the defaults and instead, create alternate shortcuts for doing so.
-> 
+>
 > One thing I suggest you could try is to behave somewhat like overflow areas in a web page. When you scroll with a scroll mouse or trackpad in the area, the browser will scroll that area until it reaches it's scroll limit and then will switch to scrolling the entire page. It would be interesting to experiment with this same approach with other in-page mechanisms. For example, with tabs, I often use Cmd-Shift-\[ and Cmd-Shift-\] to change tabs (versus Cmd-1/2/3, etc). You could have it do so within the page until it hits its limit (first tab/last tab) and then after that, let the event fall back to the browser. For Cmd-1, have it select the first tab. If the user is already on the first tab, have it fall back to the browser.

@@ -8,6 +8,7 @@ tags:
   - "internet-explorer-bugs"
   - "js"
   - "usability"
+  - "ux"
 ---
 
 I just read [Jakob Nielsen's recent post in which he urged web designers/developers to stop password masking](http://www.useit.com/alertbox/passwords.html) due to it's inherent usability issues. I found it an interesting read. Hey, at last, someone dared to talk about the elephant in the room!

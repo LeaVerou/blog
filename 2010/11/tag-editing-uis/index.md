@@ -6,6 +6,7 @@ categories:
 tags:
   - "ui-design"
   - "usability"
+  - "ux"
 ---
 
 I had to build the edit tags interface for an application I'm working on, so I took a good look at how these are implemented across many popular applications nowadays. It seems there are a few patterns that are used over and over, and I'm unsure which one is the most preferable by users, they all have their advantages and disadvantages. In this post I'm going to describe these patterns and list some of the pros and cons I think they have. For simplicity, I will focus on the tag editing interface itself, ignoring any tag suggestions and other extra features.

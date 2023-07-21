@@ -8,6 +8,7 @@ tags:
   - "forms"
   - "html"
   - "usability"
+  - "ux"
 ---
 
 First of all, sorry for my long absence! I haven't abandoned this blog, I was just really, really busy. I'm still busy, and this probably won't change soon. However, I will still blog when I get too fed up with work or studying (this is one of these moments...). Now, let's get to the meat.

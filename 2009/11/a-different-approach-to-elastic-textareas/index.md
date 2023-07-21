@@ -6,6 +6,7 @@ categories:
 tags:
   - "js"
   - "usability"
+  - "ux"
 ---
 
 I loved elastic textareas since the very first moment I used one (at facebook obviously). They let you save screen real estate while at the same time they are more comfortable for the end user. It's one of the rare occasions when you can have your UI cake and eat it too!

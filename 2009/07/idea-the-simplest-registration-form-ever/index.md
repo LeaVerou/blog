@@ -1,12 +1,13 @@
 ---
 title: "Idea: The simplest registration form ever"
 date: "2009-07-23"
-categories: 
+categories:
   - "thoughts"
-tags: 
+tags:
   - "registration-forms"
   - "ui"
   - "usability"
+  - "ux"
 ---
 
 If a web application has some sort of registration system (and most do), the registration page should be one of the most attractive, inviting, usable pages of it. It should make you to **want** to register, not repulse you. We don't want the user to give up in the middle of filling it because they are fed up with it's length or bad usability, or -even worse- not even attempt to do so, do we?

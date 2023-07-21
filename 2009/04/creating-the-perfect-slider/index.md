@@ -1,11 +1,12 @@
 ---
 title: "Creating the perfect slider"
 date: "2009-04-24"
-categories: 
+categories:
   - "articles"
-tags: 
+tags:
   - "forms"
   - "usability"
+  - "ux"
 ---
 
 I've previously discussed many times the color picker I have to create, and blogged about my findings on the way. An essential component of most color pickers is a slider control.

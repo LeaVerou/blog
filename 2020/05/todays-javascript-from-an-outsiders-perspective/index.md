@@ -6,6 +6,7 @@ categories:
 tags:
   - "js"
   - "usability"
+  - "dx"
 ---
 
 Today I tried to help a friend who is a great computer scientist, but not a JS person use a JS module he found on Github. Since for the past 6 years my day job is doing usability research & teaching at MIT, I couldn't help but cringe at the slog that this was. Lo and behold, a pile of unnecessary error conditions, cryptic errors, and lack of proper feedback. And I don't feel I did a good job communicating the frustration he went through in the one hour or so until he gave up.

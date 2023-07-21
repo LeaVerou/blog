@@ -11,6 +11,7 @@ tags:
   - "css-transitions"
   - "usability"
   - "webkit"
+  - "ux"
 ---
 
 In this post I'm going to share some tips to increase a site's usability that are very quick to implement. Not all of them are cross-browser, but they are the icing on the cake anyway, nobody would mind without them.

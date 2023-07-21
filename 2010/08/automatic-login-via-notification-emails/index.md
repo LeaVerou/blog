@@ -6,6 +6,7 @@ categories:
 tags:
   - "security"
   - "usability"
+  - "ux"
   - "tradeoffs"
 ---
 
