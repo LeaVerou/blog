@@ -5,11 +5,11 @@ tags:
   - "original"
 ---
 
-[![](images/Screen-Shot-2018-02-19-at-22.57.12-300x211.png)](https://leaverou.github.io/talks/intro/)This semester I’m teaching [6.813 User Interface Design and Implementation at MIT](http://web.mit.edu/6.813/www/sp18/), as an instructor.
+[![](images/Screen-Shot-2018-02-19-at-22.57.12-300x211.png)](https://projects.verou.me/talks/intro/)This semester I’m teaching [6.813 User Interface Design and Implementation at MIT](http://web.mit.edu/6.813/www/sp18/), as an instructor.
 
 Many of the assignments of this course include Web development and the course included two 2-hour labs to introduce students to these technologies. Since I’m involved this year, I decided to make new labs from scratch and increase the number of labs from 2 to 3. Even so, trying to decide what to include and what not to from the entirety of web development in only 6 hours was really hard, and I still feel I failed to include important bits.
 
-Since many people asked me for the slides on Twitter, I decided to share them. [You will find my slides here](https://leaverou.github.io/talks/intro/) and [an outline of what is covered is here](http://web.mit.edu/6.813/www/sp18/labs/). These slides were also the supporting material the students had on their own laptops and often they had to do exercises in them.
+Since many people asked me for the slides on Twitter, I decided to share them. [You will find my slides here](https://projects.verou.me/talks/intro/) and [an outline of what is covered is here](http://web.mit.edu/6.813/www/sp18/labs/). These slides were also the supporting material the students had on their own laptops and often they had to do exercises in them.
 
 The audience for these slides is **beginners in Web development but technical otherwise** — people who understand OOP, trees, data structures and have experience in at least one C-like programming language.
 

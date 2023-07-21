@@ -21,7 +21,7 @@ I posted a [list of tutorials and questions from web designers & developers](ht
 
 However, the more real examples we have, the more likely it is to retain the feature in some form. This is where you come in: If you think border-corner-shape has merit, provide use cases, either by links to websites whose design elements it would simplify, screenshots of websites or descriptions of cases where you needed such a thing (in that order of preference). You can either post to the thread directly, or comment here and I’ll post them to the list in batches.
 
-If you think it has merit but it could be improved, feel free to post about that as well. If you don’t think it’s a good idea, any alternatives you can think of are welcome as well. Or, if you don’t think it’s useful, say that too (but make sure you first fully understand what it can do). If you’re not sure how it can be used, play around with [the demo app I made](http://leaverou.github.io/corner-shape/) and be creative!
+If you think it has merit but it could be improved, feel free to post about that as well. If you don’t think it’s a good idea, any alternatives you can think of are welcome as well. Or, if you don’t think it’s useful, say that too (but make sure you first fully understand what it can do). If you’re not sure how it can be used, play around with [the demo app I made](https://projects.verou.me/corner-shape/) and be creative!
 
 Below are a few examples of shapes:
 

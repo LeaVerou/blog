@@ -10,7 +10,7 @@ tags:
 
 I’ve been interested in digital color for a long time, and this year I decided to risk giving a technical talk about color some of the conferences I’m speaking at. “Why is that risky?” you might ask. Well, it might end up being really interesting, or it may end up alienating both designers because it’s too technical and developers because it’s about a “designery” topic.
 
-In preparation for this talk, I decided to make a simple game to see how well I and other web developers understand color, and especially CSS notations of color. Meet [Whathecolor](http://leaverou.github.io/whathecolor)!
+In preparation for this talk, I decided to make a simple game to see how well I and other web developers understand color, and especially CSS notations of color. Meet [Whathecolor](https://projects.verou.me/whathecolor)!
 
 The idea is simple: You are presented with a color and you try to type in a CSS color that matches it. It could be anything, from hsl() or rgb() to even named colors (although that would be stupid). It would be interesting to see what averages people get by trying hsl() vs rgb() and whether the former is as easier for web developers as we think. Feel free to post your results here or on twitter! Perhaps in the future, something like this could be used by the CSS WG to test the usability of color notations we’re thinking of adding to CSS instead of speculating about it.
 
@@ -18,7 +18,7 @@ Disclaimer: This is a quick hack. Please don’t complain that it doesn't look g
 
 Also, yes, if you want to cheat, it’s super easy, but I have no idea why somebody would cheat on something like this.
 
-[Play](http://leaverou.github.io/whathecolor)
+[Play](https://projects.verou.me/whathecolor)
 
 ### Color proximity
 
@@ -31,7 +31,7 @@ So I experimented a bit and ended up using an average of my original idea and a 
 ### Other notes
 
 - You do not need a proximity of 100% to win, since rounding errors might prevent you from matching the exact color if you're using HSL. Also, because matching the exact same color isn't really important, as long as you get close enough that any difference is imperceptible.
-- I wrote a Color “class” for this, which you can find in [color.js](http://leaverou.github.io/whathecolor/color.js). Like most of my open source stuff, it’s MIT licensed. Maybe it could be useful in some other color-related project, who knows.
+- I wrote a Color “class” for this, which you can find in [color.js](https://projects.verou.me/whathecolor/color.js). Like most of my open source stuff, it’s MIT licensed. Maybe it could be useful in some other color-related project, who knows.
 - My original idea was to have “levels”, where the color would get increasingly more difficult to get. For example, in the first level, you'd only have to guess simple colors whose RGB coordinates were either 0, 128 or 255. So, my Color.random() method accepts an entropy parameter, for that level. However, when I tested the game with truly random colors (any integer from 0 to 255), it turned out it wasn't really that hard (it took me about a minute to guess each color), so I ditched the idea of levels early on. The code is still there though.
 - An idea about making it harder in the future would be to introduce semi-transparent (RGBA/HSLA) colors. That would be fun :evil\_grin:
 

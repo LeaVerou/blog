@@ -19,4 +19,4 @@ I made a quick [testcase](http://dabblet.com/gist/0b79583e6e9c4e5e52aec5d682ac71
 
 So, enjoy, and contribute!
 
-[Multirange](http://leaverou.github.io/multirange/)
+[Multirange](https://projects.verou.me/multirange/)

@@ -37,7 +37,7 @@ Chrome only very recently unprefixed gradients and Safari is a long way from doi
 
 ### My opinion
 
-Don’t use -ms- prefixed gradients, there’s absolutely zero point in doing so. Include -moz- for the less subtle gradients. No significant need for -o- gradients. -webkit- is still needed and probably will be at least until the end of 2013. Or, of course, just use [\-prefix-free](http://leaverou.github.io/prefixfree/) and don’t bother. :P
+Don’t use -ms- prefixed gradients, there’s absolutely zero point in doing so. Include -moz- for the less subtle gradients. No significant need for -o- gradients. -webkit- is still needed and probably will be at least until the end of 2013. Or, of course, just use [\-prefix-free](https://projects.verou.me/prefixfree/) and don’t bother. :P
 
 Keep in mind that your stats might differ from global stats, so which prefixes you need to include might differ on a case by case basis. **The purpose of this post is to alert you that maybe you don’t need all these prefixes, not to prescriptively tell you which ones to keep.** Except -ms-, please don’t use that. There’s absolutely zero reason whatsoever.
 

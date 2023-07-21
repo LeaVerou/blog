@@ -8,11 +8,11 @@ tags:
 defaultLanguage: "html"
 ---
 
-**_tl;dr:_** _If you just want to quickly get stats for a repo, you can find the app_ [_here_](https://leaverou.github.io/issue-closing/)_. The rest of this post explains how it's built with Mavo HTML, CSS, and 0 lines of JS._ Or, if you'd prefer, you can just View Source — it's all there!
+**_tl;dr:_** _If you just want to quickly get stats for a repo, you can find the app_ [_here_](https://projects.verou.me/issue-closing/)_. The rest of this post explains how it's built with Mavo HTML, CSS, and 0 lines of JS._ Or, if you'd prefer, you can just View Source — it's all there!
 
 ![](images/image.png)
 
-The finished app we're going to make, find it at [https://leaverou.github.io/issue-closing](https://leaverou.github.io/issue-closing)
+The finished app we're going to make, find it at [https://projects.verou.me/issue-closing](https://projects.verou.me/issue-closing)
 
 One of the cool things about [Mavo](https://mavo.io) is how it enables one to quickly build apps that utilize the Github API. At some point I wanted to compute stats about how quickly (or rather, slowly...) Github issues are closed in the [Mavo repo](https://github.com/mavoweb/mavo). And what better way to build this than a Mavo app? It was fairly easy to build a prototype for that.
 
@@ -108,7 +108,7 @@ I created two properties: `repo` for the actual repo and `repoInput` for the inp
 
 ## Setting the repo via a URL parameter
 
-Eventually I also wanted to be able to set the repo from the URL, so I also added a hidden `repoDefault` property: `<meta property="repoDefault" content="[url('repo') or 'mavoweb/mavo']">`, and then changed the hardcoded `mv-default="mavoweb/mavo"` to `mv-default="[repoDefault]"` on both the `repo` and the `repoInput` properties. That way one can link to stats for a specific repo, e.g. [https://leaverou.github.io/issue-closing/?repo=prismjs/prism](https://leaverou.github.io/issue-closing/?repo=prismjs/prism)
+Eventually I also wanted to be able to set the repo from the URL, so I also added a hidden `repoDefault` property: `<meta property="repoDefault" content="[url('repo') or 'mavoweb/mavo']">`, and then changed the hardcoded `mv-default="mavoweb/mavo"` to `mv-default="[repoDefault]"` on both the `repo` and the `repoInput` properties. That way one can link to stats for a specific repo, e.g. [https://projects.verou.me/issue-closing/?repo=prismjs/prism](https://projects.verou.me/issue-closing/?repo=prismjs/prism)
 
 Why a `repoDefault` property and not just `mv-default="[url('repo') or 'mavoweb/mavo']`? Just keeping things [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) and avoiding having to repeat the same expression twice.
 
