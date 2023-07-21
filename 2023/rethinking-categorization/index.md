@@ -124,3 +124,6 @@ Instead of deciding that categories hold the article type, or the broader domain
 Then, we could have a "type" attribute, and a "domain" attribute, and use them both for categorization, and for filtering.
 Since Eleventy already supports arbitrary metadata, this is just a matter of implementation.
 
+Lots to think about, but one thing seems clear: Categories do not have a clear purpose, and thus I’m doing away with them.
+For now, I have converted all past categories to tags, so that the additional metadata is not lost,
+and I will revisit how to best expose this metadata in the future.
