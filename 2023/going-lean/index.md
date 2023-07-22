@@ -1,6 +1,6 @@
 ---
 title: "Going Lean"
-date: "2023-07-20"
+date: "2023-07-21"
 toc: true
 tags:
   - meta
@@ -95,17 +95,28 @@ Each page has a link to edit it on GitHub, which automatically takes you through
 </figcaption>
 </figure>
 
+### Licensing
+
 Note that **a public repo is not automatically open source**.
-So far, I have not added a license, as I’m contemplating options.
-This is not as simple as licensing a library, as there are multiple components to it:
-(a) the website code (b) the content and images \(c) the design
-As with most of my code, I’d be happy for the code here to be MIT-licensed.
-When it comes to content and images, I feel some kind of Creative Commons Attribution license would be most appropriate (CC-BY? CC-BY-SA?).
-But when it comes to the design, I’m not sure I want to license it at all.
-It may be far from perfect, but it’s part of my own personal brand, which by definition needs to be unique.
-I would find it unsettling if someone else used the exact same design,
-in the same way that I would find it unsettling to walk into a house that looks exactly like mine.
-So, adding a license will need to wait until I can figure out how to can license all three separately.
+As you know, I have a long track record of open sourcing my code.
+I love seeing people learning from it, using it in their own projects, and blogging about what they’ve learned.
+So, [MIT-licensing](https://opensource.org/licenses/MIT) the **code** part of this website is a no-brainer.
+[CC-BY](https://creativecommons.org/licenses/by/4.0/) also seems like a no-brainer for **content**, because, why not?
+
+Where it gets tricky is the **design**.
+I’m well aware that neither my logo nor the visual style of this website would win any design awards;
+I haven’t worked as a graphic designer for many years, and it shows.
+However, it’s something I feel is very personal to me, my own personal brand, which by definition needs to be unique.
+Seeing another website with the same logo and/or visual style would feel just as unsettling as walking into a house that looks exactly like mine.
+I’m speaking from experience: I’ve had my logo and design copied many times, and it always felt like a violation.
+
+I’m not sure how to express this distinction in a GitHub `LICENSE` file, so I haven’t yet added one,
+but I did try to outline it in the [Credits & Making Of](/credits/#licensing) page.
+
+It’s still difficult to draw the line precisely, especially when it comes to CSS code.
+I’m basically happy for people to copy as much of my CSS code as they want (following [MIT license](https://opensource.org/licenses/MIT) rules),
+as long as the end result doesn’t scream "Lea Verou" to anyone who has seen this site.
+*But how on Earth do you express that?* 🤔
 
 ## Migrating content to Markdown
 
@@ -148,14 +159,14 @@ I fixed a few manually, but I’m sure there’s more left.
 ## Rethinking Categorization
 
 While the importer preserved both tags and categories, this was a good opportunity to rethink whether I need them both,
-as well as how I use them.
+and to re-evaluate how I use them.
 
 This spun off into a separate post: [Rethinking Categorization](../rethinking-categorization/).
 
 ## Migrating comments
 
 Probably one of the hardest parts of this migration was preserving Disqus comments.
-In fact, it was so hard that I procrastinated on it for months,
+In fact, it was so hard that I procrastinated on it for three months,
 being stuck in a limbo where I couldn’t blog because I'd have to port the new post manually.
 
 I’ve documented the process in a [separate blog post](../preserve-disqus/), as it was quite involved,
@@ -175,8 +186,10 @@ Thankfully, redirecting these URLs to corresponding `/blog/` URLs was a one line
 ```
 
 Going forwards, I also decided to do away with the month being part of the URL, as it complicates the file structure for no discernible benefit and I don’t blog nearly as much now as I did in 2009, e.g. compare [2009](/blog/2009) vs [2022](/blog/2022/): 38 vs 7!
-I do think I will start blogging more again now (not only due to the new site, but also due to new interests and a long backlog of ideas),
-but I doubt I will ever get back to the pre-2014 levels (coincidentally, it appears my blogging frequency dropped significantly after I [started my PhD](/blog/2014/02/im-going-to-mit/)).
+I do think I will start blogging more again now, not only due to the new site,
+but also due to new interests and a long backlog of ideas (just look at [July 2023](/blog/2023/07/) so far!).
+However, I doubt I will ever get back to the pre-2014 levels, I simply don’t have that kind of time anymore
+(coincidentally, it appears my blogging frequency dropped significantly after I [started my PhD](/blog/2014/02/im-going-to-mit/)).
 
 I also wanted to continue having nice, RESTful, [usable](https://www.nngroup.com/articles/url-as-ui/) URLs, which also requires:
 
@@ -232,3 +245,16 @@ In fact, here it is, ready to be dragged to the bookmarks bar:
 <a href="javascript:location.href = `vscode://file/Users/leaverou/Documents/lea.verou.me/${document.documentElement.dataset.inputpath}`" class="call-to-action">Edit in VS Code</a>
 
 Now, if only I could find a way to do the opposite: open the localhost URL that corresponds to the Markdown file I’m editing — and my workflow would be complete!
+
+## What’s next?
+
+Obviously, there’s a lot of work left to do, and I bet people will find a lot more breakage than I had noticed.
+I also have a backlog of blog post ideas that I can’t *wait* to write about.
+
+But I’ve also been toying around with the idea of porting over my personal (non-tech) blog posts,
+and keep them in an entirely separate section of the website.
+I don’t like that my content is currently hostage to [Tumblr](https://pensieve.verou.me/) (2012-2013) and [Medium](https://leaverou.medium.com/) (2017-2021),
+and would love to own it too,
+though I’m a bit concerned that properly separating the two would take a lot of work.
+
+Anyhow, 'nuff said. Ship it, squirrel! 🚢🐿️

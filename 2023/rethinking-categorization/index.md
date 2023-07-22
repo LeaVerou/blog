@@ -1,6 +1,6 @@
 ---
 title: Rethinking Categorization
-date: "2023-07-19"
+date: "2023-07-20"
 toc: true
 tags:
   - meta

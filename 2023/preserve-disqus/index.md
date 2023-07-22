@@ -189,9 +189,12 @@ and it seems like quite a hassle to implement.
 Having myself (ab)used the GitHub API as a storage backend many a times (even [as early as 2012](/2011/12/introducing-dabblet-an-interactive-css-playground/)), I can see the appeal.
 This may be a viable path forwards, though I need to verify that GitHub Issues can be easily exported, so that I’m not locked in.
 
-On a similar vein, [Gisqus](https://giscus.app/) seems great too: It’s like Utterances, but uses GitHub Discussions instead of Issues.
+On a similar vein, I really loved [Gisqus](https://giscus.app/) seems great too: It’s like Utterances, but uses GitHub Discussions instead of Issues.
+What holds me back from switching to it is that Discussions cannot yet be exported,
+and I think portability is important here.
 
-I would have loved some way to simply collect the discussions about the post from various social media and display them underneath,
-but with their API prices getting out of control ([1](https://www.theverge.com/2023/3/30/23662832/twitter-api-tiers-free-bot-novelty-accounts-basic-enterprice-monthly-price) [2](https://www.theverge.com/2023/5/31/23743993/reddit-apollo-client-api-cost)), that doesn’t seem feasible.
+People don’t even really use comments much anymore, they post on social media instead.
+I would have **loved** some way to simply collect the discussions about the post from various social media and display them underneath,
+but with API prices getting out of control ([1](https://www.theverge.com/2023/3/30/23662832/twitter-api-tiers-free-bot-novelty-accounts-basic-enterprice-monthly-price) [2](https://www.theverge.com/2023/5/31/23743993/reddit-apollo-client-api-cost)), that doesn’t seem feasible.
 
 If there are any options I missed, please let me know in the (Disqus, for now 😕) comments!
