@@ -4,7 +4,7 @@ override:tags: []
 layout: "page.njk"
 pagination: {
 	data: collections.blog,
-	size: 20,
+	size: 15,
 	reverse: true
 }
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"

@@ -1,5 +1,5 @@
 ---
-title: "Introspecting CSS via the CSS OM: Getting supported properties, shorthands, longhands"
+title: "Introspecting CSS via the CSS OM: Get supported properties, shorthands, longhands"
 date: "2020-07-27"
 tags:
   - "tips"

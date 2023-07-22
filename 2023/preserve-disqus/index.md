@@ -1,6 +1,6 @@
 ---
 title: Migrating Disqus from WP to 11ty
-date: 2023-07-17
+date: 2023-07-18
 toc: true
 tags:
   - meta
