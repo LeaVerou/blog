@@ -38,6 +38,7 @@ body:
         - Broken styles
         - Broken URLs
         - Broken syntax highlighting
+        - Accessibility issue
         - Other
   - type: textarea
     id: details
