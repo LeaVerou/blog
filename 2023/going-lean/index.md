@@ -197,16 +197,20 @@ Overall, I’m happy with the result, and the flexibility.
 I’ve had a lot of fun with this project, and it was a great distraction during a very difficult time in my life,
 due to dealing with some serious health issues in my immediate family.
 
-The only thing I find somewhat annoying is the editing flow:
-In WP, editing a blog post I was looking at in my browser was a single click (provided I was logged in).
+However, there are a few things that are now more of a hassle than they were in WP,
+mainly around the editing flow:
+
+- In WP, editing a blog post I was looking at in my browser was a single click (provided I was logged in).
 I guess I could still do that by editing through GitHub, but now I’m spoiled, I want an easy way to edit in my own editor,
 however the only way to do that is to either painfully traverse the directory structure, or …search to find the right *.md file,
 neither of which is ideal.
-Previewing a post I was editing was also a single click, whereas now I need to run a local server and manually type the URL in (or browse the website to find it).
+- Previewing a post I was editing was also a single click, whereas now I need to run a local server and manually type the URL in (or browse the website to find it).
+- Making edits now requires me to think of a suitable commit message.
+Sure, this is useful sometimes, but most of the time, I want the convenience of just saving my changes and being done with it.
 
 ### Open file in VS Code from the browser?
 
-There *is* a way to solve half of this problem: VS Code supports a `vscode://` protocol that allows you to
+There *is* a way to solve the first problem: VS Code supports a `vscode://` protocol that allows you to
 [open a file in VS Code from the browser](https://code.visualstudio.com/docs/editor/command-line#_opening-vs-code-with-urls).
 This means, this link wwould open the file for this blog post in VS Code:
 
