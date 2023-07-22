@@ -9,9 +9,9 @@ tags:
 ---
 
 WordPress has been with me since [my very first post in 2009](/blog).
-There is a lot to love about it: It’s open source, it has a thriving ecosystem, a beautiful default theme, and a block editor that makes my inner UX geek giddy.
-Plus, it made building a website and publishing content accessible to everyone.
-No wonder it’s [the most popular CMS in the world](https://almanac.httparchive.org/en/2022/cms#most-popular-cmss), by a huge margin.
+There is a lot to love about it: It’s open source, it has a thriving ecosystem, a beautiful default theme, and a revolutionary block editor that makes my inner UX geek giddy.
+Plus, WP made building a website and publishing content accessible to everyone.
+No wonder it’s [the most popular CMS in the world](https://almanac.httparchive.org/en/2022/cms#most-popular-cmss), by a **huge** margin.
 
 However, for me, the bad had started to outweigh the good:
 
@@ -79,7 +79,7 @@ In fact, I fully embraced it, by making it as easy as possible to file issues an
 
 <figure>
 
-![Notice from top of page saying "You are browsing the new, beta version of my website. Some things may not work properly. View this page on the old website and if you spot any problems, please file an issue!" with links throughout](image.png)
+![Notice from top of page saying "You are browsing the new, beta version of my website. Some things may not work properly. View this page on the old website and if you spot any problems, please file an issue!" with links throughout](images/broken-page-notice.png)
 <figcaption>
 
 Each page has a link to report a problem with it, which prefills as much info as possible.
@@ -89,7 +89,7 @@ as well as [URLs for prefilling the form](https://docs.github.com/en/issues/trac
 </figure>
 <figure>
 
-!["Edit on GitHub link"](image-1.png)
+!["Edit on GitHub link"](images/gh-edit.png)
 <figcaption>
 Each page has a link to edit it on GitHub, which automatically takes you through a PR flow if you don’t have write access to the repo.
 </figcaption>
@@ -201,7 +201,8 @@ However, there are a few things that are now more of a hassle than they were in 
 mainly around the editing flow:
 
 - In WP, editing a blog post I was looking at in my browser was a single click (provided I was logged in).
-I guess I could still do that by editing through GitHub, but now I’m spoiled, I want an easy way to edit in my own editor,
+I guess I could still do that by editing through GitHub, but now I’m spoiled, I want an easy way to edit in my own editor
+(VS Code, which has [a lot of nice features for Markdown editing](https://code.visualstudio.com/docs/languages/markdown)),
 however the only way to do that is to either painfully traverse the directory structure, or …search to find the right *.md file,
 neither of which is ideal.
 - Previewing a post I was editing was also a single click, whereas now I need to run a local server and manually type the URL in (or browse the website to find it).
