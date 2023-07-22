@@ -9,5 +9,7 @@ eleventyComputed:
   title: "Posts from {{ year }}"
 ---
 
+{% include "_yearly.njk" %}
+
 {% import "_posts.njk" as posts %}
 {{ posts.list(collections.postsByYear[ year ], {style: "compact"}) }}

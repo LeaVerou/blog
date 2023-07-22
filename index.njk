@@ -10,17 +10,7 @@ pagination: {
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---
 
-<div class="bar-chart" style="--max: 50" id="by-year">
-	{% for year, posts in collections.postsByYear %}
-		<a href="/blog/{{ year }}/" style="--p: {{ posts.length }}" data-title="{{ posts.length | pluralize("post") }}">
-			<span class="result">
-				<span class="number">{{ posts.length }}</span>
-				post{{ "s" if posts.length !== 1 }}
-			</span>
-			<span class="label">{{ year }}</span>
-		</a>
-	{% endfor %}
-</div>
+{% include "_yearly.njk" %}
 
 {% import "_posts.njk" as posts with context %}
 {{ posts.list(pagination.items) }}
