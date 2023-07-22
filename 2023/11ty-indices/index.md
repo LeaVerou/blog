@@ -220,6 +220,10 @@ eleventyComputed:
 
 You can see an example of such a page here: [Posts from 2010](/blog/2010/).
 
+Bonus, because this collection is more broadly useful, I was able to utilize it to make a little yearly archives bar chart!
+
+![Bar chart of posts by year, with 2012 selected and text above it reading "28 posts"](image.png)
+
 ## Index of posts by month
 
 Pagination only works on one level:
