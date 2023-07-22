@@ -80,6 +80,7 @@ In fact, I fully embraced it, by making it as easy as possible to file issues an
 <figure>
 
 ![Notice from top of page saying "You are browsing the new, beta version of my website. Some things may not work properly. View this page on the old website and if you spot any problems, please file an issue!" with links throughout](images/broken-page-notice.png)
+
 <figcaption>
 
 Each page has a link to report a problem with it, which prefills as much info as possible.
