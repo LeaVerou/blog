@@ -3,6 +3,7 @@ title: "I’m going to MIT!!"
 date: "2014-02-11"
 tags:
   - "personal"
+  - "academia"
 ---
 
 Last year, I did something crazy, that I've been wanting to do since I was little: I applied to MIT’s PhD program in Electrical Engineering and Computer Science.

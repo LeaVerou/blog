@@ -33,7 +33,7 @@ There are so many conveniences that just come for free with this workflow: git, 
 And if you can make the repo public, oooooh, the possibilities! People could even file PRs and issues for your blog posts!
 
 Using [Netlify](https://netlify.com) as a platform was also a no-brainer:
-I had been using it for years, and at this point host over 30 sites with them.
+I had been using it for years, for over 30 sites at this point!
 I love their simplicity, their focus on developer experience, and their commitment to open source.
 I also happen to know a bunch of folks there, and they have a great culture too.
 
@@ -55,10 +55,17 @@ One of the hardest dilemmas was whether to make the repo for this website public
 
 Overall, I was happy to have most files be public, but there were a few things I wanted to keep private:
 - Drafts (some drafts I’m ok to share publicly, but not all)
+- Unlisted pages and posts (posts with publicly accessible URLs, but not linked from anywhere)
 - Private pages (e.g. in the previous site I had a password-protected page with my details for conference organizers)
 
-Unfortunately, right now it’s all-or-nothing, even if only one file needs to be private, the whole repo needs to be private
-(I don’t think it has to be this way, and I [tweeted about this](https://twitter.com/LeaVerou/status/1652806575973605378)).
+Unfortunately, right now it’s all-or-nothing, even if only one file needs to be private, the whole repo needs to be private.
+
+<aside>
+
+FWIW I don’t think it has to be this way, and I [tweeted](https://twitter.com/LeaVerou/status/1652806575973605378) about this,
+including some ideas about fixing it, either from the GitHub side, or the serverless platform side.
+I’m hoping to write a blog post to expand on this soon.
+</aside>
 
 Making the repo public does have many advantages:
 - Transparency is one of my core values, and this is in line with it.
@@ -68,18 +75,36 @@ Making the repo public does have many advantages:
 - I wouldn’t need to use a separate public repo for the data that populates my [Speaking](/speaking/), [Publications](/publications/), and [Projects](/projects/) pages.
 
 I went back and forth quite a lot, but in the end I decided to make it public.
-In fact, I fully embraced it, by making it as easy as possible to file issues and submit PRs:
-- Each page has a link to report a problem with it, which prefills as many info as possible.
-- Each page has a link to edit it on GitHub
+In fact, I fully embraced it, by making it as easy as possible to file issues and submit PRs.
+
+<figure>
+
+![Notice from top of page saying "You are browsing the new, beta version of my website. Some things may not work properly. View this page on the old website and if you spot any problems, please file an issue!" with links throughout](image.png)
+<figcaption>
+
+Each page has a link to report a problem with it, which prefills as much info as possible.
+This was also a good excuse to try out [GitHub Issue Forms](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms),
+as well as [URLs for prefilling the form](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-url-query)!
+</figcaption>
+</figure>
+<figure>
+
+!["Edit on GitHub link"](image-1.png)
+<figcaption>
+Each page has a link to edit it on GitHub, which automatically takes you through a PR flow if you don’t have write access to the repo.
+</figcaption>
+</figure>
 
 Note that **a public repo is not automatically open source**.
 So far, I have not added a license, as I’m contemplating options.
 This is not as simple as licensing a library, as there are multiple components to it:
-(a) the website code (b) the content and images (c) the design
+(a) the website code (b) the content and images \(c) the design
 As with most of my code, I’d be happy for the code here to be MIT-licensed.
-When it comes to content and images, I feel some kind of Creative Commons Attribtion license would be most appropriate (CC-BY? CC-BY-SA?).
+When it comes to content and images, I feel some kind of Creative Commons Attribution license would be most appropriate (CC-BY? CC-BY-SA?).
 But when it comes to the design, I’m not sure I want to license it at all.
 It may be far from perfect, but it’s part of my own personal brand, which by definition needs to be unique.
+I would find it unsettling if someone else used the exact same design,
+in the same way that I would find it unsettling to walk into a house that looks exactly like mine.
 So, adding a license will need to wait until I can figure out how to can license all three separately.
 
 ## Migrating content to Markdown
@@ -140,15 +165,20 @@ including some thoughts about what system to use in the future, as I eventually 
 
 I wanted to preserve the URL structure of my old site as much as possible, both for SEO, but also because [cool URLs don’t change](https://www.w3.org/Provider/Style/URI).
 The WP importer I used allowed me to preserve the `/year/month/slug` structure of my URLs.
-I did want to have the blog in its own directory though, so I just added a [Netlify redirect](https://docs.netlify.com/routing/redirects/):
+
+I did want to have the blog in its own directory though.
+This site started as a blog, but I now see it as more of a personal site *with* a blog.
+Thankfully, redirecting these URLs to corresponding `/blog/` URLs was a one liner using [Netlify redirects](https://docs.netlify.com/routing/redirects/):
 
 ```
 /20* /blog/20:splat 301
 ```
 
-Going forwards, I decided to do away with the month being part of the URL, as it complicates the file structure for no discernible benefit (and I don’t blog nearly as much now as I did in 2009).
+Going forwards, I also decided to do away with the month being part of the URL, as it complicates the file structure for no discernible benefit and I don’t blog nearly as much now as I did in 2009, e.g. compare [2009](/blog/2009) vs [2022](/blog/2022/): 38 vs 7!
+I do think I will start blogging more again now (not only due to the new site, but also due to new interests and a long backlog of ideas),
+but I doubt I will ever get back to the pre-2014 levels (coincidentally, it appears my blogging frequency dropped significantly after I [started my PhD](/blog/2014/02/im-going-to-mit/)).
 
-I also wanted to have good, RESTful, [usable](https://www.nngroup.com/articles/url-as-ui/) URLs, which also requires:
+I also wanted to continue having nice, RESTful, [usable](https://www.nngroup.com/articles/url-as-ui/) URLs, which also requires:
 
 > URLs that are "hackable" to allow users to move to higher levels of the information architecture by hacking off the end of the URL
 
@@ -160,3 +190,40 @@ but also:
 - and of course [`/blog/`](/blog/) should show all posts
 
 This proved quite tricky to do with Eleventy, and spanned an entirely different [blog post](../11ty-indices/).
+
+## Overall impressions
+
+Overall, I’m happy with the result, and the flexibility.
+I’ve had a lot of fun with this project, and it was a great distraction during a very difficult time in my life,
+due to dealing with some serious health issues in my immediate family.
+
+The only thing I find somewhat annoying is the editing flow:
+In WP, editing a blog post I was looking at in my browser was a single click (provided I was logged in).
+I guess I could still do that by editing through GitHub, but now I’m spoiled, I want an easy way to edit in my own editor,
+however the only way to do that is to either painfully traverse the directory structure, or …search to find the right *.md file,
+neither of which is ideal.
+Previewing a post I was editing was also a single click, whereas now I need to run a local server and manually type the URL in (or browse the website to find it).
+
+### Open file in VS Code from the browser?
+
+There *is* a way to solve half of this problem: VS Code supports a `vscode://` protocol that allows you to
+[open a file in VS Code from the browser](https://code.visualstudio.com/docs/editor/command-line#_opening-vs-code-with-urls).
+This means, this link wwould open the file for this blog post in VS Code:
+
+```html
+<a href="vscode://file/Users/leaverou/Documents/lea.verou.me/blog/2023/going-lean/index.md">Edit in VS Code</a>
+```
+
+See the issue? I cannot add a button to the UI that only works for me!
+However, I don’t *need* to add a button to the UI:
+as long as I expose the input path of the current page (Eleventy’s [`page.inputPath`](https://www.11ty.dev/docs/data-eleventy-supplied/)) in the HTML somehow,
+I can just add a bookmarklet to my own browser that just does:
+
+```js
+location.href = `vscode://file/Users/leaverou/Documents/lea.verou.me/${document.documentElement.dataset.inputpath}`;
+```
+
+In fact, here it is, ready to be dragged to the bookmarks bar:
+<a href="javascript:location.href = `vscode://file/Users/leaverou/Documents/lea.verou.me/${document.documentElement.dataset.inputpath}`" class="call-to-action">Edit in VS Code</a>
+
+Now, if only I could find a way to do the opposite: open the localhost URL that corresponds to the Markdown file I’m editing — and my workflow would be complete!
