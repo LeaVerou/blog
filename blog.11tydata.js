@@ -18,6 +18,14 @@ module.exports = {
 		},
 		is_post: data => {
 			return data.tags.includes("blog");
-		}
+		},
+		// Return URLs without /blog/ for blog posts before July 2023
+		compatUrl: data => {
+			if (data.page.date < new Date("2023-06-01")) {
+				return data.page.url.replace("/blog/", "/");
+			}
+
+			return data.page.url;
+		},
 	}
 };
