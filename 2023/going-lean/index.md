@@ -227,7 +227,7 @@ Sure, this is useful sometimes, but most of the time, I want the convenience of 
 
 There *is* a way to solve the first problem: VS Code supports a `vscode://` protocol that allows you to
 [open a file in VS Code from the browser](https://code.visualstudio.com/docs/editor/command-line#_opening-vs-code-with-urls).
-This means, this link wwould open the file for this blog post in VS Code:
+This means, this link would open the file for this blog post in VS Code:
 
 ```html
 <a href="vscode://file/Users/leaverou/Documents/lea.verou.me/blog/2023/going-lean/index.md">Edit in VS Code</a>
