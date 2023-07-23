@@ -1,5 +1,5 @@
 name: Broken page
-description: A page/blog post has a problem
+description: A *specific* page or blog post has a problem. If you want to report a problem with the website in general, please use the "Bug" template instead.
 title: 'Broken page: [Page title]'
 labels: broken-page
 body:
