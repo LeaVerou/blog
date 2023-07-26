@@ -1,7 +1,6 @@
 ---
 title: Help Design the Inaugural State of HTML Survey!
 date: 2023-07-26
-draft: true
 tags:
   - "news"
   - "html"
