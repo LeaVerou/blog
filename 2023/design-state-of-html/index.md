@@ -82,6 +82,13 @@ If you can think of features we missed, please [post a new Discussion in this ca
 There is also a more general [💬 State of HTML 2023 Design](https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-design) category,
 for meta-discussions on Part 1 of the survey, and design brainstorming on Part 2.
 
+<div class=note>
+
+Note that **the feedback period will be open for two weeks, until August 10th**.
+After that point, feedback may still be taken into account, but it may be too late in the process to make a difference.
+
+</div>
+
 Some things to keep in mind when voting and generally participating in these discussions:
 - The votes and proposals collected through this process are **only one of the many variables** that feed into deciding what to ask about, and are **non-binding**.
 - There are **two goals** to balance here:
