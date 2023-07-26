@@ -21,28 +21,34 @@ It went really well: we got 60% higher response rate than the year before, which
 The feedback from these surveys is a prime input into the [Interop](https://web.dev/interop-2023/) project,
 where browsers collaborate to implement the most important features for developers interoperably.
 
-So this summer, Google trusted me with a mich bigger project, a brand new survey: **State of HTML**!
+So this summer, Google trusted me with a much bigger project, a brand new survey: **State of HTML**!
 
 <!-- more -->
+
+Your first reaction is probably wondering why we need a survey about HTML, of all things. Let me address your concerns: no, the survey is not going to be about whether you favor `<h3>`s or `<h4>`s for sub-headings, or whether you prefer `<em>` or `<i>`. It turns out, just like JavaScript and CSS, HTML is actually going through an evolution of its own! New elements like `<selectmenu>` and xxxxxxxxx are on the horizon, and there's also *******. 
+
+But moreover, the purpose of this new survey is to fill in the gaps left between the State of JavaScript and State of CSS surveys: anything that doesn't quite fit into the CSS or JS worlds will now have its own home!
 
 Designing a brand new survey is a more daunting task than creating the new edition of an existing survey,
 but also an exciting one, as comparability with the data from prior years is not a concern,
 so there is a lot more freedom.
 
 Each *State of X* survey consists of two parts:
-Part 1 is a quiz: a long list of less known and/or cutting edge or even upcoming features where respondents select one of three options:
+Part 1 is a quiz: a long list of lesser-known and/or cutting-edge (or even upcoming) features where respondents select one of three options:
 
 ![Screenshot of question saying "Custom Elements" with answers 🤷 Never heard of it/Not sure what it is, ✅ Know what it is, but haven't used it, 👍 I've used it](images/image.png)
 Starting with State of CSS 2022, respondents could also add freeform comments to provide more context about their answer through the little speech bubble icon.
 One of my goals this year is to make this feature quicker to use for common types of feedback,
 and to facilitate quantitative analysis of the responses (to some degree).
 
-At the end of the survey, respondents even get a score based on their answers and a rank compared to other respondents,
+At the end of the survey, respondents even get a knowledge score based on their answers,
 which provides value and helps reduce survey fatigue.
-Part 2 is more freeform, and usually includes multiple choice questions about tools and resources, freeform questions about pain points, and of course demographics.
 
-One of the novel things I tried in the State of CSS survey was to [involve the community in the design process](/blog/2022/07/help-design-the-state-of-css-survey-2022/),
-with one click voting for the features to ask about.
+Part 2 is more freeform, and usually includes multiple-choice questions about tools and resources, freeform questions about pain points, and of course, demographics.
+
+
+One of the novel things I tried in the 2022 State of CSS survey was to [involve the community in the design process](/blog/2022/07/help-design-the-state-of-css-survey-2022/),
+with one-click voting for the features to ask about.
 These were actually GitHub Issues with certain labels.
 Two years prior I had released [MaVoice: an app to facilitate one click voting on Issues in *any* repo](/blog/2020/07/releasing-mavoice-a-free-app-to-vote-on-repo-issues/),
 and it [fit the bill perfectly here](https://projects.verou.me/mavoice/?repo=devographics/surveys&labels=State%20of%20CSS%202022).
