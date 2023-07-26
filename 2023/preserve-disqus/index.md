@@ -2,6 +2,8 @@
 title: Migrating Disqus from WP to 11ty
 date: 2023-07-18
 toc: true
+social_posts:
+  twitter: https://twitter.com/LeaVerou/status/1682802475215073282
 tags:
   - meta
   - 11ty

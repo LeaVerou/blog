@@ -2,6 +2,8 @@
 title: "Going Lean"
 date: "2023-07-21"
 toc: true
+social_posts:
+  twitter: https://twitter.com/LeaVerou/status/1682802462841864192
 tags:
   - meta
   - 11ty

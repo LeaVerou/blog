@@ -2,6 +2,8 @@
 title: Rethinking Categorization
 date: "2023-07-20"
 toc: true
+social_posts:
+  twitter: https://twitter.com/LeaVerou/status/1682802468231557120
 tags:
   - meta
   - ia

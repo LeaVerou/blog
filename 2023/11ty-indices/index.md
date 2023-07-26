@@ -2,6 +2,8 @@
 title: "11ty: Index ALL the things!"
 date: "2023-07-19"
 toc: true
+social_posts:
+  twitter: https://twitter.com/LeaVerou/status/1682802471800913920
 tags:
   - meta
   - 11ty
