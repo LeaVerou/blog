@@ -61,7 +61,7 @@ Two years prior I had released [MaVoice: an app to facilitate one click voting o
 and it [fit the bill perfectly here](https://projects.verou.me/mavoice/?repo=devographics/surveys&labels=State%20of%20CSS%202022).
 
 This process worked exceptionally well for uncovering blind spots: it turned out there were a bunch of CSS features that would be good to ask about, but were simply not on our radar.
-This is one of the reasons transparency is one of my core values: **no one human or small team can ever match the collective intelligence of the community**.
+This is one of the reasons I strongly believe in transparency and co-design: **no one human or small team can ever match the collective intelligence of the community**.
 
 Predictably, I plan to try the same approach for State of HTML.
 Instead of using MaVoice, this year I’m trying [GitHub Discussions](https://github.com/features/discussions).
@@ -80,15 +80,15 @@ You can also see a (read-only) summary of the proposed features with their metad
 though keep in mind that it’s manually updated so it may not not include new proposals.
 
 If you can think of features we missed, please [post a new Discussion in this category](https://github.com/Devographics/surveys/discussions/new?category=state-of-html-2023-features).
-I have also created a more general [💬 State of HTML 2023 Design](https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-design) category,
-for design brainstorming on Part 2 of the survey, and meta-discussions about Part 1.
+There is also a more general [💬 State of HTML 2023 Design](https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-design) category,
+for meta-discussions on Part 1 of the survey, and design brainstorming on Part 2.
 
 Some things to keep in mind when voting and generally participating in these discussions:
 - The votes and proposals collected through this process are **only one of the many variables** that feed into deciding what to ask about, and are **non-binding**.
-- There are **two important goals** to balance here, both equally important: 1) The survey needs to be valuable to developers (and fun!) 2) The survey needs to be valuable for browsers (i.e. get them actionable feedback that can feed into prioritization for what to implement)
+- There are **two goals** to balance here:
+	1. The survey needs to provide value to developers -- and be fun to fill in!
+	2. The survey needs to provide value to browsers, i.e. get them actionable feedback they can use to help prioritize what to work on. This is the main way that these surveys have impact on the web platform, and is at least as important as (1).
 - While the title is "State of HTML", certain JS APIs or even CSS syntax is also relevant, especially those very close to HTML, such as DOM, ARIA, Web Components, PWAs etc.
 - Stable features that have existed for a long time and are widely known are generally less likely to make it to the survey.
 
-Now go vote! 🗳
-
-<a class="call-to-action" href="https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-features">Vote on Features for State of HTML 2023!</a>
+<a class="call-to-action" href="https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-features">Now go vote! 🗳</a>
