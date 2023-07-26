@@ -79,9 +79,11 @@ These initial ideas and focus areas came from a combination of personal research
 You can also see a (read-only) summary of the proposed features with their metadata [here](https://coda.io/@leaverou/html-features)
 though keep in mind that it’s manually updated so it may not not include new proposals.
 
-If you can think of features we missed, please [post a new Discussion in this category](https://github.com/Devographics/surveys/discussions/new?category=state-of-html-2023-features)!
+If you can think of features we missed, please [post a new Discussion in this category](https://github.com/Devographics/surveys/discussions/new?category=state-of-html-2023-features).
+I have also created a more general [💬 State of HTML 2023 Design](https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-design) category,
+for design brainstorming on Part 2 of the survey, and meta-discussions about Part 1.
 
-Some things to keep in mind:
+Some things to keep in mind when voting and generally participating in these discussions:
 - The votes and proposals collected through this process are **only one of the many variables** that feed into deciding what to ask about, and are **non-binding**.
 - There are **two important goals** to balance here, both equally important: 1) The survey needs to be valuable to developers (and fun!) 2) The survey needs to be valuable for browsers (i.e. get them actionable feedback that can feed into prioritization for what to implement)
 - While the title is "State of HTML", certain JS APIs or even CSS syntax is also relevant, especially those very close to HTML, such as DOM, ARIA, Web Components, PWAs etc.
