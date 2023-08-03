@@ -45,7 +45,7 @@ but also an exciting one, as comparability with the data from prior years is not
 so there is a lot more freedom.
 
 Each *State of X* survey consists of two parts:
-Part 1 is a quiz: a long list of lesser-known and/or cutting-edge (or even upcoming) features where respondents select one of three options:
+<dfn id="part1">Part 1</dfn> is a quiz: a long list of lesser-known and/or cutting-edge (or even upcoming) features where respondents select one of three options:
 
 ![Screenshot of question saying "Custom Elements" with answers 🤷 Never heard of it/Not sure what it is, ✅ Know what it is, but haven't used it, 👍 I've used it](images/feature-example.png)
 Starting with State of CSS 2022, respondents could also add freeform comments to provide more context about their answer through the little speech bubble icon.
@@ -55,7 +55,7 @@ and to facilitate quantitative analysis of the responses (to some degree).
 At the end of the survey, respondents even get a knowledge score based on their answers,
 which provides immediate value and motivation which reduces survey fatigue.
 
-Part 2 is more freeform, and usually includes multiple-choice questions about tools and resources, freeform questions about pain points, and of course, demographics.
+<dfn id="part2">Part 2</dfn> is more freeform, and usually includes multiple-choice questions about tools and resources, freeform questions about pain points, and of course, demographics.
 
 
 One of the novel things I tried in the 2022 State of CSS survey was to [involve the community in the design process](/blog/2022/07/help-design-the-state-of-css-survey-2022/),
