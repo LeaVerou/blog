@@ -137,7 +137,7 @@ If it varies year to year, please enter an average.
 ## Conclusion
 
 I’m sure there is a lot of prior art on the general dilemma on numerical inputs vs brackets,
-but I wanted to do some analysis with the specifics of this case and outline my thought process.
+but I wanted to do some analysis with the specifics of this case and outline an analytical framework for answering these kinds of dilemmas.
 
 That said, if you know of any relevant prior art, please share it in the comments!
 Same if you can spot any flaws in my analysis or recommendations.
