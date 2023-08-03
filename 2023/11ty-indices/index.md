@@ -201,8 +201,10 @@ eleventyConfig.addCollection("postsByYear", (collectionApi) => {
 	return ret;
 });
 ```
-
+{% endraw %}
 and then, in [`blog/year-index.njk`]({{ site.repo_file }}/blog/year-index.njk):
+
+{% raw %}
 
 ```njk
 ---
