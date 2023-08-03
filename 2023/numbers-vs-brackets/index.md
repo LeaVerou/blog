@@ -141,3 +141,5 @@ but I wanted to do some analysis with the specifics of this case and outline an 
 
 That said, if you know of any relevant prior art, please share it in the comments!
 Same if you can spot any flaws in my analysis or recommendations.
+
+You could also [check out the relevant discussion](https://github.com/Devographics/surveys/discussions/177) as there may be good points there.
