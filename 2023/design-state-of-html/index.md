@@ -6,6 +6,7 @@ social_posts:
   mastodon: https://front-end.social/@leaverou/110780780762395398
   bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3k3glspxiab2u
   linkedin: https://www.linkedin.com/posts/leaverou_help-design-the-inaugural-state-of-html-survey-activity-7089972680195469312-MrKr
+  facebook: https://www.facebook.com/leaverou/posts/10160859186056192
 tags:
   - "news"
   - "html"
