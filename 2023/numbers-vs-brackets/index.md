@@ -2,6 +2,11 @@
 title: "Numbers or Brackets for numeric questions?"
 date: 2023-08-03
 social_posts:
+  twitter: https://twitter.com/LeaVerou/status/1687194198808600578
+  mastodon: https://front-end.social/@leaverou/110827500905765956
+  bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3k43dlymwnb2f
+  linkedin: https://www.linkedin.com/feed/update/urn:li:share:7092960633536602112/
+  facebook: https://www.facebook.com/leaverou/posts/10160859274391192
 tags:
   - survey-design
   - ux
