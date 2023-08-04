@@ -1,0 +1,8 @@
+blockquote.question {
+	font-style: normal;
+}
+
+blockquote.question strong,
+blockquote.question small {
+	display: block;
+}

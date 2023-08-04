@@ -1,6 +1,7 @@
 ---
 title: "Numbers or Brackets for numeric questions?"
 date: 2023-08-03
+page_css: true
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1687194198808600578
   mastodon: https://front-end.social/@leaverou/110827500905765956
@@ -67,12 +68,56 @@ As you can see, despite our initial intuition that brackets are faster, the time
 
 Of course, this is a simplification.
 There are models in [HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction), such as [KLM](https://en.wikipedia.org/wiki/Keystroke-level_model) that can more accurately estimate the time it takes for certain UI flows.
-For example, here are some of the variables we left out in our analysis:
-- When answering a numerical question, most users need to home from mouse to keyboard, which takes time (estimated as 0.4s in KLM)
-and then focus the input so they can write in it, which takes an additional click (estimated as 0.2s in KLM)
-- When answering a bracketed question, users need to move the mouse to the correct bracket, which takes time (KLM estimates all pointing tasks as a flat 1.1s, but this can be more accurately estimated using [Fitts’ Law](https://en.wikipedia.org/wiki/Fitts%27s_law))
+We even taught some of these to MIT students in [6.813](http://web.mit.edu/6.813/www/sp18/classes/10-more-efficiency/#keystroke_level_model),
+as well as [its successor](https://designftw.mit.edu/).
 
-However, given the vast difference in times, I don't think a more accurate model would change the conclusion.
+For example, here are some of the variables we left out in our analysis above:
+- When answering with numerical input, most users need to home from mouse to keyboard, which takes time (estimated as 0.4s in KLM)
+and then focus the input so they can write in it, which takes an additional click (estimated as 0.2s in KLM)
+- When answering with brackets, users need to move the mouse to the correct bracket, which takes time (KLM estimates all pointing tasks as a flat 1.1s, but this can be more accurately estimated using [Fitts’ Law](https://en.wikipedia.org/wiki/Fitts%27s_law))
+- We are assuming that the decision is instantaneous, but doing the mental math of comparing the number in your head to the bracket numbers also takes time.
+
+However, given the vast difference in times, I don't think a more accurate model would change the conclusion much.
+
+<div class=note>
+
+Note that this analysis is based on a desktop interface, primarily because it’s easier (most of these models were developed before mobile was widespread, e.g. KLM was invented in 1978!)
+Mobile would require a separate calculation taking into account the specifics of mobile interaction (e.g. the time it takes for the keyboard to pop up), though the same logic applies.
+(thanks Tim for [this exellent question](https://twitter.com/gumnos/status/1687199431819763712)!)
+
+</div>
+
+## What about sliders?
+
+Sliders are uncommon in surveys, and for good reason.
+They offer the most benefit in UIs where changes to the value provide **feedback**, and allow users to **iteratively approach the desired value by reacting to this feedback**.
+For example:
+- In a color picker, the user can zero in to the desired coordinates iteratively, by seeing the color change in real time
+- In a video player, the user can drag the slider to the right time by getting feedback about video frames.
+- In searches (e.g. for flights), dragging the slider updates the results in real time, allowing the user to gradually refine their search with suitable tradeoffs
+
+In surveys, there is usually no feedback, which eliminates this core benefit.
+
+When the number is known in advance, sliders are usually a poor choice, except when we have very few numbers to choose among (e.g. a 1-5 rating)
+and the slider UI makes it very clear where to click to select each of them, or we don't much care about the number we select (e.g. search flights by departure time).[^3]
+None of our demographics questions falls in this category (unless bracketed, in which case why not use regular brackets?).
+
+[^3]: [Slider Design: Rules of Thumb, NNGroup, 2015](https://www.nngroup.com/articles/gui-slider-controls/)
+
+There are several reasons for this:
+- It is hard to predict where exactly to click to select the desired number. The denser the range, the harder it is.
+- Even if you know where to click, it’s [hard to do so on mobile](https://www.nngroup.com/articles/gui-slider-controls/#:~:text=Imprecise%20Interactions)
+- Dragging a slider on desktop is generally slower than typing the number outright.[^4]
+
+[^4]: KLM is a poor model for dragging tasks for two reasons:
+First, it regards dragging as simply a combination of three actions: *button press, mouse move, button release*.
+But we all know from experience that dragging is much harder than simply pointing, as managing two tasks simultaneously (holding down the mouse button and moving the pointer) is almost always harder than doing them sequentially.
+Second, it assumes that all pointing tasks have a fixed cost (1.1s), which may be acceptable for actual pointing tasks, but the inaccuracy is magnified for dragging tasks.
+A lot of HCI literature (and even [NNGroup](https://www.nngroup.com/articles/gui-slider-controls/#:~:text=subjected%20to%20the-,steering%20law,-%2C%20which%20describes%20the)) refers to the [Steering Law](https://en.wikipedia.org/wiki/Steering_law) to estimate the time it takes to use a slider,
+however modern sliders (and scrollbars) do not require steering, as they are not constrained to a single axis:
+once dragging is initiated, moving the pointer in any direction adjusts the slider, until the mouse button is released.
+[Fitts Law](https://en.wikipedia.org/wiki/Fitts%27s_law) actually appears to be a better model here, and indeed there are [many papers](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C22&q=fitts+law+dragging) extending it to dragging.
+However, evaluating this research is out of scope for this post.
 
 ## `<input type=number>` all the things?
 
@@ -112,32 +157,52 @@ I proposed the following brackets:
 - Just me!
 - Small (2 - 50)
 - Medium (51 - 200)
-- Large (200 - 1000)
+- Large (201 - 1000)
 - Very Large (1000+)
 
 ### Income
 
-The question tht started it all!
+The question tht started it all is unfortunately the hardest.
 
-This is a number that people know (or can approximate).
+Income is a number that people know (or can approximate).
 It is faster to type, but only marginally (1.75s vs 1.5s).
 We can however reduce the keystrokes further (from 1.5s to 0.6s on average) by asking people to enter thousands.
 
 The biggest concern here is **privacy**.
 Would people be comfortable sharing a more precise number?
-I wonder if we could mitigate this by explicitly instructing respondents to round it further, e.g. to the nearest multiple of 10.
+We could mitigate this somewhat by explicitly instructing respondents to round it further, e.g. to the nearest multiple of 10:
 
-Overall, something like this:
-
-<blockquote>
-<strong>What is your approximate yearly income (before taxes)?</strong><br>
+<blockquote class="question">
+<strong>What is your approximate yearly income (before taxes)?</strong>
 <small>
 Feel free to round to the nearest multiple of 10 if you are not comfortable sharing an exact number.
-If it varies year to year, please enter an average.
+If it varies by year, please enter an average.
 </small>
 <br>
-<label>$<input type=number size=3>,000</label>
+<label>$<input type=number size=3> ,000</label>
 </blockquote>
+
+However, this assumes that the privacy issues are about granularity, or about the number being too low (and rounding to 10s could help with both).
+However, [David Karger](https://people.csail.mit.edu/karger/) made an excellent point in [the comments](https://lea.verou.me/blog/2023/numbers-vs-brackets/#comment-6246846722),
+that people at the higher income brackets may also be reluctant to share their income:
+
+> I don't think that rounding off accomplishes anything. It's not the least significant digit that people care about, but the most significant digit. This all depends on who they imagine will read the data of course. But consider some techy earnings, say 350k. That's quite a generous salary and some people might be embarrassed to reveal their good fortune. Rounding it to 300k would still be embarrassing. On the other hand, a bracket like 150 to 500 would give them wiggle room to say that they're earning a decent salary without revealing that they're earning a fantastic one. I don't have immediate insight into what brackets should be chosen to give people the cover they need to be truthful, but I think they will work better for this question.
+
+I wonder if the solution may instead be to offer UI that lets users indicate that the number they have entered is actually an upper or lower bound.
+
+<blockquote class="question">
+<strong>What is your approximate yearly income (before taxes)?</strong>
+<select>
+<option selected>About</option>
+<option>Over</option>
+<option>Under</option>
+<option>Exactly</option>
+</select>
+<label>$<input type=number size=3> ,000</label>
+</blockquote>
+
+Of course, a dropdown PLUS a number input is much slower than using brackets,
+but if only a tiny fraction of respondents uses it, it does not affect the analysis of the average case.
 
 ## Conclusion
 
