@@ -26,6 +26,12 @@ I decided to explore this a bit further, which changed my opinion.
 
 <!-- more -->
 
+<figure>
+
+![Multiple choice question showing income brackets starting from $0-$10 up to "More than $200k"](images/income-brackets.png)
+<figcaption>The current income question, which uses 6 brackets plus a "Not Applicable" option.</figcaption>
+</figure>
+
 There are actually four demographics questions in *State of X* surveys where the answer is essentially a number, yet we ask respondents to select a bracket:
 age, years of experience, company size, and income.
 
