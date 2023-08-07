@@ -1,6 +1,7 @@
 ---
 title: "Numbers or Brackets for numeric questions?"
 date: 2023-08-03
+date_updated: 2023-08-07
 page_css: true
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1687194198808600578
@@ -188,13 +189,13 @@ If it varies by year, please enter an average.
 <label>$<input type=number size=3> ,000</label>
 </blockquote>
 
-However, this assumes that the privacy issues are about granularity, or about the number being too low (and rounding to 10s could help with both).
+However, this assumes that the privacy issues are about granularity, or about the number being too low (rounding to 10s could help with both).
 However, [David Karger](https://people.csail.mit.edu/karger/) made an excellent point in [the comments](https://lea.verou.me/blog/2023/numbers-vs-brackets/#comment-6246846722),
 that people at the higher income brackets may also be reluctant to share their income:
 
 > I don't think that rounding off accomplishes anything. It's not the least significant digit that people care about, but the most significant digit. This all depends on who they imagine will read the data of course. But consider some techy earnings, say 350k. That's quite a generous salary and some people might be embarrassed to reveal their good fortune. Rounding it to 300k would still be embarrassing. On the other hand, a bracket like 150 to 500 would give them wiggle room to say that they're earning a decent salary without revealing that they're earning a fantastic one. I don't have immediate insight into what brackets should be chosen to give people the cover they need to be truthful, but I think they will work better for this question.
 
-I wonder if the solution may instead be to offer UI that lets users indicate that the number they have entered is actually an upper or lower bound.
+Another idea was to offer UI that lets users indicate that the number they have entered is actually an upper or lower bound.
 
 <blockquote class="question">
 <strong>What is your approximate yearly income (before taxes)?</strong>
@@ -209,6 +210,11 @@ I wonder if the solution may instead be to offer UI that lets users indicate tha
 
 Of course, a dropdown PLUS a number input is much slower than using brackets,
 but if only a tiny fraction of respondents uses it, it does not affect the analysis of the average case.
+
+However, after careful consideration and input, both [qualitative](https://github.com/Devographics/surveys/discussions/177#discussioncomment-6634104) and [quantitative](https://twitter.com/SachaGreif/status/1688447006459805696), it appears that privacy is a much bigger factor than I had previously realized.
+Even though I was aware that people see income level as sensitive data (more so in certain cultures than others),
+I had not fully realized the extent of this.
+In the end, I think **the additional privacy afforded by brackets far outweighs any argument for efficiency or data analysis convenience**.
 
 ## Conclusion
 
