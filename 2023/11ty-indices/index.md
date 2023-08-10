@@ -174,7 +174,7 @@ For the vast majority of use cases, a dynamic collection is more appropriate.
 ## Index of posts by year
 
 Generating yearly indices can be quite similar as generating tag pages.
-The main difference is that for tags the colleciton already exists (`collections[tag]`) whereas
+The main difference is that for tags the collection already exists (`collections[tag]`) whereas
 for years you have to build it yourself, using `addCollection()` in your config file.
 
 This seems to come up pretty frequently, both for years and months (the next section):
