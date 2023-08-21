@@ -169,7 +169,7 @@ I proposed the following brackets:
 
 ### Income
 
-The question tht started it all is unfortunately the hardest.
+The question that started it all is unfortunately the hardest.
 
 Income is a number that people know (or can approximate).
 It is faster to type, but only marginally (1.75s vs 1.5s).
