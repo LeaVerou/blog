@@ -111,17 +111,17 @@ Please file an issue so we can fix it!
 
 ## Acknowledgements
 
-This survey would not have been possible without the hard work of many people besdies me:
+This survey would not have been possible without the hard work of many people besides me:
 - Engineering team: Sacha Greif, Eric Buriel
 - UX research & data science team: Shaine Rosewel Matala, Michael Quiapos, Gio Vernell Quiogue
-- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I did surpassed himself with this one!
+- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I think surpassed himself with this one!
 
 And several volunteers:
 - [Léonie Watson](https://tink.uk/) for accessibility feedback
 - Our usability testing participants
 - …and all folks who provided early feedback throuhgout the process
 
-Last but not least, Kadir Topal made the survey possible by proposing it and securing funding from Google for it.
+Last but not least, **Kadir Topal** made the survey possible in the first place, by proposing it and securing funding from Google for it.
 
 Thank you all! 🙏🏼
 
