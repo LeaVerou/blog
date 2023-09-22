@@ -6,6 +6,8 @@ toc: true
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1705250535069433903
   mastodon: https://front-end.social/@leaverou/111109649821619176
+  bluesky: https://staging.bsky.app/profile/did:plc:eagnfcoqnbtzpkglrtej6ayg/post/3k7yo3gxjy22t
+  threads: https://www.threads.net/@leaverou/post/CxgDDwVNjQf/?igshid=MzRlODBiNWFlZA==
 tags:
   - launch
   - news
