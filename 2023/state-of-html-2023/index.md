@@ -3,6 +3,9 @@ title: State of HTML 2023 now open!
 date: 2023-09-22
 image: images/logo.png
 toc: true
+social_posts:
+  twitter: https://twitter.com/LeaVerou/status/1705250535069433903
+  mastodon: https://front-end.social/@leaverou/111109649821619176
 tags:
   - launch
   - news
@@ -14,7 +17,7 @@ tags:
 
 **tl;dr** the brand new State of HTML survey is finally open!
 
-<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/" class="call-to-action" target="_blank">Take State of HTML 2023 Survey</a>
+<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/?source=leaverou" class="call-to-action" target="_blank">Take State of HTML 2023 Survey</a>
 
 Benefits to you:
 - Survey results are **used by browsers to prioritize roadmaps** — the reason Google is funding this.
@@ -60,7 +63,7 @@ You could even start anonymously and create an account later, and your responses
 
 So, perhaps the call to action above should be…
 
-<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/" class="call-to-action" target="_blank"><em>Start</em> State of HTML 2023 Survey</a>
+<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/?source=leaverou" class="call-to-action" target="_blank"><em>Start</em> State of HTML 2023 Survey</a>
 
 ### Why are there JS questions in an HTML survey?
 
@@ -147,4 +150,4 @@ Last but not least, **Kadir Topal** made the survey possible in the first place,
 
 Thank you all! 🙏🏼
 
-<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/" class="call-to-action" target="_blank">You still haven’t started the State of HTML 2023 survey?!</a>
+<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/?source=leaverou" class="call-to-action" target="_blank">You still haven’t started the State of HTML 2023 survey?!</a>
