@@ -1,7 +1,6 @@
 ---
 title: State of HTML 2023 now open!
 date: 2023-09-22
-draft: true
 toc: true
 tags:
   - launch
@@ -77,7 +76,7 @@ Fun fact: Nobody in the core [State of HTML team](#acknowledgements) is a native
 ![Screenshot showing dozens of languages](images/languages.png)
 <figcaption>
 
-Each survey is (at least partially) translated in over 30 languages.
+Each survey gets (at least partially) translated to over 30 languages.
 
 </figcaption>
 </figure>
@@ -122,7 +121,7 @@ Please file an issue so we can fix it!
 ## Acknowledgements
 
 This survey would not have been possible without the hard work of many people.
-Besides me (Lea Verou), this includes the rest of the team:
+Besides myself (Lea Verou), this includes the rest of the team:
 - Engineering team: Sacha Greif, Eric Burel
 - UX research & data science team: Shaine Rosewel Matala, Michael Quiapos, Gio Vernell Quiogue
 - Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I think surpassed himself with this one!
