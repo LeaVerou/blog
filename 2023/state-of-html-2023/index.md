@@ -66,10 +66,18 @@ There is a question at the end, where you can select that you only write HTML/CS
 
 ### Is the survey only available in English?
 
-Localization has been an integral part of these surveys since the beginning.
-Fun fact: Nobody in the [State of HTML team](#acknowledgements) is a native English speaker.
+Absolutely not! Localization has been an integral part of these surveys since the beginning.
+Fun fact: Nobody in the core [State of HTML team](#acknowledgements) is a native English speaker.
+
+<figure>
 
 ![Screenshot showing dozens of languages](images/languages.png)
+<figcaption>
+
+Each survey is (at least partially) translated in over 30 languages.
+
+</figcaption>
+</figure>
 
 However, since translations are a community effort, they are not necessarily complete, especially in the beginning.
 If you are a native speaker of a language that is not yet complete, please consider [helping out](https://github.com/Devographics/locale-en-US)!
@@ -86,7 +94,6 @@ If it makes you feel better, this was my own score, and I *created* the damn sur
 Our engineer, [Sacha](https://sachagreif.com/) who is also the founder of [Devographics](https://www.devographics.com/) got 19%!
 
 </figcaption>
-
 </figure>
 
 Two reasons:
@@ -114,7 +121,7 @@ Please file an issue so we can fix it!
 This survey would not have been possible without the hard work of many people besides me:
 - Engineering team: Sacha Greif, Eric Buriel
 - UX research & data science team: Shaine Rosewel Matala, Michael Quiapos, Gio Vernell Quiogue
-- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I think surpassed himself with this one!
+- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I did surpassed himself with this one!
 
 And several volunteers:
 - [Léonie Watson](https://tink.uk/) for accessibility feedback
