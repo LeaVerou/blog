@@ -16,14 +16,17 @@ tags:
 
 <a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/" class="call-to-action" target="_blank">Take State of HTML 2023 Survey</a>
 
-As usual, the results of these surveys are not only useful to the community;
-they are also **used by browsers to prioritize roadmaps** — which is why Google is funding this one.
-So time spent filling them out thoughtfully is an investment that can come back to you tenfold;
+Benefits to you:
+- Survey results are **used by browsers to prioritize roadmaps** — the reason Google is funding this.
+Time spent thoughtfully filling them out is an investment that can come back to you tenfold
 in the form of seeing features you care about implemented, browser incompatibilities being prioritized, and gaps in the platform being addressed.
+- Learn about new and upcoming features you may have missed
+- Get a personalized score and see how you compare to other respondents
+- Learn about the latest trends in the ecosystem and what other developers are focusing on
 
 ## Background
 
-This is likely the most ambitious Devographics survey to date.
+This is likely the most ambitious [Devographics](https://www.devographics.com/) survey to date.
 For [the past couple of months](../design-state-of-html/), I’ve been hard at work leading a small product team spread across three continents (2am to 8am became my second work shift 😅).
 We embarked on this mission with some uncertainty about whether there were *enough* features for a State of HTML survey,
 but quickly found ourselves with the opposite problem:
@@ -40,13 +43,13 @@ Once the dust settles, I plan to write separate blog posts about some of these.
 ### Can I edit my responses?
 
 **Absolutely!** Do not worry about filling it out perfectly in one go.
-If you’re filling out the survey anonymously, you can still edit responses on your device for a while.
 If you create an account, you can edit your responses for the whole period the survey is open, and even split filling it out across multiple devices (e.g. start on your phone, then fill out some on your desktop, etc.)
-You could even create an account later, and your responses will be preserved; the only issue is filling it out anonymously, then logging in with an existing account.
+Even if you’re filling it out anonymously, you can still edit responses on your device for a while.
+You could even start anonymously and create an account later, and your responses will be preserved (the only issue is filling it out anonymously, then logging in with an existing account).
 
 So, perhaps the call to action above should be…
 
-<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/" class="call-to-action" target="_blank">Start State of HTML 2023 Survey</a>
+<a href="https://survey.devographics.com/en-US/survey/state-of-html/2023/" class="call-to-action" target="_blank"><em>Start</em> State of HTML 2023 Survey</a>
 
 ### Why are there JS questions in an HTML survey?
 
@@ -90,7 +93,7 @@ If you are a native speaker of a language that is not yet complete, please consi
 
 <figcaption>
 
-If it makes you feel better, this was my own score, and I *created* the damn survey 😅
+If it makes you feel better, this was my own score, and I *created* the darn survey 😅
 Our engineer, [Sacha](https://sachagreif.com/) who is also the founder of [Devographics](https://www.devographics.com/) got 19%!
 
 </figcaption>
@@ -98,9 +101,9 @@ Our engineer, [Sacha](https://sachagreif.com/) who is also the founder of [Devog
 
 Two reasons:
 1. It asks about *a lot* of cutting edge features, more than the other surveys.
-As I mentioned above, we had a lot of difficult tradeoffs to make about what to include,
+As I mentioned above, we had a lot of difficult tradeoffs to make,
 and had to cut a ton of features that were otherwise a great fit.
-We err'ed on the side of more cutting edge features, as those are the areas the survey results can help make the most difference in the ecosystem.
+We err'ed on the side of more cutting edge features, as those are the areas the survey can help make the most difference in the ecosystem.
 2. To save on space, and be able to ask about more features, we used a new compact format for some of the more stable features, which only asks about usage, not awareness.
 Here is an example from the first section of the survey (Forms):
 ![Form validation question screenshot](images/form-validation.png)
@@ -118,17 +121,18 @@ Please file an issue so we can fix it!
 
 ## Acknowledgements
 
-This survey would not have been possible without the hard work of many people besides me:
-- Engineering team: Sacha Greif, Eric Buriel
+This survey would not have been possible without the hard work of many people.
+Besides me (Lea Verou), this includes the rest of the team:
+- Engineering team: Sacha Greif, Eric Burel
 - UX research & data science team: Shaine Rosewel Matala, Michael Quiapos, Gio Vernell Quiogue
-- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I did surpassed himself with this one!
+- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I think surpassed himself with this one!
 
 And several volunteers:
 - [Léonie Watson](https://tink.uk/) for accessibility feedback
 - Our usability testing participants
 - …and all folks who provided early feedback throuhgout the process
 
-Last but not least, **Kadir Topal** made the survey possible in the first place, by proposing it and securing funding from Google for it.
+Last but not least, **Kadir Topal** made the survey possible in the first place, by proposing it and securing funding from Google.
 
 Thank you all! 🙏🏼
 
