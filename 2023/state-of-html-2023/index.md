@@ -23,6 +23,17 @@ in the form of seeing features you care about implemented, browser incompatibili
 - Get a personalized score and see how you compare to other respondents
 - Learn about the latest trends in the ecosystem and what other developers are focusing on
 
+<figure>
+
+![State of HTML 2023 Logo](images/logo.png)
+
+<figcaption>
+
+The State of HTML logo, designed by [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I think surpassed himself with this one!
+
+</figcaption>
+</figure>
+
 ## Background
 
 This is likely the most ambitious [Devographics](https://www.devographics.com/) survey to date.
@@ -124,7 +135,7 @@ This survey would not have been possible without the hard work of many people.
 Besides myself (Lea Verou), this includes the rest of the team:
 - Engineering team: Sacha Greif, Eric Burel
 - UX research & data science team: Shaine Rosewel Matala, Michael Quiapos, Gio Vernell Quiogue
-- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/), who I think surpassed himself with this one!
+- Our logo designer, [Chris Kirk-Nielsen](https://chriskirknielsen.com/)
 
 And several volunteers:
 - [Léonie Watson](https://tink.uk/) for accessibility feedback
