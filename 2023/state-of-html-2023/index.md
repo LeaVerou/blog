@@ -101,21 +101,24 @@ Each survey gets (at least partially) translated to over 30 languages.
 However, since translations are a community effort, they are not necessarily complete, especially in the beginning.
 If you are a native speaker of a language that is not yet complete, please consider [helping out](https://github.com/Devographics/locale-en-US)!
 
-### Why is my score lower than I expected?
+### What does my score mean?
+
+Previous surveys reported score as a percentage: "You have heard or used X out of Y features mentioned in the survey".
+This one did too at first:
 
 <figure>
 
-![80% score, 105/131 heard or used](images/my-score.png)
+![80% score, 105/131 heard or used](images/my-score-old.png)
 
 <figcaption>
 
-If it makes you feel better, this was my own score, and I *created* the darn survey 😅
+This was my own score when the survey first launched, and I *created* the darn survey 😅
 Our engineer, [Sacha](https://sachagreif.com/) who is also the founder of [Devographics](https://www.devographics.com/) got 19%!
 
 </figcaption>
 </figure>
 
-Two reasons:
+These were a lot lower for this survey, for two reasons:
 1. It asks about *a lot* of cutting edge features, more than the other surveys.
 As I mentioned above, we had a lot of difficult tradeoffs to make,
 and had to cut a ton of features that were otherwise a great fit.
@@ -123,10 +126,28 @@ We err'ed on the side of more cutting edge features, as those are the areas the 
 2. To save on space, and be able to ask about more features, we used a new compact format for some of the more stable features, which only asks about usage, not awareness.
 Here is an example from the first section of the survey (Forms):
 ![Form validation question screenshot](images/form-validation.png)
-This has the downside that features you do know about but haven’t used do not count towards the final score.
+However, this means that if you have never used a feature, it does not count towards your score, even if you have been aware of it for years.
+It therefore felt unfair to many to report that you’ve "heard or used" X% of features, when there was no way to express that you have heard 89 out of 131 of them!
 
-We are [exploring ways to improve this experience](https://github.com/Devographics/surveys/discussions/217), such as displaying a rank among other respondents,
-and/or displaying separate usage and awareness scores that combine to form the overall score.
+To address this, we changed the score to be a sum of points, a bit like a video game:
+each used feature is worth 10 points, each known feature is worth 5 points.
+
+<figure>
+
+![920 pts score, used 79 features out of 131, heard of 26 more](images/my-score-new.png)
+
+<figcaption>
+
+My score after the change.
+If you have already taken the survey, you can just revisit it (with the same device & browser if filled it in anonymously)
+and go straight to the finish page to see your new score.
+
+</figcaption>
+</figure>
+
+The downside of the new score is that it's harder to interpret by itself, it only makes sense in comparison to others.
+You can search for the #StateOfHTML hashtag on microblogging services (e.g. here’s [Twitter](https://twitter.com/search?q=%23StateOfHTML&src=typed_query&f=live)).
+We are also working on displaying your rank among other participants automatically, to make this easier.
 
 ### I found a bug, what should I do?
 
