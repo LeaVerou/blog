@@ -29,6 +29,13 @@ in the form of seeing features you care about implemented, browser incompatibili
 - Get a personalized score and see how you compare to other respondents
 - Learn about the latest trends in the ecosystem and what other developers are focusing on
 
+<div class="info">
+
+While the survey will be open for 3 weeks, responses entered **within the first 9 days (until October 1st)** will have a much higher impact on the Web,
+as preliminary data will be used to inform [Interop 2024](https://web.dev/interop-2024-proposals/) proposals.
+
+</div>
+
 <figure>
 
 ![State of HTML 2023 Logo](images/logo.png)
