@@ -25,7 +25,8 @@ Benefits to you:
 - Survey results are **used by browsers to prioritize roadmaps** — the reason Google is funding this.
 Time spent thoughtfully filling them out is an investment that can come back to you tenfold
 in the form of seeing features you care about implemented, browser incompatibilities being prioritized, and gaps in the platform being addressed.
-- Learn about new and upcoming features you may have missed
+- In addition to browsers, several standards groups are also using the results for prioritization and decision-making.
+- Learn about new and upcoming features you may have missed; add features to your reading list and get a list of resources at the end!
 - Get a personalized score and see how you compare to other respondents
 - Learn about the latest trends in the ecosystem and what other developers are focusing on
 
