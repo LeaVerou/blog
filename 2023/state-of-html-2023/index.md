@@ -77,7 +77,7 @@ We mainly included JS APIs in the following areas:
 - APIs used to create web apps that feel like native apps (e.g. Service Workers, Web App Manifest, etc.)
 
 If you don’t write any JS, we absolutely still want to hear from you!
-In fact, I would encourage you to fill out the survey **even more**: we need to hear from folks who don’t write JS, as they are often underrepresented.
+In fact, I would encourage you **even more strongly** to fill out the survey: we need to hear from folks who don’t write JS, as they are often underrepresented.
 Please feel free to skip any JS-related questions (all questions are optional anyway) or select that you have never heard these features.
 There is a question at the end, where you can select that you only write HTML/CSS:
 
