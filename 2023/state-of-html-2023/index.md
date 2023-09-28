@@ -1,6 +1,7 @@
 ---
 title: State of HTML 2023 now open!
 date: 2023-09-22
+edited: 2023-09-26
 image: images/logo.png
 toc: true
 social_posts:
@@ -140,6 +141,9 @@ It therefore felt unfair to many to report that you’ve "heard or used" X% of f
 To address this, we changed the score to be a sum of points, a bit like a video game:
 each used feature is worth 10 points, each known feature is worth 5 points.
 
+Since the new score is harder to interpret by itself and only makes sense in comparison to others,
+we also show your rank among other participants, to make this easier.
+
 <figure>
 
 ![920 pts score, used 79 features out of 131, heard of 26 more](images/my-score-new.png)
@@ -148,14 +152,11 @@ each used feature is worth 10 points, each known feature is worth 5 points.
 
 My score after the change.
 If you have already taken the survey, you can just revisit it (with the same device & browser if filled it in anonymously)
-and go straight to the finish page to see your new score.
+and go straight to the finish page to see your new score and ranking!
 
 </figcaption>
 </figure>
 
-The downside of the new score is that it's harder to interpret by itself, it only makes sense in comparison to others.
-You can search for the #StateOfHTML hashtag on microblogging services (e.g. here’s [Twitter](https://twitter.com/search?q=%23StateOfHTML&src=typed_query&f=live)).
-We are also working on displaying your rank among other participants automatically, to make this easier.
 
 ### I found a bug, what should I do?
 
