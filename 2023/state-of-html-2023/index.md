@@ -182,10 +182,11 @@ Last but not least, **Kadir Topal** made the survey possible in the first place,
 
 Thank you all! 🙏🏼
 
-## Press coverage
+## Press coverage (selected)
 
 - [Turns out I know less about HTML than I thought! 😅 - Kevin Powell](https://www.youtube.com/watch?v=sPWlakxKRm8) (Video)
 - [Are you an HTML expert? Find out with the new State of HTML 2023 survey - dev.to](https://dev.to/dianale/are-you-an-html-expert-find-out-with-the-new-state-of-html-2023-survey-58g4)
+- [Chris’ Corner: Things I Totally Didn’t Know About That I Learned From Taking the State of HTML 2023 Survey](https://blog.codepen.io/2023/10/02/chris-corner-things-i-totally-didnt-know-about-that-i-learned-from-taking-the-state-of-html-2023-survey/)
 - [Frontend Focus](https://frontendfoc.us/issues/611)
 - [CSS Weekly](https://css-weekly.com/issue-562/)
 - [The HTML Blog](https://thathtml.blog/2023/09/the-state-of-html/)
