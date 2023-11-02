@@ -28,7 +28,7 @@ A common incarnation of form-over-function, is when designers start identifying 
 sacrificing a great deal of learnability for an — often marginal — improvement in aesthetics.
 
 [Aesthetic and Minimalist Design](https://www.nngroup.com/articles/aesthetic-minimalist-design/) is one of the Nielsen/Norman core usability heuristics (and all other heuristics taxonomies have something similar).
-More poetically, Antoine de Saint-Exupéry said “Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away”.
+More poetically, Antoine de Saint-Exupéry said *“Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away”*.
 However, this is one of those cases where everyone agrees with the theory, but the devil is in the details (though user testing can do wonders for consensus).
 
 <!-- more -->
@@ -57,7 +57,7 @@ The new GitHub commenting UI, focused. Am I the only one that expected the focus
 </figure>
 
 However, I cannot for the life of me internalize that this is a text field that I can type in.
-Even after using it over a dozen times, I still have to do a double take every time (“Where is the comment field?!”, “Why is this read-only?”).
+Even after using it over a dozen times, I still have to do a double take every time (*“Where is the comment field?!”*, *“Why is this read-only?”*).
 
 For comparison, this was the old UI:
 
