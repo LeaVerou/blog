@@ -2,6 +2,11 @@
 title: "Minimalist Affordances: Making the right tradeoffs"
 date: 2023-11-02
 social_posts:
+  twitter: https://twitter.com/LeaVerou/status/1720143657238503869
+  mastodon: https://front-end.social/@leaverou/111342327439718457
+  bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3kd7xppqorr2n
+  facebook: https://www.facebook.com/leaverou/posts/10161062641831192
+  threads: https://www.threads.net/@leaverou/post/CzJ1S1Suyhu
 image: images/new-comment.png
 toc: true
 tags:
