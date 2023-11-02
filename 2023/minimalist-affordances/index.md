@@ -7,6 +7,7 @@ social_posts:
   bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3kd7xppqorr2n
   facebook: https://www.facebook.com/leaverou/posts/10161062641831192
   threads: https://www.threads.net/@leaverou/post/CzJ1S1Suyhu
+  linkedin: https://www.linkedin.com/posts/leaverou_minimalist-affordances-making-the-right-activity-7125915446041550848-gOr4
 image: images/new-comment.png
 toc: true
 tags:
