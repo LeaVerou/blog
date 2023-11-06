@@ -15,14 +15,25 @@ body:
       placeholder: ex. https://lea.verou.me/blog/2020/12/writable-getters/
     validations:
       required: true
+  - type: input
+    id: oldurl
+    attributes:
+      label: "Old URL:"
+      description: |
+        URL of the page on the previous website.
+        If you followed a "Report broken page" link from the website, this should be already filled in for you.
+        If it isn’t, this
   - type: dropdown
     id: is_regression
     attributes:
       label: Did this page work in the previous website?
-      description: You can usually find the same page on the old website by using `lea0.verou.me` instead of `lea.verou.me` and replacing `/blog/` with `/`.
+      description: |
+        If you followed a "Report broken page" link from the website, you can find the old URL above, if one existed.
+        If not, you can usually find the same page on the old website by using `lea0.verou.me` instead of `lea.verou.me` and replacing `/blog/` with `/`.
       options:
         - "Yes"
         - "No"
+        - "N/A"
     validations:
       required: true
   - type: dropdown
