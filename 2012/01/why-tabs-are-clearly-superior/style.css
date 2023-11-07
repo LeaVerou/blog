@@ -1,0 +1,25 @@
+body {
+	tab-size: 4;
+}
+
+pre, code {
+	tab-size: inherit !important;
+}
+
+#tab_size {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	padding: .3em .6em;
+	margin-left: -.6em;
+	box-sizing: border-box;
+	display: flex;
+	gap: .5em;
+	width: 100%;
+	background: hsl(0 0% 100% / .5);
+	backdrop-filter: blur(4px);
+}
+
+#tab_size input {
+	flex: 1;
+}
