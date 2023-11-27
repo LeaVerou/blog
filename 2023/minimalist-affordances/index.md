@@ -206,16 +206,40 @@ Was there really no possible depiction of these symbols that could communicate t
 ## Update: GitHub’s response (Nov 20th, 2023)
 
 This post resonated a lot with people on social media.
-It turned out many had stumbled on the same issue since the comment form redesign, but did not necessarily have the HCI/UX background to explain what the problem was.
+Here are some selected responses:
 
-The Primer team at GitHub reached out to me to discuss the issue, and I was happy to see that they were very receptive to feedback.
-They then iterated, and came up with a new design that is much better:
+<details>
+<summary>Selected Social Media Replies</summary>
 
-![The textarea is clearly outlined](images/fixed-comment.png)
+https://twitter.com/jitl/status/1720272221149581493
+
+https://twitter.com/noeldevelops/status/1724509073964487056
+
+https://twitter.com/zisiszikos/status/1720157900620939519
+
+https://twitter.com/manuelmeister/status/1720147908731818249
+
+> @leaverou @github I really thought the page was broken or incompletely loaded until I saw it enough times to try typing in it. It's emotionally uncomfortable to type in, fighting how it looks vs. what I know it is.
+> — [Benjamin @hazula@hachyderm.io](https://front-end.social/@hazula@hachyderm.io), [Nov 3rd, 2023](https://front-end.social/@hazula@hachyderm.io/111345248877999709)
+
+</details>
+
+The [Primer team at GitHub](https://primer.style/) reached out to me to discuss the issue, and I was happy to see that they were very receptive to feedback.
+They then iterated, and came up with a new design that communicates purpose much better, even if less minimalistic:
+
+<figure>
+
+![](images/new-comment-fixed.png)
+![](images/fixed-comment.png)
+
+<figcaption>
+The textarea is now clearly outlined, both before and after focus, clearly indicating that this is a multiline text field.
+</figcaption>
+</figure>
 
 https://twitter.com/natalyathree/status/1729161513636884499
 
 > @leaverou @github thank you for this post. We have shipped improvements to make it easier again to identify the textarea and distinguish between Write and Preview.
-> — [Daniel Adams (@dipree@mastodon.social)](https://front-end.social/@dipree@mastodon.social)
+> — [Daniel Adams (@dipree@mastodon.social)](https://front-end.social/@dipree@mastodon.social), [Nov 20th, 2023](https://front-end.social/@dipree@mastodon.social/111444773791934052)
 
 Always great to see an org that is receptive to feedback!
