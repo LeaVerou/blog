@@ -205,7 +205,17 @@ Was there really no possible depiction of these symbols that could communicate t
 
 ## Update: GitHub’s response (Nov 20th, 2023)
 
-Apparently this post made quite a stir internally at GitHub, and after several iterations, [they fixed the issue](https://front-end.social/@dipree@mastodon.social/111444773791934052)! 🎉
-This is the current comment UI:
+This post resonated a lot with people on social media.
+It turned out many had stumbled on the same issue since the comment form redesign, but did not necessarily have the HCI/UX background to explain what the problem was.
+
+The Primer team at GitHub reached out to me to discuss the issue, and I was happy to see that they were very receptive to feedback.
+They then iterated, and came up with a new design that is much better:
 
 ![The textarea is clearly outlined](images/fixed-comment.png)
+
+https://twitter.com/natalyathree/status/1729161513636884499
+
+> @leaverou @github thank you for this post. We have shipped improvements to make it easier again to identify the textarea and distinguish between Write and Preview.
+> — [Daniel Adams (@dipree@mastodon.social)](https://front-end.social/@dipree@mastodon.social)
+
+Always great to see an org that is receptive to feedback!
