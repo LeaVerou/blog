@@ -1,6 +1,7 @@
 ---
 title: "Minimalist Affordances: Making the right tradeoffs"
 date: 2023-11-02
+date_updated: 2023-11-27
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1720143657238503869
   mastodon: https://front-end.social/@leaverou/111342327439718457
@@ -201,3 +202,10 @@ E.g. the alphabet is also a set of arbitrary symbols we need to learn to be able
 But even the best tradeoff is worse than none, aka having your cake and eating it too beats both options.
 Was a tradeoff really necessary here?
 Was there really no possible depiction of these symbols that could communicate their purpose, order, and ratios? Or at least a notation that was [memorable by association rather than straight memorization](https://medium.com/@matthewraychiang/doet-knowledge-in-the-head-and-in-the-world-64f901627eb3)?
+
+## Update: GitHub’s response (Nov 20th, 2023)
+
+Apparently this post made quite a stir internally at GitHub, and after several iterations, [they fixed the issue](https://front-end.social/@dipree@mastodon.social/111444773791934052)! 🎉
+This is the current comment UI:
+
+![The textarea is clearly outlined](images/fixed-comment.png)
