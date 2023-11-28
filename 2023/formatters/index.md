@@ -49,7 +49,7 @@ The benefits cited for this approach are typically:
 2. Codebase uses a consistent style, reducing inconsistencies between different files.
 3. No more bikeshedding about formatting.
 
-In fact, the first two also listed in Johnny’s [PR](https://github.com/LeaVerou/color.js/pull/351).
+In fact, the first two also listed in Jonny’s [PR](https://github.com/LeaVerou/color.js/pull/351).
 
 However, linting gets you 1 and 2, and I’m not sure how common 3 really is.
 Typically formatting is decided early on, and future contributors just adopt the existing formatting rules.
