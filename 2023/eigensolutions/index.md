@@ -13,7 +13,7 @@ This works great with the kinds of transactional processes (marketplaces, social
 but can fall apart when designing creative tools (developer tools, no-code tools, design tools, languages, APIs etc.).
 There are fundamental differences[^0] between the two:
 - In transactional processes, users have clearly defined goals, and the task is highly specialized (e.g. "Go to work", "Order takeout", "Find accommodation for my upcoming trip") and can often be modeled as a linear process
-- In creator tools, use cases vary *wildly*, goals are neither linear, nor clearly defined, and may even change throuhgout the session
+- In creator tools, use cases vary *wildly*, goals are neither linear, nor clearly defined, and may even change throughout the session
 
 In fact, creator tools typically ship knowingly addressing only a percentage of their key use cases — otherwise they would never ship at all.
 
@@ -104,6 +104,18 @@ It is a spectrum, not a binary: overfitting and eigensolutions are just its two 
 Eigensolutions do not come along every day, and do not necessarily exist for all problems.
 It is important to actively guard against overfitting by making sure solutions are validated by many diverse use cases.
 However, going too far the other side and chasing eigensolutions for every problem is not the best use of resources.
+
+<figure>
+
+![](images/xkcd-974.png)
+
+<figcaption>
+
+Source: [xkcd.com/974, “The General Problem”](https://xkcd.com/974/)
+Going too far the other way is a poor use of resources.
+</figcaption>
+</figure>
+
 Instead, I think a happy medium is to try and be on the right side of the spectrum:
 
 ![](images/overfitting.png)
@@ -211,7 +223,8 @@ which enables a broad set of existing seemingly unrelated use cases:
 - Elements that “bleed” out of their parents margins
 - Decorations that match the parent’s background or border color
 
-There were existing proposals for many of these, some of which were overfitting.
+There were existing proposals for many of these, some of which did suffer from overfitting,
+while others can still be implemented as shortcuts, but with much lower priority.
 
 </details>
 
@@ -269,8 +282,8 @@ This combined approach *both* reduces the floor *and* increases the ceiling.
 
 ### Example: Coda table filtering
 
-[Coda](https://coda.io), a product I’ve been using a lot in the last few months, and has replaced Google Docs, Google Sheets, and a few custom apps I was using.
-It’s full of examples of this pattern, but for the sake of brevity, I’ll focus on one:
+[Coda](https://coda.io) is a product I’ve been using a lot in the last few months. It has replaced Google Docs, Google Sheets, and a few more niche or custom apps I was using.
+Its UI is full of examples of this pattern, but for the sake of brevity, I will focus on one:
 table filtering.
 
 At first, the filtering UI is pretty high level, designed around common use cases:
@@ -296,8 +309,8 @@ Clicking it opens a formula editor, where you can edit the formula directly:
 
 ![](images/coda-filter-editor.png)
 
-I suspect for the vast majority of use cases that need to use a formula, a simple tweak is all that is necessary
-(as one data point, the one time I used this, it was just about using parentheses to combine AND and OR differently than what the UI did).
+I suspect that the vast majority of use cases that require that escape hatch, a small tweak to the generated formula is all that is necessary
+(as one data point, the one time I used this, it was just about using parentheses to combine AND and OR differently).
 The user may have not been able to write the formula from scratch, but tweaking is easier.
 
 ### What to ship first?
@@ -337,6 +350,7 @@ For a while, this became the gold standard and many new features were very low l
 This filled some necessary gaps in the platform, but since resources are limited, the layering was often missed, resulting in *only* low level primitives which were a pain to use.
 More recently, we’ve been [recommending](https://www.w3.org/TR/design-principles/#high-level-low-level) a more balanced approach, where tradeoffs are evaluated on a case by case basis.
 
+## Conclusion
 
-
+TBD
 
