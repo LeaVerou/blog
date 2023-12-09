@@ -186,6 +186,7 @@ Take a look at the symbols for notes and pauses:
 ![Music notes and rests](images/notes.png)
 
 <figcaption>
+
 Image courtesy of [Musicnotes](https://www.musicnotes.com/blog/how-to-read-sheet-music/)
 
 </figcaption>
