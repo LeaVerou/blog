@@ -234,7 +234,7 @@ while others can still be implemented as shortcuts, but with much lower priority
 
 ## Use cases as the testsuite of product design
 
-The most discerning of readers may have noticed that despite the name, it’s still about the use case:
+The most discerning of readers may have noticed that despite the name, it’s still all about the use cases:
 **eigensolutions just expose links between use cases that may have been hard to detect, but seem obvious in retrospect**.
 To take the `mv-value` example above, one *could* have seen in advance that all of these use cases were fundamentally about rendering programmatically derived structured data on custom UIs. But wasn't it much easier to see in retrospect?
 
@@ -247,48 +247,52 @@ Joe McLean [takes a more extreme position](https://bootcamp.uxdesign.cc/overfitt
 >
 > Use cases should be applied after design is done — to check if the tools available can accomplish the job. As a starting point, they put you in a mindset to overfit. This is especially dangerous because users will often tell you they love it in concept testing. “Ah yes, here is my process, represented in pictures!” But it’s only when you actually try to use the tool — hold the thing in your hands — that there’s a hundred things you need it to do that it doesn’t. It’s not flexible — it’s a series of menus and disappointed feature requirements.
 
-Joe argues for using use cases *only* at the end, to validate a design, as he believes that starting from use cases leads to overfitting.
+Joe argues for using use cases *only* at the end, to validate a design, as he believes that starting from use cases leads puts you in a mindset to overfit.
 This is so much the polar opposite of current conventional wisdom, that many would consider it heresy.
 
-Personally, I think that *also* imposes unnecessary constraints on the design process.
-I find it helpful to start with a few use cases to drive the design, additional use cases to refine it, and even more to eventually validate it.
+I think that *also* imposes unnecessary constraints on the design process.
+I find it helpful to start with a few use cases to drive the design (the more diverse the better), additional use cases to refine it, and even more to eventually validate it.
 In some ways, this is similar to test-driven development in engineering: engineers start with a few test cases before writing any code,
 then add more as they go to make sure everything works as expected.
 It’s an iterative process.
-If you’re on the right path, additional use cases lead to refinement at first, then validation in the end.
-If not, they highlight fundamental flaws and show you you need to start over.
+If you’re on the right path, additional use cases lead to refinement at first, then validation in the end as the design stabilizes.
+If you’re not on the right path, they highlight fundamental flaws and show you that you need to start over.
 
 But if someone else’s creative process works best with using use cases only for validation, more power to them!
 
 What matters is the outcome: designing a solution that addresses a broad set of use cases in a way users can understand and use.
-**No proposal should be considered without being rigorously supported by use cases**.
+I think what we can all agree on is that
+**no proposal should be considered without being rigorously supported by use cases**.
 It is not enough for use cases to exist;
 they also need to be sufficiently diverse and correspond to user pain points that are both **real** and **pervasive** enough to justify adding a new feature.
 But whether use cases drove the design, were used to validate it, or a mix of both is irrelevant,
 and requiring one or the other imposes unnecessary constraints on the design process.
 
-## Layering with shortcuts
+## Layering with higher level abstractions
 
 My north star product design principle is *“Common things should be easy, complex things should be possible”* (paraphrasing [Alan Kay](https://www.goodreads.com/quotes/8636264-simple-things-should-be-simple-complex-things-should-be-possible) — because common things are not always simple).
 
 Eigensolutions, by definition, tend to be lower level primitives.
-They enable a broad set of use cases, but are not necessarily the most learnable or efficient way to implement all of them,
-compared to a solution tailored to only one of these use cases.
+They make complex things possible, but not necessarily easy.
+They enable a broad set of use cases, but may not be the most learnable or efficient way to implement all of them, compared to a tailored solution.
+*Some do both, in which case congratulations, you’ve got an even bigger unicorn! You can skip this section. :)*
 
 However, this is one of the rare times in life where we can have our cake and eat it too.
-Instead of implementing tailored solutions ad-hoc (risking overfitting), they can be implemented as **shortcuts**, higher level abstractions on top of the lower level primitive.
+Instead of implementing tailored solutions ad-hoc (risking overfitting),
+they can be implemented as **shortcuts**: higher level abstractions *using* the lower level primitive.
 Done well, shortcuts provide dual benefit: not only do they reduce friction for common cases,
-they also serve as teaching aids for the underlying lower level primitive,
-since [we know](#TBD) that tweaking is easier than creating from scratch.
+they also serve as teaching aids for the underlying lower level feature.
 This offers a very smooth ease-of-use to power curve:
 if users need to go further than what the shortcut provides, they can always fall back on the lower level primitive to do so.
-This combined approach *both* reduces the floor *and* increases the ceiling.
+[We know](#TBD) that tweaking is easier than creating from scratch,
+so even when users use that escape hatch, they can tweak what they had created with the higher level UI, rather than starting from scratch.
+This combined approach *both* reduces the floor *and* increases the ceiling!
 
-### Example: Coda table filtering
+### Example: Table filtering in Coda
 
-[Coda](https://coda.io) is a product I’ve been using a lot in the last few months. It has replaced Google Docs, Google Sheets, and a few more niche or custom apps I was using.
-Its UI is full of examples of this pattern, but for the sake of brevity, I will focus on one:
-table filtering.
+[Coda](https://coda.io) is a product I’ve been using a lot in the last few months.
+It has replaced Google Docs, Google Sheets, and a few more niche or custom apps I was using.
+Its UI is full of examples of this pattern, but for the sake of brevity, I will focus on one: table filtering.
 
 At first, the filtering UI is pretty high level, designed around common use cases:
 
@@ -305,39 +309,44 @@ Also note the nice touch of "And" not just being informative, but also a control
 
 </figure>
 
-For the vast majority of use cases (I would guess over 95%), the UI is sufficient.
-If you don’t need additional flexibility, you may not even notice the little f button on the top right.
+For the vast majority of use cases (I would guess >95%), the UI is perfectly sufficient.
+If you don’t need additional flexibility, you may not even notice the little ***f*** button on the top right.
 But for those that need additional power it can be a lifesaver.
-That little f indicates that behind the scenes, the UI is actually generating a *formula* for filtering.
+That little *f* indicates that behind the scenes, the UI is actually generating a *formula* for filtering.
 Clicking it opens a formula editor, where you can edit the formula directly:
 
 ![](images/coda-filter-editor.png)
 
-I suspect that the vast majority of use cases that require that escape hatch, a small tweak to the generated formula is all that is necessary
-(as one data point, the one time I used this, it was just about using parentheses to combine AND and OR differently).
+I suspect that even for the use cases that require that escape hatch, a small tweak to the generated formula is all that is necessary.
 The user may have not been able to write the formula from scratch, but tweaking is easier.
+As one data point, the one time I used this, it was just about using parentheses to combine AND and OR differently than the UI allowed.
+And as a bonus, the app can collect metrics about what users do with the lower level feature and use that to improve the higher level UI.
+It’s a win-win all around.
 
 ### What to ship first?
 
-In an ideal world, lower level primitives and shortcuts would be designed and shipped together.
-However, engineering resources are typically limited, and it often makes sense to ship one before the other, so we can add value earlier.
+In an ideal world, lower level primitives and higher level abstractions would be designed and shipped together.
+However, engineering resources are typically limited, and it often makes sense to ship one before the other,
+so we can provide value sooner.
 
 This can happen in either direction:
-1. **Lower level primitive first**, with demos and documentation to showcase common "recipes".
-Then shortcuts to make common cases easy can ship at a later stage.
+1. **Lower level primitive first**.
+Shortcuts to make common cases easy can ship at a later stage,
+and demos and documentation to showcase common "recipes" can be used as a stopgap meanwhile.
 This prioritizes use case coverage over optimal UX, but it also allows collecting more data,
-which can inform the design of the shortcuts.
-2. **Shortcut first**, as an independent, ostensibly ad hoc feature.
+which can inform the design of the shortcuts implemented.
+2. **Higher level abstraction first**, as an independent, ostensibly ad hoc feature.
 Then later, once the lower level primitive ships, it is used to "explain" the shortcut, and make it more powerful.
-This prioritizes covering a good chunk of use cases with optimal UX.
+This prioritizes optimal UX over use case coverage:
+we're not covering all use cases, but for the ones we are covering, we're offering a frictionless user experience.
 
 But which one?
 As with most things in life, the answer is “it depends”.
 
 A few considerations are:
 - How many shortcuts do we need? What percentage of use cases do they cover?
-- How confident are we that we will need the shortcuts to produce a good user experience? Could the lower level primitive be sufficient in the end?
-- How confident are we about the specific shortcuts we need?
+- How much harder is it to use the lower level primitive directly? Are we certain we will need to provide shortcuts, or is it possible it may be sufficient on its own?
+- How confident are we about what specific shortcuts we need?
 - How much engineering effort does the lower level primitive require and how does it compare to implementing the shortcuts as ad hoc features?
 - Do we have extensibility mechanisms in place for users to create and share *their own* higher level abstractions over the lower level feature?
 
