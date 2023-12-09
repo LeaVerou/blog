@@ -1,8 +1,9 @@
 ---
-title: "Eigensolutions: the antidote to overfitting"
+title: "What’s the opposite of overfitting? Eigensolutions!"
 draft: true
 toc: true
-tags: product, design
+tags:
+  - product
 ---
 
 In most product literature, the design process looks a bit like this:
@@ -15,10 +16,10 @@ There are fundamental differences[^0] between the two:
 - In transactional processes, users have clearly defined goals, and the task is highly specialized (e.g. "Go to work", "Order takeout", "Find accommodation for my upcoming trip") and can often be modeled as a linear process
 - In creator tools, use cases vary *wildly*, goals are neither linear, nor clearly defined, and may even change throughout the session
 
-In fact, creator tools typically ship knowingly addressing only a percentage of their key use cases — otherwise they would never ship at all.
+Creator tools typically ship knowingly addressing only a percentage of their key use cases — otherwise they would never ship at all.
 
 [^0]: I’ve spent so long designing creator tools that I tended to assume my observations and learnings from my experience are universal.
-I first read about the distinction in Joe Mc Lean’s
+I first read about this distinction in Joe Mc Lean’s
 excellent post on [overfitting](https://bootcamp.uxdesign.cc/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7), and it was a bit of an a-ha moment.
 
 In [end-user programming](https://en.wikipedia.org/wiki/End-user_development) we talk about the **floor** and the **ceiling** of a tool:
@@ -50,7 +51,6 @@ due to lack of resources, good solutions, or both.
 Pain points get processed into use cases, which accumulate in the use case backlog
 
 </figcaption>
-
 </figure>
 
 Often, the design process for creator tools consists of *matching* these use cases to solutions, which can happen before, during, or after idea conception:
@@ -61,24 +61,31 @@ Often, the design process for creator tools consists of *matching* these use cas
 
 <figcaption>
 
-Here we started the design process with a use case in mind,
+Here we started the design process with a few use cases in mind,
 and made tweaks to the first idea during ideation to incorporate another use case into the design.
-Because the first idea addressed a broader initial set of use cases, we decided to go with that and develop it further.
+Because the first idea addressed a broader set of use cases, we decided to go with that and develop it further.
 Then we validated its design with more use cases,
 and in the end even realized it also addresses another, unrelated use case!
 
 </figcaption>
-
 </figure>
+
+<div class=note>
+
+A product may include *both* transactional processes and creator tools,
+e.g. Instagram is a social media platform (transactional) with a photo editor (creator tool).
+Although the more domain-specific the creator tool, the less likely it is to be a good example for what is being discussed here.
+
+</div>
 
 ## From overfitting to eigensolutions
 
-Shishir Mehrotra of Coda wrote about the importance of “[*Eigenquestions*](https://coda.io/@shishir/eigenquestions-the-art-of-framing-problems)” when framing problems, a term he came up with, inspired from his math background:
+Shishir Mehrotra of Coda wrote about the importance of “[*Eigenquestions*](https://coda.io/@shishir/eigenquestions-the-art-of-framing-problems)” when framing problems, a term he coined, inspired from his math background:
 
 > the eigenquestion is the question where, if answered, it likely answers the subsequent questions as well.
 
-This inspired me to name an analogous concept I’ve been pondering for a while: The *eigensolution*.
-**Eigensolutions are solutions that address several key use cases, that are seemingly unrelated.**
+This inspired me to name an analogous concept I’ve been pondering for a while: *Eigensolutions*.
+**The eigensolution is a solution that addresses several, seemingly unrelated, key use cases.**
 
 <figure>
 
@@ -94,16 +101,16 @@ An eigensolution is the polar opposite of [overfitting](https://bootcamp.uxdesig
 Overfitting happens when the driving use cases behind a solution are insufficiently diverse,
 so the solution ends up being so specific it cannot even generalize to use cases that are obviously related.
 
-Overfitting is (and should be) the boogeyman of creative tool design.
+Overfitting is one of the worst things that can happen during the design process.
 It is a hallmark of poor design that leads to feature creep and poor user experiences.
 It forces product teams to add more and more features to address the use cases that were not initially addressed.
 This clutters the UI and confuses the user experience.
 From the user’s perspective, there are now multiple distinct features that solve subtly different problems.
 
-It is a spectrum, not a binary: overfitting and eigensolutions are just its two opposite ends.
+It’s important to note that it’s a spectrum, not a binary: overfitting and eigensolutions are just its two opposite ends.
 Eigensolutions do not come along every day, and do not necessarily exist for all problems.
-It is important to actively guard against overfitting by making sure solutions are validated by many diverse use cases.
-However, going too far the other side and chasing eigensolutions for every problem is not the best use of resources.
+While it’s important to actively guard against overfitting by making sure solutions are validated by many diverse use cases,
+going too far the other side and chasing a general solution for every problem is a poor use of resources.
 
 <figure>
 
@@ -111,8 +118,7 @@ However, going too far the other side and chasing eigensolutions for every probl
 
 <figcaption>
 
-Source: [xkcd.com/974, “The General Problem”](https://xkcd.com/974/)
-Going too far the other way is a poor use of resources.
+[xkcd.com/974, “The General Problem”](https://xkcd.com/974/)
 </figcaption>
 </figure>
 
@@ -126,7 +132,7 @@ Quick-wins are easier to sell: they ship faster and add value sooner.
 In my 11 years designing web technologies, I have seen many beautiful, elegant eigensolutions be vetoed due to implementation difficulties (which is often the right decision — it's all about the cost-benefit).
 2. Eigensolutions tend to be lower level primitives, which are more flexible, but also involve higher friction than a solution that is tailored to a specific use case.
 
-Both issues can often be addressed through **layering**, discussed below.
+Both issues can often be addressed through **layering**, discussed later in this article.
 
 ## Examples of eigensolutions
 
@@ -140,8 +146,7 @@ If you have good examples in mind that require less context to understand, pleas
 
 <details>
 <summary>
-
-### Mavo dynamic structured values
+Mavo dynamic structured values
 </summary>
 
 [Mavo](https://mavo.io/) is a programming language I developed while doing my PhD at MIT.
@@ -205,8 +210,7 @@ But many use cases did not require editing, and that is more of a bug than a fun
 
 <details>
 <summary>
-
-### CSS `inherit()` function
+CSS `inherit()` function
 </summary>
 
 [CSS](https://en.wikipedia.org/wiki/CSS) is a language used to define the presentation of literally every website on the web.
@@ -217,13 +221,13 @@ which would allow descendant elements to reference the parent value of *any* CSS
 which enables a broad set of existing seemingly unrelated use cases:
 
 - CSS variables that build on the parent value, e.g. nesting level
-- Font weight that is relative to the parent (made a bigger pain point after variable fonts)
+- Font weight that is relative to the parent (a bigger pain point after variable fonts)
 - Inner corner rounding that correctly follows the parent
 - Swapping foreground and background colors on accent elements
 - Elements that “bleed” out of their parents margins
-- Decorations that match the parent’s background or border color
+- Box decorations that create irregular shapes
 
-There were existing proposals for many of these, some of which did suffer from overfitting,
+There were existing proposals for some of these, some of which did suffer from overfitting,
 while others can still be implemented as shortcuts, but with much lower priority.
 
 </details>
