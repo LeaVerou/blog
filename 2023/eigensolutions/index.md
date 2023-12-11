@@ -230,6 +230,8 @@ which enables a broad set of existing seemingly unrelated use cases:
 There were existing proposals for some of these, some of which did suffer from overfitting,
 while others can still be implemented as shortcuts, but with much lower priority.
 
+TBD: add a bit more context
+
 </details>
 
 ## Use cases as the testsuite of product design
