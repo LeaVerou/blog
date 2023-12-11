@@ -3,9 +3,8 @@ title: "Blog"
 override:tags: []
 layout: "page.njk"
 pagination: {
-	data: collections.publishedPosts,
-	size: 15,
-	reverse: true
+	data: collections.published,
+	size: 15
 }
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---

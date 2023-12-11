@@ -12,7 +12,7 @@ override:tags: []
 }
 {% endmacro %}
 [
-{% for post in collections.publishedPosts %}
+{% for post in collections.published %}
 	{{ post_json(post) }}{{ "," if not loop.last }}
 {% endfor %}
 ]
