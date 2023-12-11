@@ -6,39 +6,49 @@ tags:
   - product
 ---
 
-In most product literature, the design process looks a bit like this:
+## Creator tools are not Uber or Facebook
+
+In product literature, the design process looks a bit like this:
 
 ![Pain point -> Use cases -> Ideas -> Solution](images/design-linear.png)
 
-This works great with the kinds of transactional processes (marketplaces, social media, search engines, etc) it tends to discuss,
-but can fall apart when designing creative tools (developer tools, no-code tools, design tools, languages, APIs etc.).
-There are fundamental differences[^0] between the two:
-- In transactional processes, users have clearly defined goals, and the task is highly specialized (e.g. "Go to work", "Order takeout", "Find accommodation for my upcoming trip") and can often be modeled as a linear process
-- In creator tools, use cases vary *wildly*, goals are neither linear, nor clearly defined, and may even change throughout the session
+This works great with the kinds of transactional processes (marketplaces, social media, search engines, etc) most product literature centers around,
+but can fall apart when designing creative tools (developer tools, no-code tools, design tools, languages, APIs etc.),
+as there are fundamental differences[^0] between the two:
+- In **transactional processes**, users have clearly defined goals, and the task is highly specialized
+(e.g. *"Go to work"*, *"Order takeout"*, *"Find accommodation for my upcoming trip"*) and can often be modeled as a linear process.
+- In **creator tools**, use cases vary *wildly*, goals are neither linear, nor clearly defined, and may even change throughout the session.
 
 Creator tools typically ship knowingly addressing only a percentage of their key use cases — otherwise they would never ship at all.
+It’s all about balancing UX, use case coverage, and design/implementation effort.
 
 [^0]: I’ve spent so long designing creator tools that I tended to assume my observations and learnings from my experience are universal.
 I first read about this distinction in Joe Mc Lean’s
 excellent post on [overfitting](https://bootcamp.uxdesign.cc/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7), and it was a bit of an a-ha moment.
 
-In [end-user programming](https://en.wikipedia.org/wiki/End-user_development) we talk about the **floor** and the **ceiling** of a tool:
+### Evaluating creator tool UX: Floor and ceiling
+
+In [end-user programming](https://en.wikipedia.org/wiki/End-user_development) we talk about the *floor* and the *ceiling* of a tool:
 - The **floor** is the minimum level of knowledge users need to create something useful.
 - The **ceiling** refers to the extent of what can be created.
 
-I think that vocabulary actually generalizes nicely to all creator tools.
+I think that vocabulary generalizes more broadly to creator tools, and can be a useful UX metric.
 A few examples:
-- A programming language has an extremely high ceiling, but also a very high floor.
+- A **programming language** has an extremely high ceiling, but also a very high floor:
 You can use it to make anything, but it requires years of training.
-- A spreadsheet has a medium floor and a medium ceiling.
+- A **spreadsheet** has a medium floor and a medium ceiling:
 It requires some training, but not much, and it can make a wide variety of things, but not everything.
-- Google Forms has a very low floor, but also a low ceiling.
+- A form builder like **Google Forms** has a very low floor, but also a low ceiling:
 Anyone can start using it with no training, but you can also only make a very specific kind of thing with it.
 
-A lot of product work in creator tools centers around either **reducing the floor, or increasing the ceiling**.
+A lot of product work in creator tools centers around either **reducing the floor, or increasing the ceiling**
+either of the tool as a whole, or of individual features.
 A product that combines a low floor with a high ceiling is the unicorn of low-code/no-code tools.
-Especially in general-purpose creator tools,
-because use cases are so varied, they accumulate at a much faster rate than they can be addressed, especially in the beginning.
+
+### Evaluating use case coverage: The Use Case Backlog
+
+In creator tools, use cases tend to accumulate at a much faster rate than they can be addressed, especially in the beginning.
+The more general the tool, the higher the rate of accumulation, since the pool of potential use cases it could cover is naturally larger.
 Therefore we end up with what I call a *"use case backlog"*: a list of use cases that are within scope, but we cannot yet address
 due to lack of resources, good solutions, or both.
 
@@ -53,7 +63,8 @@ Pain points get processed into use cases, which accumulate in the use case backl
 </figcaption>
 </figure>
 
-Often, the design process for creator tools consists of *matching* these use cases to solutions, which can happen before, during, or after idea conception:
+Unlike the linear design process of transactional processes,
+the design process for creator tools often consists of *matching* use cases to solutions, which can happen before, during, or after idea conception:
 
 <figure>
 
@@ -84,8 +95,8 @@ Shishir Mehrotra of Coda wrote about the importance of “[*Eigenquestions*](htt
 
 > the eigenquestion is the question where, if answered, it likely answers the subsequent questions as well.
 
-This inspired me to name an analogous concept I’ve been pondering for a while: *Eigensolutions*.
-**The eigensolution is a solution that addresses several, seemingly unrelated, key use cases.**
+This inspired me to name a symmetrical concept I’ve been pondering for a while: *Eigensolutions*.
+**The *eigensolution* is a solution that addresses several key use cases, that previously appeared unrelated.**
 
 <figure>
 
@@ -99,16 +110,15 @@ Eigensolutions address multiple key but seemingly unrelated use cases.
 
 An eigensolution is the polar opposite of [overfitting](https://bootcamp.uxdesign.cc/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7).
 Overfitting happens when the driving use cases behind a solution are insufficiently diverse,
-so the solution ends up being so specific it cannot even generalize to use cases that are obviously related.
+so the solution ends up being so specific it cannot even generalize to use cases that are clearly related.
 
-Overfitting is one of the worst things that can happen during the design process.
-It is a hallmark of poor design that leads to feature creep and poor user experiences.
-It forces product teams to add more and more features to address the use cases that were not initially addressed.
-This clutters the UI and confuses the user experience.
-From the user’s perspective, there are now multiple distinct features that solve subtly different problems.
+**Overfitting is one of the worst things that can happen during the design process.**
+It is a hallmark of poor design that leads to feature creep and poor user experience.
+It forces product teams to keep adding more features to address the use cases that were not initially addressed.
+The result is UI clutter and user confusion, as from the user’s perspective, there are now multiple distinct features that solve subtly different problems.
 
-It’s important to note that it’s a spectrum, not a binary: overfitting and eigensolutions are just its two opposite ends.
-Eigensolutions do not come along every day, and do not necessarily exist for all problems.
+It’s important to note that it’s a spectrum, not a binary: *overfitting* and *eigensolutions* are just its two opposite ends.
+Eigensolutions do not come along every day, and do not even exist for all problems.
 While it’s important to actively guard against overfitting by making sure solutions are validated by many diverse use cases,
 going too far the other side and chasing a general solution for every problem is a poor use of resources.
 
@@ -126,11 +136,12 @@ Instead, I think a happy medium is to try and be on the right side of the spectr
 
 ![](images/overfitting.png)
 
+In addition, good design is only part of the work; without shipping, even the best of features is a pointless document.
 Contrary to what you may expect, **eigensolutions can actually be quite hard to push to stakeholders**:
 1. Due to their generality, they often require significantly higher engineering effort to implement than a more specific solution.
 Quick-wins are easier to sell: they ship faster and add value sooner.
-In my 11 years designing web technologies, I have seen many beautiful, elegant eigensolutions be vetoed due to implementation difficulties (which is often the right decision — it's all about the cost-benefit).
-2. Eigensolutions tend to be lower level primitives, which are more flexible, but also involve higher friction than a solution that is tailored to a specific use case.
+In my 11 years designing web technologies, I have seen many beautiful, elegant eigensolutions be vetoed due to implementation difficulties in favor of far more specific solutions — and often this was the right decision, it's all about the cost-benefit.
+2. Eigensolutions tend to be lower level primitives, which are more flexible, but can also involve higher friction to use than a solution that is tailored to a specific use case.
 
 Both issues can often be addressed through **layering**, discussed later in this article.
 
@@ -243,7 +254,7 @@ To take the `mv-value` example above, one *could* have seen in advance that all 
 Requiring all use cases to precede any design work can be unnecessarily restrictive,
 as frequently solving a problem improves our understanding of the problem.
 
-Joe McLean [takes a more extreme position](https://bootcamp.uxdesign.cc/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7):
+Joe McLean (of [Miro](https://miro.com/)) [takes a more extreme position](https://bootcamp.uxdesign.cc/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7):
 
 > I believe it’s best to think of a use case as a test case to see if your basic tools are working. What’s missing from the toolbox? What are the limits of what’s available? What 4 use cases would open up with the addition of one more tool?
 >
@@ -253,19 +264,24 @@ Joe argues for using use cases *only* at the end, to validate a design, as he be
 This is so much the polar opposite of current conventional wisdom, that many would consider it heresy.
 
 I think that *also* imposes unnecessary constraints on the design process.
-I find it helpful to start with a few use cases to drive the design (the more diverse the better), additional use cases to refine it, and even more to eventually validate it.
-In some ways, this is similar to test-driven development in engineering: engineers start with a few test cases before writing any code,
+I tend to favor a more iterative process:
+
+1. Collect as many diverse use cases as possible upfront to drive the design
+2. Additional use cases are used to refine the design until it stabilizes
+3. Even more at the end to validate it further.
+
+If you’re on the right path, additional use cases will smoothly take you from refinement to validation as the design stabilizes.
+If you’re not on the right path, they will highlight fundamental flaws and show you that you need to start over.
+
+This has some similarities to test-driven development in engineering:
+engineers start with a few test cases before writing any code,
 then add more as they go to make sure everything works as expected.
-It’s an iterative process.
-If you’re on the right path, additional use cases lead to refinement at first, then validation in the end as the design stabilizes.
-If you’re not on the right path, they highlight fundamental flaws and show you that you need to start over.
 
 But if someone else’s creative process works best with using use cases only for validation, more power to them!
 
-What matters is the outcome: designing a solution that addresses a broad set of use cases in a way users can understand and use.
-I think what we can all agree on is that
-**no proposal should be considered without being rigorously supported by use cases**.
-It is not enough for use cases to exist;
+What matters is the **outcome**: designing a solution that addresses a broad set of use cases in a way users can understand and use.
+I think we can all agree that **no proposal should be considered without being rigorously supported by use cases**.
+By "rigorously" I mean that it's not enough for use cases to exist;
 they also need to be sufficiently diverse and correspond to user pain points that are both **real** and **pervasive** enough to justify adding a new feature.
 But whether use cases drove the design, were used to validate it, or a mix of both is irrelevant,
 and requiring one or the other imposes unnecessary constraints on the design process.
@@ -274,7 +290,7 @@ and requiring one or the other imposes unnecessary constraints on the design pro
 
 My north star product design principle is *“Common things should be easy, complex things should be possible”* (paraphrasing [Alan Kay](https://www.goodreads.com/quotes/8636264-simple-things-should-be-simple-complex-things-should-be-possible) — because common things are not always simple).
 
-Eigensolutions, by definition, tend to be lower level primitives.
+Eigensolutions tend to be lower level primitives.
 They make complex things possible, but not necessarily easy.
 They enable a broad set of use cases, but may not be the most learnable or efficient way to implement all of them, compared to a tailored solution.
 *Some do both, in which case congratulations, you’ve got an even bigger unicorn! You can skip this section. :)*
@@ -354,7 +370,14 @@ A few considerations are:
 
 Outside of specific cases,
 it's also good to have a design principle in place about which way is generally favored, which is part of the product philosophy
-and can be used to fall back on when weighing the tradeoffs end up roughly even.
+(the answer to the [eigenquestion](https://coda.io/@shishir/eigenquestions-the-art-of-framing-problems/eigenquestions-3):
+***"Are we optimizing for flexibility or learnability?"***)
+and can be used to fall back on if weighing tradeoffs ends up inconclusive.
+
+Note that **even when we don’t think the eigensolution is implementable**,
+designing the tailored solutions as special cases of that ***"north star UI"*** can still be a good idea.
+I have often seen "unimplementable" solutions become implementable later on, due to changes in internal or external factors.
+If that happens, we already have everything in place for it.
 
 In the web platform we’ve gone back and forth on this a lot.
 In the beginning, the Web skewed towards shipping higher level abstractions.
