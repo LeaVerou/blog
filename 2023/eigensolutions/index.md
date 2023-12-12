@@ -6,6 +6,12 @@ tags:
   - product
 ---
 
+<div class=nutshell>
+
+**tl;dr:** TBD. Add high level gist (who, what, why, how) here.
+
+</div>
+
 ## Creator tools are not Uber or Facebook
 
 In product literature, the design process looks a bit like this:
@@ -70,6 +76,11 @@ Pain points get processed into use cases, which accumulate in the use case backl
 
 Unlike the linear design process of transactional processes,
 the design process for creator tools often consists of *matching* use cases to solutions, which can happen before, during, or after idea conception:
+
+<div class="note callout" style="--label: 'TBD'">
+These diagrams (especially the ones below) have too many details and don't necessarily help comprehension.
+Make them more abstract.
+</div>
 
 <figure>
 
