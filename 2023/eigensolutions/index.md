@@ -177,7 +177,7 @@ Quick-wins are easier to sell: they ship faster and add value sooner.
 In my 11 years designing web technologies, I have seen many beautiful, elegant eigensolutions be vetoed due to implementation difficulties in favor of far more specific solutions — and often this was the right decision, it's all about the cost-benefit.
 2. Eigensolutions tend to be lower level primitives, which are more flexible, but can also involve higher friction to use than a solution that is tailored to a specific use case.
 
-Both issues can often be addressed through **layering**, discussed later in this article.
+Both issues can often be addressed through [*layering*](#layering), discussed later in this article.
 
 ## Examples of eigensolutions
 
@@ -320,12 +320,12 @@ they also need to be sufficiently diverse and correspond to user pain points tha
 But whether use cases drove the design, were used to validate it, or a mix of both is irrelevant,
 and requiring one or the other imposes unnecessary constraints on the design process.
 
-## Layering with higher level abstractions
+## Layering with higher level abstractions { #layering }
 
-My north star product design principle is *“Common things should be easy, complex things should be possible”* (paraphrasing [Alan Kay](https://www.goodreads.com/quotes/8636264-simple-things-should-be-simple-complex-things-should-be-possible) — because common things are not always simple).
+My north star product design principle is *“Common things should be easy, complex things should be possible”* (paraphrasing [Alan Kay](https://www.goodreads.com/quotes/8636264-simple-things-should-be-simple-complex-things-should-be-possible) — because common things are not always simple, but it’s common things you want to optimize for).
 
 Eigensolutions tend to be lower level primitives.
-They make complex things possible, but not necessarily easy.
+They make complex things possible, but do not necessarily make common things easy.
 They enable a broad set of use cases, but may not be the most learnable or efficient way to implement all of them, compared to a tailored solution.
 *Some do both, in which case congratulations, you’ve got an even bigger unicorn! You can skip this section. :)*
 
