@@ -134,7 +134,7 @@ It is a hallmark of poor design that leads to feature creep and poor user experi
 It forces product teams to keep adding more features to address the use cases that were not initially addressed.
 The result is UI clutter and user confusion, as from the user’s perspective, there are now multiple distinct features that solve subtly different problems.
 
-## From solutions to eigensolutions: a mindset shift to composability
+## From solutions to eigensolutions: a mindset shift to composability { #composability }
 
 This is all nice and dandy, but how do we actually design and ship eigensolutions?
 Do we just sit around waiting for inspiration to strike?
