@@ -134,17 +134,18 @@ It is a hallmark of poor design that leads to feature creep and poor user experi
 It forces product teams to keep adding more features to address the use cases that were not initially addressed.
 The result is UI clutter and user confusion, as from the user’s perspective, there are now multiple distinct features that solve subtly different problems.
 
-## From solutions to eigensolutions
+## From solutions to eigensolutions: a mindset shift to composability
 
 This is all nice and dandy, but how do we actually design and ship eigensolutions?
 Do we just sit around waiting for inspiration to strike?
-Well, we *could*, but it would be a pretty poor use of resources.
+Well, we *could*, but it would be a pretty poor use of resources. :)
 
-Instead, it takes a mindset shift, from the linear *Use case → Idea → Solution* process to **composability**.
+Instead, it takes a *mindset shift*, from the linear *Use case → Idea → Solution* process to **composability**.
 Rather than designing a solution to address only our driving use cases,
-how can we design a solution as a **composition** of smaller, more general features, that could be used together to address a broader set of use cases?
+step back and ask and ask yourself:
+can we design a solution as a **composition** of smaller, more general features, that could be used together to address a broader set of use cases?
 In many cases the features required for that composition are already implemented and are just missing one piece: our eigensolution.
-In other cases composability may require more than one new feature, but the result is still a net win since these are features that are useful on their own and can ship independently.
+In other cases composability may require more than one new feature, but the result can still be a net win since these are features are useful on their own and can ship independently.
 
 It’s important to note that it’s a spectrum, not a binary: *overfitting* and *eigensolutions* are just its two opposite ends.
 Eigensolutions do not come along every day, and do not even exist for all problems.
@@ -304,7 +305,7 @@ I tend to favor a more iterative process:
 3. Even more at the end to validate it further.
 
 If you’re on the right path, additional use cases will smoothly take you from refinement to validation as the design stabilizes.
-If you’re not on the right path, they will highlight fundamental flaws and show you that you need to start over.
+If you’re not on the right path, they will expose fundamental flaws in your design and show you that you need to start over.
 
 This has some similarities to test-driven development in engineering:
 engineers start with a few test cases before writing any code,
