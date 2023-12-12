@@ -79,7 +79,8 @@ the design process for creator tools often consists of *matching* use cases to s
 
 <div class="warning" style="--label: 'TBD'">
 These diagrams (especially the ones below) have too many details and don't necessarily help comprehension.
-Make them more abstract.
+Simplify, reduce to their essence, make them more abstract.
+Also, illustrate better that this is an iterative process.
 </div>
 
 <figure>
