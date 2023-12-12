@@ -364,7 +364,7 @@ As with most things in life, the answer is “it depends”.
 A few considerations are:
 - How many shortcuts do we need? What percentage of use cases do they cover?
 - How much harder is it to use the lower level primitive directly? Are we certain we will need to provide shortcuts, or is it possible it may be sufficient on its own?
-- How confident are we about what specific shortcuts we need?
+- Which one are we more confident about?
 - How much engineering effort does the lower level primitive require and how does it compare to implementing the shortcuts as ad hoc features?
 - Do we have extensibility mechanisms in place for users to create and share *their own* higher level abstractions over the lower level feature?
 
