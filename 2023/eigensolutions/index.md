@@ -33,13 +33,18 @@ In [end-user programming](https://en.wikipedia.org/wiki/End-user_development) we
 - The **ceiling** refers to the extent of what can be created.
 
 I think that vocabulary generalizes more broadly to creator tools, and can be a useful UX metric.
-A few examples:
-- A **programming language** has an extremely high ceiling, but also a very high floor:
-You can use it to make anything, but it requires years of training.
-- A **spreadsheet** has a medium floor and a medium ceiling:
-It requires some training, but not much, and it can make a wide variety of things, but not everything.
-- A form builder like **Google Forms** has a very low floor, but also a low ceiling:
-Anyone can start using it with no training, but you can also only make a very specific kind of thing with it.
+A few examples and where they stand:
+
+<figure>
+
+![A 2x2 chart of various creator tools and where they stand on the floor/ceiling grid](images/floor-ceiling.png)
+
+<figcaption>
+
+*Programming languages* tend to have high ceiling, but also a high floor: You make anything, but it requires months or years of training,
+whereas *domain specific GUI builders* like Google Forms have a low floor, but also a low ceiling: Anyone can start using them with no training, but you can also only make very specific kinds of things with them.
+</figcaption>
+</figure>
 
 A lot of product work in creator tools centers around either **reducing the floor, or increasing the ceiling**
 either of the tool as a whole, or of individual features.
