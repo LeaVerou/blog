@@ -54,7 +54,7 @@ whereas *domain specific GUI builders* like Google Forms have a low floor, but a
 
 A lot of product work in creator tools centers around either **reducing the floor, or increasing the ceiling**
 either of the tool as a whole, or of individual features.
-A product that combines a low floor with a high ceiling is the unicorn of low-code/no-code tools.
+A product that combines a low floor with a high ceiling is the unicorn of general purpose creator tools.
 
 ### Evaluating use case coverage: The Use Case Backlog
 
