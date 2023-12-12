@@ -129,22 +129,38 @@ Overfitting happens when the driving use cases behind a solution are insufficien
 so the solution ends up being so specific it cannot even generalize to use cases that are clearly related.
 
 **Overfitting is one of the worst things that can happen during the design process.**
-It is a hallmark of poor design that leads to feature creep and poor user experience.
+It is a hallmark of poor design that leads to feature creep and poor user experiences.
 It forces product teams to keep adding more features to address the use cases that were not initially addressed.
 The result is UI clutter and user confusion, as from the user’s perspective, there are now multiple distinct features that solve subtly different problems.
+
+## From solutions to eigensolutions
+
+This is all nice and dandy, but how do we actually design and ship eigensolutions?
+Do we just sit around waiting for inspiration to strike?
+Well, we *could*, but it would be a pretty poor use of resources.
+
+Instead, it takes a mindset shift, from the linear *Use case → Idea → Solution* process to **composability**.
+Rather than designing a solution to address only our driving use cases,
+how can we design a solution as a **composition** of smaller, more general features, that could be used together to address a broader set of use cases?
+In many cases the features required for that composition are already implemented and are just missing one piece: our eigensolution.
+In other cases composability may require more than one new feature, but the result is still a net win since these are features that are useful on their own and can ship independently.
 
 It’s important to note that it’s a spectrum, not a binary: *overfitting* and *eigensolutions* are just its two opposite ends.
 Eigensolutions do not come along every day, and do not even exist for all problems.
 While it’s important to actively guard against overfitting by making sure solutions are validated by many diverse use cases,
-going too far the other side and chasing a general solution for every problem is a poor use of resources.
+going too far the other side and chasing a general solution for every problem is also a poor use of resources.
 
 <figure>
+<div>
+
+**The General Problem**
 
 ![](images/xkcd-974.png)
+</div>
 
 <figcaption>
 
-[xkcd.com/974, “The General Problem”](https://xkcd.com/974/)
+Source: [xkcd.com/974](https://xkcd.com/974/)
 </figcaption>
 </figure>
 
@@ -152,7 +168,7 @@ Instead, I think a happy medium is to try and be on the right side of the spectr
 
 ![](images/overfitting.png)
 
-In addition, good design is only part of the work; without shipping, even the best of features is a pointless document.
+But good design is only part of the work; without shipping, even the most well designed feature is a pointless document.
 Contrary to what you may expect, **eigensolutions can actually be quite hard to push to stakeholders**:
 1. Due to their generality, they often require significantly higher engineering effort to implement than a more specific solution.
 Quick-wins are easier to sell: they ship faster and add value sooner.
