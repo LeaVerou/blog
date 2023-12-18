@@ -111,7 +111,7 @@ and in the end even realized it also addresses another, unrelated use case!
 
 A product may include *both* transactional processes and creator tools,
 e.g. Instagram is a social media platform (transactional) with a photo editor (creator tool).
-Although these tend to be more domain-specific creators tool, which are less good examples for the concepts discussed here.
+Although these tend to be more domain-specific creator tools, which are less good examples for the concepts discussed here.
 
 </div>
 
