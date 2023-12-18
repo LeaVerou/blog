@@ -313,7 +313,7 @@ For a while, this became the gold standard and many new features were very low l
 This filled some necessary gaps in the platform, but since resources are limited, the layering was often missed, resulting in *only* low level primitives which were a pain to use.
 More recently, we’ve been [recommending](https://www.w3.org/TR/design-principles/#high-level-low-level) a more balanced approach, where tradeoffs are evaluated on a case by case basis.
 
-## A fictional example
+## A fictional example: TableSoda { #example }
 
 Suppose we were working on a fictional product that is an improvement over spreadsheets, let’s call it *TableSoda*.
 It has several features that make it more powerful and user-friendly than spreadsheets:
@@ -348,14 +348,15 @@ So what prevents them from creating their own pivot tables?
 There is no way to create dynamic tables in TableSoda, rows can only be added by users.
 What if we could populate a table’s rows via a formula? The formula values could be used either for one column or multiple (if it returns a list of objects).
 
-Formula-populated tables are actually an eigensolution.
-They not only solve our driving use case, but all of the above:
+Formula-populated tables not only solve our driving use case, but all of the above:
 - Unions can be implemented by using a formula to concatenate the rows of multiple tables into a single list.
 - Vertical splitting can be implemented by using a formula to keep the rows of multiple tables in sync with a master table
 - Granular access control can be implemented by having a table with different permissions that is populated using a formula that filters the rows and/or columns of the source table.
 
+It’s an eigensolution!
+
 Note that our eigensolution is not the end for any of our use cases.
-It make many things *possible*, but none of them are *easy*.
+It makes many things *possible*, but none of them are *easy*.
 Some of them are common enough to warrant a [shortcut](#layering): UI that generates the formula needed.
 For others, our solution is more of a *workaround* than a primary solution, and the search for a primary solution continues, potentially with reduced prioritization.
 And others don’t come up often enough to warrant anything further.
