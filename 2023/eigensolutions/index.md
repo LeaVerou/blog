@@ -403,3 +403,5 @@ It is not enough for use cases to exist;
 they need to be sufficiently diverse and correspond to *real* user pain points that are *common* enough to justify the cost of adding a new feature.
 But whether use cases drove the design, were used to validate it, or a mix of both is irrelevant,
 and requiring one or the other imposes unnecessary constraints on the design process.
+
+*Thanks to Marily Nika and Elika Etemad for providing feedback on an earlier draft of this post.*
