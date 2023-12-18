@@ -283,9 +283,26 @@ it's also good to have a design principle in place about which way is generally 
 and can be used to fall back on if weighing tradeoffs ends up inconclusive.
 
 Note that **even when we don’t think the eigensolution is implementable**,
-designing the tailored solutions as special cases of that ***"north star UI"*** can still be a good idea.
-I have often seen "unimplementable" solutions become implementable later on, due to changes in internal or external factors.
-If that happens, we already have everything in place for it.
+it can still be useful as a [*north star UI*](#nsui) and designing the tailored solutions as special cases of it can still be a good idea.
+
+<aside id="nsui">
+
+#### North Star UI?
+
+The ideal UI for addressing a set of use cases in a perfect world where we have infinite resources.
+This is rarely known to us, but there are cases where we know exactly what the perfect solution would be,
+but it’s not feasible due to practical concerns (e.g. implementation challenges), so we need to keep looking.
+However, it can still be useful as a guide to steer us in the right direction.
+And in some cases, it becomes feasible later on, due to changes in internal or external factors.
+In my 11 years of designing web technologies, I have seen many “unimplementable” solutions become implementable later on.
+
+My favorite example, and something I’m proud to have personally helped drive is the current [CSS Nesting syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting).
+We had plenty of signal for what the optimal syntax for users would be, but it was vetoed by engineering across all major browsers, so we had to design around certain constraints.
+Instead of completely diverging (which *could* have produced better syntaxes!), we used it as a north star, and designed and shipped a syntax that was a bit more verbose but forwards compatible with it.
+Once we got consensus on that, I started trying to get people on board to explore ways (even potential algorithms) to bridge the gap,
+until eventually Chrome engineers closed on a way to implement the north star syntax 🎉, and as they say, the rest is history.
+
+</aside>
 
 In the web platform we’ve gone back and forth on this a lot.
 In the beginning, the Web skewed towards shipping higher level abstractions.
@@ -379,9 +396,9 @@ then add more as they go to make sure everything works as expected.
 
 But if someone else’s design thinking works best with using use cases only for validation, more power to them!
 
-What matters is the **outcome**: designing a solution that addresses a broad set of use cases in a way users can understand and use.
-I think we can all agree that **no proposal should be considered without being rigorously supported by use cases**.
-By "rigorously" I mean that it's not enough for use cases to exist;
-they also need to be sufficiently diverse and correspond to user pain points that are both **real** and **pervasive** enough to justify adding a new feature.
+**What matters is that the outcome is a solution that addresses a broad set of use cases in a way users can understand and use.**
+We can probably all agree that no proposal should be considered without being **rigorously** supported by use cases.
+It is not enough for use cases to exist;
+they need to be sufficiently diverse and correspond to *real* user pain points that are *common* enough to justify the cost of adding a new feature.
 But whether use cases drove the design, were used to validate it, or a mix of both is irrelevant,
 and requiring one or the other imposes unnecessary constraints on the design process.
