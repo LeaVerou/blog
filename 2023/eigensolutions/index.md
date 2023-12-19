@@ -2,6 +2,11 @@
 title: "Eigensolutions: composability as the antidote to overfit"
 toc: true
 image: images/summary.png
+social:
+  - twitter: "https://twitter.com/LeaVerou/status/1737181344935911875"
+  - mastodon: "https://front-end.social/@leaverou/111608540810239306"
+  - linkedin: "https://www.linkedin.com/posts/leaverou_whats-the-opposite-of-overfitting-eigensolutions-activity-7142948935676882945-ocpy?utm_source=share&utm_medium=member_desktop"
+  - threads: "https://www.threads.net/@leaverou/post/C1DLFBKvSXF"
 tags:
   - product
   - design-thinking
