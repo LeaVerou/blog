@@ -57,7 +57,6 @@ In [end-user programming](https://en.wikipedia.org/wiki/End-user_development) we
 </aside>
 
 I think that vocabulary generalizes more broadly to creator tools, and can be a useful UX metric.
-A few examples and where they stand:
 
 <figure>
 
@@ -70,7 +69,7 @@ whereas *domain specific GUI builders* like Google Forms have a low floor, but a
 </figcaption>
 </figure>
 
-A product that combines a low floor with a high ceiling is the unicorn of general purpose creator tools.
+A product that combines a low floor with a high ceiling is the unicorn of creator tools.
 Therefore, most product work in creator tools centers around either **reducing the floor** (making things *easier*), or **increasing the ceiling** (making things *possible*).
 Which one of the two takes priority depends on various factors (user research, product philosophy, strategy etc.), and could differ by product area or even by feature.
 
@@ -128,7 +127,7 @@ Although these tend to be more domain-specific creator tools, which are less goo
 
 ## From overfitting to eigensolutions { #eigensolutions }
 
-Shishir Mehrotra (of [Coda](https://coda.io/)) wrote about the importance of “[*Eigenquestions*](https://coda.io/@shishir/eigenquestions-the-art-of-framing-problems)” when framing problems, a term he coined, inspired from his math background:
+[Shishir Mehrotra](https://shishir.io/) (of [Coda](https://coda.io/)) wrote about the importance of “[*Eigenquestions*](https://coda.io/@shishir/eigenquestions-the-art-of-framing-problems)” when framing problems, a term he coined, inspired from his math background:
 
 > the eigenquestion is the question where, if answered, it likely answers the subsequent questions as well.
 
