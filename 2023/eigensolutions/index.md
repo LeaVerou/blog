@@ -1,6 +1,5 @@
 ---
 title: "Eigensolutions: composability as the antidote to overfit"
-draft: true
 toc: true
 image: images/overfitting.png
 tags:
