@@ -4,10 +4,11 @@ toc: true
 image: images/summary.png
 date: 2023-12-19
 social_posts:
-  - twitter: https://twitter.com/LeaVerou/status/1737181344935911875
-  - mastodon: https://front-end.social/@leaverou/111608540810239306
-  - linkedin: https://www.linkedin.com/posts/leaverou_whats-the-opposite-of-overfitting-eigensolutions-activity-7142948935676882945-ocpy
-  - threads: https://www.threads.net/@leaverou/post/C1DL0mdvZnK
+  twitter: https://twitter.com/LeaVerou/status/1737181344935911875
+  mastodon: https://front-end.social/@leaverou/111608540810239306
+  linkedin: https://www.linkedin.com/posts/leaverou_whats-the-opposite-of-overfitting-eigensolutions-activity-7142948935676882945-ocpy
+  threads: https://www.threads.net/@leaverou/post/C1DL0mdvZnK
+  bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3kgwo2q77ms24
 tags:
   - product
   - design-thinking
