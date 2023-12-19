@@ -1,7 +1,7 @@
 ---
 title: "Eigensolutions: composability as the antidote to overfit"
 toc: true
-image: images/overfitting.png
+image: images/summary.png
 tags:
   - product
   - design-thinking
