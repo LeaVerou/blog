@@ -39,11 +39,16 @@ It’s all about balancing UX, use case coverage, and design/implementation effo
 I first read about this distinction in Joe Mc Lean’s
 excellent post on [overfitting](https://bootcamp.uxdesign.cc/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7), and it was a bit of an a-ha moment.
 
-### Evaluating creator tool UX: Floor and ceiling { #floor-ceiling }
+### Evaluating user experience: Floor and ceiling { #floor-ceiling }
 
 In [end-user programming](https://en.wikipedia.org/wiki/End-user_development) we talk about the *floor* and the *ceiling* of a tool:
 - The **floor** is the minimum level of knowledge users need to create something useful.
 - The **ceiling** refers to the extent of what can be created.
+
+<aside>
+
+[Some](https://mres.medium.com/designing-for-wide-walls-323bdb4e7277) people also talk about [*wide walls*](https://johnumekubo.com/2017/11/09/low-floors-high-ceilings-and-wide-walls/): the range of things that can be made (i.e. how domain specific the tool is).
+</aside>
 
 I think that vocabulary generalizes more broadly to creator tools, and can be a useful UX metric.
 A few examples and where they stand:
@@ -117,7 +122,7 @@ Although these tend to be more domain-specific creator tools, which are less goo
 
 ## From overfitting to eigensolutions { #eigensolutions }
 
-Shishir Mehrotra of Coda wrote about the importance of “[*Eigenquestions*](https://coda.io/@shishir/eigenquestions-the-art-of-framing-problems)” when framing problems, a term he coined, inspired from his math background:
+Shishir Mehrotra (of [Coda](https://coda.io/)) wrote about the importance of “[*Eigenquestions*](https://coda.io/@shishir/eigenquestions-the-art-of-framing-problems)” when framing problems, a term he coined, inspired from his math background:
 
 > the eigenquestion is the question where, if answered, it likely answers the subsequent questions as well.
 
@@ -147,7 +152,7 @@ The result is UI clutter and user confusion, as from the user’s perspective, t
 
 ## A mindset shift to composability { #composability }
 
-This is all nice and dandy, but how do we actually design and ship eigensolutions?
+This is all nice and dandy, but how do we design and ship eigensolutions?
 Do we just sit around waiting for inspiration to strike?
 Well, we *could*, but it would be a pretty poor use of resources. :)
 
@@ -156,9 +161,14 @@ Rather than designing a solution to address only our driving use cases,
 step back and ask and ask yourself:
 can we design a solution as a **composition** of smaller, more general features, that could be used together to address a broader set of use cases?
 In many cases the features required for that composition are already implemented and are just missing one piece: our eigensolution.
-In other cases composability may require more than one new feature, but the result can still be a net win since these are features are useful on their own and can ship independently.
+In other cases composability may require more than one new feature, but the result can still be a net win since these features are useful on their own and can ship independently.
 
-It’s important to note that it’s a spectrum, not a binary: *overfitting* and *eigensolutions* are just its two opposite ends.
+A composability mindset requires **being aware of pain points and use cases across many different product areas**.
+This becomes harder in larger organizations, where product teams are highly specialized.
+It’s not impossible, but requires conscious effort to cross-polinate all the way down,
+rather than completely depending on higher levels of the hierarchy to maintain a bird’s eye view of the product.
+
+It’s also important to note that it’s a spectrum, not a binary: *overfitting* and *eigensolutions* are just its two opposite ends.
 Eigensolutions do not come along every day, and do not even exist for all problems.
 While it’s important to actively guard against overfitting by making sure solutions are validated by many diverse use cases,
 going too far the other side and chasing a general solution for every problem is also a poor use of resources.
