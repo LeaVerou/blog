@@ -163,7 +163,7 @@ Well, we *could*, but it would be a pretty poor use of resources. :)
 
 Instead, it takes a *mindset shift*, from the linear *Use case → Idea → Solution* process to **composability**.
 Rather than designing a solution to address only our driving use cases,
-step back and ask and ask yourself:
+step back and ask yourself:
 can we design a solution as a **composition** of smaller, more general features, that could be used together to address a broader set of use cases?
 In many cases the features required for that composition are already implemented and are just missing one piece: our eigensolution.
 In other cases composability may require more than one new feature, but the result can still be a net win since these features are useful on their own and can ship independently.
