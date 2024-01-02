@@ -20,7 +20,7 @@ Since most prioritization frameworks include a user-centered / impact component,
 For example, if using [RICE](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/), you can use this framework to calculate R×I,
 then proceed to multiply by C/E as usual.
 
-## The Three Pilars: Utility, Usability, Evolution
+## The Three Pillars
 
 1. **Utility** (aka *Impact*):
 How many use cases and user pain points does it address, how well, and how prominent are they?
@@ -43,8 +43,8 @@ Now let’s discuss each factor in more detail, including subcategories and spec
 Utility is a measure of how much value a feature brings to users.
 It can be further broken down to:
 
-- [**Increasing the ceiling**](../eigensolutions/#floor-ceiling): What becomes *possible*? Does it enable any use cases for which there is no workaround?
-- [**Reducing the floor**](../eigensolutions/#floor-ceiling): What becomes *easier*? Does it provide a better way to do something for which there is already a workaround? How big is the delta?
+- [**Raising the ceiling**](../eigensolutions/#floor-ceiling): What becomes *possible*? Does it enable any use cases for which there is no workaround?
+- [**Lowering the floor**](../eigensolutions/#floor-ceiling): What becomes *easier*? Does it provide a better way to do something for which there is already a workaround? How big is the delta?
 - [**Widening the walls**](https://mres.medium.com/designing-for-wide-walls-323bdb4e7277): Does it serve an ignored audience or market? Does it broaden the set of use cases served by the product?
 - **Use Case Significance**: How *important* are the use cases addressed?
 
@@ -175,7 +175,7 @@ However, almost every technology we use on a daily basis went through this kind 
 The more **repetitive or common the task**, the higher the importance of efficiency.
 For example text entry is an area where efficiency needs to be optimized down to individual keystrokes or minute pointing movements.
 On the other end of the spectrum, for highly **infrequent tasks** where users don't have time to develop transferable knolwedge across uses, learnability tends to be top priority.
-Last, Safety tends to be higher priority **when there is a lot at stake**: missile launches, airplane navigation, healthcare software on a macro scale, or provacy, data integrity, finances on a micro scale.
+Last, Safety tends to be higher priority **when there is a lot at stake**: missile launches, airplane navigation, healthcare software on a macro scale, or privacy, data integrity, finances on a micro scale.
 
 There is granularity here as well.
 For example, a visa application is used infrequently enough that learnability matters far more than efficiency for the product in general.
@@ -235,3 +235,7 @@ It is also important to be cognizant of the interplays between these various fac
 However, but treating it as a separate factor helps us catch these issues much earler.
 - *Utility* and *Usability* can often be at odds: the more powerful a feature is, the more challenging it is to make it usable.
 But they can also be synergetic: often improving usability is *exactly* what the user needs!
+
+<div class="callout" style="--label: 'TBD'">
+TBD: Lacks a conclusion, illustrations, and examples.
+</div>
