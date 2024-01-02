@@ -2,6 +2,13 @@
 draft: true
 title: A framework for User-Centered Decision-making
 date: 2024-01-02
+toc: true
+tags:
+  - product
+  - product-design
+  - user-centered-design
+  - decision-making
+  - prioritization
 ---
 
 I was recently asked to describe the guiding principles I would use to weigh three different solutions to a specific user pain point,
@@ -216,12 +223,12 @@ If a product does not provide value, *people leave*, even if it provides a fanta
 
 I would suggest 3:2:1 ratio between Utility, Usability, and Evolution as a starting point,
 tweaking depending on the product and its environment. For example:
-- **Competition**: If a product is competing in a space where use cases are already covered very well, by products with poor usability, usability becomes more important.
+- **Competition**: If a product is competing in a space where use cases are already covered very well, but by products with poor usability, *Usability* becomes more important.
 In fact, many successful products were actually usability innovations: The Web, Dropbox, the iPhone, Zoom, and many others.
 - **Ease of changes**: [Change is always hard](https://www.intercom.com/blog/navigating-the-complexity-of-change-aversion/).
-However, for some products, it‘s a lot harder, making a solid evolution path more important.
+However, for some products, it‘s a lot harder, making a solid *Evolution* path more important.
 Web technologies are an extreme example: it is almost impossible to remove or change anything, ever, as there are billions of uses in the wild, no way to migrate them, and no control over them.
-- **Complexity**: Similarly, the more complexity increases, the more important it becomes to keep further increase at bay, so Evolution becomes more important
+- **Complexity**: The more complexity increases, the more important it becomes to keep further increase at bay, so *Evolution* becomes more important.
 
 It is also important to be cognizant of the interplays between these various factors:
 - *Evolution* affects *Usability*: Features that fit poorly into the product’s past and future eventually create usability issues.
