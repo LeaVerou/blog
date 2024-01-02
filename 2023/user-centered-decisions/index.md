@@ -1,6 +1,6 @@
 ---
 draft: true
-title: A framework for User-Centered Decision-making
+title: A framework for User-Centered Decisions
 date: 2024-01-02
 toc: true
 tags:
@@ -215,19 +215,20 @@ For example:
 ## Overall
 
 While all three are very important, they are not *equally* important.
-In broad strokes, usually:
+In broad strokes, usually, **Utility > Usability > Evolution**.
+Here’s why:
 
 * [**Utility > Usability**](https://elezea.com/2016/01/utility-is-more-important-than-usability/):
 If a product does not provide value, *people leave*, even if it provides a fantastic user experience for the few and/or niche use cases it actually serves.
-* **Usability > Evolution**, since the latter is a long-term / more speculative concern, whereas the former a more immediate / higher confidence one.
+* **Usability > Evolution**, since Evolution is a long-term / more speculative concern, whereas Usability a more immediate / higher confidence one.
 
-I would suggest 3:2:1 ratio between Utility, Usability, and Evolution as a starting point,
-tweaking depending on the product and its environment. For example:
+The exact weights depend on the product and its environment, but you can use a 3:2:1 ratio between them as a starting point.
+A few things to consider:
 - **Competition**: If a product is competing in a space where use cases are already covered very well, but by products with poor usability, *Usability* becomes more important.
 In fact, many successful products were actually usability innovations: The Web, Dropbox, the iPhone, Zoom, and many others.
 - **Ease of changes**: [Change is always hard](https://www.intercom.com/blog/navigating-the-complexity-of-change-aversion/).
-However, for some products, it‘s a lot harder, making a solid *Evolution* path more important.
-Web technologies are an extreme example: it is almost impossible to remove or change anything, ever, as there are billions of uses in the wild, no way to migrate them, and no control over them.
+However, for some products, it’s a lot harder, making a solid *Evolution* path more important.
+Web technologies are an extreme example: it is almost impossible to remove or change anything, ever, as there are billions of uses in the wild, no way to migrate them, and no control over them. Instead, changes have to be built as *new* technologies or addition to existing ones.
 - **Complexity**: The more complexity increases, the more important it becomes to keep further increase at bay, so *Evolution* becomes more important.
 
 It is also important to be cognizant of the interplays between these various factors:
@@ -235,6 +236,19 @@ It is also important to be cognizant of the interplays between these various fac
 However, but treating it as a separate factor helps us catch these issues much earler.
 - *Utility* and *Usability* can often be at odds: the more powerful a feature is, the more challenging it is to make it usable.
 But they can also be synergetic: often improving usability is *exactly* what the user needs!
+
+## Calculating a score
+
+So far we’ve discussed various factors, tradeoffs, exceptions, so it may be unclear how to actually use this as a framework to score ideas.
+
+Let’s step back and consider the goals for any scoring framework:
+1. **Compare and contrast**: Helps us make an informed decision without being lost in the complexity of the various tradeoffs.
+2. **Drive consensus**: It is often easier for a team to agree on a rating for an individual factor, than a feature as a whole.
+3. **Communicate the decision**: Provide a way to communicate the decision to stakeholders, so they can understand the rationale behind it.
+
+Depending on the complexity of the problem and the contentiousness of the decision, we may be able to get away with a simple 1-5 score for each factor, and a weighted average for each idea’s overall score. Using the 3:2:1 ratio mentioned above, this would be:
+
+Overal score = ( 3 × Utility_Score + 2 × Usability_Score + Evolution_Score ) / 6
 
 <div class="callout" style="--label: 'TBD'">
 TBD: Lacks a conclusion, illustrations, and examples.
