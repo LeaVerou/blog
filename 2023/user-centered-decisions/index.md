@@ -9,6 +9,7 @@ tags:
   - user-centered-design
   - decision-making
   - prioritization
+  - decision-making
 ---
 
 I was recently asked to describe the guiding principles I would use to weigh three different solutions to a specific user pain point,
@@ -20,7 +21,7 @@ Since most prioritization frameworks include a user-centered / impact component,
 For example, if using [RICE](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/), you can use this framework to calculate R×I,
 then proceed to multiply by C/E as usual.
 
-## The Three Pillars
+## The Three Axes
 
 1. **Utility** (aka *Impact*):
 How many use cases and user pain points does it address, how well, and how prominent are they?
@@ -56,7 +57,8 @@ and evaluate significance for them separately.
 ### Primary & Secondary use cases { #primary-secondary-use-cases }
 
 *Primary use cases* (in relation to a solution) are those for which a solution is optimal (or close), and have often been the driving use cases behind its design.
-This is to contrast with *secondary use cases*, for which a solution is a workaround (involving varying levels of friction).
+This is to contrast with *secondary use cases*, for which a solution is a workaround.
+When discussing secondary use cases, it is important to note the level of friction the workaround involves.
 
 We may occasionally decide to ship a feature with a low number of primary use cases, simply because it has a high number of secondary use cases.
 In other words, a feature that may not the best solution for much, but it's an excellent low-friction workaround for many use cases, buying us time to work on better solutions for them.
@@ -212,7 +214,7 @@ For example:
 * **Granularity**: Is it a less granular version of a future feature?
 * **North star UI**: If we have a [north star UI](../eigensolutions#nsui), is it compatible with it, or does it actively diverge?
 
-## Overall
+## Overall weighing
 
 While all three are very important, they are not *equally* important.
 In broad strokes, usually, **Utility > Usability > Evolution**.
@@ -237,18 +239,70 @@ However, but treating it as a separate factor helps us catch these issues much e
 - *Utility* and *Usability* can often be at odds: the more powerful a feature is, the more challenging it is to make it usable.
 But they can also be synergetic: often improving usability is *exactly* what the user needs!
 
-## Calculating a score
+## Ok, now make the darn decision already!
 
-So far we’ve discussed various factors, tradeoffs, exceptions, so it may be unclear how to actually use this as a framework to score ideas.
+So far we’ve discussed various tradeoffs, so it may be unclear how to use this as a framework to make actual decisions.
 
-Let’s step back and consider the goals for any scoring framework:
-1. **Compare and contrast**: Helps us make an informed decision without being lost in the complexity of the various tradeoffs.
-2. **Drive consensus**: It is often easier for a team to agree on a rating for an individual factor, than a feature as a whole.
-3. **Communicate the decision**: Provide a way to communicate the decision to stakeholders, so they can understand the rationale behind it.
+It is important to remember that **decision-making itself *also* involves tradeoffs: adding structure makes it easier to decide, but consumes more time**.
+To balance this, I tend to favor an iterative approach, adding more precision and structure if the previous step failed to provide enough clarity.
+For many simple, uncontroversial decisions, just discussing the three factors can be sufficient, and the cost-benefit of more structure is not worth it.
+For more complex decisions, a more structured approach can pay off.
 
-Depending on the complexity of the problem and the contentiousness of the decision, we may be able to get away with a simple 1-5 score for each factor, and a weighted average for each idea’s overall score. Using the 3:2:1 ratio mentioned above, this would be:
+Let’s consider the goals for any scoring framework:
+1. **Compare and contrast**: Make an informed decision between alternatives without being lost in the complexity of their tradeoffs.
+2. **Drive consensus**: It is often easier for a team to agree on a rating or weight for an individual factor, than the much bigger decision of which option to go with.
+3. **Communicate**: Provide a way to communicate the decision to stakeholders, so they can understand the rationale behind it.
 
-Overal score = ( 3 × Utility_Score + 2 × Usability_Score + Evolution_Score ) / 6
+Calculating things precisely (e.g. use case coverage, significance, etc.) is rarely necessary for any of these goals, and typically not a good use of time.
+In the spirit of an iterative approach, start with a simple 1-5 score for each factor, and only add more granularity and/or precision if it does not suffice for making a decision with reasonable confidence (which I have never seen).
+Remember that the only purpose of the scores is to help us compare alternatives.
+They have no meaning outside of that context.
+
+I use three tables, one for each factor, with a row for each idea.
+Then the columns are:
+
+<dl>
+<dt>Utility</dt><dd>
+
+* Primary use cases
+* Secondary use cases
+* Utility Score *(1-5)*
+</dd>
+<dt>Usability</dt><dd>
+
+* Learnability
+* Efficiency
+* Safety
+* Usability Score *(1-5)*
+</dd>
+<dt>Evolution</dt><dd>
+
+* Past & Present
+* Future
+* Evolution Score *(1-5)*
+</dd>
+</dl>
+
+We fill in the freeform columns first, which should then give us a pretty clear picture of the score for each factor.
+
+Finally, using the 3:2:1 ratio mentioned above, the overall score would be:
+
+$$
+Overall\_Score = \frac{ 3 \cdot Utility\_Score + 2 \cdot Usability\_Score + 1 \cdot Evolution\_Score }{3 + 2 + 1}
+$$
+
+### Template: User-Centered Decision Worksheet
+
+I have set up a [Coda](https://coda.io/) template for this, which you can [view here]():
+
+I love using Coda for any kind of scorecard. In this case because:
+* I don’t have to repeat each idea in the multiple tables, I can just use views and they update automatically
+* Rich text (lists, etc) within table cells make it easier to brainstorm about the different factors
+* Rich rating widgets for inputting scores
+* I can output the overall score with a formula, and it updates automatically.
+* I can even use controls for the weights, and the overall score updates automatically!
+
+As a bonus, I can then even @-mention each feature in the rest of the doc, and hovering over it shows a tooltip with all its metadata!
 
 <div class="callout" style="--label: 'TBD'">
 TBD: Lacks a conclusion, illustrations, and examples.
