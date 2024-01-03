@@ -3,6 +3,7 @@ draft: true
 title: A framework for User-Centered Decisions
 date: 2024-01-02
 toc: true
+image: images/summary.png
 tags:
   - product
   - product-design
@@ -22,6 +23,8 @@ For example, if using [RICE](https://www.intercom.com/blog/rice-simple-prioritiz
 then proceed to multiply by C/E as usual.
 
 ## The Three Axes
+
+![Alt text](images/summary.png)
 
 1. **Utility** (aka *Impact*):
 How many use cases and user pain points does it address, how well, and how prominent are they?
