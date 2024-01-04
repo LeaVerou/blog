@@ -28,21 +28,18 @@ then proceed to multiply by C/E as usual (being mindful of units).
 
 ## The Three Axes
 
+Nielsen talks about Utility and Usability (which he groups under [*Usefulness*](https://www.nngroup.com/articles/usability-101-introduction-to-usability/)) as the core pillars of [Product-led Growth](https://www.nngroup.com/articles/product-led-growth-ux/).
+I think there is also a third axis, which I called *Evolution*, and refers to how well a feature fits into the product’s bigger picture.
+
 ![Alt text](images/summary.png)
 
 1. **Utility** (aka *Impact*):
 How many use cases and user pain points does it address, how well, and how prominent are they?
 2. **Usability**: How easy is it to use?
 Evaluating usability at the idea stage is tricky, as overall usability will vary depending on how each idea is implemented, and there is often a lot of wiggle room within the same idea. At this stage, we are *only* concerned with aspects of usability inherent in the idea itself.
-3. **Evolution** (aka *Bigger Picture*):
+3. **Evolution**:
 How does it relate to features that we have shipped in the past and features we may ship in the future?
 Being mindful of this prevents feature creep and ensures the mental models exposed via the UI remain coherent.
-
-<aside>
-
-Nielsen groups Utility and Usability under a single term: [*Usefulness*](https://www.nngroup.com/articles/usability-101-introduction-to-usability/).
-
-</aside>
 
 These are not entirely independent, there are complex interplays between them:
 - *Evolution* affects *Usability*: Features that fit poorly into the product’s past and future will create later usability issues.
@@ -51,9 +48,9 @@ However, treating it as a separate factor helps us catch these issues much earle
 
 Now let’s discuss each axis in more detail.
 
-## Utility
+### Utility
 
-Utility is a measure of the value a feature brings to users as a whole.
+Utility measures the value proposition of a feature for users.
 It can be further broken down to:
 
 - [**Raising the ceiling**](../eigensolutions/#floor-ceiling): What becomes *possible*? Does it enable any use cases for which there is no workaround?
@@ -63,10 +60,10 @@ It can be further broken down to:
 
 While this applies more broadly, it is particularly relevant and top priority for [creative tools](https://lea.verou.me/blog/2023/eigensolutions/).
 
-In evaluating the overall Utility of an idea, it can often be helpful to list *primary* and *secondary* use cases separately,
-and evaluate significance for them separately.
+In evaluating the overall *Utility* of an idea, it can often be helpful to list *primary* and *secondary* use cases separately,
+and evaluate Significance for them separately.
 
-### Primary & Secondary use cases { #primary-secondary-use-cases }
+#### Primary & Secondary use cases { #primary-secondary-use-cases }
 
 *Primary use cases* are those for which a solution is optimal (or close), and have often been the driving use cases behind its design.
 This is to contrast with *secondary use cases*, for which a solution is a workaround.
@@ -85,7 +82,7 @@ It is not unheard of to ship a feature with a low number of primary use cases, s
 In these cases, [Evolution](#evolution) is even more important: when we later have addressed all these use cases head-on,
 does this feature still serve a purpose?
 
-### Use Case Significance
+#### Use Case Significance
 
 This is a rough measure of how *important* the features addressed are.
 This needs to be evaluated holistically: an incremental improvement for a common interaction is far more impactful than a substantial improvement for a niche use case.
@@ -103,7 +100,7 @@ Some ways to reason about it may be:
 
 </div>
 
-## Usability
+### Usability
 
 There are many ways to break usability down into independent, quantifiable dimensions.
 I generally go with a tweaked version of the one I first learned at [MIT’s UI Design & Implementation](http://web.mit.edu/6.813/) course I took in 2016 *(and then [taught](http://web.mit.edu/6.813/www/sp18/general/#course_staff) in 2018 and [replaced](https://designftw.mit.edu/) in 2020 😅)*,
@@ -176,7 +173,7 @@ Each idea will rarely have universally worse or better usability than another.
 More commonly, it will be better in some dimensions and worse in others.
 To evaluate these tradeoffs, we need to understand the situation and the user.
 
-### The situation
+#### The situation
 
 “Situation” here refers to the use case plus its context.
 
@@ -197,7 +194,7 @@ Is Efficiency or Safety more important?
 Note that there are also interplays between different dimensions: the more effort a task involves (efficiency), the more high stakes a mistake is perceived to be (safety).
 You have likely experienced this: a lengthy form losing your answers feels a lot more frustrating than having to re-enter your email in a login form.
 
-### The user
+#### The user
 
 As a general rule of thumb, novices need learnability whereas for experts other dimensions of usability are more important.
 *But who is an expert? Expert in what?*
@@ -222,7 +219,7 @@ However, almost every mainstream technology went through this kind of democratiz
 This distinction does not only apply to the product as a whole, but also **individual product areas**.
 For example, an onboarding flow needs to prioritize learnability regardless of the priorities of the rest of the product.
 
-## Evolution
+### Evolution
 
 Evolution is a bigger picture measure of how well a proposed feature fits into the product’s past, present and future,
 with an emphasis on the latter, since relationship to the past and present is also the *Internal Consistency* component of *Learnability*.
@@ -259,8 +256,8 @@ If a product does not provide value, *people leave*, even if it provides a fanta
 Depending on the product and the environment however, this trend could be reversed:
 - **Competition**: If a product is competing in a space where use cases are already covered very well, but by products with poor usability, *Usability* becomes more important.
 In fact, many successful products were actually usability innovations: The Web, Dropbox, the iPhone, Zoom, and many others.
-- **Ease of changes**: [Change is always hard](https://www.intercom.com/blog/navigating-the-complexity-of-change-aversion/),
-but for some products it’s a lot harder, making a solid *Evolution* path far more important.
+- **Mutability**: [Change is always hard](https://www.intercom.com/blog/navigating-the-complexity-of-change-aversion/),
+but for some products it’s a lot harder, making a solid *Evolution* path more important.
 Web technologies are an extreme example: it is almost impossible to remove or change anything, ever, as there are billions of uses in the wild, no way to migrate them, and no control over them. Instead, changes have to be designed as *new* technologies or additions to existing ones.
 - **Complexity**: The more complexity increases, the more important it becomes to keep further increase at bay, so *Evolution* becomes more important.
 
@@ -268,7 +265,7 @@ Web technologies are an extreme example: it is almost impossible to remove or ch
 
 So far we’ve discussed various tradeoffs, so it may be unclear how to use this as a framework to make actual decisions.
 
-It is important to remember that **decision-making itself *also* involves tradeoffs: adding structure makes it easier to decide, but consumes more time**.
+**Decision-making itself *also* involves tradeoffs: adding structure makes it easier to decide, but consumes more time**.
 To balance this, I tend to favor an iterative approach, adding more precision and structure if the previous step failed to provide enough clarity.
 For simple, uncontroversial decisions, just discussing the three axes can be sufficient, and the cost-benefit of more structure is not worth it.
 But for more complex higher stakes decisions, a more structured approach can pay off.
@@ -326,7 +323,7 @@ Why [Coda](https://coda.io/) instead of something like Google Docs or Google She
 * I can output the overall score for each feature with a formula, and it updates automatically.
 No need to clumsily copy-paste it across cells either, I can just define it once for the whole column.
 I can even use controls for the weights that are outside the table entirely.
-* This is likely subjective, but I find Coda docs much more aesthetically pleasing compared to alternatives.
+* This may be subjective, but I find Coda docs more well designed than any alternative I’ve tried.
 
 <figure>
 
