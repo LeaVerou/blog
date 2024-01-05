@@ -421,3 +421,54 @@ But whether use cases drove the design, were used to validate it, or a mix of bo
 and requiring one or the other imposes unnecessary constraints on the design process.
 
 *Thanks to Marily Nika and Elika Etemad for providing feedback on an earlier draft of this post.*
+
+## Notable reactions
+
+I hesitantly published this article right before the 2023 winter break.
+I say hesitantly, because it’s a departure from my usual content, and I wasn’t sure how it would be received.
+I was giddy to see that despite its length and somewhat intimidating title, and publication date, it did get some very validating reactions.
+
+My favorite was [Daniel Jackson](http://people.csail.mit.edu/dnj/)’s [insightful summary of the ideas presented](https://forum.essenceofsoftware.com/t/lea-verou-post-eigensolutions-composability-as-the-antidote-to-overfit/184):
+
+> I just came across an [excellent post ](https://lea.verou.me/blog/2023/eigensolutions/) by Lea Verou which argues for building software on more general and composable abstractions.
+>
+> In short, I see several different ideas at play in her piece:
+>
+> * Use cases lead to overfitting and it’s better to design more coherent and general increments of function;
+> * More complex and domain-specific functionality can often be obtained as an instantiation or composition of more abstract and general functionality;
+> * Even if you don’t implement the more general and abstract functionality, it might be better to design it and think of your implementation as partial;
+> * You can use progressive disclosure in the UI as a bridge between more common domain-specific functionality and more general functionality.
+>
+> These ideas seem to have a lot in common with concept design. Maybe her eigensolutions are concepts? What do y’all think? Also, I really liked the critique of use cases, which connects to our [discussion](https://forum.essenceofsoftware.com/t/how-related-are-nakedobjects-by-pawlson-and-concept-oriented-design/177/9) last year of Bertrand Meyer’s piece.
+
+It was very validating to see that the ideas resonated with someone who has been thinking about good conceptual design so deeply that it’s his primary area of research at MIT for years, and has published an [excellent book](https://essenceofsoftware.com/) on the matter (I only started reading it recently, but I’m loving it so far).
+
+It was also validating to see that the ideas resonated with [Shishir Mehrotra](https://shishir.io/) (CEO of [Coda](https://coda.io)), who [commented](https://www.linkedin.com/feed/update/urn:li:activity:7142948935676882945?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7142948935676882945%2C7145299080624103424%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287145299080624103424%2Curn%3Ali%3Aactivity%3A7142948935676882945%29):
+
+> Very insightful article, loved it!
+
+If you recall, it was him who coined the term *eigenquestion* that inspired the term *eigensolution*.
+
+[Daniel Fosco](https://www.threads.net/@dfosco[Title](https://www.threads.net/@dfosco)) (Software designer at [Miro](https://miro.com/)) [reposted and wrote](https://www.threads.net/@dfosco/post/C1FGfODoxSp):
+
+> This is by far the best design article I've read in a very long time. Lea dives right into what it takes to build complex tools that have to meet wide, unmapped user needs.
+> I also love how it does not shy away from the complexity of the topic even for a moment: on the contrary, the title is already telling you what you're signing up for.
+> @leaverou is no stranger to great writing, but this one is truly a gem.
+
+I recently started using [Miro](https://miro.com/) myself, for diagrams and wireframes (most illustrations in this article have been made with Miro), and there are some real gems in its design, so it was very validating to see that the ideas resonated with someone who works on designing it.
+
+Fredrik Matheson (Creative Director at Bekk) [reposted and wrote](https://www.linkedin.com/posts/movito_whats-the-opposite-of-overfitting-eigensolutions-activity-7143012800225861632-i_Lw?utm_source=share&utm_medium=member_desktop):
+
+> Are you new to UX? This post will be a bit like taking an elevator up above the clouds, where you can see further, beyond the constraints of the transactional systems you might be working on already. Recommended.
+
+He even subsequently proceeded to quote concepts from it in a [number of](https://www.linkedin.com/feed/update/urn:li:activity:7143508856587911169?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7143508856587911169%2C7144244558615269376%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287144244558615269376%2Curn%3Ali%3Aactivity%3A7143508856587911169%29) [comments](https://www.linkedin.com/feed/update/urn:li:ugcPost:7148246579894800384?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7148246579894800384%2C7148248066465193984%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287148248066465193984%2Curn%3Ali%3AugcPost%3A7148246579894800384%29) on other posts! 🤩
+
+{#
+[Maja Jackson](https://www.linkedin.com/posts/maja-jaakson_whats-the-opposite-of-overfitting-eigensolutions-activity-7143173660101566464-7obf?utm_source=share&utm_medium=member_desktop):
+
+> Holy guacamole… this is a killer article by Lea Verou, imo with application well beyond the design of creator tools.
+>
+> Lea presents the concept of Eigensolutions: design solutions that address a number of seemingly unrelated use cases at once. We find an eigensolution by looking for commonalities across these cases; in particular, looking for a change to a product that addresses (or that plays a key role in addressing) a family of use cases, where the “familial trait” is, well… that solution itself. 🤯🤩
+
+[Charlie Robbins](https://www.linkedin.com/posts/charlierobbins_genius-from-lea-verou-on-how-to-iterate-towards-activity-7145828200277831682-K7GX?utm_source=share&utm_medium=member_desktop)
+#}
