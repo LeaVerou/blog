@@ -425,8 +425,8 @@ and requiring one or the other imposes unnecessary constraints on the design pro
 ## Notable reactions
 
 I hesitantly published this article right before the 2023 winter break.
-I say hesitantly, because it’s a departure from my usual content, and I wasn’t sure how it would be received.
-I was giddy to see that despite its length and somewhat intimidating title, and publication date, it did get some very validating reactions.
+I say hesitantly, because it was a departure from my usual content, and I wasn’t sure how it would be received.
+I was elated to see that despite its length, somewhat intimidating title, and publication date, it did get some very validating reactions.
 
 My favorite was [Daniel Jackson](http://people.csail.mit.edu/dnj/)’s [insightful summary of the ideas presented](https://forum.essenceofsoftware.com/t/lea-verou-post-eigensolutions-composability-as-the-antidote-to-overfit/184):
 
