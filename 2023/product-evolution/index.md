@@ -1,6 +1,6 @@
 ---
 draft: true
-title: "Evolution: The missing key to unlock Product-Led Growth"
+title: "Evolution: The missing component of Product-Led Growth"
 toc: true
 image: images/summary.png
 tags:
@@ -18,7 +18,7 @@ TBD: Lacks a conclusion, illustrations, and examples.
 
 In the last few years, [Product-Led Growth](https://www.productplan.com/glossary/product-led-growth/) has seen a meteoric rise in popularity.
 The idea is simple: instead of relying on sales and marketing to acquire users, you build a product that sells itself.
-As a usability person, this makes me giddy: **Prioritizing user experience is now a business strategy**, with senior leadership buy-in!
+As a usability advocate, this makes me giddy: **Prioritizing user experience is now a business strategy**, with senior leadership buy-in!
 
 NN/G [considers](https://www.nngroup.com/articles/product-led-growth-ux/) *Utility* and *Usability* the core components of Product-led Growth, which Nielsen groups under a single term: [*Usefulness*](https://www.nngroup.com/articles/usability-101-introduction-to-usability/).
 *Utility* refers to how many use cases are addressed, how well, and how significant these use cases are.
