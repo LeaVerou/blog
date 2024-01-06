@@ -159,7 +159,7 @@ such as [plane crashes](https://en.wikipedia.org/wiki/Helios_Airways_Flight_522)
 </aside>
 
 Our life is rife with examples of poor usability, to the point where if something is easy to use, people are often surprised.
-There is even what some of us call “[UX Stockholm Syndrome](http://www.ianvoyce.com/index.php/2015/09/17/bad-ux-and-stockholm-syndrome/)”: after very prolonged exposure to a poor interface, users start believing that it is easy to use, and even advocate against improvements.
+There is even what some of us call “[UX Stockholm Syndrome](https://www.ianvoyce.com/rant/usability/2015/09/17/bad-ux-and-stockholm-syndrome.html)”: after very prolonged exposure to a poor interface, users start believing that it is easy to use, and even advocate against improvements.
 The [curse of knowledge](https://en.wikipedia.org/wiki/Curse_of_knowledge) makes them forget how difficult it was to learn, and the prolonged exposure can even make them efficient at using it.
 
 Take **hex colors** for example. Quick, what color is `#7A6652`?
