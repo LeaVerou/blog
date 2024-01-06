@@ -49,25 +49,25 @@ The changes required to fix the underlying design are a lot more substantial and
 
 ## The weight of Evolution
 
-I’m not arguing that *Evolution* is more important than *Utility* or *Usability*.
-Just like in chess, the next move is far more important than any future move!
-The argument this post is making is that we should look further than the current roadmap, not that we should stop looking at what’s right in front of us.
-For most cases, the relative priority of these three axes should be *Utility* first, then *Usability*, then *Evolution* (though the specific weights may vary by product, domain, etc.).
-However, there are some factors that make *Evolution* matter more than usual.
-
-First, **low mutability**.
-[Change is always hard](https://www.intercom.com/blog/navigating-the-complexity-of-change-aversion/), but for some products it’s a lot harder.
 The importance of *Evolution* was really drilled into me while designing web technologies, i.e. the technologies implemented in browsers that web developers use to develop websites and web applications.
-We do not have a name for it, but it’s a very important consideration when designing any feature for the Web.
-I have often said that **web standards work is “product work on hard mode”**, and this is one of the reasons.
+We do not have a name for it, but the consideration is very high priority when designing any feature for the Web.
+
+In general, *Utility* and *Usability* matter more than *Evolution*.
+Just like in chess, the next move is far more important than any subsequent move.
+The argument this post is making is that we should look further than the current roadmap, not that we should stop looking at what’s right in front of us.
+However, there are some cases where *Evolution* may become equally important as the other two, or even more.
+
+**Low mutability** is one such case.
+[Change is always hard](https://www.intercom.com/blog/navigating-the-complexity-of-change-aversion/), but for some products it’s a lot harder.
 Web technologies are an extreme example, where you can never remove or change anything.
 There are billions of uses in the wild, that you have no control over, and no way to migrate users.
 You cannot risk breaking the Web.
 Instead, changes must be designed as either *additions* to existing technologies, or (if substantial enough) as entirely new technologies.
 The best you can hope for is that if you deprecate the old technology, and you heavily promote the new one, over many years usage of the old technology will drop below the usage threshold that allows *considering* removal (< 0.02%!).
+I have often said that **web standards work is “product work on hard mode”**, and this is one of the reasons.
 If you do product work, pause for a moment and consider this: *How much harder would shipping be if you knew you could never remove or change anything?*
 
-Second, **high complexity**.
+Another case is **high complexity**.
 Many things that are complex today began as simple things.
 The cost of adding features without validating their *Evolution* story is increasing complexity.
 To some degree, complexity is the fate of every successful product, but being deliberate about adding features can curb the rate of increase.
