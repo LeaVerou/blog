@@ -1,7 +1,6 @@
 ---
 draft: true
 title: A framework for User-Centered Decisions
-date: 2024-01-02
 toc: true
 image: images/summary.png
 tags:
@@ -10,7 +9,6 @@ tags:
   - user-centered-design
   - decision-making
   - prioritization
-  - decision-making
 ---
 
 <div class="callout" style="--label: 'TBD'">
@@ -28,8 +26,10 @@ then proceed to multiply by C/E as usual (being mindful of units).
 
 ## The Three Axes
 
-Nielsen talks about Utility and Usability (which he groups under [*Usefulness*](https://www.nngroup.com/articles/usability-101-introduction-to-usability/)) as the core pillars of [Product-led Growth](https://www.nngroup.com/articles/product-led-growth-ux/).
-I think there is also a third axis, which I called *Evolution*, and refers to how well a feature fits into the product’s bigger picture.
+Utility and Usability (which Nielsen groups under [*Usefulness*](https://www.nngroup.com/articles/usability-101-introduction-to-usability/)) are considered the core pillars of [Product-led Growth](https://www.nngroup.com/articles/product-led-growth-ux/).
+However, both Utility and Usability are short-term metrics and do not consider the bigger picture, so only using them as a compass could result in short-sightedness.
+I think there is also a third axis, which I call *Evolution*, and refers to how well a feature fits into the bigger picture,
+by examining how it relates to the product’s past and (especially) future.
 
 ![Alt text](images/summary.png)
 

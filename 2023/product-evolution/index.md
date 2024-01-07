@@ -105,8 +105,9 @@ In my 11 years of designing web technologies, I have seen this happen so many ti
 My favorite example, and something I’m proud to have personally helped drive is the current [CSS Nesting syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting).
 We had plenty of signal for what the optimal syntax was for users, but it had been vetoed by engineering across all major browsers due to prohibitive performance, so we had to design around certain parsing constraints.
 Instead of completely diverging, we used this optimal syntax as a north star, and designed and shipped an intermediate syntax I proposed that was fully compatible with it, just a little more explicit in some cases ([Option 3](https://webkit.org/blog/13607/help-choose-from-options-for-css-nesting-syntax/) for anyone who followed this).
-Once we got consensus on that, I started trying to get people on board to explore ways (and brainstorm potential algorithms) to bridge the gap,
-I initially faced a lot of resistance, until eventually a few Chrome engineers closed on a way to implement the north star syntax 🎉, and as they say, *the rest is history*.
+Once we got consensus on that, I started trying to get people on board to explore ways (and brainstorm potential algorithms) to bridge the gap.
+A few other Working Group members joined me, with my co-TAG member Peter Linss perhaps being most vocal.
+We initially faced a lot of resistance from browser engineers, until eventually a couple Chrome engineers closed on a way to implement the north star syntax 🎉, and as they say, *the rest is history*.
 
 It was not easy to get there, and required weighing *Evolution* as a factor.
 There were diverging proposals that in some ways had better syntax than that intermediate milestone.
@@ -133,9 +134,9 @@ For example:
 * **Power**: Is it a less powerful version of a future feature?
 * **Granularity**: Is it a less granular version of a future feature?
 
-While these trajectories are common ways to ensure that a feature fits well into the bigger picture, there is also the opposite path:
-A feature also has an excellent *Evolution* story if it helps us *remove* other features that have issues across any of the three axes,
-by covering their use cases in a better way.
+Other considerations:
+- Opportunity cost: What does introducing this feature prevent us from doing in the future?
+- Simplification: What does it allow us to *remove*?
 
 <div class="callout" style="--label: 'TBD'">
 TBD: Lacks a conclusion, illustrations, and examples.
