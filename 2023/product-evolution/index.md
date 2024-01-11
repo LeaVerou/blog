@@ -79,15 +79,18 @@ However, it is often easier to see in retrospect, after we’ve already felt the
 
 In evaluating *Evolution* for a feature, it’s useful to have alignment on what our "North Star UI(s)" might be.
 
-A North Star UI is the ideal UI for addressing a set of use cases and pain points in a perfect world where we have infinite resources and no implementation constraints.
-Many problems are genuinely so hard that even without constraints, the ideal solution is not known.
+**A *North Star UI* is the ideal UI for addressing a set of use cases and pain points in a perfect world where we have infinite resources and no practical constraints** (implementation difficulty, performance, backwards compatibility, etc.).
+Sure, many problems are genuinely so hard that even without constraints, the ideal solution is still unknown.
 However, there many cases where we know *exactly* what the perfect solution would be,
-but it’s not feasible due to practical concerns, so we need to keep looking.
+but it’s simply not feasible, so we need to keep looking.
 
 <aside>
 
+#### Origin of the term “North Star UI”
+
 Where does the term "North Star UI" come from and who coined it?
-Googling for "north star UI" yields very few results (10 right now, 2 of which are from this blog), and it’s unclear
+Googling for "north star UI" yields very few results outside this blog (8 as of right now), all of which are *using*, rather than *defining* the term.
+It appears that a couple people have used it in a similar fashion, but nobody has defined it until now?
 
 </aside>
 
@@ -95,18 +98,31 @@ In these cases, it’s useful to document this “North Star UI” and ensure th
 You can even do usability testing (using wireframes or prototypes) to validate it.
 
 Why would we do this for something that’s not feasible?
-First, it can still be useful as a guide to steer us in the right direction.
+First, it can still be useful as **a guide to steer us in the right direction**.
 Even if you can’t get all the way there, maybe you can close enough that the remaining distance won’t matter.
 And in the process, you may find that the closer you get, the more feasible it becomes.
 
-Second, I have often seen "unimplementable" solutions become implementable later on, due to changes in internal or external factors, or simply because a brilliant engineer had a brilliant idea that made the impossible, possible.
-In my 11 years of designing web technologies, I have seen this happen so many times, I now take "unimplementable" to just mean "really hard — right now".
+Second, it ensures **team alignment**, which is *essential* when trying to decide what compromises to make.
+How can we reach consensus on the right tradeoffs if we are not even aligned on what the solution would be if we *didn't* have to make any compromises?
 
-My favorite example, and something I’m proud to have personally helped drive is the current [CSS Nesting syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting).
-We had plenty of signal for what the optimal syntax was for users, but it had been vetoed by engineering across all major browsers due to prohibitive performance, so we had to design around certain parsing constraints.
-Instead of completely diverging, we used this optimal syntax as a north star, and designed and shipped an intermediate syntax I proposed that was fully compatible with it, just a little more explicit in some cases ([Option 3](https://webkit.org/blog/13607/help-choose-from-options-for-css-nesting-syntax/) for anyone who followed this).
-Once we got consensus on that, I started trying to get people on board to explore ways (and brainstorm potential algorithms) to bridge the gap.
-A few other Working Group members joined me, with my co-TAG member Peter Linss perhaps being most vocal.
+Third, it builds **team momentum**.
+Doing usability testing on a prototype can do wonders for getting people on board who may have previously been skeptical.
+I would strongly advise to include engineers in this process, as engineering momentum can literally make the difference between what is *possible* and what is *not*.
+
+Last, I have often seen **"unimplementable" solutions become implementable** later on, due to changes in internal or external factors, or simply because a brilliant engineer had a brilliant idea that made the impossible, possible.
+In my 11 years of designing web technologies, I have seen this happen so many times, I now interpret "cannot be done" as "really hard — right now".
+
+### Mini Case study 1: CSS Nesting Syntax
+
+My favorite example, and something I’m proud to have personally helped drive is the current [CSS Nesting syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting), now [shipped in every browser](https://caniuse.com/css-nesting).
+We had plenty of signal for what the optimal syntax was for users (North Star UI), but it had been vetoed by engineering across all major browsers due to prohibitive performance, so we had to design around certain parsing constraints.
+The [original design](https://www.w3.org/TR/2021/WD-css-nesting-1-20210831/#nesting) was quite verbose, actively conflicted with the NSUI syntax, and had poor compatibility with another related feature (`@scope`).
+Instead of completely diverging, I [proposed](https://github.com/w3c/csswg-drafts/issues/7834#issuecomment-1272373216) a syntax that was a subset of our NSUI, just more explicit in some (common) cases.
+[Originally discussed as *“Lea’s proposal”*](https://github.com/w3c/csswg-drafts/blob/2535b93ca241a1db5a29c47c5b22c5b1d0be2e71/css-nesting-1/proposals.md), it was later named "Non-letter start proposal" but became known as [Option 3](https://webkit.org/blog/13607/help-choose-from-options-for-css-nesting-syntax/) from its position among the five options considered.
+After some [intense weighing of tradeoffs](https://github.com/w3c/csswg-drafts/blob/main/css-nesting-1/proposals.md) and several user [polls](https://github.com/w3c/csswg-drafts/blob/main/css-nesting-1/proposals.md#twitter-polls) and [surveys](https://webkit.org/blog/13607/help-choose-from-options-for-css-nesting-syntax/), the <abbr title="Working Group">WG</abbr> resolved to adopt that syntax.
+
+Once we got consensus on that, I [started trying](https://github.com/w3c/csswg-drafts/issues/7961) to get people on board to explore ways (and brainstorm potential algorithms) to bridge the gap.
+A few other WG members joined me, with my co-TAG member Peter Linss perhaps being most vocal.
 We initially faced a lot of resistance from browser engineers, until eventually a couple Chrome engineers closed on a way to implement the north star syntax 🎉, and as they say, *the rest is history*.
 
 It was not easy to get there, and required weighing *Evolution* as a factor.
