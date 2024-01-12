@@ -472,3 +472,15 @@ He even subsequently proceeded to quote concepts from it in a [number of](https:
 
 [Charlie Robbins](https://www.linkedin.com/posts/charlierobbins_genius-from-lea-verou-on-how-to-iterate-towards-activity-7145828200277831682-K7GX?utm_source=share&utm_medium=member_desktop)
 #}
+
+[Nate Baldwin](https://www.linkedin.com/in/natebaldwindesign/) (Principal Product Designer at Intuit) [reposted and wrote](https://twitter.com/NateBaldwinArt/status/1738748897928077400):
+
+> This is a wonderful article! What @LeaVerou defines is what I consider platform design, which I think sits one level below UI systems design. Ie:
+>
+> Product design
+> ⬇️
+> Systems design (UI)
+> ⬇️
+> Platform design
+>
+> Although her approach to design is relevant to each.
