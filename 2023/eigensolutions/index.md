@@ -93,7 +93,7 @@ Pain points get processed into use cases, which accumulate in the use case backl
 </figure>
 
 Unlike the linear design process of transactional processes,
-the design process for creator tools often consists of *matching* use cases to solutions, which can happen before, during, or after idea conception:
+the design process for creator tools often consists of *matching* use cases to solutions, which can happen before, during, or after idea conception.
 
 {#
 <div class="warning" style="--label: 'TBD'">
