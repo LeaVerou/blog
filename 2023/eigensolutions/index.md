@@ -25,6 +25,7 @@ Designing eigensolutions takes a mindset shift from linear design to *composabil
 
 </div>
 <!-- more -->
+
 ## Creator tools are not Uber or Facebook
 
 In product literature, the design process looks a bit like this:
