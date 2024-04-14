@@ -17,9 +17,15 @@ The promise of Web Components was that we'd get this convenience, but for a much
 
 Or, that was the idea. Somewhere along the way, the space got flooded by JS frameworks aficionados, who revel in complex APIs, overengineered build processes and dependency graphs that look like the roots of a banyan tree.
 
+<figure>
+
 ![](https://live.staticflickr.com/2025/32441377780_e3acf6de12_b.jpg)
 
+<figcaption>
+
 This is what the roots of a Banyan tree look like. [Photo by David Stanley on Flickr (CC-BY)](https://www.flickr.com/photos/79721788@N00/32441377780/).
+</figcaption>
+</figure>
 
 Perusing the components on [webcomponents.org](https://www.webcomponents.org/) fills me with anxiety, and I'm perfectly comfortable writing JS — I write JS for a living! What hope do those who can't write JS have? Using a custom element from the directory often needs to be preceded by a ritual of npm flugelhorn, import clownshoes, build quux, all completely unapologetically because "here is my truckload of dependencies, yeah, what". Many steps are even omitted, likely because they are "obvious". Often, you wade through the maze only to find the component doesn't work anymore, or is not fit for your purpose.
 
