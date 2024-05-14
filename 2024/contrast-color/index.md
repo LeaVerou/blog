@@ -1,5 +1,5 @@
 ---
-title: "On using CSS to automatically pick text colors and compliance vs readability"
+title: "Color contrast, automatic text color, and compliance vs readability"
 toc: true
 draft: true
 tags:
@@ -15,37 +15,79 @@ Can we emulate the upcoming CSS [`contrast-color()`](https://drafts.csswg.org/cs
 And if so, what are the tradeoffs involved and how should to best balance them?
 </div>
 
-[Relative Colors](/specs/#relative-colors) (RCS) is one of the [CSS features I designed](/specs/) that I’m the most proud of.
+## Relative Colors
+
+Out of all the [CSS features I designed](/specs/), [Relative Colors](/specs/#relative-colors) aka _Relative Color Syntax_ (RCS) is definitely in the top 5 of those I’m most proud of.
 In a nutshell, they allow CSS authors to derive a new color from an existing color value by doing arbitrary math on color components:
 
 ```css
---lighter-color: oklch(from var(--color) calc(l * 1.2) c h);
+--color-lighter: oklch(from var(--color) calc(l * 1.2) c h);
+--color-alpha-50: oklab(from var(--color) l a b / 50%);
 ```
 
-As of May 2024, they have [shipped in every browser except Firefox](https://caniuse.com/css-relative-colors),
-but given that they are an [Interop 2024 focus area](https://web.dev/blog/interop-2024)
-and that [Firefox has expressed a positive standards position](https://github.com/mozilla/standards-positions/issues/841),
-I would expect them to ship there soon as well.
+The elevator pitch was that by allowing these kinds of lower level operations, they provide flexibility on how color variations are derived,
+giving us more time to figure out what the appropriate higher level primitives should be.
 
-While most [Relative Colors tutorials](https://developer.chrome.com/blog/css-relative-color-syntax) show examples revolving around tweaking one color component up or down (and there is indeed a host of use cases that just needs that),
-there are also a lot more nonobvious pain points that Relative Colors can solve.
+As of May 2024, RCS has [shipped in every browser except Firefox](https://caniuse.com/css-relative-colors),
+but given that it is an [Interop 2024 focus area](https://web.dev/blog/interop-2024),
+that [Firefox has expressed a positive standards position](https://mozilla.github.io/standards-positions/#css-relative-color-syntax),
+and that the [Bugzilla issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1701488) has had some recent activity and has been assigned,
+I would expect it to ship there soon as well, making it [Baseline](https://web.dev/baseline) soon after.
 
-One of the big longstanding CSS pain points is that there is no way to specify a text color that is readable over an arbitrary background color (e.g. white on darker backgrounds and black on lighter backgrounds).
-The good news is that this is actually coming, as the CSS function [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color) (which you may have heard of as `color-contrast()`, an earlier name).
-It had stalled for years, but I recently scoped it down to an MVP that may actually ship soonish,
-which circumvents some very difficult design decisions of the full-blown feature.
+Most [Relative Colors tutorials](https://developer.chrome.com/blog/css-relative-color-syntax)
+revolve around its primary driving use cases:
+making tints and shades or other color variations by tweaking a specific color component up or down,
+and/or overriding a color component with a fixed value.
+While this does indeed address some very common pain points,
+it is merely scratching the surface of what is possible with RCS.
+This article aims to explore a more advanced use case.
 
+## `contrast-color()`
+
+A big longstanding CSS pain point is that there is no way to specify a text color that is automatically guaranteed to be readable over an arbitrary background color, e.g. white on darker backgrounds and black on lighter backgrounds.
+
+Why would one need that?
+The primary use case is when colors are outside the control over the CSS author.
+This includes:
+- Colors defined by the end-user. An example you’re likely familiar with: GitHub labels. Think of how you select an arbitrary color when creating a label and GitHub automatically picks the text color — often poorly (we’ll see why in a bit)
+- Colors defined by another developer. E.g. you’re writing a web component that supports certain CSS variables for styling.
+You *could* require separate variables for the text and background, but that reduces the usability of your web component by making it more of a hassle to use.
+Wouldn’t it be great if it could just use a [sensible default](https://www.nngroup.com/articles/slips/), that you can, but rarely need to override?
+- Colors defined by an external design system, like [Open Props](https://open-props.style/).
+
+But even in a codebase where a single author controls everything, it can improve modularization and code reuse.
+
+The good news is that this is actually coming, as the CSS function [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color).
+This is not new, you may have heard of it as `color-contrast()` before, an earlier name.
+I [recently drove consensus to scope it down to an MVP](https://github.com/w3c/csswg-drafts/issues/9166) that addresses the most prominent pain points and can actually ship soonish,
+as it circumvents some very difficult design decisions that had caused the full-blown feature to stall.
+
+Usage will look like this:
+
+```css
+background: var(--color);
+color: contrast-color(var(--color));
+```
+
+Glorious, isn’t it?
 Of course, soonish in spec years is still, well, years.
-If you see [my past spec work](/specs/) with a bit of luck, it can take as little as 2 years to get a feature shipped across all major browsers after it’s been specced.
-But 2 years is also a long time, what can we do until then?
+As a data point, you can see in [my past spec work](/specs/) that with a bit of luck (and browser interest), it can take as little as 2 years to get a feature shipped across all major browsers after it’s been specced.
+But 2 years is also a long time (and it could be longer).
+Is there any recourse until then?
 
+As you may have guessed from the title, the answer is yes.
 It may not be pretty, but there is a way to emulate `contrast-color()` (or something close to it) using Relative Colors.
 
-## Emulating `contrast-color()` using Relative Colors
+## Using RCS to automatically compute a contrasting text color
 
-Let’s assume there is some L(ightness) value above which we use black text and white text and they are guaranteed to have good contrast.
+In the following we will use the [OKLCh color space](), which is the most [perceptually uniform]() [polar color space]() that CSS supports.
+
+Let’s assume there is a Lightness value above which black text is guaranteed to be readable regardless of the chroma and hue,
+and below which white text is guaranteed to be readable.
 We will validate that assumption later, but for now let’s take it for granted.
-After some experimentation, let’s use `0.7` as that value, but assign it to a variable so we can easily change it later:
+In the rest of this article, we’ll call that value the **threshold**.
+For now we will use `0.7`, but will compute it more rigorously in the next section.
+Let’s assign it to a variable:
 
 ```css
 --l-threshold: 0.7;
@@ -53,41 +95,64 @@ After some experimentation, let’s use `0.7` as that value, but assign it to a 
 
 Most RCS examples in the wild use `calc()` with simple additions and multiplications.
 However, **any math function supported by CSS is actually fair game**, including `clamp()`, trigonometric functions, and many others.
+For example, if you wanted to create a lighter tint of a core color with RCS, you could do something like thi:
 
-In this case, we want to come up with an expression that is composed of CSS math functions already supported widely
-and will return `1` if `l <= var(--l-threshold)` and `0` if `l > var(--l-threshold)`.
+```css
+background: oklch(from var(--color) 90% clamp(0, c, 0.1) h);
+```
 
-If we can manage to find an expression that will be negative for `l > var(--l-threshold)` and over 1 for `l <= var(--l-threshold)`, we can use `clamp(0, var(--l), 1)` to get the desired result.
-Now, a ratio of `var(--l-threshold) / l` is over 1 for `l <= var(--l-threshold)` and under 1 for `l > var(--l-threshold)`.
-This means that if we subtract `1` from it, it will give us a negative number for `l > var(--l-threshold)` and a positive one for `l <= var(--l-threshold)`.
-We’re almost there, but we didn’t want a positive number, we wanted a number over `1`.
-However, once we have a negative number for one branch and a positive for the other branch, the rest is easy:
-we can simply multiply this by a large enough number so that the negative number becomes a large negative number and the positive number becomes a large positive number.
+Let’s work bakwards from the desired result.
+We want to come up with an expression that is composed of CSS math functions already supported widely
+and will return `1` if `l` &le; var(--l-threshold)` and `0` if otherwise.
+Then we could use that value as the lightness of a new color:
+
+```css
+--l: /* ??? */;
+color: oklch(var(--l) 0 0);
+```
+
+The CSS math functions that are widely supported are:
+- `calc()`
+- `min()`, `max()`, `clamp()`
+- [Trigonometric functions](https://drafts.csswg.org/css-values-4/#trig-funcs) (`sin()`, `cos()`, `tan()`, `asin()`, `acos()`, `atan()`, `atan2()`
+- [Exponential functions](https://drafts.csswg.org/css-values-4/#exponent-funcs) (`exp()`, `log()`, `log2()`, `log10()`, `sqrt()`)
+
+We can simplify the task a bit:
+if we can manage to find an expression that will be negative when `l` > `var(--l-threshold)` and > 1 when `l` &le; `var(--l-threshold)`,
+we can use `clamp(0, var(--l), 1)` to get the desired result.
+
+One idea would be to use ratios.
+The ratio of `var(--l-threshold) / l` is > 1 for `l` &le; `var(--l-threshold)` and < 1 when `l` > `var(--l-threshold)`.
+This means that if we subtract `1`, it will give us a negative number for `l > var(--l-threshold)` and a positive one for `l <= var(--l-threshold)`.
+Then all we need to do is multiply that expression by a huge number so that the positive number is guaranteed to be over 1.
 
 Putting it all together, it looks like this:
 
 ```css
 --l-threshold: 0.7;
---l: clamp(0, (var(--l-threshold) / l - 1) * 9999999, 1);
+--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
 color: oklch(from var(--color) var(--l) 0 h);
 ```
 
 One worry might be that if L gets close enough to the threshold we may get a number between 0 - 1,
-but in my experiments this never happened, presumably since precision is not infinite.
+but in my experiments this never happened, presumably since precision is finite.
 
-## Is there such a threshold? And if so, what is it?
+## Does this mythical threshold actually exist?
 
-We have until now made the assumption that such a threshold exists, but that is not obvious.
-Perhaps there is no "safe" lightness threshold that we can use.
+In the previous section we’ve made a pretty big assumption:
+That there is a L value above which black text is guaranteed to be readable regardless of the chroma and hue,
+and below which white text is guaranteed to be readable.
+It is time to put this claim to the test.
 
 When people first year about perceptually uniform color spaces like [LCH]() and its improved version, [OKLCH](),
 they imagine that they can infer the contrast between two colors by simply comparing their L values.
-This is unfortunately not true, but there is certainly _significant_ correlation between L values and contrast.
+This is unfortunately not true, as contrast depends on more factors than perceptual lightness.
+However, there is certainly _significant_ correlation between Lightness values and contrast.
 
 At this point, I should point out that while most people are aware of the WCAG 2.1 contrast algorithm,
 which is part of the Web Content Accessibility Guidelines and baked into law in many countries,
-it has been known for a while that its results are actually quite poor.
-So bad in fact that in some tests it even [performs almost as bad as random chance](https://www.cedc.tools/article.html).
+**it has been known for a while that its results are actually quite poor**.
+So bad in fact that in some tests it [performs almost as bad as random chance](https://www.cedc.tools/article.html).
 There is a newer contrast algorithm, [APCA](https://apcacontrast.com/) that produces _far_ better results,
 but is not yet part of any standard or legislation, and there have previously been some bumps along the way with making it freely available to the public (which seem to be largely resolved).
 
@@ -99,7 +164,7 @@ I ran [some quick experiments](research/) using [Color.js](https://colorjs.io) w
 in increments of increasing granularity and calculate the lightness ranges for colors where white was the "best" text color (= produced higher contrast than black) and vice versa.
 I also compute the brackets for each level (fail, AA, AAA, AAA+) for both APCA and WCAG.
 
-This is [the table produced with C ∈ [0, 0.4] (step = 0.025) and H ∈ [0, 360) (step = 1)](research/?c=0,0.4,0.025&h=0,359,1):
+This is <a href="research/?c=0,0.4,0.025&h=0,359,1">the table produced with C ∈ [0, 0.4\] (step = 0.025) and H ∈ [0, 360) (step = 1)</a>:
 
 <table>
 	<thead><tr><th rowspan="2">Text color</th><th rowspan="2">Level</th><th colspan="2">APCA</th><th colspan="2">WCAG 2.1</th></tr><tr><th>Min</th><th>Max</th><th>Min</th><th>Max</th></tr></thead>
@@ -157,7 +222,7 @@ You can write any valid CSS color in the text field, though a polar format like 
 <script src="https://elements.colorjs.io/src/color-swatch/color-swatch.js" type="module"></script>
 <style>
 .contrast-color {
-	--l: clamp(0, (var(--l-threshold) / l - 1) * 9999999, 1);
+	--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
 	color: oklch(from var(--color) var(--l) 0 h);
 }
 </style>
