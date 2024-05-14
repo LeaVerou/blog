@@ -1,0 +1,97 @@
+@import url("/assets/tokens.css");
+@import url("/assets/components/tables.css");
+
+body {
+	font: 100%/1.5 system-ui;
+	padding: 1em;
+	max-width: 55em;
+	margin: auto;
+}
+
+fieldset {
+	border: 1px solid oklch(90% 3% 180);
+	border-radius: .3rem;
+}
+
+input, textarea, select, button {
+	font: inherit;
+}
+
+table {
+	margin-top: 1em;
+	table-layout: fixed;
+}
+
+progress {
+	width: 100%;
+}
+
+.toolbar {
+	display: flex;
+	gap: .4em;
+	align-items: center;
+	margin-block: 1em;
+}
+
+.bounds {
+	--_l: var(--l, 50%);
+	--mid-h: calc((var(--min-h) + var(--max-h)) / 2);
+	--color-min-c-min-h: oklch(var(--_l) var(--min-c) var(--min-h));
+	--color-min-c-mid-h: oklch(var(--_l) var(--min-c) var(--mid-h));
+	--color-min-c-max-h: oklch(var(--_l) var(--min-c) var(--max-h));
+	--color-max-c-min-h: oklch(var(--_l) var(--max-c) var(--min-h));
+	--color-max-c-mid-h: oklch(var(--_l) var(--max-c) var(--mid-h));
+	--color-max-c-max-h: oklch(var(--_l) var(--max-c) var(--max-h));
+
+	display: grid;
+	grid-template-columns: auto repeat(3, 1fr);
+	gap: .4em;
+	--border-width: 1em;
+	background:
+		linear-gradient(to right  in oklch, var(--color-min-c-min-h) var(--border-width), var(--color-min-c-mid-h), var(--color-min-c-max-h)) 0 0 / 100% var(--border-width),
+		linear-gradient(to right  in oklch, var(--color-max-c-min-h) var(--border-width), var(--color-max-c-mid-h), var(--color-max-c-max-h)) 0 100% / 100% var(--border-width),
+		linear-gradient(to bottom in oklab, var(--color-min-c-min-h) var(--border-width), var(--color-max-c-min-h)) 0 0 / var(--border-width) 100%,
+		linear-gradient(to bottom in oklab, var(--color-min-c-max-h) var(--border-width), var(--color-max-c-max-h)) 100% 0 / var(--border-width) 100%;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	border: 1em solid transparent;
+	border-radius: .5rem;
+
+	legend {
+		font-weight: bold;
+		background: white;
+		padding: .1em .4em;
+		text-transform: uppercase;
+	}
+
+	p {
+		display: grid;
+		grid-column: 1 / -1;
+		grid-template-columns: subgrid;
+
+		label {
+			display: flex;
+			gap: .4em;
+
+			input {
+				flex: 1;
+			}
+		}
+	}
+}
+
+/* Important numbers */
+.white .fail .wcag21.min,
+.white .best .apca.max,
+.black .fail .wcag21.max,
+.black .best .apca.min {
+	font-weight: bold;
+}
+
+/* Unimportant numbers */
+td[data-value$="Infinity"],
+td[data-value="0"],
+td[data-value="1"] {
+	color: color-mix(in oklab, canvastext 50%, oklab(none none none / 0%));
+	font-weight: inherit;
+}

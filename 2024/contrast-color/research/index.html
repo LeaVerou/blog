@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrast ranges for white & black text by L</title>
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔲</text></svg>'>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="index.js"></script>
+</head>
+<body>
+
+<h1>Contrast ranges for white & black text by L</h1>
+
+<main :style="{
+	'--min-c': coords.c.min,
+	'--max-c': coords.c.max,
+	'--min-h': coords.h.min,
+	'--max-h': coords.h.max,
+	'--l': current.l,
+	'--c': current.c,
+	'--h': current.h,
+}">
+	<fieldset class="bounds">
+		<legend>Bounds</legend>
+		<p class="chroma">
+			Chroma:
+			<label>From <input type="number" v-model="coords.c.min" min="0" max="1" step=".001"></label>
+			<label>to <input type="number" v-model="coords.c.max" min="0" max="1" step=".001"></label>
+			<label>in steps of <input type="number" v-model="coords.c.step" min="0" max="1" step=".001"></label>
+		</p>
+		<p class="hue">
+			Hue:
+			<label>From <input type="number" v-model="coords.h.min" min="0" max="360" step="1"></label>
+			<label>to <input type="number" v-model="coords.h.max" min="0" max="360" step="1"></label>
+			<label>in steps of <input type="number" v-model="coords.h.step" min="0" max="360" step="1"></label>
+		</p>
+	</fieldset>
+	<progress min="0" max="2.8" :value="progress"></progress>
+	<div class="toolbar">
+		<button @click="start()">Start {{ this.progress > 0 ? "over" : "" }}</button>
+
+		{{ status }}
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th rowspan="2">Text color</th>
+				<th rowspan="2">Level</th>
+				<th colspan="2">APCA</th>
+				<th colspan="2">WCAG 2.1</th>
+			</tr>
+			<tr>
+				<th>Min</th>
+				<th>Max</th>
+				<th>Min</th>
+				<th>Max</th>
+			</tr>
+		</thead>
+		<tbody v-for="(levels, color) in stats.WCAG21" :class="color">
+			<tr v-for="(bounds, level, index) in levels" :class="level.toLowerCase()">
+				<th v-if="index === 0" :rowspan="Object.keys(levels).length">{{ color }}</th>
+				<td>{{ level }}</td>
+
+				<template v-for="(value, i) of [stats.APCA[color][level]?.[0], stats.APCA[color][level]?.[1], bounds[0], bounds[1]]">
+					<td :class="`${ i >= 2? 'wcag21' : 'apca' } ${ i % 2 ? 'max' : 'min' }`"
+					    :data-value="value">{{ percent(value) }}</td>
+				</template>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>Conclusions</h2>
+
+	<p>These are the <strong>guarantees</strong> we have for each range of L based on the data above.
+		It does not mean that pairs outside these ranges will <em>certainly</em> fail or won’t be readable,
+		just that we cannot tell just by looking at the L.
+	</p>
+
+	<table>
+		<thead>
+			<tr>
+				<th colspan="2">L:</th>
+				<th v-for="i in bounds.length - 1">
+					<span class="divider before">{{ percent(bounds[i - 1]) }} </span>
+					to
+					<span class="divider after">{{ percent(bounds[i]) }}</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="(color, i) of ['white', 'black']">
+				<th rowspan="2" v-if="i === 0">
+					Compliance
+					<small>WCAG 2.1</small>
+				</th>
+				<th>{{ color }}</th>
+				<td v-for="value of compliance_bounds[color]" :class="value ? 'pass' : 'fail'">
+					{{ value ? "✅" : "❌" }} {{ value || "" }}
+				</td>
+			</tr>
+			<tr v-for="(color, i) of ['white', 'black']">
+				<th rowspan="2" v-if="i === 0">
+					Readability
+					<small>APCA</small>
+				</th>
+				<th>{{ color }}</th>
+				<td v-for="value of readability_bounds[color]" :class="value === 'best' ? 'pass' : value === 'unknown' ? 'fail' : 'ok'">
+					{{ value === "best" ? "😍 Best" : value === "ok" ? "🙂 OK" : "🤷🏽‍♀️ ?" }}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- <h3>Compliance (WCAG)</h3>
+
+	<table>
+		<thead>
+			<tr>
+				<th>
+					0 &le; L < {{ percent(stats.WCAG21.black.fail[1]) }}
+				</th>
+				<th>
+					{{ percent(stats.WCAG21.black.fail[1]) }} &le; L &le; {{ percent(stats.WCAG21.white.fail[0]) }}
+				</th>
+				<th>
+					{{ percent(stats.WCAG21.white.fail[0]) }}  < L &le; 100%
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<td>
+				White text passes
+			</td>
+			<td>
+				Both pass
+			</td>
+			<td>
+				Black text passes
+			</td>
+		</tbody>
+	</table>
+
+	<h3>Readability (APCA)</h3>
+
+	White:
+	<table>
+		<thead>
+			<tr>
+				<th class="pass">
+					0% &le; L < {{ percent(stats.APCA.black.best[0]) }}
+				</th>
+				<th>
+					{{ percent(stats.APCA.black.best[0]) }} &le; L < {{ percent(stats.APCA.white.fail[0]) }}
+				</th>
+				<th class="fail">
+					{{ percent(stats.APCA.white.fail[0]) }} &le; L &le; 100%
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="pass">
+					Best
+				</td>
+				<td>
+					Adequate
+				</td>
+				<td class="fail">
+					Unknown
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	Black:
+	<table>
+		<thead>
+			<tr>
+				<th class="fail">
+					0% &le; L &le; {{ percent(stats.APCA.black.fail[1]) }}
+				</th>
+				<th>
+					{{ percent(stats.APCA.black.fail[1]) }} < L &le; {{ percent(stats.APCA.white.best[1]) }}
+				</th>
+				<th class="pass">
+					{{ percent(stats.APCA.white.best[1]) }} < L &le; 100%
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="fail">
+					Unknown
+				</td>
+				<td>
+					Adequate
+				</td>
+				<td class="pass">
+					Best
+				</td>
+			</tr>
+		</tbody>
+	</table> -->
+</main>
+
+</body>
+</html>
