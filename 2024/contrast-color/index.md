@@ -1,5 +1,5 @@
 ---
-title: "On auto contrasting text color, and compliance vs readability"
+title: "Automatic contrasting text color, and compliance vs readability"
 toc: true
 draft: true
 tags:
