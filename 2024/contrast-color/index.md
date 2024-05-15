@@ -1,5 +1,5 @@
 ---
-title: "Color contrast, automatic text color, and compliance vs readability"
+title: "On auto contrasting text color, and compliance vs readability"
 toc: true
 draft: true
 tags:
@@ -12,35 +12,39 @@ tags:
 <div class=nutshell>
 
 Can we emulate the upcoming CSS [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color) function via CSS features that have already widely shipped?
-And if so, what are the tradeoffs involved and how should to best balance them?
+And if so, what are the tradeoffs involved and how to best balance them?
 </div>
 
 ## Relative Colors
 
-Out of all the [CSS features I designed](/specs/), [Relative Colors](/specs/#relative-colors) aka _Relative Color Syntax_ (RCS) is definitely in the top 5 of those I’m most proud of.
-In a nutshell, they allow CSS authors to derive a new color from an existing color value by doing arbitrary math on color components:
+Out of [all the CSS features I have designed](/specs/),
+[Relative Colors](/specs/#relative-colors) aka _Relative Color Syntax_ (RCS) is definitely among the ones I’m most proud of.
+In a nutshell, they allow CSS authors to derive a new color from an existing color value by doing arbitrary math on color components
+in any supported color space:
 
 ```css
 --color-lighter: oklch(from var(--color) calc(l * 1.2) c h);
 --color-alpha-50: oklab(from var(--color) l a b / 50%);
 ```
 
-The elevator pitch was that by allowing these kinds of lower level operations, they provide flexibility on how color variations are derived,
+The elevator pitch was that by allowing lower level operations they provide authors flexibility on how to derive color variations,
 giving us more time to figure out what the appropriate higher level primitives should be.
 
 As of May 2024, RCS has [shipped in every browser except Firefox](https://caniuse.com/css-relative-colors),
 but given that it is an [Interop 2024 focus area](https://web.dev/blog/interop-2024),
 that [Firefox has expressed a positive standards position](https://mozilla.github.io/standards-positions/#css-relative-color-syntax),
 and that the [Bugzilla issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1701488) has had some recent activity and has been assigned,
-I would expect it to ship there soon as well, making it [Baseline](https://web.dev/baseline) soon after.
+I am optimistic it would ship in Firefox soon.
+My guess it that it would become [Baseline](https://web.dev/baseline) by the end of 2024.
 
 Most [Relative Colors tutorials](https://developer.chrome.com/blog/css-relative-color-syntax)
 revolve around its primary driving use cases:
 making tints and shades or other color variations by tweaking a specific color component up or down,
-and/or overriding a color component with a fixed value.
-While this does indeed address some very common pain points,
-it is merely scratching the surface of what is possible with RCS.
-This article aims to explore a more advanced use case.
+and/or overriding a color component with a fixed value,
+like the example above.
+While this does address some very common pain points,
+it is merely scratching the surface of what RCS makes possible.
+This article explores a more advanced use case, with the hope that it will spark more creative uses of RCS in the wild.
 
 ## `contrast-color()`
 
@@ -49,13 +53,13 @@ A big longstanding CSS pain point is that there is no way to specify a text colo
 Why would one need that?
 The primary use case is when colors are outside the control over the CSS author.
 This includes:
-- Colors defined by the end-user. An example you’re likely familiar with: GitHub labels. Think of how you select an arbitrary color when creating a label and GitHub automatically picks the text color — often poorly (we’ll see why in a bit)
-- Colors defined by another developer. E.g. you’re writing a web component that supports certain CSS variables for styling.
+- **User-defined colors.** An example you’re likely familiar with: GitHub labels. Think of how you select an arbitrary color when creating a label and GitHub automatically picks the text color — often poorly (we’ll see why in a bit)
+- **Colors defined by another developer.** E.g. you’re writing a web component that supports certain CSS variables for styling.
 You *could* require separate variables for the text and background, but that reduces the usability of your web component by making it more of a hassle to use.
 Wouldn’t it be great if it could just use a [sensible default](https://www.nngroup.com/articles/slips/), that you can, but rarely need to override?
-- Colors defined by an external design system, like [Open Props](https://open-props.style/).
+- **Colors defined by an external design system**, like [Open Props](https://open-props.style/) or [Material Design](https://material.io/).
 
-But even in a codebase where a single author controls everything, it can improve modularization and code reuse.
+Even in a codebase where a single author controls everything, reducing couplings can improve modularity and facilitate better code reuse.
 
 The good news is that this is actually coming, as the CSS function [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color).
 This is not new, you may have heard of it as `color-contrast()` before, an earlier name.
@@ -140,7 +144,7 @@ but in my experiments this never happened, presumably since precision is finite.
 ## Does this mythical threshold actually exist?
 
 In the previous section we’ve made a pretty big assumption:
-That there is a L value above which black text is guaranteed to be readable regardless of the chroma and hue,
+That there is a Lightness value above which black text is guaranteed to be readable regardless of the chroma and hue,
 and below which white text is guaranteed to be readable.
 It is time to put this claim to the test.
 
@@ -149,7 +153,7 @@ they imagine that they can infer the contrast between two colors by simply compa
 This is unfortunately not true, as contrast depends on more factors than perceptual lightness.
 However, there is certainly _significant_ correlation between Lightness values and contrast.
 
-At this point, I should point out that while most people are aware of the WCAG 2.1 contrast algorithm,
+At this point, I should point out that while most people are aware of the [WCAG 2.1 contrast algorithm](https://www.w3.org/TR/WCAG21/#contrast-minimum),
 which is part of the Web Content Accessibility Guidelines and baked into law in many countries,
 **it has been known for a while that its results are actually quite poor**.
 So bad in fact that in some tests it [performs almost as bad as random chance](https://www.cedc.tools/article.html).
