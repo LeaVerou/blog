@@ -7,6 +7,7 @@ tags:
   - color
   - a11y
   - specs
+image: images/demo.png
 ---
 
 <div class=nutshell>
@@ -30,12 +31,18 @@ in any supported color space:
 The elevator pitch was that by allowing lower level operations they provide authors flexibility on how to derive color variations,
 giving us more time to figure out what the appropriate higher level primitives should be.
 
-As of May 2024, RCS has [shipped in every browser except Firefox](https://caniuse.com/css-relative-colors),
+As of May 2024, RCS has [shipped in every browser except Firefox](https://caniuse.com/css-relative-colors).
 but given that it is an [Interop 2024 focus area](https://web.dev/blog/interop-2024),
 that [Firefox has expressed a positive standards position](https://mozilla.github.io/standards-positions/#css-relative-color-syntax),
 and that the [Bugzilla issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1701488) has had some recent activity and has been assigned,
 I am optimistic it would ship in Firefox soon.
 My guess it that it would become [Baseline](https://web.dev/baseline) by the end of 2024.
+
+Even if my prediction is off, it already is available to **83% of users worldwide**,
+and if you sort [its caniuse page](https://caniuse.com/css-relative-colors) by usage,
+you will see the vast majority of the remaining 17% doesn’t come from Firefox,
+but from older Chrome and Safari versions.
+I think its current market share warrants production use today, as long as we use `@supports` to make sure things *work* in non-supporting browsers, even if less pretty.
 
 Most [Relative Colors tutorials](https://developer.chrome.com/blog/css-relative-color-syntax)
 revolve around its primary driving use cases:
@@ -108,7 +115,7 @@ Let’s assign it to a variable:
 
 Most RCS examples in the wild use `calc()` with simple additions and multiplications.
 However, **any math function supported by CSS is actually fair game**, including `clamp()`, trigonometric functions, and many others.
-For example, if you wanted to create a lighter tint of a core color with RCS, you could do something like thi:
+For example, if you wanted to create a lighter tint of a core color with RCS, you could do something like this:
 
 ```css
 background: oklch(from var(--color) 90% clamp(0, c, 0.1) h);
@@ -153,6 +160,26 @@ color: oklch(from var(--color) var(--l) 0 h);
 
 One worry might be that if L gets close enough to the threshold we may get a number between 0 - 1,
 but in my experiments this never happened, presumably since precision is finite.
+
+### Fallback for browsers that don’t support RCS
+
+The last piece of the puzzle is to provide a fallback for browsers that don’t support RCS.
+We can use `@supports` with any color property and any relative color value, e.g.:
+
+```css
+@supports (color: oklch(from red l c h)) {
+	.contrast-color {
+		background: hsl(0 0 100 / 50%);
+		color: black;
+	}
+}
+```
+
+In the spirit of making sure things work in non-supporting browsers, even if less pretty,
+some fallback ideas could be:
+- A white or semi-transparent white background with black text.
+- `-webkit-text-stroke` with a color opposite to the text color. This works better with bolder text, since half of the outline is inside the letterforms.
+- Many `text-shadow` values with a color opposite to the text color. This works better with thinner text, as it’s drawn behind the text.
 
 ## Does this mythical L threshold actually exist?
 
@@ -256,8 +283,12 @@ Edit the color below to see how the two thresholds work in practice, and compare
 
 <style>
 .contrast-color {
-	--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
-	color: oklch(from var(--color) var(--l) 0 h);
+	--text-shadow: 0 0 .05em black;
+	--text-shadow-2: var(--text-shadow), var(--text-shadow);
+	--text-shadow-4: var(--text-shadow-2), var(--text-shadow-2);
+	--text-shadow-8: var(--text-shadow-4), var(--text-shadow-4);
+	text-shadow: var(--text-shadow-8);
+	color: white;
 }
 
 #demo {
@@ -274,8 +305,31 @@ Edit the color below to see how the two thresholds work in practice, and compare
 		margin-bottom: 0;
 	}
 }
+
+@supports (color: oklch(from red l c h)) {
+	:root {
+		--supports-rcs: 1;
+	}
+
+	.if-no-rcs {
+		display: none;
+	}
+
+	.contrast-color {
+		--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
+		color: oklch(from var(--color) var(--l) 0 h);
+		text-shadow: none;
+	}
+}
 </style>
 
+<div class="warning if-no-rcs">
+
+Your browser does not support Relative Color Syntax, so the demo below will not work.
+This is what it looks like in a supporting browser:
+![Screenshot of demo](images/demo.png)
+
+</div>
 <section id="demo">
 <script type=module>
 import { getLevel } from "./research/util.js";
@@ -347,7 +401,17 @@ You can even turn this into a utility class that you can combine with different 
 ```css
 .contrast-color {
 	--l: clamp(0, (var(--l-threshold, 0.623) / l - 1) * infinity, 1);
-	color: oklch(from var(--color) var(--l) 0 h);
+
+	/* Fallback for browsers that don't support RCS */
+	color: white;
+	text-shadow: 0 0 .05em black, 0 0 .05em black, 0 0 .05em black, 0 0 .05em black;
+}
+
+@supports (color: oklch(from red l c h)) {
+	.contrast-color {
+		color: oklch(from var(--color) var(--l) 0 h);
+		text-shadow: none;
+	}
 }
 
 .pink {
