@@ -1,5 +1,5 @@
 ---
-title: "Automatic contrasting text color, and compliance vs readability"
+title: "Generating text colors with CSS, and balancing compliance vs readability"
 toc: true
 draft: true
 tags:
