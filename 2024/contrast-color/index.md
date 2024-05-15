@@ -5,8 +5,9 @@ draft: true
 tags:
   - css
   - color
+  - color-science
   - a11y
-  - specs
+  - web-standards
 image: images/demo.png
 ---
 
@@ -142,13 +143,15 @@ The CSS math functions that are widely supported are:
 </aside>
 
 We can simplify the task a bit:
-if we can manage to find an expression that will be negative when `l` > `var(--l-threshold)` and > 1 when `l` &le; `var(--l-threshold)`,
-we can use `clamp(0, var(--l), 1)` to get the desired result.
+We don’t need to find an expression that returns an exact value.
+If we can manage to find an expression that will be negative when <var>L</var> > <var>L<sub>threshold</sub></var> and > <var>1</var> when <var>L</var> ≤ <var>L<sub>threshold</sub></var>,
+we can use `clamp(0, /* expression */, 1)` to get the desired result.
 
 One idea would be to use ratios.
-The ratio of `var(--l-threshold) / l` is > 1 for `l` &le; `var(--l-threshold)` and < 1 when `l` > `var(--l-threshold)`.
-This means that if we subtract `1`, it will give us a negative number for `l` > `var(--l-threshold)` and a positive one for `l` &le; `var(--l-threshold)`.
-Then all we need to do is multiply that expression by a huge number so that the positive number is guaranteed to be over 1.
+
+The ratio of $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}}$ is > <var>1</var> for <var>L</var> ≤ <var>L<sub>threshold</sub></var> and < <var>1</var> when <var>L</var> > <var>L<sub>threshold</sub></var>.
+This means that $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}} - 1$ will be a negative number for <var>L</var> > <var>L<sub>threshold</sub></var> and a positive one for <var>L</var> > <var>L<sub>threshold</sub></var>.
+Then all we need to do is multiply that expression by a huge number so that the positive number is guaranteed to be over <var>1</var>.
 
 Putting it all together, it looks like this:
 
@@ -158,7 +161,7 @@ Putting it all together, it looks like this:
 color: oklch(from var(--color) var(--l) 0 h);
 ```
 
-One worry might be that if L gets close enough to the threshold we may get a number between 0 - 1,
+One worry might be that if L gets close enough to the threshold we could get a number between <var>0</var> - <var>1</var>,
 but in my experiments this never happened, presumably since precision is finite.
 
 ### Fallback for browsers that don’t support RCS
@@ -167,25 +170,34 @@ The last piece of the puzzle is to provide a fallback for browsers that don’t 
 We can use `@supports` with any color property and any relative color value, e.g.:
 
 ```css
+.contrast-color {
+	--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
+
+	/* Fallback */
+	background: hsl(0 0 0 / 50%);
+	color: white;
+}
+
 @supports (color: oklch(from red l c h)) {
 	.contrast-color {
-		background: hsl(0 0 100 / 50%);
-		color: black;
+		color: oklch(from var(--color) var(--l) 0 h);
+		background: none;
 	}
 }
 ```
 
 In the spirit of making sure things work in non-supporting browsers, even if less pretty,
 some fallback ideas could be:
-- A white or semi-transparent white background with black text.
+- A white or semi-transparent white background with black text or vice versa.
 - `-webkit-text-stroke` with a color opposite to the text color. This works better with bolder text, since half of the outline is inside the letterforms.
 - Many `text-shadow` values with a color opposite to the text color. This works better with thinner text, as it’s drawn behind the text.
 
 ## Does this mythical L threshold actually exist?
 
 In the previous section we’ve made a pretty big assumption:
-That there is a Lightness value above which black text is guaranteed to be readable regardless of the chroma and hue,
-and below which white text is guaranteed to be readable.
+That there is a Lightness value (<var>L<sub>threshold</sub></var>) above which black text is guaranteed to be readable regardless of the chroma and hue,
+and below which white text is guaranteed to be readable regardless of the chroma and hue.
+But does such a value exist?
 It is time to put this claim to the test.
 
 When people first hear about [perceptually uniform color spaces]() like [Lab](https://en.wikipedia.org/wiki/CIELAB_color_space), [LCH](https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_model) or their improved versions, [OkLab]() and [OKLCH](),
@@ -196,7 +208,7 @@ However, there is certainly _significant_ correlation between Lightness values a
 At this point, I should point out that while most web designers are aware of the [WCAG 2.1 contrast algorithm](https://www.w3.org/TR/WCAG21/#contrast-minimum),
 which is part of the [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/) and baked into law in many countries,
 **it has been known for years that it produces extremely poor results**.
-So bad in fact that in some tests it [performs almost as bad as random chance](https://www.cedc.tools/article.html).
+So bad in fact that in [some tests](https://www.cedc.tools/article.html) it performs almost as bad as random chance for any color that is not very light or very dark.
 There is a newer contrast algorithm, [APCA](https://apcacontrast.com/) that produces _far_ better results,
 but is not yet part of any standard or legislation, and there have previously been some bumps along the way with making it freely available to the public (which seem to be largely resolved).
 
