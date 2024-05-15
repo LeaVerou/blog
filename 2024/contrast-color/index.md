@@ -46,7 +46,7 @@ While this does address some very common pain points,
 it is merely scratching the surface of what RCS makes possible.
 This article explores a more advanced use case, with the hope that it will spark more creative uses of RCS in the wild.
 
-## `contrast-color()`
+## The CSS `contrast-color()` function
 
 A big longstanding CSS pain point is that there is no way to specify a text color that is automatically guaranteed to be readable over an arbitrary background color, e.g. white on darker backgrounds and black on lighter backgrounds.
 
@@ -58,6 +58,15 @@ This includes:
 You *could* require separate variables for the text and background, but that reduces the usability of your web component by making it more of a hassle to use.
 Wouldn’t it be great if it could just use a [sensible default](https://www.nngroup.com/articles/slips/), that you can, but rarely need to override?
 - **Colors defined by an external design system**, like [Open Props](https://open-props.style/) or [Material Design](https://material.io/).
+
+<figure>
+
+![Screenshot from GitHub issues showing many different labels with different colors](images/gh-labels.png)
+<figcaption>
+GitHub Labels are an example where colors are user-defined, and the UI needs to pick a text color that works with them.
+GitHub uses WCAG 2.1 to determine the text color, which is why (as we will see in the next section) the results are often poor.
+</figcaption>
+</figure>
 
 Even in a codebase where a single author controls everything, reducing couplings can improve modularity and facilitate better code reuse.
 
@@ -107,7 +116,7 @@ background: oklch(from var(--color) 90% clamp(0, c, 0.1) h);
 
 Let’s work bakwards from the desired result.
 We want to come up with an expression that is composed of CSS math functions already supported widely
-and will return `1` if `l` &le; var(--l-threshold)` and `0` if otherwise.
+and will return `1` if `l` &le; `var(--l-threshold)` and `0` if otherwise.
 Then we could use that value as the lightness of a new color:
 
 ```css
@@ -115,11 +124,15 @@ Then we could use that value as the lightness of a new color:
 color: oklch(var(--l) 0 0);
 ```
 
+<aside class="info">
+
 The CSS math functions that are widely supported are:
 - `calc()`
 - `min()`, `max()`, `clamp()`
 - [Trigonometric functions](https://drafts.csswg.org/css-values-4/#trig-funcs) (`sin()`, `cos()`, `tan()`, `asin()`, `acos()`, `atan()`, `atan2()`
 - [Exponential functions](https://drafts.csswg.org/css-values-4/#exponent-funcs) (`exp()`, `log()`, `log2()`, `log10()`, `sqrt()`)
+
+</aside>
 
 We can simplify the task a bit:
 if we can manage to find an expression that will be negative when `l` > `var(--l-threshold)` and > 1 when `l` &le; `var(--l-threshold)`,
@@ -127,7 +140,7 @@ we can use `clamp(0, var(--l), 1)` to get the desired result.
 
 One idea would be to use ratios.
 The ratio of `var(--l-threshold) / l` is > 1 for `l` &le; `var(--l-threshold)` and < 1 when `l` > `var(--l-threshold)`.
-This means that if we subtract `1`, it will give us a negative number for `l > var(--l-threshold)` and a positive one for `l <= var(--l-threshold)`.
+This means that if we subtract `1`, it will give us a negative number for `l` > `var(--l-threshold)` and a positive one for `l` &le; `var(--l-threshold)`.
 Then all we need to do is multiply that expression by a huge number so that the positive number is guaranteed to be over 1.
 
 Putting it all together, it looks like this:
@@ -141,32 +154,52 @@ color: oklch(from var(--color) var(--l) 0 h);
 One worry might be that if L gets close enough to the threshold we may get a number between 0 - 1,
 but in my experiments this never happened, presumably since precision is finite.
 
-## Does this mythical threshold actually exist?
+## Does this mythical L threshold actually exist?
 
 In the previous section we’ve made a pretty big assumption:
 That there is a Lightness value above which black text is guaranteed to be readable regardless of the chroma and hue,
 and below which white text is guaranteed to be readable.
 It is time to put this claim to the test.
 
-When people first year about perceptually uniform color spaces like [LCH]() and its improved version, [OKLCH](),
-they imagine that they can infer the contrast between two colors by simply comparing their L values.
+When people first hear about [perceptually uniform color spaces]() like [Lab](https://en.wikipedia.org/wiki/CIELAB_color_space), [LCH](https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_model) or their improved versions, [OkLab]() and [OKLCH](),
+they imagine that they can infer the contrast between two colors by simply comparing their L(ightness) values.
 This is unfortunately not true, as contrast depends on more factors than perceptual lightness.
 However, there is certainly _significant_ correlation between Lightness values and contrast.
 
-At this point, I should point out that while most people are aware of the [WCAG 2.1 contrast algorithm](https://www.w3.org/TR/WCAG21/#contrast-minimum),
-which is part of the Web Content Accessibility Guidelines and baked into law in many countries,
-**it has been known for a while that its results are actually quite poor**.
+At this point, I should point out that while most web designers are aware of the [WCAG 2.1 contrast algorithm](https://www.w3.org/TR/WCAG21/#contrast-minimum),
+which is part of the [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG21/) and baked into law in many countries,
+**it has been known for years that it produces extremely poor results**.
 So bad in fact that in some tests it [performs almost as bad as random chance](https://www.cedc.tools/article.html).
 There is a newer contrast algorithm, [APCA](https://apcacontrast.com/) that produces _far_ better results,
 but is not yet part of any standard or legislation, and there have previously been some bumps along the way with making it freely available to the public (which seem to be largely resolved).
 
-This means that creating accessible color pairings should ideally be a two step process:
-- Use APCA to ensure **actual readability**
-- **Compliance failsafe**: Ensure the result does not actively _fail_ WCAG 2.1
+<figure>
+<div style="padding: .5em 1em; background: hsl(180 62% 40%); color: white">Some text</div>
+<div style="padding: .5em 1em; background: hsl(180 62% 40%); color: black">Some text</div>
+<figcaption>Which of the two seems more readable?
+You may be surprised to find that the white text version fails WCAG 2.1,
+while the black text version even passes WCAG AAA!
+</figcaption>
+</figure>
 
-I ran [some quick experiments](research/) using [Color.js](https://colorjs.io) where I iterate over the OKLCh reference range (loosely based on the P3 gamut)
+So where does that leave web authors?
+In quite a predicament as it turns out.
+It seems that the best way to create accessible color pairings right now is a two step process:
+- Use APCA to ensure **actual readability**
+- **Compliance failsafe**: Ensure the result does not actively _fail_ WCAG 2.1.
+
+I ran [some quick experiments](research/) using [Color.js](https://colorjs.io)
+where I iterate over the [OKLCh reference range](https://drafts.csswg.org/css-color-4/#prr-oklch) (loosely based on the P3 gamut)
 in increments of increasing granularity and calculate the lightness ranges for colors where white was the "best" text color (= produced higher contrast than black) and vice versa.
 I also compute the brackets for each level (fail, AA, AAA, AAA+) for both APCA and WCAG.
+
+I then turned my exploration into an interactive playground where you can run the same experiments yourself,
+potentially with narrower ranges that fit your use case or higher granularity.
+
+<figure>
+<video src="videos/playground.mp4" loop autoplay muted style="max-height: 60vh"></video>
+<figcaption>Calculating lightness ranges and contrast brackets for black and white on different background colors.</figcaption>
+</figure>
 
 This is <a href="research/?c=0,0.4,0.025&h=0,359,1">the table produced with C ∈ [0, 0.4\] (step = 0.025) and H ∈ [0, 360) (step = 1)</a>:
 
@@ -191,53 +224,111 @@ This is <a href="research/?c=0,0.4,0.025&h=0,359,1">the table produced with C �
 Note that these are the min and max L values for each level.
 E.g. the fact that white text *can* fail WCAG when L ∈ [62.4%, 100%] doesn’t mean that *every* color with L > 62.4% will fail WCAG,
 just that *some* do.
-So, we can only draw meaningful conclusions by inverting the logic:
-Since all white text failures are with L ∈ [62.4%, 100%], it logically follows that if L < 62.4%, white text will pass WCAG
+So, **we can only draw meaningful conclusions by inverting the logic**:
+Since all white text failures are have an L ∈ [62.4%, 100%],
+it logically follows that if L < 62.4%, white text will pass WCAG
 regardless of what the color is.
 
-By applying this logic to all ranges, we can draw similar guarantees for many of these brackets (OK = pass but not best, ❌ = no guarantee either way):
-
-<table><thead><tr><th colspan="2"></th><th><span class="divider before">0%</span> to <span class="divider after">52.7%</span></th><th><span class="divider before">52.7%</span> to <span class="divider after">62.4%</span></th><th><span class="divider before">62.4%</span> to <span class="divider after">66.1%</span></th><th><span class="divider before">66.1%</span> to <span class="divider after">68.7%</span></th><th><span class="divider before">68.7%</span> to <span class="divider after">71.6%</span></th><th><span class="divider before">71.6%</span> to <span class="divider after">75.2%</span></th><th><span class="divider before">75.2%</span> to <span class="divider after">100%</span></th></tr></thead><tbody><tr><th rowspan="2"> Compliance <small>WCAG 2.1</small></th><th>white</th><td class="pass">✅ AA</td><td class="pass">✅ AA</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="pass">✅ AA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA+</td></tr><tr><th rowspan="2"> Readability <small>APCA</small></th><th>white</th><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="ok">🙂 Adequate</td><td class="ok">🙂 Adequate</td><td class="fail">😶 Unknown</td><td class="fail">😶 Unknown</td></tr><tr><!--v-if--><th>black</th><td class="fail">😶 Unknown</td><td class="fail">😶 Unknown</td><td class="fail">😶 Unknown</td><td class="fail">😶 Unknown</td><td class="ok">🙂 Adequate</td><td class="ok">🙂 Adequate</td><td class="pass">😍 Best</td></tr></tbody></table>
-
-
-
-You may have noticed that in general, APCA favors white text more,
-while WCAG has many positives for colors where white text would result in better readability.
-This is a known issue with the WCAG algorithm.
+By applying this logic to all ranges, we can draw similar guarantees for many of these brackets:
 
 <figure>
-<div style="padding: .5em 1em; background: hsl(180 62% 40%); color: white">Some text</div>
-<div style="padding: .5em 1em; background: hsl(180 62% 40%); color: black">Some text</div>
-<figcaption>Which of the two seems more readable?
-You may be surprised to find that the white text fails WCAG 2.1,
-while the black text passes AAA!
+
+<table style="margin-inline: 2rem"><thead><tr><th colspan="2"></th><th><span class="divider before">0%</span> to <span class="divider after">52.7%</span></th><th><span class="divider before">52.7%</span> to <span class="divider after">62.4%</span></th><th><span class="divider before">62.4%</span> to <span class="divider after">66.1%</span></th><th><span class="divider before">66.1%</span> to <span class="divider after">68.7%</span></th><th><span class="divider before">68.7%</span> to <span class="divider after">71.6%</span></th><th><span class="divider before">71.6%</span> to <span class="divider after">75.2%</span></th><th><span class="divider before">75.2%</span> to <span class="divider after">100%</span></th></tr></thead><tbody><tr><th rowspan="2"> Compliance <small>WCAG 2.1</small></th><th>white</th><td class="pass">✅ AA</td><td class="pass">✅ AA</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="pass">✅ AA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA+</td></tr><tr><th rowspan="2"> Readability <small>APCA</small></th><th>white</th><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="pass">😍 Best</td></tr></tbody></table>
+
+<figcaption>
+Contrast guarantees we can infer for black and white text over arbitrary colors.
+OK = passes but is not necessarily best, ❌ = cannot infer any guarantees.
 </figcaption>
 </figure>
 
-Therefore, to best balance readability and compliance, we should use the highest threshold we can get away with.
+
+You may have noticed that in general, WCAG has a lot of false negatives around white text,
+and tends to place the Lightness threshold much lower than APCA.
+This is a known issue with the WCAG algorithm.
+
+Therefore, **to best balance readability and compliance, we should use the highest threshold we can get away with**.
 This means:
 - If passing WCAG is a requirement, the highest threshold we can use is **62.3%**.
 - If actual readability is our only concern, we can safely ignore WCAG and pick a threshold somewhere between 68.7% and 71.6%, e.g. **70%**.
 
-Here’s a demo so you can see how they both play out.
-Edit the color below (hint: use your keyboard arrow keys to quickly move through the whole range of each coordinate) to see how the two thresholds work in practice.
-You can write any valid CSS color in the text field, though a polar format like OKLCh might work best.
+Here’s a [demo](#demo) so you can see how they both play out.
+Edit the color below to see how the two thresholds work in practice, and compare with the actual contrast brackets, shown on the table on the left.
 
-<script src="https://elements.colorjs.io/src/color-swatch/color-swatch.js" type="module"></script>
 <style>
 .contrast-color {
 	--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
 	color: oklch(from var(--color) var(--l) 0 h);
 }
+
+#demo {
+	display: flex;
+	gap: 2em;
+	padding-block: 2rem;
+
+	color-picker {
+		flex: 1;
+	}
+
+	table {
+		width: auto;
+		margin-bottom: 0;
+	}
+}
 </style>
 
-<color-swatch size="large">
-	<div slot="swatch">
-		<div class="contrast-color" style="--l-threshold: 0.7;">Threshold = 70%</div>
-		<div class="contrast-color" style="--l-threshold: 0.623;">Threshold = 62.3%</div>
-	</div>
-	<input value="oklch(65% 30% 180)" />
-</color-swatch>
+<section id="demo">
+<script type=module>
+import { getLevel } from "./research/util.js";
+globalThis.updateContrasts = function (color) {
+	console.log(color);
+	if (!color) {
+		return;
+	}
+	for (let td of document.querySelectorAll("[data-algo]")) {
+		let {algo, color: textColor} = td.dataset;
+		let level = getLevel(algo, color.contrast(textColor, algo));
+		td.textContent = level;
+		td.className = level === "fail" ? "fail" : "pass";
+	}
+}
+</script>
+<script type=module src="https://elements.colorjs.io/src/color-picker/color-picker.js"></script>
+<color-picker space="oklch" color="oklch(65% 30% 180)" oncolorchange="updateContrasts(this.color)" >
+	<div class="contrast-color" style="--l-threshold: 0.7;">Threshold = 70%</div>
+	<div class="contrast-color" style="--l-threshold: 0.623;">Threshold = 62.3%</div>
+</color-picker>
+<table id="contrasts">
+	<caption>Actual contrast ratios</caption>
+	<thead>
+		<tr>
+			<th>Text color</th>
+			<th>APCA</th>
+			<th>WCAG 2.1</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>White</th>
+			<td data-algo="APCA" data-color="white"></td>
+			<td data-algo="WCAG21" data-color="white"></td>
+		</tr>
+		<tr class="black">
+			<th>Black</th>
+			<td data-algo="APCA" data-color="black"></td>
+			<td data-algo="WCAG21" data-color="black"></td>
+		</tr>
+</table>
+</section>
+
+Avoid colors marked "P3+", "PP" or "PP+", as these are almost certainly outside your screen gamut,
+and [browsers currently do not gamut map properly](https://github.com/w3c/csswg-drafts/issues/9449), so the visual result will be off.
+
+<aside class="note language-html" style="--label: 'Sneak peek'">
+
+The [`<color-picker>`](https://elements.colorjs.io/src/color-picker) component above is part of a new project I’m working on called [Color Elements](https://elements.colorjs.io/) ([`color-elements`](https://www.npmjs.com/package/color-elements) on npm).
+It’s a (*highly* experimental) collection of web components that make it easy to make color-related apps and demos.
+If that seems interesting, feel free to try them out and provide feedback!
+</aside>
 
 Note that if your actual color is more constrained (e.g. a subset of hues or chromas),
 you might be able to balance these tradeoffs better by using a different threshold.
@@ -252,11 +343,25 @@ Here are some examples of narrower ranges I have tried and the highest threshold
 | Warm colors (reds/oranges/yellows) | [H ∈ [0, 100]](research/?h=0,100,1) | 66.8% |
 | Pinks/Purples | [H ∈ [300, 370]](research/?h=300,370,1) | 67% |
 
+You can even turn this into a utility class that you can combine with different thesholds:
+
+```css
+.contrast-color {
+	--l: clamp(0, (var(--l-threshold, 0.623) / l - 1) * infinity, 1);
+	color: oklch(from var(--color) var(--l) 0 h);
+}
+
+.pink {
+	--l-threshold: 0.67;
+}
+```
+
 ## Future work
 
-This is only a start, I can imagine many directions for improvement:
-- Keep in mind that RCS allows us to do math with *any* of the color components,
-in *any* component. Could a formula that takes `c` and `h` into account be better?
+This is only a start.
+I can imagine many directions for improvement:
+- Since RCS allows us to do math with *any* of the color components
+in *any* component, I wonder if there is a better formula that takes `c` and `h` into account.
 - Currently we only calcualte thresholds for white and black text.
 However, in real designs, we rarely want pure black text.
 How would this extend to darker tints of the background color?

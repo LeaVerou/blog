@@ -1,6 +1,11 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 import Color from "https://colorjs.io/dist/color.js";
-import { nextFrame, getBlankStats, levels } from "./util.js";
+import {
+	nextFrame,
+	getBlankStats,
+	levels,
+	getLevel,
+} from "./util.js";
 
 let white = new Color("white");
 let black = new Color("black");
@@ -195,18 +200,8 @@ globalThis.app = createApp({
 			let l = color.get("l");
 
 			this.contrastRange(l, stats[algo][textColor === black ? "black" : "white"], "best");
-			this.contrastRange(l, stats[algo].black, this.getLevel(algo, contrastBlack));
-			this.contrastRange(l, stats[algo].white, this.getLevel(algo, contrastWhite));
-		},
-
-		getLevel (algo, contrastRatio) {
-			if (algo === "WCAG21") {
-				return (contrastRatio < 3) ? "fail" : (contrastRatio < 4.5) ? "AA" : (contrastRatio < 7) ? "AAA" : "AAA+";
-			}
-			else {
-				contrastRatio = Math.abs(contrastRatio);
-				return (contrastRatio < 45) ? "fail" : (contrastRatio < 60) ? "AA" : (contrastRatio < 75) ? "AAA" : "AAA+";
-			}
+			this.contrastRange(l, stats[algo].black, getLevel(algo, contrastBlack));
+			this.contrastRange(l, stats[algo].white, getLevel(algo, contrastWhite));
 		},
 
 		contrastRange (l, obj, prop) {

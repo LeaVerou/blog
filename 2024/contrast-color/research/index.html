@@ -107,7 +107,7 @@
 				</th>
 				<th>{{ color }}</th>
 				<td v-for="value of readability_bounds[color]" :class="value === 'best' ? 'pass' : value === 'unknown' ? 'fail' : 'ok'">
-					{{ value === "best" ? "😍 Best" : value === "ok" ? "🙂 OK" : "🤷🏽‍♀️ ?" }}
+					{{ value === "best" ? "😍 Best" : value === "ok" ? "🙂 OK" : "❌" }}
 				</td>
 			</tr>
 		</tbody>

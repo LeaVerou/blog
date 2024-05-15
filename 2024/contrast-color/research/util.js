@@ -28,3 +28,15 @@ export function getBlankStats () {
 		}
 	};
 }
+
+export function getLevel (algo, contrastRatio) {
+	contrastRatio = Math.abs(contrastRatio);
+
+	if (algo === "WCAG21") {
+		return (contrastRatio < 3) ? "fail" : (contrastRatio < 4.5) ? "AA" : (contrastRatio < 7) ? "AAA" : "AAA+";
+	}
+	else {
+		contrastRatio = Math.abs(contrastRatio);
+		return (contrastRatio < 45) ? "fail" : (contrastRatio < 60) ? "AA" : (contrastRatio < 75) ? "AAA" : "AAA+";
+	}
+}
