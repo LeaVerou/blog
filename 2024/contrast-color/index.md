@@ -280,7 +280,6 @@ Edit the color below to see how the two thresholds work in practice, and compare
 <script type=module>
 import { getLevel } from "./research/util.js";
 globalThis.updateContrasts = function (color) {
-	console.log(color);
 	if (!color) {
 		return;
 	}
