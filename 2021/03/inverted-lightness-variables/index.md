@@ -10,6 +10,7 @@ tags:
   - "dark-mode"
   - "hsl"
   - "lch"
+  - color
 ---
 
 By now, you probably know that you can use custom properties for individual color components, to avoid repeating the same color coordinates multiple times throughout your theme. You may even know that you can use the same variable for multiple components, e.g. HSL hue and lightness:

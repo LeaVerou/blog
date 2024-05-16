@@ -7,7 +7,7 @@ tags:
   - "colors"
   - "color-api"
   - "color-science"
-  - "colors"
+  - "color"
   - "css-color-4"
   - "css-color-5"
   - "esm"

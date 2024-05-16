@@ -65,18 +65,23 @@ progress {
 	}
 
 	p {
-		display: grid;
 		grid-column: 1 / -1;
-		grid-template-columns: subgrid;
 
-		label {
-			display: flex;
-			gap: .4em;
+		&.coord {
+			display: grid;
+			grid-template-columns: subgrid;
 
-			input {
-				flex: 1;
+			label {
+				display: flex;
+				gap: .4em;
+
+				input {
+					flex: 1;
+				}
 			}
 		}
+
+
 	}
 }
 

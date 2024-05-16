@@ -1,7 +1,6 @@
 ---
 title: "On compliance vs readability: Generating text colors with CSS"
 toc: true
-draft: true
 tags:
   - css
   - color
@@ -44,7 +43,8 @@ Even if my prediction is off, it already is available to **83% of users worldwid
 and if you sort [its caniuse page](https://caniuse.com/css-relative-colors) by usage,
 you will see the vast majority of the remaining 17% doesn’t come from Firefox,
 but from older Chrome and Safari versions.
-I think its current market share warrants production use today, as long as we use `@supports` to make sure things *work* in non-supporting browsers, even if less pretty.
+I think **its current market share warrants production use today**,
+as long as we use `@supports` to make sure things *work* in non-supporting browsers, even if less pretty.
 
 Most [Relative Colors tutorials](https://developer.chrome.com/blog/css-relative-color-syntax)
 revolve around its primary driving use cases:
@@ -52,21 +52,22 @@ making tints and shades or other color variations by tweaking a specific color c
 and/or overriding a color component with a fixed value,
 like the example above.
 While this does address some very common pain points,
-it is merely scratching the surface of what RCS makes possible.
+it is merely scratching the surface of what RCS enables.
 This article explores a more advanced use case, with the hope that it will spark more creative uses of RCS in the wild.
 
 ## The CSS `contrast-color()` function
 
-A big longstanding CSS pain point is that there is no way to specify a text color that is automatically guaranteed to be readable over an arbitrary background color, e.g. white on darker backgrounds and black on lighter backgrounds.
+One of the big longstanding CSS pain points is that it’s impossible to automatically specify a text color that is guaranteed to be readable on arbitrary backgrounds,
+e.g. white on darker colors and black on lighter ones.
 
 Why would one need that?
-The primary use case is when colors are outside the control over the CSS author.
+The primary use case is *when colors are outside the CSS author’s control*.
 This includes:
 - **User-defined colors.** An example you’re likely familiar with: GitHub labels. Think of how you select an arbitrary color when creating a label and GitHub automatically picks the text color — often poorly (we’ll see why in a bit)
 - **Colors defined by another developer.** E.g. you’re writing a web component that supports certain CSS variables for styling.
 You *could* require separate variables for the text and background, but that reduces the usability of your web component by making it more of a hassle to use.
 Wouldn’t it be great if it could just use a [sensible default](https://www.nngroup.com/articles/slips/), that you can, but rarely need to override?
-- **Colors defined by an external design system**, like [Open Props](https://open-props.style/) or [Material Design](https://material.io/).
+- **Colors defined by an external design system**, like [Open Props](https://open-props.style/), [Material Design](https://material.io/), or even (*gasp*) [Tailwind](https://tailwindcss.com/).
 
 <figure>
 
@@ -77,9 +78,11 @@ GitHub uses WCAG 2.1 to determine the text color, which is why (as we will see i
 </figcaption>
 </figure>
 
-Even in a codebase where a single author controls everything, reducing couplings can improve modularity and facilitate better code reuse.
+Even in a codebase where every line of CSS code is controlled by a single author,
+reducing couplings can improve modularity and facilitate code reuse.
 
-The good news is that this is actually coming, as the CSS function [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color).
+The good news is that this is not going to be a pain point for much longer.
+The CSS function [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color) was designed to address exactly that.
 This is not new, you may have heard of it as `color-contrast()` before, an earlier name.
 I recently [drove consensus to scope it down to an MVP](https://github.com/w3c/csswg-drafts/issues/9166) that addresses the most prominent pain points and can actually ship soonish,
 as it circumvents some very difficult design decisions that had caused the full-blown feature to stall.
@@ -92,42 +95,64 @@ background: var(--color);
 color: contrast-color(var(--color));
 ```
 
-Glorious, isn’t it?
+*Glorious, isn’t it?*
 Of course, soonish in spec years is still, well, years.
 As a data point, you can see in [my past spec work](/specs/) that with a bit of luck (and browser interest), it can take as little as 2 years to get a feature shipped across all major browsers after it’s been specced.
-But 2 years is also a long time (and it could be longer).
-Is there any recourse until then?
+When the standards work is also well-funded,
+there have even been cases where a feature went **from conception to baseline in 2 years**,
+with [Cascade Layers](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_layers) being the poster child for this:
+[proposal by Miriam in Oct 2019](https://github.com/w3c/csswg-drafts/issues/4470),
+[shipped in every major browser by Mar 2022](https://caniuse.com/css-cascade-layers).
+But 2 years is still a long time (and there are no guarantees it won’t be longer).
+What is our recourse until then?
 
 As you may have guessed from the title, the answer is yes.
 It may not be pretty, but there is a way to emulate `contrast-color()` (or something close to it) using Relative Colors.
 
 ## Using RCS to automatically compute a contrasting text color
 
-In the following we will use the [OKLCh color space](), which is the most [perceptually uniform]() [polar color space]() that CSS supports.
+In the following we will use the [OKLCh color space](https://www.w3.org/TR/css-color-4/#ok-lab), which is the most *perceptually uniform* *polar color space* that CSS supports.
+
+<aside class="info" style="--label: 'Glossary'">
+
+- **Perceptually uniform color space**: A color space where the Euclidean distance between two colors is proportional to their perceptual difference.
+RGB spaces (and their polar forms, HSL, HSV, HSB, HWB, etc.) are typically *not* perceptually uniform.
+Some examples of what this means for HSL in [my older post on LCH](../../2020/04/lch-colors-in-css-what-why-and-how/).
+Examples of perceptually uniform color spaces include Lab, LCH, OkLab, and OkLCh.
+- **Polar color space**: A color space where colors are represented as an angular hue (which determines the “core” color, e.g. red, yellow, green, blue, etc.) and two components that control the exact shade of that hue (typically some version of colorfulness and lightness).
+
+</aside>
 
 Let’s assume there is a Lightness value above which black text is guaranteed to be readable regardless of the chroma and hue,
 and below which white text is guaranteed to be readable.
 We will validate that assumption later, but for now let’s take it for granted.
-In the rest of this article, we’ll call that value the **threshold**.
-For now we will use `0.7`, but will compute it more rigorously in the next section.
-Let’s assign it to a variable:
+In the rest of this article, we’ll call that value the **threshold** and represent it as <var>L<sub>threshold</sub></var>.
+
+We will compute this value more rigously in the next section (and prove that it actually exists!),
+but for now let’s use `0.7` (70%).
+We can assign it to a variable to make it easier to tweak:
 
 ```css
 --l-threshold: 0.7;
 ```
 
+<aside class="info">
+
 Most RCS examples in the wild use `calc()` with simple additions and multiplications.
 However, **any math function supported by CSS is actually fair game**, including `clamp()`, trigonometric functions, and many others.
-For example, if you wanted to create a lighter tint of a core color with RCS, you could do something like this:
+For example, if you wanted to create a lighter tint of a core color with RCS,
+you could do something like this:
 
 ```css
 background: oklch(from var(--color) 90% clamp(0, c, 0.1) h);
 ```
 
-Let’s work bakwards from the desired result.
-We want to come up with an expression that is composed of CSS math functions already supported widely
-and will return `1` if `l` &le; `var(--l-threshold)` and `0` if otherwise.
-Then we could use that value as the lightness of a new color:
+</aside>
+
+Let’s work backwards from the desired result.
+We want to come up with an expression that is composed of **widely supported CSS math functions**,
+and will return <var>1</var> if <var>L</var> ≤ <var>L<sub>threshold</sub></var> and <var>0</var> otherwise.
+If we could write such an expression, we could then use that value as the lightness of a new color:
 
 ```css
 --l: /* ??? */;
@@ -139,17 +164,19 @@ color: oklch(var(--l) 0 0);
 The CSS math functions that are widely supported are:
 - `calc()`
 - `min()`, `max()`, `clamp()`
-- [Trigonometric functions](https://drafts.csswg.org/css-values-4/#trig-funcs) (`sin()`, `cos()`, `tan()`, `asin()`, `acos()`, `atan()`, `atan2()`
+- [Trigonometric functions](https://drafts.csswg.org/css-values-4/#trig-funcs) (`sin()`, `cos()`, `tan()`, `asin()`, `acos()`, `atan()`, `atan2()`) *([another CSS feature I proposed](https://lea.verou.me/specs/#css-trigonometric-functions), back in 2018 😁)*
 - [Exponential functions](https://drafts.csswg.org/css-values-4/#exponent-funcs) (`exp()`, `log()`, `log2()`, `log10()`, `sqrt()`)
 
 </aside>
 
-We can simplify the task a bit:
-We don’t need to find an expression that returns an exact value.
-If we can manage to find an expression that will be negative when <var>L</var> > <var>L<sub>threshold</sub></var> and > <var>1</var> when <var>L</var> ≤ <var>L<sub>threshold</sub></var>,
-we can use `clamp(0, /* expression */, 1)` to get the desired result.
+How could we simplify the task?
+One way is to **relax what our expression needs to return**.
+We don’t actually need an exact <var>0</var> or <var>1</var>
+If we can manage to find an expression that will give us <var>0</var> when <var>L</var> > <var>L<sub>threshold</sub></var>
+and > <var>1</var> when <var>L</var> ≤ <var>L<sub>threshold</sub></var>,
+we can just use `clamp(0, /* expression */, 1)` to get the desired result.
 
-One idea would be to use ratios.
+One idea would be to use ratios, as they have this nice property where they are > <var>1</var> if the numerator is larger than the denominator and ≤ <var>1</var> otherwise.
 
 The ratio of $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}}$ is > <var>1</var> for <var>L</var> ≤ <var>L<sub>threshold</sub></var> and < <var>1</var> when <var>L</var> > <var>L<sub>threshold</sub></var>.
 This means that $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}} - 1$ will be a negative number for <var>L</var> > <var>L<sub>threshold</sub></var> and a positive one for <var>L</var> > <var>L<sub>threshold</sub></var>.
@@ -169,19 +196,16 @@ but in my experiments this never happened, presumably since precision is finite.
 ### Fallback for browsers that don’t support RCS
 
 The last piece of the puzzle is to provide a fallback for browsers that don’t support RCS.
-We can use `@supports` with any color property and any relative color value, e.g.:
+We can use `@supports` with any color property and any relative color value as the test, e.g.:
 
 ```css
 .contrast-color {
-	--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
-
 	/* Fallback */
 	background: hsl(0 0 0 / 50%);
 	color: white;
-}
 
-@supports (color: oklch(from red l c h)) {
-	.contrast-color {
+	@supports (color: oklch(from red l c h)) {
+		--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
 		color: oklch(from var(--color) var(--l) 0 h);
 		background: none;
 	}
@@ -202,7 +226,7 @@ and below which white text is guaranteed to be readable regardless of the chroma
 But does such a value exist?
 It is time to put this claim to the test.
 
-When people first hear about [perceptually uniform color spaces]() like [Lab](https://en.wikipedia.org/wiki/CIELAB_color_space), [LCH](https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_model) or their improved versions, [OkLab]() and [OKLCH](),
+When people first hear about [perceptually uniform color spaces]() like [Lab](https://en.wikipedia.org/wiki/CIELAB_color_space), [LCH](https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_model) or their improved versions, [OkLab](https://bottosson.github.io/posts/oklab/) and [OKLCH](https://www.w3.org/TR/css-color-4/#ok-lab),
 they imagine that they can infer the contrast between two colors by simply comparing their L(ightness) values.
 This is unfortunately not true, as contrast depends on more factors than perceptual lightness.
 However, there is certainly _significant_ correlation between Lightness values and contrast.
@@ -235,7 +259,7 @@ in increments of increasing granularity and calculate the lightness ranges for c
 I also compute the brackets for each level (fail, AA, AAA, AAA+) for both APCA and WCAG.
 
 I then turned my exploration into an [interactive playground](research) where you can run the same experiments yourself,
-potentially with narrower ranges that fit your use case or higher granularity.
+potentially with narrower ranges that fit your use case, or with higher granularity.
 
 <figure>
 <video src="videos/playground.mp4" loop autoplay muted style="max-height: 60vh"></video>
@@ -275,14 +299,13 @@ By applying this logic to all ranges, we can draw similar guarantees for many of
 <figure>
 <div style="overflow: auto">
 <table style="margin-inline-end: 1ch"><thead><tr><th colspan="2"></th><th><strong>0%</strong> to <span class="divider after">52.7%</span></th><th><span class="divider before">52.7%</span> to <span class="divider after">62.4%</span></th><th><span class="divider before">62.4%</span> to <span class="divider after">66.1%</span></th><th><span class="divider before">66.1%</span> to <span class="divider after">68.7%</span></th><th><span class="divider before">68.7%</span> to <span class="divider after">71.6%</span></th><th><span class="divider before">71.6%</span> to <span class="divider after">75.2%</span></th><th><span class="divider before">75.2%</span> to <strong>100%</strong></th></tr></thead>
-<tbody><tr><th rowspan="2"> Compliance <small>WCAG 2.1</small></th><th>white</th><td class="pass">✅ AA</td><td class="pass">✅ AA</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="pass">✅ AA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA+</td></tr><tr><th rowspan="2"> Readability <small>APCA</small></th><th>white</th><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="pass">😍 Best</td></tr></tbody></table>
+<tbody><tr><th rowspan="2"> Compliance <small>WCAG 2.1</small></th><th>white</th><td class="pass">✅ AA</td><td class="pass">✅ AA</td><td class="fail"></td><td class="fail"></td><td class="fail"></td><td class="fail"></td><td class="fail"></td></tr><tr><!--v-if--><th>black</th><td class="fail"></td><td class="pass">✅ AA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA+</td></tr><tr><th rowspan="2"> Readability <small>APCA</small></th><th>white</th><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="fail"></td><td class="fail"></td></tr><tr><!--v-if--><th>black</th><td class="fail"></td><td class="fail"></td><td class="fail"></td><td class="fail"></td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="pass">😍 Best</td></tr></tbody></table>
 </div>
 <figcaption>
 Contrast guarantees we can infer for black and white text over arbitrary colors.
-OK = passes but is not necessarily best, ❌ = cannot infer any guarantees.
+OK = passes but is not necessarily best.
 </figcaption>
 </figure>
-
 
 You may have noticed that in general, WCAG has a lot of false negatives around white text,
 and tends to place the Lightness threshold much lower than APCA.
@@ -313,6 +336,18 @@ Edit the color below to see how the two thresholds work in practice, and compare
 
 	color-picker {
 		flex: 1;
+
+		&::part(swatch) {
+			flex: 1.8;
+		}
+	}
+
+	input[type=number] {
+		field-sizing: content;
+		background: none;
+		color: inherit;
+		border: .1em solid;
+		border-radius: .2em;
 	}
 
 	table {
@@ -363,6 +398,10 @@ globalThis.updateContrasts = function (color) {
 <script type=module src="https://elements.colorjs.io/src/color-picker/color-picker.js"></script>
 <color-picker space="oklch" color="oklch(65% 30% 180)" oncolorchange="updateContrasts(this.color)" >
 	<div class="contrast-color" style="--l-threshold: 0.7;">Threshold = 70%</div>
+	<label class="contrast-color" style="--l-threshold: 0.645;" style="--l-threshold: 0.623;">
+		Threshold =
+		<input type="number" value="64.5" step="0.1" oninput="this.parentNode.style.setProperty('--l-threshold', this.value/100)">%
+	</label>
 	<div class="contrast-color" style="--l-threshold: 0.623;">Threshold = 62.3%</div>
 </color-picker>
 <table id="contrasts">
@@ -398,7 +437,7 @@ It’s a (*highly* experimental) collection of web components that make it easy 
 If that seems interesting, feel free to try them out and provide feedback!
 </aside>
 
-Note that if your actual color is more constrained (e.g. a subset of hues or chromas),
+Note that if your actual color is more constrained (e.g. a subset of hues or chromas or a specific gamut),
 you might be able to balance these tradeoffs better by using a different threshold.
 Run the experiment yourself with your actual range of colors and find out!
 
@@ -406,10 +445,16 @@ Here are some examples of narrower ranges I have tried and the highest threshold
 
 | Description | Color range | Threshold |
 |-------------|-------------|-----------|
+| Modern low-end screens | [Colors within the sRGB gamut](research/?gamut=srgb) | 65% |
+| Modern high-end screens | [Colors within the P3 gamut](research/?gamut=p3) | 64.5% |
+| Future high-end screens | [Colors within the Rec.2020 gamut](research/?gamut=rec2020) | 63.4% |
 | Neutrals | [C ∈ [0, 0.03]](research/?c=0,0.03,0.01) | 67% |
 | Muted colors | [C ∈ [0, 0.1]](research/?c=0,0.1,0.01) | 65.6% |
 | Warm colors (reds/oranges/yellows) | [H ∈ [0, 100]](research/?h=0,100,1) | 66.8% |
 | Pinks/Purples | [H ∈ [300, 370]](research/?h=300,370,1) | 67% |
+
+It is particularly interesting that **the threshold is improved to 64.5% by just ignoring colors that are not actually displayable** on modern screens.
+So, assuming (though sadly this is [not an assumption that currently holds true](https://github.com/w3c/csswg-drafts/issues/9449)) that browsers prioritize preserving lightness when gamut mapping, we *could* use 64.5% and still guarantee WCAG compliance.
 
 You can even turn this into a utility class that you can combine with different thesholds:
 
@@ -453,8 +498,14 @@ I can imagine many directions for improvement such as:
 - Since RCS allows us to do math with *any* of the color components
 in *any* color space, I wonder if there is a better formula that still be implemented in CSS and balances readability and compliance even better.
 E.g. I’ve had some chats with [Andrew Somers](https://github.com/Myndex) (creator of APCA) right before publishing this,
-which suggest that doing clever things with luminance (the Y component of XYZ) could be a promising direction.
+which suggest that doing math on luminance (the Y component of XYZ) instead could be a promising direction.
 - We currently only calcualte thresholds for white and black text.
 However, in real designs, we rarely want pure black text,
 which is why `contrast-color()` only guarantees a *“very light or very dark color”* unless the `max` keyword is used.
 How would this extend to darker tints of the background color?
+
+*Thanks to [Chris Lilley](https://svgees.us),
+[Andrew Somers](https://github.com/myndex),
+[Cory LaViska](https://www.abeautifulsite.net/),
+[Elika Etemad](https://fantasai.inkedblade.net/),
+and [Tab Atkins-Bittner](https://xanthir.com/) for their feedback on earlier drafts of this article.*

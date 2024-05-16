@@ -17,6 +17,7 @@ let coords = {
 };
 
 let params = new URLSearchParams(location.search);
+
 for (let coord of ["c", "h"]) {
 	if (params.get(coord)) {
 		let [min, max, step] = params.get(coord).split(",");
@@ -33,6 +34,8 @@ for (let coord of ["c", "h"]) {
 globalThis.app = createApp({
 	data () {
 		return {
+			gamut: params.get("gamut") ?? "p3",
+			skip_oog: params.get("gamut") !== null,
 			progress: 0,
 			status: "Not started",
 			step: 0.1,
@@ -175,8 +178,10 @@ globalThis.app = createApp({
 						let colorStr = `oklch(${l} ${c} ${h})`;
 						let color = new Color(colorStr);
 
-						for (let algo in stats) {
-							this.calculateMinMax(algo, color);
+						if (!this.gamut || color.inGamut(this.gamut)) {
+							for (let algo in stats) {
+								this.calculateMinMax(algo, color);
+							}
 						}
 					}
 				}
@@ -235,6 +240,27 @@ globalThis.app = createApp({
 				history.replaceState(null, "", url);
 			},
 		},
+		gamut (value) {
+			let url = new URL(location);
+			if (value) {
+				url.searchParams.set("gamut", value);
+				this.skip_oog = true;
+			}
+			else {
+				url.searchParams.delete("gamut");
+			}
+			history.replaceState(null, "", url);
+		},
+		skip_oog (value) {
+			let url = new URL(location);
+			if (value) {
+				url.searchParams.set("gamut", this.gamut);
+			}
+			else {
+				url.searchParams.delete("gamut");
+			}
+			history.replaceState(null, "", url);
+		}
 	},
 }).mount(document.body);
 

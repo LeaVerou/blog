@@ -23,18 +23,32 @@
 	'--h': current.h,
 }">
 	<fieldset class="bounds">
-		<legend>Bounds</legend>
-		<p class="chroma">
+		<legend>Settings</legend>
+		<p class="coord chroma">
 			Chroma:
 			<label>From <input type="number" v-model="coords.c.min" min="0" max="1" step=".001"></label>
 			<label>to <input type="number" v-model="coords.c.max" min="0" max="1" step=".001"></label>
 			<label>in steps of <input type="number" v-model="coords.c.step" min="0" max="1" step=".001"></label>
 		</p>
-		<p class="hue">
+		<p class="coord hue">
 			Hue:
 			<label>From <input type="number" v-model="coords.h.min" min="0" max="360" step="1"></label>
 			<label>to <input type="number" v-model="coords.h.max" min="0" max="360" step="1"></label>
 			<label>in steps of <input type="number" v-model="coords.h.step" min="0" max="360" step="1"></label>
+		</p>
+		<p>
+			<label>
+				<input type="checkbox" v-model="skip_oog">
+				Skip colors outside the
+			</label>
+			<label>
+				<select v-model="gamut">
+					<option value="srgb">sRGB</option>
+					<option value="p3">P3</option>
+					<option value="rec2020">Rec. 2020</option>
+				</select>
+				gamut
+			</label>
 		</p>
 	</fieldset>
 	<progress min="0" max="2.8" :value="progress"></progress>
@@ -97,7 +111,7 @@
 				</th>
 				<th>{{ color }}</th>
 				<td v-for="value of compliance_bounds[color]" :class="value ? 'pass' : 'fail'">
-					{{ value ? "✅" : "❌" }} {{ value || "" }}
+					{{ value ? "✅" : "" }} {{ value || "" }}
 				</td>
 			</tr>
 			<tr v-for="(color, i) of ['white', 'black']">
@@ -107,7 +121,7 @@
 				</th>
 				<th>{{ color }}</th>
 				<td v-for="value of readability_bounds[color]" :class="value === 'best' ? 'pass' : value === 'unknown' ? 'fail' : 'ok'">
-					{{ value === "best" ? "😍 Best" : value === "ok" ? "🙂 OK" : "❌" }}
+					{{ value === "best" ? "😍 Best" : value === "ok" ? "🙂 OK" : "" }}
 				</td>
 			</tr>
 		</tbody>
