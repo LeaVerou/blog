@@ -1,5 +1,5 @@
 ---
-title: "Generating text colors with CSS, and balancing compliance vs readability"
+title: "On compliance vs readability: Generating text colors with CSS"
 toc: true
 draft: true
 tags:
@@ -25,7 +25,8 @@ In a nutshell, they allow CSS authors to derive a new color from an existing col
 in any supported color space:
 
 ```css
---color-lighter: oklch(from var(--color) calc(l * 1.2) c h);
+--color-lighter: hsl(from var(--color) h s calc(l * 1.2));
+--color-lighterer: oklch(from var(--color) calc(l + 0.2) c h);
 --color-alpha-50: oklab(from var(--color) l a b / 50%);
 ```
 
@@ -80,8 +81,9 @@ Even in a codebase where a single author controls everything, reducing couplings
 
 The good news is that this is actually coming, as the CSS function [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color).
 This is not new, you may have heard of it as `color-contrast()` before, an earlier name.
-I [recently drove consensus to scope it down to an MVP](https://github.com/w3c/csswg-drafts/issues/9166) that addresses the most prominent pain points and can actually ship soonish,
+I recently [drove consensus to scope it down to an MVP](https://github.com/w3c/csswg-drafts/issues/9166) that addresses the most prominent pain points and can actually ship soonish,
 as it circumvents some very difficult design decisions that had caused the full-blown feature to stall.
+I then [added it to the spec](https://github.com/w3c/csswg-drafts/commit/39f469149abb5575505b6d2d54b8bddf119f896d) per WG resolution, though some details still need to be ironed out.
 
 Usage will look like this:
 
@@ -232,7 +234,7 @@ where I iterate over the [OKLCh reference range](https://drafts.csswg.org/css-co
 in increments of increasing granularity and calculate the lightness ranges for colors where white was the "best" text color (= produced higher contrast than black) and vice versa.
 I also compute the brackets for each level (fail, AA, AAA, AAA+) for both APCA and WCAG.
 
-I then turned my exploration into an interactive playground where you can run the same experiments yourself,
+I then turned my exploration into an [interactive playground](research) where you can run the same experiments yourself,
 potentially with narrower ranges that fit your use case or higher granularity.
 
 <figure>
@@ -271,9 +273,10 @@ regardless of what the color is.
 By applying this logic to all ranges, we can draw similar guarantees for many of these brackets:
 
 <figure>
-
-<table style="margin-inline: 2rem"><thead><tr><th colspan="2"></th><th><span class="divider before">0%</span> to <span class="divider after">52.7%</span></th><th><span class="divider before">52.7%</span> to <span class="divider after">62.4%</span></th><th><span class="divider before">62.4%</span> to <span class="divider after">66.1%</span></th><th><span class="divider before">66.1%</span> to <span class="divider after">68.7%</span></th><th><span class="divider before">68.7%</span> to <span class="divider after">71.6%</span></th><th><span class="divider before">71.6%</span> to <span class="divider after">75.2%</span></th><th><span class="divider before">75.2%</span> to <span class="divider after">100%</span></th></tr></thead><tbody><tr><th rowspan="2"> Compliance <small>WCAG 2.1</small></th><th>white</th><td class="pass">✅ AA</td><td class="pass">✅ AA</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="pass">✅ AA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA+</td></tr><tr><th rowspan="2"> Readability <small>APCA</small></th><th>white</th><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="pass">😍 Best</td></tr></tbody></table>
-
+<div style="overflow: auto">
+<table style="margin-inline-end: 1ch"><thead><tr><th colspan="2"></th><th><strong>0%</strong> to <span class="divider after">52.7%</span></th><th><span class="divider before">52.7%</span> to <span class="divider after">62.4%</span></th><th><span class="divider before">62.4%</span> to <span class="divider after">66.1%</span></th><th><span class="divider before">66.1%</span> to <span class="divider after">68.7%</span></th><th><span class="divider before">68.7%</span> to <span class="divider after">71.6%</span></th><th><span class="divider before">71.6%</span> to <span class="divider after">75.2%</span></th><th><span class="divider before">75.2%</span> to <strong>100%</strong></th></tr></thead>
+<tbody><tr><th rowspan="2"> Compliance <small>WCAG 2.1</small></th><th>white</th><td class="pass">✅ AA</td><td class="pass">✅ AA</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="pass">✅ AA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA</td><td class="pass">✅ AAA+</td></tr><tr><th rowspan="2"> Readability <small>APCA</small></th><th>white</th><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="pass">😍 Best</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="fail">❌</td><td class="fail">❌</td></tr><tr><!--v-if--><th>black</th><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="fail">❌</td><td class="ok">🙂 OK</td><td class="ok">🙂 OK</td><td class="pass">😍 Best</td></tr></tbody></table>
+</div>
 <figcaption>
 Contrast guarantees we can infer for black and white text over arbitrary colors.
 OK = passes but is not necessarily best, ❌ = cannot infer any guarantees.
@@ -413,17 +416,7 @@ You can even turn this into a utility class that you can combine with different 
 ```css
 .contrast-color {
 	--l: clamp(0, (var(--l-threshold, 0.623) / l - 1) * infinity, 1);
-
-	/* Fallback for browsers that don't support RCS */
-	color: white;
-	text-shadow: 0 0 .05em black, 0 0 .05em black, 0 0 .05em black, 0 0 .05em black;
-}
-
-@supports (color: oklch(from red l c h)) {
-	.contrast-color {
-		color: oklch(from var(--color) var(--l) 0 h);
-		text-shadow: none;
-	}
+	color: oklch(from var(--color) var(--l) 0 h);
 }
 
 .pink {
@@ -431,12 +424,37 @@ You can even turn this into a utility class that you can combine with different 
 }
 ```
 
-## Future work
+## Conclusion & Future work
+
+Putting it all together, including a fallback, as well as a "fall forward" that uses `contrast-color()`,
+the utility class could look like this:
+
+```css
+.contrast-color {
+	/* Fallback for browsers that don't support RCS */
+	color: white;
+	text-shadow: 0 0 .05em black, 0 0 .05em black, 0 0 .05em black, 0 0 .05em black;
+
+	@supports (color: oklch(from red l c h)) {
+		--l: clamp(0, (var(--l-threshold, 0.623) / l - 1) * infinity, 1);
+		color: oklch(from var(--color) var(--l) 0 h);
+		text-shadow: none;
+	}
+
+	@supports (color: contrast-color(red)) {
+		color: contrast-color(var(--color));
+		text-shadow: none;
+	}
+}
+```
 
 This is only a start.
-I can imagine many directions for improvement:
+I can imagine many directions for improvement such as:
 - Since RCS allows us to do math with *any* of the color components
-in *any* component, I wonder if there is a better formula that takes `c` and `h` into account.
-- Currently we only calcualte thresholds for white and black text.
-However, in real designs, we rarely want pure black text.
+in *any* color space, I wonder if there is a better formula that still be implemented in CSS and balances readability and compliance even better.
+E.g. I’ve had some chats with [Andrew Somers](https://github.com/Myndex) (creator of APCA) right before publishing this,
+which suggest that doing clever things with luminance (the Y component of XYZ) could be a promising direction.
+- We currently only calcualte thresholds for white and black text.
+However, in real designs, we rarely want pure black text,
+which is why `contrast-color()` only guarantees a *“very light or very dark color”* unless the `max` keyword is used.
 How would this extend to darker tints of the background color?

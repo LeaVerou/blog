@@ -83,9 +83,9 @@
 			<tr>
 				<th colspan="2">L:</th>
 				<th v-for="i in bounds.length - 1">
-					<span class="divider before">{{ percent(bounds[i - 1]) }} </span>
+					<strong :class="bounds[i - 1] > 0 ? 'divider before' : ''">{{ percent(bounds[i - 1]) }} </strong>
 					to
-					<span class="divider after">{{ percent(bounds[i]) }}</span>
+					<strong :class="bounds[i] < 1 ? 'divider after' : ''">{{ percent(bounds[i]) }}</strong>
 				</th>
 			</tr>
 		</thead>
