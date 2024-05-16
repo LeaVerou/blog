@@ -8,6 +8,11 @@ tags:
   - a11y
   - web-standards
 image: images/demo.png
+social_posts:
+  mastodon: https://front-end.social/@leaverou/112451790361014358
+  linkedin: https://www.linkedin.com/posts/leaverou_on-compliance-vs-readability-generating-activity-7196918480657379328-uPNF
+  twitter: https://twitter.com/LeaVerou/status/1791155547128856874
+  threads: https://www.threads.net/@leaverou/post/C7CZyVDLHDu?hl=en
 ---
 
 <div class=nutshell>
