@@ -402,12 +402,12 @@ globalThis.updateContrasts = function (color) {
 </script>
 <script type=module src="https://elements.colorjs.io/src/color-picker/color-picker.js"></script>
 <color-picker space="oklch" color="oklch(65% 30% 180)" oncolorchange="updateContrasts(this.color)" >
-	<div class="contrast-color" style="--l-threshold: 0.7;">Threshold = 70%</div>
+	<div class="contrast-color" style="--l-threshold: 0.7;"><var>L<sub>threshold</sub></var> = 70%</div>
 	<label class="contrast-color" style="--l-threshold: 0.645;" style="--l-threshold: 0.623;">
-		Threshold =
+		<var>L<sub>threshold</sub></var> =
 		<input type="number" value="64.5" step="0.1" oninput="this.parentNode.style.setProperty('--l-threshold', this.value/100)">%
 	</label>
-	<div class="contrast-color" style="--l-threshold: 0.623;">Threshold = 62.3%</div>
+	<div class="contrast-color" style="--l-threshold: 0.623;"><var>L<sub>threshold</sub></var> = 62.3%</div>
 </color-picker>
 <table id="contrasts">
 	<caption>Actual contrast ratios</caption>
