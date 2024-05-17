@@ -504,10 +504,43 @@ I can imagine many directions for improvement such as:
 in *any* color space, I wonder if there is a better formula that still be implemented in CSS and balances readability and compliance even better.
 E.g. I’ve had some chats with [Andrew Somers](https://github.com/Myndex) (creator of APCA) right before publishing this,
 which suggest that doing math on luminance (the Y component of XYZ) instead could be a promising direction.
-- We currently only calcualte thresholds for white and black text.
+- We currently only calculate thresholds for white and black text.
 However, in real designs, we rarely want pure black text,
 which is why `contrast-color()` only guarantees a *“very light or very dark color”* unless the `max` keyword is used.
 How would this extend to darker tints of the background color?
+
+## Addendum
+
+As often happens, after publishing this blog post, a ton of folks reached out to share all sorts of related work in the space.
+I thought I’d share some of the most interesting findings here.
+
+### Using luminance instead of Lightness
+
+When colors have sufficiently different lightness values (as happens with white or black text),
+humans disregard chromatic contrast (the contrast that hue/colorfulness provide)
+and basically only use lightness contrast to determine readability.
+This is why L can be such a good predictor of whether white or black text works best.
+
+Another measure, luminance, is basically the color’s Y component in the XYZ color space,
+and a good threshold for flipping to black text is when Y > 0.36.
+This gives us another method for computing a text color:
+
+```css
+--y: clamp(0, (var(--y-threshold) / y - 1) * infinity, 1);
+color: color(from var(--color) xyz-d65 var(--y) var(--y) var(--y));
+```
+
+As you can see in [this demo by Lloyd Kupchanko](https://blackorwhite.lloydk.ca/), using <var>Y<sub>threshold</sub></var> > 36%
+very closely predicts the best text color as determined by APCA.
+However, in my tests ([codepen](https://codepen.io/leaverou/pen/ExzVOME)) it appears to work as well as the L threshold (it’s a struggle to find colors where they disagree),
+and using OKLCh makes it easier to customize the color, so it’s unclear what benefit this method provides.
+
+### Useful resources
+
+Many people have shared useful resources on the topic, such as:
+- [Black or White?](https://blackorwhite.lloydk.ca/): Compare different contrast algorithms for picking between black or white
+- [Dynamic text color contrast based on background lightness with CSS/SVG filters](https://miunau.com/posts/dynamic-text-contrast-in-css/): A different approach to the same problem (requires extra HTML element for the text)
+
 
 *Thanks to [Chris Lilley](https://svgees.us),
 [Andrew Somers](https://github.com/myndex),
