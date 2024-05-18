@@ -526,14 +526,21 @@ and a good threshold for flipping to black text is when Y > 0.36.
 This gives us another method for computing a text color:
 
 ```css
+--y-threshold: 0.36;
 --y: clamp(0, (var(--y-threshold) / y - 1) * infinity, 1);
 color: color(from var(--color) xyz-d65 var(--y) var(--y) var(--y));
 ```
 
 As you can see in [this demo by Lloyd Kupchanko](https://blackorwhite.lloydk.ca/), using <var>Y<sub>threshold</sub></var> > 36%
 very closely predicts the best text color as determined by APCA.
-However, in my tests ([codepen](https://codepen.io/leaverou/pen/ExzVOME)) it appears to work as well as the L threshold (it’s a struggle to find colors where they disagree),
-and using OKLCh makes it easier to customize the color, so it’s unclear what benefit this method provides.
+
+In my tests ([codepen](https://codepen.io/leaverou/pen/ExzVOME)) it appeared to work as well as the <var>L<sub>threshold</sub></var> method,
+i.e. it was a struggle to find colors where they disagree.
+However, [after this blog post, Lloyd added](https://twitter.com/lkupchanko/status/1791558925206409553) various <var>L<sub>threshold</sub></var> boundaries to his demo,
+and it appears that indeed, <var>L<sub>threshold</sub></var> has a wider range where it disagrees with APCA than <var>Y<sub>threshold</sub></var> does.
+
+Given this, **my recommendation would be to use the <var>Y<sub>threshold</sub></var> method if you need to flip between black and white text,
+and the <var>L<sub>threshold</sub></var> method if you need to customize the text color further** (e.g. have a very dark color instead of black).
 
 ### Useful resources
 
@@ -546,4 +553,5 @@ Many people have shared useful resources on the topic, such as:
 [Andrew Somers](https://github.com/myndex),
 [Cory LaViska](https://www.abeautifulsite.net/),
 [Elika Etemad](https://fantasai.inkedblade.net/),
-and [Tab Atkins-Bittner](https://xanthir.com/) for their feedback on earlier drafts of this article.*
+and [Tab Atkins-Bittner](https://xanthir.com/)
+for their feedback on earlier drafts of this article.*
