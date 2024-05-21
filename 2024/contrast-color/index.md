@@ -476,6 +476,16 @@ You can even turn this into a utility class that you can combine with different 
 
 ## Conclusion & Future work
 
+<div class=warning>
+
+About a week after publishing this post, I discovered a browser bug with `color-mix()` and RCS,
+where colors defined via `color-mix()` used in `from` render RCS invalid.
+You can use [this testcase](https://codepen.io/leaverou/pen/ExzVOME) to see if a given browser is affected.
+This has been fixed in Chrome 125 and Safari TP release 194, but it certainly throws a spanner in the works since the whole point of using this technique is that we don’t have to care how the color was defined.
+
+We can still use this technique, but would need to adjust the `@supports` condition to use `color-mix()`.
+</div>
+
 Putting it all together, including a fallback, as well as a "fall forward" that uses `contrast-color()`,
 the utility class could look like this:
 
@@ -485,7 +495,7 @@ the utility class could look like this:
 	color: white;
 	text-shadow: 0 0 .05em black, 0 0 .05em black, 0 0 .05em black, 0 0 .05em black;
 
-	@supports (color: oklch(from red l c h)) {
+	@supports (color: oklch(from color-mix(in oklch, tan, red) l c h)) {
 		--l: clamp(0, (var(--l-threshold, 0.623) / l - 1) * infinity, 1);
 		color: oklch(from var(--color) var(--l) 0 h);
 		text-shadow: none;
@@ -541,13 +551,6 @@ and it appears that indeed, <var>L<sub>threshold</sub></var> has a wider range w
 
 Given this, **my recommendation would be to use the <var>Y<sub>threshold</sub></var> method if you need to flip between black and white text,
 and the <var>L<sub>threshold</sub></var> method if you need to customize the text color further** (e.g. have a very dark color instead of black).
-
-### Browser bug with RCS + `color-mix()`
-
-About a week after publishing this post, I discovered a browser bug with `color-mix()` and RCS,
-where colors defined via `color-mix()` used in `from` render RCS invalid.
-You can use [this testcase](https://codepen.io/leaverou/pen/ExzVOME) to see if a given browser is affected.
-This has been fixed in Chrome 125 and Safari TP release 194, but it certainly throws a spanner in the works since the whole point of using this technique is that we don’t have to care how the color was defined.
 
 ### Useful resources
 
