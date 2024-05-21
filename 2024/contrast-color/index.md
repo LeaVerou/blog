@@ -542,6 +542,13 @@ and it appears that indeed, <var>L<sub>threshold</sub></var> has a wider range w
 Given this, **my recommendation would be to use the <var>Y<sub>threshold</sub></var> method if you need to flip between black and white text,
 and the <var>L<sub>threshold</sub></var> method if you need to customize the text color further** (e.g. have a very dark color instead of black).
 
+### Browser bug with RCS + `color-mix()`
+
+About a week after publishing this post, I discovered a browser bug with `color-mix()` and RCS,
+where colors defined via `color-mix()` used in `from` render RCS invalid.
+You can use [this testcase](https://codepen.io/leaverou/pen/ExzVOME) to see if a given browser is affected.
+This has been fixed in Chrome 125 and Safari TP release 194, but it certainly throws a spanner in the works since the whole point of using this technique is that we don’t have to care how the color was defined.
+
 ### Useful resources
 
 Many people have shared useful resources on the topic, such as:
