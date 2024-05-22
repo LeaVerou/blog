@@ -41,7 +41,7 @@ As of May 2024, RCS has [shipped in every browser except Firefox](https://canius
 but given that it is an [Interop 2024 focus area](https://web.dev/blog/interop-2024),
 that [Firefox has expressed a positive standards position](https://mozilla.github.io/standards-positions/#css-relative-color-syntax),
 and that the [Bugzilla issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1701488) has had some recent activity and has been assigned,
-I am optimistic it would ship in Firefox soon.
+I am optimistic it would ship in Firefox soon (edit: **it shipped 5 days after writing these lines, in Firefox 128** 🎉).
 My guess it that it would become [Baseline](https://web.dev/baseline) by the end of 2024.
 
 Even if my prediction is off, it already is available to **83% of users worldwide**,
