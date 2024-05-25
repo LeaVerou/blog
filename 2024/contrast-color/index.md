@@ -322,7 +322,7 @@ This means:
 - If actual readability is our only concern, we can safely ignore WCAG and pick a threshold somewhere between 68.7% and 71.6%, e.g. **70%**.
 
 Here’s a [demo](#demo) so you can see how they both play out.
-Edit the color below to see how the two thresholds work in practice, and compare with the actual contrast brackets, shown on the table on the left.
+Edit the color below to see how the two thresholds work in practice, and compare with the actual contrast brackets, shown on the table next to (or below) the color picker.
 
 <style>
 .contrast-color {
@@ -358,6 +358,12 @@ Edit the color below to see how the two thresholds work in practice, and compare
 	table {
 		width: auto;
 		margin-bottom: 0;
+	}
+
+	@media (width <= 430px) {
+		& {
+			flex-direction: column;
+		}
 	}
 }
 
