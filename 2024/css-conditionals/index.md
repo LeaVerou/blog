@@ -7,6 +7,8 @@ tags:
   - web-standards
   - css-wg
   - web-components
+social_posts:
+  - twitter: https://lea.verou.me/blog/2024/css-conditionals/
 ---
 
 <div class="nutshell">

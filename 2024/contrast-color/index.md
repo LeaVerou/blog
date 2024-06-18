@@ -1,6 +1,7 @@
 ---
 title: "On compliance vs readability: Generating text colors with CSS"
 toc: true
+date: 2024-05-17
 tags:
   - css
   - color
