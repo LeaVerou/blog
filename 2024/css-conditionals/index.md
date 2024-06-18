@@ -8,9 +8,9 @@ tags:
   - css-wg
   - web-components
 social_posts:
-  - twitter: https://twitter.com/LeaVerou/status/1803110002900484215
-  - mastodon: https://front-end.social/@leaverou/112638690229716577
-  - linkedin: https://www.linkedin.com/posts/leaverou_css-values-what-is-the-mvp-for-inline-activity-7206968267087745024-1Fns
+  twitter: https://twitter.com/LeaVerou/status/1803110002900484215
+  mastodon: https://front-end.social/@leaverou/112638690229716577
+  linkedin: https://www.linkedin.com/posts/leaverou_css-values-what-is-the-mvp-for-inline-activity-7206968267087745024-1Fns
 ---
 
 <div class="nutshell">
