@@ -8,7 +8,7 @@ tags:
   - css-wg
   - web-components
 social_posts:
-  - twitter: https://lea.verou.me/blog/2024/css-conditionals/
+  - twitter: https://twitter.com/LeaVerou/status/1803110002900484215
 ---
 
 <div class="nutshell">
