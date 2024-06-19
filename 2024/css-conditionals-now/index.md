@@ -53,6 +53,8 @@ Why is that? Several reasons:
 The corollary is that if hacks allow you to expose a nicer API to component users, it may be worth the increase in internal complexity (to a degree).
 Just make sure that part of the code is well commented, and keep track of it so you can return to it once the platform has evolved to not require a hack anymore.
 
+As to whether custom properties are a better option to control styling than e.g. attributes, I listed several arguments for that in my [previous article](../css-conditionals/#why).
+
 ## The current state of the art
 
 There is a host of hacks and workarounds that people have come up with to make up for the lack of inline conditionals in CSS, with the first one dating back to 2016.

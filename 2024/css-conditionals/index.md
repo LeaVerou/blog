@@ -49,7 +49,7 @@ there were a few other recurring questions and a fair bit of confusion that I fi
 
 ## FAQ
 
-### What is `if()` for? Does it replace style queries?
+### What is `if()` for? Does it replace style queries? { #why }
 
 Quite the opposite — `if()` _complements_ [style queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_size_and_style_queries#container_style_queries_2).
 If you can do something with style queries, by all means, use style queries — they are almost certainly a better solution.
