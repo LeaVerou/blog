@@ -106,7 +106,7 @@ E.g. this code snippet to map `0` to `100px`, `1` to `20px`, and `2` to `3px`:
 }
 ```
 
-Which these days could be rewritten as:
+Which these days could be rewritten as this, which also makes the boolean logic at play clearer:
 
 ```css
 .block {
