@@ -7,6 +7,7 @@ tags:
   - web-standards
   - css-wg
   - web-components
+  - css-variables
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1803110002900484215
   mastodon: https://front-end.social/@leaverou/112638690229716577
