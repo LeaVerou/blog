@@ -24,16 +24,18 @@ prioritizing developer convenience over user convenience.
 
 The [TAG](https://en.wikipedia.org/wiki/Technical_Architecture_Group) maintains a [Web Platform Design Principles](https://www.w3.org/TR/design-principles/) document [^1]
 that everyone designing APIs for the web platform is supposed to read and follow.
-I’m a strong believer in having published Design Principles, for any product.
-They help stay on track, and remember what the big picture vision is, which is otherwise easy to lose in the day to day minutiae.
+I’m a strong believer in having published Design Principles, for any product[^product].
+They help stay on track, and remember what the big picture vision is, which is otherwise easy to lose sight of in the day to day minutiae.
 One of the core principles in the document is the [Priority of Constituencies](https://www.w3.org/TR/design-principles/#priority-of-constituencies).
 The core of it is:
+
+[^product]: I’m using _product_ here in the general sense, of any software product, technology, or API, not just for-profit or commercial ones.
 
 > User needs come before the needs of web page authors, which come before the needs of user agent implementors, which come before the needs of specification writers, which come before theoretical purity.
 
 Like all principles, this isn’t absolute.
 A small gain in user convenience is not a good tradeoff when it requires tremendous implementation complexity.
-But it’s a good north star as a rule of thumb.
+But as a rule of thumb it’s a good north star to follow.
 
 The TAG did not invent this principle; it is well known in UX and Product circles with a number of different wordings:
 - “Put the pain on those who can bear it”
@@ -41,7 +43,7 @@ The TAG did not invent this principle; it is well known in UX and Product circle
 
 Why is that? Several reasons:
 - It is _far_ easier to change the implementation than to change the user-facing API, so it’s worth making sacrifices to keep it clean from the get go.
-- Most products (in the general sense) have way more users than developers, so this minimizes collective pain.
+- Most products have way more users than developers, so this minimizes collective pain.
 - Internal complexity can be managed far more easily, with tooling or even good comments.
 - Managing complexity internally localizes it and contains it better.
 - Once the underlying platform improves, only one codebase needs to be changed to reap the benefits.
