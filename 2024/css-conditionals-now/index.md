@@ -595,7 +595,7 @@ Keywords → Numbers
 : Type grinding
 
 Numbers → Keywords
-: ???
+: We can use [paused animations](#paused-animations) to select among a number of keywords based on a number (which we transform to a negative `animation-delay`).
 
 Numbers → Space toggles
 : Once again, [Roma Komarov has come up with a very cool trick](https://codepen.io/kizu/pen/zYQdamG): he uses an animation that interpolates a custom property from `initial` to the empty value,
