@@ -579,6 +579,34 @@ Here is a simple example that you can play with ([codepen](https://codepen.io/le
 
 And here is a more realistic one, using the [Type Grinding](#type-grinding) method to transform keywords to numbers, and then using the above technique to select among 4 colors for backgrounds and borders ([codepen](https://codepen.io/leaverou/pen/rNgJoJe)).
 
+## Combining approaches
+
+There are two components to each method: the input values it supports, i.e. your custom property API that you will expose, e.g. numbers, keywords, etc.,
+and the output values it supports (`<dimension>`, keywords, etc.).
+
+Even without doing anything, we can combine methods that support the same type of input values,
+e.g. [Binary Linear Interpolation](#binary-linear-interpolation) and [Paused animations](#paused-animations)
+or [Type Grinding](#type-grinding) and [Variable animation names](#named-paused-animations).
+
+If we can transform the input values of one method to the input values of another, we can mix and match approaches to maximize flexibility.
+For example, we can use [type grinding](#type-grinding) to transform keywords to numbers, and then use [paused animations](#paused-animations) or [binary linear interpolation](#binary-linear-interpolation) to select among a number of quantitative values based on that number.
+
+Keywords → Numbers
+: Type grinding
+
+Numbers → Keywords
+: ???
+
+Numbers → Space toggles
+: Once again, [Roma Komarov has come up with a very cool trick](https://codepen.io/kizu/pen/zYQdamG): he uses an animation that interpolates a custom property from `initial` to the empty value,
+then uses the number to set the `animation-delay` accordingly to select among the values (basically [paused animations](#paused-animations) but used on an internal value).
+Unfortunately [two Firefox bugs]() prevent it from working.
+He also tried [a variant for space toggles](https://codepen.io/kizu/pen/BaedVMP) but that has even worse compatibility, limited to Chrome only.
+I [modified his idea a bit](https://codepen.io/leaverou/pen/eYaMdMN?editors=1100), and it looks like my attempt works on Firefox as well. 🎉
+
+Space toggles → Numbers
+: Easy: `--number: calc(0 var(--toggle, + 1))`
+
 ## So, which one is better?
 
 I think the most important consideration is the API we expose to component users.
@@ -598,10 +626,6 @@ On the other hand, [`@keyframes` are not only allowed, but also properly scoped 
 so _Variable animation name_ might be a good choice when you don’t want to use the same keywords for multiple custom properties on the same component.
 Of course, the caveats of the animation-based approaches described earlier still apply.
 Up to you to decide whether they are a dealbreaker for your particular use case.
-
-Note that you can also combine methods that support the same custom property values,
-e.g. [Binary Linear Interpolation](#binary-linear-interpolation) and [Paused animations](#paused-animations)
-or [Type Grinding](#type-grinding) and [Variable animation names](#named-paused-animations).
 
 
 TBD: Maybe some kind of decision tree or scorecard or summary?
