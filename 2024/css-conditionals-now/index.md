@@ -236,11 +236,16 @@ A big downside of most of these methods (except for the animation-based ones) is
 and the declaration gets applied whether your custom property has a value or not,
 which makes it difficult to layer composable styles leading to some undesirable couplings.
 
-Roma Komarov’s [“Layered Toggles”](https://kizu.dev/layered-toggles/) method addresses this
+Roma Komarov’s [“Layered Toggles”](https://kizu.dev/layered-toggles/) method addresses this for some cases
 by allowing us to decouple the different values by taking advantage of Cascade Layers.
 The core idea is that Cascade Layers include a `revert-layer` keyword that will cause the current layer to be ignored wrt the declaration it’s used on.
+Given that we can use unnamed layers, we can simply user a `@layer {}` rule for every block of properties we want to apply conditionally.
 
-TBD: Add an example here
+This approach does have some severe limitations which made it rather unpractical for my use cases.
+The biggest one is that anything in a layer has lower priority than any unlayered styles,
+which makes it prohibitive for many use cases.
+Also, this doesn’t really simplify cyclic toggles, you still need to set all values in one place.
+Still, worth a look as there are some use cases it can be helpful for.
 
 ### 3. Paused animations
 
