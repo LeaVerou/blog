@@ -42,15 +42,12 @@ The core of it is:
 Obviously in most projects there are far fewer stakeholders than for the whole web platform,
 but the spirit of the principle still applies:
 **the higher the abstraction, the higher priority the user needs**.
+Or, in other words, **consumers above producers**.
 
 For a more relatable example, in a web app using a framework like e.g. Vue and several Vue components,
 the user needs of website users come before the needs of the web app developers,
 which come before the needs of the developers of its Vue components,
 which come before the needs of the Vue framework developers (sorry Evan :).
-
-Like all principles, this isn’t absolute.
-A small gain in user convenience is not a good tradeoff when it requires tremendous implementation complexity.
-But as a rule of thumb it’s a good north star to follow.
 
 The TAG did not invent this principle; it is well known in UX and Product circles with a number of different wordings:
 - “Put the pain on those who can bear it”
@@ -68,9 +65,15 @@ Why is that? Several reasons:
 The corollary is that if hacks allow you to expose a nicer API to component users, it may be worth the increase in internal complexity (to a degree).
 Just make sure that part of the code is well commented, and keep track of it so you can return to it once the platform has evolved to not require a hack anymore.
 
-As to whether custom properties are a better option to control styling than e.g. attributes, I listed several arguments for that in my [previous article](../css-conditionals/#why).
+Like all principles, **this isn’t absolute**.
+A small gain in user convenience is not a good tradeoff when it requires tremendous implementation complexity.
+But it’s a good north star to follow.
 
-### When is it not a good idea to use do this?
+As to whether custom properties are a better option to control styling than e.g. attributes,
+I listed several arguments for that in my [previous article](../css-conditionals/#why).
+Although, there are also cases where using custom properties is not a good idea…
+
+### When is it not a good idea to do this?
 
 In a nutshell, when the abstraction is likely to leak.
 **Ugliness is only acceptable if it’s encapsulated and not exposed to component users.**
@@ -210,13 +213,14 @@ The core idea is that variables do not only become `initial` when they are not s
 but also when cycles are encountered.
 
 <aside class=info>
+
 What is a cycle? A cycle is when a variable references itself, either directly or indirectly.
-The most trivial cycle is `--foo: var(--foo);`, but they can have any number of steps, e.g.:
+The most trivial cycle is `--foo: var(--foo);` but they can have any number of steps, e.g.:
 
 ```css
---foo: var(--bar);
---bar: var(--baz);
---baz: var(--foo);
+--a1: var(--a2);
+--a2: var(--a3);
+--a3: var(--a1);
 ```
 </aside>
 
@@ -230,7 +234,7 @@ It looks like this:
 	--variant-default: var(--variant,);
 	--variant-success: var(--variant,);
 	--variant-warning: var(--variant,);
-	--variant-error:	 var(--variant,);
+	--variant-error:   var(--variant,);
 
 	background:
 		var(--variant-default, lavender)
@@ -247,6 +251,12 @@ And is used like this:
 	--variant: var(--variant-warning);
 }
 ```
+
+<div class=note>
+
+A downside of this method is that since the values behind the `--variant-success`, `--variant-warning`, etc variables are specific to the `--variant` variable
+they need to be namespaced to avoid clashes.
+</div>
 
 #### Layered Toggles
 
