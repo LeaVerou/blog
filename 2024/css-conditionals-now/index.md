@@ -5,6 +5,7 @@ tags:
   - css
   - web-components
   - css-variables
+image: images/callouts.png
 ---
 
 <div class=nutshell>
@@ -13,7 +14,7 @@ The CSS WG [resolved](../css-conditionals/) to add `if()` to CSS, but that won�
 What are our options in the meantime?
 </div>
 
-Two days ago, I posted about the recent [CSS WG resolution to add an `if()` function to CSS](../css-conditionals/).
+A couple days ago, I posted about the recent [CSS WG resolution to add an `if()` function to CSS](../css-conditionals/).
 Great as it may be, this is still a long way off, two years if everything goes super smoothly, more if not.
 So what can you do when you need conditionals *right now*?
 
@@ -69,9 +70,26 @@ Just make sure that part of the code is well commented, and keep track of it so 
 
 As to whether custom properties are a better option to control styling than e.g. attributes, I listed several arguments for that in my [previous article](../css-conditionals/#why).
 
+### When is it not a good idea to use do this?
+
+In a nutshell, when the abstraction is likely to leak.
+**Ugliness is only acceptable if it’s encapsulated and not exposed to component users.**
+If there is a high chance they may come into contact with it, it might be a better idea to simply use attributes and call it a day.
+
+<figure>
+
+![A series of callouts with --variant declarations next to them](images/callouts.png)
+<figcaption>Example callouts with three variants.</figcaption>
+</figure>
+
+In many of the examples below, I use variants as the canonical example of a custom property that a component may want to expose.
+However, if component consumers may need to customize each variant, it may be better to use attributes so they can just use e.g. `[variant="success"]` instead of having to understand whatever crazy hack was used to expose a `--variant` custom property.
+And even from a philosophical purity perspective, variants are on the brink of presentational vs semantic anyway.
+
 ## The current state of the art
 
-There is a host of hacks and workarounds that people have come up with to make up for the lack of inline conditionals in CSS, with the first one dating back to 2016.
+There is a host of hacks and workarounds that people have come up with to make up for the lack of inline conditionals in CSS,
+with the first ones dating back to as early as 2015.
 
 ### 1. Binary Linear Interpolation { #binary-linear-interpolation }
 
@@ -144,6 +162,7 @@ Back then, `min()` and `max()` were not available, so he had to divide each fact
 Once `abs()` ships this will be even simpler (the inner `max()` is basically getting the absolute value of `N - var(--foo)`)
 
 Ana Tudor also wrote about this in 2018, in this very visual article: [DRY Switching with CSS Variables](https://css-tricks.com/dry-switching-with-css-variables-the-difference-of-one-declaration/).
+Pretty sure she was also using boolean algebra on these too (multiplication = AND, addition = OR), but I couldn’t find the exact post.
 
 ### 2. Toggles (Space Toggle, Cyclic Toggles) { #toggles }
 
@@ -754,7 +773,9 @@ and its downsides are not dealbreakers for your particular use case.
 
 ## Conclusion
 
-Phew! That was a long one.
-If there was ever any doubt that we needed `if()` in CSS, hopefully the sheer number and horribleness of these hacks has dispelled it.
+Phew! That was a long one. If you’re aware of any other techniques, let me know so I can add them.
+
+And I think after all of this, if you had any doubt that we need `if()` in CSS,
+the sheer number and horribleness of these hacks _must_ have dispelled it by now. 😅
 
 _Thanks to [Roma Komarov](https://kizu.dev/) for reviewing earlier drafts of this article._
