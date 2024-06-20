@@ -14,7 +14,7 @@ The CSS WG [resolved](../css-conditionals/) to add `if()` to CSS, but that wonâ€
 What are our options in the meantime?
 </div>
 
-Yesterday I posted about the recent [CSS WG resolution to add an `if()` function to CSS](../css-conditionals/).
+Two days ago, I posted about the recent [CSS WG resolution to add an `if()` function to CSS](../css-conditionals/).
 Great as it may be, this is still a long way off, two years if everything goes super smoothly, more if not.
 So what can you do when you need conditionals *right now*?
 
@@ -515,7 +515,7 @@ Note that you can combine the two approaches (variable animation-name and [pause
 when you have two custom properties where each state of the first corresponds to N distinct states of the latter.
 For example, a `--variant` that sets colors, and a light/dark mode within each variant that sets different colors.
 
-### Making animation-based approaches more composable with author code
+### Making animation-based approaches compose better with author code
 
 Another downside of the animation-based approaches is that they take over the `animation` property.
 If authors want to apply an animation to your component, suddenly a bunch of unrelated things stop working, which is not great user experience.
@@ -573,12 +573,6 @@ Here is a simple example that you can play with ([codepen](https://codepen.io/le
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 And here is a more realistic one, using the [Type Grinding](#type-grinding) method to transform keywords to numbers, and then using the above technique to select among 4 colors for backgrounds and borders ([codepen](https://codepen.io/leaverou/pen/rNgJoJe)).
-
-## Limitations
-
-There are certain limitations that are present on all or most of the methods we have so far.
-Only [toggles](#toggles) are able to support _any_ output type, including strings, `url()`s etc.
-All other methods are limited to quantitative vaues (`<dimension>`, `<number>`, `<integer>`) or keywords.
 
 ## So, which one is better?
 
