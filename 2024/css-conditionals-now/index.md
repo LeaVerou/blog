@@ -1,6 +1,5 @@
 ---
 title: Inline conditionals in CSS, now?
-draft: true
 toc: true
 tags:
   - css
@@ -278,9 +277,9 @@ Used like:
 This is merely to illustrate the core idea, having a `--variant` property that takes numbers is not a good API!
 Though the numbers could be aliased to variables, so that users would set `--variant: var(--success)`.
 
-This technique seems to have been [first documented by me in 2015](https://youtu.be/eVnUDTtOLE0?t=1167), during a talk about …pie charts.
+This technique seems to have been [first documented by me in 2015](https://youtu.be/eVnUDTtOLE0?t=1167), during a talk about …pie charts
+(I would swear I showed it in an earlier talk but I cannot find it).
 I never bothered writing about it, but [someone else did](https://au.si/css-conditions-today), 4 years later.
-Roma Komarov [independently discovered this in 2018](https://codepen.io/kizu/pen/vVNpXj), but never wrote about it either.
 
 To ensure you don’t get slightly interpolated values due to precision issues, you could also slap a `steps()` in there:
 
@@ -293,8 +292,10 @@ button {
 This is especially useful when 100 divided by your number of values produces repeating decimals,
 e.g. 3 steps means your keyframes are at increments of `33.33333%`.
 
-A benefit of this method is that defining each state is done with regular declarations, not involving any weirdness.
-It does also have some obvious downsides are:
+A benefit of this method is that defining each state is done with regular declarations, not involving any weirdness,
+and that .
+
+It does also have some obvious downsides:
 - Values restricted to numbers
 - Takes over the `animation` property, so you can’t use it for actual animations.
 
@@ -609,25 +610,150 @@ and it looks like my attempt works on Firefox as well. 🎉
 
 ## So, which one is better?
 
-I think the most important consideration is the API we expose to component users.
+I’ve summarized the pros and cons of each method below:
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Input values</th>
+<th>Output values</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+
+[Binary Linear Interpolation](#binary-linear-interpolation)
+</th>
+<td>Numbers</td>
+<td>Quantitative</td>
+<td>
+
+* Lightweight
+* Requires no global rules
+
+</td>
+<td>
+
+* Limited output range
+
+</td>
+</tr>
+<tr>
+<th>
+
+[Toggles](#toggles)
+</th>
+<td>
+
+`var(—alias)` (actual values are too weird to expose raw)
+</td>
+<td>Any</td>
+<td>
+
+* Can be used in part of a value
+
+</td>
+<td>
+
+* Weird values that need to be aliased
+
+</td>
+</tr>
+<tr>
+<th>
+
+[Paused animations](#paused-animations)
+</th>
+<td>Numbers</td>
+<td>Any</td>
+<td>
+
+* Normal, decoupled declarations
+
+</td>
+<td>
+
+* Takes over `animation` property
+* Cascade weirdness
+
+</td>
+</tr>
+<tr>
+<th>
+
+[Type Grinding](#type-grinding)
+</th>
+<td>Keywords</td>
+<td>
+
+Any value supported by the `syntax` descriptor
+</td>
+<td>
+
+* High flexibility for exposed API
+* Good encapsulation
+
+</td>
+<td>
+
+* Must insert CSS into light DOM
+* Tedious code (though can be automated with build tools)
+* [No Firefox support](https://caniuse.com/mdn-css_at-rules_property) (though that’s [changing](https://bugzilla.mozilla.org/show_bug.cgi?id=1864818))
+
+</td>
+</tr>
+<tr>
+<th>
+
+[Variable animation name](#variable-animation-name)
+</th>
+<td>Keywords</td>
+<td>Any</td>
+<td>
+
+* Normal, decoupled declarations
+
+</td>
+<td>
+
+* Impractical outside of Shadow DOM due to name clashes
+* Takes over `animation` property
+* Cascade weirdness
+
+</td>
+</tr>
+</tbody>
+</table>
+
+The most important consideration is the API we want to expose to component users.
 After all, exposing a nicer API is the whole point of this, right?
-If your custom property makes sense as a number without degrading the API (e.g. `--size` may make sense as a number, but `small | medium | large` is still better than `0 | 1 | 2`), then [Binary Linear Interpolation](#binary-linear-interpolation) is probably the most flexible method.
-However, in the vast majority of cases I have seen, the north star API is a set of plain, high-level keywords.
+
+If your custom property makes sense as a number _without degrading usability_
+(e.g. `--size` may make sense as a number, but `small | medium | large` is still better than `0 | 1 | 2`),
+then [Binary Linear Interpolation](#binary-linear-interpolation) is probably the most flexible method to start with,
+and as we have seen in [Combining approaches](#combining-approaches) section, numbers can be converted to inputs for every other method.
+
+However, in the vast majority of cases I have seen, the [north star API](../../2023/eigensolutions/#nsui) is a set of plain, high-level keywords.
 This is only possible via [Type Grinding](#type-grinding) and [Variable animation names](#named-paused-animations).
 
 Between the two, Type Grinding is the one providing the best encapsulation,
 since it relies entirely on custom properties and does not hijack any native properties.
 
 Unfortunately, the fact that [`@property` is not yet supported in Shadow DOM](https://codepen.io/leaverou/pen/MWdQxyG) throws a spanner in the works,
-but since these intermediate properties are used for internal calculations,
-we can just give them obscure names and insert them in the light DOM the first time our component is used.
+but since these intermediate properties are only used for internal calculations,
+we can just give them obscure names and insert them in the light DOM.
 
 On the other hand, [`@keyframes` are not only allowed, but also properly scoped when used in Shadow DOM](https://codepen.io/leaverou/pen/gOJvEMw),
-so _Variable animation name_ might be a good choice when you don’t want to use the same keywords for multiple custom properties on the same component.
-Of course, the caveats of the animation-based approaches described earlier still apply.
-Up to you to decide whether they are a dealbreaker for your particular use case.
+so [Variable animation name](#variable-animation-name) might be a good choice when you don’t want to use the same keywords for multiple custom properties on the same component
+and its downsides are not dealbreakers for your particular use case.
 
+## Conclusion
 
-TBD: Maybe some kind of decision tree or scorecard or summary?
+Phew! That was a long one.
+If there was ever any doubt that we needed `if()` in CSS, hopefully the sheer number and horribleness of these hacks has dispelled it.
 
 _Thanks to [Roma Komarov](https://kizu.dev/) for reviewing earlier drafts of this article._
