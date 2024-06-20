@@ -74,7 +74,7 @@ As to whether custom properties are a better option to control styling than e.g.
 
 There is a host of hacks and workarounds that people have come up with to make up for the lack of inline conditionals in CSS, with the first one dating back to 2016.
 
-### 1. Binary Linear Interpolation
+### 1. Binary Linear Interpolation { #binary-linear-interpolation }
 
 This was [first documented by Roma Komarov in 2016](https://kizu.dev/conditions-for-css-variables/), and has since been used in a number of creative ways.
 The gist of this method is to use essentially the [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation) formula for mapping $[0, 1]$ to $[a, b]$:
@@ -247,7 +247,7 @@ which makes it prohibitive for many use cases.
 Also, this doesn’t really simplify cyclic toggles, you still need to set all values in one place.
 Still, worth a look as there are some use cases it can be helpful for.
 
-### 3. Paused animations
+### 3. Paused animations { #paused-animations }
 
 The core idea behind this method is that paused animations (`animation-play-state: paused`) can still be advanced by setting `animation-delay` to a negative value.
 For example in an animation like `animation: 100s foo`, you can access the 50% mark by setting `animation-delay: -50s`.
@@ -423,7 +423,7 @@ Here is the `--variant` example using this method:
 Then, we can use techniques like [linear range mapping](https://forsethingvild.medium.com/lea-verous-dynamic-css-secrets-takeaways-d281218de60a#6ca0) to transform it to a length or a percentage ([generator](https://css.land/ranges/))
 or [recursive `color-mix()`](https://noahliebman.net/2024/04/recursion-in-the-stylesheet/) to use that number to select an appropriate color.
 
-### 5. Variable animation name
+### 5. Variable animation name { #variable-animation-name }
 
 In June 2023, Roma Komarov [discovered](https://codepen.io/kizu/pen/YzRXXXL) another method that allows plain keywords to be used as the custom property API.
 He never wrote about it, so [this Codepen](https://codepen.io/kizu/pen/YzRXXXL) is the only documentation we have.
@@ -597,15 +597,15 @@ Keywords → Numbers
 Numbers → Keywords
 : We can use [paused animations](#paused-animations) to select among a number of keywords based on a number (which we transform to a negative `animation-delay`).
 
-Numbers → Space toggles
-: Once again, [Roma Komarov has come up with a very cool trick](https://codepen.io/kizu/pen/zYQdamG): he uses an animation that interpolates a custom property from `initial` to the empty value,
-then uses the number to set the `animation-delay` accordingly to select among the values (basically [paused animations](#paused-animations) but used on an internal value).
-Unfortunately [two Firefox bugs]() prevent it from working.
-He also tried [a variant for space toggles](https://codepen.io/kizu/pen/BaedVMP) but that has even worse compatibility, limited to Chrome only.
-I [modified his idea a bit](https://codepen.io/leaverou/pen/eYaMdMN?editors=1100), and it looks like my attempt works on Firefox as well. 🎉
-
 Space toggles → Numbers
 : Easy: `--number: calc(0 var(--toggle, + 1))`
+
+Numbers → Space toggles
+: Once again, [Roma Komarov has come up with a very cool trick](https://codepen.io/kizu/pen/zYQdamG): he conditionally applies an animation which interpolates two custom properties from `initial` to the empty value and vice versa — basically [variable animation names](#named-paused-animations) but used on an internal value.
+Unfortunately [a Firefox bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1763376) prevents it from working interoperably.
+He also tried [a variant for space toggles](https://codepen.io/kizu/pen/BaedVMP) but that has even worse compatibility, limited to Chrome only.
+I [modified his idea a bit](https://codepen.io/leaverou/pen/eYaMdMN?editors=1100) to use [paused animations](#paused-animations) instead,
+and it looks like my attempt works on Firefox as well. 🎉
 
 ## So, which one is better?
 
