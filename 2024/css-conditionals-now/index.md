@@ -426,8 +426,9 @@ or [recursive `color-mix()`](https://noahliebman.net/2024/04/recursion-in-the-st
 
 ### 5. Variable animation name { #variable-animation-name }
 
-In June 2023, Roma Komarov [discovered](https://codepen.io/kizu/pen/YzRXXXL) another method that allows plain keywords to be used as the custom property API.
-He never wrote about it, so [this Codepen](https://codepen.io/kizu/pen/YzRXXXL) is the only documentation we have.
+In 2018, Roma Komarov [discovered](https://codepen.io/kizu/details/vVNpXj) another method that allows plain keywords to be used as the custom property API,
+forgot about it, then [rediscovered](https://codepen.io/kizu/pen/YzRXXXL) it in June 2023 😅.
+He still never wrote about it, so these codepens are the only documentation we have.
 It’s a variation of the previous method: instead of using a single `@keyframes` rule and switching between them via `animation-delay`,
 define several separate `@keyframes` rules, each named after the keyword we want to use:
 
@@ -649,7 +650,7 @@ I’ve summarized the pros and cons of each method below:
 </th>
 <td>
 
-`var(—alias)` (actual values are too weird to expose raw)
+`var(--alias)` _(actual values are too weird to expose raw)_
 </td>
 <td>Any</td>
 <td>
