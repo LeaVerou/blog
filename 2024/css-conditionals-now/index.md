@@ -8,6 +8,12 @@ tags:
   - css-variables
 ---
 
+<div class=nutshell>
+
+The CSS WG [resolved](../css-conditionals/) to add `if()` to CSS, but that won’t be in browsers for a while.
+What are our options in the meantime?
+</div>
+
 Yesterday I posted about the recent [CSS WG resolution to add an `if()` function to CSS](../css-conditionals/).
 Great as it may be, this is still a long way off, two years if everything goes super smoothly, more if not.
 So what can you do when you need conditionals *right now*?
@@ -15,7 +21,7 @@ So what can you do when you need conditionals *right now*?
 You may be pleased to find that you’re not _completely_ out of luck.
 There is a series of brilliant, horrible hacks that enable you to expose the kinds of higher level custom properties that conditionals typically enable.
 
-## Using hacks in production?!
+## Using hacks in production?! { #hacks-in-production }
 
 The instinctive reaction many developers have when seeing hacks like these is “Nice hack, but can’t _possibly_ ever use this in production”.
 This sounds reasonable on the surface (keeping the codebase maintainable is a worthy goal!) but
@@ -32,6 +38,15 @@ The core of it is:
 [^product]: I’m using _product_ here in the general sense, of any software product, technology, or API, not just for-profit or commercial ones.
 
 > User needs come before the needs of web page authors, which come before the needs of user agent implementors, which come before the needs of specification writers, which come before theoretical purity.
+
+Obviously in most projects there are far fewer stakeholders than for the whole web platform,
+but the spirit of the principle still applies:
+**the higher the abstraction, the higher priority the user needs**.
+
+For a more relatable example, in a web app using a framework like e.g. Vue and several Vue components,
+the user needs of website users come before the needs of the web app developers,
+which come before the needs of the developers of its Vue components,
+which come before the needs of the Vue framework developers (sorry Evan :).
 
 Like all principles, this isn’t absolute.
 A small gain in user convenience is not a good tradeoff when it requires tremendous implementation complexity.
@@ -59,7 +74,7 @@ As to whether custom properties are a better option to control styling than e.g.
 
 There is a host of hacks and workarounds that people have come up with to make up for the lack of inline conditionals in CSS, with the first one dating back to 2016.
 
-### Binary Linear Interpolation
+### 1. Binary Linear Interpolation
 
 This was [first documented by Roma Komarov in 2016](https://kizu.dev/conditions-for-css-variables/), and has since been used in a number of creative ways.
 The gist of this method is to use essentially the [linear interpolation](https://en.wikipedia.org/wiki/Linear_interpolation) formula for mapping $[0, 1]$ to $[a, b]$:
@@ -131,7 +146,7 @@ Once `abs()` ships this will be even simpler (the inner `max()` is basically get
 
 Ana Tudor also wrote about this in 2018, in this very visual article: [DRY Switching with CSS Variables](https://css-tricks.com/dry-switching-with-css-variables-the-difference-of-one-declaration/).
 
-### Toggles (Space Toggle, Cyclic Toggles) { #toggles }
+### 2. Toggles (Space Toggle, Cyclic Toggles) { #toggles }
 
 This was independently discovered by Ana Tudor ([c. 2017](https://twitter.com/anatudor/status/1284160219963170816)),
 Jane Ori [in April 2020](https://twitter.com/Jane0ri/status/1282303255826046977) (who gave it the name “Space Toggle”),
@@ -167,6 +182,8 @@ Note how we needed two variables for the two states.
 Another downside is that there is no way to specify a fallback if none of the relevant variables are set.
 In the example above, if neither `--if-success` nor `--if-warning` are set, the `background` declaration will be empty, and thus become IACVT which will make it `transparent`.
 
+#### Cyclic Toggles
+
 In 2023, Roma Komarov expanded the technique into what he called [“Cyclic Dependency Space Toggles”](https://kizu.dev/cyclic-toggles/) which
 addresses both limitations:
 it supports any number of states,
@@ -190,18 +207,18 @@ It looks like this:
 
 ```css
 .info {
-	--level: var(--level--default);
+	--variant: var(--variant-default);
 
-	--level--default: var(--level,);
-	--level--success: var(--level,);
-	--level--warning: var(--level,);
-	--level--error:	 var(--level,);
+	--variant-default: var(--variant,);
+	--variant-success: var(--variant,);
+	--variant-warning: var(--variant,);
+	--variant-error:	 var(--variant,);
 
 	background:
-		var(--level--default, lavender)
-		var(--level--success, palegreen)
-		var(--level--warning, khaki)
-		var(--level--error,	 lightpink);
+		var(--variant-default, lavender)
+		var(--variant-success, palegreen)
+		var(--variant-warning, khaki)
+		var(--variant-error,   lightpink);
 }
 ```
 
@@ -209,15 +226,27 @@ And is used like this:
 
 ```css
 .my-warning {
-	--level: var(--level--warning);
+	--variant: var(--variant-warning);
 }
 ```
 
-### Paused animations
+#### Layered Toggles
+
+A big downside of most of these methods (except for the animation-based ones) is that you need to specify all values of the property in one place,
+and the declaration gets applied whether your custom property has a value or not,
+which makes it difficult to layer composable styles leading to some undesirable couplings.
+
+Roma Komarov’s [“Layered Toggles”](https://kizu.dev/layered-toggles/) method addresses this
+by allowing us to decouple the different values by taking advantage of Cascade Layers.
+The core idea is that Cascade Layers include a `revert-layer` keyword that will cause the current layer to be ignored wrt the declaration it’s used on.
+
+TBD: Add an example here
+
+### 3. Paused animations
 
 The core idea behind this method is that paused animations (`animation-play-state: paused`) can still be advanced by setting `animation-delay` to a negative value.
 For example in an animation like `animation: 100s foo`, you can access the 50% mark by setting `animation-delay: -50s`.
-It’s trivial to transform raw numbers to time values, so this can be abstracted to plain numbers for the user-facing API.
+It’s trivial to transform raw numbers to `<time>` values, so this can be abstracted to plain numbers for the user-facing API.
 
 Here is a simple example to illustrate how this works:
 
@@ -242,7 +271,7 @@ Used like:
 ```
 
 This is merely to illustrate the core idea, having a `--variant` property that takes numbers is not a good API!
-Though the numbers could be aliased to variables.
+Though the numbers could be aliased to variables, so that users would set `--variant: var(--success)`.
 
 This technique seems to have been [first documented by me in 2015](https://youtu.be/eVnUDTtOLE0?t=1167), during a talk about …pie charts.
 I never bothered writing about it, but [someone else did](https://au.si/css-conditions-today), 4 years later.
@@ -264,7 +293,7 @@ It does also have some obvious downsides are:
 - Values restricted to numbers
 - Takes over the `animation` property, so you can’t use it for actual animations.
 
-### Type Grinding via `@property` { #type-grinding }
+### 4. Type Grinding { #type-grinding }
 
 So far all of these methods impose constraints on the API exposed by these custom properties:
 numbers by the linear interpolation method and weird values that have to be hidden behind variables
@@ -389,23 +418,7 @@ Here is the `--variant` example using this method:
 Then, we can use techniques like [linear range mapping](https://forsethingvild.medium.com/lea-verous-dynamic-css-secrets-takeaways-d281218de60a#6ca0) to transform it to a length or a percentage ([generator](https://css.land/ranges/))
 or [recursive `color-mix()`](https://noahliebman.net/2024/04/recursion-in-the-stylesheet/) to use that number to select an appropriate color.
 
-In fact, when you don’t care about having a continuous color scale, the `color-mix()` code needed can be a lot simpler than that.
-Here’s what I came up with to select among 4 colors, using the `--variant-index` variable from the previous example ([Full demo](https://codepen.io/leaverou/pen/rNgJoJe/d600ca13a3545837eb3acc0a0a50e5b6)):
-
-```css
-background: color-mix(in oklab,
-	var(--stone-2) calc(100% * (1 - var(--variant-index))),
-	color-mix(in oklab,
-		var(--green-2) calc(100% * (2 - var(--variant-index))),
-		color-mix(in oklab,
-			var(--yellow-2) calc(100% * (3 - var(--variant-index))),
-			var(--red-2)
-		)
-	)
-);
-```
-
-### Variable animation name
+### 5. Variable animation name
 
 In June 2023, Roma Komarov [discovered](https://codepen.io/kizu/pen/YzRXXXL) another method that allows plain keywords to be used as the custom property API.
 He never wrote about it, so [this Codepen](https://codepen.io/kizu/pen/YzRXXXL) is the only documentation we have.
@@ -434,9 +447,9 @@ define several separate `@keyframes` rules, each named after the keyword we want
 
 .callout {
 	padding: 1em;
+	margin: 1rem;
 	border: 3px solid var(--color-neutral-80);
 	background: var(--color-neutral-90);
-	margin: 1rem;
 
 	animation: var(--variant) 0s paused both;
 }
@@ -454,12 +467,125 @@ The obvious downsides of this method are:
 - Impractical to use outside of Shadow DOM due to the potential for name clashes.
 - Takes over the `animation` property, so you can’t use it for actual animations.
 
+## Improvements
+
+Every one of these methods has limitations, some of which are inerent in its nature, but others can be improved upon.
+In this section I will discuss some improvements that me or others have thought of.
+I decided to include these in a separate section, since they affect more than one method.
+
+### Making animation-based approaches cascade better
+
+A big downside with the animation-based approaches (3 and 5) is the place of animations in the cascade:
+properties applied via animation keyframes can only be overridden via other animations or `!important`.
+
+One way to deal with that is to set custom properties in the animation keyframes, that you apply in regular rules.
+To use the example from [Variable animation name](#variable-animation-name):
+
+```css
+@keyframes success {
+	from, to {
+		--background-color: var(--color-success-90);
+		--border-color: var(--color-success-80);
+	}
+}
+@keyframes warning {
+	from, to {
+		--background-color: var(--color-warning-90);
+		--border-color: var(--color-warning-80);
+	}
+}
+@keyframes danger {
+	from, to {
+		--background-color: var(--color-danger-90);
+		--border-color: var(--color-danger-80);
+	}
+}
+
+.callout {
+	padding: 1em;
+	margin: 1rem;
+	border: 3px solid var(--border-color, var(--color-neutral-80));
+	background-color: var(--background-color, var(--color-neutral-90));
+
+	animation: var(--variant) 0s paused both;
+}
+```
+
+Note that you can combine the two approaches (variable animation-name and [paused animations](#paused-animations))
+when you have two custom properties where each state of the first corresponds to N distinct states of the latter.
+For example, a `--variant` that sets colors, and a light/dark mode within each variant that sets different colors.
+
+### Making animation-based approaches more composable with author code
+
+Another downside of the animation-based approaches is that they take over the `animation` property.
+If authors want to apply an animation to your component, suddenly a bunch of unrelated things stop working, which is not great user experience.
+
+There isn’t that much to do here to prevent this experience, but you can at least offer a way out:
+instead of defining your animations directly on `animation`, define them on a custom property, e.g. `--core-animations`.
+Then, if authors want to apply their own animations, they just make sure to also include `var(--core-animations)` before or after.
+
+### Discrete color scales
+
+Many of the approaches above are based on numerical values, which are then mapped to the value we actually want.
+For numbers or [dimensions](https://www.w3.org/TR/css-values/#dimensions), this is easy.
+But what about colors?
+
+I linked to Noah Liebman’s post above on [recursive `color-mix()`](https://noahliebman.net/2024/04/recursion-in-the-stylesheet/),
+where he presents a rather complex method to select among a continuous color scale based on a 0-1 number.
+
+However, if you don’t care about any intermediate colors and just want to select among a few discrete colors, the method can be a lot simpler.
+Simple enough to be specified inline.
+
+Let me explain: Since `color-mix()` only takes two colors, we need to nest them to select among more than 2, no way around that.
+However, the percentages we calculate can be very simple: `100%` when we want to select the first color and `0%` otherwise.
+I plugged these numbers into my [CSS range mapping tool](https://css.land/ranges/)
+([example](https://css.land/ranges/?min_x=2&min_y=100%&max_x=3&max_y=0%&variableName=variant-index)) and noticed a pattern:
+If we want to output `100%` when our variable (e.g. `--variant-index`) is N-1 and `0%` when it’s N, we can use `100% * (N - var(--variant-index))`.
+
+We can use this on every step of the mixing:
+
+```css
+background: color-mix(in oklab,
+	var(--stone-2) calc(100% * (1 - var(--color-index, 0))), /* default color */
+	color-mix(in oklab,
+		var(--green-2) calc(100% * (2 - var(--color-index))),
+		color-mix(in oklab,
+			var(--yellow-2) calc(100% * (3 - var(--color-index))),
+			var(--red-2)
+		)
+	)
+);
+```
+
+But what happens when the resulting percentage is < 0% or > 100%?
+Generally, [percentages outside [0%, 100%] make `color-mix()` invalid](https://www.w3.org/TR/css-color-5/#color-mix-percent-norm),
+which would indicate that we need to take care to keep our percentages within that range (via `clamp()` or `max()`).
+However, [within math functions there is no parse-time range-checking](https://drafts.csswg.org/css-values-4/#calc-range),
+so values are simply clamped to the allowed range.
+
+Here is a simple example that you can play with ([codepen](https://codepen.io/leaverou/pen/ZENxGjX?editors=0100)):
+
+<p class="codepen" data-height="300" data-default-tab="css,result" data-slug-hash="ZENxGjX" data-pen-title="Discrete color scales with simpler recursive color-mix()" data-user="leaverou" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/leaverou/pen/ZENxGjX">
+  Discrete color scales with simpler recursive color-mix()</a> by Lea Verou (<a href="https://codepen.io/leaverou">@leaverou</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+And here is a more realistic one, using the [Type Grinding](#type-grinding) method to transform keywords to numbers, and then using the above technique to select among 4 colors for backgrounds and borders ([codepen](https://codepen.io/leaverou/pen/rNgJoJe)).
+
+## Limitations
+
+There are certain limitations that are present on all or most of the methods we have so far.
+Only [toggles](#toggles) are able to support _any_ output type, including strings, `url()`s etc.
+All other methods are limited to quantitative vaues (`<dimension>`, `<number>`, `<integer>`) or keywords.
 
 ## So, which one is better?
 
 I think the most important consideration is the API we expose to component users.
 After all, exposing a nicer API is the whole point of this, right?
-In the vast majority of cases I have seen, the north star API is a set of plain, high-level keywords.
+If your custom property makes sense as a number without degrading the API (e.g. `--size` may make sense as a number, but `small | medium | large` is still better than `0 | 1 | 2`), then [Binary Linear Interpolation](#binary-linear-interpolation) is probably the most flexible method.
+However, in the vast majority of cases I have seen, the north star API is a set of plain, high-level keywords.
 This is only possible via [Type Grinding](#type-grinding) and [Variable animation names](#named-paused-animations).
 
 Between the two, Type Grinding is the one providing the best encapsulation,
@@ -470,13 +596,15 @@ but since these intermediate properties are used for internal calculations,
 we can just give them obscure names and insert them in the light DOM the first time our component is used.
 
 On the other hand, [`@keyframes` are not only allowed, but also properly scoped when used in Shadow DOM](https://codepen.io/leaverou/pen/gOJvEMw),
-so _Variable animation name_ might be a good choice when
-a) it’s unlikely that users may want to apply their own animations to the element and
-b) you don’t want to use the same keywords for multiple custom properties on the same component.
+so _Variable animation name_ might be a good choice when you don’t want to use the same keywords for multiple custom properties on the same component.
+Of course, the caveats of the animation-based approaches described earlier still apply.
+Up to you to decide whether they are a dealbreaker for your particular use case.
 
-While (b) is a dealbreaker, you can work around (a) by defining a variable (e.g. `--essential-animations`) and instructing users to include it in their `animation` declaration if they wish to override it.
-It’s not ideal, but improving DX for a majority of use cases at the cost of slightly reduced DX for a few rare cases is typically a good tradeoff.
+Note that you can also combine methods that support the same custom property values,
+e.g. [Binary Linear Interpolation](#binary-linear-interpolation) and [Paused animations](#paused-animations)
+or [Type Grinding](#type-grinding) and [Variable animation names](#named-paused-animations).
 
-If your custom property makes sense as a number without degrading the API (e.g. `--size` may make sense as a number, but `small | medium | large` is still better than `0 | 1 | 2`), then [Binary Linear Interpolation](#binary-linear-interpolation) is probably the most flexible method.
 
 TBD: Maybe some kind of decision tree or scorecard or summary?
+
+_Thanks to [Roma Komarov](https://kizu.dev/) for reviewing earlier drafts of this article._

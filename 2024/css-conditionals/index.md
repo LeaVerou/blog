@@ -47,6 +47,8 @@ Hopefully the amount and intensity of positive reactions will help browsers prio
 Across all these platforms, besides the _“I can’t wait for this to ship!”_ sentiment being most common,
 there were a few other recurring questions and a fair bit of confusion that I figured were worth addressing.
 
+<!-- more -->
+
 ## FAQ
 
 ### What is `if()` for? Does it replace style queries? { #why }
