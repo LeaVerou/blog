@@ -299,3 +299,8 @@ It is because you can then be considered a programmer even if you only write HTM
 If this only matters for optics, then we should fix the issue at its core and fight to legitimize CSS expertise _regardless_ of whether CSS is a programming language.
 After all, as anyone who knows several well-respected programming languages _and_ CSS can attest, CSS is _far_ harder to master.
 
+------
+
+Great as all this may be, it won’t be in browsers for a while.
+What can we do _right now_?
+I wrote [Part 2](../css-conditionals-now/) exactly about that: [CSS Conditionals, now?](../css-conditionals-now/)
