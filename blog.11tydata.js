@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	eleventyComputed: {
 		postUrlStem: data => {
 			return data.page.filePathStem.replace(/^\/blog\/|\/index$/g, "");
