@@ -7,6 +7,9 @@ tags:
   - web-components
   - css-variables
 image: images/callouts.png
+social_posts:
+  twitter: https://x.com/LeaVerou/status/1804098876909002937
+  mastodon: https://front-end.social/@leaverou/112653879694173763
 ---
 
 <div class=nutshell>

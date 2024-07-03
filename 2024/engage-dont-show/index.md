@@ -7,6 +7,10 @@ tags:
   - ux
   - api-design
   - education
+social_posts:
+  - linkedin: https://www.linkedin.com/posts/leaverou_new-blog-post-forget-show-dont-tell-activity-7214332458878574592-1iqD?utm_source=share&utm_medium=member_desktop
+  - twitter: https://x.com/LeaVerou/status/1808567001771860284
+  - mastodon: https://front-end.social/@leaverou/112723963895257844
 ---
 
 A few days ago, I gave a very well received talk about API design at [dotJS](https://www.dotjs.io/) titled “API Design is UI Design” [^video].
