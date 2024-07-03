@@ -1,5 +1,6 @@
 ---
 title: Inline conditionals in CSS, now?
+date: 2024-06-21
 toc: true
 tags:
   - css
