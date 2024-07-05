@@ -60,7 +60,7 @@ Yet another case of accessibility helping everyone!
 The thing is, the more expert you are on a topic, the harder these are to do when conveying knowledge to others.
 I get it. I’ve done it too.
 First, the purpose of concepts feels obvious to you, so it’s easy to forget to articulate it.
-You overestimate the studen’t interest into the minutiae of your field of expertise.
+You overestimate the student’s interest in the minutiae of your field of expertise.
 Worse yet, **so many** concepts feel *essential* that you are _convinced_ nothing is possible without learning them (or even if it is, it’s just _not The Right Way™_).
 Looking back on some of my earlier CSS lectures, I’ve definitely been guilty of this.
 
@@ -76,7 +76,7 @@ humans are goal oriented.
 When we have a goal, we are far more motivated to absorb information that helps us towards that goal.
 The value of the new information is clear, we are practicing it immediately, and it is already connected to other things we know.
 
-This means tht explaining things in context as they become relevant is infinitely better for retention and comprehension than explaining them upfront.
+This means that explaining things in context as they become relevant is infinitely better for retention and comprehension than explaining them upfront.
 When knowledge is a solution to a problem the student is already facing, its purpose is clear, and it has already been filtered by relevance.
 Furthermore, learning it provides immediate value and instant gratification: it explains what they are experiencing or helps them achieve an immediate goal.
 
