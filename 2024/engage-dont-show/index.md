@@ -20,7 +20,7 @@ at no point going just a little bit further requires a disproportionately big ch
 
 ![](images/smooth-curve.png)
 
-[^video]: Yes, there will be a video. No, it’s not available yet.
+[^video]: The video is now available on YouTube: [API Design is UI Design](https://www.youtube.com/watch?v=g92XUzc1OHY)
 
 [^cliff]: When it does, this is called a usability cliff.
 
