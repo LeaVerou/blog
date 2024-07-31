@@ -68,7 +68,7 @@ That’s it! Do keep in mind that this will not work with cross-origin iframes, 
 
 Now all we need to do to turn it into a bookmarklet is to prepend it with `javascript:` and minify the code. Here you go:
 
-[Refresh CSS](javascript:{let e=(e,t=document)=>Array.from(t.querySelectorAll(e)),t=r=>{for(let t of e('link[rel=stylesheet][href]',r)){let e=new URL(t.href);e.searchParams.set('forceReload',Date.now()),t.href=e}for(let o of e('iframe',r))o.contentDocument&&t(o.contentDocument)};t()})
+<a href="javascript:{let e=(e,t=document)=>Array.from(t.querySelectorAll(e)),t=r=>{for(let t of e('link[rel=stylesheet][href]',r)){let e=new URL(t.href);e.searchParams.set('forceReload',Date.now()),t.href=e}for(let o of e('iframe',r))o.contentDocument&&t(o.contentDocument)};t()}">🔄 CSS v2</a>
 
 Hope this is useful to someone else as well :) Any improvements are always welcome!
 
