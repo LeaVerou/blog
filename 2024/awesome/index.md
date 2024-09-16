@@ -1,7 +1,6 @@
 ---
 title: "Making the Web More Awesome — for everyone"
 date: 2024-09-16
-toc: true
 draft: true
 tags:
   - icons
@@ -14,11 +13,12 @@ tags:
 ---
 
 Folks, I have some exciting news to share.
-Today I start a new chapter in my career.
-After a decade in academia, [teaching](https://designftw.mit.edu) and doing research at MIT at the intersection of usability and programming language design,
-two weeks ago I wrapped up my [PhD at MIT](../../2014/02/im-going-to-mit/) [on usability & programming language design](https://phd.verou.me)
+
+Today I’m starting a new chapter in my career.
+After [a decade at MIT](../../2014/02/im-going-to-mit/), [teaching](https://designftw.mit.edu) and doing research at the intersection of usability and programming language design,
+I wrapped up my [PhD](https://phd.verou.me) two weeks ago
 (yes, I’m a Dr now! And [damn right I will](https://www.nytimes.com/2018/06/28/opinion/women-dont-back-down-online.html) — once it actually sinks in)
-and today I start my new role at [Font Awesome](https://fontawesome.com) as _Product Lead_.
+and today I start my new role as _Product Lead_ at [Font Awesome](https://fontawesome.com).
 
 I will be evaluating user needs and improving product design and usability across all company products,
 with an emphasis on [Web Awesome](https://www.kickstarter.com/projects/fontawesome/web-awesome),
@@ -31,16 +31,17 @@ There is even a small chance I may have been the first to [create an icon font f
 which would make it even more wonderfully poetic that I’m joining the company that has become synonymous with icon fonts on the Web.
 
 However, it was not [my MIT PhD](https://phd.verou.me) that led me to this role,
-but actually an email from Dave Gandy (CEO of Font Awesome) about [Color.js](https://colorjs.io),
-one of my most popular open source side projects,
+but an email from Dave Gandy (creator and CEO of Font Awesome) about [Color.js](https://colorjs.io),
+(one of my most popular open source side projects)
 that turned into many hours of chats,
 and eventually a job offer for a role I could not refuse, one that was literally molded around my skills and interests.
 
 The role is not the only reason I’m excited to join Font Awesome, though.
 The company itself is a breath of fresh air:
-open source friendly (as Dave says, literally the only reason we have Pro versions is that we need to sustain this somehow 😅),
-already profitable (so no scrambling to meet VC demands),
-fully remote, huge emphasis on work-life balance, and an interview process that did not feel like an interview — or even a process.
+open source friendly (as Dave says, _“literally the only reason we have Pro versions is that we need to sustain this somehow”_ 😅),
+already profitable (so no scrambling to meet VC demands by cramming AI features nobody wants into our products),
+fully remote, huge emphasis on work-life balance,
+and an interview process that did not feel like an interview — or even a process.
 In fact, they did not even want to look at my resume.
 It is telling that in their 10 years of existence, not a single person has left the company, and they have never had to fire anyone.
 Moreover, it’s a company that bridges the best of both worlds: despite having existed for a decade and being profitable for most of that,
@@ -49,7 +50,7 @@ branching out to new products and markets gives it a startup-like energy and exc
 I had been extremely selective in the job opportunities I pursued, so it took a while to find the perfect role.
 Having ADHD (diagnosed only last year — I want to write a blog post about that too at some point),
 I knew it was _crucial_ to find a job I could be passionate about:
-ADHD folks are unstoppable machines in jobs they love (it's a superpower called _hyperfocus_),
+ADHD folks are unstoppable machines in jobs they love (I have literally built my career by directing my [_hyperfocus_](https://en.wikipedia.org/wiki/Hyperfocus) to things that are actually productive),
 but struggle way more than neurotypicals in jobs they hate.
 It took a while, but when I encountered Font Awesome, I knew this was it.
 
