@@ -18,13 +18,13 @@ Today I start a new chapter in my career.
 After [a decade at MIT](../../2014/02/im-going-to-mit/), [teaching](https://designftw.mit.edu) and
 doing [research](https://lea.verou.me/publications/#research) at the intersection of usability and programming language design,
 I wrapped up my [PhD](https://phd.verou.me) two weeks ago
-(yes, I’m a Dr now! And [damn right I will](https://www.nytimes.com/2018/06/28/opinion/women-dont-back-down-online.html) — once it actually sinks in)
-and today I start my new role as _Product Lead_ at [Font Awesome](https://fontawesome.com).
+(yes, **I’m a Dr now**! And [_damn right I will_](https://www.nytimes.com/2018/06/28/opinion/women-dont-back-down-online.html) — once it actually sinks in)
+and **today I start my new role as _Product Lead_ at [Font Awesome](https://fontawesome.com)**.
 
 I will be evaluating user needs and improving product design and usability across all company products,
 with an emphasis on [Web Awesome](https://www.kickstarter.com/projects/fontawesome/web-awesome),
-the product we are launching early next year to revolutionize how Web UIs are built by using web components in ways you’ve never seen before.
-Beyond improving the products themselves (all of which include extensive free & open source versions),
+the product we are launching early next year to revolutionize how Web UIs are built by using web components and CSS in ways you’ve never seen before.
+Beyond improving the products themselves (all of which include **extensive free & open source versions**),
 part of my role will utilize [my web standards experience](/specs) to collect web platform pain points from across the company and translating them to new and existing web standards proposals.
 
 Yes, I know, it’s a match made in heaven. 😍
@@ -33,7 +33,6 @@ which would make it even more wonderfully poetic that I’m joining the company 
 
 However, it was not [my MIT PhD](https://phd.verou.me) that led me to this role,
 but an email from Dave Gandy (creator & CEO of Font Awesome) about [Color.js](https://colorjs.io),
-(one of my most popular open source side projects)
 that turned into hours of chats,
 and eventually a job offer for a role I could not refuse, one that was literally molded around my skills and interests.
 
