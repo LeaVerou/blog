@@ -2,6 +2,7 @@
 title: "Making the Web More Awesome — for everyone"
 date: 2024-09-16
 draft: true
+image: images/hero.png
 tags:
   - icons
   - web-awesome
@@ -20,6 +21,8 @@ doing [research](https://lea.verou.me/publications/#research) at the intersectio
 I wrapped up my [PhD](https://phd.verou.me) two weeks ago
 (yes, **I’m a Dr now**! And [_damn right I will_](https://www.nytimes.com/2018/06/28/opinion/women-dont-back-down-online.html) — once it actually sinks in)
 and **today I start my new role as _Product Lead_ at [Font Awesome](https://fontawesome.com)**.
+
+<img src="images/hero.png" alt="Font Awesome + Lea Verou">
 
 I will be evaluating user needs and improving product design and usability across all company products,
 with an emphasis on [Web Awesome](https://www.kickstarter.com/projects/fontawesome/web-awesome),
@@ -43,7 +46,7 @@ already profitable (= no scrambling to meet VC demands by cramming AI features n
 fully remote, huge emphasis on work-life balance,
 and an interview process that did not feel like an interview — or even a process.
 In fact, they did not even want to look at my resume (despite my efforts 🤣).
-It is telling that **in their 10 years of existence, not a single person has left the company, and they have never had to fire anyone**.
+It is telling that **in their 10 years of existence, not a single person has left the company, and they have never had to let anyone go**.
 Moreover, it bridges the best of both worlds: despite having existed for a decade,
 branching out to new products[^1] and markets gives it a startup-like energy and excitement.
 
@@ -56,16 +59,16 @@ Having ADHD (diagnosed only last year — I want to write a blog post about that
 I knew it was _crucial_ to find a job I could be passionate about:
 ADHD folks are unstoppable machines in jobs they love (I have literally built my career by directing my [_hyperfocus_](https://en.wikipedia.org/wiki/Hyperfocus) to things that are actually productive),
 but struggle way more than neurotypicals in jobs they hate.
-It took a while, but when I encountered Font Awesome, I knew this was it.
+It took a while, but when I started talking with Dave, I knew Font Awesome was _it_.
 
 I’m still reeling from the mad rush of spending the past couple of months averaging 100-hour weeks to wrap up my PhD before I could start,
 but I couldn’t be more excited about this new chapter.
 
 I’m hoping to write a series of blog posts in the coming weeks about about my journey to this point.
 Things like:
-- How I decided that academia was not for me — but persisted to the finish line anyway because I’m stubborn like that 😅
-- How I realized that it’s product work that is my real calling, not software engineering per se (as much as I love both)
-- How I used web technologies instead of LaTeX to write [my PhD thesis](https://phd.verou.me) (and print it to [PDF](https://phd.verou.me/thesis.pdf) for submission), with [11ty](https://11ty.dev) plus several open source plugins, many of which I wrote, an ecosystem I hope to one day free more people from the tyrrany of LaTeX, which was amazing in the 70s, but its ergonomics are now showing their age.
+- How I decided that academia was not for me — but persisted to the finish line anyway because I’m stubborn AF 😅
+- How I realized that product work is my real calling, not software engineering per se (as much as I love both)
+- How I used web technologies instead of LaTeX to write [my PhD thesis](https://phd.verou.me) (and print it to [PDF](https://phd.verou.me/thesis.pdf) for submission), with [11ty](https://11ty.dev) plus several open source plugins, many of which I wrote, an ecosystem I hope to one day free more people from the tyranny of LaTeX (which was amazing in the 70s, but its ergonomics are now showing their age).
 
 But for now, I just wanted to share the news, and go off to make the web more awesome — _for everyone_. 🚀
 
