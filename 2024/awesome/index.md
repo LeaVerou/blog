@@ -1,7 +1,6 @@
 ---
 title: "Making the Web More Awesome — for everyone"
 date: 2024-09-16
-draft: true
 image: images/hero.png
 tags:
   - icons
@@ -61,7 +60,7 @@ ADHD folks are unstoppable machines in jobs they love (I have literally built my
 but struggle way more than neurotypicals in jobs they hate.
 It took a while, but when I started talking with Dave, I knew Font Awesome was _it_.
 
-I’m still reeling from the mad rush of spending the past couple of months averaging 100-hour weeks to wrap up my PhD before I could start,
+I’m still reeling from the mad rush of spending the past couple of months averaging 100-hour weeks to wrap up my PhD before starting,
 but I couldn’t be more excited about this new chapter.
 
 I’m hoping to write a series of blog posts in the coming weeks about about my journey to this point.
