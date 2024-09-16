@@ -1,5 +1,5 @@
 ---
-title: "Making the Web More Awesome — for everyone"
+title: "Making the Web more Awesome — for everyone"
 date: 2024-09-16
 image: images/hero.png
 tags:
