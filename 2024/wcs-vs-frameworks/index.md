@@ -18,6 +18,8 @@ I was approached by a bunch of folks (Justin Fagnani, Gray Norton, Kevin Schaaf)
 The result of these brainstorming sessions was the [Web Components CG](https://web-components-cg.netlify.app/) which now has a life of its own
 and has become a vibrant Web Components community that has helped move several specs of strategic importance forwards.
 
+<!-- more -->
+
 As someone who deeply cares about Web Components,
 [my initial response was also to push back](https://x.com/LeaVerou/status/1840134654852247765).
 I was reminded of how many times I have seen this pattern before.
@@ -91,7 +93,9 @@ _Consuming_ WCs is aleady pretty smooth, and the APIs are largely there to demys
 However, _authoring_ web components is a whole different story.
 Especially if not using a library like Lit, authoring WCs is still painful, tedious, and riddled with footguns.
 For generalizable elements, this is an acceptable tradeoff, as their potential consumers are a much larger group than their authors.
-But when using components as a templating mechanism, the overlap between consumers and authors is much larger.
+As an extreme example of this, nobody complains about the ergonomics of implementing native elements in browsers using C++ or Rust.
+But when using components as a templating mechanism, the overlap between consumers and authors is much larger,
+so authoring ergonomics become a lot more important.
 
 This was the motivation behind [this Twitter poll I posted a while back](https://x.com/LeaVerou/status/1697245010650148924).
 
@@ -100,12 +104,12 @@ https://x.com/LeaVerou/status/1697245010650148924
 I asked if people mostly _consumed_ web components, _used_ WCs that others have made, or both.
 Note that many people who use WCs are not aware of it, so the motivation was not to gauge adoption,
 but to see if the community has caught on to this distinction between use cases.
-**The fact that > 80% of people who knowingly use web components are also web components _authors_ means that WCs have not yet reached their full potential.**
+**The fact that > 80% of people who knowingly use web components are also web components _authors_ is indicative of the problem.**
 WCs are meant to empower folks to do more, not to be consumed by expert web developers who can also write them.
-This number should have been a lot smaller if WCs were to reach their full potential.
-This was one of the reasons [I joined the Web Awesome project](../awesome):
+For web components to reach their full potential, this number should be a lot smaller.
+This was one of the reasons [I joined the Web Awesome project](../awesome);
 I think that is the right direction for WCs:
-encapsulating complexity into beautiful, usable, generalizable elements that give people superpowers by extending what HTML can do:
+encapsulating complexity into beautiful, generalizable, customizable elements that give people superpowers by extending what HTML can do:
 they can be used by developers to author gorgeous UIs,
 designers to do more without having to learn JS,
 or even hobbyists that struggle with both (since HTML is the most approachable web platform language).
