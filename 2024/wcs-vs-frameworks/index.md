@@ -116,7 +116,7 @@ or even hobbyists that struggle with both (since HTML is the most approachable w
 
 So IMO making it about frameworks vs web components is a false dichotomy.
 Frameworks already use native HTML elements in their components.
-**Web components extend what native elements can do, and thus make crafting project-specific components easier across *all* frameworks.**
+**Web components extend what native elements can do, and thus make crafting project-specific components easier across *all* frameworks** (as well as *no* frameworks).
 I wonder if this narrative could resonate across both sides and reconcile them.
 Basically _“yes, we may still need frameworks for nontrivial apps, but web components make their job easier”_
 rather than pitting them against each other in a pointless comparison where everyone loses.
