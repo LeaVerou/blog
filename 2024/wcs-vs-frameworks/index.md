@@ -22,10 +22,11 @@ As someone who deeply cares about Web Components,
 [my initial response was also to push back](https://x.com/LeaVerou/status/1840134654852247765).
 I was reminded of how many times I have seen this pattern before.
 **It is common for new web platform features to face pushback and resistance for many years**;
-we tend to compare them to current userland practices, and their ergonomics usually fare poorly at the start, as making things _possible_ often precedes making them _easy_ (especially for cases where the requirements are very diverse and there is no immediately apparent [80/20 solution](https://en.wikipedia.org/wiki/Pareto_principle)).
+we tend to compare them to current userland practices, and their ergonomics often fare poorly at the start.
+Especially when there is no immediately apparent [80/20 solution](https://en.wikipedia.org/wiki/Pareto_principle), making things _possible_ tends to precede making them _easy_.
 
 Web platform features operate under a whole different set of requirements and constraints:
-- They need to last _decades_, not just until the next major version.
+- They need to last _decades_, not just until the next major release.
 - They need to not only cater to the current version of the web platform, but _anticipate_ its future evolution and be compatible with it.
 - They need to be _backwards compatible_ with the web as it was 20 years ago.
 - They need to be compatible with a slew of accessibility and internationalization needs that userland libraries can choose to ignore at first.
