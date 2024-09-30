@@ -1,6 +1,7 @@
 ---
 title: Web Components are not Framework Components — and that’s a Good Thing™
 draft: true
+date: 2024-10-01
 ---
 
 A [blog post by Ryan Carniato](https://dev.to/ryansolid/web-components-are-not-the-future-48bh)
@@ -12,7 +13,7 @@ so they could be addressed in the future.
 
 While the initial reaction if you are on the receiving end is to feel threatened, these kinds of posts can often end up pushing a technology forwards.
 I have some personal experience:
-after I published my [2020 post titled “The failed promise of Web Components”](../../2020/09/the-failed-promise-of-web-components/) which also made the rounds at the time,
+after I published my [2020 post titled “The failed promise of Web Components”](../../2020/09/the-failed-promise-of-web-components) which also made the rounds at the time,
 I was approached by a bunch of folks (Justin Fagnani, Gray Norton, Kevin Schaaf) about teaming up to fix the issues I described.
 The result of these brainstorming sessions was the [Web Components CG](https://web-components-cg.netlify.app/) which now has a life of its own
 and has become a vibrant Web Components community that has helped move several specs of strategic importance forwards.
@@ -101,7 +102,7 @@ but to see if the community has caught on to this distinction between use cases.
 **The fact that > 80% of people who knowingly use web components are also web components _authors_ means that WCs have not yet reached their full potential.**
 WCs are meant to empower folks to do more, not to be consumed by expert web developers who can also write them.
 This number should have been a lot smaller if WCs were to reach their full potential.
-This was one of the reasons [I joined the Web Awesome project](../awesome/):
+This was one of the reasons [I joined the Web Awesome project](../awesome):
 I think that is the right direction for WCs:
 encapsulating complexity into beautiful, usable, generalizable elements that give people superpowers by extending what HTML can do:
 they can be used by developers to author gorgeous UIs,
