@@ -53,7 +53,7 @@ Let me explain.
 
 <figure>
 
-TBD: Venn diagram
+<img src="images/component-types.svg" alt="Venn diagram illustrating general vs project-specific components">
 
 <figcaption>
 
