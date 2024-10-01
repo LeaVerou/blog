@@ -8,7 +8,7 @@ image: images/component-types.png
 A [blog post by Ryan Carniato](https://dev.to/ryansolid/web-components-are-not-the-future-48bh)
 titled _“Web Components Are Not the Future”_ has recently stirred a lot of controversy.
 A few other JS framework authors pitched in, expressing [frustration](https://x.com/youyuxi/status/1839833110164504691) and [disillusionment](https://x.com/Rich_Harris/status/1839885047349788720) around Web Components.
-Some Web Components folks wrote [rebuttals](https://www.abeautifulsite.net/posts/web-components-are-not-the-future-they-re-the-present/),
+Some Web Components [folks](https://www.linkedin.com/posts/kreitlow_as-someone-who-builds-complex-custom-elements-activity-7246381911470682113-dPoI/) [wrote](https://nolanlawson.com/2024/09/28/web-components-are-okay/) [rebuttals](https://www.abeautifulsite.net/posts/web-components-are-not-the-future-they-re-the-present/),
 while others repeatedly tried to get to the bottom of the issues,
 so they could be addressed in the future.
 
@@ -48,9 +48,15 @@ I liked CSS for styling, but was among the last to switch to floats for layout �
 The majority resistance lasted until the mid '00s when it went from _“this will never work”_ to _“this was clearly the solution all along”_ almost overnight.
 And the rest, as they say, is history. 🙂
 
-But the more I thought about this, the more I realized that (as often happens in these kinds of heated debates), **the truth is somewhere in the middle**.
-Having both used and authored numerous web components, as well as used several frameworks (and [even authored one](https://mavo.io/) over the course of [my PhD](https://phd.verou.me)), both sides do have some points.
-**Web Components cannot currently replace framework components 1-1, but that is not a prerequisite for WCs being useful.**
+But the more I thought about this, the more I realized that — as often happens in these kinds of heated debates — **the truth lies somewhere in the middle**.
+Having used both several frameworks, and several web components,
+and having authored many web components (most of them experimental and unreleased) and [even one framework](https://mavo.io/) over the course of [my PhD](https://phd.verou.me), both sides do have some valid points.
+
+Frankly, if framework authors were sold the idea that web components would be a compile target for their frameworks, and then got today’s WC APIs, I understand their anger.
+Worse yet, if every time they tried to explain that this sucks as a compile target they were told "no you don’t get it", heck I’d feel gaslit too!
+**Web Components are still far from being a good compile target for frameworks,
+but that is not a prerequisite for them being useful**.
+They simply solve different problems.
 
 Let me explain.
 
@@ -64,19 +70,20 @@ Not all component use cases are the same.
 </figcaption>
 </figure>
 
-I think the crux of this debate is that **the community has mixed two very different use cases,
-largely because frameworks do not differentiate between them**.
-Conceptually, there are two types of components:
-1. **Generalizable elements** that extend what HTML can do and can be used in the same way as native HTML elements across any project.
-For example: tabs, rating widgets, comboboxes, dialogs etc.
+I think the crux of this debate is that **the community has mixed two very different categories of use cases**,
+largely because frameworks do not differentiate between them;
+"component" has become the hammer with which to hammer every nail.
+Conceptually, there are two core categories of components:
+1. **Generalizable elements** that extend what HTML can do and can be used in the same way as native HTML elements across a wide range of diverse projects.
+Things like tabs, rating widgets, comboboxes, dialogs, menus, charts, etc.
+Another way to think about these is _"if resources were infinite, elements that would make sense as native HTML elements"_.
 2. **Reactive templating**: UI modules that have project-specific purposes and are not required to make sense in a different project.
-For example, a font foundry may have a `<FontFamilyDemo>` component with child `<FontFamilyStyleDemo>` components,
+For example, a font foundry may have a component to demo a font family with child components to demo a font family style,
 but the uses of such components outside the very niche font foundry use case are very limited.
 
 Of course, it’s a spectrum; few things in life fit neatly in completely distinct categories.
 For example an `<html-demo>` component may be somewhat niche, but would be useful across any site that wants to demo HTML snippets
 (e.g. a web components library, a documentation site around web technologies, a book teaching how to implement UI patterns, etc.).
-Or even a `<product-card>` component for an e-shop.
 But the fact that it’s a spectrum does not mean the distinction does not exist.
 
 WCs primarily benefit the use case of generalizable elements that extend HTML,
@@ -84,7 +91,7 @@ and are currently painful to use for reactive templating.
 Fundamentally, **it’s about the ratio of potential consumers to authors**.
 
 One of the big benefits of Web Components is **interop**: you write it once and you can use it with any framework (or none at all).
-Indeed, it makes no sense to fragment efforts to reimplement e.g. tabs or a rating widget separately for each framework,
+Indeed, it makes no sense to fragment efforts to reimplement e.g. tabs or a rating widget separately for each framework-specific silo,
 it is simply duplicated busywork.
 But when it comes to project-specific components, interop becomes less important:
 you typically pick a framework and stick to it across your entire project.
@@ -92,15 +99,16 @@ Reusing project-specific components across different projects is not a major nee
 so the value proposition of interop is much smaller.
 
 Additionally, the **ergonomics** of consuming vs authoring web components are vastly different.
-_Consuming_ WCs is aleady pretty smooth, and the APIs are largely there to demystify the magic of built-in elements and expose it to web components (with a few small gaps being actively plugged as we speak).
+_Consuming_ WCs is already pretty smooth, and the APIs are largely there to demystify most of the magic of built-in elements and expose it to web components (with a few small gaps being actively plugged as we speak).
 However, _authoring_ web components is a whole different story.
-Especially if not using a library like Lit, authoring WCs is still painful, tedious, and riddled with footguns.
+Especially without a library like [Lit](https://lit.dev/), authoring WCs is still painful, tedious, and riddled with footguns.
 For generalizable elements, this is an acceptable tradeoff, as their potential consumers are a much larger group than their authors.
 As an extreme example of this, nobody complains about the ergonomics of implementing native elements in browsers using C++ or Rust.
-But when using components as a templating mechanism, the overlap between consumers and authors is much larger,
-so authoring ergonomics become a lot more important.
+But when using components as a templating mechanism, authoring ergonomics are _crucial_,
+since the overlap between consumers and authors is nearly 100%.
 
-This was the motivation behind [this Twitter poll I posted a while back](https://x.com/LeaVerou/status/1697245010650148924). I asked if people mostly _consumed_ web components, _used_ WCs that others have made, or both.
+This was the motivation behind [this Twitter poll I posted a while back](https://x.com/LeaVerou/status/1697245010650148924).
+I asked if people mostly _consumed_ web components, _used_ WCs that others have made, or both.
 Note that many people who use WCs are not aware of it, so the motivation was not to gauge adoption,
 but to see if the community has caught on to this distinction between use cases.
 **The fact that > 80% of people who knowingly use web components are also web components _authors_ is indicative of the problem.**
@@ -125,8 +133,8 @@ but we first need to get the low-level foundations right.
 At this point **the focus is still on making things _possible_ rather than making them _easy_**.
 The last remaining pieces of the puzzle are things like
 [Reference Target](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/reference-target-explainer.md) for cross-root ARIA
-or [`ElementInternals.type`](https://github.com/openui/open-ui/issues/1088) to allow custom elements to become popover targets or submit buttons,
-both of which saw a lot of progress at W3C TPAC last week.
+or [`ElementInternals.type`](https://github.com/openui/open-ui/issues/1088#issuecomment-2366092981) to allow custom elements to become popover targets or submit buttons,
+both of which saw a lot of progress at [W3C TPAC](https://www.w3.org/2024/09/TPAC/Overview.html) last week.
 
 After that, perhaps eventually web components will even become viable for reactive templating use cases;
 things like the [`open-stylable` shadow roots](https://github.com/WICG/webcomponents/issues/909) proposal,
