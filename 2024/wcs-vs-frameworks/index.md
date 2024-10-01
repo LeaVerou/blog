@@ -2,6 +2,9 @@
 title: Web Components are not Framework Components — and That’s Okay
 date: 2024-10-01
 image: images/component-types.png
+social_posts:
+  - twitter: https://x.com/twitter/status/1841183386024755660
+  - mastodon: https://front-end.social/@leaverou/113233583191981935
 ---
 
 _**Disclaimer:** This post expresses my opinions, which do not necessarily reflect consensus by the whole Web Components community._
