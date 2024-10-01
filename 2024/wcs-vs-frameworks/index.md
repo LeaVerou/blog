@@ -1,6 +1,5 @@
 ---
 title: Web Components are not Framework Components — and That’s Okay
-draft: true
 date: 2024-10-01
 image: images/component-types.png
 ---
@@ -9,7 +8,7 @@ A [blog post by Ryan Carniato](https://dev.to/ryansolid/web-components-are-not-t
 titled _“Web Components Are Not the Future”_ has recently stirred a lot of controversy.
 A few other JS framework authors pitched in, expressing [frustration](https://x.com/youyuxi/status/1839833110164504691) and [disillusionment](https://x.com/Rich_Harris/status/1839885047349788720) around Web Components.
 Some Web Components [folks](https://www.linkedin.com/posts/kreitlow_as-someone-who-builds-complex-custom-elements-activity-7246381911470682113-dPoI/) [wrote](https://nolanlawson.com/2024/09/28/web-components-are-okay/) [rebuttals](https://www.abeautifulsite.net/posts/web-components-are-not-the-future-they-re-the-present/),
-while others repeatedly [tried](https://x.com/mr__disagree/status/1839846994040283344) to get to the bottom of the issues,
+while others [repeatedly](https://x.com/Mr__Disagree/status/1839487412797350267) [tried](https://x.com/mr__disagree/status/1839846994040283344) to get to the bottom of the issues,
 so they could be addressed in the future.
 
 When you are on the receiving end of such an onslaught,
@@ -54,7 +53,7 @@ and having authored both web components (most of them experimental and unrelease
 
 Frankly, if framework authors were sold the idea that web components would be a compile target for their frameworks, and then got today’s WC APIs, I understand their frustration.
 Worse yet, if every time they tried to explain that this sucks as a compile target they were told "no you just don’t get it", heck I’d feel gaslit too!
-**Web Components are still far from being a good compile target for frameworks,
+**Web Components are still far from being a good compile target for all framework components,
 but that is not a prerequisite for them being useful**.
 They simply solve different problems.
 
@@ -87,16 +86,22 @@ For example an `<html-demo>` component may be somewhat niche, but would be usefu
 But the fact that it’s a spectrum does not mean the distinction does not exist.
 
 WCs primarily benefit the use case of generalizable elements that extend HTML,
-and are currently painful to use for reactive templating.
+and are still painful to use for reactive templating.
 Fundamentally, **it’s about the ratio of potential consumers to authors**.
 
-One of the big benefits of Web Components is **interop**: you write it once and you can use it with any framework (or none at all).
-Indeed, it makes no sense to fragment efforts to reimplement e.g. tabs or a rating widget separately for each framework-specific silo,
+The huge benefit of Web Components is **interoperability**:
+you write it once, it works forever, and you can use it with any framework (or none at all).
+It makes no sense to fragment efforts to reimplement e.g. tabs or a rating widget separately for each framework-specific silo,
 it is simply duplicated busywork.
-But when it comes to project-specific components, interop becomes less important:
+
+As a personal anecdote, a few weeks ago I found this [amazing JSON viewer component](https://carlosnz.github.io/json-edit-react/), but I couldn’t use it because I don’t use React (I prefer Vue and Svelte).
+To this day, I have not found anything comparable for Vue, Svelte, or vanilla JS.
+This kind of fragmentation is sadly an everyday occurrence for most devs.
+
+But when it comes to project-specific components, the importance of interop decreases:
 you typically pick a framework and stick to it across your entire project.
 Reusing project-specific components across different projects is not a major need,
-so the value proposition of interop is much smaller.
+so the value proposition of interop is smaller.
 
 Additionally, the **ergonomics** of consuming vs authoring web components are vastly different.
 _Consuming_ WCs is already pretty smooth, and the APIs are largely there to demystify most of the magic of built-in elements and expose it to web components (with a few small gaps being actively plugged as we speak).
@@ -113,7 +118,7 @@ Note that many people who use WCs are not aware of it, so the motivation was not
 but to see if the community has caught on to this distinction between use cases.
 **The fact that > 80% of people who knowingly use web components are also web components _authors_ is indicative of the problem.**
 WCs are meant to empower folks to do more, not to be consumed by expert web developers who can also write them.
-For web components to reach their full potential, this number should be a lot smaller.
+Until this number becomes a lot smaller, Web Components will not have reached their full potential.
 This was one of the reasons [I joined the Web Awesome project](../awesome);
 I think that is the right direction for WCs:
 encapsulating complexity into beautiful, generalizable, customizable elements that give people superpowers by extending what HTML can do:
@@ -143,12 +148,13 @@ are some early beginnings in that direction,
 and [declarative shadow DOM](https://www.konnorrogers.com/posts/2023/what-is-declarative-shadow-dom) paved the way for SSR (among other things).
 **Then, and only then, they may make sense as a compile target for frameworks.**
 However, that is quite far off.
-And even if we get there, frameworks would still be needed for complex use cases,
-as they do a lot more than let you use and define components,
-and by then they will be doing a lot more.
+And even if we get there, frameworks would still be useful for complex use cases,
+as they do a lot more than let you use and define components.
+Components are not even the best reuse mechanism for every project-specific use case — e.g. for list rendering, components are overkill compared to something like [`v-for`](https://vuejs.org/guide/essentials/list).
+And by then frameworks will be doing even more.
 It is by definition that frameworks are always a step ahead of the web platform,
 not a failing of the web platform.
-As Cory said, _“Frameworks are a testbed for new ideas that may or may not work out.”_.
+As Cory [said](https://www.abeautifulsite.net/posts/web-components-are-not-the-future-they-re-the-present/), _“Frameworks are a testbed for new ideas that may or may not work out.”_.
 
 The bottom line is, web components reduce the number of use cases where we need to reach for a framework,
 but complex large applications will likely still benefit from one.
