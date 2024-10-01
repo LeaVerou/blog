@@ -4,6 +4,8 @@ date: 2024-10-01
 image: images/component-types.png
 ---
 
+_**Disclaimer:** This post expresses my opinions, which do not necessarily reflect consensus by the whole Web Components community._
+
 A [blog post by Ryan Carniato](https://dev.to/ryansolid/web-components-are-not-the-future-48bh)
 titled _“Web Components Are Not the Future”_ has recently stirred a lot of controversy.
 A few other JS framework authors pitched in, expressing [frustration](https://x.com/youyuxi/status/1839833110164504691) and [disillusionment](https://x.com/Rich_Harris/status/1839885047349788720) around Web Components.
@@ -159,3 +161,5 @@ As Cory [said](https://www.abeautifulsite.net/posts/web-components-are-not-the-f
 The bottom line is, web components reduce the number of use cases where we need to reach for a framework,
 but complex large applications will likely still benefit from one.
 **So how about we conclude that frameworks are useful, web components are also useful, stop fighting and go make awesome sh!t using whatever tools we find most productive?**
+
+_Thanks to Michael Warren, Nolan Lawson, Cory LaViska, Steve Orvell, and others for their feedback on earlier drafts of this post._
