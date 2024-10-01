@@ -1,5 +1,5 @@
 ---
-title: Web Components are not Framework Components — and that’s a Good Thing™
+title: Web Components are not Framework Components — and That’s Okay
 draft: true
 date: 2024-10-01
 image: images/component-types.png
