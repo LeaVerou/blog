@@ -151,4 +151,4 @@ As Cory said, _“Frameworks are a testbed for new ideas that may or may not wor
 
 The bottom line is, web components reduce the number of use cases where we need to reach for a framework,
 but complex large applications will likely still benefit from one.
-**So how about we conclude that frameworks are useful, web components are also useful, stop fighting and go make awesome sh!t?**
+**So how about we conclude that frameworks are useful, web components are also useful, stop fighting and go make awesome sh!t using whatever tools we find most productive?**
