@@ -139,7 +139,8 @@ both of which saw a lot of progress at [W3C TPAC](https://www.w3.org/2024/09/TPA
 After that, perhaps eventually web components will even become viable for reactive templating use cases;
 things like the [`open-stylable` shadow roots](https://github.com/WICG/webcomponents/issues/909) proposal,
 declarative elements, or [DOM Parts](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/DOM-Parts-Declarative-Template.md)
-are some early beginnings in that direction.
+are some early beginnings in that direction,
+and [declarative shadow DOM](https://www.konnorrogers.com/posts/2023/what-is-declarative-shadow-dom) paved the way for SSR (among other things).
 **Then, and only then, they may make sense as a compile target for frameworks.**
 However, that is quite far off.
 And even if we get there, frameworks would still be needed for complex use cases,
