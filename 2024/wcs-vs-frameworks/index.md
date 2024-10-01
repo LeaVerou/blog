@@ -50,10 +50,10 @@ And the rest, as they say, is history. 🙂
 
 But the more I thought about this, the more I realized that — as often happens in these kinds of heated debates — **the truth lies somewhere in the middle**.
 Having used both several frameworks, and several web components,
-and having authored many web components (most of them experimental and unreleased) and [even one framework](https://mavo.io/) over the course of [my PhD](https://phd.verou.me), both sides do have some valid points.
+and having authored both web components (most of them experimental and unreleased) and [even one framework](https://mavo.io/) over the course of [my PhD](https://phd.verou.me), both sides do have some valid points.
 
-Frankly, if framework authors were sold the idea that web components would be a compile target for their frameworks, and then got today’s WC APIs, I understand their anger.
-Worse yet, if every time they tried to explain that this sucks as a compile target they were told "no you don’t get it", heck I’d feel gaslit too!
+Frankly, if framework authors were sold the idea that web components would be a compile target for their frameworks, and then got today’s WC APIs, I understand their frustration.
+Worse yet, if every time they tried to explain that this sucks as a compile target they were told "no you just don’t get it", heck I’d feel gaslit too!
 **Web Components are still far from being a good compile target for frameworks,
 but that is not a prerequisite for them being useful**.
 They simply solve different problems.
