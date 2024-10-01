@@ -12,7 +12,9 @@ Some Web Components folks wrote [rebuttals](https://www.abeautifulsite.net/posts
 while others repeatedly tried to get to the bottom of the issues,
 so they could be addressed in the future.
 
-While the initial reaction if you are on the receiving end is to feel threatened, these kinds of posts can often end up pushing a technology forwards.
+When you are on the receiving end of such an onslaught,
+the initial reaction is to feel threatened and become defensive.
+However, these kinds of posts can often end up shaking things up and pushing a technology forwards in the end.
 I have some personal experience:
 after I published my [2020 post titled “The failed promise of Web Components”](../../2020/09/the-failed-promise-of-web-components) which also made the rounds at the time,
 I was approached by a bunch of folks (Justin Fagnani, Gray Norton, Kevin Schaaf) about teaming up to fix the issues I described.
@@ -32,7 +34,7 @@ Web platform features operate under a whole different set of requirements and co
 - They need to last _decades_, not just until the next major release.
 - They need to not only cater to the current version of the web platform, but _anticipate_ its future evolution and be compatible with it.
 - They need to be _backwards compatible_ with the web as it was 20 years ago.
-- They need to be compatible with a slew of accessibility and internationalization needs that userland libraries can choose to ignore at first.
+- They need to be compatible with a slew of accessibility and internationalization needs that userland libraries often ignore at first.
 - They are developed in a distributed way, by people across many different organizations, with different needs and priorities.
 
 Usually, the result is **more robust, but takes a lot longer**.
@@ -67,7 +69,7 @@ largely because frameworks do not differentiate between them**.
 Conceptually, there are two types of components:
 1. **Generalizable elements** that extend what HTML can do and can be used in the same way as native HTML elements across any project.
 For example: tabs, rating widgets, comboboxes, dialogs etc.
-2. **Reactive templating**: UI modules that have project-specific purposes and make no sense in a different project.
+2. **Reactive templating**: UI modules that have project-specific purposes and are not required to make sense in a different project.
 For example, a font foundry may have a `<FontFamilyDemo>` component with child `<FontFamilyStyleDemo>` components,
 but the uses of such components outside the very niche font foundry use case are very limited.
 
@@ -98,11 +100,7 @@ As an extreme example of this, nobody complains about the ergonomics of implemen
 But when using components as a templating mechanism, the overlap between consumers and authors is much larger,
 so authoring ergonomics become a lot more important.
 
-This was the motivation behind [this Twitter poll I posted a while back](https://x.com/LeaVerou/status/1697245010650148924).
-
-https://x.com/LeaVerou/status/1697245010650148924
-
-I asked if people mostly _consumed_ web components, _used_ WCs that others have made, or both.
+This was the motivation behind [this Twitter poll I posted a while back](https://x.com/LeaVerou/status/1697245010650148924). I asked if people mostly _consumed_ web components, _used_ WCs that others have made, or both.
 Note that many people who use WCs are not aware of it, so the motivation was not to gauge adoption,
 but to see if the community has caught on to this distinction between use cases.
 **The fact that > 80% of people who knowingly use web components are also web components _authors_ is indicative of the problem.**
