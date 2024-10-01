@@ -9,7 +9,7 @@ A [blog post by Ryan Carniato](https://dev.to/ryansolid/web-components-are-not-t
 titled _“Web Components Are Not the Future”_ has recently stirred a lot of controversy.
 A few other JS framework authors pitched in, expressing [frustration](https://x.com/youyuxi/status/1839833110164504691) and [disillusionment](https://x.com/Rich_Harris/status/1839885047349788720) around Web Components.
 Some Web Components [folks](https://www.linkedin.com/posts/kreitlow_as-someone-who-builds-complex-custom-elements-activity-7246381911470682113-dPoI/) [wrote](https://nolanlawson.com/2024/09/28/web-components-are-okay/) [rebuttals](https://www.abeautifulsite.net/posts/web-components-are-not-the-future-they-re-the-present/),
-while others repeatedly tried to get to the bottom of the issues,
+while others repeatedly [tried](https://x.com/mr__disagree/status/1839846994040283344) to get to the bottom of the issues,
 so they could be addressed in the future.
 
 When you are on the receiving end of such an onslaught,
