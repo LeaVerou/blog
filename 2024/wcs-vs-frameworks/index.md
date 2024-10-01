@@ -2,6 +2,7 @@
 title: Web Components are not Framework Components — and that’s a Good Thing™
 draft: true
 date: 2024-10-01
+image: images/component-types.png
 ---
 
 A [blog post by Ryan Carniato](https://dev.to/ryansolid/web-components-are-not-the-future-48bh)
