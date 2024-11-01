@@ -184,15 +184,15 @@ we can just use `clamp(0, /* expression */, 1)` to get the desired result.
 
 One idea would be to use ratios, as they have this nice property where they are > <var>1</var> if the numerator is larger than the denominator and ≤ <var>1</var> otherwise.
 
-The ratio of $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}}$ is > <var>1</var> for <var>L</var> ≤ <var>L<sub>threshold</sub></var> and < <var>1</var> when <var>L</var> > <var>L<sub>threshold</sub></var>.
-This means that $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}} - 1$ will be a negative number for <var>L</var> > <var>L<sub>threshold</sub></var> and a positive one for <var>L</var> > <var>L<sub>threshold</sub></var>.
-Then all we need to do is multiply that expression by a huge number so that the positive number is guaranteed to be over <var>1</var>.
+The ratio of $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}}$ is < <var>1</var> for <var>L</var> ≤ <var>L<sub>threshold</sub></var> and > <var>1</var> when <var>L</var> > <var>L<sub>threshold</sub></var>.
+This means that $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}} - 1$ will be a negative number for <var>L</var> < <var>L<sub>threshold</sub></var> and a positive one for <var>L</var> > <var>L<sub>threshold</sub></var>.
+Then all we need to do is multiply that expression by a huge (in magnitude) negative number so that when it's negative the result is guaranteed to be over <var>1</var>.
 
 Putting it all together, it looks like this:
 
 ```css
 --l-threshold: 0.7;
---l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
+--l: clamp(0, (l / var(--l-threshold) - 1) * -infinity, 1);
 color: oklch(from var(--color) var(--l) 0 h);
 ```
 
@@ -211,7 +211,7 @@ We can use `@supports` with any color property and any relative color value as t
 	color: white;
 
 	@supports (color: oklch(from red l c h)) {
-		--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
+		--l: clamp(0, (l / var(--l-threshold) - 1) * -infinity, 1);
 		color: oklch(from var(--color) var(--l) 0 h);
 		background: none;
 	}
@@ -378,7 +378,7 @@ Edit the color below to see how the two thresholds work in practice, and compare
 	}
 
 	.contrast-color {
-		--l: clamp(0, (var(--l-threshold) / l - 1) * infinity, 1);
+		--l: clamp(0, (l / var(--l-threshold) - 1) * -infinity, 1);
 		color: oklch(from var(--color) var(--l) 0 h);
 		text-shadow: none;
 	}
@@ -472,7 +472,7 @@ You can even turn this into a utility class that you can combine with different 
 
 ```css
 .contrast-color {
-	--l: clamp(0, (var(--l-threshold, 0.623) / l - 1) * infinity, 1);
+	--l: clamp(0, (l / var(--l-threshold, 0.623) - 1) * -infinity, 1);
 	color: oklch(from var(--color) var(--l) 0 h);
 }
 
@@ -493,7 +493,7 @@ the utility class could look like this:
 	text-shadow: 0 0 .05em black, 0 0 .05em black, 0 0 .05em black, 0 0 .05em black;
 
 	@supports (color: oklch(from red l c h)) {
-		--l: clamp(0, (var(--l-threshold, 0.623) / l - 1) * infinity, 1);
+		--l: clamp(0, (l / var(--l-threshold, 0.623) - 1) * -infinity, 1);
 		color: oklch(from var(--color) var(--l) 0 h);
 		text-shadow: none;
 	}
@@ -534,7 +534,7 @@ This gives us another method for computing a text color:
 
 ```css
 --y-threshold: 0.36;
---y: clamp(0, (var(--y-threshold) / y - 1) * infinity, 1);
+--y: clamp(0, (y / var(--y-threshold) - 1) * -infinity, 1);
 color: color(from var(--color) xyz-d65 var(--y) var(--y) var(--y));
 ```
 
