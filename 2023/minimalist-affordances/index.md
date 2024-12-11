@@ -19,7 +19,7 @@ tags:
 
 Usability and aesthetics *usually* go hand in hand.
 In fact, there is even what we call the [*"Aesthetic Usability Effect"*](https://www.nngroup.com/articles/aesthetic-usability-effect/):
-users perceive beautiful interfaces as easier to use and cut them more slack when it comes to minor usabiity issues.
+users perceive beautiful interfaces as easier to use and cut them more slack when it comes to minor usability issues.
 
 Unfortunately, sometimes usability and aesthetics can be at odds, also known as “form over function”.
 
