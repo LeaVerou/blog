@@ -18,4 +18,4 @@ and the result is: foo＠bar․com
 
 I used that technique on the [ligatweet page](http://lea.verou.me/demos/ligatweet/#conversions). Of course, if many people start using it, I guess spambot developers will notice, so it won't be a good idea any more. However, for some reason I don't think it will ever become that mainstream :P
 
-By the way, if you're interested in other ways of email hiding, [here's an extensive article on the subject](http://www.csarven.ca/hiding-email-addresses) that I came across after a quick googlesearch (to see if somebody else came up with this first -- I didn't find anything).
+By the way, if you're interested in other ways of email hiding, [here's an extensive article on the subject](https://csarven.ca/hiding-email-addresses) that I came across after a quick googlesearch (to see if somebody else came up with this first -- I didn't find anything).
