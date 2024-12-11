@@ -69,6 +69,6 @@ li:first-child:nth-last-child(4) ~ li {
 
 And here's a fiddle to prove it:
 
-<iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/leaverou/HdfaT/embedded/result,css,html"></iframe>
+<iframe style="width: 100%; height: 300px" src="https://jsfiddle.net/leaverou/HdfaT/embedded/result,css,html"></iframe>
 
 Yes, I know that with Flexbox and the other layout modules, techniques such as these are soon becoming obsolete, but I think they are still useful right now. I'm also aware that you can emulate this particular example with table display modes, but a) Table display modes have other implications that are sometimes undesirable and b) Widths are just an example, you could come up with other ways to style the elements based on their total count, which can't be emulated by CSS tables.

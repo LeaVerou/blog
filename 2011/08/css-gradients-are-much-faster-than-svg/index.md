@@ -12,7 +12,7 @@ tags:
 
 Which is really sad, because SVG is awesome. It lets you do what CSS gradients do and much more, in quite a small filesize, as it’s just text too. However, the browser needs to generate a DOM for every SVG graphic, which results in sluggishness.
 
-[Here's my test case](http://jsfiddle.net/leaverou/8hQEy/embedded/result%2Ccss%2Cjs/)
+[Here's my test case](https://jsfiddle.net/leaverou/8hQEy/embedded/result%2Ccss%2Cjs/)
 
 Mouse over the 2 divs. They both use a spotlight effect that's dynamically updated according to the position of the mouse cursor. One of them does it with an SVG (through a data URI), the other one through a CSS radial gradient.
 

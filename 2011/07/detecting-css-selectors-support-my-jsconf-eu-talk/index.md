@@ -25,8 +25,8 @@ A really simple way to detect CSS selectors support is using `document.querySele
 
 The basic idea is creating a new `<style>` element with an empty rule and the selector we want to test support for, and then read out the stylesheet through the DOM methods to see if a rule actually exists. I've so far tested it in Firefox, Opera and Chrome and it seems to work. I haven't tested it in IE yet, as I currently have too many apps running to turn on the vm, so it might need a few fixes to work there (or I might be unlucky and the idea might not work at all).
 
-You can test it out yourself in this [fiddle](http://jsfiddle.net/leaverou/Pmn8m/), just check the console: [http://fiddle.jshell.net/leaverou/Pmn8m/show/light/](http://fiddle.jshell.net/leaverou/Pmn8m/show/light/)
+You can test it out yourself in this [fiddle](https://jsfiddle.net/leaverou/Pmn8m/), just check the console: [http://fiddle.jshell.net/leaverou/Pmn8m/show/light/](http://fiddle.jshell.net/leaverou/Pmn8m/show/light/)
 
 Apologies if this has already been documented elsewhere, I really couldn't find anything.
 
-**Edit:** [James Long worked on fixing my example's issues with IE](http://jsfiddle.net/Skateside/5dKc7/5/)
+**Edit:** [James Long worked on fixing my example's issues with IE](https://jsfiddle.net/Skateside/5dKc7/5/)

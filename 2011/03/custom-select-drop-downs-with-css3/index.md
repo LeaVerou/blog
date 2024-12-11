@@ -17,7 +17,7 @@ The property was originally SVG-only, but eventually browsers and the W3C adopte
 
 It can be used in many use cases that weren't possible before (or the solution was overly complicated), one of them being to create custom-looking `<select>` drop downs, by overlaying an element over the native drop down arrow (to create the custom one) and disallowing pointer events on it. Here's a quick example:
 
-<iframe style="width: 100%; height: 200px" src="http://jsfiddle.net/leaverou/XxkSC/embedded/result,css"></iframe>
+<iframe style="width: 100%; height: 200px" src="https://jsfiddle.net/leaverou/XxkSC/embedded/result,css"></iframe>
 
 `-webkit-appearance: none` was needed in Webkit to turn off the native OSX appearance (in OSX and maybe Safari on Windows, I didn't test that). However, since that also removes the native drop down arrow, our custom arrow now obscures part of the text, so we had to add a 30px padding-right to the select element, only in Webkit. You can easily detect if `pointer-events` is supported via JS and only apply this it if it is (eg by adding or removing a class from the body element):
 

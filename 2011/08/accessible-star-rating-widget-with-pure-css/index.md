@@ -21,6 +21,6 @@ In browsers that don't support `:checked` (essentially only IE < 9), it degrades
 
 So, here it is:
 
-<iframe style="width: 100%; height: 180px;" src="http://jsfiddle.net/leaverou/CGP87/embedded/result%2Ccss%2Chtml/" width="320" height="240"></iframe>
+<iframe style="width: 100%; height: 180px;" src="https://jsfiddle.net/leaverou/CGP87/embedded/result%2Ccss%2Chtml/" width="320" height="240"></iframe>
 
 Legal note, for those who need it: This code is MIT licensed.

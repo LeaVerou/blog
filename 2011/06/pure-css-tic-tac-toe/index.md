@@ -25,4 +25,4 @@ All modern browsers support the indeterminate state in checkboxes (for Opera you
 
 Enjoy:
 
-<iframe style="width: 100%; height: 350px" src="http://jsfiddle.net/leaverou/5X5Tq/embedded/result,css,html,js"></iframe>
+<iframe style="width: 100%; height: 350px" src="https://jsfiddle.net/leaverou/5X5Tq/embedded/result,css,html,js"></iframe>

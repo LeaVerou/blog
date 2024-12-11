@@ -14,7 +14,7 @@ So, I thought I’d take a chance at trying to recreate this effect without any 
 
 They have the same disadvantage as the originals: They depend on the background color. However, unlike the originals, they come at less code, they're scalable without changing a million values (as shown in the "bigger" section) and of course, no extra markup.
 
-You can see the results in [the fiddle](http://jsfiddle.net/leaverou/T9bmw/) below:
+You can see the results in [the fiddle](https://jsfiddle.net/leaverou/T9bmw/) below:
 
 <iframe style="width: 100%; height: 400px" src="//jsfiddle.net/leaverou/T9bmw/embedded/result%2Ccss%2Chtml"></iframe>
 
