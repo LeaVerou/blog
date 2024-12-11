@@ -73,6 +73,6 @@ The solution I decided to go with was to use [Modernizr](http://modernizr.com) t
 
 It doesn’t look as good as Firefox, but it’s decent. You can see the CSS rules I used in the following Dabblet:
 
-<iframe src="http://dabblet.com/gist/5214646" height="500" width="100%"></iframe>
+<iframe src="https://dabblet.com/gist/5214646" height="500" width="100%"></iframe>
 
 Obviously it’s not a complete MathML-to-CSS library, if one is even possible, but it works well for my use case. If I have to use more MathML features, I’d write more CSS rules. The intention of this post is not to provide a CSS framework to use as a MathML fallback, but to show you a solution you could adapt to your needs. Hope it helps!

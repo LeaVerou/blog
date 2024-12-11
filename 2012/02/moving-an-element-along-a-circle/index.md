@@ -18,6 +18,6 @@ Recently, I [suggested to www-style that transform-origin should be a list](http
 
 I simplified the code a bit, and here it is:
 
-<iframe style="width: 100%; height: 500px;" src="http://dabblet.com/gist/1760283" width="320" height="240"></iframe>
+<iframe style="width: 100%; height: 500px;" src="https://dabblet.com/gist/1760283" width="320" height="240"></iframe>
 
 With the tools we currently have, I don't think it gets any simpler than that.

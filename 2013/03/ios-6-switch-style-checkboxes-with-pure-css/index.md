@@ -25,11 +25,11 @@ The best idea I came up with was to use a radial gradient for the knob and anima
 
 Here you can see my failed attempt, which only works as intended in Chrome:
 
-<iframe src="http://dabblet.com/gist/5078981/457e62ee672ba69fe6ce5a3f6c173528366a2203" width="100%" height="200"></iframe>
+<iframe src="https://dabblet.com/gist/5078981/457e62ee672ba69fe6ce5a3f6c173528366a2203" width="100%" height="200"></iframe>
 
 I realized I had to lift one of the restrictions if I wanted to solve this, so I picked the 4th (no extra HTML elements), as it was the least important one. I could have done it as a pseudoelements on `<label>`s, but I decided to use a `<div>` instead, for maximum flexibility. The `<div>` is added through script in the Dabblet below, but it could be added by hand instead.
 
-<iframe src="http://dabblet.com/gist/5078981" width="100%" height="500"></iframe>
+<iframe src="https://dabblet.com/gist/5078981" width="100%" height="500"></iframe>
 
 To get around the limitation of pseudo-elements not being animatable in current and older versions of WebKit, I animate the padding of the `<div>` instead.
 
@@ -39,7 +39,7 @@ Another challenge with this was the different backgrounds. Changing the backgrou
 
 So, without further ado, here is the final result:
 
-<iframe src="http://dabblet.com/gist/5166717" width="100%" height="800"></iframe>
+<iframe src="https://dabblet.com/gist/5166717" width="100%" height="800"></iframe>
 
 Yes, I know there are other efforts on the web to replicate this effect with pure CSS, but none of them seems to come as close to the original, without images and with such minimal HTML.
 

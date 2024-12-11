@@ -27,7 +27,7 @@ And not just of the screen, but we can't even capture an element on the page and
 
 ### We can't get POST parameters and HTTP headers
 
-There's absolutely NO way to get the POST parameters or the HTTP response headers that the current page was sent with. You can get the GET parameters through the location object, but no way to get POST parameters. This makes it very hard to make client-side applications that accept input from 3rd party websites when that input is too long to be on the URL (as is the case of [dabblet](http://dabblet.com) for example).
+There's absolutely NO way to get the POST parameters or the HTTP response headers that the current page was sent with. You can get the GET parameters through the location object, but no way to get POST parameters. This makes it very hard to make client-side applications that accept input from 3rd party websites when that input is too long to be on the URL (as is the case of [dabblet](https://dabblet.com) for example).
 
 ### We can't make peer to peer connections
 

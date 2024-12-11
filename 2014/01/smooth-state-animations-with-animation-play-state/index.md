@@ -11,11 +11,11 @@ When a CSS animation is applied from the beginning of the page load, things are 
 
 A naïve approach would be to try something like this:
 
-<iframe src="http://dabblet.com/gist/8334474" width="100%" height="400"></iframe>
+<iframe src="https://dabblet.com/gist/8334474" width="100%" height="400"></iframe>
 
 However, this means that when you hover out of the element, it abruptly snaps to its original state (no rotation). In many cases, it would be a more desirable to have it freeze in the last shown frame, until we hover over it again. To achieve that, we can apply the animation from the beginning, with `animation-play-state: paused;` and just change it on :hover to `animation-play-state: running;`. This is what happens then:
 
-<iframe src="http://dabblet.com/gist/8333352" width="100%" height="400"></iframe>
+<iframe src="https://dabblet.com/gist/8333352" width="100%" height="400"></iframe>
 
 I figured this out when I was recently helping my good friend [Julian](http://twitter.com/juliancheal) with [his one page website](http://juliancheal.co.uk)\*. When you hover over the figure, it starts scrolling, but when you hover out of it, it doesn’t snap back to its original position, which would’ve looked awful.
 

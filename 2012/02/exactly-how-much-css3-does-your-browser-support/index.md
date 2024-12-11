@@ -9,7 +9,7 @@ tags:
   - "web-standards"
 ---
 
-[![](images/Screen-shot-2012-02-02-at-14.20.15--300x187.png "Screen shot 2012-02-02 at 14.20.15")](images/Screen-shot-2012-02-02-at-14.20.15-.png)This project started as an attempt to improve [dabblet](http://dabblet.com) and to generate data for the book chapter I'm writing for Smashing Book #3. I wanted to create a very simple/basic testsuite for CSS3 stuff so that you could hover on a e.g. CSS3 property and you got a nice browser support popup. While I didn't achieve that (turns out BrowserScope doesn't do that kind of thing), I still think it's interesting as a spin-off project, especially since the results will probably surprise you.
+[![](images/Screen-shot-2012-02-02-at-14.20.15--300x187.png "Screen shot 2012-02-02 at 14.20.15")](images/Screen-shot-2012-02-02-at-14.20.15-.png)This project started as an attempt to improve [dabblet](https://dabblet.com) and to generate data for the book chapter I'm writing for Smashing Book #3. I wanted to create a very simple/basic testsuite for CSS3 stuff so that you could hover on a e.g. CSS3 property and you got a nice browser support popup. While I didn't achieve that (turns out BrowserScope doesn't do that kind of thing), I still think it's interesting as a spin-off project, especially since the results will probably surprise you.
 
 ### How it works
 

@@ -8,7 +8,7 @@ tags:
 
 I posted about this in both the [WebPlatform.org blog](http://blog.webplatform.org/2012/11/live-examples-coming-soon/) and [Dabblet’s blog](http://blog.dabblet.com/post/35203393585/lots-of-improvements-in-the-pipeline), but I thought it might be interesting to many readers of this blog as well:
 
-> As many of you probably know, [I](http://lea.verou.me/)’ve started working for [W3C Developer Relations](http://www.w3.org/community/devrel/) since this August. Half of my time is devoted to [WebPlatform.org](http://www.webplatform.org/), a very promising project to document the web with the help of all major players, in a vendor-neutral way. Even before I joined [W3C](http://w3.org), we discussed using a hosted, customized version of [dabblet](http://dabblet.com) in WebPlatform.org, as a platform for live code examples. I recently started working towards making this happen.
+> As many of you probably know, [I](http://lea.verou.me/)’ve started working for [W3C Developer Relations](http://www.w3.org/community/devrel/) since this August. Half of my time is devoted to [WebPlatform.org](http://www.webplatform.org/), a very promising project to document the web with the help of all major players, in a vendor-neutral way. Even before I joined [W3C](http://w3.org), we discussed using a hosted, customized version of [dabblet](https://dabblet.com) in WebPlatform.org, as a platform for live code examples. I recently started working towards making this happen.
 >
 > A lot of changes and improvements need to be made to achieve this, but the good news is, most of these will be pushed to dabblet.com as well! In a nutshell, this is what I’m currently working on:
 >

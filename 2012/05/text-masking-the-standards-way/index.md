@@ -12,7 +12,7 @@ As much as I like .net magazine, I was recently outraged by their "[Texturizing 
 
 A common response to such complaints is that they are merely philosophical and who cares if the feature works right now and degrades gracefully. This argument could be valid for some cases, when the style is just a minor, gracefully degrading enhancement and no standards compliant alternative is present (for example, I've used `::-webkit-scrollbar` styles myself). However, this is not the case here. We have had [a standards compliant alternative for this for the past 11 years](http://www.w3.org/TR/2001/WD-SVG11-20011030/ "Warning: This is a very early version of the SVG 1.1 spec. For reference, use the latest one.") and it's called SVG. It can also do much more than masking, if you give it a chance. Here’s an example of texturized text with SVG:
 
-<iframe style="width: 100%; height: 600px;" src="http://dabblet.com/gist/2594420" width="320" height="240"></iframe>
+<iframe style="width: 100%; height: 600px;" src="https://dabblet.com/gist/2594420" width="320" height="240"></iframe>
 
 **Edit:** Thanks to [@devongovett's improvements](https://twitter.com/devongovett/status/198513261333848064), the code is now simpler & shorter.
 

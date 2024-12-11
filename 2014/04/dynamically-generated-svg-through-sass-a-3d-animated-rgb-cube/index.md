@@ -16,13 +16,13 @@ tags:
 
 **The most challenging part wasn't actually the 3D cube.** This has been done tons of times before, it was probably the most common demo for CSS 3D transforms a couple of years ago. The only part of this that could be of interest is that mine only used 2 elements for the cube. This is a dabblet of the cube, without any RGB gradients on it:
 
-<iframe src="http://dabblet.com/gist/9594360" height="800" width="100%"></iframe>
+<iframe src="https://dabblet.com/gist/9594360" height="800" width="100%"></iframe>
 
 **The challenging part was creating the gradients for the 6 sides.** These are not plain gradients, as you can see below:
 
-[![RGB cube sides](images/gradients.png)](images/gradients.png)These are basically two linear gradients from left to right, with the topmost one being masked with a gradient from top to bottom. You can use [CSS Masking to achieve this (for Chrome/Safari)](http://dabblet.com/gist/9201622) and SVG Masks for Firefox, but this masks the whole element, which would hide the pseudo-elements needed for the sides. What I needed was masks applied to backgrounds only, not the whole element.
+[![RGB cube sides](images/gradients.png)](images/gradients.png)These are basically two linear gradients from left to right, with the topmost one being masked with a gradient from top to bottom. You can use [CSS Masking to achieve this (for Chrome/Safari)](https://dabblet.com/gist/9201622) and SVG Masks for Firefox, but this masks the whole element, which would hide the pseudo-elements needed for the sides. What I needed was masks applied to backgrounds only, not the whole element.
 
-It seemed obvious that the best idea would be to use SVG background images. For example, here is [the SVG background needed for the top left one](http://dabblet.com/gist/9964928):
+It seemed obvious that the best idea would be to use SVG background images. For example, here is [the SVG background needed for the top left one](https://dabblet.com/gist/9964928):
 
 ```markup
 <svg xmlns="http://www.w3.org/2000/svg" width="200px" height="200px">

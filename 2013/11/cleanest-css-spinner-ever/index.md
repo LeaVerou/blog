@@ -23,6 +23,6 @@ Using a preprocessor for variables and calculations should simplify the code eve
 
 Enjoy :)
 
-<iframe src="http://dabblet.com/gist/7615212" width="100%" height="300"></iframe>
+<iframe src="https://dabblet.com/gist/7615212" width="100%" height="300"></iframe>
 
 Ideas for further improvement are welcome. Remember that it's not just the size of the code that matters, but also its simplicity.

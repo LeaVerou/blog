@@ -18,7 +18,7 @@ tags:
 
 Don't get me wrong, I LOVE JSFiddle. It was a pioneer and it paved the way for all similar apps. It's great for JavaScript experiments. But for pure CSS/HTML experiments, we can do better.
 
-The thought of making some interactive playground for CSS experiments was lingering in my mind for quite a while, but never attempted to start it as I knew it would be a lot of fascinating work and I wouldn't be able to focus on anything else throughout. While I was writing [my 24ways article](http://24ways.org/2011/css3-patterns-explained), I wanted to include lots of CSS demos and I wanted the code to be editable and in some cases on top of the result to save space. JSFiddle's embedding didn't do that, so I decided to make something simple, just for that article. It quickly evolved to something much bigger, and yes I was right, it was lots of fascinating work and I wasn't able to focus on anything else throughout. I even delayed my 24ways article for the whole time I was developing it, and I'm grateful that Drew was so patient. After 3 weeks of working on it, I present [dabblet](http://dabblet.com).
+The thought of making some interactive playground for CSS experiments was lingering in my mind for quite a while, but never attempted to start it as I knew it would be a lot of fascinating work and I wouldn't be able to focus on anything else throughout. While I was writing [my 24ways article](http://24ways.org/2011/css3-patterns-explained), I wanted to include lots of CSS demos and I wanted the code to be editable and in some cases on top of the result to save space. JSFiddle's embedding didn't do that, so I decided to make something simple, just for that article. It quickly evolved to something much bigger, and yes I was right, it was lots of fascinating work and I wasn't able to focus on anything else throughout. I even delayed my 24ways article for the whole time I was developing it, and I'm grateful that Drew was so patient. After 3 weeks of working on it, I present [dabblet](https://dabblet.com).
 
 ### Features
 
@@ -28,7 +28,7 @@ So what does dabblet have that similar apps don't? Here's a list:
 - Saves everything to [Github gists](https://gist.github.com/), so even if dabblet goes away (not that I plan to!) you won't lose your data
 - No page reloads even on saving, everything is XHR-ed
 - Many familiar keyboard shortcuts
-- Small inline previewers for many kinds of CSS values, in particular for: [colors](http://dribbble.com/shots/338667-Mystery-upcoming-project-UI-detail-CSS-color-preview), [absolute lengths](http://dribbble.com/shots/339917-Mystery-upcoming-project-UI-detail-Length-preview), durations, [angles](http://dribbble.com/shots/346253-Mystery-upcoming-project-UI-detail-Angle-preview), [easing functions](http://dribbble.com/shots/349045-Mystery-upcoming-project-UI-detail-Easing-previewer) and [gradients](http://dribbble.com/shots/346247-Mystery-upcoming-project-UI-detail-CSS-gradient-preview). Check them all in [this dabblet](http://dabblet.com/gist/1441328).
+- Small inline previewers for many kinds of CSS values, in particular for: [colors](http://dribbble.com/shots/338667-Mystery-upcoming-project-UI-detail-CSS-color-preview), [absolute lengths](http://dribbble.com/shots/339917-Mystery-upcoming-project-UI-detail-Length-preview), durations, [angles](http://dribbble.com/shots/346253-Mystery-upcoming-project-UI-detail-Angle-preview), [easing functions](http://dribbble.com/shots/349045-Mystery-upcoming-project-UI-detail-Easing-previewer) and [gradients](http://dribbble.com/shots/346247-Mystery-upcoming-project-UI-detail-CSS-gradient-preview). Check them all in [this dabblet](https://dabblet.com/gist/1441328).
 - Automatically adds prefixes with [\-prefix-free](http://leaverou.github.com/prefixfree/), to speed up testing
 - Use the Alt key and the up/down arrows to increment/decrement `<length>`, `<time>` and `<angle>` values.
 - Dabblet is [open source](https://github.com/LeaVerou/dabblet) under a NPOSL 3.0 license
@@ -56,13 +56,13 @@ I hope you enjoy using it as much as I enjoyed making it. Please report any bugs
 
 Here are some dabblets that should get you started:
 
-- [http://dabblet.com/gist/1441328](http://dabblet.com/gist/1441328)
-- [http://dabblet.com/gist/1454230](http://dabblet.com/gist/1454230)
-- [http://dabblet.com/gist/1454409](http://dabblet.com/gist/1454409)
-- [http://dabblet.com/gist/1457668](http://dabblet.com/gist/1457668)
-- [http://dabblet.com/gist/1457677](http://dabblet.com/gist/1457677)
-- [http://dabblet.com/gist/1421054](http://dabblet.com/gist/1421054)
-- [http://dabblet.com/gist/1454889](http://dabblet.com/gist/1454889)
+- [https://dabblet.com/gist/1441328](https://dabblet.com/gist/1441328)
+- [https://dabblet.com/gist/1454230](https://dabblet.com/gist/1454230)
+- [https://dabblet.com/gist/1454409](https://dabblet.com/gist/1454409)
+- [https://dabblet.com/gist/1457668](https://dabblet.com/gist/1457668)
+- [https://dabblet.com/gist/1457677](https://dabblet.com/gist/1457677)
+- [https://dabblet.com/gist/1421054](https://dabblet.com/gist/1421054)
+- [https://dabblet.com/gist/1454889](https://dabblet.com/gist/1454889)
 
 ## Credits
 

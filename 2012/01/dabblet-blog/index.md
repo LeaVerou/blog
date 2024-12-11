@@ -7,7 +7,7 @@ tags:
   - "dabblet"
 ---
 
-Not sure if you noticed, but [Dabblet](http://dabblet.com) now has a blog: [blog.dabblet.com](http://blog.dabblet.com)
+Not sure if you noticed, but [Dabblet](https://dabblet.com) now has a blog: [blog.dabblet.com](http://blog.dabblet.com)
 
 I’ll post there about Dabblet updates and not flood my regular subscribers here who may not care. So, if you are interested on Dabblet’s progress, follow that blog or [@dabblet](http://twitter.com/dabblet) on twitter.
 

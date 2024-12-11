@@ -29,6 +29,6 @@ Of course, if you have multiple `<dd>`s for every `<dt>`, you will need to alter
 
 You can see a live result here:
 
-<iframe style="width: 100%; height: 800px;" src="http://dabblet.com/gist/1901867" width="320" height="240"></iframe>
+<iframe style="width: 100%; height: 800px;" src="https://dabblet.com/gist/1901867" width="320" height="240"></iframe>
 
 Tested to work in **IE8+, Chrome, Firefox 3+, Opera 10+, Safari 4+**.
