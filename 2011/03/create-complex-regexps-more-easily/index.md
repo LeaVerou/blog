@@ -13,12 +13,13 @@ When I was writing [my linear-gradient() to -webkit-gradient() converter](http:/
 
 Turns out JavaScript regular expression objects have a .source property that can be used in the RegExp constructor to create a new RegExp out of another one. So I wrote a new function that takes a string with identifiers for regexp replacements in {{ and }} and replaces them with the corresponding sub-regexps, taken from an object literal as a second argument:
 
-/\*\*
- \* Create complex regexps in an easy to read way
- \* @param str {String} Final regex with {{id}} for replacements
- \* @param replacements {Object} Object with the replacements
- \* @param flags {String} Just like the flags argument in the RegExp constructor
- \*/
+```js
+/**
+ * Create complex regexps in an easy-to-read way
+ * @param str {String} Final regex with {{id}} for replacements
+ * @param replacements {Object} Object with the replacements
+ * @param flags {String} Just like the flags argument in the RegExp constructor
+ */
 RegExp.create = function(str, replacements, flags) {
 	for(var id in replacements) {
 		var replacement = replacements\[id\],
@@ -36,9 +37,11 @@ RegExp.create = function(str, replacements, flags) {
 
 	return RegExp(str, flags);
 };
+```
 
 If you don't like adding a function to the RegExp object, you can name it however you want. Here's how I used it for my linear-gradient() parser:
 
+```js
 self.regex = {};
 
 self.regex.number = /^-?\[0-9\]\*\\.?\[0-9\]+$/;
@@ -75,5 +78,6 @@ self.regex.linearGradient = RegExp.create('^linear-gradient\\\\(\\\\s\*(?:({{dir
 	direction: self.regex.direction,
 	colorStop: self.regex.colorStop
 }, 'i');
+```
 
 (self in this case was a local variable, not the window object)
