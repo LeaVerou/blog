@@ -1,15 +1,15 @@
 ---
 draft: true
-title: "Survey Design: Okay, but how does it _feel_?"
+title: "Sentiment Chips: Okay, but how does it _feel_?"
 date: 2024-12-25
 toc: true
 tags:
+  - survey-design
   - product
   - product-design
   - design-thinking
   - case-study
   - ux
-  - survey-design
 ---
 
 One would think that we've more or less figured survey UI out by now.
@@ -31,8 +31,8 @@ This case study is Part 1 of (what I’m hoping will be) a series around how sur
 
 ## The Problem
 
-For context, the body of State Of surveys is a series of *"Feature"* questions:
-questions that present the respondent with a certain web platform feature and ask if they had heard of it or used it.
+For context, the body of State Of surveys is a series of *"Feature questions"*,
+which present the respondent with a certain web platform feature and ask if they had heard of it or used it.
 Feature questions look like this:
 
 <figure>
@@ -99,7 +99,7 @@ But …could you imagine filling out 50 of these?
 
 However, an acceptable solution needed to add **minimal friction for end-users**:
 there were at least 50 such questions, so any increase in friction would quickly add up — even one extra click was pushing it.
-And we needed a sufficiently **high response rate** to have a good <abbr title="Confidence Interval">CI</span>.
+And we needed a sufficiently **high response rate** to have a good <abbr title="Confidence Interval">CI</abbr>.
 But it also needed to facilitate **quantitative** data analysis.
 
 Oh, and all of that should involve **minimal engineering effort**, as the engineering team was tiny and stretched thin.
@@ -112,7 +112,7 @@ Misguided as it may have been, the comment field and the infrastructure around i
 These inserted predefined responses into the comment field with a single click.
 Being a purely client-side interaction meant it could be implemented in a day, and it _still_ kept end-user friction to a minimum:
 1 optional extra click to provide sentiment.
-Quantitative data analysis was not optimally covered in theory, as entering freeform responses are notoriously hard to analyze.
+In theory, quantitative data analysis was not optimally covered, as freeform responses are notoriously hard to analyze.
 However, based in the psychology of user behavior, I hypothesized that the vast majority of users would not edit these at all, a minority would append context, and an even tinier minority would actually edit the responses.
 This meant we could analyze them via simple string matching and only lose a few false negatives.
 
@@ -138,7 +138,7 @@ Often, constraints are negotiable or get lifted entirely, but **without a north 
 
 ### Ideas 2 & 3: Followups and sentiment radios
 
-This new backend came with a UI proposal which both me and the Google PM that was one of the survey’s main stakeholders had serious reservations about:
+This new backend came with a UI proposal that raised red flags for both me and the Google PM I was collaborating with, who was one of the survey's main stakeholders.
 even *seeing* the followup UI required an extra click, so it was guaranteed to have a low response rate.
 It would have been better than the 0.9% of the comment field (clicking is easier than typing!), but still pretty low (I would estimate < 15%).
 And even when users were intrinsically motivated to leave feedback, two clicks and a popover was a steep price to pay.
@@ -181,7 +181,9 @@ Could we do better?
 Guided by this, I designed a UI where selecting sentiment is done via "sentiment chips" which are **actually part of the answer**,
 so clicking them _also_ selects the answer they are accompanying, allowing users to express an answer across both variables with a single click, or just select the answer itself to express no sentiment.
 To reduce visual clutter, these only faded in on hover.
-Additionally, clicking on the selected chip a second time would deselect it, fixing a longstanding UX issue with radio buttons.
+Additionally, clicking on the selected chip a second time would deselect it, fixing a longstanding UX issue with radio buttons [^radios].
+
+[^radios]: A radio group with all buttons off cannot be returned to that state by user interaction.
 
 Over the course of designing this, I became so convinced it was the right solution, that I implemented a high fidelity prototype myself, complete with code that could be easily adapted to the infrastructure used by the survey app.
 
@@ -211,15 +213,19 @@ Reception of sentiment chips was not what I had hoped at first.
 I had expected pushback due to the engineering effort needed, but folks also had other concerns:
 that users would find things appearing on hover distracting and feel "ambushed",
 that the UI was too "weird",
-and that users would not discover the 1-click interaction and use it as a two-step process anyway.
+that users would not discover the 1-click interaction and use it as a two-step process anyway,
+and that response rate would be low because these chips were not visible upfront.
 
-#### Mini-feature questions
+### Mini-feature questions: Sentiment Chips + Checkboxes?
 
-Around the same time I had a relevant realization: we don’t actually need to know *both* awareness and usage for all features.
+Around the same time as designing sentiment chips, I had a relevant realization:
+**we don’t actually need to know _both_ awareness and usage for all features**.
+
 For old, widely supported features, awareness doesn’t matter, because even when it’s low, it has plateaued.
 And for features that are so new they have not yet been implemented in browsers, usage is largely meaningless.
-If we don’t need all three options, experience can be expressed with a checkbox.
-This insights plus sentiment chips would allow us to introduce a new question type that merges multiple feature questions in one!
+For these cases, each feature only has two states, and thus experience can be expressed with a checkbox!
+This would allow us to combine questions about multiple features in one,
+and we could still use sentiment chips, albeit a little differently:
 
 <figure>
 	<video src="videos/minifeature-desktop.mp4" loop muted loading="lazy" autoplay style="flex: 2.75"></video>
@@ -230,13 +236,18 @@ The mini features prototype on desktop and mobile.
 </figcaption>
 </figure>
 
-However, due to the way sentiment chips worked, this means it is not possible to select sentiment for features you have not checked (depending on context, checked could mean either used or heard):
-once you click on a chip, it also *selects* the feature, as if you clicked on its label.
-I guess it would be possible to click on a chip and then *uncheck* the feature, but that would be a very weird interaction.
+While these could be used for questions that **either** discern usage **or** awareness, we decided to stick to the former, as there was a (valid) concern that having mini-feature questions whose checked state meant different things could be confusing and lead to errors.
+That way, only old, lower-priority features would be relegated to this template,
+and new features which tend to be higher priority for browser vendors would still get the full UI, comments and all.
+Instead, to improve the experience for cutting edge features, we introduced a "Not implemented" tag next to the "Used it" option.
+
+One disadvantage of the mini feature UI is that due to the way sentiment chips work, it is not possible to select sentiment for features you have not used:
+once you click on a chip, it also *selects* the feature, as if you had clicked on its label.
+I guess it could be possible to click on a chip and then *uncheck* the feature, but that would be a very weird interaction.
 
 ### Idea 5: Existing 5-point question template
 
-At this point, the eng lead dredged up a question template that had been used to ask about the respondent’s experience with various types of tooling.
+At this point, the lead engineer dredged up a question template that had been used to ask about the respondent’s experience with various types of tooling.
 Instead of separating experience and sentiment, it used a 5-point scale where each answer except the first answered *both* questions.
 
 <figure>
@@ -258,52 +269,73 @@ Neutral votes get pushed into positive votes, and the data around positive senti
 - These did not allow users to express sentiment for features they had not heard of, despite these questions often including enough info for users to know whether they were interested.
 - I was worried that increasing the number of upfront answers to 5 would increase cognitive overhead (and even scrolling distance!) too much.
 
+A UX researcher we were working with even did a [heuristic evaluation](https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/) that somewhat favored the 5-point template mainly on the basis of being a more familiar UI.
+The odds seemed stacked against sentiment chips, but the upcoming usability testing could still tip the scales in their favor.
 
-## Usability testing to the rescue!
+## Usability Testing to the Rescue!
 
-Despite the lead engineer being adamant that Idea 5 was too much work and being unconvinced about its merits, since I had built a prototype, we could user test it and see how it compares to the alternative: the 5-point question.
+Despite the lead engineer being adamant that Idea 4 was too much work and being unconvinced about its merits, since I had built a prototype, we could user test it and see how it compares to the alternative: the 5-point question.
 
 We ran a [within-subjects](https://www.nngroup.com/articles/between-within-subjects/) usability study
 with 6 participants ([no, they are not too few](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/))
 recruited via social media.
 Half of the survey used the 5-point template, the other half sentiment chips.
-To avoid order effects, we randomized the order of the two conditions.
+The order of the conditions was randomized to avoid order effects.
+
+In addition to their actual experience, we also collected subjective feedback at the end of the survey,
+showing them a screenshot of each answering UI and asking how each felt.
 
 ### What worked well: Sentiment chips
 
-I have ran many usability studies in the last ten years, and I have never seen results as resounding as this one.
-In fact, after the 5th participant we unanimously agreed to switch to sentiment chips.
+I have run many usability studies in the last ten years, and I have never seen results as resounding as this one.
+So much that we unanimously agreed to switch to sentiment chips after the 5th participant, because the scales were so tipped in favor of sentiment chips that nothing that happened in the last session could have tipped them the other way.
 
-All of my concerns about the 5-point template were brought up by participants on their own accord:
+The lead engineer observed some of the sessions, and this was instrumental in changing his mind.
+This was not a coincidence: when engineering is unconvinced that a certain UI is worth the implementation complexity,
+it is often a good strategy to have them observe usability testing sessions, and helps build long-term user empathy,
+which makes future consensus easier too.
+Given the unfortunate lack of [HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) prioritization in Computer Science curricula, this may even be their first exposure to usability testing.
 
-- Participants *really* liked being able to express sentiment, and were vocal about their frustration when they could not express it (such as for features they had never heard of in the 5-point condition).
-- Participants *really* disliked being forced into selecting a sentiment when they had no opinion.
-- Some participants even mentioned it felt overwhelming to have to select among 5 options.
+_All_ of my concerns about the 5-point template were brought up by participants on their own accord, repeatedly:
 
-Furthermore, none of the team’s concerns about sentiment chips were validated:
-- No one found the chips appearing on hover distracting or felt "ambushed"
-- Everyone discovered the 1-click interaction pretty fast (within the first 2-3 questions).
-But interestingly, they still *chose* to use it as a two-step process for some of the questions, to reduce cognitive load by breaking down the decision into two smaller ones.
-The fact that this UI allowed users to make *their own* efficiency vs cognitive overhead tradeoffs was an advantage I had not even considered when designing it.
-- Response rate was generally high — when people did not select sentiment, it was because they **genuinely** had no opinion.
+- **All participants** *really* liked being able to express sentiment, and were vocal about their frustration when they could not express it.
+- All but one participant (4/5) complained being forced into selecting a sentiment when they had no opinion.
+- Some participants even mentioned that the 5-point template felt overwhelming.
+
+Furthermore, _none_ of the concerns about sentiment chips were validated:
+
+- No-one found the chips appearing on hover distracting or felt "ambushed"
+- No-one struggled to understand how to use them
+- Everyone discovered the 1-click interaction pretty fast (typically within the first 2-3 questions).
+But interestingly, **they still *chose* to use it as a two-step process for some of the questions**, presumably to reduce cognitive load by breaking down the decision into two smaller ones.
+The fact that this UI allowed users to make *their own* efficiency vs cognitive overhead tradeoffs was an advantage I had not even considered when designing it!
+- Response rate was generally high — when people did not select sentiment, it was because they **genuinely** had no opinion, not because they couldn’t be bothered.
 
 ### What worked okay: Mini-feature questions
 
-Mini-feature questions did successfully help cut down response time per feature by 75%,
+[Mini-feature questions](#mini-feature-questions) did successfully help cut down response time per feature by 75%,
 though this came at a price:
-Once more, we saw that participants *really* wanted to express sentiment, and were frustrated when they couldn’t
-and these questions did not allow them to express sentiment for features they had not used.
+Once more, we saw that participants *really* wanted to express sentiment, and were frustrated when they couldn’t,
+which was the case for features they had not used.
 Regardless, we agreed that the benefits outweighed the costs.
 
 ### What did not work: Sentiment chips on mobile
 
 A blind spot in our testing was that we did not test the UI on mobile.
 Usability tests were conducted remotely via video call, so it was a lot easier to get participants to use their regular computers.
-Additionally, stats for previous surveys showed that mobile use was a much smaller percentage than for the web in general (~25%), so we did not prioritize it.
-That said, we should have at least done a couple sessions on mobile!
+Additionally, stats for previous surveys showed that mobile use was a much smaller percentage in these surveys than for the web in general (~25%), so we did not prioritize it.
+
+This was a mistake in itself: using current usage stats to inform prioritization may seem like a great idea, but it can be prone to [reverse causality bias](https://www.indeed.com/career-advice/career-development/reverse-causality).
+Meaning, are people not using these surveys on mobile very much because they genuinely don’t need to,
+or because the experience on mobile is subpar?
+We often see this with accessibility too: people claim that it doesn’t matter because they don’t have users with disabilities,
+but often they don’t have users with disabilities because their site is not accessible!
+
+But even if 75% of users genuinely preferred to take these surveys on desktop (which is plausible, since they are long and people often do them in increments), we should at least have done a few sessions on mobile — 25% is not negligible!
 
 Once responses started coming in, we realized that participants had trouble understanding what the up and down arrows meant, since on mobile these are shown without labels until selected.
 This would have been an easy fix had it had been caught early, e.g. thumbs up/down icons could have been used instead.
+This was not a huge issue, as their purpose becomes clear when selected, but it definitely added some friction.
 
 ## Aftermath: Sentiment Chips in the Wild
 
@@ -313,7 +345,75 @@ When participants know they are being watched they are always more willing to en
 no matter how much you emphasize that they should act naturally when briefing them.
 That's not their failing; it's simply human nature.
 
-Indeed, sentiment response rates in the wild were lower than in the usability study, but they were still very high: 38% on average (same median), ranging from 24% to 59%, which is plenty to draw conclusions.
+Indeed, sentiment response rates in the real-world were lower than those observed in the usability study,
+but still remained high — ranging from 24% to 59% and averaging 38% (with the same median), which provided ample data to draw conclusions.
+
 While the expectation was that people would be more likely to express sentiment for features they had used or at least heard of,
 this was not really the case:
-participants expressed sentiment on 39% (median = 40%) of the features they had used, 37% of the features they had heard of, and 37% of the features they had not heard of.
+participants expressed sentiment on 39% (median = 40%) of the features they had used, 37% of the features they had heard of, and 37% of the features they had not heard of,
+indicating that expressing sentiment for features they had not heard of was indeed a very common use case, and not one to be brushed off.
+
+## Generalizability
+
+While this UI was originally designed to collect sentiment about the selected option in a multiple choice question,
+I think it could be generalized to improving UX for other types of two variable questions.
+Generally, it can be a good fit when we have questions that collect data across two variables and:
+1. The second variable is optional and lower priority than the first
+2. The first variable is single (exclusive) choice, i.e. not checkbox questions.
+
+The core benefit of this approach is the **reduction in cognitive load**.
+It is [well established that matrix questions are more overwhelming](https://journals.sagepub.com/doi/full/10.1177/0894439316674459).
+This design allows questions to initially appear like a simple multiple choice question, and only reveal the UI for the second variable upon interaction.
+Additionally, while matrix questions force participants to decide on both variables at once, this design allows them to make their own tradeoff of cognitive load vs efficiency, treating the UI as single step or two step as they see fit.
+
+Another benefit of this design is that it allows for the labels of the options for the second variable to be context-dependent, whereas a matrix limits you to a single column header.
+In the sentiment case, the labels varied depending on whether the feature had been used (_"Positive experience"_ / _"Negative experience"_) or not (_"Interested"_ / _"Not interested"_).
+
+The more such questions a survey has, the bigger the benefits — if it’s only about a couple questions,
+it may not be worth the implementation complexity,
+though I’m hoping that survey software may eventually provide this out of the box so that this is no longer a tradeoff.
+
+That said, matrix questions _do_ have their benefits, when used appropriately, i.e. when the two requirements listed above are not met.
+
+Matrix questions have an big edge when users need to make a single selection per row, especially when this may be the same answer for multiple rows, which means they can just tick down a whole column.
+Sentiment chips does not allow them to build this positional association, as they have different horizontal positions per answer.
+
+Sentiment chips also enforce a clear prioritization across the two variables:
+the question is presented as a multiple choice question across the first variable,
+with the chips allowing the respondent to provide optional additional context across a second variable.
+Matrix questions allow presenting the two variables with the same visual weight,
+which could be desirable in certain cases.
+For example, there are cases when we don’t want to allow the respondent to provide an answer to the first variable without _also_ providing an answer to the second.
+
+## Lessons Learned
+
+In addition to any generalizable knowledge around survey design, I think this is also an interesting product management case study, for a variety of reasons.
+
+### Never skimp on articulating the [north star UI](../../2023/eigensolutions/#nsui)
+
+Start any product design task by **ignoring ephemeral constraints** (e.g. engineering resources) and first reach consensus on what the optimal UI is, _before_ you start applying constraints.
+Yes, you read that right.
+I want to write a whole post about the importance of north star UIs, because this is one of many cases over the course of my career where tight implementation constraints were magically lifted, either due to a change of mind, a change in the environment, or simply someone's brilliant idea.
+Without consensus on what the north star UI is (or even a clear idea about it) you then have to go back to the drawing board when this happens.
+
+### Usability testing as a consensus-building tool
+
+You probably already know that usability testing is a great tool for improving user experience,
+but there is a second, more strategic hidden utility to it: consensus building.
+
+I’ve been in way, **_way_** too many cases where decisions were made by **hypothesizing about user behavior**, which could not only be missing the mark, but also there is no way forwards for disagreements.
+What do you do, hypothesize harder?
+When there is user testing data, it is much harder to argue against it.
+
+This is especially useful in convincing engineering that a certain UI is worth the implementation complexity,
+and having engineers observe usability testing sessions can be an educational experience for many.
+
+### Heuristic evaluations are not a substitute for usability testing
+
+There are many things to like about [heuristic evaluations](https://www.interaction-design.org/literature/topics/heuristic-evaluation?srsltid=AfmBOoq-_ZLU1ObBeZI5GJYZBlWSI4uRNlwL6_7W1hwKloKHw-54l29n) and [design reviews](https://en.wikipedia.org/wiki/Design_review).
+They can be done by a usability expert alone and can uncover numerous issues that would have taken multiple rounds of usability testing, especially if they are also a domain expert.
+Fixing the low hanging fruit issues means user testing time can be spent more efficiently, uncovering less obvious problems.
+
+However, a downside of these is that they are inherently prone to bias.
+They can be excellent for finding problems that may have been overlooked and are often obvious once pointed out.
+However (unless the number of evaluators is large), they are not a good way to decide between alternatives and reach consensus.
