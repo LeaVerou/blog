@@ -14,18 +14,18 @@ tags:
 
 One would think that we've more or less figured survey UI out by now.
 Multiple choice questions, checkbox questions, matrix questions, dropdown questions, freeform textfields, numerical scales,
-what more could one possibly need?
+_what more could one possibly need_?!
 
 And yet, every time I led one of the [State Of ... surveys](https://devographics.com), and _especially_ the inaugural [State of HTML 2023 Survey](../../2023/state-of-html-2023/),
-I kept hitting the same wall: how the established options for answering UIs were woefully inadequate for balancing good user experience with good insights for stakeholders.
-Since the [State Of](https://www.devographics.com/) surveys used a custom survey app, in many cases I could convince the engineering team to implement a new answering UI, but not always.
+I kept hitting the same wall: how the established options for answering UIs were woefully inadequate for balancing good user experience with good stakeholder insights.
+Since the [State Of](https://www.devographics.com/) surveys used a custom survey app, I could often convince engineering to implement new answering UIs, but not always.
 After [joining Font Awesome](../awesome/), I somehow found myself leading [yet another survey](https://survey.awesome.me/?from=lv_blog), despite swearing never to do this again. 🥲
 Alas, building a custom survey UI was simply not justifiable in this case; I had to make do with the existing options out there [^tally], so I was once again reminded of this exact pain.
 
 [^tally]: I ended up going with [Tally](https://tally.so), mainly due to the flexibility of its conditional logic.
 
 So what are these cases, and how could better answering UI help?
-This case study is Part 1 of (what I’m hoping will be) a series around how survey UI innovations could help balance tradeoffs between user experience and data quality.
+I’m hoping this case study to be Part 1 of a series around how survey UI innovations can help balance tradeoffs between user experience and data quality, though this is definitely the one I’m most proud of, as it was such a bumpy ride, but it was all worth it in the end.
 
 <!-- more -->
 
@@ -35,7 +35,7 @@ For context, the body of State Of surveys is a series of *"Feature questions"*,
 which present the respondent with a certain web platform feature and ask if they had heard of it or used it.
 Feature questions look like this:
 
-<figure>
+<figure class="float">
 
 ![alt text](images/feature.png)
 <figcaption>
@@ -59,13 +59,7 @@ That was it.
 Survey data on experience and awareness _could_ be useful, but only if it was accompanied with subjective sentiment data:
 if they hadn't used it or heard about it, Were they interested? If they had used it, how did it feel?
 
-As an attempt to address this feedback, a button that opened a freeform comment field had been introduced the year prior, but response rates were abysmally low,
-starting from **0.9%** for the first question [^1] and dropping further along the way.
-This was no surprise to me: freeform questions have a dramatically lower response rate than structured questions,
-and hidden controls get less interaction (*"out of sight, out of mind"*).
-But even if they had a high response rate, freeform comments are notoriously hard to analyze, especially when they are so domain specific.
-
-<figure>
+<figure class="float">
 
 <video src="videos/comments.mp4" loop muted loading="lazy" autoplay></video>
 <figcaption>
@@ -74,6 +68,12 @@ and being entirely freeform, were hard to analyze.
 </figcaption>
 </figure>
 
+As an attempt to address this feedback, a button that opened a freeform comment field had been introduced the year prior, but response rates were abysmally low,
+starting from **0.9%** for the first question [^1] and dropping further along the way.
+This was no surprise to me: freeform questions have a dramatically lower response rate than structured questions,
+and hidden controls get less interaction (*"out of sight, out of mind"*).
+But even if they had a high response rate, freeform comments are notoriously hard to analyze, especially when they are so domain specific.
+
 [^1]: Meaning out of the people who responded to that question about their experience with a feature, only 0.9% left a comment.
 
 ## Ideation
@@ -81,7 +81,7 @@ and being entirely freeform, were hard to analyze.
 Essentially, the data we needed to collect was a combination of two variables: **experience** and **sentiment**.
 Collecting data on two variables is common in survey design, and typically implemented as a matrix question.
 
-<figure>
+<figure class="center">
 
 | 		| 🤷 | 👍 | 👎 |
 |-------|----|----|----|
@@ -228,7 +228,7 @@ This would allow us to combine questions about multiple features in one,
 and we could still use sentiment chips, albeit a little differently:
 
 <figure>
-	<video src="videos/minifeature-desktop.mp4" loop muted loading="lazy" autoplay style="flex: 2.75"></video>
+	<video src="videos/minifeature-desktop.mp4" loop muted loading="lazy" autoplay style="flex: 3.97"></video>
 	<video src="videos/minifeature-mobile.mp4" loop muted loading="lazy" autoplay></video>
 <figcaption>
 
@@ -250,7 +250,7 @@ I guess it could be possible to click on a chip and then *uncheck* the feature, 
 At this point, the lead engineer dredged up a question template that had been used to ask about the respondent’s experience with various types of tooling.
 Instead of separating experience and sentiment, it used a 5-point scale where each answer except the first answered *both* questions.
 
-<figure>
+<figure class="float">
 <img src="images/5-point.png" alt="">
 
 <figcaption>
@@ -346,27 +346,79 @@ no matter how much you emphasize that they should act naturally when briefing th
 That's not their failing; it's simply human nature.
 
 Indeed, sentiment response rates in the real-world were lower than those observed in the usability study,
-but still remained high — ranging from 24% to 59% and averaging 38% (with the same median), which provided ample data to draw conclusions.
+but still high — ranging from 24% to 59% and averaging 38% (with the same median) **per question**, meaning that out of every ten participants that answered each question, approximately four also provided a sentiment.
+This was more than enough to draw conclusions.
+In fact, sentiment chips were deemed such a success **they were later adopted by all other State Of surveys**,
+even at the cost of continuity with previous years.
 
-While the expectation was that people would be more likely to express sentiment for features they had used or at least heard of,
-this was not really the case:
-participants expressed sentiment on 39% (median = 40%) of the features they had used, 37% of the features they had heard of, and 37% of the features they had not heard of,
-indicating that expressing sentiment for features they had not heard of was indeed a very common use case, and not one to be brushed off.
+Against expectations, participants were **just as likely to express sentiment for features they had never heard of**,
+and in fact marginally more likely than for features they had simply heard of.
+In general response rates were pretty uniform across all experiences:
+
+<figure class="center">
+
+| Experience | Sentiment response rate (average) | Sentiment response rate (median) |
+|------------|------------------------------|----------------------------|
+| Never heard of it | 37.3% | 37.4% |
+| Heard of it | 37.3% | 36.9% |
+| Used it | 39.0% | 40.1% |
+| **Overall** | **37.6%** | **37.9%** |
+
+<figcaption>
+
+Sentiment response rates overall and by experience (per question).
+</figcaption>
+</figure>
+
+As we had observed in the user study as well, participants were **_far_ more likely to express positive rather than negative sentiment**.
+Here are some interesting stats:
+- The feature with the **most negative sentiment** overall across all experiences ([`<model>`](https://immersive-web.github.io/model-element/)) still only had 10% of respondents expressing negative sentiment for it, and still had **2.4x more positive sentiment** than negative (24.7% vs 10.4%)!
+- In contrast, the feature with the **most positive sentiment** ([`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)) got a whopping 55% of respondents expressing positive sentiment (and only 4% negative).
+- In fact, even the feature with the **least positive sentiment** ([Imperative Slot Assignment](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/assign) 🤔) still had way more positive sentiment (17.24%) than `<model>` had negative sentiment (10%)!
+- If we look at the **ratio of positive over negative sentiment**, it ranged from **64x** (!) more positive than negative sentiment (45% vs 0.7% for landmark elements) to a mere **2.4x** times more positive sentiment (24.7% vs 10.4% for `<model>`).
+
+<div class=warning>
+
+The analysis presented in this section was done before the survey closed and thus includes _most_ of the data (around 90%) but not all.
+</div>
+
+### Results Visualization
+
+Presenting all this data was another challenge.
+When you have two variables, **ideally you want to be able to group results by either**.
+E.g. you may be more interested in the total negative sentiment for a feature, or how many people had used it, and the results visualization should support both.
+How do we design a results display that facilitates this?
+Thankfully the visualizations for State Of surveys were already very interactive so interactivity was not out of the question.
+
+I was no longer involved by then but consulted in a volunteer capacity.
+My main advice was to **use proximity for clear visual grouping**, and to use a **consistent visual association for bars** that represented the same bit of data, both of which they followed.
+This was the rendering they settled on for the results:
+
+<figure>
+<video src="videos/results.mp4" loop muted loading="lazy" autoplay></video>
+<figcaption>
+Interactive bar chart presenting two variables at once.
+</figcaption>
+</figure>
+
+I think in terms of functionality this works really well.
+The visual design could be improved to communicate IA better and appear less busy at first glance,
+but given there is no dedicated designer in the team, I think they did a fantastic job.
 
 ## Generalizability
 
 While this UI was originally designed to collect sentiment about the selected option in a multiple choice question,
-I think it could be generalized to improving UX for other types of two variable questions.
+I think it could be **generalized to improving UX for other types of two variable questions**.
 Generally, it can be a good fit when we have questions that collect data across two variables and:
-1. The second variable is optional and lower priority than the first
-2. The first variable is single (exclusive) choice, i.e. not checkbox questions.
+1. The second variable is **optional** and lower priority than the first
+2. The first variable is **exclusive** (single) choice, i.e. not checkbox questions.
 
 The core benefit of this approach is the **reduction in cognitive load**.
 It is [well established that matrix questions are more overwhelming](https://journals.sagepub.com/doi/full/10.1177/0894439316674459).
 This design allows questions to initially appear like a simple multiple choice question, and only reveal the UI for the second variable upon interaction.
 Additionally, while matrix questions force participants to decide on both variables at once, this design allows them to make their own tradeoff of cognitive load vs efficiency, treating the UI as single step or two step as they see fit.
 
-Another benefit of this design is that it allows for the labels of the options for the second variable to be context-dependent, whereas a matrix limits you to a single column header.
+Another benefit of this design is that it allows for **option labels to be context-dependent** for the second variable, whereas a matrix limits you to a single column header.
 In the sentiment case, the labels varied depending on whether the feature had been used (_"Positive experience"_ / _"Negative experience"_) or not (_"Interested"_ / _"Not interested"_).
 
 The more such questions a survey has, the bigger the benefits — if it’s only about a couple questions,
@@ -375,10 +427,12 @@ though I’m hoping that survey software may eventually provide this out of the 
 
 That said, matrix questions _do_ have their benefits, when used appropriately, i.e. when the two requirements listed above are not met.
 
-Matrix questions have an big edge when users need to make a single selection per row, especially when this may be the same answer for multiple rows, which means they can just tick down a whole column.
+Matrix questions have an big edge when users need to make **a single selection per row**,
+especially when this may be the same answer for multiple rows, which means they can just **tick down a whole column**.
 Sentiment chips does not allow them to build this positional association, as they have different horizontal positions per answer.
+This is also why it’s important to color-code them and maintain the same color coding throughout the survey so that most participants can build a visual association that way (the ~9% of people with atypical color vision won’t benefit, but this is just an extra cue).
 
-Sentiment chips also enforce a clear prioritization across the two variables:
+Sentiment chips also **enforce a clear prioritization** across the two variables:
 the question is presented as a multiple choice question across the first variable,
 with the chips allowing the respondent to provide optional additional context across a second variable.
 Matrix questions allow presenting the two variables with the same visual weight,
@@ -387,7 +441,7 @@ For example, there are cases when we don’t want to allow the respondent to pro
 
 ## Lessons Learned
 
-In addition to any generalizable knowledge around survey design, I think this is also an interesting product management case study, for a variety of reasons.
+In addition to any generalizable knowledge around survey design, I think this is also an interesting product management case study, and teaches us several lessons.
 
 ### Never skimp on articulating the [north star UI](../../2023/eigensolutions/#nsui)
 
@@ -396,12 +450,12 @@ Yes, you read that right.
 I want to write a whole post about the importance of north star UIs, because this is one of many cases over the course of my career where tight implementation constraints were magically lifted, either due to a change of mind, a change in the environment, or simply someone's brilliant idea.
 Without consensus on what the north star UI is (or even a clear idea about it) you then have to go back to the drawing board when this happens.
 
-### Usability testing as a consensus-building tool
+### User testing is also a consensus-building tool
 
 You probably already know that usability testing is a great tool for improving user experience,
 but there is a second, more strategic hidden utility to it: consensus building.
 
-I’ve been in way, **_way_** too many cases where decisions were made by **hypothesizing about user behavior**, which could not only be missing the mark, but also there is no way forwards for disagreements.
+I’ve been in way, **_way_** too many teams where UI decisions were made by **hypothesizing about user behavior**, which could not only be missing the mark, but also there is no way forwards for disagreements.
 What do you do, hypothesize harder?
 When there is user testing data, it is much harder to argue against it.
 
@@ -413,7 +467,8 @@ and having engineers observe usability testing sessions can be an educational ex
 There are many things to like about [heuristic evaluations](https://www.interaction-design.org/literature/topics/heuristic-evaluation?srsltid=AfmBOoq-_ZLU1ObBeZI5GJYZBlWSI4uRNlwL6_7W1hwKloKHw-54l29n) and [design reviews](https://en.wikipedia.org/wiki/Design_review).
 They can be done by a usability expert alone and can uncover numerous issues that would have taken multiple rounds of usability testing, especially if they are also a domain expert.
 Fixing the low hanging fruit issues means user testing time can be spent more efficiently, uncovering less obvious problems.
+That are  are also certain types of issues that can _only_ be uncovered by a heuristic evaluation, such as _"death by a thousand paper cuts" type issues: small issues that are not a big deal on their own and are too small to observe in a user study, but add up to more friction.
 
-However, a downside of these is that they are inherently prone to bias.
+However, a big downside of these is that they are inherently **prone to bias**.
 They can be excellent for finding problems that may have been overlooked and are often obvious once pointed out.
-However (unless the number of evaluators is large), they are not a good way to decide between alternatives and reach consensus.
+However (unless the number of evaluators is large), they are not a good way to decide between alternatives.
