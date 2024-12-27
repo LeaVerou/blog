@@ -1,6 +1,6 @@
 ---
 draft: true
-title: "Sentiment Chips: Okay, but how does it _feel_?"
+title: "Context Chips: Okay, but how does it _feel_?"
 date: 2024-12-27
 toc: true
 image: images/cover.png
