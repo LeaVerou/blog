@@ -1,6 +1,6 @@
 ---
 draft: true
-title: "Context Chips: Okay, but how does it _feel_?"
+title: "Context Chips for Survey UIs: “Okay, but how does it _feel_?”"
 date: 2024-12-27
 toc: true
 image: images/cover.png
@@ -11,6 +11,7 @@ tags:
   - design-thinking
   - case-study
   - ux
+  - usability
 ---
 
 ![Minimalistic skeleton diagram showing the concept presented in this article](images/cover.svg)
@@ -176,7 +177,7 @@ Right: Sentiment radios (by Google PM)
 </figcaption>
 </figure>
 
-### Idea 4: Sentiment chips
+### Idea 4: Context chips
 
 Back to the drawing board, I asked myself: if I had infinite engineering resources, what UI would I design?
 The biggest challenge was reducing friction.
@@ -184,7 +185,7 @@ All ideas so far had required at least one extra (optional) click to select sent
 Could we do better?
 **What if users could select _both_ experience _and_ sentiment with a single click?**
 
-Guided by this, I designed a UI where selecting sentiment is done via "sentiment chips" which are **actually part of the answer**,
+Guided by this, I designed a UI where selecting sentiment is done via "context chips" which are **actually part of the answer**,
 so clicking them _also_ selects the answer they are accompanying, allowing users to express an answer across both variables with a single click, or just select the answer itself to express no sentiment.
 To reduce visual clutter, these only faded in on hover.
 Additionally, clicking on the selected chip a second time would deselect it, fixing a longstanding UX issue with radio buttons [^radios].
@@ -198,7 +199,7 @@ Over the course of designing this, I became so convinced it was the right soluti
 	<video src="videos/feature-mobile.mp4" loop muted loading="lazy" autoplay></video>
 <figcaption>
 
-The sentiment chips prototype on desktop and mobile.
+The context chips prototype on desktop and mobile.
 </figcaption>
 </figure>
 
@@ -215,23 +216,23 @@ This was deemed too complicated and was abandoned early on.
 </figcaption>
 </figure>
 
-Reception of sentiment chips was not what I had hoped at first.
+Reception of context chips was not what I had hoped at first.
 I had expected pushback due to the engineering effort needed, but folks also had other concerns:
 that users would find things appearing on hover distracting and feel "ambushed",
 that the UI was too "weird",
 that users would not discover the 1-click interaction and use it as a two-step process anyway,
 and that response rate would be low because these chips were not visible upfront.
 
-### Mini-feature questions: Sentiment Chips + Checkboxes?
+### Mini-feature questions: Context Chips + Checkboxes?
 
-Around the same time as designing sentiment chips, I had a relevant realization:
+Around the same time as designing context chips, I had a relevant realization:
 **we don’t actually need to know _both_ awareness and usage for all features**.
 
 For old, widely supported features, awareness doesn’t matter, because even when it’s low, it has plateaued.
 And for features that are so new they have not yet been implemented in browsers, usage is largely meaningless.
 For these cases, each feature only has two states, and thus experience can be expressed with a checkbox!
 This would allow us to combine questions about multiple features in one,
-and we could still use sentiment chips, albeit a little differently:
+and we could still use context chips, albeit a little differently:
 
 <figure>
 	<video src="videos/minifeature-desktop.mp4" loop muted loading="lazy" autoplay style="flex: 3.97"></video>
@@ -247,7 +248,7 @@ That way, only old, lower-priority features would be relegated to this template,
 and new features which tend to be higher priority for browser vendors would still get the full UI, comments and all.
 Instead, to improve the experience for cutting edge features, we introduced a "Not implemented" tag next to the "Used it" option.
 
-One disadvantage of the mini feature UI is that due to the way sentiment chips work, it is not possible to select sentiment for features you have not used:
+One disadvantage of the mini feature UI is that due to the way context chips work, it is not possible to select sentiment for features you have not used:
 once you click on a chip, it also *selects* the feature, as if you had clicked on its label.
 I guess it could be possible to click on a chip and then *uncheck* the feature, but that would be a very weird interaction.
 
@@ -276,7 +277,7 @@ Neutral votes get pushed into positive votes, and the data around positive senti
 - I was worried that increasing the number of upfront answers to 5 would increase cognitive overhead (and even scrolling distance!) too much.
 
 A UX researcher we were working with even did a [heuristic evaluation](https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/) that somewhat favored the 5-point template mainly on the basis of being a more familiar UI.
-The odds seemed stacked against sentiment chips, but the upcoming usability testing could still tip the scales in their favor.
+The odds seemed stacked against context chips, but the upcoming usability testing could still tip the scales in their favor.
 
 ## Usability Testing to the Rescue!
 
@@ -285,16 +286,16 @@ Despite the lead engineer being adamant that Idea 4 was too much work and being 
 We ran a [within-subjects](https://www.nngroup.com/articles/between-within-subjects/) usability study
 with 6 participants ([no, they are not too few](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/))
 recruited via social media.
-Half of the survey used the 5-point template, the other half sentiment chips.
+Half of the survey used the 5-point template, the other half context chips.
 The order of the conditions was randomized to avoid order effects.
 
 In addition to their actual experience, we also collected subjective feedback at the end of the survey,
 showing them a screenshot of each answering UI and asking how each felt.
 
-### What worked well: Sentiment chips
+### What worked well: Context Chips
 
 I have run many usability studies in the last ten years, and I have never seen results as resounding as this one.
-So much that we unanimously agreed to switch to sentiment chips after the 5th participant, because the scales were so tipped in favor of sentiment chips that nothing that happened in the last session could have tipped them the other way.
+So much that we unanimously agreed to switch to context chips after the 5th participant, because the scales were so tipped in favor of context chips that nothing that happened in the last session could have tipped them the other way.
 
 The lead engineer observed some of the sessions, and this was instrumental in changing his mind.
 This was not a coincidence: when engineering is unconvinced that a certain UI is worth the implementation complexity,
@@ -308,7 +309,7 @@ _All_ of my concerns about the 5-point template were brought up by participants 
 - All but one participant (4/5) complained being forced into selecting a sentiment when they had no opinion.
 - Some participants even mentioned that the 5-point template felt overwhelming.
 
-Furthermore, _none_ of the concerns about sentiment chips were validated:
+Furthermore, _none_ of the concerns about context chips were validated:
 
 - No-one found the chips appearing on hover distracting or felt "ambushed"
 - No-one struggled to understand how to use them
@@ -317,15 +318,15 @@ But interestingly, **they still *chose* to use it as a two-step process for some
 The fact that this UI allowed users to make *their own* efficiency vs cognitive overhead tradeoffs was an advantage I had not even considered when designing it!
 - Response rate was generally high — when people did not select sentiment, it was because they **genuinely** had no opinion, not because they couldn’t be bothered.
 
-### What worked okay: Mini-feature questions
+### What worked okay: Mini-feature Questions
 
-[Mini-feature questions](#mini-feature-questions) did successfully help cut down response time per feature by 75%,
+[Mini-feature questions](#mini-feature-questions) did successfully help **cut down response time per feature by 75%**,
 though this came at a price:
 Once more, we saw that participants *really* wanted to express sentiment, and were frustrated when they couldn’t,
 which was the case for features they had not used.
-Regardless, we agreed that the benefits outweighed the costs.
+Regardless, we agreed that the tradeoff was worth it for the low-priority questions we were planning to use mini-features for.
 
-### What did not work: Sentiment chips on mobile
+### What did not work: Context Chips on Mobile
 
 A blind spot in our testing was that we did not test the UI on mobile.
 Usability tests were conducted remotely via video call, so it was a lot easier to get participants to use their regular computers.
@@ -343,7 +344,7 @@ Once responses started coming in, we realized that participants had trouble unde
 This would have been an easy fix had it had been caught early, e.g. thumbs up/down icons could have been used instead.
 This was not a huge issue, as their purpose becomes clear when selected, but it definitely added some friction.
 
-## Aftermath: Sentiment Chips in the Wild
+## Aftermath: Context Chips in the Wild
 
 In our usability testing, we had seen a high response rate for sentiment (% of question respondents who selected sentiment),
 but that is no guarantee things will play out that way post-launch as well.
@@ -354,7 +355,7 @@ That's not their failing; it's simply human nature.
 Indeed, sentiment response rates in the real-world were lower than those observed in the usability study,
 but still high — ranging from 24% to 59% and averaging 38% (with the same median) **per question**, meaning that out of every ten participants that answered each question, approximately four also provided a sentiment.
 This was more than enough to draw conclusions.
-In fact, sentiment chips were deemed such a success **they were later adopted by all other State Of surveys**,
+In fact, context chips were deemed such a success **they were later adopted by all other State Of surveys**,
 even at the cost of continuity with previous years.
 
 Against expectations, participants were **just as likely to express sentiment for features they had never heard of**,
@@ -435,10 +436,14 @@ That said, matrix questions _do_ have their benefits, when used appropriately, i
 
 Matrix questions have an big edge when users need to make **a single selection per row**,
 especially when this may be the same answer for multiple rows, which means they can just **tick down a whole column**.
-Sentiment chips does not allow them to build this positional association, as they have different horizontal positions per answer.
-This is also why it’s important to color-code them and maintain the same color coding throughout the survey so that most participants can build a visual association that way (the ~9% of people with atypical color vision won’t benefit, but this is just an extra cue).
+Context chips do not allow users to build this positional association, as they are not aligned vertically.
+THey are placed right after the answer text, and thus their horizontal position varies per answer.
+To mitigate this, it can be useful to color-code them and maintain the same color coding consistently throughout the survey so that participants can build a visual association [^colorblind].
 
-Sentiment chips also **enforce a clear prioritization** across the two variables:
+[^colorblind]: The ~9% of people with atypical color vision won’t benefit, but that’s okay in this case,
+as color is used to add an extra cue, and not an essential part of the interface.
+
+Context chips also **enforce a clear prioritization** across the two variables:
 the question is presented as a multiple choice question across the first variable,
 with the chips allowing the respondent to provide optional additional context across a second variable.
 Matrix questions allow presenting the two variables with the same visual weight,
