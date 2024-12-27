@@ -1,6 +1,6 @@
 ---
 draft: true
-title: "Context Chips for Survey UIs: “Okay, but how does it _feel_?”"
+title: "Context Chips in Survey Design: “Okay, but how does it _feel_?”"
 date: 2024-12-27
 toc: true
 image: images/cover.png
