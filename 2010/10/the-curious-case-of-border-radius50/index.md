@@ -30,35 +30,35 @@ As noted in [this comment by David Baron](http://lea.verou.me/2010/10/the-curio
 
 ## Different implementations, different bugs
 
-<figure class="float">
+<figure class="float margin">
 <a href="images/Firefox4b6.png" target="_blank"><img src="images/Firefox4b6.png" alt="" /></a>
 <figcaption>Firefox 4 beta 6</figcaption>
 </figure>
 
 As I mentioned above, **Gecko** up to Firefox version 4 beta 6 always draws a regular curve for the corners with the largest radii applicable, resulting in a shape that is either a perfect circle or a rectangle with a semicircle on top and bottom (if height > width) or right and left (if width > height).
 
-<figure class="float">
+<figure class="float margin">
 <a href="images/Minefield.png" target="_blank"><img src="images/Minefield.png" alt="" /></a>
 <figcaption>Minefield (latest Gecko nightlies)</figcaption>
 </figure>
 
 In the latest nightlies this bug is fixed, and it follows the spec to the letter. I can't help but wonder if this was a bug, a misinterpretation of the spec or a deliberate disagreement with it.
 
-<figure class="float">
+<figure class="float margin">
 <a href="images/Firefox4b6.png" target="_blank"><img src="images/Webkit.png" alt="" /></a>
 <figcaption>WebKit nightlies</figcaption>
 </figure>
 
 **Webkit** was late to support percentages in border-radius, but it seems to be the first (it or IE9, I'm not sure) to follow the spec to the letter --concerning corner radii at least-- and renders an ellipse (horizontal radius = width/2, vertical radius = height/2) no matter what. Webkit however seems to be having serious trouble with borders, rendering them with variable width strokes (!).
 
-<figure class="float">
+<figure class="float margin">
 <a href="images/Opera.png" target="_blank"><img src="images/Opera.png" alt="" /></a>
 <figcaption>Opera 11</figcaption>
 </figure>
 
 **Presto** (Opera) is the weirdest when it comes to rendering a percentage border-radius. I can't figure out the algorithm it uses to determine the radii of the corners even if it was to save my life, it even changes according to window size in my testcases! Since I've been using border-radius:50% regularly, I've had the pleasure of observing Opera's rendering in many different designs and I still can't find a pattern. It's particularly funny when rendering the little fuchsia comment bubbles in the homepage of my blog: Every one of them has a different radius, even if they are about the same size. It even got one of them right and rendered it as an ellipse once!
 
-<figure class="float">
+<figure class="float margin">
 <a href="images/IE9.png" target="_blank"><img src="images/IE9.png" alt="" /></a>
 <figcaption>Internet Explorer 9</figcaption>
 </figure>
