@@ -13,7 +13,7 @@ tags:
   - ux
 ---
 
-![Minimalistic skeleton diagram showing the concept presented in this article](images/cover.png)
+![Minimalistic skeleton diagram showing the concept presented in this article](images/cover.svg)
 
 One would think that we've more or less figured survey UI out by now.
 Multiple choice questions, checkbox questions, matrix questions, dropdown questions, freeform textfields, numerical scales,
