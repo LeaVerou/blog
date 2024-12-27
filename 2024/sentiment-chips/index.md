@@ -1,8 +1,9 @@
 ---
 draft: true
 title: "Sentiment Chips: Okay, but how does it _feel_?"
-date: 2024-12-25
+date: 2024-12-27
 toc: true
+image: images/cover.png
 tags:
   - survey-design
   - product
@@ -12,19 +13,24 @@ tags:
   - ux
 ---
 
+![Minimalistic skeleton diagram showing the concept presented in this article](images/cover.png)
+
 One would think that we've more or less figured survey UI out by now.
 Multiple choice questions, checkbox questions, matrix questions, dropdown questions, freeform textfields, numerical scales,
 _what more could one possibly need_?!
 
-And yet, every time I led one of the [State Of ... surveys](https://devographics.com), and _especially_ the inaugural [State of HTML 2023 Survey](../../2023/state-of-html-2023/),
-I kept hitting the same wall: how the established options for answering UIs were woefully inadequate for balancing good user experience with good stakeholder insights.
-Since the [State Of](https://www.devographics.com/) surveys used a custom survey app, I could often convince engineering to implement new answering UIs, but not always.
+And yet, every time Google sponsored me to lead one of the [State Of ... surveys](https://devographics.com), and _especially_ the inaugural [State of HTML 2023 Survey](../../2023/state-of-html-2023/),
+I kept hitting the same wall: how the established options for answering UIs were woefully inadequate for
+collecting good insights with minimal friction for end-users.
+The [State Of](https://www.devographics.com/) surveys used a completely custom survey infrastructure,
+so I could often (but not always) convince engineering to implement new question UIs.
+
 After [joining Font Awesome](../awesome/), I somehow found myself leading [yet another survey](https://survey.awesome.me/?from=lv_blog), despite swearing never to do this again. 🥲
-Alas, building a custom survey UI was simply not justifiable in this case; I had to make do with the existing options out there [^tally], so I was once again reminded of this exact pain.
+Alas, building a custom survey UI was simply not an option in this case; I had to make do with the existing options out there [^tally], so I was reminded of this kind of pain once again.
 
 [^tally]: I ended up going with [Tally](https://tally.so), mainly due to the flexibility of its conditional logic.
 
-So what are these cases, and how could better answering UI help?
+So what are these cases where the existing answering UIs are inadequate, and how could better ones help?
 I’m hoping this case study to be Part 1 of a series around how survey UI innovations can help balance tradeoffs between user experience and data quality, though this is definitely the one I’m most proud of, as it was such a bumpy ride, but it was all worth it in the end.
 
 <!-- more -->
