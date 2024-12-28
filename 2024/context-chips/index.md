@@ -8,7 +8,7 @@ tags:
   - product
   - product-design
   - design-thinking
-  - case-study
+  - case-studies
   - ux
   - usability
 social_posts:
