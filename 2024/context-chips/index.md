@@ -401,9 +401,9 @@ Here are some interesting stats:
 - In fact, even the feature with the **least positive sentiment** ([Imperative Slot Assignment](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/assign) 🤔) still had way more positive sentiment (17.24%) than `<model>` had negative sentiment (10%)!
 - If we look at the **ratio of positive over negative sentiment**, it ranged from **64x** (!) more positive than negative sentiment (45% vs 0.7% for landmark elements) to a mere **2.4x** times more positive sentiment (24.7% vs 10.4% for `<model>`), and was **11x** on average (**8x** median).
 
-<div class=warning>
+<div class=note>
 
-The analysis presented in this section was done before the survey closed and thus includes _most_ of the data (around 90%) but not all.
+The analysis presented in this section includes data from **20K respondents**, which was _most_ of the whole dataset (around 90%) but not all, as it was done before the survey closed.
 </div>
 
 ### Results Visualization
