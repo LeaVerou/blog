@@ -1,5 +1,4 @@
 ---
-draft: true
 title: "Context Chips in Survey Design: “Okay, but how does it _feel_?”"
 date: 2024-12-27
 toc: true
@@ -281,7 +280,7 @@ The odds seemed stacked against context chips, but the upcoming usability testin
 
 ## Usability Testing to the Rescue!
 
-Despite the lead engineer being adamant that Idea 4 was too much work and being unconvinced about its merits, since I had built a prototype, we could user test it and see how it compares to the alternative: the 5-point question.
+Despite the lead engineer being unconvinced about the merits of context chips and being adamant that even adapting my fully functional prototype was too much work, since the prototype existed, we decided to user test it against the 5-point question and see how it compared.
 
 We ran a [within-subjects](https://www.nngroup.com/articles/between-within-subjects/) usability study
 with 6 participants ([no, they are not too few](https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/))
@@ -299,8 +298,8 @@ So much that we unanimously agreed to switch to context chips after the 5th part
 
 The lead engineer observed some of the sessions, and this was instrumental in changing his mind.
 This was not a coincidence: when engineering is unconvinced that a certain UI is worth the implementation complexity,
-it is often a good strategy to have them observe usability testing sessions, and helps build long-term user empathy,
-which makes future consensus easier too.
+it can be a good strategy to have them observe usability testing sessions.
+Not only does it help prove the value to them, it also builds long-term user empathy, which makes future consensus easier.
 Given the unfortunate lack of [HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) prioritization in Computer Science curricula, this may even be their first exposure to usability testing.
 
 _All_ of my concerns about the 5-point template were brought up by participants on their own accord, repeatedly:
