@@ -152,7 +152,7 @@ I was very proud of myself: I had managed to design a solution that satisfied al
 Not to mention this design gently guided users towards using the comment field, which could motivate them to add even more context.
 
 Yet, when I presented my mocks to the team, engineering _hated_ it with a passion.
-The lead engineer (who was also the project founder) found the idea of **turning a structured interaction into unstructured data deeply unsettling**.
+The lead engineer (who was also the project founder) found the idea of **turning a structured interaction into unstructured data _deeply_ unsettling**.
 So much it motivated him to implement a whole backend to store these followups properly, something I had initially thought was out of the question.
 
 So now what?
@@ -212,7 +212,7 @@ Additionally, clicking on the selected chip a second time would deselect it, fix
 Over the course of designing this, I became so convinced it was the right solution, that I implemented a high fidelity prototype myself, complete with code that could be easily adapted to the infrastructure used by the survey app.
 
 <figure>
-	<video src="videos/feature-desktop.mp4" loop muted loading="lazy" autoplay playsinline style="flex: 2.75"></video>
+	<video src="videos/feature-desktop.mp4" loop muted loading="lazy" autoplay playsinline style="flex: 2.9 "></video>
 	<video src="videos/feature-mobile.mp4" loop muted loading="lazy" autoplay playsinline></video>
 <figcaption>
 
@@ -271,7 +271,7 @@ I guess it could be possible to click on a chip and then *uncheck* the feature, 
 
 ### Idea 5: Existing 5-point question template
 
-At this point, the lead engineer dredged up a question template that had been used to ask about the respondent’s experience with various types of tooling.
+At this point, the lead engineer dredged up a question template that had been used in other surveys to ask about the respondent’s experience with various types of tooling.
 Instead of separating experience and sentiment, it used a 5-point scale where each answer except the first answered *both* questions.
 
 <figure class="float">
@@ -291,7 +291,7 @@ I had serious reservations.
 If you force people to select between two states, positive or negative, you’re simply going to get garbage data.
 Neutral votes get pushed into positive votes, and the data around positive sentiment becomes useless.
 - These did not allow users to express sentiment for features they had not heard of, despite these questions often including enough info for users to know whether they were interested.
-- I was worried that increasing the number of upfront answers to 5 would increase cognitive overhead (and even scrolling distance!) too much.
+- I was worried that increasing the number of upfront answers to 5 would increase cognitive load too much — and even scrolling distance, by 66%!
 
 A UX researcher we were working with even did a [heuristic evaluation](https://www.nngroup.com/articles/how-to-conduct-a-heuristic-evaluation/) that somewhat favored the 5-point template mainly on the basis of being a more familiar UI.
 The odds seemed stacked against context chips, but the upcoming usability testing could still tip the scales in their favor.
@@ -322,23 +322,23 @@ Given the unfortunate lack of [HCI](https://en.wikipedia.org/wiki/Human%E2%80%93
 
 _All_ of my concerns about the 5-point template were brought up by participants on their own accord, repeatedly:
 
-- **All participants** *really* liked being able to express sentiment, and were vocal about their frustration when they could not express it.
-- All but one participant (4/5) complained being forced into selecting a sentiment when they had no opinion.
+- All participants *really* liked being able to express sentiment, and were vocal about their **frustration when they could not express it**.
+- All but one participant (4/5) complained about **being forced into selecting a sentiment when they had no opinion**.
 - Some participants even mentioned that the 5-point template felt overwhelming.
 
 Furthermore, _none_ of the concerns about context chips were validated:
 
-- No-one found the chips appearing on hover distracting or felt "ambushed"
-- No-one struggled to understand how to use them
+- No-one found the chips appearing on hover distracting or felt "ambushed".
+- No-one struggled to understand how to use them.
 - Everyone discovered the 1-click interaction pretty fast (typically within the first 2-3 questions).
-But interestingly, **they still *chose* to use it as a two-step process for some of the questions**, presumably to reduce cognitive load by breaking down the decision into two smaller ones.
-The fact that this UI allowed users to make *their own* efficiency vs cognitive overhead tradeoffs was an advantage I had not even considered when designing it!
+But interestingly, **they still *chose* to use it as a two-step process for some of the questions**, presumably to reduce cognitive load for difficult to answer questions by breaking down the decision into two smaller ones.
+The fact that this UI allowed users to make ***their own* efficiency vs cognitive load tradeoffs** was an advantage I had not even considered when designing it!
 - Response rate was generally high — when people did not select sentiment, it was because they **genuinely** had no opinion, not because they couldn’t be bothered.
 
 ### What worked okay: Mini-feature Questions
 
 [Mini-feature questions](#mini-feature-questions) did successfully help **cut down response time per feature by 75%**,
-though this came at a price:
+though this came at a cost:
 Once more, we saw that participants *really* wanted to express sentiment, and were frustrated when they couldn’t,
 which was the case for features they had not used.
 Regardless, we agreed that the tradeoff was worth it for the low-priority questions we were planning to use mini-features for.
@@ -359,7 +359,7 @@ But even if 75% of users genuinely preferred to take these surveys on desktop (w
 
 Once responses started coming in, we realized that participants had trouble understanding what the up and down arrows meant, since on mobile these are shown without labels until selected.
 This would have been an easy fix had it had been caught early, e.g. thumbs up/down icons could have been used instead.
-This was not a huge issue, as their purpose becomes clear when selected, but it definitely added some friction.
+This was not a huge issue, as their purpose becomes clear when selected, but it definitely adds some friction.
 
 ## Aftermath: Context Chips in the Wild
 
