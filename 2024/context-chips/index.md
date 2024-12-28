@@ -13,6 +13,7 @@ tags:
   - usability
 social_posts:
   - twitter: ""
+nutshell: The story of how a weird little UI to collect sentiment alongside survey responses defied constraints and triumphed over skepticism through usability testing.
 ---
 
 ![Minimalistic skeleton diagram showing the concept presented in this article](images/cover.svg)
