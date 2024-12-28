@@ -133,7 +133,7 @@ I was very proud of myself: I had managed to design a solution that satisfied al
 Not to mention this design gently guided users towards using the comment field, which could motivate them to add even more context.
 
 Yet, when I presented my mocks to the team, engineering _hated_ it with a passion.
-The lead engineer found the idea of turning a structured interaction into unstructured data deeply unsettling.
+The lead engineer (who was also the project founder) found the idea of turning a structured interaction into unstructured data deeply unsettling.
 So much it motivated him to implement a whole backend to store these followups properly, something I had initially thought was out of the question.
 
 So now what?
