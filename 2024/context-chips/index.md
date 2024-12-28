@@ -120,7 +120,7 @@ If user experience and cognitive load were not a concern, the same data could ac
 Indeed, if there were only a couple such questions, a matrix could have been acceptable.
 But …could you imagine filling out 50 of these?
 
-However, an acceptable solution needed to add **minimal friction for end-users**:
+An acceptable solution needed to add **minimal friction for end-users**:
 there were at least 50 such questions, so any increase in friction would quickly add up — even one extra click was pushing it.
 And we needed a sufficiently **high response rate** to have a good <abbr title="Confidence Interval">CI</abbr>.
 But it also needed to facilitate **quantitative** data analysis.
