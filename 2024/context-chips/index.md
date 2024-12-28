@@ -11,6 +11,8 @@ tags:
   - case-study
   - ux
   - usability
+social_posts:
+  - twitter: ""
 ---
 
 ![Minimalistic skeleton diagram showing the concept presented in this article](images/cover.svg)
@@ -37,11 +39,13 @@ I’m hoping this case study to be Part 1 of a series around how survey UI innov
 
 ## The Problem
 
+
+
 For context, the body of State Of surveys is a series of *"Feature questions"*,
 which present the respondent with a certain web platform feature and ask if they had heard of it or used it.
 Feature questions look like this:
 
-<figure class="float">
+<figure>
 
 ![alt text](images/feature.png)
 <figcaption>
@@ -51,19 +55,28 @@ An example of a feature question from the State of CSS 2022 survey.
 
 Respondents get a score in the end, based on how many of these they had heard of or used.
 Each survey had dozens of these questions.
-Based on initial estimates, State of HTML was going to have at least fifty.
+Based on initial estimates, State of HTML was going to have at least **fifty**.
 
-Respondents *love* these questions.
+<figure class="float">
+
+![alt text](images/score.png)
+<figcaption>
+This was my score. We revamped the scoring system for this iteration and switched from a percentage to a point-based score,
+since not all questions were equally weighted.
+</figcaption>
+</figure>
+
+**Respondents *love* these questions.**
 They learn about new things they may not have heard of, and get to test their knowledge.
 But also, from the survey designer’s perspective, they gamify a (very long) survey, increasing completion rates,
 and provide users incentive to share their score on social media, spreading the word.
 
 One would expect that they also provide valuable data, yet browser vendors had repeatedly mentioned that this data was largely useless to them.
 Surveys were all about what people _felt_, not what they knew or had used — they had better ways to gauge those.
-Instead, the reason they funneled thousands into funding these surveys every year was the 1-2 pain points questions towards the end.
+Instead, **the reason they funneled thousands into funding these surveys every year was the 1-2 pain points questions** towards the end.
 That was it.
 Survey data on experience and awareness _could_ be useful, but only if it was accompanied with subjective sentiment data:
-if they hadn't used it or heard about it, Were they interested? If they had used it, how did it feel?
+if they hadn't used it or heard about it, were they interested? If they had used it, how did it _feel_?
 
 <figure class="float">
 
@@ -107,19 +120,21 @@ However, an acceptable solution needed to add **minimal friction for end-users**
 there were at least 50 such questions, so any increase in friction would quickly add up — even one extra click was pushing it.
 And we needed a sufficiently **high response rate** to have a good <abbr title="Confidence Interval">CI</abbr>.
 But it also needed to facilitate **quantitative** data analysis.
+Oh, and all of that should involve **minimal engineering effort**, as the (tiny) engineering team was already stretched thin.
 
-Oh, and all of that should involve **minimal engineering effort**, as the engineering team was tiny and stretched thin.
 Did I hear anyone say _overconstrained_? 😅
 
 ### Idea 1: Quick context
 
 Initially, I took these constraints to heart.
 Misguided as it may have been, the comment field and the infrastructure around it already existed, so I designed a UI that revealed relevant positive/negative sentiment options using contextual [progressive disclosure](https://www.nngroup.com/articles/progressive-disclosure/).
-These inserted predefined responses into the comment field with a single click.
-Being a purely client-side interaction meant it could be implemented in a day, and it _still_ kept end-user friction to a minimum:
-1 optional extra click to provide sentiment.
+These **inserted predefined responses** into the comment field with a single click.
+
+Being a purely client-side interaction meant it could be implemented in a day, and it _still_ kept end-user friction at bay:
+providing sentiment was optional and only required a single click.
+
 In theory, quantitative data analysis was not optimally covered, as freeform responses are notoriously hard to analyze.
-However, based in the psychology of user behavior, I hypothesized that the vast majority of users would not edit these at all, a minority would append context, and an even tinier minority would actually edit the responses.
+However, based in the psychology of user behavior, I hypothesized that **the vast majority of users would not edit these at all**, a minority would append context, and an even tinier minority would actually edit the responses.
 This meant we could analyze them via simple string matching and only lose a few false negatives.
 
 <figure>
@@ -133,37 +148,13 @@ I was very proud of myself: I had managed to design a solution that satisfied al
 Not to mention this design gently guided users towards using the comment field, which could motivate them to add even more context.
 
 Yet, when I presented my mocks to the team, engineering _hated_ it with a passion.
-The lead engineer (who was also the project founder) found the idea of turning a structured interaction into unstructured data deeply unsettling.
+The lead engineer (who was also the project founder) found the idea of **turning a structured interaction into unstructured data deeply unsettling**.
 So much it motivated him to implement a whole backend to store these followups properly, something I had initially thought was out of the question.
 
 So now what?
-I was once again reminded that product design should be a two stage process:
-first you design the ["north star UI"](../../2023/eigensolutions/#nsui), and _then_ you apply any ephemeral constraints you are under.
-By incorporating ephemeral constraints too early, one does not even know what the best solution is.
-Often, constraints are negotiable or get lifted entirely, but **without a north star design, you cannot adapt: you’re either stuck with a subpar UI, or need to start all over** — which is what I did.
+Back to the drawing board, but with one constraint lifted!
 
 ### Ideas 2 & 3: Followups and sentiment radios
-
-This new backend came with a UI proposal that raised red flags for both me and the Google PM I was collaborating with, who was one of the survey's main stakeholders.
-even *seeing* the followup UI required an extra click, so it was guaranteed to have a low response rate.
-It would have been better than the 0.9% of the comment field (clicking is easier than typing!), but still pretty low (I would estimate < 15%).
-And even when users were intrinsically motivated to leave feedback, two clicks and a popover was a steep price to pay.
-
-<aside>
-
-#### "Two clicks and a popover"
-
-Perceived friction is not just about the number of clicks and keystrokes, but also about the number of *context switches*.
-The bigger the UI shift, the more cognitive overhead it adds, as the action is *perceived* as more substantial, even when in terms of user interaction it involves exactly the same number of steps (using simplistic models like KLM).
-This is the reason why it feels smoother to have a text field that expands when you click on it,
-rather than a button that makes a text field appear:
-an existing control changing form is perceived as a smaller UI shift than one control disappearing and another appearing.
-</aside>
-
-Another idea came from the Google PM: **sentiment radios**.
-It was an attempt to simplify the interaction by framing it as a two step process:
-first experience, then sentiment, through radio buttons that slid down once a main answer was selected.
-However, I was very concerned that such a major UI shift after every single answer would quickly become overwhelming over the course of the survey.
 
 <figure>
 <img src="images/followups.gif" alt="">
@@ -175,6 +166,29 @@ Left: Followups (by lead engineer)
 Right: Sentiment radios (by Google PM)
 </figcaption>
 </figure>
+
+This new backend came with a UI proposal that raised red flags for both me and the Google PM I was collaborating with (one of the survey's core stakeholders, but not the main one).
+Even *seeing* the followup UI required an extra click, so it was guaranteed to have a low response rate.
+It would have been better than the 0.9% of the comment field (clicking is easier than typing!), but still pretty low (I would estimate < 15%).
+And even when users were intrinsically motivated to leave feedback, **two clicks and a popover was a steep price** to pay.
+
+<aside>
+
+#### "Two clicks and a popover"
+
+Perceived friction is not just about the number of clicks and keystrokes, but also about the number of *context switches*.
+The bigger the UI shift, the more cognitive overhead it adds, as the action is *perceived* as more substantial, even when in terms of user interaction it involves exactly the same number of steps (using simplistic models like [KLM](https://en.wikipedia.org/wiki/Keystroke-level_model)).
+This is the reason why it feels smoother to have a text field that expands when you click on it,
+rather than a button that makes a text field appear:
+an existing control changing form is perceived as a smaller UI shift than one control disappearing and another appearing.
+</aside>
+
+Another idea came from the Google PM: **sentiment radios**.
+It was an attempt to simplify the interaction by framing it as a two step process:
+first experience, then sentiment, through radio buttons that slid down once a main answer was selected.
+However, I was very concerned that such a major UI shift after every single answer would quickly become overwhelming over the course of the survey.
+
+
 
 ### Idea 4: Context chips
 
