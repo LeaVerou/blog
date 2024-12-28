@@ -399,7 +399,7 @@ Here are some interesting stats:
 - The feature with the **most negative sentiment** overall across all experiences ([`<model>`](https://immersive-web.github.io/model-element/)) still only had 10% of respondents expressing negative sentiment for it, and still had **2.4x more positive sentiment** than negative (24.7% vs 10.4%)!
 - In contrast, the feature with the **most positive sentiment** ([`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)) got a whopping 55% of respondents expressing positive sentiment (and only 4% negative).
 - In fact, even the feature with the **least positive sentiment** ([Imperative Slot Assignment](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/assign) 🤔) still had way more positive sentiment (17.24%) than `<model>` had negative sentiment (10%)!
-- If we look at the **ratio of positive over negative sentiment**, it ranged from **64x** (!) more positive than negative sentiment (45% vs 0.7% for landmark elements) to a mere **2.4x** times more positive sentiment (24.7% vs 10.4% for `<model>`).
+- If we look at the **ratio of positive over negative sentiment**, it ranged from **64x** (!) more positive than negative sentiment (45% vs 0.7% for landmark elements) to a mere **2.4x** times more positive sentiment (24.7% vs 10.4% for `<model>`), and was **11x** on average (**8x** median).
 
 <div class=warning>
 
