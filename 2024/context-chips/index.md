@@ -12,7 +12,12 @@ tags:
   - ux
   - usability
 social_posts:
-  - twitter: ""
+  twitter: https://x.com/LeaVerou/status/1872863400939622443
+  bluesky: https://bsky.app./profile/lea.verou.me/post/3ledoj4gw722j
+  mastodon: https://front-end.social/@leaverou/113728583760477460
+  linkedin: https://www.linkedin.com/posts/leaverou_context-chips-in-survey-design-okay-but-activity-7278631454480175104-WeQv
+  threads: https://www.threads.net/@leaverou/post/DEG_0BFNyFT
+  facebook: https://www.facebook.com/leaverou/posts/10162245092386192
 nutshell: The story of how a weird little UI to collect sentiment alongside survey responses defied constraints and triumphed over skepticism through usability testing.
 ---
 
