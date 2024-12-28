@@ -28,15 +28,15 @@ Multiple choice questions, checkbox questions, matrix questions, dropdown questi
 _what more could one possibly need_?!
 
 And yet, every time Google sponsored me to lead one of the [State Of ... surveys](https://devographics.com), and _especially_ the inaugural [State of HTML 2023 Survey](../../2023/state-of-html-2023/),
-I kept hitting the same wall: how the established options for answering UIs were woefully inadequate for
-collecting good insights with minimal friction for end-users.
+I kept hitting the same wall; I kept feeling that the established options for answering UIs were woefully inadequate for
+**balancing the collection good insights with minimal friction for end-users**.
+
 The [State Of](https://www.devographics.com/) surveys used a completely custom survey infrastructure,
 so I could often (but not always) convince engineering to implement new question UIs.
-
 After [joining Font Awesome](../awesome/), I somehow found myself leading [yet another survey](https://survey.awesome.me/?from=lv_blog), despite swearing never to do this again. 🥲
-Alas, building a custom survey UI was simply not an option in this case; I had to make do with the existing options out there [^tally], so I was reminded of this kind of pain once again.
+Alas, building a custom survey UI was simply not an option in this case; I had to make do with the existing options out there [^tally], so I felt this kind of pain to my core once again.
 
-[^tally]: I ended up going with [Tally](https://tally.so), mainly due to the flexibility of its conditional logic.
+[^tally]: Unlike Devographics, surveys are not FA’s core business, so the Impact/Effort tradeoff simply wasn’t there for a custom UI, at least at this point in time. I ended up going with [Tally](https://tally.so), mainly due to the flexibility of its conditional logic and its support for code injection (which among other things, allowed me to use FA icons — a whopping 120 different ones!).
 
 So what are these cases where the existing answering UIs are inadequate, and how could better ones help?
 I’m hoping this case study to be Part 1 of a series around how survey UI innovations can help balance tradeoffs between user experience and data quality, though this is definitely the one I’m most proud of, as it was such a bumpy ride, but it was all worth it in the end.
@@ -44,8 +44,6 @@ I’m hoping this case study to be Part 1 of a series around how survey UI innov
 <!-- more -->
 
 ## The Problem
-
-
 
 For context, the body of State Of surveys is a series of *"Feature questions"*,
 which present the respondent with a certain web platform feature and ask if they had heard of it or used it.
