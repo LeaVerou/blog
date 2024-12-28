@@ -86,7 +86,7 @@ if they hadn't used it or heard about it, were they interested? If they had used
 
 <figure class="float">
 
-<video src="videos/comments.mp4" loop muted loading="lazy" autoplay></video>
+<video src="videos/comments.mp4" loop muted loading="lazy" autoplay playsinline></video>
 <figcaption>
 Optional freeform comments had been added the year prior, but got an abysmally low response rate,
 and being entirely freeform, were hard to analyze.
@@ -144,7 +144,7 @@ However, based in the psychology of user behavior, I hypothesized that **the vas
 This meant we could analyze them via simple string matching and only lose a few false negatives.
 
 <figure>
-<video src="videos/quick-context.mp4" loop muted loading="lazy" autoplay></video>
+<video src="videos/quick-context.mp4" loop muted loading="lazy" autoplay playsinline></video>
 <figcaption>
 Mockup of the quick context idea.
 </figcaption>
@@ -214,8 +214,8 @@ Additionally, clicking on the selected chip a second time would deselect it, fix
 Over the course of designing this, I became so convinced it was the right solution, that I implemented a high fidelity prototype myself, complete with code that could be easily adapted to the infrastructure used by the survey app.
 
 <figure>
-	<video src="videos/feature-desktop.mp4" loop muted loading="lazy" autoplay style="flex: 2.75"></video>
-	<video src="videos/feature-mobile.mp4" loop muted loading="lazy" autoplay></video>
+	<video src="videos/feature-desktop.mp4" loop muted loading="lazy" autoplay playsinline style="flex: 2.75"></video>
+	<video src="videos/feature-mobile.mp4" loop muted loading="lazy" autoplay playsinline></video>
 <figcaption>
 
 The context chips prototype on desktop and mobile.
@@ -227,7 +227,7 @@ There were no layout shifts, the followups were in close proximity to the main a
 I was not a huge fan of the mobile version, but I couldn't think of a much better way to adapt this UI to mobile.
 
 <figure>
-<video src="videos/in-answer.mp4" loop muted loading="lazy" autoplay></video>
+<video src="videos/in-answer.mp4" loop muted loading="lazy" autoplay playsinline></video>
 <figcaption>
 
 Early alternative concept that supported followups.
@@ -254,8 +254,8 @@ This would allow us to combine questions about multiple features in one,
 and we could still use context chips, albeit a little differently:
 
 <figure>
-	<video src="videos/minifeature-desktop.mp4" loop muted loading="lazy" autoplay style="flex: 3.97"></video>
-	<video src="videos/minifeature-mobile.mp4" loop muted loading="lazy" autoplay></video>
+	<video src="videos/minifeature-desktop.mp4" loop muted loading="lazy" autoplay playsinline style="flex: 3.97"></video>
+	<video src="videos/minifeature-mobile.mp4" loop muted loading="lazy" autoplay playsinline></video>
 <figcaption>
 
 The mini features prototype on desktop and mobile.
@@ -421,7 +421,7 @@ My main advice was to **use proximity for clear visual grouping**, and to use a 
 This was the rendering they settled on for the results:
 
 <figure>
-<video src="videos/results.mp4" loop muted loading="lazy" autoplay></video>
+<video src="videos/results.mp4" loop muted loading="lazy" autoplay playsinline></video>
 <figcaption>
 Interactive bar chart presenting two variables at once.
 </figcaption>
