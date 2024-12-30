@@ -11,6 +11,7 @@ tags:
   - case-studies
   - ux
   - usability
+  - north-star-ui
 social_posts:
   twitter: https://x.com/LeaVerou/status/1872863400939622443
   bluesky: https://bsky.app./profile/lea.verou.me/post/3ledoj4gw722j
@@ -471,7 +472,7 @@ For example, there are cases when we don’t want to allow the respondent to pro
 
 In addition to any generalizable knowledge around survey design, I think this is also an interesting product management case study, and teaches us several lessons.
 
-### Never skimp on articulating the [north star UI](../../2023/eigensolutions/#nsui)
+### Never skimp on articulating the [north star UI](../../2023/eigensolutions/#nsui) { #nsui }
 
 Start any product design task by **ignoring ephemeral constraints** (e.g. engineering resources) and first reach consensus on what the optimal UI is, _before_ you start applying constraints.
 Yes, you read that right.
@@ -489,6 +490,13 @@ When there is user testing data, it is much harder to argue against it.
 
 This is especially useful in convincing engineering that a certain UI is worth the implementation complexity,
 and having engineers observe usability testing sessions can be an educational experience for many.
+
+<aside>
+
+For many engineers, user needs are an [unknown unknown](https://www.theuncertaintyproject.org/tools/rumsfeld-matrix) since HCI courses are elective in most CS curricula and not talked about very much in engineering resources.
+One of the most common comments we got after the first lecture of our [usability & web programming class at MIT](https://designftw.mit.edu/) was "Wow, I had never thought about software from the user’s perspective before!".
+Believe it or not, these comments would often came from CS majors about to graduate!
+</aside>
 
 ### Heuristic evaluations are not a substitute for usability testing
 
