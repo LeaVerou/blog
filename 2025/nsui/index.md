@@ -18,7 +18,7 @@ In my experience, **this argument is where a lot of good product design goes to 
 
 No, I’m not suggesting you should drain engineering resources chasing the perfect UI!
 Yes, in the end it will all boil down to Impact/Effort [^rice].
-But bringing up ephemeral constraints such as implementation difficulty up too early is counterproductive.
+But bringing ephemeral constraints such as implementation difficulty up too early is counterproductive.
 
 [^rice]: More elaborate prioritization schemes such as [RICE](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/) are merely about breaking down either the Impact or the Effort or both into more granular components or introducing uncertainty into the equation.
 But ultimately, it’s all about the Impact/Effort ratio.
