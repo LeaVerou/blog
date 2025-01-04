@@ -12,7 +12,8 @@ export default {
 			if (wpid) {
 				return `${ wpid } https:\/\/lea.verou.me\/?p=${ wpid }`;
 			}
-			else if (data.disqus !== false) {
+			else if (data.disqus !== false && data.page.date < new Date("2024-01-01")) {
+				// Posts before 2024-01-01 use Disqus
 				return typeof data.disqus !== "string"? data.postUrlStem : data.disqus;
 			}
 		},
