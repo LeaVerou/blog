@@ -5,10 +5,12 @@ toc: true
 tags:
   - product
   - product-design
+  - product-management
   - user-centered-design
   - product-led-growth
   - north-star-ui
   - collaboration
+  - case-studies
 ---
 
 _“Oh we can’t possibly do that, it would be *way* too much work to implement!”_
