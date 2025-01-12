@@ -132,4 +132,6 @@ Furthermore, it's a short-term solution. It works now, because screens that can 
 
 LCH is the same color space as Lab, just viewed differently! Take a look at the following diagram that I made for my students:
 
+<object data="https://designftw.mit.edu/lectures/color/img/lab.svg" type="image/svg+xml"></object>
+
 The L in Lab and LCH is exactly the same (perceptual Lightness). For a given lightness L, in Lab, a color has cartesian coordinates (L, a, b) and polar coordinates (L, C, H). Chroma is just the length of the line from 0 to point (a, b) and Hue is the angle of that ray. Therefore, the formulae to convert Lab to LCH are trivial one liners: C is sqrt(a² + b²) and H is atan(b/a) (with different handling if a = 0). atan() is just the reverse of tan(), i.e. tan(H) = b/a.
