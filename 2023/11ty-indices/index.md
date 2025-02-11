@@ -252,9 +252,11 @@ config.addCollection("postsByMonth", (collectionApi) => {
     return ret;
 });
 ```
+{% endraw %}
 
 And a separate [`blog/month-index.njk`]({{ site.repo_file }}/blog/month-index.njk) file:
 
+{% raw %}
 ```njk
 ---
 pagination:
