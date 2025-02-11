@@ -328,3 +328,16 @@ With a bit of luck, you may even find yourself implementing an "infeasible" NSUI
 
 We initially faced a lot of resistance from browser engineers, until eventually [Anders Ruud](https://github.com/w3c/csswg-drafts/issues/7961#issuecomment-1489883575) and his team experimented with variations of my proposed algorithm and actually closed in on a way to implement the NSUI syntax in Chrome.
 The rest, as they say, is history.
+
+## Conclusion
+
+Hopefully by now you’re convinced about the value of starting product design tasks by envision what the NSUI would be,
+but in case you are not, here’s a recap of the benefits:
+
+1. Simplifies problem solving, by breaking down hard product problems into more manageable components.
+2. Facilitates team alignment and helps build consensus.
+3. Makes our design process more resilient and adaptable.
+4. Paves the way for getting there (someday).
+
+What do you think? Pointless thought experiment or valuable tool?
+Do you design NSUIs in your team?
