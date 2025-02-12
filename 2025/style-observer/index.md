@@ -1,6 +1,6 @@
 ---
 toc: true
-title: "Style-observer: observe CSS property changes, for reals"
+title: "Style-observer: JS to observe CSS property changes, for reals"
 tags:
   - launch
   - open-source
