@@ -5,6 +5,10 @@ tags:
   - launch
   - open-source
 image: images/social.gif
+social_posts:
+  mastodon: https://front-end.social/@leaverou/113990603659432637
+  twitter: https://x.com/LeaVerou/status/1889682465133830250
+  bluesky: https://bsky.app./profile/did:plc:eagnfcoqnbtzpkglrtej6ayg/post/3lhygzakuic2n
 ---
 
 <figure class="outlined">
