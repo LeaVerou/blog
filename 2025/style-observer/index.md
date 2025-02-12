@@ -1,5 +1,4 @@
 ---
-draft: true
 toc: true
 title: "Style-observer: observe CSS property changes, for reals"
 tags:
@@ -7,23 +6,27 @@ tags:
   - open-source
 ---
 
+<figure class="outlined">
+<img src="images/social.gif" alt="Style-observer social media teaser" />
+</figure>
+
 I cannot count the number of times in my career I wished I could run JS in response to CSS property changes,
-regardless of where they came from.
+regardless of what triggered them: media queries, user actions, or even other JS.
 
 Use cases abound.
 Here are some of mine:
 - Implement higher level custom properties in components, where one custom property changes multiple others in nontrivial ways (e.g. a `--variant: danger` that sets 10 color tokens).
 - Polyfill missing CSS features
-- Change certain HTML attributes via CSS
+- Change certain HTML attributes via CSS (hello `--aria-expanded`!)
 
-The most recent time I needed this was to prototype an idea for [Web Awesome](https://webawesome.com),
+The most recent time I needed this was to prototype an idea I had for [Web Awesome](https://webawesome.com),
 and I decided this was it:
-I’d either find a good, bulletproof solution, or I’d build it myself.
+I’d either find a good, bulletproof solution, or I would build it myself.
 
-Guess what happened?
 Spoiler alert:
-<a href="https://observe.style" title="And I couldn't even resist registering a domain for it 🤦🏽‍♀️" class="call-to-action">Oops, I did it again</a>
+<a href="https://observe.style" title="And I couldn't even resist registering a domain for it 🤦🏽‍♀️ It’s all fun and games until the renewal bills start coming 🥲" class="call-to-action">Oops, I did it again</a>
 
+<!-- more -->
 
 ## A Brief History of Style Observers
 
@@ -52,12 +55,11 @@ Releasing his work as open source was already a great service to the community, 
 He stumbled on [a ton of browser bugs](https://allow-discrete-bugs.netlify.app/), which he did an incredible job of [documenting](https://www.bram.us/2024/08/31/introducing-bramus-style-observer-a-mutationobserver-for-css/#custom-props) and then filing.
 His conclusion was:
 
-> Right now, the only cross-browser way to observe Custom Properties with @bramus/style-observer is to register the property with a syntax of "<custom-ident>".
-
-> Note that <custom-ident> values can not start with a number, so you can’t use this type to store numeric values.
+> Right now, the only cross-browser way to observe Custom Properties with @bramus/style-observer is to register the property with a syntax of "`<custom-ident>`".
+> Note that `<custom-ident>` values can not start with a number, so you can’t use this type to store numeric values.
 
 Wait, what?
-That was still _quite_ a limitation.
+That was still _quite_ the limitation!
 
 My brain started racing with ideas for how to improve on this.
 What if, instead of trying to work around all of these bugs at once, we _detect_ them so we only have to work around the ones that are actually present?
@@ -65,14 +67,18 @@ What if, instead of trying to work around all of these bugs at once, we _detect_
 ## World, meet `style-observer`
 
 At first I considered just sending a bunch of PRs, but I wanted to iterate fast, and change too many things.
-I took the fact that the domain [`observe.style`](https:/`observe.style) was available as a sign from the universe, and decided the time had come for me to take my own crack at this age-old problem, armed with the knowledge of those who came before me and with the help of my trusty apprentice [Dmitry Sharabin](https://d12n.me/) (hiring him to work full-time on our open source projects is a whole separate blog post).
+I took the fact that the domain [`observe.style`](https:/`observe.style) was available as a sign from the universe, and decided the time had come for me to take my own crack at this age-old problem, armed with the knowledge of those who came before me and with the help of my trusty apprentice [Dmitry Sharabin](https://d12n.me/) _(hiring him to work full-time on our open source projects is a whole separate blog post)_.
 
-Beyond the obvious API and feature differences (throttling, aggregation),
-one of the core ways `style-observer` achieves better browser support is that
+One of the core ways `style-observer` achieves better browser support is that
 it **performs feature detection** for many of the bugs Bramus identified.
 This way, code can work around them in a targeted way, rather than the same code having to tiptoe around all possible bugs.
 As a result, it basically works in every browser that supports [`transition-behavior: allow-discrete`](https://caniuse.com/mdn-css_properties_transition-behavior),
 i.e. 90% globally.
+
+<figure class="float">
+
+![Keep Calm and Style Observe](images/calm.png)
+</figure>
 
 - **Safari transition loop bug ([#279012](https://bugs.webkit.org/show_bug.cgi?id=279012))**:
 `StyleObserver` [detects](https://github.com/LeaVerou/style-observer/blob/main/src/util/detect-transitionrun-loop.js) this and works around it by debouncing.
@@ -83,14 +89,24 @@ By design, `StyleObserver` does not fire its callback immediately (i.e. works mo
 In browsers that *do* fire an initial `transitionstart` event, it is ignored.
 - In addition, while working on this, we found [a couple more bugs](https://github.com/LeaVerou/style-observer/issues/42).
 
-Since this came out of a real need, to (potentially) use in a real product, it has been exhaustively tested, and comes with a testsuite of > 150 unit tests (thanks to Dmitry’s hard work).
+
+
+Additionally, besides browser support, this supports throttling, aggregation, and plays more nicely with existing transitions.
+
+
+
+Since this came out of a real need, to (potentially) ship in a real product, it has been exhaustively tested, and comes with a testsuite of > 150 unit tests (thanks to Dmitry’s hard work).
+
 If you want to contribute, one area we could use help with is benchmarking.
 
-That’s all for now.
-Please try it out and let us know what you think!
+That’s all for now!
+Try it out and let us know what you think!
 
 - Docs: [observe.style](https://observe.style)
 - Repo: [leaverou/style-observer](https://github.com/LeaVerou/style-observer)
 - NPM: [style-observer](https://www.npmjs.com/package/style-observer)
+
+
+
 
 <a href="https://observe.style" class="call-to-action">Gotta end with a call to action, amirite?</a>
