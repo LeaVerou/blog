@@ -19,6 +19,7 @@ Here are some of mine:
 - Implement higher level custom properties in components, where one custom property changes multiple others in nontrivial ways (e.g. a `--variant: danger` that sets 10 color tokens).
 - Polyfill missing CSS features
 - Change certain HTML attributes via CSS (hello `--aria-expanded`!)
+- Set CSS properties based on other CSS properties without having to mirror them as custom properties
 
 The most recent time I needed this was to prototype an idea I had for [Web Awesome](https://webawesome.com),
 and I decided this was it:
