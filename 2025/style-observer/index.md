@@ -4,6 +4,7 @@ title: "Style-observer: observe CSS property changes, for reals"
 tags:
   - launch
   - open-source
+image: images/social.gif
 ---
 
 <figure class="outlined">
