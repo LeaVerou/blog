@@ -1,6 +1,6 @@
 ---
 draft: true
-title: "What is a North Star UI and how can it help product design?"
+title: "What is a North Star UI and how can it help you ship?"
 toc: true
 tags:
   - product
@@ -13,27 +13,167 @@ tags:
   - case-studies
 ---
 
-_“Oh we can’t possibly do that, it would be *way* too much work to implement!”_
+You may be familiar with this wonderful [illustration and accompanying
+blog post by Henrik Kniberg](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp):
 
-Raise your hand if you’ve ever heard (or worse, _said_) this during a product design brainstorming session.
-In my experience, **this argument is where a lot of good product design goes to die**.
+<img src="images/mvp.png" alt="Henrik Kniberg's MVP illustration">
 
-No, I’m not suggesting you should drain engineering resources chasing the perfect UI!
-Yes, in the end it will all boil down to Impact/Effort [^rice].
-But bringing ephemeral constraints such as implementation difficulty up too early is counterproductive.
+It’s a very visual way to illustrate the age-old concept that
+that a good MVP is not the one developed in isolation over months or years,
+grounded on assumptions about user needs and goals,
+but one that delivers value to users as early as possible,
+so that future iterations can take advantage of the lessons learned from real users.
 
-[^rice]: More elaborate prioritization schemes such as [RICE](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/) are merely about breaking down either the Impact or the Effort or both into more granular components or introducing uncertainty into the equation.
-But ultimately, it’s all about the Impact/Effort ratio.
+## The MVP as a range { #mvp-range }
 
-By _ephemeral_ I’m referring to constraints that are not intrinsic to the problem at hand (these are _requirements_!),
-but those that have to do with the current state of technology, the team, the company, or the broader environment.
+While not quite what Henrik intended,
+I love this metaphor so much, I have been using it to describe shipping goals when writing product specs.
+I find they are understandable to anyone who has seen Henrik’s illustration,
+and fit nicely into a [fixed time, variable scope](https://basecamp.com/shapeup/1.2-chapter-03#fixed-time-variable-scope) development process,
+such as the [Shape Up methodology](https://basecamp.com/shapeup) that we use at Font Awesome.
 
-For example, _"This interaction will be very common and needs to be as frictionless and efficient as possible"_ is a requirement, as it is intrinsic to the use case.
-Ephemeral constraints are things like:
-- Engineering resources
-- Performance
-- Technical feasibility (to some extent)
-- Backwards compatibility
+1. 🛹 **The Skateboard (aka the Pessimist’s MVP):**
+What is the absolute minimum we _can_ ship, if need be?
+This is the most bare-bones set of features, without which we cannot ship at all.
+It skews more utilitarian: it has the basic _functionality_ we need, but its UX is very rough, even embarrassing.
+Anything that can be [flintstoned](https://stackingthebricks.com/the-fine-art-of-flintstoning/) is flintstoned.
+This is meant to be less-than a traditional MVP.
+2. 🛴 **The Scooter (aka the Realist’s MVP):**
+It is the minimum set of features we want to ship that will still provide value and fulfill enough user needs across enough user segments to be worth it.
+Its UX is more well thought out than the skateboard but anything nontrivial to implement is punted unless essential.
+This is closer to a traditional MVP.
+3. 🚲 **The Bicycle (aka the Optimist’s MVP):**
+The wishlist or stretch goals.
+If everything goes _really_ well, what else can we ship?
+This may include UX improvements, "sprinkles of delight", and features that are nonessential but have high I/E ratios.
+This is where we aspire to be, but we are not going to be heartbroken if we don’t get there.
+4. 🏍️ **The motorcycle:**
+These are improvements that are beyond even the optimistic MVP, but we want to get to sometime in the near future.
+5. 🚗 **The car:**
+Improvements that we can ship in the medium to longer term future.
+6. 🏎️ **The race car (aka the North Star UI):**
+This is the ideal product we would ship if we were not bound by ephemeral constraints like time, resources, performance considerations, or backwards compatibility.
+
+The meat is the first three stages, since they directly affect what is being worked on.
+The more we go down the list, the less fleshed out specs are, since we _know_ they will change once we have input to customers.
+
+The most controversial of these is the last one: the race car, i.e. the North Star UI.
+It is the very antithesis of the MVP.
+The MVP describes what we can ship ASAP,
+whereas the North Star describes the most idealized goal, one we may _never_ be able to ship.
+
+It is easy to dismiss that as a waste of time, a purely academic exercise.
+_“We’re all about shipping. Why would we spend time on something that’s not even feasible?”_ I hear you say.
+However, in the rest of this essay I will argue that it is one of the most important milestones,
+and fleshing it out pays dividends in the long run.
+
+## More deliberate product design { #deliberate }
+
+<figure>
+TODO: Race car with arrows pointing to car, motorcycle, bike, scooter, skateboard.
+</figure>
+
+Whether you realize it or not, **the North Star is the only actual input into this process.**
+Every other stage, the skateboard, the scooter, the bike, the motorcycle, the car, are all outputs.
+They are all derived from the North Star, like peeling layers off an onion.
+In fact in some contexts the process of breaking down a bigger shipping goal into milestones that can ship independently is literally called _layering_.
+
+The process is so ingrained, so automatic, that most product designers don’t realize that they are doing it.
+They go from race car to car, or even motorcycle so quickly they barely realize there was anything else there to begin with.
+Thinking about the North Star feels like a guilty pleasure — who has time for this daydreaming?
+We gotta ship, yesterday!
+
+But the race car is **fundamental**.
+Without it, there is no skateboard — you can’t reduce the unknown.
+Without a solid North Star, your MVP is a confused jumble of design decisions and compromises, so tangled it becomes impossible to tell them apart.
+
+To stick with the transportation metaphor,
+a skateboard might be a good MVP if your ultimate vision is a race car,
+but it would be a _terrible_ minimum viable ferry boat — you might want to try a wooden raft for that.
+
+<figure>
+TODO: first, the most basic raft possible. Then a simple sailboat, then a speedboat, then a yacht, and finally a ship.
+</figure>
+
+
+This North Star may (and likely, will) change down the line, informed by customer feedback.
+That’s okay and par for the course.
+We don’t need to wander aimlessly with no destination, to be able to course correct.
+
+Perhaps counterintuitively, spending time fleshing out a North Star UI can actually help you ship.
+Allow me to explain.
+
+## Simplify problem solving { #problem-solving }
+
+A common problem-solving strategy in every domain, is to break down a complex problem into smaller, more manageable components and solving them separately.
+Product design is no different.
+The concept of a North Star UI breaks down tough product design problems into three more manageable components:
+
+1. **North Star UI (NSUI)**: What is the ideal solution?
+2. **Ephemeral constraints**: What prevents us from getting there?
+3. **Compromises**: How close can we reasonably get given these constraints?
+
+In many simpler problems, their difficulty is concentrated in only one of these components, in which case this framework does not help much.
+Where it really shines is the really tough product problems, where the first and third question are _both_ hard.
+Far easier to answer them separately than trying to answer both at once.
+
+## Facilitate team alignment { #consensus }
+
+<figure>
+TODO: Two people arguing.
+One has a speech bubble with a skateboard, the other a speech bubble with a wooden raft.
+The first also has a thought bubble with a car, the second a thought bubble with a ship.
+</figure>
+
+When the North Star UI is not clearly articulated, it doesn't mean it doesn’t exist.
+It just means that **everyone is following a different North Star.**
+
+Since MVPs are products of the North Star, this will manifest as difficulty reaching consensus at every step of the way.
+
+Debating at a different level of abstraction than what produced the original disconnect is generally a recipe for nonterminating divergence.
+It pays off to zoom out and resolve the root cause separately,
+rather than waste time and energy debating its byproducts one after another,
+like fighting off a [Lernaean Hydra](https://en.wikipedia.org/wiki/Lernaean_Hydra) one head at a time.
+
+Having the space to flesh out the North Star UI separately not only eliminates future disagreements before they happen,
+it also strips away a lot of noise.
+
+Often, what is fundamentally a North Star disagreement will masquerade as a disagreement about practical constraints.
+It feels easier to cite practical constraints than to debate the merits of an idea directly.
+Fleshing out the North Star UI separately eliminates this deflection at the root.
+Here is a story that may sound familiar:
+Alice has designed an [eigensolution](../../2023/eigensolutions/), — an elegant solution that addresses several user pain points at once.
+She is aware it would be a little tricky to implement, but she thinks the tremendous improvement in user experience is worth it and she can layer it in such a way that it can ship incrementally.
+When she presents her idea to the product team, Bob dismisses it as _"this is way too much work, it’s not worth doing"_.
+However, what he is _actually_ thinking is _"this is a bad idea and any amount of work towards it is a waste"_.
+Instead of spending time figuring out whether Alice’s concept is a good idea,
+they spend their time discussing how much work it is and whether it could be reduced.
+As a result, they fail to reach consensus because the amount of work was not the core issue.
+
+It is important to answer the questions above in order, and reach consensus on what the North Star UI is before moving on to the compromises.
+This way, we are aware of what is an actual design decision and what is a compromise driven by practical constraints.
+Articulating these separately, allows us to debate them separately.
+It is very hard to evaluate tradeoffs collaboratively if you are not on the same page about what we are trading off and how much it’s worth.
+You need to know _both_ the cost _and_ the benefit to do a cost-benefit analysis.
+
+## North Star UIs can improve MVPs via user testing
+
+Conventional wisdom is that we strip down the North Star to an MVP, ship that, and then iterate based on input from real users.
+But did you know you can actually get input from real users without writing a single line of code?
+
+![alt text](images/user-test-wireframe.png)
+
+While common knowledge among usability folks, this seems unheard of in product management circles.
+You don't need to wait until an implemented MVP to do user testing.
+You can do user testing as early as a low-fi paper prototype, with the user telling you where they would click or tap and the facilitator mocking the response.
+This allows you to user test your North Star UI directly and adjust your MVP accordingly without having to wait for a whole deployment cycle.
+
+Obviously, this works better for some types of products than others (it is notably hard to mock rich interactions or UIs with too many possible responses), but it is a powerful tool to have in your arsenal.
+It can be particularly useful useful when there are vastly different perspectives within a team about what the North Star UI is, or when the problem is so novel that every potential solution is on shaky ground.
+Even the best product intuition can be wrong, and there is no point in evaluating compromises if it turns out that even the "perfect" solution is not actually a good one.
+
+
+<!--
 
 A tool I keep coming back to is what I call a _"North Star UI"_ .
 <dfn>**A *North Star UI* is the ideal UI for addressing a set of pain points and use cases in a perfect world with no ephemeral constraints.**</dfn>
@@ -49,50 +189,9 @@ _“Why would we spend precious resources on something that’s not feasible?
 We should be pragmatic, not chase pipe dreams!”_ I often hear.
 And yet, perhaps counterintuitively, a solid NSUI can provide so many benefits that over time it actually _reduces_ the amount of resources spent on product design.
 
-What benefits?
-Let’s dive in.
 
-## 1. Simplifies problem solving { #problem-solving }
+-->
 
-A common problem-solving strategy in every domain, is to break down a complex problem into smaller, more manageable components and solving them separately.
-Product design is no different.
-The concept of a North Star UI breaks down product design tasks into three more manageable components:
-
-1. **North Star UI (NSUI)**: What is the ideal solution?
-2. **Ephemeral constraints**: What prevents us from getting there?
-3. **Compromises**: How close can we reasonably get given the timeframe we have?
-
-These subproblems do not always have the same level of difficulty.
-Sometimes the NSUI is obvious, and the big product design challenge is navigating the compromises.
-Other times, the big challenge is figuring out what the NSUI should be and once this is clear, it turns out it’s also perfectly feasible.
-And most of the time, both are hard, so solving them separately can be a huge help.
-
-
-## 2. Facilitates team alignment and helps build consensus { #consensus }
-
-This is a pattern I’ve seen very frequently, across many different teams:
-disagreements about the NSUI will often masquerade as disagreements about practical constraints,
-so people will waste time and energy debating the wrong issue.
-
-Here is a story that may sound familiar:
-Bob will say "X is way too much work, it’s not worth doing",
-but what are they actually thinking is "X is a bad idea, so any nontrivial amount of work towards it is a waste",
-while Alice thinks that X is an elegant solution that would create an incredible user experience, and is worth a somewhat higher implementation cost.
-Instead of spending time figuring out whether X is a good idea in itself,
-they spend their time debating how much work it is and how that could be simplified,
-but fail to reach consensus because that is not actually the root issue.
-_(Any similarity to real persons, living or dead, is purely coincidental.)_ 😅
-
-The thing is, **when the NSUI is not documented, it still exists, but everyone has their own version.**
-It is important to answer these questions in order, and reach consensus on what the North Star UI is before moving on.
-**We need to be _aware_ of what is an actual design decision and what is a compromise driven by practical constraints.**
-
-By articulating these separately, they can also be debated separately,
-so that when we are at the stage of evaluating compromises, we are all on the same page about what we are trading off and how much it’s worth.
-How can you do a cost-benefit analysis, without knowing _both_ the cost _and_ the benefit?
-
-**NSUIs can even be user tested**, using wireframes or prototypes, which can be particularly useful when there are vastly different perspectives within a team about what the NSUI is, or when the problem is so novel that every potential solution is on shaky ground.
-Even the best product intuition can be wrong, and there is **no point in evaluating compromises if it turns out that even the "perfect" solution is not actually a good one.**
 
 ## 3. Paves the way for getting there (someday) { #evolution }
 
@@ -331,8 +430,8 @@ The rest, as they say, is history.
 
 ## Conclusion
 
-Hopefully by now you’re convinced about the value of starting product design tasks by envision what the NSUI would be,
-but in case you are not, here’s a recap of the benefits:
+Hopefully by now you’re convinced that it is worthwhile to begin product problems by fleshing out the North Star.
+If not, here’s a recap of the benefits:
 
 1. Simplifies problem solving, by breaking down hard product problems into more manageable components.
 2. Facilitates team alignment and helps build consensus.
@@ -340,4 +439,4 @@ but in case you are not, here’s a recap of the benefits:
 4. Paves the way for getting there (someday).
 
 What do you think? Pointless thought experiment or valuable tool?
-Do you design NSUIs in your team?
+Do you spend the time to flesh out and document North Star UIs in your team?
