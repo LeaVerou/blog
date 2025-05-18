@@ -3,7 +3,7 @@ permalink: "blog/tags/index.json"
 layout: null
 override:tags: []
 ---
-{% from "../blog/index-json.njk" import post_json %}
+{% from "../blog/index.json.njk" import post_json %}
 {
 {% for tag, posts in collections.postsByTag %}
 	"{{ tag }}": {
