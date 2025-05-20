@@ -146,8 +146,8 @@ When the North Star UI is not clearly articulated, everyone has their own.
 
 Here is a story that will sound familiar to many readers:
 Alice has designed an elegant solution that addresses not just the problem at hand, but several prevalent longstanding user pain points at once — an [eigensolution](../../2023/eigensolutions/).
-She is aware it would be a little trickier to implement, but she thinks the tremendous improvement in user experience is worth the moderate increase in effort.
-She has even designed a deployment strategy that allows it to ship incrementally, adding value and getting customer feedback earlier.
+She is aware it would be a little trickier to implement, but she thinks the tremendous improvement in user experience is worth the very modest increase in effort.
+She has even outlined a staged deployment strategy that allows it to ship incrementally, adding value and getting customer feedback earlier.
 Excited, she presents her idea to the product team, only to hear Bob dismiss it with  _"this is scope creep and way too much work, it’s not worth doing"_.
 However, what Bob is _actually_ thinking is _"this is a bad idea; any amount of work towards it is a waste"_.
 The design session is now derailed.
@@ -168,9 +168,9 @@ Articulating these separately, allows us to discuss them separately.
 It is very hard to evaluate tradeoffs collaboratively if you are not on the same page about what we are trading off and how much it’s worth.
 **You cannot do a cost-benefit analysis without being aware of _both_ the cost _and_ the benefit.**
 
-Additionally, discussing the North Star separately ensures that everyone is on the same page about what is being designed.
-All too often have I seen design sessions where one person is discussing what the skateboard should be,
-another what the bicycle should be, and another what the car should be,
+Additionally, fleshing the North Star out separately ensures that **everyone is on the same page about what is being discussed**.
+All too often have I seen design sessions where one person is discussing the skateboard,
+another the bicycle, and a third what the car,
 no-one realizing they are talking cross purposes.
 
 ## 4. It can improve the MVP via user testing
@@ -217,7 +217,7 @@ In fact, sometimes simply reframing the North Star as a sequence of milestones r
 For an example of this, check out the [CSS Nesting case study](#css-nesting) below.
 </aside>
 
-## 6. It makes your design process more adaptable { #adaptability }
+## 6. It makes the design process robust and adaptable { #adaptability }
 
 North Star UIs make the product design process more resilient and adaptable.
 I have often seen **"unimplementable" solutions become implementable** down the line, due to changes in internal or external factors, or simply because someone had a lightbulb moment.
@@ -225,12 +225,25 @@ I have often seen **"unimplementable" solutions become implementable** down the 
 Without a solid foundation to fall back on, this means our only options are to either go back to the drawing board, or miss out on the opportunity to adapt.
 With a solid North Star UI in place, when constraints get lifted we only need to re-evaluate our compromises, which is usually much easier than starting from scratch.
 
-### Case studies where constraints were lifted { #case-studies }
+## Case studies { #case-studies }
 
 In my 20 years of product design, I have seen ephemeral constraints melt away so many times I have learned to interpret _"unimplementable"_ as _"kinda hard; right now"_.
 Some examples from my own experience below.
 
-#### Change in Engineering Momentum: Sentiment Chips { #sentiment-chips }
+### Context Chips { #context-chips }
+
+<figure>
+
+<img src="../../2024/context-chips/images/cover.png" alt="Illustration of context chips">
+</figure>
+
+This is a case where I was originally operating under the constraint extremely minimal engineering resources and having to aggressively prioritize,
+a constraint that was later lifted due to a change in engineering momentum.
+It is described at length in [Context Chips in Survey Design: “Okay, but how does it _feel_?”](../2024/context-chips/).
+
+In a nutshell, the relevant bits are:
+- The engineer _hated_ the original low-effort, entirely client-side idea so much, he prototyped a much higher-effort solution which involved a backend and API changes in a day. Previously, this would have been entirely out of the question.
+- Initial opposition to the later proposed UI was completely reversed once the engineer observed user testing sessions using a prototype.
 
 Here is a little secret that applies to nearly all software engineers:
 **neither feasibility nor effort are fixed for a given task.**
@@ -246,9 +259,10 @@ Things that were impossible or insurmountable become feasible, and things that w
 
 One way to get engineers excited is to convince them about the **value and utility of what they are building**.
 All too often, product decisions are made in a vacuum, based on gut feelings and assumptions about user needs.
-Backing them with data, such as usability testing sessions [(and having engineers observe!)](../context-chips/) is an excellent way to demonstrate their basis.
+Backing them with data, such as usability testing sessions is an excellent way to demonstrate their basis.
+And having engineers observe user testing sessions firsthand can be much more powerful than secondhand reports.
 
-#### Change in the Environment: CSS Conic Gradients { #conic-gradients }
+### CSS Conic Gradients { #conic-gradients }
 
 <figure class="float" id="hue-wheel">
 <style>
@@ -275,7 +289,7 @@ Conical gradients are often used to render hue wheels.
 </figcaption>
 </figure>
 
-Sometimes, what makes a high effort feature feasible (or even trivial) is a change in the environment.
+Often, what makes a high effort feature feasible (or even trivial) is a **change in the environment**.
 An example that comes to mind is [CSS conic gradients](/specs/#conical-gradients).
 Conic gradients are the type of gradient that is created by (conceptually) rotating a ray around a center point.
 
@@ -290,17 +304,17 @@ In the years that followed, one after another these libraries added support for 
 I also created a [polyfill](../../2015/06/conical-gradients-today/) which stimulated developer demand, increasing Impact.
 These two things together took the Impact/Effort ratio from "not worth it" to "let’s do this, stat" and in 2 years the feature was implemented across all major browsers.
 
-#### Someone had a Lightbulb Moment: Relaxed CSS Nesting Syntax { #css-nesting }
+#### Relaxed CSS Nesting Syntax { #css-nesting }
 
 Sometimes high effort things just take a lot of hard work and there is no way around it.
-Other times they are one good idea away.
+Other times, feasibility is **one good idea away**.
 
 One of my favorite examples, and something I’m proud to have [helped drive](/specs/#relaxed-css-nesting) is the [relaxed CSS Nesting syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting), now [shipped in every browser](https://caniuse.com/css-nesting).
 It is such an amazing case study on the importance of having a North Star UI,
 I even did [an entire talk about it at Web Unleashed](https://www.youtube.com/watch?v=hcEDJq7jfdY),
 with a lot more technical details that I have included here.
 
-In a nutshell, CSS nesting is a syntax that allowed CSS developers to reduce repetition and better organize their code by allowing them to nest rules inside other rules.
+In a nutshell, CSS nesting was a (then new) CSS syntax that let CSS developers better organize their code by reducing repetition through nesting CSS rules inside other CSS rules.
 
 <figure id="css-nesting-example" class="float">
 <style>
@@ -309,6 +323,10 @@ In a nutshell, CSS nesting is a syntax that allowed CSS developers to reduce rep
 		font-size: 50%;
 		font-weight: 600;
 		width: auto;
+		overflow: auto;
+	}
+	pre code {
+		white-space: pre;
 	}
 }
 </style>
@@ -342,6 +360,7 @@ table.browser-support td > a {
 	color: inherit;
 }
 ```
+
 ```css
 table.browser-support {
 	border-collapse: collapse;
@@ -384,32 +403,30 @@ since the syntax was already well established in developer tooling (CSS preproce
 Instead, **the big challenge was navigating the practical constraints**,
 since CSS implemented in browsers has different performance characteristics,
 so a syntax that is easily feasible for a preprocessor may be out of reach for a browser.
-In this case, the North Star syntax had been ruled out by browser engineers due to prohibitive parsing performance [^1],
+In this case, the North Star syntax had been ruled out by browser engineers due to prohibitive parsing performance [^lookahead],
 so we had to design a different, more explicit syntax that could be parsed more efficiently.
 
-[^1]: for any Compilers geeks out there that want all the deets: it required potentially unbounded lookahead since there is no fixed number of tokens a parser can read and be able to tell the difference between a selector and a declaration.
-
-[Initial attempts](https://www.w3.org/TR/2021/WD-css-nesting-1-20210831/#nesting) for a syntax that satisfied these requirements introduced a lot of noise,
-in the form of an awkward, noisy `@nest` token that needed to be placed in the beginning of many nested rules.
+[^lookahead]: for any Compilers geeks out there that want all the deets: it required potentially unbounded lookahead since there is no fixed number of tokens a parser can read and be able to tell the difference between a selector and a declaration.
 
 At this point, it is important to note that CSS Nesting is a feature that once available,
-it is used all over a stylesheet, not just a couple times here and there.
-For such widely used features, every character counts.
-Conciseness and readability of syntax are paramount,
-especially when conciseness is the sole purpose of this feature in the first place!
+is used all over a stylesheet, not just a couple times here and there.
+Both conciseness and readability are paramount,
+especially when conciseness is the sole purpose of the feature in the first place!
 
-Worse yet, these attempts were actively incompatible with the NSUI syntax, as well as other parts of CSS (namely, the `@scope` rule).
-This meant that even if the NSUI became feasible later,
+[Initial attempts](https://www.w3.org/TR/2021/WD-css-nesting-1-20210831/#nesting) for a syntax that satisfied these requirements introduced a lot of noise,
+in the form of an awkward, noisy `@nest` token that needed to be placed in the beginning of most nested rules.
+Worse yet, these attempts were actively incompatible with the North Star syntax, as well as other parts of CSS (namely, the `@scope` rule).
+This meant that even if the North Star UI became feasible later,
 CSS would need to forever support syntax that would then have no purpose,
-it would exist just as a wart from the past, just like HTML doctypes.
+and would only exist as a wart from the past, just like HTML doctypes.
 
 This proposal sat dormant for a while, since implementors were not exactly in a hurry to ship it.
 This all changed when [State of CSS 2022](https://2022.stateofcss.com/en-US/usage/#missing_features_freeform) showed Nesting as the top missing CSS feature, making Google suddenly very keen to ship it.
 
 A small subset of the CSS Working Group, led by Elika Etemad and yours truly organized a number of breakouts to explore alternatives,
-an effort that produced not one, not two, but four competing proposals.
-The one that the group voted to adopt [^option3] was the one I [designed](https://github.com/w3c/csswg-drafts/issues/7834#issuecomment-1272373216) with the NSUI in mind, by asking the question:
-**If the NSUI is out of the question _right now_, how close can we get and still be compatible with it in case it becomes feasible later on?**
+an effort that produced not one, not two, but **four competing proposals**.
+The one that the group voted to adopt [^option3] was the one I [designed](https://github.com/w3c/csswg-drafts/issues/7834#issuecomment-1272373216) with the North Star in mind, by asking the question:
+**If the North Star syntax is out of the question _right now_, how close can we get and still be compatible with it in case it becomes feasible later on?**
 
 [^option3]: Originally dubbed [*“Lea’s proposal”*](https://github.com/w3c/csswg-drafts/blob/2535b93ca241a1db5a29c47c5b22c5b1d0be2e71/css-nesting-1/proposals.md), and later ["Non-letter start proposal"](https://github.com/w3c/csswg-drafts/blob/main/css-nesting-1/proposals.md), but became known as [Option 3](https://webkit.org/blog/13607/help-choose-from-options-for-css-nesting-syntax/) from its position among the five options considered (including the original syntax).
 
