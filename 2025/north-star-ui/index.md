@@ -1,7 +1,9 @@
 ---
+title: "The North Star UI: Great Products Start at the Finish Line"
 draft: true
-title: "What is a North Star UI and how can it help you ship?"
+date: 2025-05-20
 toc: true
+image: images/disconnect.png
 tags:
   - product
   - product-design
@@ -12,6 +14,12 @@ tags:
   - collaboration
   - case-studies
 ---
+
+<div class=nutshell>
+
+Most teams start with the MVP.
+But what if the key to shipping great products wasn't starting small — but starting _big_?
+</div>
 
 You may be familiar with this wonderful [illustration and accompanying
 blog post by Henrik Kniberg](https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp):
@@ -28,36 +36,31 @@ so that future iterations can take advantage of the lessons learned from real us
 
 While not quite what Henrik intended,
 I love this metaphor so much, I have been using it to describe shipping goals when writing product specs.
-I find they are understandable to anyone who has seen Henrik’s illustration,
+I find they can be immediately understood by anyone who has seen Henrik’s illustration,
 and fit nicely into a [fixed time, variable scope](https://basecamp.com/shapeup/1.2-chapter-03#fixed-time-variable-scope) development process,
 such as [Shape Up](https://basecamp.com/shapeup).
 
 1. 🛹 **The Skateboard (aka the Pessimist’s MVP):**
 What is the absolute minimum we _can_ ship, if need be?
-This is the most bare-bones set of features, without which we cannot ship at all.
-It skews more utilitarian: it has the basic _functionality_ we need, but its UX is very rough, even embarrassing.
-Anything that can be [flintstoned](https://stackingthebricks.com/the-fine-art-of-flintstoning/) is flintstoned.
-This is meant to be less-than a traditional MVP.
+Utilitarian, bare-bones, and somewhat embarrassing, but shippable (only barely).
+Anything that can be [flintstoned](https://stackingthebricks.com/the-fine-art-of-flintstoning/) gets flintstoned.
 1. 🛴 **The Scooter (aka the Realist’s MVP):**
-It is the minimum set of features we want to ship that will still provide value and fulfill enough user needs across enough user segments to be worth it.
-Its UX is more well thought out than the skateboard but anything nontrivial to implement is punted unless essential.
-This is closer to a traditional MVP.
+The minimum product that delivers value. Usable, but no frills.
 1. 🚲 **The Bicycle (aka the Optimist’s MVP):**
-The wishlist or stretch goals.
-If everything goes _really_ well, what else can we ship?
-This may include UX improvements, "sprinkles of delight", and features that are nonessential but have high I/E ratios.
-This is where we aspire to be, but we are not going to be heartbroken if we don’t get there.
+Stretch goals — UX polish, _"sprinkles of delight"_, nonessential features with high I/E.
+Great if we get here, fine if we don’t.
 1. 🏍️ **The motorcycle:**
-These are improvements that are beyond even the optimistic MVP, but we want to get to sometime in the near future.
+Next-phase improvements we want to reach soon after launch.
 1. 🚗 **The car:**
-Improvements that we can ship in the medium to longer term future.
+Medium-term vision; more complete and refined.
 1. 🏎️ **The race car (aka the North Star UI):**
-This is the ideal product we would ship if we were not bound by ephemeral constraints like time, resources, performance considerations, or backwards compatibility.
+The ideal experience — unconstrained by time, resources, or compatibility.
+Not meant to ship, but to guide everything else.
 
 The meat is the first three stages, since they directly affect what is being worked on.
 The more we go down the list, the less fleshed out specs are, since we _know_ they will change once we have input to customers.
 
-The most controversial of these is the last one: the race car, i.e. the North Star UI.
+The most controversial of these is the last one: the race car, i.e. the _North Star UI_.
 It is the very antithesis of the MVP.
 The MVP describes what we can ship ASAP,
 whereas the North Star describes the most idealized goal, one we may _never_ be able to ship.
@@ -66,29 +69,32 @@ It is easy to dismiss that as a waste of time, a purely academic exercise.
 _“We’re all about shipping. Why would we spend time on something that may not even be feasible?”_ I hear you cry.
 
 Stay with me for a moment.
-Paradoxical as it may be, hopefully by the end of this I will have convinced you that fleshing it out pays dividends in the long run and actually **saves you time**.
+Paradoxical as it may sound, I hope that by the end of this I will have convinced you that fleshing it out pays dividends in the long run and actually **saves you time**.
 
-## 1. It makes product design more deliberate { #deliberate }
+## 1. It exposes the hidden driver of all product design decisions { #driver }
 
 <!-- <figure>
 TODO: Race car with arrows pointing to car, motorcycle, bike, scooter, skateboard.
 </figure> -->
 
-Whether you realize it or not, **the North Star is the only actual input into the product design process.**
-Every other stage is derived from it, like peeling layers off an onion (in fact in some contexts the process of breaking down a bigger shipping goal into milestones that can ship independently is literally called _layering_).
+Whether you realize it or not, **every shipping goal is derived from the North Star**, like peeling layers off an onion.
+In some contexts the process of breaking down a bigger shipping goal into milestones that can ship independently is even called _layering_.
 
-The process is so ingrained, so automatic, that many product designers don’t realize that they are doing it.
-They go from race car to car, or even motorcycle so quickly they barely realize there was anything else there to begin with.
-Thinking about the North Star feels like a guilty pleasure — who has time for this daydreaming?
+<figure>
+<img src="images/onion.png">
+<figcaption>
+Every shipping goal is derived from the North Star, like peeling layers off an onion.
+</figcaption>
+</figure>
+
+The process is so ingrained, so automatic, that many product designers don’t realize they are doing it.
+They go from race car to car to motorcycle so quickly they barely realize there was anything else there to begin with.
+Thinking about the North Star feels like a guilty pleasure — who has time for daydreaming?
 We must ship, _yesterday_!
 
 But the race car is **fundamental**.
 Without it, there is no skateboard — you can’t reduce the unknown.
 Without a solid North Star, your MVP is a confused jumble of design decisions and compromises, so tangled it becomes impossible to tell them apart.
-
-To stick with the transportation metaphor,
-a skateboard might be a good MVP if your ultimate vision is a race car,
-but it would be a _terrible_ minimum viable  cruise ship — you might want to try a wooden raft for that.
 
 <figure>
 <img src="images/boats.png" alt="A wooden raft, then a simple sailboat, then a speedboat, then a yacht, and finally a ship.">
@@ -99,10 +105,14 @@ A skateboard may be a great MVP for a car, but a terrible MVP for a cruise ship.
 </figure>
 
 
-This North Star will likely change a lot down the line, informed by experience and user feedback.
-That’s okay; having an initial destination does not remove your ability to course correct.
+To stick with the transportation metaphor,
+a skateboard might be a good MVP if your ultimate vision is a race car,
+but it would be a _terrible_ minimum viable  cruise ship — you might want to try a wooden raft for that.
 
-## 2. It simplifies problem solving { #problem-solving }
+This North Star will likely change a lot down the line, informed by experience and user feedback.
+That’s okay; **having an initial destination does not remove your ability to course correct**.
+
+## 2. It makes impossible product problems tractable { #problem-solving }
 
 Nearly every domain has a version of _divide and conquer_:
 instead of trying to solve a complex problem all at once, break it down into smaller, more manageable components and solve them separately.
@@ -110,7 +120,7 @@ Product design is no different.
 The concept of a North Star UI breaks down tough product design problems into three more manageable components:
 
 1. **North Star**: What is the ideal solution?
-2. **Ephemeral constraints**: What prevents us from getting there?
+2. **Ephemeral constraints**: What prevents us from getting there right now?
 3. **Compromises**: How close can we reasonably get given these constraints?
 
 Depending on the product problem, this could simplify things a little or a lot.
@@ -128,19 +138,25 @@ because the root disconnect is never addressed head on.
 <figure>
 
 <img src="images/disconnect.png" alt="Two people arguing. One has a speech bubble with a skateboard, the other a speech bubble with a wooden raft. The first also has a thought bubble with a car, the second a thought bubble with a ship.">
+<figcaption>
+
+When the North Star UI is not clearly articulated, everyone has their own.
+</figcaption>
 </figure>
 
-Citing practical constraints feels less confrontational than debating the merits of an idea directly.
-Fleshing out the North Star UI as an explicit goal strips away this noise and brings clarity.
-
-Here is a story that may sound familiar:
-Alice has designed an elegant solution that addresses several user pain points at once — an [eigensolution](../../2023/eigensolutions/).
-She is aware it would be a little tricky to implement, but she thinks the tremendous improvement in user experience is worth it,
-and she even has ideas about how to layer it in such a way that it can ship incrementally, adding value and getting customer feedback earlier.
-Excited, she presents her idea to the product team, only to hear Bob dismiss it with  _"this is way too much work, it’s not worth doing"_.
+Here is a story that will sound familiar to many readers:
+Alice has designed an elegant solution that addresses not just the problem at hand, but several prevalent longstanding user pain points at once — an [eigensolution](../../2023/eigensolutions/).
+She is aware it would be a little trickier to implement, but she thinks the tremendous improvement in user experience is worth the moderate increase in effort.
+She has even designed a deployment strategy that allows it to ship incrementally, adding value and getting customer feedback earlier.
+Excited, she presents her idea to the product team, only to hear Bob dismiss it with  _"this is scope creep and way too much work, it’s not worth doing"_.
 However, what Bob is _actually_ thinking is _"this is a bad idea; any amount of work towards it is a waste"_.
-The discussion is derailed: instead of figuring out whether Alice’s solution is good, the team is now spending all remaining time
-discussing how much work it would be and whether it could be reduced.
+The design session is now derailed.
+At best, instead of figuring out whether Alice’s solution is good, the team is now spending all remaining time discussing how much work it would be and whether it could be reduced.
+This is a dead end because the amount of work was never the actual problem.
+Or worse, Alice backs off and agrees to Bob’s “simpler” idea that is [overfit](https://bootcamp.uxdesign.cc/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7) to the very specific use case being discussed, because she does not want to be seen as unfocused, or not a team player.
+
+Arguing over effort feels safer and less confrontational than arguing over vision — but it’s often a proxy war.
+Fleshing out the North Star UI as an explicit goal strips away this noise and brings clarity.
 
 This is not productive.
 First, if the idea is not good, the amount of work is irrelevant and spending time costing it is putting the cart before the horse.
@@ -201,7 +217,7 @@ In fact, sometimes simply reframing the North Star as a sequence of milestones r
 For an example of this, check out the [CSS Nesting case study](#css-nesting) below.
 </aside>
 
-## 6. Today's constraints are not tomorrow's constraints { #adaptability }
+## 6. It makes your design process more adaptable { #adaptability }
 
 North Star UIs make the product design process more resilient and adaptable.
 I have often seen **"unimplementable" solutions become implementable** down the line, due to changes in internal or external factors, or simply because someone had a lightbulb moment.
@@ -211,7 +227,7 @@ With a solid North Star UI in place, when constraints get lifted we only need to
 
 ### Case studies where constraints were lifted { #case-studies }
 
-I have seen ephemeral constraints get lifted so many times that I have learned to interpret _"cannot be done"_ as _"hard; right now"_.
+In my 20 years of product design, I have seen ephemeral constraints melt away so many times I have learned to interpret _"unimplementable"_ as _"kinda hard; right now"_.
 Some examples from my own experience below.
 
 #### Change in Engineering Momentum: Sentiment Chips { #sentiment-chips }
