@@ -109,11 +109,8 @@ If you want to contribute, one area we could use help with is benchmarking.
 That’s all for now!
 Try it out and let us know what you think!
 
+<a href="https://observe.style" class="cta">Gotta end with a call to action, amirite?</a>
+
 - Docs: [observe.style](https://observe.style)
 - Repo: [leaverou/style-observer](https://github.com/LeaVerou/style-observer)
 - NPM: [style-observer](https://www.npmjs.com/package/style-observer)
-
-
-
-
-<a href="https://observe.style" class="cta">Gotta end with a call to action, amirite?</a>
