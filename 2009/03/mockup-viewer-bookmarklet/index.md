@@ -15,7 +15,7 @@ Not any more! I was so fed up today, that I wrote a little bookmarklet that does
 Enjoy.
 
 {% raw %}
-<a href="javascript:(function(){%20document.body.style.margin%20=%200;%20var%20inner%20=%20window.innerWidth%20||%20document.body.clientWidth,%20img%20=%20document.getElementsByTagName('img')[0];%20img.removeAttribute('width');%20img.removeAttribute('height');%20document.body.scrollLeft%20=%20(img.offsetWidth%20-%20inner)/2;%20})();" class="call-to-action">Mockup viewer</a>
+<a href="javascript:(function(){%20document.body.style.margin%20=%200;%20var%20inner%20=%20window.innerWidth%20||%20document.body.clientWidth,%20img%20=%20document.getElementsByTagName('img')[0];%20img.removeAttribute('width');%20img.removeAttribute('height');%20document.body.scrollLeft%20=%20(img.offsetWidth%20-%20inner)/2;%20})();" class="cta">Mockup viewer</a>
 {% endraw %}
 JS code:
 

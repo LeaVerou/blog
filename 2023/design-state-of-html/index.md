@@ -77,7 +77,7 @@ They also allow for more discussion, and do not clutter Issues, which are better
 I have created a Discussions category for this and seeded it with 55 features spanning 12 focus areas (Forms & Editing, Making Web Components, Consuming Web Components, ARIA & Accessibility APIs, Embedding, Multimedia, Interactivity, Semantic HTML, Templating, Bridging the gap with native, Performance, Security & Privacy).
 These initial ideas and focus areas came from a combination of personal research, as well as several brainstorming sessions with the [WebDX CG](https://www.w3.org/community/webdx/).
 
-<a class="call-to-action" href="https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-features">Vote on Features for State of HTML 2023!</a>
+<a class="cta" href="https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-features">Vote on Features for State of HTML 2023!</a>
 
 ![Screenshot of list of discussions](images/discussions.png)
 
@@ -103,4 +103,4 @@ Some things to keep in mind when voting and generally participating in these dis
 - While the title is "State of HTML", certain JS APIs or even CSS syntax is also relevant, especially those very close to HTML, such as DOM, ARIA, Web Components, PWAs etc.
 - Stable features that have existed for a long time and are widely known are generally less likely to make it to the survey.
 
-<a class="call-to-action" href="https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-features">Now go vote! 🗳</a>
+<a class="cta" href="https://github.com/Devographics/surveys/discussions/categories/state-of-html-2023-features">Now go vote! 🗳</a>

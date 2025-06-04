@@ -9,7 +9,7 @@ tags:
   - "state-of-css"
 ---
 
-<a href="https://survey.devographics.com/survey/state-of-css/2022?source=leaverou" class="call-to-action">Take State of CSS 2022 survey</a>
+<a href="https://survey.devographics.com/survey/state-of-css/2022?source=leaverou" class="cta">Take State of CSS 2022 survey</a>
 
 A while ago I posted a [call for feedback to inform the design of the State of CSS 2022 survey](https://lea.verou.me/2022/07/help-design-the-state-of-css-survey-2022/). The response has been overwhelming and it was glorious. We got quite a lot of [proposals](https://github.com/Devographics/surveys/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc), [feedback](https://github.com/Devographics/surveys/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc), [votes](https://projects.verou.me/mavoice/?repo=devographics/surveys&labels=State%20of%20CSS%202022). But that also meant we had to make some tough decisions about what gets in the survey and what doesn’t, otherwise we'd end up with a survey so long nobody would want to finish it!
 

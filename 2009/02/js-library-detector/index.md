@@ -21,7 +21,7 @@ The logic behind it is that every JavaScript library creates at least one global
 
 So, here is the bookmarklet:
 {% raw %}
-<a href="javascript:if('Prototype'%20in%20window)%20{%20var%20ret%20=%20'Prototype%20'%20+%20Prototype.Version;%20if('Scriptaculous'%20in%20window)%20ret%20+=%20'%20with%20script.aculo.us%20'%20+%20Scriptaculous.Version;%20alert(ret);%20}%20if('jQuery'%20in%20window)%20alert('jQuery%20'%20+%20jQuery.fn.jquery);%20if('MooTools'%20in%20window)%20alert('MooTools%20'%20+%20MooTools.version);%20if('YAHOO'%20in%20window)%20alert('YUI%20'%20+%20YAHOO.VERSION);%20if('dojo'%20in%20window)%20alert('Dojo%20'%20+%20dojo.version);%20if('Ext'%20in%20window)%20alert('ExtJS%20'%20+%20Ext.version);%20if('DOMAssistant'%20in%20window)%20alert('DOMAssistant');" class="call-to-action">JS library detector</a>
+<a href="javascript:if('Prototype'%20in%20window)%20{%20var%20ret%20=%20'Prototype%20'%20+%20Prototype.Version;%20if('Scriptaculous'%20in%20window)%20ret%20+=%20'%20with%20script.aculo.us%20'%20+%20Scriptaculous.Version;%20alert(ret);%20}%20if('jQuery'%20in%20window)%20alert('jQuery%20'%20+%20jQuery.fn.jquery);%20if('MooTools'%20in%20window)%20alert('MooTools%20'%20+%20MooTools.version);%20if('YAHOO'%20in%20window)%20alert('YUI%20'%20+%20YAHOO.VERSION);%20if('dojo'%20in%20window)%20alert('Dojo%20'%20+%20dojo.version);%20if('Ext'%20in%20window)%20alert('ExtJS%20'%20+%20Ext.version);%20if('DOMAssistant'%20in%20window)%20alert('DOMAssistant');" class="cta">JS library detector</a>
 {% endraw %}
 Just drag it to your bookmarks toolbar and it's ready.
 

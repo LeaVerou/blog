@@ -245,7 +245,7 @@ location.href = `vscode://file/Users/leaverou/Documents/lea.verou.me/${document.
 ```
 
 In fact, here it is, ready to be dragged to the bookmarks bar:
-<a href="javascript:location.href = `vscode://file/Users/leaverou/Documents/lea.verou.me/${document.documentElement.dataset.inputpath}`" class="call-to-action">Edit in VS Code</a>
+<a href="javascript:location.href = `vscode://file/Users/leaverou/Documents/lea.verou.me/${document.documentElement.dataset.inputpath}`" class="cta">Edit in VS Code</a>
 
 Now, if only I could find a way to do the opposite: open the localhost URL that corresponds to the Markdown file I’m editing — and my workflow would be complete!
 

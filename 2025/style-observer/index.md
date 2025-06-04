@@ -31,7 +31,7 @@ and I decided this was it:
 I’d either find a good, bulletproof solution, or I would build it myself.
 
 Spoiler alert:
-<a href="https://observe.style" title="And I couldn't even resist registering a domain for it 🤦🏽‍♀️ It’s all fun and games until the renewal bills start coming 🥲" class="call-to-action">Oops, I did it again</a>
+<a href="https://observe.style" title="And I couldn't even resist registering a domain for it 🤦🏽‍♀️ It’s all fun and games until the renewal bills start coming 🥲" class="cta">Oops, I did it again</a>
 
 <!-- more -->
 
@@ -116,4 +116,4 @@ Try it out and let us know what you think!
 
 
 
-<a href="https://observe.style" class="call-to-action">Gotta end with a call to action, amirite?</a>
+<a href="https://observe.style" class="cta">Gotta end with a call to action, amirite?</a>

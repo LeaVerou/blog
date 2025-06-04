@@ -13,7 +13,7 @@ https://twitter.com/LeaVerou/status/827327249305178113
 
 Most suggested complicated tools, some non-free and most unlikely to work on local URLs. I thought damn, what I need is a very simple thing! I could code this in 5 minutes! So I did and [here it is](http://duoload.verou.me/), in case someone else finds it useful! The (minuscule amount of) code is of course on [Github](https://github.com/LeaVerou/duoload).
 
-<a href="http://duoload.verou.me/" class="call-to-action">Duoload</a>
+<a href="http://duoload.verou.me/" class="cta">Duoload</a>
 
 Of course it goes without saying that this is probably a bit inaccurate. Do not use it for mission-critical performance comparisons.
 
