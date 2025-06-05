@@ -4,7 +4,7 @@ date: 2023-07-26
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1684203493731581952
   mastodon: https://front-end.social/@leaverou/110780780762395398
-  bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3k3glspxiab2u
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3k3glspxiab2u
   linkedin: https://www.linkedin.com/posts/leaverou_help-design-the-inaugural-state-of-html-survey-activity-7089972680195469312-MrKr
   facebook: https://www.facebook.com/leaverou/posts/10160859186056192
 tags:

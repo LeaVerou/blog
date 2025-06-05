@@ -6,7 +6,7 @@ page_css: true
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1687194198808600578
   mastodon: https://front-end.social/@leaverou/110827500905765956
-  bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3k43dlymwnb2f
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3k43dlymwnb2f
   linkedin: https://www.linkedin.com/feed/update/urn:li:share:7092960633536602112/
   facebook: https://www.facebook.com/leaverou/posts/10160859274391192
 tags:

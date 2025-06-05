@@ -5,7 +5,7 @@ date_updated: 2023-11-27
 social_posts:
   twitter: https://twitter.com/LeaVerou/status/1720143657238503869
   mastodon: https://front-end.social/@leaverou/111342327439718457
-  bluesky: https://staging.bsky.app/profile/lea.verou.me/post/3kd7xppqorr2n
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3kd7xppqorr2n
   facebook: https://www.facebook.com/leaverou/posts/10161062641831192
   threads: https://www.threads.net/@leaverou/post/CzJ1S1Suyhu
   linkedin: https://www.linkedin.com/posts/leaverou_minimalist-affordances-making-the-right-activity-7125915446041550848-gOr4
