@@ -7,8 +7,9 @@ tags:
   - font-awesome
   - announcement
   - personal
-# social_posts:
-#   twitter:
+social_posts:
+  twitter: https://x.com/LeaVerou/status/1835778001889546575
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3l4cdzgnng62y
 ---
 
 Folks, I have some exciting news to share. 🤩
