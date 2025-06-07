@@ -1,0 +1,242 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 761.2788221349919 463.83203125"
+	width="1522.5576442699837"
+	height="927.6640625"
+>
+	<defs>
+            <style>@import url("/assets/fonts.css");</style>
+		<symbol
+			id="image-crop-192965c4b5d3e63558241897ac79a76f8d550f9d3afc4f20833df91af466324ca3cd4479bf4b6a6763bd5cba0487b2b2-1512095198"
+		>
+			<image
+				href="iceberg.jpg"
+				preserveAspectRatio="none"
+				width="1125.2202283849913"
+				height="479.0000000000003"
+			></image>
+		</symbol>
+		<clipPath id="y4K39Q4ok5O4Oce75qX_g">
+			<rect
+				transform="translate(0 0) rotate(0 380.6394110674959 231.916015625)"
+				width="761.2788221349919"
+				height="463.83203125"
+			></rect>
+		</clipPath>
+	</defs>
+	<mask id="mask-image-crop-xIQylnWlg0nNdtkWSlkYM" fill="#fff">
+		<rect x="79.23828125000011" y="0" width="729" height="432"></rect>
+	</mask>
+	<g clip-path="url(#y4K39Q4ok5O4Oce75qX_g)">
+		<g
+			mask="url(#mask-image-crop-xIQylnWlg0nNdtkWSlkYM)"
+			transform="translate(-63.238281250000114 16) rotate(0 443.87769231749604 215.916015625)"
+		>
+			<use
+				href="#image-crop-192965c4b5d3e63558241897ac79a76f8d550f9d3afc4f20833df91af466324ca3cd4479bf4b6a6763bd5cba0487b2b2-1512095198"
+				width="808.2382812500001"
+				height="432"
+				opacity="1"
+			></use>
+		</g>
+	</g>
+	<g clip-path="url(#y4K39Q4ok5O4Oce75qX_g)">
+		<g
+			transform="translate(351.19721286960805 129.97265625) rotate(0 74.76554107666016 10.565522513517578)"
+		>
+			<text
+				x="0"
+				y="14.893160535054378"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16.904836021628125px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				Core Functionality
+			</text>
+		</g>
+	</g>
+	<g clip-path="url(#y4K39Q4ok5O4Oce75qX_g)">
+		<g transform="translate(156.7683020587068 34.17578125) rotate(0 221.66993713378906 22.5)">
+			<text
+				x="221.66993713378906"
+				y="31.716"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="36px"
+				fill="#ffffff"
+				text-anchor="middle"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				Building a web component
+			</text>
+		</g>
+	</g>
+	<g clip-path="url(#y4K39Q4ok5O4Oce75qX_g)">
+		<g
+			transform="translate(350.6410301697433 194.94239537938228) rotate(0 128.9678955078125 110.00000000000003)"
+		>
+			<text
+				x="0"
+				y="14.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				Responding to attribute changes
+			</text>
+			<text
+				x="0"
+				y="34.096000000000004"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			></text>
+			<text
+				x="0"
+				y="54.096000000000004"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				Accessibility
+			</text>
+			<text
+				x="0"
+				y="74.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			></text>
+			<text
+				x="0"
+				y="94.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				i18n
+			</text>
+			<text
+				x="0"
+				y="114.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			></text>
+			<text
+				x="0"
+				y="134.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				Style customization
+			</text>
+			<text
+				x="0"
+				y="154.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			></text>
+			<text
+				x="0"
+				y="174.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				Content customization
+			</text>
+			<text
+				x="0"
+				y="194.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			></text>
+			<text
+				x="0"
+				y="214.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				Performance
+			</text>
+		</g>
+	</g>
+	<g clip-path="url(#y4K39Q4ok5O4Oce75qX_g)">
+		<g
+			stroke-opacity="0.5"
+			fill-opacity="0.5"
+			transform="translate(610 420) rotate(0 45.66394805908203 10)"
+		>
+			<text
+				x="0"
+				y="14.096"
+				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
+				font-size="16px"
+				fill="#ffffff"
+				text-anchor="start"
+				style="white-space: pre"
+				direction="ltr"
+				dominant-baseline="alphabetic"
+			>
+				lea.verou.me
+			</text>
+		</g>
+	</g>
+</svg>
