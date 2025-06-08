@@ -27,6 +27,7 @@ Just want the components? Here you go:
 <i class="fa-brands fa-npm"></i> NPM</a>
 </figcaption>
 </figure>
+
 ## A love letter to the Bluesky API
 
 I’m old enough to remember the golden Web 2.0 era, when many of today’s big social media platforms grew up.
