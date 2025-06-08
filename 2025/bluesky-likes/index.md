@@ -257,7 +257,7 @@ This way, in the unlikely scenario that someone is using this component by itsel
 they can simply nest content within it to provide a link to the full list of likers or even other context.
 And because **the visually hidden styling is applied to the slot this also allows providing fallback content to everyone**.
 
-### The pains of locale-aware web components
+### The pain of creating locale-aware web components
 
 Both components display formatted numbers:
 `<bluesky-likes>` displays the total number of likes, and `<bluesky-likers>` displays the number of likes not shown (if any).
