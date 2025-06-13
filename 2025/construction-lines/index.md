@@ -113,7 +113,7 @@ Off the top of my head:
 After the impossibly hard constraints and tradeoffs you deal with when designing APIs for the Web platform, regular product problems seem like a cakewalk (_we have versions? And we can actually change things?? And we have reliable metrics?!? And the stakeholders all work at the same company?!?_ 🤯).
 - They often **feed into each other**: DevRel work made me a better communicator in everything I do.
 Usability made me a better speaker and educator[^teachingui], so a better developer advocate too.
-- Leading on the [Web Platform Design Principles](https://w3.org/TR/design-principles) convinced me that **explicit design principles are immensely useful for all product work**.
+- Leading the [Web Platform Design Principles](https://w3.org/TR/design-principles) convinced me that **explicit design principles are immensely useful for all product work**.
 - Web standards taught me that contrary to popular belief, **you do not need a benevolent dictator to ship**.
 But then you do need a good process.
 Consensus does not magically grow on trees, building consensus is its own [art](https://www.w3.org/guide/).
