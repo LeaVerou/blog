@@ -6,14 +6,6 @@ image: images/logo-with-lines.png
 tags: [personal]
 ---
 
-<style>
-#logo-with-lines {
-	max-height: 50vh;
-	margin: auto;
-	background: radial-gradient(white 30%, transparent 80%);
-	display: block;
-}
-</style>
 <object data="images/logo-with-lines.svg" id="logo-with-lines"></object>
 
 I recently stumbled across [The Oatmeal’s series on Creativity](https://theoatmeal.com/comics/creativity_things).
@@ -41,6 +33,15 @@ They often start with infatuation — and end with the realization that you’re
 Letting go always stings, even when it’s the right call.
 There’s always grief: when you’re not ready to move on, you grieve the bond; when you are, you grieve your expectations.
 But every ending leaves behind clarity — about who you are, and what makes you happy.
+
+<style>
+#logo-with-lines {
+	max-height: 50vh;
+	margin: auto;
+	background: radial-gradient(white 30%, transparent 80%);
+	display: block;
+}
+</style>
 
 ## The pursuit of happiness
 
