@@ -46,22 +46,21 @@ But every ending leaves behind clarity — about who you are, and what makes you
 ## The pursuit of happiness
 
 Today is my 39th birthday.
-Additionally, the 20th anniversary of the start of my career [^firstjob] is approaching.
+Additionally, this summer marks my career’s 20th birthday.
 Naturally, I’ve been doing a lot of reflection on the past twenty years.
+
 As is typical for ADHDers, I have done a ton of different things, and built a diverse skillset as a result.
+But what made me happiest?
+The list went a bit like this:
+- **Entrepreneurship:** Co-founding a startup and driving it to become a household name (in Greece — this was 2008!)
+- **Consulting:** Being a full-time consultant, speaker, and author, traveling the world and jumping from one exciting gig to another
+- **Academia:**[^academia] Pushing the boundaries of Human-Computer Interaction at MIT and teaching MIT CS students to care about people.
 
-But what made me the happiest?
-I made a mental list. It went a bit like this:
-- Co-founding a startup and driving it to become a household name (in Greece — this was 2008!)
-- Being a full-time consultant, speaker, and author, traveling the world and jumping from one exciting gig to another
-- Pushing the boundaries of Human-Computer Interaction at MIT and teaching MIT CS students to care about people
+[^academia]: Many things wrong with academia, but the intellectual freedom is unparalleled, and it makes up for a lot.
 
-It became clear that all had three things in common: **autonomy**, **breadth**, and **impact**.
+All had three things in common: **autonomy**, **breadth**, and **impact**.
 
 Those three things have been the biggest predictors of happiness for me — far more than **income** [^alanwatts] or **work-life balance**, which are the usual suspects.
-
-[^firstjob]: Believe it or not, I was more of a graphic designer than a developer back then.
-Logos, posters, corporate identity, magazines, you name it, I’ve done it!
 
 [^alanwatts]: See also [Alan Watts’ “What if money was no object?”](https://www.zenpencils.com/comic/98-alan-watts-what-if-money-was-no-object/) — a classic, but still relevant.
 
@@ -69,7 +68,7 @@ I used to **aspire to work-life balance** in the same way I aspired to frequent 
 Eventually I realized that what makes me happy isn’t working less, it’s loving what I do, and feeling it matters.
 Working less cannot transform how your work makes you _feel_; it can only dampen the effects.
 But dilution doesn’t turn misery into joy — at best it just makes it tolerable.
-Don’t get me wrong, poor WLB _can absolutely_ make you miserable; when long hours are an expectation imposed externally,
+Don’t get me wrong, poor WLB _can absolutely_ make you miserable; when long hours are an externally imposed expectation,
 not an internal drive fueled by passion.
 As with many things in life, it’s _enthusiastic consent_ that makes all the difference.
 
@@ -86,18 +85,18 @@ And I’m like…
   </figcaption>
 </figure>
 
-It’s silly that people are forced to choose, and present themselves as _less than_ to seem more employable.
+It’s silly that people are forced to choose, and present themselves as _less than_ to seem more attractive to hiring managers.
 To use myself as an example:
 * **Web architecture:** I have designed [several](/specs) web technologies that have shipped across all browsers.
 I’ve spent 4 years in the [TAG](https://en.wikipedia.org/wiki/Technical_Architecture_Group),
 reviewing new web technologies across the web platform,
 and eventually leading the [Web Platform Design Principles](https://www.w3.org/TR/design-principles/) effort.
 * **Product/usability/HCI:** Prior to working as Product Lead at Font Awesome,
-I’ve earned a PhD at MIT in Human-Computer Interaction (with a minor in Entrepreneurship & Innovation),
-where I published peer reviewed papers in top-tier HCI conferences,
-and co-created/taught [a on usability and web technologies course](https://designftw.mit.edu) that is now a permanent subject.
-I have run user research for several scientific and industry projects.
-I have started several open source projects, some used all over the Web.
+I’ve earned a PhD at MIT in Human-Computer Interaction with a minor in Entrepreneurship & Innovation.
+I published peer reviewed papers in top-tier HCI conferences,
+and co-created/taught a [course](https://designftw.mit.edu) on usability & web technologies that is now a permanent subject.
+I have run user research for scientific and industry projects.
+I have started several open source projects, some used by millions.
 In the more distant past, I co-founded a (then) well-known social startup in my home country, Greece and ran product, engineering, and design for 3 years.
 * **DevRel:** I’ve given over 100 conference talks, published a bestselling [book](https://amzn.to/3FXipvi) on CSS, and was the first devrel hire at W3C back in 2012.
 I have built dozens of apps and polyfills that stimulated developer interest in new Web features and drove browser adoption.
@@ -147,8 +146,8 @@ so if you need help with certain challenges, or to level up your team around web
 
 Don’t get me wrong, I’m not closing the door to full-time roles.
 I know there are roles out there that value passion and offer the kind of autonomy, breadth, and impact that would let me thrive.
-It’s the ROI of digging through rubble to find them that I’m unsure about — and as a product person at heart, I/E tradeoffs are top of mind.
-But if you have such a unicorn, <a class="contact no-after" data-subject="🦄 role">I’m all ears</a>.
+It’s the ROI of digging through rubble to find them that gives me pause — as a product person at heart, I/E tradeoffs are top of mind.
+But if you have such a unicorn, <a class="contact no-after" data-subject="🦄 job">I’m all ears</a>.
 
 I also _finally_ took a few small steps to make my pro bono work financially sustainable, a long overdue todo item.
 Both pages still need work, but you can now support my writing via [ko-fi](https://ko-fi.com/leaverou)[^dan], and my open source work via [GitHub Sponsors](https://github.com/leaverou).
