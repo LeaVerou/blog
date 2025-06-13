@@ -51,7 +51,7 @@ Naturally, I’ve been doing a lot of reflection.
 
 As is typical for ADHDers, I have done a ton of different things, and built a diverse skillset as a result.
 But what made me happiest?
-The list went a bit like this:
+The list of highs went a bit like this:
 - **Entrepreneurship:** Co-founding a startup and driving it to become a household name (in Greece — this was 2008!)
 - **Consulting:** Being a full-time consultant, speaker, and author, traveling the world and jumping from one exciting gig to another
 - **Academia:**[^academia] Pushing the boundaries of Human-Computer Interaction at MIT and teaching MIT CS students to care about people.
