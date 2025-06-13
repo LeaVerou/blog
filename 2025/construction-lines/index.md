@@ -81,7 +81,7 @@ And I’m like…
   <video controls src="videos/aurora.mp4" loop></video>
   <figcaption>
 
-  [Source](https://www.instagram.com/reel/DKj1uT7hHl-/?igsh=MXBtNWpnNWJnNWczag==)
+Aurora is my spirit animal 🫶🏼 [Source](https://www.instagram.com/reel/DKj1uT7hHl-/?igsh=MXBtNWpnNWJnNWczag==)
   </figcaption>
 </figure>
 
