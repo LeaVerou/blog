@@ -95,7 +95,7 @@ I published peer reviewed papers in top-tier HCI conferences,
 and co-created/taught a [course](https://designftw.mit.edu) on usability & web technologies that is now a permanent subject.
 I have run user research for scientific and industry projects.
 I have started several open source projects, some used by millions.
-In the more distant past, I co-founded a (then) well-known social startup in my home country, Greece and ran product, engineering, and design for 3 years.
+In the more distant past, I co-founded a (then) well-known social startup in my home country, Greece and ran product, engineering, and design for three years (six if you count pre-incorporation).
 * **DevRel:** I’ve given over 100 conference talks, published a bestselling [book](https://amzn.to/3FXipvi) on CSS, and was the first devrel hire at W3C back in 2012.
 I have built dozens of apps and polyfills that stimulated developer interest in new Web features and drove browser adoption.
 
