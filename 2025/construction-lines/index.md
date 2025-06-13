@@ -136,7 +136,7 @@ Don’t get me wrong, I’m not closing the door to full-time roles.
 I know that roles that provide the kind of autonomy, breadth, and impact that would let me thrive _do_ exist.
 Roles where my passion and energy would be celebrated.
 It’s the ROI of digging through rubble to find them that I’m concerned about — and as a product person at heart, I/E tradeoffs are top of mind.
-But if you think you have such a unicorn, <a class="contact no-after" data-subject="🦄 role">I’m all ears</a>.
+But if you have such a unicorn, <a class="contact no-after" data-subject="🦄 role">I’m all ears</a>.
 
 I have also _finally_ taken a few small steps to make my pro bono work financially sustainable, a long overdue todo item.
 You can now support my writing via [ko-fi](https://ko-fi.com/leaverou)[^dan], and my open source work via [GitHub Sponsors](https://github.com/leaverou).
