@@ -1,6 +1,5 @@
 ---
 title: Construction Lines
-draft: true
 date: 2025-06-13
 toc: true
 image: images/logo-with-lines.png
@@ -45,10 +44,9 @@ But every ending leaves behind clarity — about who you are, and what makes you
 
 ## The pursuit of happiness
 
-Today is my 39th birthday.
-Additionally, this summer marks my career’s 20th birthday.
-Naturally, I’ve been doing a lot of reflection on the past twenty years.
-
+Today is my 39th birthday — and this summer marks 20 years since I first dipped my toes into this industry.
+Naturally, I’ve been doing a lot of reflection.
+<!-- more -->
 As is typical for ADHDers, I have done a ton of different things, and built a diverse skillset as a result.
 But what made me happiest?
 The list went a bit like this:
@@ -60,7 +58,7 @@ The list went a bit like this:
 
 All had three things in common: **autonomy**, **breadth**, and **impact**.
 
-Those three things have been the biggest predictors of happiness for me — far more than **income** [^alanwatts] or **work-life balance**, which are the usual suspects.
+These three things have been the biggest predictors of happiness for me — far more than **income** [^alanwatts] or **work-life balance**, which are the usual suspects.
 
 [^alanwatts]: See also [Alan Watts’ “What if money was no object?”](https://www.zenpencils.com/comic/98-alan-watts-what-if-money-was-no-object/) — a classic, but still relevant.
 
