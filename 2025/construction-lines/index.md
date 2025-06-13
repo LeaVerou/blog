@@ -136,7 +136,7 @@ Its _Individual Impact_ is small, but the _Reach_ is millions, since all front-e
 Since consulting and entrepreneurship have been my happiness peaks, I figured I’d try them again.
 Yes, both at once, because after all, we’ve already established that WLB is a foreign concept 🤣
 
-My apprentice [Dmitry](https://d12.me) and I have been in high gear building some exciting things,
+My apprentice [Dmitry](https://d12n.me) and I have been in high gear building some exciting things,
 which I hope to be able to share soon,
 and I feel more exhilarated than I have in years.
 I had missed drawing my own lines.
