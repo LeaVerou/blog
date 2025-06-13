@@ -4,6 +4,7 @@ draft: true
 date: 2025-06-13
 toc: true
 image: images/logo-with-lines.png
+tags: [personal]
 ---
 
 <style>
@@ -37,22 +38,25 @@ I’m proud of what we built together, and grateful for what I learned along the
 But it was time to move on.
 
 Jobs are a lot like relationships.
-They often start with infatuation — and end with the realization that you’re simply not compatible.
-Letting go stings, even when it’s the right call.
-There’s always some grief: when you’re not ready to move on, you grieve the bond; when you are, you grieve your expectations.
+They often start with infatuation — and end with the realization that you’re simply not compatible, and that’s no-one’s fault.
+Letting go always stings, even when it’s the right call.
+There’s always grief: when you’re not ready to move on, you grieve the bond; when you are, you grieve your expectations.
 But every ending leaves behind clarity — about who you are, and what makes you happy.
 
 ## The pursuit of happiness
 
-As the 20th anniversary of my first job [^firstjob] approaches,
-I’ve been doing a lot of reflection on the past twenty years.
-In typical ADHD fashion, I have done a ton of different things, and built a diverse skillset as a result.
+Today is my 39th birthday.
+Additionally, the 20th anniversary of the start of my career [^firstjob] is approaching.
+Naturally, I’ve been doing a lot of reflection on the past twenty years.
+As is typical for ADHDers, I have done a ton of different things, and built a diverse skillset as a result.
+
 But what made me the happiest?
-I realized that all the highs —
-- Co-founding a startup and driving it to become a household name (in Greece)
+I made a mental list. It went a bit like this:
+- Co-founding a startup and driving it to become a household name (in Greece — this was 2008!)
 - Being a full-time consultant, speaker, and author, traveling the world and jumping from one exciting gig to another
-- Pushing the boundaries of Human-Computer Interaction at MIT and [teaching](https://designftw.mit.edu) MIT CS students to care about people
-— had three things in common: **autonomy**, **breadth**, and **impact**.
+- Pushing the boundaries of Human-Computer Interaction at MIT and teaching MIT CS students to care about people
+
+It became clear that all had three things in common: **autonomy**, **breadth**, and **impact**.
 
 Those three things have been the biggest predictors of happiness for me — far more than **income** [^alanwatts] or **work-life balance**, which are the usual suspects.
 
@@ -61,11 +65,11 @@ Logos, posters, corporate identity, magazines, you name it, I’ve done it!
 
 [^alanwatts]: See also [Alan Watts’ “What if money was no object?”](https://www.zenpencils.com/comic/98-alan-watts-what-if-money-was-no-object/) — a classic, but still relevant.
 
-I used to aspire to **work-life balance** in the same way I aspired to frequent exercise — because it was good for me, not because it gave me joy.
+I used to **aspire to work-life balance** in the same way I aspired to frequent exercise — because it was good for me, not because it gave me joy.
 Eventually I realized that what makes me happy isn’t working less, it’s loving what I do, and feeling it matters.
-Working less cannot transform how your work makes you _feel_; it can only dampen it.
+Working less cannot transform how your work makes you _feel_; it can only dampen the effects.
 But dilution doesn’t turn misery into joy — at best it just makes it tolerable.
-Sure, poor WLB _can_ make you miserable; when long hours are an expectation imposed from above,
+Don’t get me wrong, poor WLB _can absolutely_ make you miserable; when long hours are an expectation imposed externally,
 not an internal drive fueled by passion.
 As with many things in life, it’s _enthusiastic consent_ that makes all the difference.
 
@@ -88,36 +92,45 @@ To use myself as an example:
 I’ve spent 4 years in the [TAG](https://en.wikipedia.org/wiki/Technical_Architecture_Group),
 reviewing new web technologies across the web platform,
 and eventually leading the [Web Platform Design Principles](https://www.w3.org/TR/design-principles/) effort.
-* **Product/usability:** Prior to working as Product Lead at Font Awesome,
+* **Product/usability/HCI:** Prior to working as Product Lead at Font Awesome,
 I’ve earned a PhD at MIT in Human-Computer Interaction (with a minor in Entrepreneurship & Innovation),
 where I published peer reviewed papers in top-tier HCI conferences,
 and co-created/taught [a on usability and web technologies course](https://designftw.mit.edu) that is now a permanent subject.
 I have run user research for several scientific and industry projects.
 I have started several open source projects, some used all over the Web.
 In the more distant past, I co-founded a (then) well-known social startup in my home country, Greece and ran product, engineering, and design for 3 years.
-* **DevRel:** I’ve given over 100 conference talks, published a bestselling [book](https://amzn.to/3FXipvi) on CSS, and was the first devrel hire at W3 back in 2012.
+* **DevRel:** I’ve given over 100 conference talks, published a bestselling [book](https://amzn.to/3FXipvi) on CSS, and was the first devrel hire at W3C back in 2012.
 I have built dozens of apps and polyfills that stimulated developer interest in new Web features and drove browser adoption.
 
-Would I present myself as a web architecture expert, a usability/product person, or a devrel person?
+Should I present myself as a web architecture expert, a usability/product person, an HCI researcher, or a Developer Advocate?
+
 What a pointless dilemma if I ever saw one!
+
 **Combining skills across different areas is a strength to be celebrated, not a weakness to be swept under the rug.**
-The crossover between skills is where the magic happens:
+The crossover between skills is where the magic happens.
+Off the top of my head:
 - Understanding usability principles has made me a *far* better web standards designer.
 - **Web standards work is product design on hard mode.**
 After the impossibly hard constraints and tradeoffs you deal with when designing APIs for the Web platform, regular product problems seem like a cakewalk (_we have versions? And we can actually change things?? And we have reliable metrics?!? And the stakeholders all work at the same company?!?_ 🤯).
-- Devrel work has made me a better communicator in everything I do. Usability has made me a better speaker and educator, so better at devrel too.
-- Working on the [Web Platform Design Principles](https://w3.org/TR/design-principles) has convinced me that **explicit design principles are immensely useful for all product work**.
-- Web standards taught me that **contrary to popular belief, you do not need a benevolent dictator to ship**. But then you do need a good process. Consensus does not magically grow on trees, it’s an [art](https://www.w3.org/guide/).
+- They often **feed into each other**: DevRel work made me a better communicator in everything I do.
+Usability made me a better speaker and educator[^teachingui], so a better developer advocate too.
+- Leading on the [Web Platform Design Principles](https://w3.org/TR/design-principles) convinced me that **explicit design principles are immensely useful for all product work**.
+- Web standards taught me that contrary to popular belief, **you do not need a benevolent dictator to ship**.
+But then you do need a good process.
+Consensus does not magically grow on trees, building consensus is its own [art](https://www.w3.org/guide/).
+
+[^teachingui]: Teaching is absolutely a form of UI design — a UI that exposes your knowledge to students — the users.
+There are many similarities between how good educators design their material and how good UI designers design interfaces.
 
 Lastly, **impact** does not have to be about solving world hunger or curing cancer.
 Making people’s lives a _little_ better is meaningful impact too.
-If you like math, you could model total impact as:
+It all boils down to:
 
 $$\text{Impact} = \text{Individual Impact} \times \text{Reach}$$
 
 You can achieve the same total impact by improving the lives of a few people a lot, or the lives of many people a little.
 For example, [my work on web standards](/specs) has been some of the most fulfilling work I’ve ever done.
-Its _Individual Impact_ is small, but the _Reach_ is millions, since all front-end developers out there have to use the same web platform.
+Its _Individual Impact_ is small, but the _Reach_ is millions, since all front-end developers out there use the same web platform.
 
 ## What’s next?
 
@@ -125,22 +138,21 @@ Since consulting and entrepreneurship have been my happiness peaks, I figured I�
 Yes, both at once, because after all, we’ve already established that WLB is a foreign concept 🤣
 
 My apprentice [Dmitry](https://d12.me) and I have been in high gear building some exciting things,
-which I hope to be able to share soon.
-But I feel more exhilarated than I have in years.
-I hadn’t realized how much I missed drawing my own lines.
+which I hope to be able to share soon,
+and I feel more exhilarated than I have in years.
+I had missed drawing my own lines.
 
 In parallel, I’m taking on select [consulting work](/consulting/),
-so if you need help or to level up your team around web architecture, CSS, or usability, [get in touch](/consulting/).
+so if you need help with certain challenges, or to level up your team around web architecture, CSS, or usability, [get in touch](/consulting/).
 
 Don’t get me wrong, I’m not closing the door to full-time roles.
-I know that roles that provide the kind of autonomy, breadth, and impact that would let me thrive _do_ exist.
-Roles where my passion and energy would be celebrated.
-It’s the ROI of digging through rubble to find them that I’m concerned about — and as a product person at heart, I/E tradeoffs are top of mind.
+I know there are roles out there that value passion and offer the kind of autonomy, breadth, and impact that would let me thrive.
+It’s the ROI of digging through rubble to find them that I’m unsure about — and as a product person at heart, I/E tradeoffs are top of mind.
 But if you have such a unicorn, <a class="contact no-after" data-subject="🦄 role">I’m all ears</a>.
 
-I have also _finally_ taken a few small steps to make my pro bono work financially sustainable, a long overdue todo item.
-You can now support my writing via [ko-fi](https://ko-fi.com/leaverou)[^dan], and my open source work via [GitHub Sponsors](https://github.com/leaverou).
-My most popular projects, [Prism](https://opencollective.com/prismjs) (nearing 1.8 **billion** total npm installs! 🤯) and [ColorJS](https://opencollective.com/color) have their own pages.
+I also _finally_ took a few small steps to make my pro bono work financially sustainable, a long overdue todo item.
+Both pages still need work, but you can now support my writing via [ko-fi](https://ko-fi.com/leaverou)[^dan], and my open source work via [GitHub Sponsors](https://github.com/leaverou).
+I made separate pages for my two most popular projects, [Prism](https://opencollective.com/prismjs) (nearing 1.8 **billion** total npm installs! 🤯) and [Color.js](https://opencollective.com/color).
 This is as much about *prioritization* as it is about *sustainability*: **money is an excellent signal about what truly matters to people**.
 
 <aside style="--label: 'PSA'">
