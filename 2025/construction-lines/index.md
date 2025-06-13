@@ -48,6 +48,7 @@ But every ending leaves behind clarity — about who you are, and what makes you
 Today is my 39th birthday — and this summer marks 20 years since I first dipped my toes into this industry.
 Naturally, I’ve been doing a lot of reflection.
 <!-- more -->
+
 As is typical for ADHDers, I have done a ton of different things, and built a diverse skillset as a result.
 But what made me happiest?
 The list went a bit like this:
