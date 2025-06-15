@@ -4,6 +4,10 @@ date: 2025-06-13
 toc: true
 image: images/logo-with-lines.png
 tags: [personal]
+social_posts:
+  twitter: https://x.com/LeaVerou/status/1933550024123707800
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3lriqxa5oek2x
+  mastodon: https://front-end.social/@leaverou/114676723703019818
 ---
 
 <object data="images/logo-with-lines.svg" id="logo-with-lines"></object>
