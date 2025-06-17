@@ -1,12 +1,10 @@
 ---
-title: Designing Web Components to display Bluesky Likes
+title: Bluesky Likes Web Components
 toc: true
 date: 2025-06-17
 image: images/demo.png
 defaultLanguage: javascript
-nutshell: I set out to announce two components I wrote for displaying Bluesky likes
-and ended up ranting about the pain of building accessible, localizable web components in 2025.
-The components are still here, though — lucky you?
+nutshell: I set out to announce two components I wrote for displaying Bluesky likes and ended up ranting about the pain of building accessible, localizable web components in 2025. The components are still here, though — lucky you?
 tags:
 - web-components
 - launch
