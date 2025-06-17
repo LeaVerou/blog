@@ -14,6 +14,8 @@ tags:
 - a11y
 - i18n
 - web-standards
+social_posts:
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3lrtildi4e22q
 ---
 
 <figure>
