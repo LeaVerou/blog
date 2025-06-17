@@ -94,7 +94,7 @@
 				direction="ltr"
 				dominant-baseline="alphabetic"
 			>
-				Responding to attribute changes
+				Responding to changes
 			</text>
 			<text
 				x="0"
@@ -166,7 +166,7 @@
 				direction="ltr"
 				dominant-baseline="alphabetic"
 			>
-				Style customization
+				Customization
 			</text>
 			<text
 				x="0"
@@ -190,32 +190,9 @@
 				direction="ltr"
 				dominant-baseline="alphabetic"
 			>
-				Content customization
-			</text>
-			<text
-				x="0"
-				y="194.096"
-				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
-				font-size="16px"
-				fill="#ffffff"
-				text-anchor="start"
-				style="white-space: pre"
-				direction="ltr"
-				dominant-baseline="alphabetic"
-			></text>
-			<text
-				x="0"
-				y="214.096"
-				font-family="Excalifont, Xiaolai, Segoe UI Emoji"
-				font-size="16px"
-				fill="#ffffff"
-				text-anchor="start"
-				style="white-space: pre"
-				direction="ltr"
-				dominant-baseline="alphabetic"
-			>
 				Performance
 			</text>
+
 		</g>
 	</g>
 	<g clip-path="url(#y4K39Q4ok5O4Oce75qX_g)">
