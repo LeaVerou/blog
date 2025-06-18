@@ -16,6 +16,8 @@ tags:
 - web-standards
 social_posts:
   bluesky: https://bsky.app/profile/lea.verou.me/post/3lrtitvo5v22c
+  mastodon: https://front-end.social/@leaverou/114705753545401012
+  twitter: https://x.com/LeaVerou/status/1935402811635728893
 ---
 
 <figure>
