@@ -574,3 +574,5 @@ And if you use them on a for-profit site, I do expect you to [fund their develop
 That’s an ethical and social expectation, not a legal one (but it will help prioritization, and that’s in your best interest too).
 
 If you’ve used them, I’d love to see what you do with them!
+
+_Thanks to [Léonie Watson](https://tink.uk/) for some of the early a11y feedback, and to [Dmitry Sharabin](https://d12n.me/) for helping with the initial API exploration._
