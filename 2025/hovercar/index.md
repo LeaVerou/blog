@@ -515,7 +515,7 @@ Note that for this framework to be beneficial, it is important that **everyone i
 Co-designing a North Star with a team that sees the process as a pointless thought experiment will only add friction and will not confer any of these benefits.
 Also, this is a mindset that can only work when applied top-down.
 If you are not a decision-maker at your place of work and leadership is not on board,
-you will likely find yourself out of a job if you try to push this ad hoc, without getting leadership buy-in first.
+you will have a very hard time if you try to push this ad hoc, without first getting leadership buy-in.
 You can try sending them a link to this blog post!
 
 If this post resonated, please share your own case studies in the comments.
