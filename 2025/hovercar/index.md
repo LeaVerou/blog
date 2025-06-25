@@ -3,7 +3,7 @@ title: "The Hovercar Framework for Deliberate Product Design"
 date: 2025-06-25
 toc: true
 image: images/disconnect.png
-nutshell: Most teams start with the MVP. But what if the key to shipping great products wasn't starting small — but starting _big_?
+nutshell: Many teams start with the MVP. But what if the key to shipping great products wasn't starting small — but starting _big_? Could great products start at the finish line?
 tags:
   - product
   - product-design
