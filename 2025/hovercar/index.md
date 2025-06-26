@@ -287,7 +287,7 @@ one around Survey UI, and one around a [CSS](https://en.wikipedia.org/wiki/CSS) 
 </figure>
 
 
-The case study is described at length in [Context Chips in Survey Design: “Okay, but how does it _feel_?”](../2024/context-chips/).
+The case study is described at length in [Context Chips in Survey Design: “Okay, but how does it _feel_?”](../../2024/context-chips/).
 In a nutshell, the relevant bits are:
 - Originally, I needed to aggressively prioritize due to minimal engineering resources, which led me to design an extremely low-effort solution which still satisfied requirements.
 - The engineer _hated_ the low-effort idea so much, he prototyped a much higher-effort solution in a day, backend and all.
