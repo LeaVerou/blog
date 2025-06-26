@@ -13,6 +13,12 @@ tags:
   - north-star-ui
   - collaboration
   - case-studies
+social_posts:
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3lshksvdji22e
+  twitter: https://x.com/LeaVerou/status/1938235343309799841
+  linkedin: https://www.linkedin.com/posts/leaverou_the-hovercar-framework-for-deliberate-product-activity-7343775972002779136-RcIe
+  mastodon: https://front-end.social/@leaverou/114746369256793310
+  threads: https://www.threads.com/@leaverou/post/DLV0q3nRWmn
 ---
 
 
