@@ -116,17 +116,13 @@ While the timeline this year is tighter than usual, there is still a little time
 
 <div class="nutshell">
 
-👉🏼 Which new HTML features or Web APIs would you like to see in the survey? 👈🏼
+👉🏼 Which upcoming HTML features or Web APIs are currently on your radar? 👈🏼
 </div>
 
-While the title is "State of HTML",
-anything that wouldn’t fit better in [State of CSS](https://stateofcss.com/) or [State of JS](https://stateofjs.com/) is fair game.
-This includes topics such as accessibility, browser APIs, web components, templating, static site generation, media formats, and more.
-This may seem strange at first, but is no different than how the [HTML specification](https://html.spec.whatwg.org/multipage/) itself covers a lot more than just HTML markup.
-
-The best candidates for this are features that are mature enough to be fleshed out (at least a mature proposal, ideally a spec and [WPT tests](https://web-platform-tests.org/)),
+Why _upcoming_?
+The best candidates for these surveys are features that are mature enough to be fleshed out (at least a mature proposal, ideally a spec and [WPT tests](https://web-platform-tests.org/)),
 but not so mature they have already been implemented in every browser.
-Why? Because these are the features for which a survey such as this can drive **meaningful impact**.
+These are the features for which a survey such as this can drive **meaningful impact**.
 If they are too early to be fleshed out, it’s hard to make progress (but they are still useful to know about as pain points).
 And if they are already implemented everywhere, the only thing that can improve things further is passage of time
 — which unfortunately is a problem for which I have no solution _(yet)_.
@@ -135,6 +131,15 @@ Obviously we’re looking at all the usual suspects already,
 such as [webstatus.dev](https://webstatus.dev/)
 or [Web platform features explorer](https://web-platform-dx.github.io/web-features-explorer).
 However, even if a feature is already on our radar, since space is finite and we can’t possibly include all of them, preliminary signal is still useful!
+
+<article class="note">
+
+While the title is "State of HTML",
+anything that wouldn’t fit better in [State of CSS](https://stateofcss.com/) or [State of JS](https://stateofjs.com/) is fair game.
+This includes topics such as accessibility, browser APIs, web components, templating, static site generation, media formats, and more.
+This may seem strange at first, but is no different than how the [HTML specification](https://html.spec.whatwg.org/multipage/) itself covers a lot more than just HTML markup.
+
+</article>
 
 You can post in the comments here,
 {%- if social_posts -%}
