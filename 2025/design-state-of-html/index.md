@@ -30,7 +30,7 @@ And this ultimately helps you: by getting your voice heard, you can directly inf
 
 Last year, I was too busy to take the lead.
 Wrapping up my PhD and starting a new job immediately after, there was no time to breathe, let alone lead a survey.
-I’m happy to return to it again this year, but my joy is bittersweet.
+I’m happy to be returning to it this year, but my joy is bittersweet.
 When I was first asked to lead this year’s survey a few months ago,
 I was still too busy to take it on.
 Someone else from the community accepted the role — someone incredibly knowledgeable and talented who would have done a **fantastic** job.
