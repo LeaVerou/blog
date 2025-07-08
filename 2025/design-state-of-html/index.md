@@ -6,6 +6,7 @@ image: images/image.png
 social_posts:
   bluesky: https://bsky.app/profile/lea.verou.me/post/3lthyr5cafs2x
   mastodon: https://front-end.social/@leaverou/114819155596989731
+  threads: https://www.threads.com/@leaverou/post/DL275YWRxJ0
 ---
 
 <figure class="no-padding">
@@ -173,7 +174,7 @@ You can post in the comments here (preferred),
 {% if social_posts -%}
 or reply on
 {%- for service, url in social_posts -%}
-	{% if loop.index > 1 %}{% if loop.last %} or{% else %}, {% endif %}{% endif %}
+	{% if loop.index > 1 %}, {% if loop.last %} or{% else %}{% endif %}{% endif %}
 	<a href="{{ url }}" class="{{ service }}"
 		title="{{ social[service].name }} post"
 		style="--color: {{ social[service].color }}"
