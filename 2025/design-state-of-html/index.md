@@ -1,5 +1,5 @@
 ---
-title: Influence the State of HTML 2025 Survey!
+title: Help design the State of HTML 2025 Survey!
 date: 2025-07-08
 draft: true
 tags: [surveys, html, data-analysis, state-of-html]
@@ -14,12 +14,15 @@ Mamma mia, here we go again!
 </figure>
 
 Two years ago, I was funded by Google to [design the inaugural State of HTML survey](../../2023/design-state-of-html/).
-It was probably the most intense of these surveys I ever worked on.
-In addition to the usual research, content, and analysis work, we even [pioneered new survey interaction UIs](../../2024/context-chips/), which improved  all subsequent _State of …_ surveys.
+While I had led _State of …_ surveys before (also graciously sponsored by Google), that was by far the most intense, as 0→1 projects often are.
+In addition to the research, content, and analysis work that goes into every _State of …_ survey,
+the unique challenges it presented were a forcing function for finally tackling some longstanding UX issues with these surveys.
+As a result, we [pioneered new survey interaction UIs](../../2024/context-chips/), and validated them via usability testing.
+This work did not just affect State of HTML, but had ripple effects on all subsequent _State of …_ surveys.
 
 The [results](https://2023.stateofhtml.com/en-US/conclusion/) made it all worth it.
-Turnout was the highest ever for a new Devographics [^devographics] survey: 21K participants, and is still a record high for State of HTML.
-The survey findings heavily influenced [Interop 2024](https://web.dev/blog/interop-2024) and several other initiatives, such as [stylable selects](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select).
+Turnout was the highest ever for a new Devographics [^devographics] survey: **21 thousand participants**, which remains a record high for State of HTML.
+The survey findings heavily influenced [Interop 2024](https://web.dev/blog/interop-2024) (hello Popover API and Declarative Shadow DOM!) and helped prioritize several other initiatives, such as [stylable selects](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select).
 
 [^devographics]: [Devographics](https://devographics.com/) is the company behind "State of …" surveys.
 
@@ -28,9 +31,10 @@ Sure, getting a shareable score about what you know and seeing how you compare t
 And this ultimately helps you: by getting your voice heard, you can directly influence the tools you work with.
 **It's a win-win: developers get better tools, and browser vendors get better roadmaps.**
 
-Last year, I was too busy to take the lead.
+Last year, I was too busy to take the lead again.
 Wrapping up my PhD and starting a new job immediately after, there was no time to breathe, let alone lead a survey.
 I’m happy to be returning to it this year, but my joy is bittersweet.
+
 When I was first asked to lead this year’s survey a few months ago,
 I was still too busy to take it on.
 Someone else from the community accepted the role — someone incredibly knowledgeable and talented who would have done a **fantastic** job.
@@ -46,12 +50,14 @@ and asked about their familiarity and sentiment towards them.
 At the end, they get a score based on how many they were familiar with that they can share with others,
 and browser vendors and standards groups get signal on which upcoming features to prioritize or improve.
 
-You can see which features were included in last year’s survey [here](https://2024.stateofhtml.com/en-US/features/) or by expanding [^expanding] the table below.
+You can see which features were included in last year’s survey [here](https://2024.stateofhtml.com/en-US/features/) or in [^expanding] the table below.
 
-[^expanding]: As an easter egg, this widget is just a `<details>` element with custom CSS.
-Inspect to see how it works.
+[^expanding]: As an Easter egg, this widget is just a `<details>` element with custom CSS.
+Inspect it to see how it works!
+It works best in Chrome and Safari, as they fully support [`::details-content`](https://caniuse.com/mdn-css_selectors_details-content).
+Chrome also supports [`calc-size()`](https://caniuse.com/mdn-css_types_calc-size), which enables a nice animation, while the interaction in Safari is more abrupt.
 In terms of a11y, the summary gets spoken out as a regular `<summary>` element, with "Show more" or "Show less" at the end of its content.
-It seems ok-ish to me, but I’d love to hear from those who have more expertise in this area.
+It seems ok-ish to me, but I’d love to hear from those with more expertise in this area.
 
 <details class="with-preview">
 <summary>State of HTML Features</summary>
@@ -119,22 +125,27 @@ While the timeline this year is tighter than usual, there is still a little time
 👉🏼 Which upcoming HTML features or Web APIs are currently on your radar? 👈🏼
 </div>
 
-Why _upcoming_?
+What does "on your radar" mean? Features you’re excited about and would love to see progress on.
+
+Why focus on _upcoming_ features?
 The best candidates for these surveys are features that are mature enough to be fleshed out (at least a mature proposal, ideally a spec and [WPT tests](https://web-platform-tests.org/)),
 but not so mature they have already been implemented in every browser.
 These are the features for which a survey such as this can drive **meaningful impact**.
-If they are too early to be fleshed out, it’s hard to make progress (but they are still useful to know about as pain points).
-And if they are already implemented everywhere, the only thing that can improve things further is passage of time
-— which unfortunately is a problem for which I have no solution _(yet)_.
+
+If it's so early for a feature that it's not yet fleshed out, it's hard to make progress via initiatives such as [Interop](https://wpt.fyi/interop).
+Interest is still useful signal to help prioritize work on fleshing it out, but it’s a bit of a longer game.
+And for features that are already implemented everywhere, the only thing that can improve things further is passage of time
+— a problem for which I unfortunately have no solution _(yet)_.
 
 Obviously we’re looking at all the usual suspects already,
-such as [webstatus.dev](https://webstatus.dev/)
-or [Web platform features explorer](https://web-platform-dx.github.io/web-features-explorer).
-However, even if a feature is already on our radar, since space is finite and we can’t possibly include all of them, preliminary signal is still useful!
+and initiatives such as [webstatus.dev](https://webstatus.dev/)
+and [Web platform features explorer](https://web-platform-dx.github.io/web-features-explorer) provide a treasure trove of data which makes this task infinitely easier than it used to be.
+But this kind of preliminary signal is also useful for filtering and prioritization — to give you a sense, my list of candidate new features to ask about already has 57 items (!).
+Given that State of HTML 2024 asked about 49 features, that will need some _very_ heavy pruning.
 
 <article class="note">
 
-While the title is "State of HTML",
+While the title is _"State of HTML"_,
 anything that wouldn’t fit better in [State of CSS](https://stateofcss.com/) or [State of JS](https://stateofjs.com/) is fair game.
 This includes topics such as accessibility, browser APIs, web components, templating, static site generation, media formats, and more.
 This may seem strange at first, but is no different than how the [HTML specification](https://html.spec.whatwg.org/multipage/) itself covers a lot more than just HTML markup.
