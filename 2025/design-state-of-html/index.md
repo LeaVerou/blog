@@ -1,7 +1,6 @@
 ---
-title: Help design the State of HTML 2025 Survey!
+title: Influence the State of HTML 2025 Survey!
 date: 2025-07-08
-draft: true
 tags: [surveys, html, data-analysis, state-of-html]
 image: images/image.png
 ---
