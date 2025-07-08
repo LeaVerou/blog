@@ -3,6 +3,9 @@ title: Influence the State of HTML 2025 Survey!
 date: 2025-07-08
 tags: [surveys, html, data-analysis, state-of-html]
 image: images/image.png
+social_posts:
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3lthyr5cafs2x
+  mastodon: https://front-end.social/@leaverou/114819155596989731
 ---
 
 <figure class="no-padding">
@@ -30,6 +33,20 @@ Sure, getting a shareable score about what you know and seeing how you compare t
 And this ultimately helps you: by getting your voice heard, you can directly influence the tools you work with.
 **It's a win-win: developers get better tools, and browser vendors get better roadmaps.**
 
+<aside class="no-icon">
+
+<h4>Fun fact</h4>
+
+One of my favorite examples of **impact** these surveys have driven is [CSS Nesting](https://www.youtube.com/watch?v=hcEDJq7jfdY).
+Browsers ignored the proposal to do Nesting natively for **a decade**, the rationale being that preprocessors served the need just fine.
+Then it came up in State of CSS 2022 as a top pain point and they **scrambled** to get it implemented ASAP.
+It was Baseline just a year later.
+Nothing moves things faster than demonstrating a clear need, and these surveys are a great way to do that.
+
+</aside>
+
+## State of HTML 2025
+
 Last year, I was too busy to take the lead again.
 Wrapping up my PhD and starting a new job immediately after, there was no time to breathe, let alone lead a survey.
 I’m happy to be returning to it this year, but my joy is bittersweet.
@@ -42,7 +59,7 @@ Understandably, leading a developer survey became the least of their concerns.
 In the meantime, I made a few [decisions](../construction-lines/) that opened up some availability, and I was able to step in at the last minute.
 It’s a sobering reminder that events which feel far away can hit close to home — shaping not just headlines, but the work and lives of people we know.
 
-## Web Platform Features at the verge of Interop
+### Web Platform Features at the verge of Interop
 
 A big part of these surveys is "feature questions": respondents are presented with a series of web platform features,
 and asked about their familiarity and sentiment towards them.
@@ -151,21 +168,19 @@ This may seem strange at first, but is no different than how the [HTML specifica
 
 </article>
 
-You can post in the comments here,
-{%- if social_posts -%}
-or reply on any of the following social posts:
-
+Any way to reach me works fine.
+You can post in the comments here (preferred),
+{% if social_posts -%}
+or reply on
 {%- for service, url in social_posts -%}
-	{% if social[service] -%}
-	<a href="{{ url }}"
-		class="{{ service }}"
+	{% if loop.index > 1 %}{% if loop.last %} or{% else %}, {% endif %}{% endif %}
+	<a href="{{ url }}" class="{{ service }}"
 		title="{{ social[service].name }} post"
 		style="--color: {{ social[service].color }}"
 		target="_blank"><i class="fa-brands fa-{{ social[service].icon }}"></i> {{ social[service].name }}</a>
-	{%- endif %}
-{%- endfor -%}
+{%- endfor %}.
 {% else %}
 or ping me on any of my socials.
-{%- endif %}
+{%- endif -%}
 Make sure to check the other replies first, and 👍 those with features you care about.
 Looking forward to your ideas and comments!
