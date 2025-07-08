@@ -117,7 +117,7 @@ CSS Custom Highlight API|  | ✅ |
 </details>
 
 I believe that co-designing these surveys with the community is the best way to avoid blind spots.
-While the timeline this year is tighter than usual, there is still a little time to ask:
+While the timeline this year is tighter than usual (**the survey is launching later this month**), there is still a little time to ask:
 
 <div class="nutshell">
 
