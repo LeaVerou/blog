@@ -7,6 +7,8 @@ social_posts:
   bluesky: https://bsky.app/profile/lea.verou.me/post/3lthyr5cafs2x
   mastodon: https://front-end.social/@leaverou/114819155596989731
   threads: https://www.threads.com/@leaverou/post/DL275YWRxJ0
+  linkedin: https://www.linkedin.com/posts/leaverou_influence-the-state-of-html-2025-survey-activity-7348727971072958464-mXdy
+  twitter: https://x.com/LeaVerou/status/1942962080568520938
 ---
 
 <figure class="no-padding">
