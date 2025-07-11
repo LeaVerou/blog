@@ -28,6 +28,8 @@ This work did not just affect State of HTML, but had ripple effects on all subse
 The [results](https://2023.stateofhtml.com/en-US/conclusion/) made it all worth it.
 Turnout was the highest ever for a new Devographics [^devographics] survey: **21 thousand participants**, which remains a record high for State of HTML.
 The survey findings heavily influenced [Interop 2024](https://web.dev/blog/interop-2024) (hello Popover API and Declarative Shadow DOM!) and helped prioritize several other initiatives, such as [stylable selects](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select).
+Despite lower 2024 participation, the survey still significantly influenced [Interop 2025](https://web.dev/blog/interop-2025);
+notably, View transitions was added after being prominent in the survey for two years in a row.
 
 [^devographics]: [Devographics](https://devographics.com/) is the company behind "State of …" surveys.
 
