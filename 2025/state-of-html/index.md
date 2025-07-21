@@ -27,7 +27,8 @@ Mamma mia, here we go again!
 </figure>
 
 About two weeks ago, I [announced](../design-state-of-html/) that I was back leading this year’s State of HTML 2025 survey, after a one year hiatus.
-After two weeks of hard work from a small team spanning three continents, we are finally ready to launch the survey!
+We are grateful for all the suggestions that poured in, they were immensely helpful in shaping the survey.
+After two weeks of hard work from a small team spanning three continents, we are finally ready to launch!
 
 I would urge **each and every one of you that works with the web platform to fill out this survey**.
 It’s a unique opportunity to have your voice heard in the browser vendors’ decision-making process.
