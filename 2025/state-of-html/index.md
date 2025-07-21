@@ -2,6 +2,7 @@
 title: State of HTML 2025 now open!
 date: 2025-07-22
 image: ../design-state-of-html/images/image.png
+description: State of HTML 2025 survey is now open! Take it now to have your voice heard and influence browsers' and standards groups' roadmaps!
 toc: true
 draft: true
 tags:
@@ -14,8 +15,8 @@ tags:
 
 <div class=nutshell>
 
-**tl;dr** the brand new State of HTML survey is finally open!<br>
-<a href="https://survey.devographics.com/en-US/survey/state-of-html/2025/?source=leaverou" class="cta" target="_blank">Take State of HTML 2025 Survey</a>
+State of HTML 2025 survey is now open!
+<a href="https://survey.devographics.com/en-US/survey/state-of-html/2025/?source=leaverou" class="cta" target="_blank" style="--icon: var(--icon-ballot-check);">Take it now</a>
 </div>
 
 <figure class="no-padding" style="background: #383336">
