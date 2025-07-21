@@ -166,18 +166,6 @@ Fun fact: None of the people working on these surveys is a native English speake
 However, since translations are a community effort, they are not necessarily complete, especially in the beginning.
 If you are a native speaker of a language that is not yet complete, please consider [helping out](https://github.com/Devographics/locale-en-US#readme)!
 
-<figure class="float">
-
-<a href="images/languages-2024.png" target="_blank">
-<img src="images/languages-2024.png" alt="Screenshot showing dozens of languages and their contributors" style="height: 15em">
-</a>
-
-<figcaption>
-
-[State of HTML 2024](https://survey.devographics.com/en-US/survey/state-of-html/2024) had translations for 31 languages.
-</figcaption>
-</figure>
-
 </details>
 
 <details name="faq">
