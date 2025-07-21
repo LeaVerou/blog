@@ -11,8 +11,10 @@ social_posts:
   twitter: https://x.com/LeaVerou/status/1942962080568520938
 ---
 
-<figure class="no-padding">
+<figure class="no-padding" style="background: #383336">
+<a href="https://survey.devographics.com/en-US/survey/state-of-html/2025/?source=leaverou" target="_blank">
 <img src="images/image.png" alt="State of HTML 2025">
+</a>
 <figcaption>
 Mamma mia, here we go again!
 </figcaption>
