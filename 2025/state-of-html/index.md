@@ -10,6 +10,11 @@ tags:
   - html
   - surveys
   - state-of-html
+social_posts:
+  bluesky: https://bsky.app/profile/did:plc:eagnfcoqnbtzpkglrtej6ayg/post/3luksmuu6m22y
+  twitter: https://x.com/LeaVerou/status/1947678622304678306
+  mastodon: https://front-end.social/@leaverou/114897544681797479
+  threads: https://www.threads.com/@leaverou/post/DMaj7N2xPeQ
 ---
 
 <div class=nutshell>
