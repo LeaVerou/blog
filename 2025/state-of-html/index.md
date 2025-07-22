@@ -4,7 +4,6 @@ date: 2025-07-22
 image: ../design-state-of-html/images/image.png
 description: State of HTML 2025 survey is now open! Take it now to have your voice heard and influence browsers' and standards groups' roadmaps!
 toc: true
-draft: true
 tags:
   - launch
   - news
@@ -15,7 +14,7 @@ tags:
 
 <div class=nutshell>
 
-State of HTML 2025 survey is now open!
+**tl;dr**: State of HTML 2025 survey is now open!
 <a href="https://survey.devographics.com/en-US/survey/state-of-html/2025/?source=leaverou" class="cta" target="_blank" style="--icon: var(--icon-ballot-check);">Take it now</a>
 </div>
 
@@ -42,7 +41,7 @@ In addition to browsers, several standards groups are also using the results for
 Additionally, you get to learn about new and upcoming features you may have missed,
 and get a personalized, sharable score at the end to see how you compare to other respondents!
 
-<a href="https://survey.devographics.com/en-US/survey/state-of-html/2025/?source=leaverou" class="cta" target="_blank">Take State of HTML 2025 Survey</a>
+<a href="https://survey.devographics.com/en-US/survey/state-of-html/2025/?source=leaverou" class="cta large" target="_blank" style="--icon: var(--icon-ballot-check);">Take State of HTML 2025 Survey</a>
 
 <div class="info">
 
@@ -52,12 +51,21 @@ as preliminary data will be directly used to inform Interop 2026.
 
 </div>
 
+## Acknowledgements
+
+I would like to thank the following people for their help in fleshing out the survey:
+
+- [Sacha Greif](https://sachagreif.com/) for actually implementing the survey and tirelessly discussing my ideas
+- My apprentice [Dmitry Sharabin](https://d12n.me/) for various fixes and improvements
+- My Google contacts, [Philip Jägenstedt](https://foolip.org/) and [Kadir Topal](https://bsky.app/profile/atopal.bsky.social) for making my involvement possible
+- And everyone who responded to my earlier [call for suggestions](../design-state-of-html/) — these were invaluable in shaping the survey, and I wish I could include them all!
+
 ## FAQ
 
-<details name="faq">
+<details>
 <summary>
 
-### What’s new this year?
+### What’s new this year? { .icon-before style="--icon: var(--icon-sparkles);" }
 </summary>
 
 We spent a lot of time thinking about which features we are asking about and why.
@@ -80,10 +88,10 @@ Last but not least, we introduced browser support icons for each feature, per po
 ![](images/baseline-icons.png)
 
 </details>
-<details name="faq">
+<details>
 <summary>
 
-### Can I edit my responses?
+### Can I edit my responses? { .icon-before style="--icon: var(--icon-pen-to-square);" }
 </summary>
 
 **Absolutely!** Do not worry about filling it out perfectly in one go.
@@ -94,10 +102,10 @@ so you can have it open in a browser tab and revisit it periodically.
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-### Why are there JS questions in an HTML survey?
+### Why are there JS questions in an HTML survey? { .icon-before style="--icon: var(--icon-js);" }
 </summary>
 
 This question comes up a lot every year.
@@ -123,10 +131,10 @@ There is also a question at the end, where you can select that you only write HT
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-### Why are some features included that are early stage proposals with no browser support?
+### Why are some features included that are early stage proposals with no browser support? { .icon-before style="--icon: var(--icon-flask);" }
 </summary>
 
 While proposals with no browser support are not good candidates for immediate prioritization by browsers,
@@ -142,10 +150,10 @@ We are hoping this will also help prevent cases where participants confuse a new
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-### Is the survey only available in English?
+### Is the survey only available in English? { .icon-before style="--icon: var(--icon-language);" }
 </summary>
 
 Absolutely not! Localization has been an integral part of these surveys since the beginning.
@@ -180,15 +188,15 @@ If you are a native speaker of a language that is not yet complete, please consi
 
 </details>
 
-<details name="faq">
+<details>
 <summary>
 
-### I found a bug, what should I do?
+### I found a bug, what should I do? { .icon-before style="--icon: var(--icon-bug);" }
 </summary>
 
 Please file an issue so we can fix it!
 
-- [File content issue](https://github.com/Devographics/surveys/issues/new)
-- [File technical issue](https://github.com/Devographics/Monorepo/issues/new)
+- [File content issue](https://github.com/Devographics/surveys/issues/new){ .icon-after style="--icon: var(--icon-arrow-up-right-from-square);" }
+- [File technical issue](https://github.com/Devographics/Monorepo/issues/new){ .icon-after style="--icon: var(--icon-arrow-up-right-from-square);" }
 
 </details>
