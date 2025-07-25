@@ -15,6 +15,7 @@ social_posts:
   twitter: https://x.com/LeaVerou/status/1947678622304678306
   mastodon: https://front-end.social/@leaverou/114897544681797479
   threads: https://www.threads.com/@leaverou/post/DMaj7N2xPeQ
+  linkedin: https://www.linkedin.com/posts/leaverou_state-of-html-2025-activity-7354538378433880065--VEa
 ---
 
 <div class=nutshell>
