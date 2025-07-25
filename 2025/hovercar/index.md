@@ -320,7 +320,7 @@ All too often, product decisions are made in a vacuum, based on gut feelings and
 Backing them up with **data**, such as usability testing sessions is an excellent way to demonstrate (and test!) their basis.
 When possible, **having engineers observe user testing sessions firsthand** can be much more powerful than secondhand reports.
 
-<!--
+{#
 ### CSS Conic Gradients { #conic-gradients }
 
 <figure class="float" id="hue-wheel">
@@ -361,7 +361,7 @@ Browsers do not implement things like shadows and gradients from scratch, they u
 At the time these libraries did not support any primitive that could be used to render conic gradients (e.g. sweep gradients, mesh gradients, etc.).
 In the years that followed, one after another these libraries added support for some kind of gradient primitive that could be used to easily render conic gradients, which took the proposal from prohibitively high to low effort.
 I also created a [polyfill](../../2015/06/conical-gradients-today/) which stimulated developer demand, increasing Impact.
-These two things together took the Impact/Effort ratio from "not worth it" to "let’s do this, stat" and in 2 years the feature was implemented across all major browsers. -->
+These two things together took the Impact/Effort ratio from "not worth it" to "let’s do this, stat" and in 2 years the feature was implemented across all major browsers. #}
 
 ### Relaxed CSS Nesting and the Power of Evolution { #css-nesting }
 
