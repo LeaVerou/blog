@@ -1,0 +1,100 @@
+/*
+#2f9e44 - MVP
+#9c36b5 - v1
+#0c8599 - v2
+*/
+
+:root {
+	--color-mvp: #2f9e44;
+	--color-v1: #9c36b5;
+	--color-v2: #0c8599;
+}
+
+@keyframes toggle {
+	from, 33.3% {
+		opacity: 1;
+	}
+	33.4%, to {
+		opacity: 0;
+	}
+}
+
+/* Animation for version elements */
+.mvp, .v1, .v2 {
+	animation: toggle 3s infinite;
+}
+
+.v1 {
+	animation-delay: 1s;
+	opacity: 0;
+}
+
+.v2 {
+	animation-delay: 2s;
+	opacity: 0;
+}
+
+@font-face {
+	font-family: "Excalifont";
+	src: url("/assets/fonts/Excalifont-Regular.woff2");
+}
+
+:root {
+	font-family: Excalifont, Segoe UI Emoji;
+}
+
+/* Common path styles */
+path {
+	stroke-linecap: round;
+	fill: none;
+}
+
+/* Grid lines */
+path.grid {
+	stroke: #1e1e1e;
+	stroke-width: 1;
+}
+
+/* Version curves */
+path.curve {
+	stroke-width: 2;
+	stroke-opacity: 0.7;
+	fill-opacity: 0.7;
+}
+
+/* Text styles - only what's different */
+text {
+	white-space: pre;
+	direction: ltr;
+	dominant-baseline: alphabetic;
+}
+
+/* Axis labels */
+text.label {
+	font-size: 28px;
+	fill: #1e1e1e;
+	text-anchor: end;
+}
+
+/* Version labels */
+text.version {
+	font-size: 36px;
+	text-anchor: start;
+}
+
+/* Caption text */
+text.caption {
+	font-size: 48px;
+	fill: #1e1e1e;
+	text-anchor: start;
+}
+
+/* Version colors */
+text.mvp { fill: var(--color-mvp); }
+text.v1 { fill: var(--color-v1); }
+text.v2 { fill: var(--color-v2); }
+
+/* Path colors */
+path.mvp { stroke: var(--color-mvp); }
+path.v1 { stroke: var(--color-v1); }
+path.v2 { stroke: var(--color-v2); }
