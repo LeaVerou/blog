@@ -1,13 +1,40 @@
-/*
-#2f9e44 - MVP
-#9c36b5 - v1
-#0c8599 - v2
-*/
+@font-face {
+	font-family: "Excalifont";
+	src: url("/assets/fonts/Excalifont-Regular.woff2");
+}
 
 :root {
 	--color-mvp: #2f9e44;
 	--color-v1: #9c36b5;
 	--color-v2: #0c8599;
+	color: #1e1e1e;
+}
+
+#hlf {
+	--path-mvp: path("M82.7 497.56 C92.92 487.48, 126.72 453.26, 144.35 439.22 C161.98 425.17, 181.42 417.69, 188.5 413.29 M79.79 494.72 C88.73 484.84, 124.67 456.23, 142.4 441.96 C160.14 427.68, 178.1 414.74, 185.2 409.06");
+	--path-v1: path("M78.78 536.74 C126.25 500.25, 276.23 381.51, 351.52 327.19 C426.81 272.87, 502.17 229.92, 532.52 209.81 M76.46 541.99 C121.68 508.11, 272.72 387.43, 348 331.41 C423.27 275.38, 497.37 226.17, 528.06 205.74");
+	--path-v2: path("M78.66 539.65 C142.31 489.89, 337.27 336.53, 467.37 248.25 C597.47 159.98, 793.39 48.92, 858.26 9.21 M82.39 536.17 C147.66 486.52, 337.63 330.02, 466.59 242.8 C595.55 155.57, 792.1 51.64, 857.16 11.83");
+}
+
+#llf {
+	--path-mvp: path("M827.73 19.81 C705.5 20.11, 217.6 21.13, 95.52 20.01 M824.47 16.91 C701.62 16.41, 214.6 15.47, 92.63 16.22");
+	--path-v1: path("M99.06 251.98 C145.68 242.35, 290.59 233.67, 366.68 198.58 C442.77 163.49, 481.92 71.22, 557.59 41.43 C633.27 11.65, 776.61 22.96, 820.75 19.87 M96.74 257.23 C140.9 249.24, 287.09 238.69, 363.15 201.9 C439.21 165.1, 477.1 66.57, 553.12 36.46 C629.14 6.35, 775.16 23.29, 819.26 25.25");
+	--path-v2: path("M80.92 535.53 C123.3 490.11, 256.04 348.45, 334.38 266.48 C412.72 184.52, 469.63 84.01, 550.95 43.75 C632.27 3.49, 777.59 28.7, 822.3 24.91 M78.5 540.01 C119.94 495.86, 254.05 353.58, 332.42 269.96 C410.79 186.35, 466.79 80.88, 548.71 39.34 C630.63 -2.2, 777.07 23.67, 822.9 20.73");
+}
+
+.mvp {
+	--path: var(--path-mvp);
+	--color: var(--color-mvp);
+}
+
+.v1 {
+	--path: var(--path-v1);
+	--color: var(--color-v1);
+}
+
+.v2 {
+	--path: var(--path-v2);
+	--color: var(--color-v2);
 }
 
 @keyframes toggle {
@@ -19,8 +46,27 @@
 	}
 }
 
-/* Animation for version elements */
-.mvp, .v1, .v2 {
+@keyframes curve {
+	from, 33.3% {
+		d: var(--path-mvp);
+		stroke: var(--color-mvp);
+	}
+	33.4%, 66.6% {
+		d: var(--path-v1);
+		stroke: var(--color-v1);
+	}
+	66.7%, to {
+		d: var(--path-v2);
+		stroke: var(--color-v2);
+	}
+}
+
+.curve {
+	animation: curve 3s infinite;
+	stroke: var(--color);
+}
+
+.version {
 	animation: toggle 3s infinite;
 }
 
@@ -34,10 +80,7 @@
 	opacity: 0;
 }
 
-@font-face {
-	font-family: "Excalifont";
-	src: url("/assets/fonts/Excalifont-Regular.woff2");
-}
+
 
 :root {
 	font-family: Excalifont, Segoe UI Emoji;
@@ -51,7 +94,7 @@ path {
 
 /* Grid lines */
 path.grid {
-	stroke: #1e1e1e;
+	stroke: currentColor;
 	stroke-width: 1;
 }
 
@@ -60,6 +103,12 @@ path.curve {
 	stroke-width: 2;
 	stroke-opacity: 0.7;
 	fill-opacity: 0.7;
+
+
+
+	&.mvp {
+
+	}
 }
 
 /* Text styles - only what's different */
@@ -72,7 +121,7 @@ text {
 /* Axis labels */
 text.label {
 	font-size: 28px;
-	fill: #1e1e1e;
+	fill: currentColor;
 	text-anchor: end;
 }
 
@@ -80,21 +129,12 @@ text.label {
 text.version {
 	font-size: 36px;
 	text-anchor: start;
+	fill: var(--color);
 }
 
 /* Caption text */
 text.caption {
 	font-size: 48px;
-	fill: #1e1e1e;
+	fill: currentColor;
 	text-anchor: start;
 }
-
-/* Version colors */
-text.mvp { fill: var(--color-mvp); }
-text.v1 { fill: var(--color-v1); }
-text.v2 { fill: var(--color-v2); }
-
-/* Path colors */
-path.mvp { stroke: var(--color-mvp); }
-path.v1 { stroke: var(--color-v1); }
-path.v2 { stroke: var(--color-v2); }
