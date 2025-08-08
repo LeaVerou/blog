@@ -7,13 +7,16 @@
 	--color-mvp: #2f9e44;
 	--color-v1: #9c36b5;
 	--color-v2: #0c8599;
-	color: #1e1e1e;
+	--color-text: #1e1e1e;
+
+	color: var(--color-text);
+	font-family: Excalifont, Segoe UI Emoji;
 }
 
 #hlf {
-	--path-mvp: path("M 83 498 C 93 487, 127 453, 144 439 C 162 425, 181 418, 189 413 M 80 495 C 89 485, 125 456, 142 442 C 160 428, 178 415, 185 409");
-	--path-v1: path("M 79 537 C 126 500, 276 382, 352 327 C 427 273, 502 230, 533 210 M 76 542 C 122 508, 273 387, 348 331 C 423 275, 497 226, 528 206");
-	--path-v2: path("M 79 540 C 142 490, 337 337, 467 248 C 597 160, 793 49, 858 9 M 82 536 C 148 487, 338 330, 467 243 C 596 156, 792 52, 857 12");
+	--path-mvp: path("M 79 540 C 93 516 127 482 144 468 C 162 454 178 446 187 441 M 78 534 C 102 509 125 485 142 471 C 160 457 178 444 185 438");
+	--path-v1:  path("M 79 540 C 126 500 276 382 352 327 C 427 273 502 230 533 210  M 80 540  C 122 508 273 387 348 331 C 423 275 497 226 528 206");
+	--path-v2:  path("M 79 540 C 142 490 337 337 467 248 C 597 160 793 49  858 9    M 80 540  C 148 487 338 330 467 243 C 596 156 792 52 857 12");
 }
 
 #llf {
@@ -22,69 +25,80 @@
 	--path-v2: path("M 81 536 C 123 490, 256 348, 334 266 C 413 185, 470 84, 551 44 C 632 3, 778 29, 822 25 M 79 540 C 120 496, 254 354, 332 270 C 411 186, 467 81, 549 39 C 631 -2, 777 24, 823 21");
 }
 
-.mvp {
-	--path: var(--path-mvp);
-	--color: var(--color-mvp);
+#grid {
+	color: var(--color-text);
 }
 
-.v1 {
-	--path: var(--path-v1);
-	--color: var(--color-v1);
-}
 
-.v2 {
-	--path: var(--path-v2);
-	--color: var(--color-v2);
-}
-
-@keyframes toggle {
-	from, 33.3% {
-		opacity: 1;
-	}
-	33.4%, to {
-		opacity: 0;
-	}
-}
 
 @keyframes curve {
-	from, 33.3% {
+	from, 25% {
 		d: var(--path-mvp);
-		stroke: var(--color-mvp);
+		color: var(--color-mvp);
 	}
-	33.4%, 66.6% {
+	35%, 60% {
 		d: var(--path-v1);
-		stroke: var(--color-v1);
+		color: var(--color-v1);
 	}
-	66.7%, to {
+	70%, to {
 		d: var(--path-v2);
-		stroke: var(--color-v2);
+		color: var(--color-v2);
 	}
+}
+
+@keyframes version {
+	from, 25% {
+		--version-mvp: 1;
+	}
+	40%, 60% {
+		--version-v1: 1;
+	}
+	70%, to {
+		--version-v2: 1;
+	}
+
+	30%, to {
+		--version-mvp: 0;
+	}
+	from, 30%, 65%, to {
+		--version-v1: 0;
+	}
+	from, 65% {
+		--version-v2: 0;
+	}
+}
+
+.chart {
+	animation: curve 3s infinite both;
 }
 
 .curve {
-	animation: curve 3s infinite;
-	stroke: var(--color);
+	stroke: currentColor;
+	d: inherit;
 }
 
 .version {
-	animation: toggle 3s infinite;
+	animation: inherit;
+	animation-name: version;
+	transition: opacity 0.5s;
+	--version-mvp: 0;
+	--version-v1: 0;
+	--version-v2: 0;
+
+	&.mvp {
+		opacity: var(--version-mvp);
+	}
+
+	&.v1 {
+		opacity: var(--version-v1);
+	}
+
+	&.v2 {
+		opacity: var(--version-v2);
+	}
 }
 
-.v1 {
-	animation-delay: 1s;
-	opacity: 0;
-}
 
-.v2 {
-	animation-delay: 2s;
-	opacity: 0;
-}
-
-
-
-:root {
-	font-family: Excalifont, Segoe UI Emoji;
-}
 
 /* Common path styles */
 path {
@@ -103,12 +117,6 @@ path.curve {
 	stroke-width: 2;
 	stroke-opacity: 0.7;
 	fill-opacity: 0.7;
-
-
-
-	&.mvp {
-
-	}
 }
 
 /* Text styles - only what's different */
@@ -116,25 +124,26 @@ text {
 	white-space: pre;
 	direction: ltr;
 	dominant-baseline: alphabetic;
+	fill: currentColor;
+	text-anchor: start;
 }
 
 /* Axis labels */
 text.label {
 	font-size: 28px;
-	fill: currentColor;
 	text-anchor: end;
+
+	&.vertical {
+		transform: rotate(-90deg) translate(-2em, -2.8em);
+	}
 }
 
 /* Version labels */
 text.version {
 	font-size: 36px;
-	text-anchor: start;
-	fill: var(--color);
 }
 
 /* Caption text */
 text.caption {
 	font-size: 48px;
-	fill: currentColor;
-	text-anchor: start;
 }
