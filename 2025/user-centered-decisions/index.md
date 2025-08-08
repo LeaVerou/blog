@@ -53,8 +53,8 @@ Now let’s discuss each axis in more detail.
 Utility measures the value proposition of a feature for users.
 It can be further broken down to:
 
-- [**Raising the ceiling**](../eigensolutions/#floor-ceiling): What becomes *possible*? Does it enable any use cases for which there is no workaround?
-- [**Lowering the floor**](../eigensolutions/#floor-ceiling): What becomes *easier*? Does it provide a better way to do something for which there is already a workaround? How big is the delta?
+- [**Raising the ceiling**](../../2023/eigensolutions/#floor-ceiling): What becomes *possible*? Does it enable any use cases for which there is no workaround?
+- [**Lowering the floor**](../../2023/eigensolutions/#floor-ceiling): What becomes *easier*? Does it provide a better way to do something for which there is already a workaround? How big is the delta?
 - [**Widening the walls**](https://mres.medium.com/designing-for-wide-walls-323bdb4e7277): Does it serve an ignored audience or market? Does it broaden the set of use cases served by the product?
 - **Use Case Significance**: How *important* are the use cases addressed?
 

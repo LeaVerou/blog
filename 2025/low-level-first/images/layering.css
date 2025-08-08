@@ -10,7 +10,20 @@
 	--color-text: #1e1e1e;
 
 	color: var(--color-text);
-	font-family: Excalifont, Segoe UI Emoji;
+	font-family: Excalifont, Segoe UI Emoji, cursive;
+}
+
+path {
+	stroke-linecap: round;
+	fill: none;
+}
+
+text {
+	white-space: pre;
+	direction: ltr;
+	dominant-baseline: alphabetic;
+	fill: currentColor;
+	text-anchor: start;
 }
 
 #hlf {
@@ -20,9 +33,9 @@
 }
 
 #llf {
-	--path-mvp: path("M96 20  C 186 20 286 20 367 20 C 427 20 492 20 558 20 C 650 20 739 20 828 20 M 93 16 C 183 16 273 16 363 16 C443 16 498 16 553 16 C629 16 727 17 824 17");
-	--path-v1:  path("M99 252 C 146 242 291 234 367 199 C 443 163 482 71 558 41 C633 12 777 23 821 20 M 97 257 C 141 249 287 239 363 202 C439 165 477 67 553 36 C629 6 775 23 819 25");
-	--path-v2:  path("M81 536 C 123 490 256 348 334 266 C 413 185 470 84 551 44 C632 3 778 29 822 25 M 79 540 C 120 496 254 354 332 270 C411 186 467 81 549 39 C631 -2 777 24 823 21");
+	--path-mvp: path("M 96 20  C 186 20 286 20 367 20 C 427 20 492 20 558 20 C 650 20 739 20 828 20    M 93 16 C 183 16 273 16 363 16 C443 16 498 16 553 16 C629 16 727 17 824 17");
+	--path-v1:  path("M 96 252 C 146 242 291 234 367 199 C 443 163 482 71 558 41 C633 12 777 23 821 20 M 97 257 C 141 249 287 239 363 202 C439 165 477 67 553 36 C629 6 775 23 819 25");
+	--path-v2:  path("M 96 536 C 123 490 256 348 334 266 C 413 185 470 84 551 44 C632 3 778 29 822 25  M 79 540 C 120 496 254 354 332 270 C411 186 467 81 549 39 C631 -2 777 24 823 21");
 }
 
 #grid {
@@ -66,20 +79,20 @@
 	from, 25% {
 		--version-mvp: 1;
 	}
-	40%, 60% {
+	42%, 60% {
 		--version-v1: 1;
 	}
-	70%, to {
+	75%, to {
 		--version-v2: 1;
 	}
 
 	30%, to {
 		--version-mvp: 0;
 	}
-	from, 30%, 65%, to {
+	from, 35%, 65%, to {
 		--version-v1: 0;
 	}
-	from, 65% {
+	from, 70% {
 		--version-v2: 0;
 	}
 }
@@ -91,6 +104,7 @@
 .curve {
 	stroke: currentColor;
 	d: inherit;
+	stroke-width: 3;
 }
 
 .version {
@@ -111,33 +125,10 @@
 }
 
 
-
-/* Common path styles */
-path {
-	stroke-linecap: round;
-	fill: none;
-}
-
 /* Grid lines */
 path.grid {
 	stroke: currentColor;
 	stroke-width: 1;
-}
-
-/* Version curves */
-path.curve {
-	stroke-width: 2;
-	stroke-opacity: 0.7;
-	fill-opacity: 0.7;
-}
-
-/* Text styles - only what's different */
-text {
-	white-space: pre;
-	direction: ltr;
-	dominant-baseline: alphabetic;
-	fill: currentColor;
-	text-anchor: start;
 }
 
 /* Axis labels */
@@ -158,4 +149,9 @@ text.version {
 /* Caption text */
 text.caption {
 	font-size: 48px;
+}
+
+.arrow {
+	letter-spacing: -0.35em;
+	font-size: 85%;
 }

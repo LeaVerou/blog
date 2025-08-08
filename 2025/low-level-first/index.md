@@ -9,23 +9,25 @@ tags:
   - product-design
 ---
 
+<object data="images/layering.svg"></object>
+
 ## Which comes first, convenience or capability?
 
 One of my favorite API design maxims is Alan Kay’s _“Simple things should be simple, complex things should be possible”_.
-It’s basically another way to say that good APIs have a low floor (common things are easy) and a high ceiling (many things are possible, though not necessarily easy).
+It’s basically another way to say that good APIs have a [low floor](../../2023/eigensolutions/#floor-ceiling) (common things are easy) and a [high ceiling](../../2023/eigensolutions/#floor-ceiling) (many things are possible, though not necessarily easy).
 Of course, these are only the two extremes, in practice most use cases fall somewhere in between, so the best API designers put thought in the entire curve of power vs effort to avoid cliffs where a large increase in use case complexity requires a large increase in effort.
-I gave an entire [API Design talk](https://www.youtube.com/watch?v=g92XUzc1OHY&t=2s) at DotJS 2024 that built on this idea.
+These concepts are not even specific to APIs, but apply to any creative tool, of which APIs are only a subset.
+I gave an entire [API Design talk](https://www.youtube.com/watch?v=g92XUzc1OHY&t=2s) at DotJS 2024 that builds on the ideas in this paragraph.
 
 But as stated, the maxim fails to **prioritize between the two**.
 Sure, both are important.
 But **which one do you ship _first_?**
 Which one do you design first?
 You can rarely do both at the same time.
+In the real world _when_ you ship matters just as much as _what_ you’re shipping.
 
 <figure>
   <object data="images/layering.svg"></object>
-  <!-- <object data="https://talks.verou.me/api-design/images/curve-shipping-llf.svg"></object>
-  <object data="https://talks.verou.me/api-design/images/curve-shipping-hlf.svg"></object> -->
   <figcaption>
     Two fundamentally different layering strategies.
   </figcaption>
@@ -38,45 +40,38 @@ I have concluded that unless there is a good reason for the opposite, **starting
 
 ### What is a low-level primitive?
 
-A high-level abstraction focuses on reducing friction for a small set of user needs.
-Low-level primitives are building blocks that can be composed to solve a wider variety of user needs, but it takes a lot more work.
-Ideally, high-level abstractions are composed from existing low-level primitives, but that is not always feasible.
+Low-level primitives are building blocks that can be composed to solve a wider variety of user needs, whereas high-level abstractions focus on eliminating friction for a small set of user needs.
+Essentially they sit at different points of the flexibility vs user effort tradeoff.
+
+Ideally, high-level abstractions are composed from existing low-level primitives, so the low-level primitives serve a dual purpose: not only do they allow users to trade off effort for flexibility, but they help build a solid mental model that explains how the high-level abstractions work.
 Think of it that way: a freezer meal of garlic butter shrimp is a high-level abstraction, whereas butter, garlic, and raw shrimp are some of the low-level primitives that go into it.
 
-### Low-level doesn't mean low effort
+### Low-level doesn't mean low implementation effort
 
-The low-level vs high-level distinction refers to UI complexity, not the underlying implementation.
+The low-level vs high-level distinction refers to the user experience, not the underlying implementation.
 Low-level primitives are not necessarily easier to implement — in fact, they are usually much harder.
-Since they can be composed in many different ways, the surface area that needs to be designed, tested, documented, and supported is much larger.
+Since they can be composed in many different ways, there is a much larger surface area that needs to be designed, tested, documented, and supported.
+It's much easier to build a mortgage calculator than a spreadsheet application.
 
 As an extreme example, a programming language is one of the most low-level primitives possible: it can build anything with enough effort, and is not optimized for any particular use case.
-But designing and implementing a programming language is a monumental effort, orders of magnitude higher than designing and implementing most applications.
+Compare the monumental effort needed to design and implement a programming language to the that needed to implement e.g. a weather app, which is a high-level abstraction that is optimized for a specific use case and can be prototyped in a day.
 
-It could even be argued that an AI agent like ChatGPT is actually a _low-level_ primitive, despite the tremendous engineering effort that went into it.
-While it can be used to effectively replace many existing applications,
-it does not optimize for any particular use case.
-Instead, it's up to the prompt to make it useful.
+As another extreme example, it could even be argued that an AI agent like ChatGPT is actually a _low-level_ primitive from a UX perspective,
+despite the tremendous engineering effort that went into it.
+It is not optimized for any particular use case, but with the right prompt, it can be used to effectively replace many existing applications.
 
-{#
-<article class="example">
-
-Take relative colors, for example.
-It would have been trivial to expose a few high-level functions that modify colors in predefined ways (e.g. `lighten()`).
-Whereas something like relative colors required large changes in how every color function is parsed and computed.
-
-</article>#}
-
-## Convenience facilitates growth, power prevents churn
+## Convenience for growth, power for retention
 
 <aside class="pullquote">
 
-> Users come to a product because it makes simple things easy, and leave because it makes complex things impossible.
+> Users come to a product because it makes simple things easy, and stay because it makes complex things possible.
 </aside>
 
 Prioritizing low-level primitives will make most product folks gasp.
 For regular products, it’s rare to enter a market where there is no existing product making things _possible_.
 Therefore, often the best strategy to achieve [product-market-fit](https://www.productplan.com/glossary/product-market-fit/) is to
 pick the right use cases and optimize the hell out of them.
+Additionally, since low-level primitives are often more work, the economics of shipping them are not always favorable.
 
 The conventional product wisdom is right when the main goal is **growth**.
 It’s a common misconception among engineers that to facilitate user acquisition, you need to build something more powerful or higher quality.
@@ -97,7 +92,8 @@ Reality is messy, and the less common use cases are bound to come up eventually.
 If you've done your homework and optimized for the right use cases, it will take enough time for that to happen that some customer loyalty will have formed and switching costs will no longer be zero.
 But it is almost a certainty that it _will_ happen.
 And if your product has no escape hatches, if there are no workarounds that make the more complex things possible, users leave.
-So one way to summarize it is that **users come to your product because it makes simple things easy, and leave because it doesn't make complex things possible**.
+So perhaps we rephrase Alan Kay’s maxim with a product twist:
+**users come to a product because it makes simple things easy, and stay because it makes complex things possible**.
 
 But the Web Platform is a very unique "product": when it comes to building websites, **it has no competitor**.
 It’s not like browsers ship with a couple alternative web platforms that web developers can use instead.
@@ -106,7 +102,7 @@ And when something is not possible with _any_ Web Platform technology, users are
 
 When it comes to building apps, the Web Platform is competing against native platforms.
 And indeed, when developers switch to native platforms, it’s rarely because the Web Platform made common things hard — it’s usually because it made certain things impossible.
-There are still native capabilities and optimizations that can only be accessed through the Web Platform.
+There are still native capabilities and optimizations that the Web Platform does not expose and can still only be accessed through native platforms.
 
 <aside>
 
@@ -161,7 +157,7 @@ Seeing what users *actually* do with the low-level building blocks tests your hy
 
 Out of the [various web technologies](/specs) I've designed over the years,
 [Relative Colors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors) are definitely in the top 3 I’m most proud of.
-They unlocked so many possibilities for color manipulation, most of which I never imagined when I first proposed them.
+They unlocked so many possibilities for color manipulation, most of which I never imagined when I [first proposed them](https://github.com/w3c/csswg-drafts/issues/3187#issuecomment-499126198).
 
 Back then, we envisioned most of their usage to be fairly simple, mainly around additions, multiplications, and replacing entire components with constants.
 Things like this:

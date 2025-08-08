@@ -14,7 +14,7 @@
 			<path class="grid" d="M 53 16  C 54 194, 52 369, 53 593    M 54 17  C 56 152, 56 289, 55 594"></path>
 			<path class="grid" d="M 22 568 C 205 570, 390 570, 922 569 M 21 568 C 376 566, 733 559, 922 568"></path>
 			<text x="900" y="600" class="label">Use case complexity</text>
-			<text x="28" y="110" class="vertical label">UI complexity</text>
+			<text x="28" y="110" class="vertical label">User effort</text>
 		</g>
 
 		<path class="curve" d="M 83 498 C 93 487, 127 453, 144 439 C 162 425, 181 418, 189 413 M 80 495 C 89 485, 125 456, 142 442 C 160 428, 178 415, 185 409"></path>
@@ -35,6 +35,6 @@
 		<text x="155" y="500" class="version v2">v2.0</text>
 	</g>
 
-	<text x="300" y="700" class="caption">High-level first</text>
-	<text x="1350" y="700" class="caption">Low-level first</text>
+	<text x="300" y="700" class="caption">High-level <tspan class="arrow">—></tspan>  Low-level</text>
+	<text x="1350" y="700" class="caption">Low-level <tspan class="arrow">—></tspan>  High-level</text>
 </svg>
