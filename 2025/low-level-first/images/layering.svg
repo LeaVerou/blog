@@ -9,7 +9,7 @@
 	</defs>
 
 	<!-- First SVG content (curve-shipping-hlf.svg) positioned at x=0 -->
-	<g transform="translate(0, 0)">
+	<g id="hlf">
 		<g
 			transform="translate(54.12828826904297 16.621008254960202) rotate(0 -0.15267868530509077 288.6000491265208)">
 			<path
@@ -55,7 +55,7 @@
 	</g>
 
 	<!-- Second SVG content (curve-shipping-llf.svg) positioned at x=1000 -->
-	<g transform="translate(1000, 0)">
+	<g transform="translate(1000, 0)" id="llf">
 		<g
 			transform="translate(54.12828826904297 10.663425992429268) rotate(0 -0.15267868530509077 288.6000491265208)">
 			<path
