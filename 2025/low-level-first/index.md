@@ -9,17 +9,23 @@ tags:
   - product-design
 ---
 
-<object data="images/layering.svg"></object>
+<!-- <object data="images/layering.svg"></object> -->
+
+
 
 ## Which comes first, convenience or capability?
 
-One of my favorite API design maxims is Alan Kay’s _“Simple things should be simple, complex things should be possible”_.
-It’s basically another way to say that good APIs have a [low floor](../../2023/eigensolutions/#floor-ceiling) (common things are easy) and a [high ceiling](../../2023/eigensolutions/#floor-ceiling) (many things are possible, though not necessarily easy).
-Of course, these are only the two extremes, in practice most use cases fall somewhere in between, so the best API designers put thought in the entire curve of power vs effort to avoid cliffs where a large increase in use case complexity requires a large increase in effort.
-These concepts are not even specific to APIs, but apply to any creative tool, of which APIs are only a subset.
-I gave an entire [API Design talk](https://www.youtube.com/watch?v=g92XUzc1OHY&t=2s) at DotJS 2024 that builds on the ideas in this paragraph.
+<object data="images/layering.svg"></object>
 
-But as stated, the maxim fails to **prioritize between the two**.
+Sometimes the stars align and you come up with a single solution that gives you a smooth, wide curve.
+But often, the way to achieve that smooth curve is to _layer_ multiple solutions, some optimized for simple use cases and others for complex ones.
+
+Ideally, these are not independent, but build on top of each other.
+For example, a high-level solution may be essentially a smart preset that configures multiple low-level primitives for a specific use case.
+
+Alan Kay was a brilliant computer scientist, but he was very much a scientist, not a product manager.
+Therefore, his wise maxim does not deal with **prioritization between the two**.
+
 Sure, both are important.
 But **which one do you ship _first_?**
 Which one do you design first?
@@ -38,27 +44,7 @@ But when it comes to the [Web Platform](https://en.wikipedia.org/wiki/Web_platfo
 after 14 years of designing and reviewing features for it,
 I have concluded that unless there is a good reason for the opposite, **starting by designing low-level primitives tends to be the safer bet**.
 
-### What is a low-level primitive?
 
-Low-level primitives are building blocks that can be composed to solve a wider variety of user needs, whereas high-level abstractions focus on eliminating friction for a small set of user needs.
-Essentially they sit at different points of the flexibility vs user effort tradeoff.
-
-Ideally, high-level abstractions are composed from existing low-level primitives, so the low-level primitives serve a dual purpose: not only do they allow users to trade off effort for flexibility, but they help build a solid mental model that explains how the high-level abstractions work.
-Think of it that way: a freezer meal of garlic butter shrimp is a high-level abstraction, whereas butter, garlic, and raw shrimp are some of the low-level primitives that go into it.
-
-### Low-level doesn't mean low implementation effort
-
-The low-level vs high-level distinction refers to the user experience, not the underlying implementation.
-Low-level primitives are not necessarily easier to implement — in fact, they are usually much harder.
-Since they can be composed in many different ways, there is a much larger surface area that needs to be designed, tested, documented, and supported.
-It's much easier to build a mortgage calculator than a spreadsheet application.
-
-As an extreme example, a programming language is one of the most low-level primitives possible: it can build anything with enough effort, and is not optimized for any particular use case.
-Compare the monumental effort needed to design and implement a programming language to the that needed to implement e.g. a weather app, which is a high-level abstraction that is optimized for a specific use case and can be prototyped in a day.
-
-As another extreme example, it could even be argued that an AI agent like ChatGPT is actually a _low-level_ primitive from a UX perspective,
-despite the tremendous engineering effort that went into it.
-It is not optimized for any particular use case, but with the right prompt, it can be used to effectively replace many existing applications.
 
 ## Convenience for growth, power for retention
 
@@ -102,7 +88,8 @@ And when something is not possible with _any_ Web Platform technology, users are
 
 When it comes to building apps, the Web Platform is competing against native platforms.
 And indeed, when developers switch to native platforms, it’s rarely because the Web Platform made common things hard — it’s usually because it made certain things impossible.
-There are still native capabilities and optimizations that the Web Platform does not expose and can still only be accessed through native platforms.
+There are still native capabilities and optimizations that the Web Platform does not expose and can still only be accessed through native platforms,
+e.g. the ability to react to have voice commands anywhere in the OS perform actions in the app.
 
 <aside>
 

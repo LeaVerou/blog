@@ -232,7 +232,7 @@ if users need to go further than what the shortcut provides, they can always fal
 so even when users use that escape hatch, they can tweak what they had created with the higher level UI, rather than starting from scratch.
 This combined approach *both* reduces the floor *and* increases the ceiling!
 
-### Example: Table filtering in Coda
+### Example: Table filtering in Coda { #coda-filtering }
 
 [Coda](https://coda.io) is a product I’ve been using a lot in the last few months.
 It has replaced Google Docs, Google Sheets, and a few more niche or custom apps I was using.

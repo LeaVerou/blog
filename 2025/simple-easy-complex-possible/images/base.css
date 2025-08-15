@@ -1,0 +1,29 @@
+@font-face {
+	font-family: "Excalifont";
+	src: url("/assets/fonts/Excalifont-Regular.woff2");
+}
+
+:root {
+	--color-green-dark: #2f9e44;
+	--color-purple-dark: #9c36b5;
+	--color-blue-dark: #0c8599;
+	--color-red-dark: #e03131;
+	--color-text: #1e1e1e;
+
+	color: var(--color-text);
+	font-family: Excalifont, Segoe UI Emoji, cursive;
+}
+
+path {
+	stroke-linecap: round;
+}
+
+path:not([fill]) {
+	fill: none;
+}
+
+text {
+	white-space: pre;
+	dominant-baseline: alphabetic;
+	fill: currentColor;
+}

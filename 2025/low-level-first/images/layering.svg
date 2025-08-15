@@ -1,12 +1,9 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 750">
-	<!-- svg-source:excalidraw -->
-
-	<defs>
-		<style class="style-fonts">
-			@import url("layering.css");
-		</style>
-
-	</defs>
+<!-- svg-source:excalidraw -->
+<style>
+	@import url("base.css");
+	@import url("layering.css");
+</style>
 
 	<!-- First SVG content (curve-shipping-hlf.svg) positioned at x=0 -->
 	<g id="hlf" class="chart">

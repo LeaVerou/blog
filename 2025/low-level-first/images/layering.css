@@ -1,30 +1,12 @@
-@font-face {
-	font-family: "Excalifont";
-	src: url("/assets/fonts/Excalifont-Regular.woff2");
-}
+@import "base.css";
 
 :root {
-	--color-mvp: #2f9e44;
-	--color-v1: #9c36b5;
-	--color-v2: #0c8599;
-	--color-text: #1e1e1e;
-
-	color: var(--color-text);
-	font-family: Excalifont, Segoe UI Emoji, cursive;
+	--color-mvp: var(--color-green-dark);
+	--color-v1: var(--color-purple-dark);
+	--color-v2: var(--color-blue-dark);
 }
 
-path {
-	stroke-linecap: round;
-	fill: none;
-}
 
-text {
-	white-space: pre;
-	direction: ltr;
-	dominant-baseline: alphabetic;
-	fill: currentColor;
-	text-anchor: start;
-}
 
 #hlf {
 	--path-mvp: path("M 79 540 C 93 516 127 482 144 468 C 162 454 178 446 187 441   M 78 534 C 102 509 125 485 142 471 C 160 457 178 444 185 438");
