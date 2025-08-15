@@ -1,5 +1,5 @@
 ---
-title: Beyond simple things being easy and complex things being possible
+title: Making simple things easy and complex things possible is not enough
 nutshell: The holy grail of good API design is making complex things possible and simple things easy. But is it enough?
 draft: true
 toc: true
