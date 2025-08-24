@@ -4,9 +4,7 @@
 	<metadata></metadata>
 	<defs>
 		<style class="style-fonts">
-			@font-face { font-family: Excalifont; src:
-			url(data:font/woff2;base64,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);
-			}</style>
+			@import "base.css";</style>
 	</defs>
 	<rect x="0" y="0" width="930.0741312667728" height="615.8654601320626" fill="#ffffff"></rect>
 	<g stroke-linecap="round">
@@ -21,7 +19,7 @@
 	<g
 		transform="translate(76.733365091302 153.88577040794178) rotate(348.7737682223341 88.6656799316406 12.5)">
 		<text x="0" y="17.619999999999997"
-			font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="20px"
+			 font-size="20px"
 			fill="#e03131" text-anchor="start" style="white-space: pre;" direction="ltr"
 			dominant-baseline="alphabetic">Adobe Photoshop</text>
 	</g>
@@ -43,14 +41,14 @@
 
 	<g transform="translate(630.9815063476562 570.8654601320626) rotate(0 136.55593872070312 17.5)">
 		<text x="273.11187744140625" y="24.668"
-			font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="28px"
+			 font-size="28px"
 			fill="#1e1e1e" text-anchor="end" style="white-space: pre;" direction="ltr"
 			dominant-baseline="alphabetic">Use case complexity</text>
 	</g>
 	<g
 		transform="translate(-51.697967529296875 72.53367302268748) rotate(270 79.19796752929688 17.5)">
 		<text x="158.39593505859375" y="24.668"
-			font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="28px"
+			 font-size="28px"
 			fill="#1e1e1e" text-anchor="end" style="white-space: pre;" direction="ltr"
 			dominant-baseline="alphabetic">User effort</text>
 	</g>
@@ -65,15 +63,15 @@
 
 	<g transform="translate(293.5478067308301 444.12768757612946) rotate(0 88.66567993164057 25)">
 		<text x="0" y="17.619999999999997"
-			font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="20px"
+			 font-size="20px"
 			fill="#f08c00" text-anchor="start" style="white-space: pre;" direction="ltr"
 			dominant-baseline="alphabetic">Instagram's</text>
-		<text x="0" y="42.62" font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji"
+		<text x="0" y="42.62"
 			font-size="20px" fill="#f08c00" text-anchor="start" style="white-space: pre;"
 			direction="ltr" dominant-baseline="alphabetic">photo editor</text>
 	</g>
 	<g transform="translate(238.65853305834446 456.542772857723) rotate(0 18 22.5)">
-		<text x="18" y="31.716" font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji"
+		<text x="18" y="31.716"
 			font-size="36px" fill="#f08c00" text-anchor="middle" style="white-space: pre;"
 			direction="ltr" dominant-baseline="alphabetic">😢</text>
 	</g>

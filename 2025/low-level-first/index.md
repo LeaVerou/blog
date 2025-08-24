@@ -201,16 +201,7 @@ I said that starting low-level tends to be a safer bet, **unless there is a good
 One such reason is when exposing lower-level primitives would involve negative security, privacy, or performance implications
 that a more tightly coupled high-level solution can avoid.
 
-<article class="example">
 
-When I was in the TAG, at some point we reviewed a proposal for a low-level API which would allow websites to read the list of fonts installed on the user's system.
-This raised huge red flags about user privacy and [fingerprinting](https://en.wikipedia.org/wiki/Device_fingerprint).
-However, upon closer inspection, it turned out that nearly use cases were highly concentrated,
-and were all variations of the same scenario:
-A web app needing to let users apply a font to a given artifact (e.g. a document, a graphic etc).
-A high-level font picker form control where the browser takes care of displaying the list of fonts and only communicates the selected font back to the application _both_ addressed privacy concerns _and_ made the API easier to use.
-
-</article>
 
 ## Power can crowdsource convenience
 

@@ -1,5 +1,5 @@
 ---
-title: Making simple things easy and complex things possible is not enough
+title: On making simple things easy and complex things possible
 nutshell: The holy grail of good API design is making complex things possible and simple things easy. But is it enough?
 draft: true
 toc: true
@@ -9,140 +9,75 @@ tags:
   - product-design
 ---
 
+<figure class="float" style="max-width: 12em">
+<img src="images/Alan_Kay.jpg.webp">
+<figcaption>
+
+Alan Kay [[source]](https://aes2.org/community/technical-council/richard-c-heyser-memorial-lecture-series/details-of-heyser-lectures/memorial-lecture-at-109th-alan-kay-the-computer-revolution-hasnt-happened-yet/)</figcaption>
+</figure>
+
 One of my favorite product design principles is Alan Kay’s _“Simple things should be simple, complex things should be possible”_.
 ^[[Kay himself replied on Quora and provided background on this quote](https://www.quora.com/What-is-the-story-behind-Alan-Kay-s-adage-Simple-things-should-be-simple-complex-things-should-be-possible). Don’t you just love the internet?]
 
-However, in the years since, I've come to realize that making simple things easy and complex things possible is a good first step,
-but for most things, it's not enough.
+I had been evangelizing the principle before I knew about the Alan Kay quote, and have tried to follow it it to nearly everything I have designed in the last 20 years, from end-user apps to programming languages.
 
-## Not just about APIs { #scope }
+However, there is a lot more to it than meets the eye, and applying it well can be nontrivial.
+As usual, the devil is in the details.
+Keep reading and maybe you won’t have to spend 20 years discovering them for yourself!
 
-Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientist, his adage is typically framed as an API design principle.
-However, it's a good rule of thumb for pretty much any creative tool, any user interface designed to help people create artifacts.
-APIs are only an example of such an interface.
+## Long-Tail UIs { #long-tail-uis }
 
-The line between creative tools and transactional processes
-^[a distinction I first read about in [Joe McLean’s brilliant post on overfitting](https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7)]
-is blurry.
-While APIs or design and development tools are squarely in the creative tool category,
-what about something like Google Calendar?
-If you squint, it could be argued that Google Calendar is a creative tool where **the artifact being created is a calendar event**.
+Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientist, his quote is typically framed as a PL or API design principle.
+But that is downplaying its importance — **programming languages and APIs are only a small subset** of the interfaces it applies to.
+
+_Making simple things easy and complex things possible_ is great guidance for nearly every interface where
+use cases are **sufficiently varied** so that some or most are simple but there is a **long tail** of complex use cases,
+**each of them being niche individually, but all together representing a significant portion of total user needs**.
+
+For lack of a better term, let's call these **Long-Tail UIs**.
+Nearly all interfaces that help humans create artifacts fall in this category.
+This includes creative tools such as development environments, design tools, programming languages, APIs, etc, but is not limited to them.
+
+Take **Google Calendar** for example.
+While it could be argued that it _is_ a tool that helps humans create artifacts (calendar events),
+it is not really a creative tool.
+And yet, it’s definitely a Long-Tail UI:
+its use cases are sufficiently varied that most are simple, but there is a large tail of complex use cases (e.g. recurring events, guests, multiple calendars, timezones, etc.).
+
+Indeed, Kay’s maxim has clearly been used in its design.
+The simple case has been so optimized that you can literally add a one hour calendar event with a single click (using a placeholder title).
+You can also drag to make adjustments to the times and duration without typing ^[Yes, typing can be faster than dragging, but minimizing homing between input devices improves efficiency more, see [KLM](https://en.wikipedia.org/wiki/Keystroke-level_model)].
+But almost every possible edge case is also catered to — with additional user effort.
 
 <figure class="width-m">
   <video src="videos/google-calendar.mp4" muted autoplay loop></video>
   <figcaption>
-    Is Google Calendar a creative tool?
+    Google Calendar is squarely a long-tail UI.
   </figcaption>
 </figure>
 
-Indeed, Kay’s maxim has clearly been used in its design.
-Everything has sensible defaults that can be tweaked, so if all we want is to add an hour-long event at a specific date and time, we can do that with a single click at the right place in the calendar.
-Can't really get simpler than that.
-We can drag an edge to make it shorter or longer, or drag & drop to reschedule it (direct manipulation),
-and we can tweak most details from the popup itself, or click "More Options" and get even more control (e.g. set guest permissions).
-**Simple things are easy, and complex things are possible.**
+While creative tools are the poster child of long-tail UIs,
+there are long-tail UI components in many interfaces generally designed around [transactional processes](https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7) such as e-commerce or meal delivery (e.g. result filtering & sorting, product personalization interfaces, etc.).
 
-## Which things are simple? { #simplicity }
+<figure class="width-m">
 
-For a long time, I used to argue that the principle should be "_Common_ things should be easy, _uncommon_ things should be possible".
-Often, the most common use cases are not at all simple!
-<!--
-Take color manipulation for example.
-A common use case is generating tints and shades from a key color.
-Generating tints and shades of a key color by just adjusting lightness does not produce good results.
-^[yes, even in a perceptually uniform color space like OKLCh. Yes, I do plan to write a blog post about this. But meanwhile, you can check out the data in https://palettes.colorjs.io to see how irregular hand-tweaked color palettes are in every color space.]
-Instead, the math for generating aesthetically pleasing tints and shades is much more complex.
-
-Or music.
-The simplest way to generate musical notes is a single sine wave at the right frequency for each note.
-But it sounds _awful_.
-Instead, actual instruments produce a ton of these, at slightly different frequencies and layer them together.
-It’s actually surprisingly difficult to emulate the sound of e.g. piano keys with a low-level API such as [Web Audio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) (yes, speaking from experience). -->
-
-For example,
-the common use case when using an HTML sanitizer is preventing XSS attacks.
-And yet, that is _insanely_ complex to get right.
-Defining explicit allowlists and blocklists is far simpler, but also more niche.
-The upcoming [Sanitizer API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API) supports defaults that are optimized for that, but allow overriding to define custom allowlists or blocklists.
-
-```js
-// Use "magic" presets designed to prevent XSS attacks
-element.setHTML(unsafeHTML);
-
-// Custom, possibly unsafe configuration
-element.setHTML(unsafeHTML, {
-  removeElements: ["span", "script"],
-  removeAttributes: ["lang", "id"],
-  comments: false,
-});
-```
-
-The common case is not simple at all, and encapsulates a lot of complexity,
-and the simple case is not common.
-
-But then I realized I was putting the cart before the horse and getting sidetracked by the complexity of the implementation.
-The "simple" things that should be easy are **simple from the user’s perspective**.
-Simplicity refers to the conceptual complexity of the use case.
-Simple things _are_ the most common things that people want to do, by definition!
-The complexity of solving them is entirely orthogonal.
-
-### User needs come first
-
-To make simple things easy, the interface needs to support the user's mental model,
-rather than requiring additional user effort to translate it to what the interface expects.
-This may be different than the model the underlying implementation uses, which means that often **interface simplicity and implementation simplicity are in direct conflict**.
-
-This becomes more clear with an example.
-Take a look at these two common types of faucets:
-
-<figure style="align-items: end;">
-
-![](images/faucet-1.jpg)
-![](images/faucet-2.jpg)
+![](images/airbnb.png)
 
 <figcaption>
-Simple to use does not necessarily mean simple to implement.
+
+Airbnb’s filtering UI here is definitely making an effort to make simple things easy (personalized shortcuts!) and complex things possible.
 </figcaption>
 </figure>
 
-When using a bathroom faucet, the user's mental model is around water temperature and pressure, rather than hot and cold water amounts.
-However, the underlying implementation expects amounts of hot and cold water as inputs.
+While some interfaces benefit more than others from making simple things easier or more complex things possible, it's actually quite difficult to find interfaces that do not benefit at all.
+These exceptions tend to mainly revolve around cases where one of the two is either not desirable (e.g. for security, safety, or performance reasons) or out of scope by design.
 
-The first faucet is a _thin abstraction_: it exposes the underlying implementation directly, passing the complexity on to users, who now need to do their own translation of temperature and pressure into amounts of hot and cold water.
-The second design prioritizes user needs, _abstracts_ the underlying implementation to support the user's mental model.
-It provides controls to adjust the water temperature and pressure independently, and translates them to the amounts of hot and cold water internally.
-The interface sacrifices implementation simplicity for UI simplicity.
+## Incremental value should require incremental user effort
 
-Users having to expend cognitive effort to compute things that the interface could be computing for them, or implementation details leaking out into the UI are both very common UX antipatterns.
-They both happen organically when people design interfaces thinking about what _they_ want to expose, rather than what _users_ want to do.
-It's a natural human tendency to think about what _they_ need out of an interaction, rather than what the other party needs, despite the latter producing better results.
-This is not specific to UI design, it applies to negotiations, networking, and many other aspects of life.
-As an anecdote, every semester David and I taught [Design for the Web](https://designftw.mit.edu), we'd have students come to us after the first lecture
-to express how much simply _thinking_ about users had shifted their mindset — they had never thought of doing that before.
-That initial mindset shift from "what do _I_ need" to "what do _users_ need" improves the UIs people design tremendously, even before learning any actual usability theory.
+I used to think that making simple things easy and complex things possible is the begin-all and end-all of good interface design.
+But over time, I realized it's only a good first step (and still surprising how many interfaces fail it!).
 
-This tension is probably the most common point of friction between UX/product folks and engineers.
-Advocating for "simplicity" is a platitude — everyone agrees that all else being equal, simpler is better!
-**It’s the tradeoffs between different types of simplicity that are tough.**
-
-Having an explicit design principle in place helps resolve that tension more easily.
-The Web Platform's version of it is called [Priority of Constituencies](https://www.w3.org/TR/design-principles/#priority-of-constituencies):
-
-> User needs come before the needs of web page authors, which come before the needs of user agent implementors, which come before the needs of specification writers, which come before theoretical purity.
-
-At its core, this is saying that user needs are more important than developer needs and that developer needs are more important than theoretical purity.
-The rest is simply the same principle applied recursively, since the same group may be users in one context and developers in another.
-In the web platform's case, web page authors are developers when it comes to web apps (and thus their needs are lower priority than the needs of *their* users)
-but users when it comes to the web platform itself (and thus their needs are higher priority than the needs of browser developers).
-
-While the specifics are different, every creative product can (and IMO, should) adopt a similar principle.
-For example end-users > plugin authors > engineering team > theoretical purity.
-
-## Incremental user effort for incremental value
-
-### Avoid usability cliffs
-
-Picture a plane with two axes: the horizontal axis being the complexity of the desired task (Use case complexity), and the Y axis the cognitive and/or physical effort users need to put into using the interface to accomplish their task.
+Picture a plane with two axes: the horizontal axis being the **complexity** of the desired task (_Use case complexity_), and the Y axis the cognitive and/or physical **effort** users need to put into using the interface to accomplish their task.
 
 <figure class="outlined width-m">
   <object data="images/curve-alankay.svg"></object>
@@ -156,31 +91,33 @@ Alan Kay's maxim can be visualized as follows:
 - _Complex things being possible_ means there should be a point somewhere on the far end.
 The lower down the better (lower user effort), but higher up is **acceptable**.
 
+But even if we get these two points — **what about all the points in between?**
+There are a ton of different ways to connect them, and they are most definitely not equal in terms of overall user experience!
 
-
-But the maxim doesn’t tell us anything about all the other points in between.
+### Avoid usability cliffs
 
 <aside class="pullquote">
-  <blockquote>
-    Simple things being easy and complex things being possible is not enough — you also need a smooth curve between the two
-  </blockquote>
+
+> Users should not be thrown into the deep end when their use case becomes only slightly more complex
 </aside>
 
 Simple use cases are often the [spherical cows in space](https://en.wikipedia.org/wiki/Spherical_cow) of product design.
-They work _great_ for prototypes to convince stakeholders, but the real world is messy and most use cases fall somewhere in between.
-It’s important that users are not thrown into the deep end when their use cases are simple, but with a few warts.
-
-<!-- A good strategy for smoothening out the curve is to apply the principle _recursively_.
-Once you have made simple things easy and complex things possible for the core flow,
-isolate groups of use cases with commonalities and repeat the process for their subflows. -->
+They work _great_ for prototypes to convince stakeholders, but the real world is messy.
+It is very easy once someone starts _really_ using a product to start encountering use cases that are still conceptually simple — just with a few warts here and there.
+If users are thrown into the deep end when that happens, overall user experience is very poor, because the use case still feels like it _should_ be simple.
 
 Let’s take the HTML `<video>` element as an example.
-Simple things are certainly easy: all we need to get a nice sleek toolbar that works well is a single attribute: `controls`.
+Simple things are certainly easy: all we need to get a nice sleek toolbar that works well on every device is a single attribute: `controls`.
 We just slap it on our `<video>` element and bam, we’re done with a single line of HTML:
+
+<figure class="multiple" style="align-items: center;">
 
 ```html
 <video src="videos/cat.mp4" controls></video>
 ```
+➡️
+<img src="images/cat-video-player.png" alt="A cat video player with a sleek toolbar">
+</figure>
 
 Now let’s suppose use case complexity increases _juuuust a little bit_.
 Maybe I want to add buttons to jump 10 seconds back or forwards. Or a language picker for subtitles. Or key moment indicators, like YouTube. Or just to hide the volume control on a video that has no audio track.
@@ -190,7 +127,7 @@ None of these are particularly niche, but the default controls are all-or-nothin
   <object data="images/curve-cliff.svg"></object>
   <figcaption>
 
-    The user experience of HTML `<video>` has a usability cliff.
+    A usability cliff is when a small increase in use case complexity requires a large increase in user effort.
   </figcaption>
 </figure>
 
@@ -198,7 +135,7 @@ Simple things are easy and complex things are possible.
 But once use case complexity crosses a certain (low) threshold, user effort abruptly shoots up.
 
 This is called a **usability cliff**, and is common when products make simple things easy and complex things possible by providing two distinct interfaces:
-a very high level one that caters to the most common use case, and a very low-level one that lets users do whatever but they have to reimplement everything from scratch.
+a very high level one that caters to the most common use case, and a very low-level one that is an escape hatch: it lets users do whatever but they have to reimplement everything from scratch.
 
 For delightful user experiences, **making simple things easy and complex things possible is not enough — the transition between the two should also be smooth**.
 The user effort required to achieve incremental value should be proportional to the value gained.
@@ -216,8 +153,16 @@ You can visualize this like that:
 
 ### Apply the principle _recursively_
 
-One good way to avoid cliffs is to ask yourself: among the use cases I considered "complex", which ones are most common?
-Then make simple things easy for them too.
+<aside class="pullquote">
+
+> Common complex things should be easier than uncommon complex things
+</aside>
+
+Long-tail UIs rarely have a uniform long tail.
+Typically, some complex use cases are more simple than others.
+Therefore, one good way to avoid cliffs is to apply the principle *recursively*.
+Once you've made simple use cases easy, consider the remaining use cases. Which ones are simplest among them?
+Then optimize them too.
 
 This was a big reason why [PrismJS](https://prismjs.com), a syntax highlighting library I wrote in 2012, became so popular,
 reaching over 2 *billion* downloads on npm and being used on some pretty huge websites ^[The other one being that it was the only one at the time that made syntax highlighting actually _look good_].
@@ -237,12 +182,15 @@ This is a very common pattern for designing extensible software:
 **a powerful low-level plugin architecture,
 with easier _shortcuts_ for common extensibility points**.
 
-### Malleable shortcuts
+### Tweakable over take-it-or-leave-it
 
-A corollary of _Incremental user effort for incremental value_ is that if the interface provides a simple way to accomplish part of a complex use case, users should be able to take advantage of it to get a headstart for more complex use cases, rather than having to recreate the solution from scratch using a more complex interface.
+Many complex use cases are just simple use cases with a few tweaks.
+Rather than canned take-it-or-leave-it solutions for simple cases (which as we've seen, tend to produce cliffs),
+a good way to smoothen the curve and require only _incremental effort for incremental value_ is to make these solutions **tweakable**.
+Tweaking tends to be much easier than starting from scratch, so you want to limit starting from scratch to the cases where it's actually desirable.
 
-At their core, all ways to smoothen this curve revolve around *tweaking*:
-Making sure that the solution to simple cases is sufficiently flexible that it takes _a lot_ of use case complexity before users need to recreate the solution from scratch using lower-level primitives, if they need to at all.
+With tweakable shortcuts, even if the simple solution does not fully cover the use case, the only additional user effort required is that needed to tweak it so that it does.
+The flow serves a dual purpose: **it gives simple use cases a solution, and complex use cases a headstart**.
 
 This is the core issue with the `<video>` example:
 The way it makes simple things easy is completely inflexible.
@@ -328,11 +276,11 @@ and more complex ones (e.g. every third week, on the third Sunday of the month, 
 
 Google Calendar has used *tweakable presets* to make simple things easy and complex things possible at the micro-interaction level.
 Simple things are easy: you just pick a preset.
-But these presets are not just shortcuts for common cases.
+But these are not just presets, they are also tweakable shortcuts.
 They also serve as entrypoints into the more "advanced" interface that can be used to set up almost any rule — with enough user effort.
 
 **Tweakable presets** smoothen the curve exactly because they contain the additional user effort to only the delta between the user's use case, and the simpler use case the interface is optimized for.
-By doing that, they also become a teaching tool for the more advanced interface, that is much more effective than help text, which is typically skimmed or ignored.
+By doing that, they also become a **teaching tool** for the more advanced interface, that is much more effective than help text, which is typically skimmed or ignored.
 
 <figure>
 
@@ -347,9 +295,10 @@ Google Calendar making simple things easy and complex things possible at the mic
 
 ### A hierarchy of abstractions
 
-So far, both malleable abstractions we have seen revolved around extensibility and customization — making the solution to simple use cases more flexible so it can support medium complexity use cases through customization.
+So far, both tweakable abstractions we have seen revolved around extensibility and customization — making the solution to simple use cases more flexible so it can support medium complexity use cases through customization.
 
-The version of this on steroids is defining low-level primitives as building blocks, and then composing them into high-level abstractions.
+The version of this on steroids is defining super low-level primitives as building blocks that make complex things possible,
+and then composing them into various high-level abstractions that make simple things easy.
 
 My favorite end-user facing product that does this is [Coda](https://coda.io).
 If you haven’t heard of Coda, imagine it as a cross between a spreadsheet, a database, and a document editor.
@@ -359,9 +308,9 @@ Think spreadsheet formulas, but a lot better.
 For many things, the formula language is its lowest level primitive.
 
 Then, to make simple things easy, Coda provides a UI for common cases, but here’s the twist:
-The UI is generating formulas behind the scenes.
+The UI is generating formulas behind the scenes that users can then tweak!
 Whenever users need to go a little beyond what the UI provides, they can switch to the formula editor and tweak the generated formula,
-which is infinitely easier than starting from scratch.
+which is infinitely easier than writing it from scratch.
 
 Let’s take the filtering interface as an example, which I [have written about before](../../2023/eigensolutions/#coda-filtering).
 At first, the filtering UI is pretty high level, designed around common use cases:
@@ -427,9 +376,27 @@ despite the tremendous engineering effort that went into it.
 It is not optimized for any particular use case, but with the right prompt, it can be used to effectively replace many existing applications.
 The [floor and ceiling model](../../2023/eigensolutions/#floor-ceiling) also explains what is so revolutionary about AI agents: despite having a very high ceiling, their floor is as low as it gets.
 
+## Respect user effort
+
+<aside class="pullquote">
+
+> Keep user effort close to the minimum necessary to declare _intent_
+</aside>
+
+If _incremental value should require incremental user effort_, an obvious corollary is that **things that produce no value should not require user effort**.
+And yet, it's surprising how often interfaces require users to do work that confers them absolutely no benefit,
+such as dealing with complexity that is not relevant to them, or doing work that the UI should be doing for them.
+
+Treat user effort as a scarce resource and keep it close to the minimum necessary to declare _intent_.
+The user experience of expending effort without getting any value in return just because an interface requires jumping through certain hoops to use is demoralizing;
+the UI equivalent of red tape.
+On the other hand, interfaces where every bit of user effort required is meaningful and produces tangible value are a joy to use.
+Guess which one is more likely to minimize churn?
+
+@@@ lazy coding prioritizing developer convenience over user experience
+
 ### Reveal complexity progressively
 
-Another corollary of _Incremental user effort should produce incremental value_ is also that **things that produce no value should not incur user effort**.
 Complexity should be tucked away until it's needed.
 Users should not have to deal with complexity that is not relevant to them.
 _Enterprise software, I’m looking at you._
@@ -439,75 +406,227 @@ This is complexity that belongs to complex use cases leaking out to simple ones.
 Any concepts exposed through a UI should add user-facing value.
 If a concept does not add user-facing value, it should not be exposed to users.
 
-And for APIs, this emphasizes the importance of sensible defaults, so that users don't need to make a ton of micro-decisions that may be entirely irrelevant to them.
+And for APIs, this emphasizes the importance of sensible defaults and shortcuts.
+Users should be able to use an API without making micro-decisions about things they don't care about or learning parts of the API that are not relevant to them.
 
-## When a shorter curve is the right call
+My favorite example of this is the SVG DOM.
 
-Every design principle is a rule of thumb, not a hard and fast law.
-Sometimes, there are good reasons not to make the curve extend across the entire spectrum.
+It's fantastic that it has been typed from the get go.
+It's great that it provides access to both the animated value and the base value.<br>
+It's _not_ great that all this complexity is thrown at users whether it's relevant to them or not.<br>
+There is no simple way to just get a value and stuff it elsewhere, like there is for the HTML DOM.
+All the complexity of the more advanced use cases is thrown at users whether it's relevant to them or not.<br>
+Complex things are possible, but simple things are not easy.
+There is no curve, just a horizontal line.
 
-### When not motivated by user needs
-
-<figure class="outlined float">
-  <object data="images/curve-photoshop.svg"></object>
+<figure>
+  <img src="images/svg-dom.png" style="flex: 1.3" alt="Screenshot of a console showing someone repeatedly trying to read the actual radius of an SVG circle, until eventually they get it right: circle.r.baseVal.value">
+  <object data="images/curve-svg-dom.svg"></object>
+  <figcaption>
+    It's great that the SVG DOM supports all this.
+    It's not great that users need to deal with it whether it's relevant to them or not.
+  </figcaption>
 </figure>
 
-Some products are framed exactly around only one end of the spectrum.
-While they could do better and extend their curve a little bit, their entire value proposition is around one end of the spectrum,
-so it doesn't make a lot of sense to invest resources in improving the other end.
+### Support the user's mental model
 
-Professional tools are an example where focusing around complex things being possible may be acceptable, such as airplane cockpits, or Photoshop.
-Tools that require a high level of domain expertise can typically afford to require some training,
-as said training often happens at the same time as acquiring the domain expertise.
-For example, a pilot learns how an airplane cockpit works while also learning how to fly.
+Requiring users to perform mental gymnastics to translate their mental model to the interface's is another form of disrespecting user effort.
+What does that look like?
+Take a look at these two common types of faucets:
 
-For many of these tools, use cases are so variable that making simple things significantly easier would turn them into a different product.
-For example, Photoshop is a professional-grade graphics editor, that can be used for a large variety of graphics-related tasks.
-Focusing around a specific subset of use cases, say photo manipulation, doesn't give us a better Photoshop UI, it gives us Lightroom.
-Is there a way to combine the two into a single product so that users don't need to understand when to use which tool, without making both actively worse?
-Perhaps, but it's not at all obvious.
+<figure style="align-items: end;">
 
-On the other hand, something like Instagram’s photo editor makes it trivial to perform simple photo manipulations that look good with very little user effort and no domain expertise (low floor),
-but is quite limited in its capabilities; there are many things it simply cannot do (low ceiling).
-While there is a lot of room for improvement, making significantly more complex things possible is largely out of scope as beyond a certain point it would require domain expertise that Instagram's target audience lacks.
+![](images/faucet-1.jpg)
+![](images/faucet-2.jpg)
+
+<figcaption>
+Simple to use does not necessarily mean simple to implement.
+</figcaption>
+</figure>
+
+When using a bathroom faucet, the user's mental model is around water temperature and pressure, not hot and cold water amounts.
+It's the underlying implementation that expects amounts of hot and cold water as inputs.
+
+The first faucet is a _thin abstraction_: it exposes the underlying implementation directly, passing the complexity on to users, who now need to do their own translation of temperature and pressure into amounts of hot and cold water.
+It prioritizes implementation simplicity at the expense of wasting user effort.
+
+The second design prioritizes user needs and _abstracts_ the underlying implementation to support the user's mental model.
+It provides controls to adjust the water temperature and pressure independently, and internally translates them to the amounts of hot and cold water.
+This interface sacrifices implementation simplicity to minimize user effort.
+
+Implementation details leaking out into the UI is a very common UX antipattern.
+Sometimes it happens simply because abstraction is hard.
+It's much easier to expose what's already there than to rethink it.
+Other times, it reflects a prioritization of developer convenience over user experience.
+We'll address this in the next section.
+
+### Compute what can be computed
+
+Users should not have to expend cognitive effort computing things that the interface could be computing for them.
+If you _can_ calculate something from user input, don't require them to enter it manually.
+This does not only reduce superfluous user effort, it also reduces preventable errors.
+
+As an example, take the `removeChild()` DOM method, used to remove a child element from its parent.
+In the abstract, its signature seems reasonable:
+
+```js
+parent.removeChild(child);
+```
+
+But this means two variables that need to have a very specific relationship are entered as separate inputs.
+This introduces an error condition, for the case where these variables _don't_ have that relationship.
+In practice, the relationship is enforced by having a single variable, and deriving the other one from it:
+
+```js
+element.parentNode?.removeChild(element);
+```
+
+While this eliminates the error condition, it still adds superfluous gruntwork into the user experience.
+**User intent is muddled by noise.**
+
+Contrast this with the newer:
+
+```js
+element.remove();
+```
+
+Now code reflects the user intent with no superfluous noise.
+If the element parent is required for the operation of removing the element, it is simply computed from it by the implementation of the `remove()` method.
+
+### Reduce gruntwork and boilerplate
+
+
+Boilerplate is repetitive syntax that users need to include without thought, because it does not actually communicate intent.
+It's just a little song and dance that the user needs to do _before_ they can communicate intent.
+
+Just like computation, this kind of gruntwork is much better suited to machines, rather than humans.
+
+There are three different causes for this:
+1. Not enough effort has been put into making simple things easy, i.e. complexity is not being revealed progressively when needed
+2. It is driven by a need to avoid being "opinionated"
+3. The wrong technology is being used to solve the problem and does not support sufficient automation
+
+For 1, see the previous section on [revealing complexity progressively](#revealing-complexity-progressively).
+
+Let’s talk a bit about 2, as this is a common point of friction between UX/product folks and engineers.
 
 
 
 
 
-### Security & privacy
+If it can be generated, generate it.
 
-Sometimes, decomposing a high-level solution into low-level primitives can introduce security & privacy issues that a more tightly coupled high-level solution can avoid.
 
-When I was in the TAG, at some point we reviewed a proposal for a low-level API which would allow websites to read the list of fonts installed on the user's system.
-This raised huge red flags about user privacy and [fingerprinting](https://en.wikipedia.org/wiki/Device_fingerprint).
-However, upon closer inspection, it turned out that nearly use cases were highly concentrated,
-and were all variations of the same scenario:
-letting end-users select a font from their system to apply it to a given artifact (e.g. a document, a graphic etc).
-A high-level font picker form control where the browser takes care of displaying the list of fonts and only communicates the selected font back to the application would _both_ address privacy concerns _and_ make the API easier to use.
 
-### Performance
 
-Sometimes, design decisions are driven by performance considerations, rather than usability principles.
-For example, CSS selectors got `:focus-within` to match elements that contained a focused element long before `:has()` was added, which allows targeting ancestors in a much more generic way.
-There was no question that `:has()` would have been a better solution, but it was considered impossible to implement performantly at the time `:focus-within` was designed.
-And even today, browsers apply certain optimizations to `:focus-within` that make it perform better than `:has()`.
+The previous point is about reducing cognitive user effort by eliminating superfluous computation from the user experience,
+whereas this is about reducing physical effort by not requiring manual effort that does not advance the interface's understanding of user intent.
 
-Other times, sensible defaults are not possible because the common case is also the slowest.
-This is the reason why [`inherits`](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/inherits) is mandatory when registering CSS properties:
-the default that would be best for users (`true`) is also the slowest, but making `false` the default would mean that registered properties behave differently from native properties by default.
-Instead, it was decided to not have a default, and make the descriptor mandatory.
+
+
+Let’s take an example from Bootstrap:
 
 
 
 
 
 
+<!-- Even if you're not 100% right, it's better to provide a customizable default that works in 80% of cases and requires effort to correct in 20% of cases than to make 100% of users expend effort so that the UI is not "opinionated" (unless there is truly no sensible option or there are other considerations to not setting a default, e.g. inclusivity). -->
+
+
+
+Do not require users to type boilerplate.
+They are not your monkeys.
+
+Specifying defaults that nearly never need customization also fall in this category, even if they _technically_ are declaring intent.
+Intent should be the delta from the average case, otherwise you may as well require users to specify your entire implementation.
+It's your interface
 
 
 
 
+## The simplicity that matters { #simplicity }
 
+<aside class="pullquote">
+
+> The "simple" things that should be easy are those that are simple from the user’s perspective,
+> not those that are simple to implement
+</aside>
+
+For a long time, I used to argue that the principle should be "_Common_ things should be easy, _uncommon_ things should be possible".
+Often, the most common use cases are not at all simple!
+<!--
+Take color manipulation for example.
+A common use case is generating tints and shades from a key color.
+Generating tints and shades of a key color by just adjusting lightness does not produce good results.
+^[yes, even in a perceptually uniform color space like OKLCh. Yes, I do plan to write a blog post about this. But meanwhile, you can check out the data in https://palettes.colorjs.io to see how irregular hand-tweaked color palettes are in every color space.]
+Instead, the math for generating aesthetically pleasing tints and shades is much more complex.
+
+Or music.
+The simplest way to generate musical notes is a single sine wave at the right frequency for each note.
+But it sounds _awful_.
+Instead, actual instruments produce a ton of these, at slightly different frequencies and layer them together.
+It’s actually surprisingly difficult to emulate the sound of e.g. piano keys with a low-level API such as [Web Audio](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) (yes, speaking from experience). -->
+
+For example,
+the common use case when using an HTML sanitizer is preventing XSS attacks.
+And yet, that is _insanely_ complex to get right.
+Defining explicit allowlists and blocklists is far simpler, but also more niche.
+The upcoming [Sanitizer API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API) supports defaults that are optimized for that, but allow overriding to define custom allowlists or blocklists.
+
+```js
+// Use "magic" presets designed to prevent XSS attacks
+element.setHTML(unsafeHTML);
+
+// Custom, possibly unsafe configuration
+element.setHTML(unsafeHTML, {
+  removeElements: ["span", "script"],
+  removeAttributes: ["lang", "id"],
+  comments: false,
+});
+```
+
+The common case is not simple at all, and encapsulates a lot of complexity,
+and the simple case is not common.
+
+But then I realized I was putting the cart before the horse and getting sidetracked by the complexity of the implementation.
+The "simple" things that should be easy are **simple from the user’s perspective**.
+Simplicity refers to the conceptual complexity of the use case.
+Simple things _are_ the most common things that people want to do, by definition!
+The complexity of solving them is entirely orthogonal.
+
+You can tell when an interface gets this wrong.
+How many times have you heard — or said — “All I wanted to do was [thing], why is it so complicated?!”
+
+### User needs come first
+
+To make simple things easy, the interface needs to support the user's mental model,
+rather than requiring additional user effort to translate it to what the interface expects.
+This may be different than the model the underlying implementation uses, which means that often **interface simplicity and implementation simplicity are in direct conflict**.
+
+This becomes more clear with an example.
+
+
+This tension is probably the most common point of friction between UX/product folks and engineers.
+Advocating for "simplicity" is a platitude — everyone agrees that all else being equal, simpler is better!
+**It’s the tradeoffs between different types of simplicity that are tough.**
+
+Having an explicit design principle in place helps resolve that tension more easily.
+The Web Platform's version of it is called [Priority of Constituencies](https://www.w3.org/TR/design-principles/#priority-of-constituencies):
+
+> User needs come before the needs of web page authors, which come before the needs of user agent implementors, which come before the needs of specification writers, which come before theoretical purity.
+
+At its core, all this is really saying is:
+- user needs > developer needs
+- developer needs > theoretical purity
+
+The rest is simply the same principle applied recursively, since in the web platform, web page authors are developers when it comes to web apps (and thus their needs are lower priority than the needs of *their* users)
+but users when it comes to the web platform itself (and thus their needs are higher priority than the needs of browser developers).
+Almost every platform, language, API, extensible tool, etc has a similar hierarchy of users.
+E.g. in an end-user facing product that supports plugins such as Coda, the hierarchy could be end-users > plugin authors > engineering team > theoretical purity.
+
+While the exact groups are different, every creative product can (and IMO, should) adopt a similar principle.
+For example end-users > plugin authors > engineering team > theoretical purity.
 
 ## Which comes first, convenience or capability?
 

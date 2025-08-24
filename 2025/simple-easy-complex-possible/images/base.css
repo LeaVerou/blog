@@ -27,3 +27,31 @@ text {
 	dominant-baseline: alphabetic;
 	fill: currentColor;
 }
+
+#grid {
+	color: var(--color-text);
+}
+
+/* Grid lines */
+path.grid {
+	stroke: currentColor;
+	stroke-width: 1;
+}
+
+/* Axis labels */
+text.label {
+	font-size: 28px;
+	text-anchor: end;
+
+	&.vertical {
+		transform: rotate(-90deg) translate(-2em, -2.8em);
+	}
+}
+
+text.curve-label {
+	font-size: 36px;
+}
+
+.red {
+	color: var(--color-red-dark);
+}

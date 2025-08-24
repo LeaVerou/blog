@@ -39,43 +39,43 @@
 	}
 }
 
-@property --version-mvp {
+@property --curve-label-mvp {
 	syntax: "<number>";
 	initial-value: 0;
 	inherits: true;
 }
 
-@property --version-v1 {
+@property --curve-label-v1 {
 	syntax: "<number>";
 	initial-value: 0;
 	inherits: true;
 }
 
-@property --version-v2 {
+@property --curve-label-v2 {
 	syntax: "<number>";
 	initial-value: 0;
 	inherits: true;
 }
 
-@keyframes version {
+@keyframes curve-label {
 	from, 25% {
-		--version-mvp: 1;
+		--curve-label-mvp: 1;
 	}
 	42%, 60% {
-		--version-v1: 1;
+		--curve-label-v1: 1;
 	}
 	75%, to {
-		--version-v2: 1;
+		--curve-label-v2: 1;
 	}
 
 	30%, to {
-		--version-mvp: 0;
+		--curve-label-mvp: 0;
 	}
 	from, 35%, 65%, to {
-		--version-v1: 0;
+		--curve-label-v1: 0;
 	}
 	from, 70% {
-		--version-v2: 0;
+		--curve-label-v2: 0;
 	}
 }
 
@@ -89,44 +89,27 @@
 	stroke-width: 3;
 }
 
-.version {
+.curve-label {
 	animation: inherit;
-	animation-name: version;
+	animation-name: curve-label;
 
 	&.mvp {
-		opacity: var(--version-mvp);
+		opacity: var(--curve-label-mvp);
 	}
 
 	&.v1 {
-		opacity: var(--version-v1);
+		opacity: var(--curve-label-v1);
 	}
 
 	&.v2 {
-		opacity: var(--version-v2);
+		opacity: var(--curve-label-v2);
 	}
 }
 
 
-/* Grid lines */
-path.grid {
-	stroke: currentColor;
-	stroke-width: 1;
-}
 
-/* Axis labels */
-text.label {
-	font-size: 28px;
-	text-anchor: end;
 
-	&.vertical {
-		transform: rotate(-90deg) translate(-2em, -2.8em);
-	}
-}
 
-/* Version labels */
-text.version {
-	font-size: 36px;
-}
 
 /* Caption text */
 text.caption {
