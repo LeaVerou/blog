@@ -9,18 +9,15 @@
 	}
 }
 
-text {
-	font-size: 36px;
-}
-
 path {
 	stroke-linecap: round;
 }
 
 :root {
-	--color-ok: #f08c00;
-	--color-good: #709517;
-	--color-amazing: #2f9e44;
+	--color-bad: var(--color-red-dark);
+	--color-ok: var(--color-orange-dark);
+	--color-good: var(--color-lime-dark);
+	--color-amazing: var(--color-green-dark);
 }
 
 @keyframes curve {

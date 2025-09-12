@@ -5,9 +5,11 @@
 
 :root {
 	--color-green-dark: #2f9e44;
+	--color-lime-dark: #709517;
 	--color-purple-dark: #9c36b5;
 	--color-blue-dark: #0c8599;
 	--color-red-dark: #e03131;
+	--color-orange-dark: #f08c00;
 	--color-text: #1e1e1e;
 
 	color: var(--color-text);

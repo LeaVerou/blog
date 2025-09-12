@@ -19,11 +19,10 @@ Alan Kay [[source]](https://aes2.org/community/technical-council/richard-c-heyse
 One of my favorite product design principles is Alan Kay’s _“Simple things should be simple, complex things should be possible”_.
 ^[[Kay himself replied on Quora and provided background on this quote](https://www.quora.com/What-is-the-story-behind-Alan-Kay-s-adage-Simple-things-should-be-simple-complex-things-should-be-possible). Don’t you just love the internet?]
 
-I had been evangelizing the principle before I knew about the Alan Kay quote, and have tried to follow it it to nearly everything I have designed in the last 20 years, from end-user apps to programming languages.
+I had been evangelizing it almost verbatim long before I knew I was not the first to coin it.
 
-However, there is a lot more to it than meets the eye, and applying it well can be nontrivial.
+However, after applying it to dozens of products, languages, and other interfaces over the last 20 years, I have realized that there is a lot more to it than meets the eye.
 As usual, the devil is in the details.
-Keep reading and maybe you won’t have to spend 20 years discovering them for yourself!
 
 ## Long-Tail UIs { #long-tail-uis }
 
@@ -57,7 +56,7 @@ But almost every possible edge case is also catered to — with additional user 
 </figure>
 
 While creative tools are the poster child of long-tail UIs,
-there are long-tail UI components in many interfaces generally designed around [transactional processes](https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7) such as e-commerce or meal delivery (e.g. result filtering & sorting, product personalization interfaces, etc.).
+there are long-tail UI _components_ in many interfaces generally designed around [transactional processes](https://medium.com/design-bootcamp/overfitting-and-the-problem-with-use-cases-337d9f4bf4d7) such as e-commerce or meal delivery (e.g. result filtering & sorting, product personalization interfaces, etc.).
 
 <figure class="width-m">
 
@@ -72,10 +71,12 @@ Airbnb’s filtering UI here is definitely making an effort to make simple thing
 While some interfaces benefit more than others from making simple things easier or more complex things possible, it's actually quite difficult to find interfaces that do not benefit at all.
 These exceptions tend to mainly revolve around cases where one of the two is either not desirable (e.g. for security, safety, or performance reasons) or out of scope by design.
 
-## Incremental value should require incremental user effort
+## It’s all about the curve
 
-I used to think that making simple things easy and complex things possible is the begin-all and end-all of good interface design.
-But over time, I realized it's only a good first step (and still surprising how many interfaces fail it!).
+You may think your UI is the bees knees because it makes simple things easy and complex things possible.
+But that’s just the baseline.
+It only means you did not royally screw it up (and yes, it's surprising how many interfaces do).
+But truly delightful interfaces _also_ take the care to ensure that the transition between the two is smooth throughout.
 
 Picture a plane with two axes: the horizontal axis being the **complexity** of the desired task (_Use case complexity_), and the Y axis the cognitive and/or physical **effort** users need to put into using the interface to accomplish their task.
 
@@ -92,12 +93,15 @@ Alan Kay's maxim can be visualized as follows:
 The lower down the better (lower user effort), but higher up is **acceptable**.
 
 But even if we get these two points — **what about all the points in between?**
-There are a ton of different ways to connect them, and they are most definitely not equal in terms of overall user experience!
+There are a ton of different ways to connect them, and they produce vastly different overall user experiences.
+
+Meet the power-to-effort curve, the most important usability metric you've never heard of.
 
 ### Avoid usability cliffs
 
 <aside class="pullquote">
 
+> User effort should be proportional to value gained.
 > Users should not be thrown into the deep end when their use case becomes only slightly more complex
 </aside>
 
