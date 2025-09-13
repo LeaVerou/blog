@@ -12,6 +12,11 @@
 	--color-orange-dark: #f08c00;
 	--color-text: #1e1e1e;
 
+	--color-bad: var(--color-red-dark);
+	--color-ok: var(--color-orange-dark);
+	--color-good: var(--color-lime-dark);
+	--color-amazing: var(--color-green-dark);
+
 	color: var(--color-text);
 	font-family: Excalifont, Segoe UI Emoji, cursive;
 }
@@ -20,13 +25,17 @@ path {
 	stroke-linecap: round;
 }
 
-path:not([fill]) {
+path:where(:not([fill])) {
 	fill: none;
 }
 
 text {
 	white-space: pre;
 	dominant-baseline: alphabetic;
+}
+
+text,
+.filled {
 	fill: currentColor;
 }
 
@@ -35,7 +44,8 @@ text {
 }
 
 /* Grid lines */
-path.grid {
+path.grid,
+.stroked {
 	stroke: currentColor;
 	stroke-width: 1;
 }
@@ -54,6 +64,22 @@ text.curve-label {
 	font-size: 36px;
 }
 
-.red {
+.green,
+.amazing {
+	color: var(--color-green-dark);
+}
+
+.lime,
+.good {
+	color: var(--color-lime-dark);
+}
+
+.orange,
+.ok {
+	color: var(--color-orange-dark);
+}
+
+.red,
+.bad {
 	color: var(--color-red-dark);
 }
