@@ -155,6 +155,19 @@ Are users yeeted into the deep end of interface complexity (bad), or do they onl
 Meet the **complexity-to-effort curve**, the most important usability metric you've never heard of.
 
 <figure class="outlined width-m">
+  <style>
+    .fallback-image {
+      display: none;
+    }
+    @supports not (d: initial) {
+      .fallback-image {
+        display: block;
+        & ~ object {
+        display: none;
+      }
+    }
+  </style>
+  <img src="./images/curve-multiple.gif" loading="lazy" class="fallback-image" />
   <object data="images/curve-multiple.svg"></object>
   <figcaption>
 
