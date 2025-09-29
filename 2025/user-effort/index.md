@@ -1,6 +1,6 @@
 ---
 title: In the economy of user effort, be a bargain, not a scam
-nutshell: Treat user effort is a currency. To create a product users love, design the tradeoffs of use case complexity to user effort with the same care you design your pricing scheme.
+nutshell: Treat user effort as a currency. To create a product users love, design the tradeoffs of use case complexity to user effort with the same care you design your pricing scheme.
 toc: true
 image: images/curve-multiple.gif
 tags:
