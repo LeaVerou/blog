@@ -13,6 +13,10 @@ tags:
   - ux
   - design-reviews
   - design-principles
+social_posts:
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3lzyinhwwqs2g
+  twitter: https://x.com/LeaVerou/status/1972709985705455885
+  mastodon: https://front-end.social/@leaverou/115288657268601817
 ---
 
 <!-- more -->
