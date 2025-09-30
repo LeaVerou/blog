@@ -288,7 +288,7 @@ a cross between a document editor, a spreadsheet, and a database.
 All over its UI, it supports entering formulas instead of raw values, which makes complex things possible.
 
 To make simple things easy, it also provides the GUI you’d expect even without a formula language.
-But here’s the twist: **these presets are generate formulas behind the scenes that users can tweak**!
+But here’s the twist: **these presets generate formulas behind the scenes that users can tweak**!
 Whenever users need to go a little beyond what the UI provides, they can switch to the formula editor and adjust what was generated
 — far easier than writing it from scratch.
 
@@ -426,7 +426,7 @@ Hard limitations, on the other hand, persist as conscious appraisals.
 The trigger doesn’t go away, since there is no workaround, so it’s far more likely to surface in explicit user feedback.
 
 Both types of pain points cause negative emotions,
-but friction is primarily processed by the [limbic system](https://en.wikipedia.org/wiki/Limbic_system) more (emotion),
+but friction is primarily processed by the [limbic system](https://en.wikipedia.org/wiki/Limbic_system) (emotion),
 whereas hard limitations remain in the [prefrontal cortex](https://en.wikipedia.org/wiki/Prefrontal_cortex) (reasoning).
 This also means that when users finally do reach the breaking point and complain about friction, you better listen.
 
