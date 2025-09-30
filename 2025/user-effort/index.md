@@ -235,13 +235,21 @@ but they have to recreate the solution to the simple use case from scratch befor
 Simple things are certainly easy: all we need to get a video with a nice sleek set of controls that work well on every device is a single attribute: `controls`.
 We just slap it on our `<video>` element and we’re done with a single line of HTML:
 
+<style>
+  figure.multiple > pre {
+    box-sizing: border-box !important;
+    min-width: max(min(10rem, 100%), 65%) !important;
+    overflow: scroll;
+  }
+</style>
+
 <figure class="multiple" style="align-items: center;">
 
-```html { style="font-size: 150%" }
+```html { style="font-size: 150%; overflow: scroll;" }
 <video src="videos/cat.mp4" controls></video>
 ```
 ➡️
-<img src="images/cat-video-player.png" alt="A cat video player with a sleek toolbar" style="flex: .5">
+<img src="images/cat-video-player.png" alt="A cat video player with a sleek toolbar" style="flex: .5; min-width: 5rem;">
 </figure>
 
 Now suppose use case complexity increases _just a little_.
