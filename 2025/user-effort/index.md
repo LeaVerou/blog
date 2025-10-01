@@ -35,14 +35,15 @@ It isn’t just a design ideal — it’s a call to continually balance friction
 
 This philosophy played a big part in [Prism’s](https://prismjs.com) success back in 2012,
 helping it become the web’s de facto syntax highlighter for years, with over **2 billion** npm downloads.
-Highlighting code on a page took including two files.
+_Simple things were easy_: All it took to highlight code on a webpage was including two files, a JS file and a CSS file.
 No markup changes.
+No JS glue code.
 Styling used readable CSS class names.
 Even adding new languages — the most common “complex” use case — required far less knowledge and effort than alternatives.
-At the same time, Prism exposed a deep extensibility model so plugin authors could patch internals and dramatically alter behavior.
-These choices are rarely free.
+At the same time, highly _complex things were possible_: Prism exposed a deep extensibility model so plugin authors could patch internals and dramatically alter behavior.
+These choices were not free.
 The friendly styling API increased clash risk, and deep extensibility reduced encapsulation.
-These were conscious tradeoffs, and they weren't easy.
+These were conscious, hard, tradeoffs.
 
 <aside class="note">
 
@@ -59,11 +60,11 @@ Since [Alan Kay](https://en.wikipedia.org/wiki/Alan_Kay) was a computer scientis
 but that sells it short.
 It applies to a much, _much_ broader class of interfaces.
 
-This class hinges on the _distribution of use cases_.
+This distinction hinges on the _distribution of use cases_.
 Products often cut scope by identifying the ~20% of use cases that drive ~80% of usage — aka the [Pareto Principle](https://en.wikipedia.org/wiki/Pareto_principle).
 Some products, however, have such diverse use cases that Pareto doesn’t meaningfully apply to the product as a whole.
 There are common use cases and niche use cases, but no clean 20-80 split.
-**The long tail of niche use cases is so numerous, it becomes significant in aggregate**.
+**The tail of niche use cases is so long, it becomes significant in aggregate**.
 For lack of a better term, I’ll call these *long‑tail UIs*.
 
 **Nearly all creative tools are long-tail UIs.**
@@ -76,7 +77,8 @@ Yes, **programming languages and APIs are user interfaces**.
 If this surprises you, watch my [DotJS 2024 talk titled "API Design is UI Design"](https://www.youtube.com/watch?v=g92XUzc1OHY).
 It’s only 20 minutes, but covers a lot of ground, including some of the ideas in this post.
 
-I include both code and GUI examples to underscore this point; if the API examples aren’t your thing, skip them and the post will still make sense.
+To underscore this point, I try to include both code and GUI examples in these posts.
+If code isn't your thing, skip them and the post will still make sense.
 
 </aside>
 
@@ -103,11 +105,13 @@ But almost every edge case is also catered to —  with additional user effort.
   </figcaption>
 </figure>
 
+{#
 Google Calendar is also an example of an interface that digitally encodes real-life,
-demonstrating that **complex use cases are not always power user use cases**.
+demonstrating that **complex use cases are not necessarily power user use cases**.
 Often, the complexity is driven by life events.
 E.g. your taxes may be complex without you being a power user of tax software,
 and your family situation may be unusual without you being a power user of every form that asks about it.
+#}
 
 </article>
 
@@ -124,15 +128,13 @@ there are _long-tail components_ in many [transactional](https://medium.com/desi
 <figcaption>
 
 Filtering UIs are another big category of long-tail UIs, and they involve so many tradeoffs and tough design decisions you could literally write a book about just them.
-Airbnb’s filtering UI here is definitely making an effort to make simple things easy with (personalized! 😍) shortcuts and complex things possible via more granular controls.
+Airbnb’s filtering UI here is definitely making an effort to make _simple things easy_ with (personalized! 😍) shortcuts and _complex things possible_ via more granular controls.
 </figcaption>
 </figure>
 
-
-
 ## It’s all about the curve { #curve }
 
-Picture a plane with two axes: the horizontal axis being the **complexity** of the desired task (again from the user's perspective, nothing to do with implementation complexity),
+Picture a plane with two axes: the horizontal axis being the **complexity** of the desired task (from the user's perspective),
 and the vertical axis the cognitive and/or physical **effort** users need to expend to accomplish their task using a given interface.
 
 Following Kay’s maxim guarantees these two points:
@@ -148,9 +150,9 @@ The lower down, the better — but higher up is **acceptable**.
 </figure>
 
 But even if we get these two points — **what about all the points in between?**
-There are a ton of different ways to connect them, and they produce _vastly_ different overall user experiences.
-How does your interface fare when a use case is only _slightly_ more complex?
-Are users yeeted into the deep end of interface complexity (bad), or do they only need to invest a proportional, incremental amount of effort to achieve their goal (good)?
+There are infinite different ways to connect them, and they produce _vastly_ different overall user experiences.
+How does your interface fare when their use case gets _slightly_ more complex?
+Are users yeeted into the deep end of interface complexity (bad), or do they only need to invest a proportional, incremental amount of additional effort to achieve their goal (good)?
 
 Meet the **complexity-to-effort curve**, the most important usability metric you've never heard of.
 
@@ -181,19 +183,20 @@ Most artifacts that users need to create to achieve their real-life goals rarely
 They are _mostly_ simple — with a _liiiiitle_ wart here and there.
 
 For a long-tail interface to serve user needs well **in practice**,
-we also need to **design the curve, not just its endpoints**.
+we need to consciously **design the curve, not just its endpoints**.
 
 ## User effort as a currency { #currency }
 
 A model with surprising predictive power is to **treat user effort as a currency** that users are spending to buy solutions to their problems.
 Nobody likes paying it;
 in an ideal world software would read our mind and execute perfectly with zero user effort.
-Since we don’t live in such a world, users are typically willing to pay more in effort when they feel their use case warrants it.
+Since we don’t live in such a world, users understand to pay a bit of effort to achieve their goals,
+and are generally willing to pay more when they feel their use case warrants it.
 
-Just like regular pricing, actual user experience often depends more on the relationship between cost and expectation (budget) than on the absolute cost itself.
+Just like regular pricing, actual user experience often depends more on the relationship between cost and budget than on the absolute cost itself.
 If you pay more than you expected, you feel ripped off.
 You may still pay it because you need the product in the moment, but you'll be looking for a better deal in the future.
-And if you pay less than you expected, you feel like you got a bargain, with all the delight and loyalty that entails.
+And if you pay less than you had budgeted, you feel like you got a bargain, with all the delight and loyalty that entails.
 
 ## Avoid usability cliffs { #cliffs }
 
@@ -206,12 +209,12 @@ And if you pay less than you expected, you feel like you got a bargain, with all
 Suppose you’re ordering pizza. You want a simple cheese pizza with ham and mushrooms.
 You use the online ordering system, and you notice that adding ham to your pizza triples its price.
 We're not talking some kind of fancy ham where the pigs were fed on caviar and bathed in champagne, just a regular run-of-the-mill pizza topping.
-You may still order it if you’re starving and no other options are available, but _how does it make you feel?_
+You may still order it if you’re really craving ham on your pizza and no other options are available, but _how does it make you feel?_
 
 It’s not that different when the currency is user effort.
 The all too familiar "*But I **just** wanted to _________, why is it so hard?*".
 
-When a slight increase in complexity results in a significant increase in user effort cost, we have a **usability cliff**.
+**When a small increase in use case complexity results in a disproportionately large increase in user effort cost, we have a usability cliff**.
 Usability cliffs make users feel resentful, just like the customers of our fictitious pizza shop.
 
 
@@ -274,8 +277,8 @@ For Instagram's photo editor, the simple use case is canned filters, whereas the
 However, they are implemented as separate flows: you can tweak the filter’s _intensity_, but you can’t see or adjust the primitives it’s built from.
 You _can_ layer both types of edits on the same image, but they are additive, which doesn’t work well.
 
-Ideally, the two panels would be integrated, so that selecting a filter would adjust the low-level controls accordingly, which would facilitate incremental tweaking
-AND would serve as a teaching aid for how filters work.
+Ideally, the two panels would be integrated, so that selecting a filter would adjust the low-level controls accordingly, which would both facilitate incremental tweaking
+_and_ serve as a teaching aid for how filters work.
 
 </article>
 
@@ -285,9 +288,9 @@ AND would serve as a teaching aid for how filters work.
 
 My favorite end-user facing product that gets this right is [Coda](https://coda.io),
 a cross between a document editor, a spreadsheet, and a database.
-All over its UI, it supports entering formulas instead of raw values, which makes complex things possible.
+All over its UI, it supports entering formulas instead of raw values, which makes _complex things possible_.
 
-To make simple things easy, it also provides the GUI you’d expect even without a formula language.
+To make _simple things easy_, it also provides the GUI you’d expect even without a formula language.
 But here’s the twist: **these presets generate formulas behind the scenes that users can tweak**!
 Whenever users need to go a little beyond what the UI provides, they can switch to the formula editor and adjust what was generated
 — far easier than writing it from scratch.
@@ -323,7 +326,7 @@ Whether the tradeoff is worth it depends on the product and use cases.
 If you like eating out, this may be a familiar scenario:
 
 > — I would like the rib-eye please, medium-rare.<br>
-> — Thank you sir. How would you like your steak cooked?
+> — Thank you sir/ma'am. How would you like your steak cooked?
 
 <aside class="pullquote" role="presentation">
 
@@ -334,12 +337,14 @@ Annoying, right?
 And yet, this is how many user interfaces work; expecting users to communicate the same intent multiple times in slightly different ways.
 
 If _incremental value should require incremental user effort_, an obvious corollary is that **things that produce no value should not require user effort**.
-
 Using the currency model makes this obvious: who likes paying without getting anything in return?
+
 **Respect user effort.**
 Treat it as a scarce resource — just like regular currency — and keep it close to the minimum necessary to declare _intent_.
 Do not require users to do work that confers them no benefit, and could have been handled by the UI.
 **If it can be derived from other input, it should be derived from other input.**
+
+<article class="bad example">
 
 <figure class="float">
 
@@ -354,8 +359,16 @@ Source: [NNGroup](https://www.nngroup.com/articles/edit-credit-card/) (adapted).
 A once ubiquitous example that is thankfully going away, is the credit card form which asks for the type of credit card in a separate dropdown.
 Credit card numbers are designed so that the type of credit card can be determined from the first four digits.
 There is zero reason to ask for it separately.
+
 Beyond wasting user effort, duplicating input that can be derived introduces an **unnecessary error condition** that you now need to handle:
 what happens when the entered type is not consistent with the entered number?
+
+</article>
+
+<aside class="pullquote" style="max-width: 15em">
+
+> If it can be derived from other input, it should be.
+</aside>
 
 User actions that meaningfully communicate intent to the interface are **signal**.
 Any other step users need to take to accomplish their goal, is **noise**.
@@ -368,26 +381,23 @@ Some noise is unavoidable.
 The only way to have 100% signal-to-noise ratio would be if the interface could mind read.
 But too much noise increases friction and obfuscates signal.
 
-A short yet demonstrative example is the web platform’s methods for programmatically removing an element from the page.
+<article class="example">
+
+<h4>Example: Programmatic Element removal</h4>
+
+The two web platform methods to programmatically remove an element from the page provide a short yet demonstrative example of this for APIs.
 To signal _intent_ in this case, the user needs to communicate two things:
 (a) **what** they want to do (remove an element), and (b) **which element** to remove.
 Anything beyond that is noise.
 
 The modern [`element.remove()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/remove) DOM method has an extremely high signal-to-noise ratio.
 It’s hard to imagine a more concise way to signal intent.
-However, the older [`parent.removeChild(child)`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) method that it replaced had much worse ergonomics.
-It required two parameters: the element to remove, and its parent.
+It replaced the older [`parent.removeChild(child)`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) method, which had much worse ergonomics.
+The older method was framed around _removing a child_, so it required two parameters: the element to remove, and its parent.
 But the parent is not a separate source of truth — it would _always_ be the child node’s parent!
 As a result, its actual usage involved _boilerplate_, where
 developers had to write a much noisier `if (element.parentNode) element.parentNode.removeChild(element)`
 ^[Yes, today it would have been `element.parentNode?.removeChild(element)`, which is a little less noisy, but this was before the optional chaining operator.].
-
-_Boilerplate_ is repetitive code that users need to include without thought, because it does not actually communicate intent.
-It’s the **software version of red tape**: hoops you need to jump through to accomplish your goal, that serve no obvious purpose in furthering said goal except for the fact that they are required.
-
-In this case, the amount of boilerplate may seem small, but when viewed as a percentage of the total amount of code, the difference is staggering.
-The exact ratio (81% vs 20% here) varies based on specifics such as variable names,
-but when the difference is meaningful, it transcends these types of low-level details.
 
 <figure class="width-m">
   <object data="images/code-signal-to-noise.svg"></object>
@@ -399,9 +409,23 @@ but when the difference is meaningful, it transcends these types of low-level de
 Of course, it was usually encapsulated in utility functions, which provided a similar signal-to-noise ratio as the modern method.
 However, user-defined abstractions don't come for free, there is an effort (and learnability) tax there, too.
 
-Improving signal-to-noise ratio is also why the front-end web industry gravitated towards component architectures: they increase signal-to-noise ratio by encapsulating boilerplate.
-As an exercise for the reader, try to calculate the signal-to-noise ratio of a [Bootstrap accordion](https://getbootstrap.com/docs/5.3/components/accordion/#example) (or any other complex Bootstrap component).
+</article>
 
+_Boilerplate_ is repetitive code that users need to include without thought, because it does not actually communicate intent.
+It’s the **software version of red tape**: hoops you need to jump through to accomplish your goal, that serve no obvious purpose in furthering said goal except for the fact that they are required of you.
+
+In case of `parent.removeChild()` above, the amount of boilerplate may seem small, but when viewed as a percentage of the total amount of code, the difference is staggering.
+The exact ratio (81% vs 20% here) varies based on the specifics of the API (variable names, method wording, etc.),
+but when the difference is meaningful, it transcends these types of low-level details.
+Think of it like big-O notation for API design.
+
+Improving signal-to-noise ratio is also why the front-end web industry gravitated towards component architectures over copy-pasta snippets:
+components increase signal-to-noise ratio by encapsulating boilerplate and exposing a much higher signal UI.
+They are the utility functions of user interfaces.
+As an exercise for the reader, try to calculate the signal-to-noise ratio of a [Bootstrap accordion](https://getbootstrap.com/docs/5.3/components/accordion/#example) (or any other complex component in any UI library that expects you to copy-paste snippets).
+
+Instead of syntax, visual interfaces have micro-interactions.
+There are various models to quantify the user effort cost of micro-interactions, such as [KLM](https://en.wikipedia.org/wiki/Keystroke-level_model).
 
 ## You cannot uncover friction by asking users { #asking-users }
 
@@ -417,10 +441,10 @@ This reveals a fundamental misunderstanding about the **psychology of user feedb
 **Users are much more vocal about things not being possible, than about things being hard.**
 The reason becomes clear if we look at the neuroscience of each.
 
-Friction is transient in working memory (prefrontal cortex).
-After completing a task, details fade.
-The negative emotion persists and accumulates, but filing a complaint requires prefrontal engagement that is brief or absent.
-Users often can’t articulate why the software feels unpleasant: the specifics vanish; the feeling remains.
+Friction is transient in working memory; after completing the task, details fade from the user's prefrontal cortex.
+However, the negative emotions persist in the limbic system and build up over time.
+Filing a complaint requires prefrontal engagement, which for friction is brief or absent.
+Users often can’t even articulate why the software feels unpleasant: the specifics vanish; the feeling remains.
 
 Hard limitations, on the other hand, persist as conscious appraisals.
 The trigger doesn’t go away, since there is no workaround, so it’s far more likely to surface in explicit user feedback.
@@ -518,9 +542,9 @@ Everyone agrees that, all else equal, simpler is better.
 **It’s the tradeoffs between different types of simplicity that are tough.**
 
 In some cases, reducing friction even carries tangible financial risks, which makes leadership buy-in crucial.
-This kind of tradeoff cannot be made by individual designers — it requires usability as a priority to trickle down from the top of the org chart.
+This kind of tradeoff cannot be made by individual designers — only when eliminating friction is an organizational priority.
 
-<article class="example">
+<article class="good example">
 
 <img src="images/oslo-train.webp" alt="The Oslo train ticket machine, with a screen saying 'Swipe card' and a single slot" style="float: inline-end; width: clamp(5em, 10vw, 9em); margin-inline-start: 1em; margin-block-end: .5em">
 
@@ -531,8 +555,7 @@ You just swipe your card and you get on the train.
 Today this may not seem radical, but back [in 2003, it was groundbreaking](https://flytoget.no/en/about/our-story/).
 
 To be able to provide such a frictionless user experience, they had to make a financial tradeoff:
-it does not ask for a PIN code, which means the company would need to simply absorb the financial losses from fraudulent charges (stolen credit cards, etc.).
-
+it does not ask for a PIN code, which means the company would need to absorb the financial losses from fraudulent charges (stolen credit cards, etc.).
 
 </article>
 
@@ -547,12 +570,13 @@ The Web Platform has its own version of this principle, which is called [Priorit
 
 > "User needs come before the needs of web page authors, which come before the needs of user agent implementors, which come before the needs of specification writers, which come before theoretical purity."
 
-This highlights another key distinction.
+This highlights another key distinction: the hierarchy of user needs is more nuanced than just users over developers.
 
 ### Consumers over Producers
 
-It’s more nuanced than users over developers; a better framing is **consumers over producers**.
-Developers are just one type of producer.
+While _users over developers_ is a good starting point, it is not sufficient to fully describe the hierarchy of user needs for many products.
+A more flexible framing is **consumers over producers**;
+developers are just one type of producer.
 
 - Consumers are typically more numerous than producers, so this **minimizes collective pain**.
 - Producers are typically more **advanced**, and can handle more complexity than consumers. I've heard this principle worded as "_Put the pain on those who can bear it_", which emphasizes this aspect.
@@ -563,8 +587,8 @@ The web platform has multiple tiers of producers:
 - **Browser developers** ("_user agent implementors_" in the principle) are consumers when it comes to specifications, but producers when it comes to the web platform
 - **Web developers** are consumers when it comes to the web platform, but producers when it comes to their own websites
 
-Even within the same tier there are producer vs consumer dynamics.
-When it comes to web development libraries, the web developers who write them are producers and the web developers who use them are consumers.
+Even within the same tier there are often producer vs consumer dynamics.
+E.g. when it comes to web development libraries, the web developers who write them are producers and the web developers who use them are consumers.
 
 This distinction also comes up in extensible software, where plugin authors are still consumers when it comes to the software itself,
 but producers when it comes to their own plugins.
