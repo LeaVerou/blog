@@ -100,7 +100,7 @@ A different duration can be set after that first click through dragging
 But almost every edge case is also catered to —  with additional user effort.
 
 <figure>
-  <video src="videos/google-calendar.mp4" muted autoplay loop loading="lazy"></video>
+  <video src="videos/google-calendar.mp4" playsinline muted autoplay loop loading="lazy"></video>
   <figcaption>
     Google Calendar is squarely a long-tail UI.
   </figcaption>
@@ -272,7 +272,7 @@ But once use case complexity crosses a certain (low) threshold, user effort abru
 
 <h4>Example: Instagram editor</h4>
 
-<video src="videos/instagram.mov" muted autoplay loop loading="lazy" style="height: 15em; max-height: 100cqh; float: inline-end; margin-inline-start: 1em"></video>
+<video src="videos/instagram.mov" muted autoplay playsinline loop loading="lazy" style="height: 15em; max-height: 100cqh; float: inline-end; margin-inline-start: 1em"></video>
 
 For Instagram's photo editor, the simple use case is canned filters, whereas the complex ones are those requiring tweaking through individual low-level controls.
 However, they are implemented as separate flows: you can tweak the filter’s _intensity_, but you can’t see or adjust the primitives it’s built from.
