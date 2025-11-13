@@ -28,7 +28,7 @@ A custom event? Nah, too slow for my purposes, why involve the DOM when it's not
 
 Another Promise? Nah, that just transfers the problem.
 
-An setInterval to repeatedly check if the tree is created? OMG, I can't believe you just thought that Lea, ewwww, gross!
+An `setInterval` to repeatedly check if the tree is created? OMG, I can't believe you just thought that Lea, ewwww, gross!
 
 Getters and setters? Hmmm, maybe that could work! If the setter is inside the Promise constructor, then I can resolve the Promise by just setting a property!
 
@@ -103,7 +103,7 @@ this.treeBuilt = defer();
 this.treeBuilt.resolve();
 ```
 
-I love that this is reusable, and calling `resolve()` makes a lot more sense than setting something to true. However, I didn't like that it involved a separate object (deferred) and that people using the treeBuilt property would not be able to call .then() directly on it, so I simplified it a bit to only use one Promise object:
+I love that this is reusable, and calling `resolve()` makes a lot more sense than setting something to `true`. However, I didn't like that it involved a separate object (`deferred`) and that people using the `treeBuilt` property would not be able to call `.then()` directly on it, so I simplified it a bit to only use one Promise object:
 
 ```
 function defer() {
