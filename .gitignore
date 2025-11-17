@@ -4,9 +4,6 @@
 # Data files
 **/index.json
 
-# Build artifacts
-blog.*
-
 # Local Netlify stuff
 .netlify
 deno.lock
