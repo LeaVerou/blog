@@ -1,0 +1,14 @@
+# HTML files
+**/index.html
+
+# Data files
+**/index.json
+
+# Local Netlify stuff
+.netlify
+deno.lock
+
+# Other
+node_modules
+.DS_Store
+thumbs.db
