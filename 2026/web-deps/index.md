@@ -9,6 +9,11 @@ tags:
   - web-standards
   - web-architecture
 nutshell: Dear JS ecosystem, I love you, but you have a dependency management problem when it comes to the Web, and the time has come for an intervention.
+social_posts:
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3mbu6axbdas2o
+  twitter: https://x.com/LeaVerou/status/2008979109368496359
+  mastodon: https://front-end.social/@leaverou/115855359656038697
+#   linkedin:
 ---
 
 <figure class="no-padding">
@@ -17,7 +22,6 @@ nutshell: Dear JS ecosystem, I love you, but you have a dependency management pr
 No, this is not another rant about npm’s security issues.
 </figcaption>
 </figure>
-
 
 **Abstraction** is the cornerstone of modern software engineering.
 Reusing logic and building higher-level solutions from lower-level building blocks is what makes all the technological wonders around us possible.
