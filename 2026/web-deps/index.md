@@ -155,10 +155,10 @@ Good luck.
 Needed to show a live demo during a talk, over clogged conference wifi?
 Maybe sacrifice a goat to the gods first.
 
-And while they maintain encapsulation slightly better than raw file imports, as they typically let you reference a package by its name for its default export,
-additional specifiers (e.g. `packagename/fn`) typically require importing by file path.
+And while they maintain encapsulation slightly better than raw file imports, as they let you reference a package by its name for its default export,
+additional specifiers (e.g. `packagename/fn`) typically still require importing by file path.
 
-_“But with public CDNs, I benefit from the resource having already been cached by another website the user visited!”_
+_“But with public CDNs, I benefit from the resource having already been cached by another website the user visited!”_<br>
 Oh my sweet summer child.
 I hate to be the one to break it to you, but no, you don’t, and that has been the case [since about 2020](https://addyosmani.com/blog/double-keyed-caching/).
 **_Double keyed caching_ obliterated this advantage**.
@@ -176,7 +176,7 @@ Even requiring resources to opt-in (e.g. via CORS) was ruled out, the concern be
 
 I personally have trouble accepting that such wasteful bandwidth usage was the best balance of tradeoffs for [all Web users](https://www.w3.org/TR/ethical-web-principles/#allpeople), including those in emerging economies and different locales[^finding].
 It's not that I don’t see the risks — it’s that I am acutely aware of the cost,
-a cost that is disproportionately borne by those in emerging economies.
+a cost that is disproportionately borne by those not in the [Wealthy Western Web](https://www.smashingmagazine.com/2017/03/world-wide-web-not-wealthy-western-web-part-1/).
 
 **How likely is it that a Web user in Zimbabwe, where [1 GB of bandwidth costs 17% of the median monthly income](https://bestbroadbanddeals.co.uk/mobiles/worldwide-data-pricing/), would choose to download React or nine weights of [Roboto](https://fonts.google.com/specimen/Roboto) thousands of times to avoid seeing personalized ads?**
 And how patronizing is it for people in California to be making this decision for them?
