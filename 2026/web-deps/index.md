@@ -177,9 +177,6 @@ a cost that is disproportionately borne by those in emerging economies.
 **How likely is it that a Web user in Zimbabwe, where [1 GB of bandwidth costs 17% of the median monthly income](https://bestbroadbanddeals.co.uk/mobiles/worldwide-data-pricing/), would choose to download React or nine weights of [Roboto](https://fonts.google.com/specimen/Roboto) thousands of times to avoid seeing personalized ads?**
 And how patronizing is it for people in California to be making this decision for them?
 
-
-[^1]: Not that [XS-leaks](https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/XS-Leaks) are generally minor, but minor compared to major vulnerabilities like XSS or SQL injection.
-
 [^finding]: In fact, when I was in the TAG, Sangwhan Moon and I [drafted a Finding](https://w3ctag.github.io/caching-bundling-sustainability/) on the topic, but the TAG never reached consensus on it.
 
 </aside>
