@@ -43,6 +43,7 @@ You just install them, use them, and move on.
 
 Instead, dependency management in the web platform consists of **bits and bobs of scattered primitives, with no coherent end-to-end solution**.
 Naturally, bundlers such as [Webpack](https://webpack.js.org/), [rollup](https://rollupjs.org/), and [esbuild](https://esbuild.github.io/) have picked up the slack, with [browserify](https://browserify.org/) being the one that started it all, in 2012.
+<!-- more -->
 
 There is **nothing wrong with bundlers** when used as a **performance optimization** to minimize waterfall effects and overhead from too many HTTP requests.
 You know, what a _bundler_ is supposed to do.
