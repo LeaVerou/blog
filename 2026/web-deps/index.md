@@ -13,7 +13,7 @@ social_posts:
   bluesky: https://bsky.app/profile/lea.verou.me/post/3mbu6axbdas2o
   twitter: https://x.com/LeaVerou/status/2008979109368496359
   mastodon: https://front-end.social/@leaverou/115855359656038697
-#   linkedin:
+  linkedin: https://www.linkedin.com/feed/update/urn:li:share:7414754649699672064/
 ---
 
 <figure class="no-padding">
