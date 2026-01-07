@@ -13,6 +13,7 @@ tags:
   - ux
   - design-reviews
   - design-principles
+date: 2025-09-29
 social_posts:
   bluesky: https://bsky.app/profile/lea.verou.me/post/3lzyinhwwqs2g
   twitter: https://x.com/LeaVerou/status/1972709985705455885
