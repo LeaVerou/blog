@@ -293,9 +293,12 @@ Instead, I have to include the darn thing in. Every. Single. Page.
 **The moment you decide to use JS dependencies, you now need an HTML templating tool as well.** 🙃
 
 “💡 *Oh I know, I’ll generate this from my library via DOM methods!*” I hear you say.
-No, my sweet summer child.
+~~No, my sweet summer child.
 **It needs to be present at parse time.**
-So unless you’re willing to `document.write()` it (please don't), the answer is a big flat NOPE.
+So unless you’re willing to `document.write()` it (please don't), the answer is a big flat NOPE.~~
+
+**Edit:** Injecting import maps via DOM methods now works in all browsers! In fact, [JSPM 4.0](https://jspm.org/jspm-4.0-release) uses it! 🎉
+This is a _gamechanger_.
 
 “💡 *Ok, at least I’ll keep it short by routing everything through a CDN or the same local folder*”
 No, my sweet summer child.
@@ -421,6 +424,9 @@ External import maps do alleviate some of the core pain points, but are still gl
 [What if import maps could be imported into JS code?](https://es.discourse.group/t/bringing-import-maps-to-js-import-importmap-json-with-type-importmap/2481)
 If JS could import import maps, (e.g. via `import "map.json" with { type: "importmap" }`), this would  eliminate the dependency on HTML altogether, allowing for scripts to localize their own import info,
 and for the graph to be progressively composed instead of globally managed.
+
+**Edit:** Injecting import maps via DOM methods now works in all browsers! 🎉
+This alleviates the need for external import maps as [a regular JS file](https://jspm.org/jspm-4.0-release#:~:text=into%20the%20browser%3A-,importmap.js,-(map%20%3D%3E%20%7B%0A%20%20document.head) can just inject them.
 
 #### Import maps via HTTP header?
 
