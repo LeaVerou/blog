@@ -1,5 +1,5 @@
 ---
-title: "On Yak Shaving and <md-block>, a new HTML element for Markdown"
+title: "On Yak Shaving and `<md-block>`, a new HTML element for Markdown"
 date: "2021-11-26"
 tags:
   - "original"
