@@ -33,6 +33,7 @@ This is not even new: when the injector is a classic (non-module) script placed 
 
 Turns out, [JSPM](https://jspm.org/) made the same discovery: [JSPM v4 uses the same technique](https://jspm.org/jspm-4.0-release#import-map-package-management).
 It is unclear why it took all of us so long to discover it but I’m glad we got there.
+<!-- more -->
 
 ## How does it work?
 
