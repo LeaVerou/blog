@@ -8,6 +8,10 @@ tags:
   - tip
   - web-standards
   - web-architecture
+social_posts:
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3mg4apwfu6c2q
+  twitter: https://x.com/LeaVerou/status/2028590531853390223
+  mastodon: https://front-end.social/@leaverou/116161822072997431
 ---
 
 
