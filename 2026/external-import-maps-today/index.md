@@ -6,6 +6,8 @@ nutshell: A few weeks ago, I [posted](../web-deps/) lamenting the current state 
 tags:
   - js
   - tip
+  - web-standards
+  - web-architecture
 ---
 
 
