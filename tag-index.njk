@@ -1,0 +1,15 @@
+---
+layout: page.njk
+pagination:
+  data: collections.blogTagPages
+  size: 1
+  alias: tagData
+override:tags: []
+permalink: "/blog/tags/{{ tagData.tag }}/"
+eleventyComputed:
+  title: "{{ tagData.posts.length | pluralize('post') }} on {{ tagData.tag | format_tag }}"
+---
+{% set taglist = tagData.posts | reverse %}
+{% set post_style = "compact" if taglist.length > 10 %}
+{% import "_posts.njk" as posts with context %}
+{{ posts.list(taglist, {style: post_style }) }}

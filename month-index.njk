@@ -1,13 +1,13 @@
 ---
+layout: page.njk
 pagination:
-  data: collections.postsByMonth
+  data: collections.blogMonthPages
   size: 1
-  alias: month
-permalink: /blog/{{ month | replace("-", "/") }}/
+  alias: monthData
 override:tags: []
+permalink: "/blog/{{ monthData.month | replace('-', '/') }}/index.html"
 eleventyComputed:
-  title: "Posts from {{ month | format_date({month: 'long', year: 'numeric'}) }}"
+  title: "Posts from {{ monthData.month | format_date({month: 'long', year: 'numeric'}) }}"
 ---
-
-{% import "_posts.njk" as posts %}
-{{ posts.list(collections.postsByMonth[month], {style: "compact"}) }}
+{% import "_posts.njk" as posts with context %}
+{{ posts.list(monthData.posts, {style: "compact"}) }}

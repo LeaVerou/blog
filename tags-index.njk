@@ -1,18 +1,20 @@
 ---
-title: All tags
-permalink: "blog/tags/index.html"
+layout: page.njk
 override:tags: []
+permalink: "/blog/tags/index.html"
+eleventyComputed:
+  title: "All tags"
 ---
-
 {% import "_tags.njk" as tags with context %}
+{% set postsByTag = collections.postsByTag[siteArea] or {} %}
 
 <ol class="tags-index subtle-markers">
 {% set orphan_count = 0 %}
-{% for tag, posts in collections.postsByTag %}
+{% for tag, posts in postsByTag %}
 	{% if posts.length > 1 %}
-	<li>{{ tags.one(tag) }}
+	<li>{{ tags.one(tag, siteArea) }}
 		<span class="post-count">({{ posts.length }} posts)</span>
-		{% if posts.aliases %}<div class="aliases">+ {% for alias in posts.aliases %}{{ tags.one(alias) }}{% endfor %}</div>{% endif %}
+		{% if posts.aliases %}<div class="aliases">+ {% for alias in posts.aliases %}{{ tags.one(alias, siteArea) }}{% endfor %}</div>{% endif %}
 	</li>
 	{% else %}
 	{% set orphan_count = orphan_count + 1 %}
@@ -21,12 +23,12 @@ override:tags: []
 </ol>
 
 <details>
-<summary>Also {{ orphan_count }} <a href="/blog/2023/rethinking-categorization">“orphan”</a> tags</summary>
+<summary>Also {{ orphan_count }}{% if siteArea === "blog" %} <a href="/blog/2023/rethinking-categorization">"orphan"</a> tags{% else %} "orphan" tags{% endif %}</summary>
 
 <p>The following tags are only used by a single post.</p>
 
 <ol class="tags-index subtle-markers">
-{% for tag, posts in collections.postsByTag %}
+{% for tag, posts in postsByTag %}
 	{% if posts.length === 1 %}
 	<li>
 		<a href="{{ posts[0].url }}">{{ tag | format_tag }}</a>
