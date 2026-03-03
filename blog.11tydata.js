@@ -4,21 +4,21 @@ export default {
 			return data.page.filePathStem.replace(/^\/blog\/|\/index$/g, "");
 		},
 		wpid: data => {
-			return data.wpids[data.postUrlStem];
+			return data.wpids?.[data.postUrlStem];
 		},
 		disqus_id: data => {
 			let wpid = data.wpid;
 
 			if (wpid) {
-				return `${ wpid } https:\/\/lea.verou.me\/?p=${ wpid }`;
+				return `${wpid} https:\/\/lea.verou.me\/?p=${wpid}`;
 			}
 			else if (data.disqus !== false && data.page.date < new Date("2024-01-01")) {
 				// Posts before 2024-01-01 use Disqus
-				return typeof data.disqus !== "string"? data.postUrlStem : data.disqus;
+				return typeof data.disqus !== "string" ? data.postUrlStem : data.disqus;
 			}
 		},
 		is_post: data => {
-			return data.tags.includes("blog");
+			return data.tags.includes("blog") && data.page.inputPath?.endsWith("/index.md");
 		},
 		is_old_post: data => {
 			if (!data.is_post) {
@@ -34,5 +34,5 @@ export default {
 
 			return data.page.url;
 		},
-	}
+	},
 };
