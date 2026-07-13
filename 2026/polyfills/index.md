@@ -422,9 +422,9 @@ This is an emotional reaction to a few high-profile incidents, not a rational co
 
 Instead of trying to eliminate polyfills, we should be more proactive in discovering and reacting to developer needs, so polyfills never become so popular that they threaten the design space of a native API.
 
-**Starting from polyfilling _itself_.**
+**Starting from polyfilling _itself_.** [^tuned]
 
-Stay tuned: in Part 2 I’ll discuss what gaps in the Web platform make it hard to write good polyfills today, and how this varies across HTML, CSS, and JS.
+[^tuned]: Stay tuned: in Part 2 I’ll discuss what gaps in the Web platform make it hard to write good polyfills today, and how this varies across HTML, CSS, and JS.
 
 _Huge thanks to [Greg Whitworth](https://www.linkedin.com/in/gregwhitworth/) and [Cassondra Roberts](https://allons-y.llc/) for reviewing an earlier draft of this post._
 
