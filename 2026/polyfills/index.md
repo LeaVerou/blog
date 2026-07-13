@@ -4,6 +4,7 @@ toc: true
 image: images/cover.png
 draft: true
 date: 2026-07-13
+nutshell: An influential spec editor thinks polyfilling is harmful. I think blaming polyfills for compat accidents is like blaming car crashes on the ambulances that show up — and the alternative is a stagnant Web, held hostage by its slowest browser.
 ---
 
 If you’re a web developer reading this, you may find the title baffling.
@@ -26,8 +27,13 @@ One of the few opinions I have held strongly over the years is that **[polyfills
 As with most things in life, it’s all about the cost-benefit.
 **We don’t stop flying planes because crashes happen.**
 We do a post-mortem and figure out how we can prevent the same accident from happening again.
+And crucially, the point of a post-mortem is to find the root cause — not to ground the entire fleet.
 
-I was under the impression that this was the consensus view of the web standards community as a whole.
+Don’t get me wrong, concerns about polyfills are well-intentioned.
+They come from implementors and standards folks who want to preserve the design flexibility to build the best API surface possible — a goal I share deeply.
+Being both a spec editor and a library author, striking that balance is something I navigate all the time.
+
+Still, I was under the impression that seeing polyfills as a net positive was the consensus view of the web standards community as a whole.
 That while we may not have consensus on the specific tradeoffs or solutions, we see polyfilling as a good thing and we generally _do_ want web platform features to be polyfillable.
 
 So, you can imagine my surprise when in a [recent WHATWG meeting](https://docs.google.com/document/d/1D90QugzZZM6ga8k0ChMA7llmGFHcH9quDj4oCrgqtkE/edit?tab=t.0) where I presented a proposal for [extending mutation observers to observe shadow root attachment](https://github.com/whatwg/dom/issues/1287), **[Anne van Kesteren](https://annevankesteren.nl/) expressed the view that polyfilling is harmful**.
@@ -37,14 +43,15 @@ So, you can imagine my surprise when in a [recent WHATWG meeting](https://docs.g
 </figure>
 
 It’s important to note that Anne is not some rando.
-He is the main active editor of most WHATWG specs (HTML, DOM, Fetch, import maps, etc.) and has **tremendous overall influence** on the direction of the Web platform.
+He is the main active editor of most WHATWG specs (HTML, DOM, Fetch, import maps, etc.), a WebKit engineer at Apple, and has **tremendous overall influence** on the direction of the Web platform.
 
 I had to find out if Anne’s comment reflected broader committee consensus, so
 I [brought the topic up in the WHATWG Matrix](https://matrix.to/#/!AGetWbsMpFPdSgUrbs:matrix.org/$MQ9QZ1sfSozpC6GsNpzX-v9srz7QXqAI6z1cuBfKDiU?via=matrix.org&via=mozilla.org&via=igalia.com) and asked some folks privately.
 
 Thankfully, it became clear that no, **Anne’s comment did _not_ reflect broader consensus** (😮‍💨), but some of the views expressed about polyfills were more ambivalent than I’d have expected.
 
-I think that concerns against polyfills are well-intentioned, but generally misplaced. Most fail to consider the system holistically, and especially the human factors that drive developer behavior.
+As I said, these concerns are well-intentioned — but I believe they are generally misplaced.
+Most fail to consider the system holistically, and especially the human factors that drive developer behavior.
 
 Let me explain.
 
@@ -58,7 +65,7 @@ _That’s_ what restricts design flexibility.
 
 
 
-Whenever this happens too early, by too many people, you have a problem.
+Whenever this happens too early, by too many people, you can have a problem.
 It doesn’t matter whether the code using it is a polyfill, a fallback, "progressive enhancement" or "graceful degradation".
 
 Fundamentally, **every pattern that uses the native feature when it exists and a userland implementation (or even nothing) when it doesn’t** risks breakage if the feature changes in a way that is incompatible with that usage.
@@ -119,7 +126,7 @@ This is user effort of the magnitude of **O(M × N) on the number of consumers a
 
 ## Are separate namespaces the solution?
 
-From the same WHATWG discussion:
+From the same [WHATWG discussion](https://docs.google.com/document/d/1D90QugzZZM6ga8k0ChMA7llmGFHcH9quDj4oCrgqtkE/edit?tab=t.0):
 
 > **Anne:** I would much rather people write a library that demonstrates the need for something as opposed to something that attempts to mimic the exact API shape of a proposal while simultaneously trampling all over our design flexibility.
 
@@ -339,6 +346,11 @@ For one, researching use cases and prior art to flesh out the feature often demo
 But also, **users have a lot of trouble expressing abstract pain points.**
 It is much easier to point to an existing feature and say _"I want browsers to support this"_ than to express a need for which no feature exists.
 
+In a way, polyfills are to the web platform what user testing is to product design — and the prototype part isn’t even an analogy: a polyfill literally _is_ a prototype of the feature.
+Real user feedback, **without baking technical debt into the platform**.
+One could even argue that browsers should be funding — or outright developing — these polyfills, precisely so they can gather this feedback _before_ an API is frozen into the platform by web compat.
+Yes, there is some risk they may constrain the ergonomics of the eventual API — but if high-demand features actually ship at a reasonable pace, that risk shrinks dramatically.
+
 ## Polyfills restore power balance in the ecosystem
 
 Who remembers [IE7.js](https://code.google.com/archive/p/ie7-js/)? Or [html5shiv](https://github.com/aFarkas/html5shiv)?
@@ -350,7 +362,15 @@ Instead, polyfills let authors adopt modern standards years before IE supported 
 That kept demand for those standards alive, kept the pressure on IE, and gave end users reasons to switch browsers.
 The fact that we were finally able to move away from IE6 and IE7 is in large part thanks to polyfills.
 
-Without polyfills, fallbacks, and progressive enhancement, **a single browser has undue power to hold back the Web**.
+A browser lagging behind is not always a matter of will, either — **release cadence matters**.
+IE, and EdgeHTML after it, was bound to the Windows release schedule, just as Safari is tied to the macOS and iOS release trains today — a constraint the engineers working on these engines have no say in.
+A slow release train stretches exactly the gap that polyfills exist to cover: even once a feature ships, it reaches users in OS-update time, not browser-update time.
+If every engine could ship at the cadence of Chromium and Firefox, the need for polyfills would shrink significantly.
+Until then, polyfills are how authors deliver the benefits of native APIs — performance, accessibility, i18n — without being held hostage to the slowest release train.
+
+<blockquote class=pullquote>Without polyfills, a single browser has undue power to hold back the Web.</blockquote>
+
+Without polyfills, fallbacks, and progressive enhancement, **a single browser has undue power to hold back the Web** — whether by choice or by circumstance.
 I'm _far_ more concerned about that than about the occasional smooshgate.
 
 ## Polyfills make the Web more robust and more inclusive
@@ -387,7 +407,9 @@ And these incidents would be even fewer if we were more proactive in discovering
 
 **Starting from polyfilling _itself_.**
 
-_Stay tuned — in the next post I’ll discuss what gaps in the Web platform make it hard to write good polyfills and how this varies across HTML, CSS, and JS!_
+Stay tuned — in the next post I’ll discuss what gaps in the Web platform make it hard to write good polyfills and how this varies across HTML, CSS, and JS!
+
+_Huge thanks to Greg Whitworth and Cassondra Roberts for reviewing an earlier draft of this post._
 
 <!--
 ## Gaps in polyfilling
