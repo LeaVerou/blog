@@ -4,6 +4,10 @@ toc: true
 image: images/cover.png
 date: 2026-07-13
 nutshell: A highly influential spec editor expressed the opinion that polyfilling is harmful. I beg to differ.
+social_posts:
+  twitter: https://x.com/LeaVerou/status/2076711528061940093
+  mastodon: https://front-end.social/@leaverou/116913701408740713
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3mqk5ns47cs2d
 ---
 
 If you’re a web developer, you may find the title baffling.
