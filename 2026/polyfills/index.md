@@ -13,6 +13,7 @@ social_posts:
   mastodon: https://front-end.social/@leaverou/116913701408740713
   bluesky: https://bsky.app/profile/lea.verou.me/post/3mqk5ns47cs2d
   threads: https://www.threads.com/@leaverou/post/DavZaRkjfL-
+  linkedin: https://www.linkedin.com/posts/leaverou_new-blog-post-in-defense-of-polyfills-share-7482505500199174144-GPId/
 ---
 
 If you’re a web developer, you may find the title baffling.
