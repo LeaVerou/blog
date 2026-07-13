@@ -99,7 +99,7 @@ When a bug is identified in an ad-hoc fallback strategy, good luck finding all t
 
 Bottom line: **eliminating polyfills does not eliminate the need for them** and all other avenues of satisfying that need are measurably _worse_.
 
-### Polyfills decouple API design from implementation
+## Polyfills decouple API design from implementation
 
 **Standardized APIs have intrinsic value, independently of browser implementations.**
 
