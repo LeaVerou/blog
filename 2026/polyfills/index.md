@@ -2,7 +2,6 @@
 title: In defense of polyfills
 toc: true
 image: images/cover.png
-draft: true
 date: 2026-07-13
 nutshell: An influential spec editor thinks polyfilling is harmful. I think blaming polyfills for compat accidents is like blaming car crashes on the ambulances that show up — and the alternative is a stagnant Web, held hostage by its slowest browser.
 ---
@@ -37,6 +36,8 @@ Still, I was under the impression that seeing polyfills as a net positive was th
 That while we may not have consensus on the specific tradeoffs or solutions, we see polyfilling as a good thing and we generally _do_ want web platform features to be polyfillable.
 
 So, you can imagine my surprise when in a [recent WHATWG meeting](https://docs.google.com/document/d/1D90QugzZZM6ga8k0ChMA7llmGFHcH9quDj4oCrgqtkE/edit?tab=t.0) where I presented a proposal for [extending mutation observers to observe shadow root attachment](https://github.com/whatwg/dom/issues/1287), **[Anne van Kesteren](https://annevankesteren.nl/) expressed the view that polyfilling is harmful**.
+
+<!-- read more -->
 
 <figure>
 <img src="images/say-what-now.gif" alt="Say what now?!" />
@@ -212,7 +213,7 @@ But for a mature feature, that has shipped in at least one browser, their appeal
 They lack all strengths of polyfills:
 - They don't use the native implementation, even when it exists.
 - They cannot be removed without refactoring
-- Without a standardized API, a ponoyfill cannot be swapped for another without further refactoring.
+- Without a standardized API, a ponyfill cannot be swapped for another without further refactoring.
 - They introduce a new userland dependency that needs to be evaluated, learned, documented, and maintained, just the same as if no standard existed at all.
 
 **IMO ponyfills are just userland libraries with better marketing.**
@@ -338,7 +339,7 @@ The web components community had been asking for years!
 
 Part of this is that the WHATWG process is designed to be _reactive_ rather than _proactive_.
 Even if there is a strong, demonstrated author need, WHATWG will refuse to flesh out a feature until [at least two implementors express interest](https://whatwg.org/working-mode#additions) in implementing it.
-["needs implementor interest"](https://github.com/whatwg/html/issues?q=sort%3Aupdated-desc%20is%3Aissue%20state%3Aopen%20label%3A%22needs%20implementer%20interest%22) is where so many good ideas go to die.
+["needs implementer interest"](https://github.com/whatwg/html/issues?q=sort%3Aupdated-desc%20is%3Aissue%20state%3Aopen%20label%3A%22needs%20implementer%20interest%22) is where so many good ideas go to die.
 
 This made sense when WHATWG was founded as a reaction to the increasingly academic W3C HTML Working Group, which had been designing XHTML 2 in a vacuum, speccing features that no browser was willing to implement.
 
@@ -369,7 +370,7 @@ That kept demand for standards alive, sustained pressure on IE, and gave end-use
 **The fact that we were finally able to move away from IE6 and IE7 is in large part thanks to polyfills.**
 
 A browser lagging behind is not always a matter of will, either — **release cadence matters**.
-IE, and EdgeHTML after it, was bound to the Windows release schedule, just as Safari is tied to the MacOS and iOS release trains today — a constraint the engineers working on these engines have no say in.
+IE, and EdgeHTML after it, was bound to the Windows release schedule, just as Safari is tied to the macOS and iOS release trains today — a constraint the engineers working on these engines have no say in.
 A slow release train stretches exactly the gap that polyfills exist to cover: even once a feature ships, it reaches users in OS-update time, not browser-update time.
 If every engine could ship at the cadence of Chromium and Firefox, the need for polyfills would shrink significantly.
 Until then, polyfills are how authors deliver the benefits of native APIs — performance, accessibility, i18n — without being held hostage to the slowest release train.
