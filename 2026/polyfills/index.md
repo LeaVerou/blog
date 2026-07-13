@@ -3,7 +3,7 @@ title: In defense of polyfills
 toc: true
 image: images/cover.png
 date: 2026-07-13
-nutshell: An influential spec editor thinks polyfilling is harmful. I think blaming polyfills for compat accidents is like blaming car crashes on the ambulances that show up — and the alternative is a stagnant Web, held hostage by its slowest browser.
+nutshell: A highly influential spec editor expressed the opinion that polyfilling is harmful. I beg to differ.
 ---
 
 If you’re a web developer, you may find the title baffling.
