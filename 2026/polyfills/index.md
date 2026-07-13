@@ -418,7 +418,6 @@ Even smooshgate resulted in `array.flat()`, which to me is not obviously worse t
 
 We are spending so much collective energy trying to mitigate a largely theoretical problem, that has only been a significant issue a handful of times in the 30+ years of the Web’s history.
 And yet, many are willing to sacrifice significant, tangible, far-reaching benefits to do so.
-
 This is an emotional reaction to a few high-profile incidents, not a rational cost-benefit tradeoff.
 
 Instead of trying to eliminate polyfills, we should be more proactive in discovering and reacting to developer needs, so polyfills never become so popular that they threaten the design space of a native API.
