@@ -1,6 +1,10 @@
 ---
 title: In defense of polyfills
 toc: true
+tags:
+  - polyfills
+  - web-standards
+  - web-platform
 image: images/cover.png
 date: 2026-07-13
 nutshell: A highly influential spec editor expressed the opinion that polyfilling is harmful. I beg to differ.
