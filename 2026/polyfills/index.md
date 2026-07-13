@@ -12,6 +12,7 @@ social_posts:
   twitter: https://x.com/LeaVerou/status/2076711528061940093
   mastodon: https://front-end.social/@leaverou/116913701408740713
   bluesky: https://bsky.app/profile/lea.verou.me/post/3mqk5ns47cs2d
+  threads: https://www.threads.com/@leaverou/post/DavZaRkjfL-
 ---
 
 If you’re a web developer, you may find the title baffling.
