@@ -7,13 +7,13 @@ date: 2026-07-13
 nutshell: An influential spec editor thinks polyfilling is harmful. I think blaming polyfills for compat accidents is like blaming car crashes on the ambulances that show up — and the alternative is a stagnant Web, held hostage by its slowest browser.
 ---
 
-If you’re a web developer reading this, you may find the title baffling.
+If you’re a web developer, you may find the title baffling.
 _"Polyfills need defending? Who’s against them?!"_ you might ask.
 
 Two weeks ago, I’d be in the same boat.
 
 Polyfills and I go way back.
-I was able to dig up a [JSConf EU talk of mine from 2011](https://www.youtube.com/watch?v=V0wJ1BnfnR8) which was exactly about this topic.
+I dug up a [JSConf EU talk of mine from 2011](https://www.youtube.com/watch?v=V0wJ1BnfnR8) on exactly this topic.
 
 <figure>
 <img src="images/polyfilling-the-gaps.jpg" alt="YouTube still from that talk" />
@@ -57,13 +57,11 @@ Let me explain.
 
 ## It’s not the polyfills
 
-**Authors want to use the native behavior when it exists, without breakage when it doesn’t.**
+**Authors want to use native behavior when it exists, without breakage when it doesn’t.**
 That’s the crux of it.
 _That’s_ what restricts design flexibility.
 
 <img src="images/polyfills-pe.jpg" alt="Scooby do mask reveal meme with the first panel reading “Polyfills” and the second (revealed) reading “Progressive Enhancement”" />
-
-
 
 Whenever this happens too early, by too many people, you can have a problem.
 It doesn’t matter whether the code using it is a polyfill, a fallback, "progressive enhancement" or "graceful degradation".
@@ -72,7 +70,7 @@ Fundamentally, **every pattern that uses the native feature when it exists and a
 
 This includes:
 - Using CSS properties for progressive enhancement, accepting that they won't work everywhere
-- Ad hoc CSS fallbacks via the cascade or `@supports`
+- CSS fallbacks via the cascade or `@supports`
 - Conditional imports after feature detection
 - Using a modern HTML element, with a script that converts it to (or wraps it with) a web component if not supported
 - Build tools that include fallbacks alongside the native feature
@@ -83,33 +81,32 @@ In _all_ of these cases, if the native API were to change in a way incompatible 
 
 <blockquote class=pullquote>Eliminating polyfills does not eliminate the need for them.</blockquote>
 
-The benefit of polyfills over all of the above is author-facing: polyfills are more portable, more maintainable, and typically more correct than ad-hoc fallbacks.
+The benefit of polyfills over the techniques above is author-facing: polyfills are portable, maintainable, and typically more correct than ad-hoc fallbacks.
 
 When a bug is identified in a polyfill, it can be fixed centrally.
 When a bug is identified in an ad-hoc fallback strategy, good luck finding all the callsites and fixing them.
 
-Bottom line: **eliminating polyfills does not eliminate the need for them** and all other avenues of satisfying that need are actively _worse_.
-
+Bottom line: **eliminating polyfills does not eliminate the need for them** and all other avenues of satisfying that need are measurably _worse_.
 
 ### Polyfills decouple API design from implementation
 
 **Standardized APIs have intrinsic value, independently of browser implementations.**
 
-We often think of polyfills as a single toggle: you use a polyfill, leave it in there, then later when all browsers implement the feature natively, you remove it.
+We think of polyfills as a toggle: use a polyfill, leave it in there, and later when all browsers implement the feature natively, it gets removed.
 
-While correct, this misses out on one of the biggest benefits of polyfills: **decoupling API design from implementation**.
+This misses out on one of the biggest benefits of polyfills: **decoupling API design from implementation**.
 
 If a userland library isn’t working well, you must weigh the tradeoffs of refactoring your codebase to use a different library, and educating your team about the new library.
 
 With a polyfill, **the API itself is not within the purview of the polyfill**.
-The polyfill only supplies implementation, the API is already externally decided.
+The polyfill supplies only implementation, while the API is externally decided by the standards.
 Thus, swapping a misbehaving polyfill for another has near-zero cost.
 
 The benefits of API standardization are far greater when we consider the broader ecosystem.
 A dependency isn’t aware what your userland implementation may be for certain functionality.
 Either it needs to provide a way to pass it via configuration (expanding its API surface), or it needs to implement its own version of the functionality, which may be incompatible with that of the host.
 
-**Standardized APIs are the town square of the Web**, uniting all code consumers (developers, agents, tooling, etc) around a shared vocabulary.
+**Standardized APIs are the town square of the Web**, uniting all consumers (developers, agents, tooling, etc) around a shared vocabulary.
 
 For example, suppose we’re using:
 - a data binding framework that synchronizes JS data with form controls
@@ -120,8 +117,8 @@ As long as these are implemented in an element-agnostic way, reading `element.va
 
 [^offenders]: Special-casing known offenders like radios and checkboxes of course.
 
-But without this standardized API, we would need to specify how every custom element expresses its data and what event(s) it uses to notify for changes to each and every one of these libraries.
-This is user effort of the magnitude of **O(M × N) on the number of consumers and producers** that must know about each other.
+But without this standardized API, we need to specify how every custom element expresses its data and what event(s) it uses to notify for changes to each and every one of these libraries.
+This is user effort on the magnitude of **O(M × N) on the number of consumers and producers** that must know about each other.
 **Standardized APIs collapse it to O(1).**
 
 ## Are separate namespaces the solution?
@@ -138,16 +135,18 @@ From the same [WHATWG discussion](https://docs.google.com/document/d/1D90QugzZZM
 
 The topic of polyfilling often comes up in discussions about CSS and HTML polyfilling, which are currently much harder to polyfill than JS features.
 
-Many people are of the opinion that the solution is to have a separate namespace for polyfills, so that they do not conflict with the native implementation.
+Many people are of the opinion that the solution is to have a separate namespace for polyfills, so they cannot conflict with native implementations.
 For example, instead of polyfilling `<amount>`, you'd create a web component that polyfills `<polyfill-amount>`.
 Instead of polyfilling the CSS property `border-shape`, you’d write a polyfill that makes `--border-shape` work the same way.
 
-At first, this seems like a good idea: the benefits of polyfilling without the syntax lock-in!
+At first glance, this seems ideal: the benefits of polyfilling without the risk of syntax lock-in!
 But we’ve tried it before.
+
 **Who remembers vendor prefixes?**
+
 Their core premise was exactly the same: if we experiment in a separate namespace, the native implementation can change without breaking any existing deployed experiments!
 
-But humans want to use the native feature when it’s there.
+But remember, **humans want to use the native feature when it’s there**.
 And they don’t want to go back and edit their code when that happens.
 So what do they do?
 They use both!
@@ -160,19 +159,22 @@ Everybody loses.
 
 ## Is dropping feature detection the solution?
 
-As an attempt to mitigate the issues, some have started recommending polyfills that skip feature detection entirely and *always* use the fallback implementation, even when the native feature exists.
+As another attempt to mitigate the issues, some have started recommending polyfills that skip feature detection entirely and *always* use the fallback implementation, even when the native feature exists.
 
-I think this is extremely wasteful.
-Polyfills add weight, are typically slower than the native implementation, less accessible, less i18nclusive, and often fail to handle edge cases.
-As their name implies, they are meant to temporarily cover a gap, not intended as a long-term solution.
-The whole point is that they eventually become dormant, even in a codebase that is no longer actively maintained.
+This is extremely wasteful.
+Polyfills add weight, are typically slower than native implementations, less accessible, less i18nclusive, and rarely handle edge cases.
+As their name implies, they are meant to _temporarily_ cover a gap.
+They were never meant to be a long-term solution.
+The whole point is planned obsolescence: they eventually become dormant, even in a codebase that is no longer actively maintained.
 Feature detection and conditional loading are _essential_ for that to work.
 
 Authors accept these costs _because_ they are temporary: every browser update quietly moves more of their users onto the native implementation, until the polyfill fades into a no-op.
 Remove feature detection, and the costs become permanent.
 Every user pays the download forever, and no user ever gets the native implementation’s performance, accessibility, or i18n — even when it’s sitting right there in their browser.
 
-It does preserve the advantages of a standardized API, but loses too many of the benefits to be an attractive value proposition.
+This approach does preserve the advantages of a standardized API, but at what cost?
+It trades away real, tangible benefits, felt by every user of the Web, to prevent a rare, largely theoretical risk.
+**Every economist would be pulling their hair out at this cost-benefit!**
 
 ## Are ponyfills the solution?
 
@@ -202,27 +204,28 @@ Note that **this does not use the native implementation at all**.
 It is not meant to be removed later.
 Its link to the native API is purely psychological.
 
-I can see ponyfills being helpful for iterating on and getting feedback on an API while the standard is still being worked on, or even to motivate a new proposal.
+I can see ponyfills being helpful for iterating on and getting feedback on an API while the standard is still being developed, or even to motivate a new proposal.
 But then again, so are userland libraries.
 
-But for a mature feature, that has actually shipped in at least one browser, their appeal is much weaker.
+But for a mature feature, that has shipped in at least one browser, their appeal is much weaker.
 
-They lack pretty much all of the strengths of polyfills:
+They lack all strengths of polyfills:
 - They don't use the native implementation, even when it exists.
 - They cannot be removed without refactoring
-- They do not use a standardized API, so a ponyfill cannot be easily swapped for another ponyfill
+- Without a standardized API, a ponoyfill cannot be swapped for another without further refactoring.
 - They introduce a new userland dependency that needs to be evaluated, learned, documented, and maintained, just the same as if no standard existed at all.
 
 **IMO ponyfills are just userland libraries with better marketing.**
 
-Even their only advantage, not modifying the global environment and thus not trampling on the spec, is typically negated by the way they are actually used in practice, as a sort of …deconstructed polyfill.
+Even their only advantage, not modifying the global environment and thus not trampling on the spec, is typically negated by actual usage: as a sort of …deconstructed polyfill.
 
-For example, see [this post](https://kikobeats.com/polyfill-ponyfill-and-prollyfill/) where the author is using a ponyfill for `Number.MAX_SAFE_INTEGER` as part of a makeshift polyfill:
+See [this post](https://kikobeats.com/polyfill-ponyfill-and-prollyfill/) where the author is using a ponyfill for `Number.MAX_SAFE_INTEGER` as part of a makeshift polyfill:
 
 ```js
 const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || require('number-max-safe-integer');
 ```
 
+**This is the norm**, not some lone author failing to grok the concept of ponyfills.
 In fact, many people would call something like this a ponyfill as well:
 
 ```js
@@ -237,8 +240,7 @@ export function regexpEscape(value) {
 
 This combines the disadvantages of both approaches, while getting you the benefits of neither!
 
-In the end, the usage hasn't changed, because the human need hasn't changed.
-How unsurprising.
+**In the end, the usage hasn't changed, because the human need hasn't changed.**
 
 ## Do polyfills discourage native implementations?
 
@@ -247,7 +249,10 @@ How unsurprising.
 _Do they?_
 
 Yes, the existence of high-quality, lightweight polyfills _can_ reduce the urgency for browsers to be the [last to implement](https://webstatus.dev/stats#missing-one-implementation).
-But that’s not what’s critical for the Web’s evolution.
+But even then, the pressure never drops to zero: polyfills are slower and heavier than native implementations, and it’s the lagging browser’s own users who feel the difference.
+Without polyfills, authors wouldn’t use the feature at all — every browser would be equally fast at not supporting it, and the laggard could drag its feet indefinitely, consequence-free.
+
+More importantly though, being last is not what’s critical for the Web’s evolution.
 
 Check out [my specs page](/specs).
 What is the average time from spec to first implementation, from that to the next, and from that to the last?
@@ -262,10 +267,10 @@ What is the average time from spec to first implementation, from that to the nex
 
 <blockquote class=pullquote>A Web platform without polyfills would be a stagnant platform.</blockquote>
 
-What is the motivation for a browser to be the first to implement if authors cannot use the feature until all other browsers implement it as well?
-Would _you_ invest millions of dollars in engineering time into something that your competitors can easily render moot?
+What is the motivation for a browser to be the first to implement if authors cannot use the feature until all others implement it as well?
+Would _you_ sink millions of dollars of engineering time into something your competitors can render moot, by means of simply …doing nothing?
 
-We cannot A/B test reality, so this is purely a thought experiment, but I think if polyfills, fallbacks, progressive enhancement and all of these "_problematic_" (?) patterns suddenly disappeared, it would _slightly_ increase motivation for those shipping last, but would _significantly_ reduce motivation for shipping first.
+We cannot A/B test reality, so this is purely a thought experiment, but I think if polyfills, fallbacks, and progressive enhancement suddenly disappeared, it would _slightly_ increase motivation for those shipping last, but would _significantly_ reduce motivation for shipping first.
 And since nobody can be last without someone else being first, **a Web platform without polyfills would be a stagnant platform.**
 
 Additionally, often the biggest blocker in getting browsers to implement new features is **demonstrating developer demand**.
@@ -289,9 +294,9 @@ That is a real cost, borne by the very people designing the platform.
 
 But let’s be clear: **none of the libraries that caused this problem was actually a polyfill**, since there was no standardized API _to_ polyfill.
 
-At best, they were speculative polyfills (aka _prollyfills_) — an imagined API occupying the same namespace as a future builtin so that authors can experiment with an emerging standard.
 At worst, they were naughty userland libraries, much like MooTools’ `Array.prototype.flatten()` that caused the [smooshgate](https://medium.com/@jacobdfriedmann/smooshgate-the-ongoing-struggle-between-progress-and-stability-in-javascript-2a971c1162dd) fiasco.
-
+At best, they were speculative polyfills (aka [_prollyfills_](https://www.w3.org/2001/tag/doc/polyfills/#nomenclature-what-is-a-polyfill-)) — an imagined API occupying the same namespace as a future builtin so authors can experiment with an emerging standard.
+Prollyfills are (rightly) more controversial, and not what this post is about.
 
 <blockquote class=pullquote>Assigning blame to polyfills is like blaming car accidents on the ambulances that show up on the scene.</blockquote>
 
@@ -299,7 +304,7 @@ But when you examine the failure cases more closely, they all have something in 
 In every single one, **standards groups and/or browsers failed to react to a strong user need in a timely fashion**.
 
 Assigning blame to polyfills is like blaming car accidents on the ambulances that show up on the scene.
-A popular polyfill is a consequence.
+**A popular polyfill is a consequence.**
 Polyfills should never become too popular in the first place: the feature should be widely implemented by then!
 
 If a polyfill (or prollyfill) becomes so popular that it can create a compat problem, **that is a symptom that a pervasive user need went unmet for too long**.
@@ -324,17 +329,18 @@ Instead of **blaming the user** ("_please stop polyfilling and deploying polyfil
 
 [^proverb]: No, not really, I made this up, but the takeaway is pretty established in HCI.
 
-When web platform design follows the [priority of constituencies](https://www.w3.org/TR/design-principles/#priority-of-constituencies), and prioritizes end-user and author needs above implementors and standards authors, the failure cases are practically nonexistent, _even_ when polyfills jump the gun and ship a bit too early.
+When web platform design follows the [priority of constituencies](https://www.w3.org/TR/design-principles/#priority-of-constituencies), and prioritizes end-user and author needs above implementors and standards authors, the failure cases are practically nonexistent, **_even_ when polyfills jump the gun and ship too early**.
 
-### The WHATWG process is particularly prone to this
+### The WHATWG process invites these failures
 
 **Why _did_ scoped registries take so long to ship?**
 The web components community had been asking for years!
 
 Part of this is that the WHATWG process is designed to be _reactive_ rather than _proactive_.
-Meaning, WHATWG refuses to flesh out a feature until there is "implementor interest".
+Even if there is a strong, demonstrated author need, WHATWG will refuse to flesh out a feature until [at least two implementors express interest](https://whatwg.org/working-mode#additions) in implementing it.
+["needs implementor interest"](https://github.com/whatwg/html/issues?q=sort%3Aupdated-desc%20is%3Aissue%20state%3Aopen%20label%3A%22needs%20implementer%20interest%22) is where so many good ideas go to die.
 
-This made sense when WHATWG was founded as a reaction to the increasingly academic W3C HTML Working Group, which was designing XHTML 2 in a vacuum, speccing features that no browser was willing to implement.
+This made sense when WHATWG was founded as a reaction to the increasingly academic W3C HTML Working Group, which had been designing XHTML 2 in a vacuum, speccing features that no browser was willing to implement.
 
 But having spent 15 years in the CSS WG and having proposed and/or helped drive [several](/specs) features to Baseline, I cannot _imagine_ gating spec development on implementor interest.
 That’s putting the cart before the horse!
@@ -356,14 +362,14 @@ Yes, there is some risk they may constrain the ergonomics of the eventual API �
 Who remembers [IE7.js](https://code.google.com/archive/p/ie7-js/)? Or [html5shiv](https://github.com/aFarkas/html5shiv)?
 
 For nearly a decade, IE was the boat anchor of the Web: dominant market share, no meaningful competition, and no incentive to implement anything new.
-Without polyfills, the rational strategy for authors would have been to target IE and call it a day — and the rational strategy for every other browser would have been to stop investing in features nobody could use.
+Without polyfills, the rational strategy for many authors was to target IE and call it a day — and the rational strategy for every other browser would have been to stop investing in features nobody could use.
 
-Instead, polyfills let authors adopt modern standards years before IE supported them.
-That kept demand for those standards alive, kept the pressure on IE, and gave end users reasons to switch browsers.
-The fact that we were finally able to move away from IE6 and IE7 is in large part thanks to polyfills.
+Instead, polyfills allowed authors to adopt modern standards _years_ before IE supported them.
+That kept demand for standards alive, sustained pressure on IE, and gave end-users reasons to switch browsers.
+**The fact that we were finally able to move away from IE6 and IE7 is in large part thanks to polyfills.**
 
 A browser lagging behind is not always a matter of will, either — **release cadence matters**.
-IE, and EdgeHTML after it, was bound to the Windows release schedule, just as Safari is tied to the macOS and iOS release trains today — a constraint the engineers working on these engines have no say in.
+IE, and EdgeHTML after it, was bound to the Windows release schedule, just as Safari is tied to the MacOS and iOS release trains today — a constraint the engineers working on these engines have no say in.
 A slow release train stretches exactly the gap that polyfills exist to cover: even once a feature ships, it reaches users in OS-update time, not browser-update time.
 If every engine could ship at the cadence of Chromium and Firefox, the need for polyfills would shrink significantly.
 Until then, polyfills are how authors deliver the benefits of native APIs — performance, accessibility, i18n — without being held hostage to the slowest release train.
@@ -373,41 +379,42 @@ Until then, polyfills are how authors deliver the benefits of native APIs — pe
 Without polyfills, fallbacks, and progressive enhancement, **a single browser has undue power to hold back the Web** — whether by choice or by circumstance.
 I'm _far_ more concerned about that than about the occasional smooshgate.
 
-## Polyfills make the Web more robust and more inclusive
+## Polyfills make the Web faster, inclusive, and more robust
 
 Native features are typically more performant, more accessible, more i18nclusive, and handle more edge cases than _any_ userland implementation.
 
-A userland library can cut corners, exclude locales, declare that a11y is out of scope, and fail to even consider the edge cases.
-A web standard cannot do that.
+A userland library can cut corners, exclude locales, declare that a11y is out of scope, and fail to consider edge cases.
+A web standard cannot.
 
-A polyfill inherits some of these limitations while it’s active, but unlike a userland library, it is graded against a spec: its target behavior has already been through accessibility and i18n review, so its gaps are well-defined, visible, and centrally fixable.
+A polyfill inherits _some_ of these limitations while it’s active, but unlike a userland library, it is graded against a spec: its target behavior has already been through accessibility and i18n review, so its gaps are well-defined, visible, and centrally fixable.
 A userland library gets to define its own bar.
 
 **Developers being able to use web features before wide availability is a win for the Web as a whole.**
 
 ## Can we stop trying to solve the wrong problem?
 
-Cost-benefit analysis is a fundamental part of human decision-making, whether conscious or subconscious.<br>
+Cost-benefit analysis is a fundamental part of human decision-making.<br>
 We get in cars, even though there is a risk of accidents.<br>
 We go outside, even though we may catch a cold — or worse.<br>
 We swim, even though there is a small risk of drowning.<br>
 
-We typically weigh the extent of the risk, the probability of it happening, and the cost of mitigating it, against the extent and frequency of the benefits, and decide accordingly.
+We weigh the extent of the risk, the probability of it happening, and the cost of mitigating it, against the extent and frequency of the benefits, and decide accordingly.
+We do this all the time, whether consciously or not.
 
 When it comes to the Web, the benefits of polyfills are tangible and felt by everyone who develops for it.
 Historically, failure cases have been few, and generally have been mitigated well.
 Even smooshgate resulted in `array.flat()`, which to me is not obviously worse than `array.flatten()`.
 
-We are spending so much collective energy trying to mitigate a largely theoretical problem, that is rarely a real issue and has only been a significant problem a handful of times in the 30+ years of the Web’s history.
-And yet, many seem willing to sacrifice very significant, everyday benefits to do so.
+We are spending so much collective energy trying to mitigate a largely theoretical problem, that has only been a significant issue a handful of times in the 30+ years of the Web’s history.
+And yet, many are willing to sacrifice significant, tangible, far-reaching benefits to do so.
 
 This is an emotional reaction to a few high-profile incidents, not a rational cost-benefit tradeoff.
 
-And these incidents would be even fewer if we were more proactive in discovering and reacting to developer needs.
+Instead of trying to eliminate polyfills, we should be more proactive in discovering and reacting to developer needs, so polyfills never become so popular that they threaten the design space of a native API.
 
 **Starting from polyfilling _itself_.**
 
-Stay tuned — in the next post I’ll discuss what gaps in the Web platform make it hard to write good polyfills and how this varies across HTML, CSS, and JS!
+Stay tuned: in Part 2 I’ll discuss what gaps in the Web platform make it hard to write good polyfills today, and how this varies across HTML, CSS, and JS.
 
 _Huge thanks to Greg Whitworth and Cassondra Roberts for reviewing an earlier draft of this post._
 
