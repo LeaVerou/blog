@@ -23,6 +23,11 @@
 	align-items: start;
 }
 
+/* Positioned, and no taller than the SVG, so the controls below can be placed against it. */
+.scene {
+	position: relative;
+}
+
 .stage svg {
 	width: 100%;
 	height: auto;
@@ -30,11 +35,13 @@
 	border-radius: 8px;
 }
 
-/* The scene SVG is a static illustration; every affordance below is added by the component. */
+/*
+ * The scene SVG is a static illustration; every affordance below is added by the component.
+ * The controls are HTML buttons laid over it, sized and placed in percentages by demo.js
+ * (see hitTarget for why they are not inside the SVG).
+ */
 .hit {
-	position: relative;
-	width: 100%;
-	height: 100%;
+	position: absolute;
 	padding: 0;
 	border: none;
 	border-radius: 999px;
@@ -49,11 +56,6 @@
 		outline: 2px solid var(--accent);
 		outline-offset: 3px;
 	}
-}
-
-/* SVG clips foreignObject by default, which would cut the ripples. */
-foreignObject {
-	overflow: visible;
 }
 
 /*
@@ -100,8 +102,8 @@ foreignObject {
 }
 
 /*
- * A press, whether the reader is making it or the walkthrough is showing one.
- * The hit target is the control's next sibling, so :has() can reach it.
+ * A press, whether the walkthrough is showing one (.pressed) or the reader is making it.
+ * The hit target is no longer inside the control, so :has() reaches it from their common ancestor.
  */
 :is(#os, #toggle) {
 	transform-box: fill-box;
@@ -109,7 +111,9 @@ foreignObject {
 	transition: scale .1s;
 }
 
-:is(#os, #toggle):is(.pressed, :has(+ foreignObject .hit:active)) {
+:is(#os, #toggle).pressed,
+.scene:has(.hit[data-control="os"]:active) #os,
+.scene:has(.hit[data-control="page"]:active) #toggle {
 	scale: .9;
 }
 
