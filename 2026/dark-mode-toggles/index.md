@@ -348,8 +348,13 @@ This entire essay assumes the common case where a website only has two color sch
 color schemes should take the underlying OS setting into account.
 Light mode should be less bright in a dark OS and dark mode should be less dark in a light OS, to reduce the contrast between the website and the rest of the system.
 
-I have not seen many UIs doing this, and CSS does not make it easier (`light-dark()` is very much designed around duality), but if you are actually doing this, you have earned your three states my friend, display them as prominently as you like, none of this applies to you!
+I have not seen many UIs doing this, and CSS does not make it easier (`light-dark()` is very much designed around duality), but if you are actually doing this, **you have earned your three states my friend**, display them as prominently as you like, none of this applies to you!
 
+Edit: I reached out to Vadim to ask if he had seen any UIs following his guidance. Here’s what he had to say:
+
+> Unfortunately, I haven’t seen any websites using this idea. I would say we’re pretty limited with tools currently to do so. The moment we want to override prefer-color-scheme, the whole light-dark() convenience is falling apart.
+
+Yet another problem that CSS functions will solve (nothing preventing us from creating a [2-4 arg version of this](https://www.bram.us/2025/09/30/css-custom-light-dark/)).
 
 ## The general version
 
