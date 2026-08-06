@@ -1,0 +1,237 @@
+/* Shadow styles for everything <theme-scenario> generates; its light-DOM step list is styled by the page. */
+
+:host {
+	/*
+	 * No color-scheme of our own: the embedding page owns that decision, and these resolve
+	 * against it — light on a page that declares nothing, both ways once the page supports dark.
+	 */
+	--dim: light-dark(#00000080, #ffffff80);
+	--faint: light-dark(#0000000d, #ffffff12);
+	--edge: light-dark(#0000001f, #ffffff26);
+	--accent: light-dark(oklch(58% 0.24 10), oklch(74% 0.18 10));
+
+	/* The layout adapts to the component's own width, wherever it is embedded — an iframe'd page,
+	   an article column. The host cannot query itself, hence the .demo wrapper. */
+	display: block;
+	container: scenario / inline-size;
+}
+
+.demo {
+	display: grid;
+	grid-template-columns: minmax(0, 3fr) minmax(19rem, 2fr);
+	gap: 2.5rem;
+	align-items: start;
+}
+
+.stage svg {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px;
+}
+
+/* The scene SVG is a static illustration; every affordance below is added by the component. */
+.hit {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: none;
+	border-radius: 999px;
+	background: none;
+	cursor: pointer;
+
+	&:disabled {
+		cursor: default;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+	}
+}
+
+/* SVG clips foreignObject by default, which would cut the ripples. */
+foreignObject {
+	overflow: visible;
+}
+
+/*
+ * Ripples mark only the walkthrough's simulated presses — the clicks the hand illustrates;
+ * the reader's own presses get just the pressed scale. Driven by a class rather than
+ * :active/.pressed, which end too soon to carry the animation.
+ */
+.hit::before,
+.hit::after {
+	content: "";
+	position: absolute;
+	inset-inline-start: 50%;
+	inset-block-start: 50%;
+	translate: -50% -50%;
+	width: 24px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 2px solid var(--accent);
+	opacity: 0;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.rippling::before,
+	.rippling::after {
+		animation: ripple .6s ease-out;
+	}
+
+	.rippling::after {
+		animation-delay: .15s;
+	}
+}
+
+@keyframes ripple {
+	from {
+		scale: .5;
+		opacity: .6;
+	}
+
+	to {
+		scale: 3;
+		opacity: 0;
+	}
+}
+
+/*
+ * A press, whether the reader is making it or the walkthrough is showing one.
+ * The hit target is the control's next sibling, so :has() can reach it.
+ */
+:is(#os, #toggle) {
+	transform-box: fill-box;
+	transform-origin: center;
+	transition: scale .1s;
+}
+
+:is(#os, #toggle):is(.pressed, :has(+ foreignObject .hit:active)) {
+	scale: .9;
+}
+
+/* Marks the steps the *user* acted on, as opposed to the ones where the OS changed by itself. */
+.pointer {
+	pointer-events: none;
+}
+
+.pointer:not(.acted) {
+	display: none;
+}
+
+.pointer path {
+	fill: white;
+	stroke: #16181c;
+	stroke-width: 1.25;
+	stroke-linejoin: round;
+	filter: drop-shadow(0 2px 3px #00000059);
+}
+
+.walkthrough {
+	display: grid;
+	gap: 1.25rem;
+	align-items: start;
+	/* UI, not prose: the page's sans, reaching the slotted list by inheritance. */
+	font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+/* Sticks near the viewport bottom while the capped list fills it, so the list's
+   max-block-size does not need to budget for the buttons. */
+.nav {
+	position: sticky;
+	bottom: .1em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: .5rem;
+	/* Legible while floating over the list. */
+	background: Canvas;
+}
+
+.nav button {
+	font: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .4em;
+	padding: .5rem 1rem;
+	border-radius: 8px;
+	border: 1px solid var(--edge);
+	background: none;
+	color: inherit;
+	cursor: pointer;
+
+	&:hover:not(:disabled) {
+		background: var(--faint);
+	}
+
+	&:disabled {
+		opacity: .4;
+		cursor: default;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 1px;
+	}
+}
+
+.prev::before {
+	content: "←";
+}
+
+.next::after {
+	content: "→";
+}
+
+/* Communicated as a class because :has() cannot see the slotted list from in here. */
+.next.restart::after {
+	content: "↻";
+}
+
+/*
+ * Stacked, everything is pinned to one screenful: the stage takes what it needs and the step
+ * list absorbs the remainder and scrolls (see steps.css), rather than pushing the buttons off
+ * the bottom. The definite rows resolve against the max, so nothing has to be measured.
+ */
+/* px, not rem: rem here resolves against the embedding page's root font size, which would
+   inflate the threshold and make two columns unreachable inside an article column. */
+@container scenario (width < 950px) {
+	.demo {
+		grid-template-columns: 1fr;
+		/* Overridable, so a page can subtract its own chrome (e.g. body padding) from the screenful. */
+		max-block-size: var(--max-block-size, 100svh);
+		grid-template-rows: auto minmax(6rem, 1fr);
+		gap: 1rem;
+	}
+
+	.walkthrough {
+		grid-template-rows: minmax(0, 1fr) auto;
+		min-block-size: 0;
+	}
+
+	/* start is what the two-column layout wants; here each child has to fill its row. */
+	.demo,
+	.walkthrough {
+		align-items: stretch;
+	}
+}
+
+/* Fixed, not absolute: at its static position it sits on the bottom edge and lengthens the page. */
+.sr-only {
+	position: fixed;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+}
+
+.error {
+	padding: 1rem;
+	border-radius: 8px;
+	background: light-dark(#fee, #400);
+}

@@ -1,0 +1,97 @@
+/* Styles for <theme-scenario>'s light-DOM step list. The component adopts this sheet into
+   whatever document it is used in; the palette variables inherit from its shadow root through
+   the slot. */
+
+.steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: .25rem;
+	/* A screenful at most; the nav buttons stick into view on their own, so they need no budget. */
+	max-block-size: var(--max-block-size, 100svh);
+	/* Matches the page TOC's type. */
+	font-size: 75%;
+	font-weight: 500;
+	/* The list is the layout's scrolling part in both modes (see scenario.css). */
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	scroll-snap-type: y mandatory;
+}
+
+.steps li {
+	scroll-snap-align: start;
+}
+
+.steps li button {
+	/* Indirection: the state shield below re-asserts color without clobbering done/current. */
+	--step-ink: var(--dim);
+
+	font: inherit;
+	text-align: start;
+	box-sizing: border-box;
+	width: 100%;
+	position: relative;
+	padding: .6rem .75rem;
+	padding-inline-start: 3rem;
+	border: none;
+	border-radius: 10px;
+	background: none;
+	color: var(--step-ink);
+	text-shadow: none;
+	cursor: pointer;
+	transition: background .2s, color .2s;
+
+	/* The page styles raw buttons as CTAs — accent background, white text and a glow on
+	   hover/focus, at higher specificity. These are not that kind of button. */
+	&:is(:hover, :focus, :active) {
+		background: var(--faint);
+		color: var(--step-ink);
+		text-shadow: none;
+	}
+
+	&:active {
+		transform: scale(.99);
+	}
+
+	/* Steps are numbered from 0, so the number comes from data-step rather than the ol's own counter. */
+	&::before {
+		content: attr(data-step);
+		position: absolute;
+		inset-inline-start: .75rem;
+		inline-size: 1.75rem;
+		font-variant-numeric: tabular-nums;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 1px;
+	}
+}
+
+/* currentColor here means the inherited page ink; "inherit" would inherit the custom property. */
+.steps .done button {
+	--step-ink: currentColor;
+
+	&::before {
+		content: "✓";
+		color: var(--accent);
+	}
+}
+
+.steps .current button {
+	--step-ink: currentColor;
+	background: var(--faint);
+
+	&::before {
+		color: var(--accent);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.steps {
+		scroll-behavior: smooth;
+	}
+}

@@ -1,0 +1,370 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="524" viewBox="0 0 640 524" role="img">
+<title>An OS appearance toggle above a browser window whose page has its own light/dark control</title>
+
+<style>
+/*
+ * The only knobs. Registered so their defaults are initial values rather than specified ones:
+ * any ancestor can pose a copy by just setting them (demo-states.html poses from a wrapper div),
+ * and they exist even when the SVG is inlined into a shadow tree, which has no :root to hang
+ * defaults on.
+ */
+@property --os {
+	syntax: "light | dark";
+	inherits: true;
+	initial-value: light;
+}
+
+@property --site {
+	syntax: "system | light | dark";
+	inherits: true;
+	initial-value: system;
+}
+
+/* 3 = System/Light/Dark segments, 2 = a single icon button.
+   Universal syntax, because the integer one needs an angle bracket, which XML forbids here. */
+@property --states {
+	syntax: "*";
+	inherits: true;
+	initial-value: 3;
+}
+
+svg {
+	font-family: Inter, system-ui, sans-serif;
+}
+
+/*
+ * Load as demo.svg#[os]-[site]-[states] to pose the illustration from the URL,
+ * e.g. demo.svg#dark-system-2. The knobs land on #scene rather than the svg root because the
+ * style queries below read them off an ancestor, and :target can only ever match one anchor,
+ * so every combination is spelled out.
+ */
+#light-system-3:target ~ #scene {
+	--os: light;
+	--site: system;
+	--states: 3;
+}
+
+#light-light-3:target ~ #scene {
+	--os: light;
+	--site: light;
+	--states: 3;
+}
+
+#light-dark-3:target ~ #scene {
+	--os: light;
+	--site: dark;
+	--states: 3;
+}
+
+#dark-system-3:target ~ #scene {
+	--os: dark;
+	--site: system;
+	--states: 3;
+}
+
+#dark-light-3:target ~ #scene {
+	--os: dark;
+	--site: light;
+	--states: 3;
+}
+
+#dark-dark-3:target ~ #scene {
+	--os: dark;
+	--site: dark;
+	--states: 3;
+}
+
+#light-system-2:target ~ #scene {
+	--os: light;
+	--site: system;
+	--states: 2;
+}
+
+#light-light-2:target ~ #scene {
+	--os: light;
+	--site: light;
+	--states: 2;
+}
+
+#light-dark-2:target ~ #scene {
+	--os: light;
+	--site: dark;
+	--states: 2;
+}
+
+#dark-system-2:target ~ #scene {
+	--os: dark;
+	--site: system;
+	--states: 2;
+}
+
+#dark-light-2:target ~ #scene {
+	--os: dark;
+	--site: light;
+	--states: 2;
+}
+
+#dark-dark-2:target ~ #scene {
+	--os: dark;
+	--site: dark;
+	--states: 2;
+}
+
+/* The OS setting themes the desktop and the browser's own chrome… */
+#desktop {
+	color-scheme: light;
+}
+
+@container style(--os: dark) {
+	#desktop {
+		color-scheme: dark;
+	}
+}
+
+/* …while the page resolves the site's preference against it.
+   The two-state button displays that same resolved value, so it reads off the same rule. */
+#page {
+	color-scheme: light;
+}
+
+#toggle .dark {
+	display: none;
+}
+
+@container style(--site: dark) or (style(--site: system) and style(--os: dark)) {
+	#page {
+		color-scheme: dark;
+	}
+
+	#toggle {
+		.light {
+			display: none;
+		}
+
+		.dark {
+			display: unset;
+		}
+	}
+}
+
+/* Two states collapse the three segments into one icon button. */
+#toggle {
+	display: none;
+}
+
+@container style(--states: 2) {
+	#site {
+		display: none;
+	}
+
+	#toggle {
+		display: unset;
+	}
+}
+
+/* Both controls: which segment the thumb sits on, which icon is lit, and what got persisted. */
+#storage .value {
+	display: none;
+}
+
+@container style(--os: light) {
+	#os .thumb { --i: 0; }
+	#os .light { color: var(--accent); }
+}
+
+@container style(--os: dark) {
+	#os .thumb { --i: 1; }
+	#os .dark { color: var(--accent); }
+}
+
+@container style(--site: system) {
+	#site .thumb { --i: 0; }
+	#site .system { color: var(--accent); }
+	#storage .system { display: unset; }
+}
+
+@container style(--site: light) {
+	#site .thumb { --i: 1; }
+	#site .light { color: var(--accent); }
+	#storage .light { display: unset; }
+}
+
+@container style(--site: dark) {
+	#site .thumb { --i: 2; }
+	#site .dark { color: var(--accent); }
+	#storage .dark { display: unset; }
+}
+
+/* Palette. light-dark() resolves per element, so these adapt to whichever
+   color-scheme the element they're used on ended up with. */
+svg {
+	--desktop: light-dark(#eef2f8, #08090b);
+	--surface: light-dark(#fff, #1b1f24);
+	--chrome: light-dark(#dbe1e9, #2d323a);
+	--line: light-dark(#16181c1f, #ffffff1f);
+	--bar: light-dark(#16181c26, #e9ebee2b);
+	--bar-strong: light-dark(#16181c4d, #e9ebee59);
+	--dim: light-dark(#16181c8c, #e9ebee8c);
+	--track: light-dark(#16181c14, #ffffff17);
+	--thumb: light-dark(#fff, #474d56);
+	--accent: light-dark(oklch(58% 0.24 10), oklch(74% 0.18 10));
+}
+
+.card,
+.window {
+	filter: drop-shadow(0 6px 16px #0000001f);
+}
+
+.track {
+	fill: var(--track);
+}
+
+.thumb {
+	--i: 0;
+	fill: var(--thumb);
+	stroke: var(--line);
+	translate: calc(var(--i) * var(--step)) 0;
+}
+
+.icon {
+	color: var(--dim);
+}
+
+/* A lone icon has no siblings to be contrasted against, so it's always the live one. */
+#toggle .icon {
+	color: var(--accent);
+}
+
+.bar {
+	fill: var(--bar);
+}
+
+.label {
+	fill: var(--dim);
+	font-size: 14px;
+	font-weight: 500;
+	dominant-baseline: middle;
+}
+
+/* Hidden tspans drop out of text layout, so the value always sits right after the key. */
+#storage {
+	fill: var(--dim);
+	font-family:  ui-monospace, monospace;
+	font-size: 20px;
+	font-weight: 520;
+	dominant-baseline: middle;
+	text-anchor: middle;
+
+	.value {
+		fill: var(--accent);
+	}
+}
+</style>
+
+<defs>
+	<g id="i-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+		<circle cx="12" cy="12" r="4.25" />
+		<path d="M12 1.5V4.25M12 19.75V22.5M22.5 12H19.75M4.25 12H1.5M19.43 4.57 17.48 6.52M6.52 17.48 4.57 19.43M19.43 19.43 17.48 17.48M6.52 6.52 4.57 4.57" />
+	</g>
+
+	<g id="i-moon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+	</g>
+
+	<g id="i-monitor" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+		<rect x="2" y="4" width="20" height="14" rx="2.5" />
+		<path d="M8.5 21h7M12 18v3" />
+	</g>
+
+	<clipPath id="window-clip">
+		<rect x="64" y="108" width="512" height="340" rx="14" />
+	</clipPath>
+</defs>
+
+<!-- Empty anchors for the URL overrides above; they render nothing. -->
+<g id="light-system-3" />
+<g id="light-light-3" />
+<g id="light-dark-3" />
+<g id="dark-system-3" />
+<g id="dark-light-3" />
+<g id="dark-dark-3" />
+<g id="light-system-2" />
+<g id="light-light-2" />
+<g id="light-dark-2" />
+<g id="dark-system-2" />
+<g id="dark-light-2" />
+<g id="dark-dark-2" />
+
+<g id="scene">
+	<g id="desktop">
+		<rect width="640" height="524" fill="var(--desktop)" />
+
+		<!-- The OS appearance setting -->
+		<g class="card">
+			<rect x="170" y="28" width="300" height="56" rx="16" fill="var(--surface)" stroke="var(--line)" />
+			<text class="label" x="194" y="56">System appearance</text>
+
+			<g id="os" style="--step: 40px">
+				<rect class="track" x="372" y="38" width="84" height="36" rx="18" />
+				<rect class="thumb" x="376" y="42" width="36" height="28" rx="14" />
+				<use class="icon light" href="#i-sun" transform="translate(394 56) scale(.8333) translate(-12 -12)" />
+				<use class="icon dark" href="#i-moon" transform="translate(434 56) scale(.8333) translate(-12 -12)" />
+			</g>
+		</g>
+
+		<!-- The browser -->
+		<g class="window">
+			<rect x="64" y="108" width="512" height="340" rx="14" fill="var(--chrome)" stroke="var(--line)" />
+
+			<g clip-path="url(#window-clip)">
+				<circle cx="86" cy="127" r="5" fill="var(--bar)" />
+				<circle cx="104" cy="127" r="5" fill="var(--bar)" />
+				<circle cx="122" cy="127" r="5" fill="var(--bar)" />
+				<rect x="146" y="117" width="240" height="20" rx="10" fill="var(--surface)" />
+
+				<!-- The page -->
+				<g id="page">
+					<rect x="64" y="146" width="512" height="302" fill="var(--surface)" />
+
+					<!-- Site header -->
+					<rect x="88" y="160" width="20" height="20" rx="6" fill="var(--accent)" />
+					<rect class="bar" x="116" y="166" width="56" height="8" rx="4" />
+					<rect class="bar" x="200" y="166" width="34" height="8" rx="4" />
+					<rect class="bar" x="246" y="166" width="34" height="8" rx="4" />
+					<rect class="bar" x="292" y="166" width="34" height="8" rx="4" />
+
+					<g id="site" style="--step: 36px">
+						<rect class="track" x="442" y="154" width="110" height="32" rx="16" />
+						<rect class="thumb" x="445" y="157" width="32" height="26" rx="13" />
+						<use class="icon system" href="#i-monitor" transform="translate(461 170) scale(.7083) translate(-12 -12)" />
+						<use class="icon light" href="#i-sun" transform="translate(497 170) scale(.7083) translate(-12 -12)" />
+						<use class="icon dark" href="#i-moon" transform="translate(533 170) scale(.7083) translate(-12 -12)" />
+					</g>
+
+					<g id="toggle">
+						<rect class="track" x="520" y="154" width="32" height="32" rx="16" />
+						<use class="icon light" href="#i-sun" transform="translate(536 170) scale(.7083) translate(-12 -12)" />
+						<use class="icon dark" href="#i-moon" transform="translate(536 170) scale(.7083) translate(-12 -12)" />
+					</g>
+
+					<rect x="64" y="193" width="512" height="1" fill="var(--line)" />
+
+					<!-- Site content -->
+					<rect x="88" y="222" width="220" height="16" rx="8" fill="var(--bar-strong)" />
+					<rect class="bar" x="88" y="258" width="464" height="9" rx="4.5" />
+					<rect class="bar" x="88" y="278" width="440" height="9" rx="4.5" />
+					<rect class="bar" x="88" y="298" width="380" height="9" rx="4.5" />
+
+					<rect x="88" y="336" width="464" height="88" rx="10" fill="none" stroke="var(--line)" />
+					<rect class="bar" x="112" y="352" width="56" height="56" rx="8" />
+					<rect class="bar" x="184" y="364" width="200" height="10" rx="5" />
+					<rect class="bar" x="184" y="386" width="280" height="10" rx="5" />
+				</g>
+			</g>
+		</g>
+
+		<!-- What the site persisted. "system" means nothing was ever written. -->
+		<text id="storage" x="320" y="486"><tspan>localStorage.theme =</tspan><tspan class="value system" dx="6">undefined</tspan><tspan class="value light" dx="6">"light"</tspan><tspan class="value dark" dx="6">"dark"</tspan></text>
+	</g>
+</g>
+</svg>

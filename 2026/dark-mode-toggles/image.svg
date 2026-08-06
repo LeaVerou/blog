@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1068">
+<style>
+	image {
+		width: 50%;
+		height: 50%;
+	}
+</style>
+<image href="demo.svg#light-system-2" width="50%" height="100%" />
+<image href="demo.svg#light-dark-2" width="50%" height="100%" x="calc(50% + 10px)" />
+<image href="demo.svg#dark-system-2" width="50%" height="100%" y="calc(50% + 10px)" />
+<image href="demo.svg#dark-light-2" width="50%" height="100%" x="calc(50% + 10px)" y="calc(50% + 10px)" />
+</svg>

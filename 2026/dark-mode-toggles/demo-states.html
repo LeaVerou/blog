@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>demo.svg — every state</title>
+
+<style>
+:root {
+	color-scheme: light dark;
+	font-family: Inter, system-ui, sans-serif;
+	line-height: 1.5;
+}
+
+body {
+	max-width: 100rem;
+	margin-inline: auto;
+	padding: 2rem 2rem 6rem;
+}
+
+code {
+	font-family: Inconsolata, ui-monospace, monospace;
+	font-size: 95%;
+}
+
+h1 {
+	margin-bottom: .25em;
+}
+
+.intro {
+	max-width: 46rem;
+	color: light-dark(#000000a6, #ffffffa6);
+}
+
+section {
+	margin-block-start: 3.5rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: auto repeat(3, 1fr);
+	gap: .75rem 1.25rem;
+	align-items: center;
+	margin-block-start: 1rem;
+}
+
+.grid > :is(.col, .row) {
+	color: light-dark(#000000a6, #ffffffa6);
+	font-size: .875rem;
+}
+
+.col {
+	text-align: center;
+}
+
+.row {
+	text-align: end;
+	text-wrap: nowrap;
+}
+
+.grid svg {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px;
+}
+
+.error {
+	padding: 1rem;
+	border-radius: 8px;
+	background: light-dark(#fee, #400);
+}
+</style>
+
+<h1>Every state of <code>demo.svg</code></h1>
+
+<p class="intro">
+	The same file, twelve times. <code>--os</code> is what the operating system says, <code>--site</code> is
+	what the site has stored, and <code>--states</code> picks which control the site ships. The page inside
+	the browser window resolves <code>--site</code> against <code>--os</code>.
+	In the <em>2 states</em> grid every row therefore contains two windows that render identically — under a
+	light OS, <code>--site: system</code> and <code>--site: light</code> produce the same pixels.
+	The only thing that tells them apart is the <code>localStorage</code> line underneath, which is not a
+	thing users can see. Those are the choices the three-segment control asks them to make.
+</p>
+
+<div id="grids"></div>
+
+<script type="module">
+const OS = ["light", "dark"];
+const SITE = ["system", "light", "dark"];
+const STATES = [3, 2];
+
+const grids = document.querySelector("#grids");
+
+// Fetched rather than inlined, so this page can never drift from the SVG it documents.
+let svg;
+
+try {
+	svg = await (await fetch("demo.svg")).text();
+}
+catch (error) {
+	grids.innerHTML = `<p class="error">Could not load <code>demo.svg</code> (${error}). This page needs to be served over HTTP, e.g. <code>npm run serve</code>.</p>`;
+	throw error;
+}
+
+grids.innerHTML = STATES.map(states => `
+	<section style="--states: ${states}">
+		<h2>${states} states</h2>
+		<div class="grid">
+			<div></div>
+			${SITE.map(site => `<div class="col"><code>--site: ${site}</code></div>`).join("")}
+			${OS.map(os => `
+				<div class="row"><code>--os: ${os}</code></div>
+				${SITE.map(site => `<div style="--os: ${os}; --site: ${site}">${svg}</div>`).join("")}
+			`).join("")}
+		</div>
+	</section>
+`).join("");
+</script>

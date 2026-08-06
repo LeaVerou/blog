@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>A good two-state dark mode toggle</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="module" src="demo.js"></script>
+
+<style>
+/* Page shell only; the component styles itself. */
+body {
+	--pad: 2rem;
+
+	max-width: 72rem;
+	margin: auto;
+	padding: var(--pad);
+
+	@media (width < 40rem) {
+		--pad: 1rem;
+	}
+}
+
+theme-scenario {
+	/* Keep the pinned layouts within the padded viewport. */
+	--max-block-size: calc(100svh - 2 * var(--pad));
+}
+</style>
+
+<theme-scenario src="demo.svg">
+	<!-- data-action scripts each step as "actor: value". The actor is the os or the page (i.e.
+	     the reader operating its control); the value is light, dark, os (follow the OS), or a
+	     negation — "!os" / "!page", the opposite of what that one shows. data-editable names the
+	     reader may operate during a step; bare, it grants them all and marks the step unscripted.
+	     The data-value placeholders hold the scheme names, which follow the OS mode the reader
+	     picks at step 0. -->
+	<ol>
+		<li data-editable="os">
+			Your OS is in <strong data-value="start">light</strong> mode and the site has stored nothing,
+			so the page follows along. Flip the OS control to run this the other way round.
+		</li>
+		<li data-action="page: !page">
+			You toggle. The target is <span data-value="other">dark</span>, which is <em>not</em> what the
+			OS says, so the site stores an override. <strong>The page goes <span data-value="other">dark</span>.</strong>
+		</li>
+		<li data-action="os: !os">
+			Your OS switches to <span data-value="other">dark</span>. The override now matches it
+			<strong>but is still kept</strong>. Nothing visibly happens, which is correct.
+		</li>
+		<li data-action="os: !os">
+			Your OS switches back to <span data-value="start">light</span>. <strong>The page stays
+			<span data-value="other">dark</span></strong>, because the override is still active.
+		</li>
+		<li data-action="page: !page">
+			You toggle. The target is <span data-value="start">light</span>, which <em>is</em> what the
+			OS says, so the override is <strong>removed</strong>. The page follows the OS again.
+		</li>
+		<li data-editable>
+			<strong>Your turn.</strong> Both controls are live and nothing from here on is scripted.
+			Drive them in any order and watch what does — and does not — end up in <code>localStorage</code>.
+		</li>
+	</ol>
+</theme-scenario>
