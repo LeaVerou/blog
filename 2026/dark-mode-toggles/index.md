@@ -10,6 +10,10 @@ tags:
   - usability
   - product-design
   - dark-mode
+social_posts:
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3msg52hpjwk2g
+  twitter: https://x.com/LeaVerou/status/2085355874667602124
+  mastodon: https://front-end.social/@leaverou/117048761441552914
 ---
 
 
