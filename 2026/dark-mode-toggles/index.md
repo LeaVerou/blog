@@ -45,7 +45,7 @@ figure {
 <figure class="multiple">
 
 ![Tailwind](images/tailwind.png)
-![RetHat Design System](images/redhat.png)
+![Red Hat Design System](images/redhat.png)
 ![Ant](images/ant.png)
 ![Web Awesome](images/webawesome.png){ style="flex: .7;" }
 ![Excalidraw](images/excalidraw.png)
@@ -56,7 +56,7 @@ figure {
 <figcaption>
 
 Examples of tri-state dark mode toggles.
-In (LTR) reading direction: Ant Design, Red Hat Design System, Web Awesome, Excalidraw, Taiga, Astro, Hero UI.
+In (LTR) reading direction: Tailwind, Red Hat Design System, Ant Design, Web Awesome, Excalidraw, Taiga, Astro, Hero UI.
 </figcaption>
 </figure>
 
