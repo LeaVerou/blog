@@ -105,6 +105,14 @@ Yes, tri-state toggles are _common_.
 [That doesn’t make them _good_](https://en.wikipedia.org/wiki/Argumentum_ad_populum).
 This essay explains why, and how to do better.
 
+<article class="note" id="disclaimer">
+
+This article is about _how_ to implement a good dark mode toggle, if you have _already_ decided you need one.
+**It does _not_ prescribe whether one is necessary at all.**
+If you decide to simply default to the system preference and not offer a toggle, I think that is a perfectly valid choice.
+And yes, I agree that **eventually browsers should provide this as part of their chrome**, instead of every website having to implement it themselves, but we're not there yet.
+</article>
+
 <!-- more -->
 
 ## Tri-state toggles are implementation-driven UI
