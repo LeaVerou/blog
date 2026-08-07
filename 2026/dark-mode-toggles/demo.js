@@ -20,21 +20,28 @@ const PRESS = 220;
 const TIP = 0.62;
 
 /**
- * Chrome won't focus an SVG <g> even with tabindex, so each control gets a real button in a
- * foreignObject, inserted right after it (the :active CSS relies on that adjacency).
+ * Chrome won't focus an SVG <g> even with tabindex, so each control gets a real button — laid over
+ * the scene rather than inside it in a foreignObject: WebKit renders and hit-tests positioned
+ * content within a foreignObject against the SVG root instead (webkit.org/b/23113), which left both
+ * controls dead in Safari and took the ripples with them, and it clips foreignObject whatever
+ * `overflow` says. Insets are percentages of the viewBox, so they scale exactly as the SVG does —
+ * physical ones, since the scene is an illustration and never mirrors.
  */
-function hitTarget (control) {
-	let { x, y, width, height } = control.getBBox();
-	let area = document.createElementNS(SVG, "foreignObject");
-	area.setAttribute("x", x);
-	area.setAttribute("y", y);
-	area.setAttribute("width", width);
-	area.setAttribute("height", height);
+function hitTarget (control, name) {
+	let svg = control.ownerSVGElement;
+	let view = svg.viewBox.baseVal;
+	let box = control.getBBox();
 
 	let button = document.createElement("button");
 	button.className = "hit";
-	area.append(button);
-	control.after(area);
+	button.dataset.control = name;
+	button.style.left = `${(box.x - view.x) / view.width * 100}%`;
+	button.style.top = `${(box.y - view.y) / view.height * 100}%`;
+	button.style.width = `${box.width / view.width * 100}%`;
+	button.style.height = `${box.height / view.height * 100}%`;
+
+	// .scene is the positioned box that hugs the SVG; appending paints the button over it.
+	svg.parentNode.append(button);
 	return button;
 }
 
@@ -89,7 +96,9 @@ class ThemeScenario extends HTMLElement {
 		let src = this.getAttribute("src");
 
 		try {
-			this.stage.innerHTML = await (await fetch(src)).text();
+			// The scene wrapper is the containing block the overlaid controls are positioned against,
+			// so it has to hug the SVG rather than whatever height the stage's grid area ends up with.
+			this.stage.innerHTML = `<div class="scene">${await (await fetch(src)).text()}</div>`;
 		}
 		catch (error) {
 			this.stage.innerHTML = `<p class="error">Could not load <code>${src}</code> (${error}). This page needs to be served over HTTP, e.g. <code>npm run serve</code>.</p>`;
@@ -117,8 +126,8 @@ class ThemeScenario extends HTMLElement {
 		this.pointer.innerHTML = `<path d="M6 4a2 2 0 0 1 4 0v7a1.6 1.6 0 0 1 3.2 0v.6a1.6 1.6 0 0 1 3.2 0v.6a1.6 1.6 0 0 1 3.2 0V18a4.5 4.5 0 0 1-4.5 4.5h-4a4.5 4.5 0 0 1-3.18-1.32l-4.2-4.2a1.8 1.8 0 0 1 2.55-2.55Z"/>`;
 		this.siteGroup.after(this.pointer);
 
-		this.osControl = hitTarget(this.osGroup);
-		this.siteControl = hitTarget(this.siteGroup);
+		this.osControl = hitTarget(this.osGroup, "os");
+		this.siteControl = hitTarget(this.siteGroup, "page");
 
 		// At step 0 the OS *is* the starting scheme, so flipping one flips the other.
 		this.osControl.addEventListener("click", () => {
