@@ -23,14 +23,16 @@
 	align-items: start;
 }
 
-/* Positioned, and no taller than the SVG, so the controls below can be placed against it. */
+/* Positioned, and exactly the SVG's box, so the controls below can be placed against it. It takes
+   the ratio (from the viewBox, in demo.js) rather than a height, so either axis can size it. */
 .scene {
 	position: relative;
+	aspect-ratio: var(--scene-ratio, auto);
 }
 
 .stage svg {
 	width: 100%;
-	height: auto;
+	height: 100%;
 	display: block;
 	border-radius: 8px;
 }
@@ -207,8 +209,24 @@
 		grid-template-columns: 1fr;
 		/* Overridable, so a page can subtract its own chrome (e.g. body padding) from the screenful. */
 		max-block-size: var(--max-block-size, 100svh);
-		grid-template-rows: auto minmax(6rem, 1fr);
+		/* The stage gets the height a full-width scene wants, but can go below it: an auto row keeps
+		   that height whatever the max says, and the demo spills over the page below. Without a
+		   scene there is no --scene-ratio, so this drops to auto rows, which is what the error box
+		   wants anyway. */
+		grid-template-rows: minmax(0, calc(100cqw / (var(--scene-ratio)))) minmax(6rem, 1fr);
 		gap: 1rem;
+	}
+
+	/* Only as tall as its row, so the scene cannot set a floor under it. */
+	.stage {
+		min-block-size: 0;
+	}
+
+	/* Sized by the row, so the SVG shrinks with it. Never the wider fit, since the row is capped at
+	   the height full width implies, so the inline axis needs no cap of its own. */
+	.scene {
+		block-size: 100%;
+		inline-size: fit-content;
 	}
 
 	.walkthrough {

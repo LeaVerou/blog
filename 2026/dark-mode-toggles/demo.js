@@ -85,6 +85,7 @@ class ThemeScenario extends HTMLElement {
 			<p class="sr-only" role="status"></p>
 		`;
 
+		this.demo = root.querySelector(".demo");
 		this.stage = root.querySelector(".stage");
 		this.prev = root.querySelector(".prev");
 		this.next = root.querySelector(".next");
@@ -99,6 +100,10 @@ class ThemeScenario extends HTMLElement {
 			// The scene wrapper is the containing block the overlaid controls are positioned against,
 			// so it has to hug the SVG rather than whatever height the stage's grid area ends up with.
 			this.stage.innerHTML = `<div class="scene">${await (await fetch(src)).text()}</div>`;
+
+			// What the scene is sized from (see scenario.css), set here so it cannot outlive it.
+			let view = this.stage.querySelector("svg").viewBox.baseVal;
+			this.demo.style.setProperty("--scene-ratio", `${view.width} / ${view.height}`);
 		}
 		catch (error) {
 			this.stage.innerHTML = `<p class="error">Could not load <code>${src}</code> (${error}). This page needs to be served over HTTP, e.g. <code>npm run serve</code>.</p>`;
