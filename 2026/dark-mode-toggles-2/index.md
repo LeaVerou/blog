@@ -2,8 +2,7 @@
 title: "The best dark mode toggle is probably none"
 date: 2026-09-02
 toc: true
-draft: true
-image: "../dark-mode-toggles/image.png"
+image: "images/image.png"
 nutshell: My article on dark mode toggles made the rounds and convinced many. However, I now think the entire debate is moot, because the best dark mode toggle is probably …none at all.
 tags:
   - ux
@@ -185,7 +184,7 @@ In our [usability class at MIT](https://designftw.mit.edu/) we made sure to ment
 
 Bramus’ central objection is that with a two-state control, forcing a mode "shouldn't be dependent on the time of the day." The scenario he gives requires OS auto-switching, *plus* toggling and reverting within a session, *plus* revisiting after the switch, *plus* remembering the earlier interaction.
 
-**Usability problems are prioritized by [frequency × impact × persistence](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/), and this scores low on all three.** The tri-state, by contrast, taxes every interaction with a state most users never need.
+**Usability problems are prioritized by [frequency × impact × persistence](https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/), and this scenario scores low on all three.** The tri-state, by contrast, taxes every interaction with a state most users never need.
 Optimizing the common path over a rare, cheaply recoverable edge case is not an antipattern, it’s precisely how usability engineering is _supposed_ to work!
 
 > "Once a user has interacted with a control, they have mentally set it to the specific state"
@@ -235,7 +234,8 @@ The core premise is quite clever: Three states with the real estate of two icons
 
 However:
 - As Vale themselves admit, some users did not realize they could revert the option they had selected, simply because that’s not a common interaction pattern. Vale does say this was a minority of users, and that it was "immediately understood by the great majority of people [they] tested it with", however I have doubts on whether this would hold true in the wild, when you haven’t already primed users to pay extra attention to the dark mode toggle.
-- Vale claims that "It only takes up the space of a two-state toggle", but that’s not true. A two-state toggle only needs the real estate of one icon, not two.
+- Vale claims that "It only takes up the space of a two-state toggle", but that’s not true. A two-state dark mode toggle only needs the real estate of one icon, not two.
+It’s _possible_ to implement one that shows both icons simultaneously, but that’s rare.
 - In its default state, nothing communicates "system". It is two icons with no indication of which is currently active. We understand that it’s a dark mode toggle, because it’s presented in isolation, in the context of an article about dark mode toggles. But used on an actual website, I wouldn't be surprised if users had no idea how to use it and only figured it out by trial and error.
 Subtly highlighting what System currently resolves to could help here, but then we’re back distinguishing whether "light" means "System (light)" or "Light, always".
 
@@ -320,7 +320,7 @@ And then it dawned on me: all these persistent dark mode toggles I had seen, lit
 
 **I could not think of a single well-known consumer-facing site with a persistent dark mode toggle.**
 All consumer-facing websites that supported this functionality displayed it in a separate settings panel ([which is a different use case](../dark-mode-toggles/#settings)).
-Even those where people spend hours a day in, like Gmail, Facebook, BlueSky, etc.
+Even those which people spend hours a day using, like Gmail, Facebook, BlueSky, etc.
 None of them see this as a use case that deserves precious header real estate.
 
 <figure>
