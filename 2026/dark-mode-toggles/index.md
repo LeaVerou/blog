@@ -264,7 +264,7 @@ Here's a concrete scenario that you can navigate interactively ([view on separat
 
 </theme-scenario>
 
-### But what if users get _confused_?
+### But what if users get _confused_? { #auto-switching }
 
 An argument I heard when discussing this was "but if the user selects light when their OS is light, then the OS switches to dark, won't they get confused that the website did not preserve their choice?"
 
@@ -381,3 +381,8 @@ Ultimately, everything boils down to the very same principle:<br>
 [**Respect user effort.**](https://lea.verou.me/blog/2025/user-effort/)
 
 _Thanks to Chris Lilley and Jake Archibald for reviewing an earlier version of this draft_
+
+## Addendum: The best dark mode toggle is probably …none
+
+This article generated a lot of discussion on social media, but I have since concluded that actually, the best dark mode toggle is probably …none.
+[Read the followup](../dark-mode-toggles-2/) to see why!
