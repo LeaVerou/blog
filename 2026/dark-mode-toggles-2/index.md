@@ -1,10 +1,10 @@
 ---
-title: "The best dark mode toggle is probably …none"
-date: 2026-08-06
+title: "The best dark mode toggle is probably none"
+date: 2026-09-02
 toc: true
 draft: true
 image: "../dark-mode-toggles/image.png"
-nutshell: My article on dark mode toggles really made the rounds. Meanwhile, I’ve started wondering if the entire debate is moot. Could the best dark mode toggle actually be …none at all?
+nutshell: My article on dark mode toggles made the rounds and convinced many. However, I now think the entire debate is moot, because the best dark mode toggle is probably …none at all.
 tags:
   - ux
   - usability
@@ -31,7 +31,7 @@ I am now firmly in the "no" camp. More on that below.
 <object data="../dark-mode-toggles/demo.svg#dark-light-2" type="image/svg+xml"></object>
 <figcaption style="grid-column: 1 / -1;">
 
-The [two-state toggle](#good-two-state-ux) design proposed in my article can actually express all three data model states.
+The [two-state toggle](../dark-mode-toggles/#good-two-state-ux) design proposed in my article can actually express all three data model states.
 </figcaption>
 </figure>
 
@@ -46,10 +46,10 @@ I tried to convince him through discussion (in person — we were both in Berlin
 ## Reactions
 
 This article _really_ made the rounds.
-It was shared by hundreds of folks, including folks I really respect, such as:
+It was shared by hundreds of folks, including people I really respect, such as:
 - [ShadCN](https://x.com/shadcn/status/2085412031717372273)
 - [Paul Kinlan](https://www.linkedin.com/in/paulkinlan/recent-activity/all/)
-- [Kevil Powell](https://bsky.app/profile/lea.verou.me/post/3msg52hpjwk2g/reposted-by)
+- [Kevin Powell](https://bsky.app/profile/lea.verou.me/post/3msg52hpjwk2g/reposted-by)
 - [John-David Dalton](https://bsky.app/profile/lea.verou.me/post/3msg52hpjwk2g/reposted-by)
 - [Tab Atkins-Bittner](https://bsky.app/profile/tabatkins.com/post/3msvipuqaas23)
 - [Cory LaViska](https://x.com/claviska/status/2085412225569767536)
@@ -90,28 +90,39 @@ Lea is a master of user experience.<br><br><a href="https://bsky.app/profile/did
 </div>
 
 Articles were written, for and against it.
-This is a very small sample (I couldn't find most of them):
+This is a small sample (I couldn't find most of them):
 - https://css-tricks.com/dark-mode-toggles-two-states-are-enough/
 - https://daily.dev/posts/dark-mode-toggles-two-states-are-enough-lea-verou-aojclwsb5
 - https://vale.rocks/micros/20260810-0330
 - https://unsung.aresluna.org/2026/08/14/
 - https://bitstorm.org/weblog/2026-8/dark-light-toggle.html
 
-There were also some and some that totally missed the point and thought I was suggesting overridding system in both states, sigh.
-Those I’m not linking to on purpose.
-
-Unfortunately, [I failed to convince Bramus](https://bsky.app/profile/bram.us/post/3msgeq7aby226), who two weeks later wrote a [blog post post of his own](https://www.bram.us/2026/08/18/the-case-for-tri-state-dark-mode-toggles/) 😢
+Unfortunately, [I failed to convince Bramus](https://bsky.app/profile/bram.us/post/3msgeq7aby226), who two weeks later wrote a [blog post of his own](https://www.bram.us/2026/08/18/the-case-for-tri-state-dark-mode-toggles/) 😢
 
 ## Responding to Bramus' post
 
-### Misleading framing: auto-switching by time of day works fine
+Bramus’s central argument is this:
 
-In both of his posts, Bramus frames the disagreement as "this will not work for users that have their system set to automatically switch to dark mode at night", which is false: it will work just fine.
+> Consider this scenario:
+>
+> 1. The user’s OS is set to auto-switch Light/Dark based on the time of day.
+> 2. They visit a website during the day, so they see the **Light** theme.
+> 3. Using the site’s two-state control, they try out the **Dark** theme. They decide they don’t like it, so they revert it back to **Light**.
+> 4. They visit the site again at night.
+>
+> Because the two-state toggle maps one of its values back to “System” behind the scenes, the site is now `dark`, although they explicitly chose `light` the last time they interacted with the control. You may now expect an incoming bug report for the control not properly working …
+
+His reasoning is that a tri-state control sidesteps this by letting users pin light or dark explicitly at all times, which he also considers clearer overall, since all three options are always visible.
+
+### An easily-misread framing: auto-switching by time of day works fine
+
+In both of his posts, Bramus initially frames the disagreement as "this will not work for users that have their system set to automatically switch to dark mode at night", which is false: it will work just fine.
 The control covers all three intents with a single click.
 Not a single click per session — a single click, _ever_.
 The variable is around _when_ that click happens.
-In fact, I [dedicated a whole section to this exact scenario](../dark-mode-toggles/#auto-switching) in the original article.
-He does later [explain](https://www.bram.us/2026/08/18/the-case-for-tri-state-dark-mode-toggles/#:~:text=Consider%20this%20scenario) what he sees as broken, but most people do not read very carefully, so there were a couple people who agreed with him thinking the two-state toggle I was proposing is somehow broken for auto-switching systems.
+In fact, I [dedicated a whole section to this exact scenario](../dark-mode-toggles/#auto-switching) in the original article, which he acknowledges but says he’s "not buying it".
+
+He does later explain what he sees as broken in more detail, but since most people do not read very carefully, there were a couple people who agreed thinking the two-state toggle I was proposing is somehow broken for auto-switching systems.
 
 ### His poll asks the wrong population the wrong question
 
@@ -159,7 +170,7 @@ The tri-state is optimized for people who already hold the system model — whic
 <aside>
 
 There is a widespread misunderstanding (especially among engineers) that exposing the underlying model directly adds clarity (best evidenced in [this HN thread](https://news.ycombinator.com/item?id=49300984)) while trying to abstract it away adds confusion.
-"Too much magic" often used to describe such abstractions in a derogatory way.
+"Too much magic" is often used to describe such abstractions in a derogatory way.
 This is absolutely true for poor abstractions: indeed they are often _worse_ than exposing the underlying model directly.
 But poor abstractions don’t prove that abstraction itself is bad — abstraction is the foundation of every UI we use today — you haven’t written any machine code this morning, have you?^[I’m not talking about you Bob!]
 
@@ -201,7 +212,7 @@ Some people were divided.
 They agreed with the reasoning, but still thought a tri-state toggle added clarity.
 So naturally, they did what UI designers do best: they designed, and the results are quite clever.
 
-Others took a different, hilarious, take on the problem, and attempted to imagine the worst possible dark mode toggles.
+Others took a different, hilarious tack on the problem, and attempted to imagine the worst possible dark mode toggles.
 
 ### Lawful Good 😇 { #lawful-good }
 
@@ -224,7 +235,8 @@ The core premise is quite clever: Three states with the real estate of two icons
 However:
 - As Vale themselves admit, some users did not realize they could revert the option they had selected, simply because that’s not a common interaction pattern. Vale does say this was a minority of users, and that it was "immediately understood by the great majority of people [they] tested it with", however I have doubts on whether this would hold true in the wild, when you haven’t already primed users to pay extra attention to the dark mode toggle.
 - Vale claims that "It only takes up the space of a two-state toggle", but that’s not true. A two-state toggle only needs the real estate of one icon, not two.
-- In its default state, nothing communicates "system". It is two icons with no indication of which is currently active. I wouldn't be surprised if users had no idea how to use it and only figured it out by trial and error.
+- In its default state, nothing communicates "system". It is two icons with no indication of which is currently active. We understand that it’s a dark mode toggle, because it’s presented in isolation, in the context of an article about dark mode toggles. But used on an actual website, I wouldn't be surprised if users had no idea how to use it and only figured it out by trial and error.
+Subtly highlighting what System currently resolves to could help here, but then we’re back distinguishing whether "light" means "System (light)" or "Light, always".
 
 But most importantly, this is adding significant implementation and UI complexity for something that the vast majority of users don't devote _nearly_ as much thought to as we think they do.
 In my opinion, this is **admirable effort that is ultimately solving a non-problem**.
@@ -289,59 +301,95 @@ codepen.io/editor/sunka...
 
 #css<br><br><a href="https://bsky.app/profile/did:plc:kc66te46cf4pmnkugea7fe5d/post/3mtwuswoj3s2m?ref_src=embed">[image or embed]</a></p>&mdash; Sunkanmi Fafowora (<a href="https://bsky.app/profile/did:plc:kc66te46cf4pmnkugea7fe5d?ref_src=embed">@sunkanmifafowora.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:kc66te46cf4pmnkugea7fe5d/post/3mtwuswoj3s2m?ref_src=embed">August 26, 2026 at 1:33 AM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
-## Is user testing the answer?
-
-Usability is a property of user outcomes, and no users were observed in any of this.
-
-Would it be helpful to get data?
-I’m not convinced this is a problem worth solving, but if we want to solve it, the best answer is obviously to get data from real user interactions.
-
-However, there is a caveat here: **qualitative user testing**^[The kind where you get a few users and observe them using the UI to accomplish a task] **is less useful for infrequent microinteractions** like this one.
-Think about it: how would you design a meaningful qualitative experiment?
-At best, any subject would only interact with the toggle once.
-Most wouldn't click it at all, unless the experiment was designed to show a website where the OS default state is awful, which generalizes poorly.
-
-Additionally, when measuring outcomes that depend on attention, it is also important to not influence attention in a way that invalidates the results.
-E.g. Vale wrote that a control with obvious usability issues was "has been intuitive and immediately understood by the great majority of people I’ve tested it with.".
-I strongly suspect these users were aware that something around dark mode toggles was being tested, and were paying a lot more attention to the control than they organically would.
-
-I think the best way to get data here is telemetry: record how users actually interact with the control and analyze it quantitatively at scale.
-
-For example, it could answer questions like:
-- How frequently do people interact with the control at all? (to see if it’s worth permanent screen real estate)
-- On a tri-state control, how frequently do users actually select the option that matches system but isn't system?
-- For mouse users, how much time passes between hovering the control and making a final selection for each condition? (as a proxy for cognitive load)
-- etc
-
-By _select_ above, I’m not referring to clicking, but the actual, final selection, to avoid noise from people playing with the control just to see what it does.
-
-
 ## Could the best dark mode toggle be …none?
 
 However, my biggest insight from all of this is that while I stand by my original recommendation that in most cases, if you _are_ going to have a dark mode toggle that is visible at all times, it should only have two states (system and opposite), I now think that for the vast majority of websites, **you should _not_ have such a toggle at all**.
 
-Instead, follow system as the default, and have a separate settings panel (even if it's actually implemented as a separate page) and put it there.
-It simply doesn't warrant permanent screen real estate for the vast majority of users who are not developers.
+Follow system as the default, and if need be have a separate settings panel (even if it's not actually implemented as a separate page but just an overlay) and put it there.
+It simply doesn't warrant permanent screen real estate for the vast majority of users.
 
 The eye-opening moment was when I sent my post to a colleague who is also an HCI PhD, to get their feedback on whether my reasoning was sound, or whether I had any blind spots.
 For background, this was someone who was much less immersed in the technical weeds of the Web — their work centers more around humans than around deep technical details.
 
 I expected either agreement or constructive criticism, but what I got was much more eye-opening:
 It turned out that **they had _no_ idea what control the article was talking about**!
-Folks, …they had never seen a dark mode toggle!
+Folks, …they had never seen a dark mode toggle!^[or — perhaps more likely — never paid attention to one]
 
 And then it dawned on me: all these persistent dark mode toggles I had seen, literally **_all of them_ have been on developer-facing sites**!
-I could not think of a single example of a well-known consumer-facing site that had a persistent dark mode toggle.
-**All consumer-facing websites that supported this functionality displayed it in a separate settings panel** ([which is a different use case](../dark-mode-toggles/#settings)).
+
+**I could not think of a single well-known consumer-facing site with a persistent dark mode toggle.**
+All consumer-facing websites that supported this functionality displayed it in a separate settings panel ([which is a different use case](../dark-mode-toggles/#settings)).
 Even those where people spend hours a day in, like Gmail, Facebook, BlueSky, etc.
 None of them see this as a use case that deserves precious header real estate.
 
-Now, a pattern can be widespread and still suffer from poor usability,
-or be great and not be popular (yet?).
-But in this case, they’re right.
-It suddenly all made sense to me: this doesn't matter _nearly_ as much to the average user as it does to us developers.
-To be clear: "always dark, even against the OS" _is_ a legitimate intent!
-But it is also a rare, expert one, and expert intents belong behind [progressive disclosure](https://www.nngroup.com/articles/progressive-disclosure/) — a settings surface — not in the one control every visitor sees.
+<figure>
+<img src="images/wikipedia.png" alt="Wikipedia with the settings panel expanded" />
+<figcaption>
 
-**We have been blinded by our debugging needs to the point we convinced ourselves this is top of mind for the average user.**
-If this is not a textbook case of [false-consensus bias](https://www.nngroup.com/articles/false-consensus/), I don't know what is.
+Wikipedia does show this sidebar by default on large enough viewports, but this is not an exception — just an auto-expanded settings panel.
+</figcaption>
+
+</figure>
+
+Now, this alone is not evidence that dark mode toggles are a bad idea.
+A pattern can be widespread and still suffer from poor usability.
+And every UX innovation started off not being popular, so the reverse doesn’t hold either: a pattern can be unpopular and still be good.
+But in this case, I think they’re right.
+It suddenly all made sense to me: this doesn't matter _nearly_ as much to the average user as it does to us developers.
+
+To be clear: "always light/dark, even against the OS" _is_ a legitimate intent!
+But it is also a relatively rare one, and rare intents belong behind [progressive disclosure](https://www.nngroup.com/articles/progressive-disclosure/) — a settings surface — not in the one control every visitor sees.
+
+In a textbook case of [false-consensus bias](https://www.nngroup.com/articles/false-consensus/),
+**we have been so focused on our debugging needs that we convinced ourselves this is top of mind for the average user.**
+
+### When is a persistent dark mode toggle a good idea?
+
+A corollary from the reasoning above is that a dark mode toggle is a good idea when the website is _developer-facing_ or _developer-adjacent_ (e.g. a site for designers).
+
+
+## Experimental validation
+
+**Usability is a property of user outcomes**, and no users were observed in any of this.
+Even my own article was derived from first principles and my experience observing users, but no actual observations of users interacting with dark mode toggles were made.
+
+Per the previous section, I’m not convinced this is a problem worth solving.
+That said, if we _do_ want to solve it, the best answer is obviously to get data from real user interactions.
+
+However, there is a caveat here: [_qualitative user testing_](https://www.nngroup.com/articles/usability-testing-101/)^[The kind where you get a few users and observe them using the UI to accomplish a task — i.e. what most people refer to as just "user testing"] **is less useful for infrequent microinteractions** like this one.
+
+Think about it: how would you design a meaningful qualitative experiment?
+At best, any subject would only interact with the toggle once.
+Most wouldn't click it at all, unless the experiment was designed to show a website where the OS default theme is awful, which generalizes poorly.
+
+Another easy bias in a controlled experiment is that it’s easy to bias the results by drawing attention to things that users would otherwise pay much less attention to.
+E.g. Vale wrote that the 3-in-2 switch was "intuitive and immediately understood by the great majority of people [they’ve] tested it with".
+I strongly suspect these users were aware that something around dark mode toggles was being tested, and were paying a lot more attention to the control than they organically would.
+
+I think the best way to get data for something like this is to record how users _actually_ interact with the control, at scale, then analyze the data quantitatively.
+The experiment could involve different toggle designs as separate conditions.
+
+Then, we could look at the data to answer questions like:
+- How frequently do people interact with the control meaningfully (i.e. ending up with a different selection)? (to see if it’s worth permanent screen real estate)
+- On a tri-state control, how frequently do users actually select the option that matches system but isn't system? (to see if you actually need three states)
+- For mouse users, how much time passes between hovering the control and making a final selection for each condition and how many clicks does it involve? (as a proxy for cognitive load)
+- etc
+
+<article class="note">
+
+By _select_ above, I’m not referring to clicking, but the actual, final selection, to avoid noise from people playing with the control just to see what it does.
+
+</article>
+
+## The big picture: Question the problem first
+
+It is easy to get deep into a rabbit hole of trying our hardest to solve a problem that shouldn’t exist in the first place.
+
+Especially for those of us with an engineering background, problem-solving comes naturally and it’s very hard to resist a challenging problem.
+
+I’ve seen this happen repeatedly in many types of technical debates.
+It’s very common in standards groups as well: someone proposes a feature and the group starts debating the details before deciding whether the feature should exist _at all_.
+
+Before any significant problem-solving task, it’s always good practice to step back and ask ourselves _"is this a real problem worth solving?"_.
+
+You’d be surprised how often the answer is _no_.
