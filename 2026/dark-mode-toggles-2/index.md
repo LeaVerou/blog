@@ -3,7 +3,7 @@ title: "The best dark mode toggle is probably none"
 date: 2026-09-02
 toc: true
 image: "images/image.png"
-nutshell: My article on dark mode toggles made the rounds and convinced many. However, I now think the entire debate is moot, because the best dark mode toggle is probably …none at all.
+nutshell: My post on two-state dark mode toggles convinced many. But should you have a persistent dark mode toggle _at all_? I have since been convinced that for most websites, the answer is no.
 tags:
   - ux
   - usability
@@ -99,7 +99,7 @@ This is a small sample (I couldn't find most of them):
 
 Unfortunately, [I failed to convince Bramus](https://bsky.app/profile/bram.us/post/3msgeq7aby226), who two weeks later wrote a [blog post of his own](https://www.bram.us/2026/08/18/the-case-for-tri-state-dark-mode-toggles/) 😢
 
-## Responding to Bramus' post
+## Bramus’ objections
 
 Bramus’s central objection to the two-state toggle is this:
 
