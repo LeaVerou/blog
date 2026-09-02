@@ -61,7 +61,9 @@ and many others. A lot more who hearted it.
 Some of the quotes really made me blush ☺️. Here is a small selection:
 
 <style>
-.quotes { display: flex; flex-wrap: wrap; gap: 1rem; zoom: .85 }
+.quotes { display: flex; flex-wrap: wrap; gap: 1rem;
+@media (width > 1200px) { zoom: .8 }
+}
 </style>
 
 <div class="quotes">
@@ -80,8 +82,7 @@ Lea is a master of user experience.<br><br><a href="https://bsky.app/profile/did
 
 <blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:xze6eimrnifbpwdv5uapb4d7/app.bsky.feed.post/3msvq55goz22c" data-bluesky-cid="bafyreibj7goljn7frunvpid5parikfbwphhzwan4aieecvaphxlfmzdyuy" data-bluesky-embed-color-mode="system"><p lang="en">Really, really appreciate the deep thinking about the user&#x27;s _actual_ needs and intentions, irrespective of conventions and commonalities, in this brilliant piece. 👌<br><br><a href="https://bsky.app/profile/did:plc:xze6eimrnifbpwdv5uapb4d7/post/3msvq55goz22c?ref_src=embed">[image or embed]</a></p>&mdash; sylvia (<a href="https://bsky.app/profile/did:plc:xze6eimrnifbpwdv5uapb4d7?ref_src=embed">@svillegas.com</a>) <a href="https://bsky.app/profile/did:plc:xze6eimrnifbpwdv5uapb4d7/post/3msvq55goz22c?ref_src=embed">August 12, 2026 at 9:12 PM</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 
-</div>
-<div class="quotes">
+
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Tri-state theme controls always make me think™. Minor friction, but unnecessary. We can do better.<br><br>The intent is simple: &quot;flip the theme&quot;. The UI only needs two states: light and dark. “Follow system” can stay under the hood.<br>The algorithm I use in my projects ➡️ <a href="https://t.co/8s15vxVFY2">https://t.co/8s15vxVFY2</a></p>&mdash; Alexey Ardov (@ardovalexey) <a href="https://x.com/ardovalexey/status/2084735328267432437?ref_src=twsrc%5Etfw">August 4, 2026</a></blockquote> <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
@@ -101,7 +102,7 @@ Unfortunately, [I failed to convince Bramus](https://bsky.app/profile/bram.us/po
 
 ## Responding to Bramus' post
 
-Bramus’s central argument is this:
+Bramus’s central objection to the two-state toggle is this:
 
 > Consider this scenario:
 >
