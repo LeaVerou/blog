@@ -365,7 +365,7 @@ That said, if we _do_ want to solve it, the best answer is obviously to get data
 However, there is a caveat here: [_qualitative user testing_](https://www.nngroup.com/articles/usability-testing-101/)^[The kind where you get a few users and observe them using the UI to accomplish a task — i.e. what most people refer to as just "user testing"] **is less useful for infrequent microinteractions** like this one.
 
 Think about it: how would you design a meaningful qualitative experiment?
-At best, any subject would only interact with the toggle once.
+At best, each participant would only interact with the toggle once.
 Most wouldn't click it at all, unless the experiment was designed to show a website where the OS default theme is awful, which generalizes poorly.
 
 Another easy bias in a controlled experiment is that it’s easy to bias the results by drawing attention to things that users would otherwise pay much less attention to.
