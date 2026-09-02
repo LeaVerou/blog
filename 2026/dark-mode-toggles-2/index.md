@@ -3,16 +3,16 @@ title: "The best dark mode toggle is probably none"
 date: 2026-09-02
 toc: true
 image: "images/image.png"
-nutshell: My post on two-state dark mode toggles convinced many. But should you have a persistent dark mode toggle _at all_? I have since been convinced that for most websites, the answer is no.
+nutshell: My post on two-state dark mode toggles sparked a lot of discussion about the optimal dark mode toggle design. But should you have a (persistent) dark mode toggle _at all_? I have since been convinced that for most websites, the answer is **no**.
 tags:
   - ux
   - usability
   - product-design
   - dark-mode
-# social_posts:
-#   bluesky: ""
-#   twitter: ""
-#   mastodon: ""
+social_posts:
+  bluesky: https://bsky.app/profile/did:plc:eagnfcoqnbtzpkglrtej6ayg/post/3mukdzdwaps2q
+  twitter: https://x.com/LeaVerou/status/2095185526127030386
+  mastodon: https://front-end.social/@leaverou/117202383300515475
 #   linkedin: ""
 ---
 
