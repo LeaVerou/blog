@@ -13,7 +13,7 @@ social_posts:
   bluesky: https://bsky.app/profile/did:plc:eagnfcoqnbtzpkglrtej6ayg/post/3mukdzdwaps2q
   twitter: https://x.com/LeaVerou/status/2095185526127030386
   mastodon: https://front-end.social/@leaverou/117202383300515475
-#   linkedin: ""
+  linkedin: https://lnkd.in/p/ddWn9uku
 ---
 
 About a month ago, I wrote an [article](../dark-mode-toggles/) recommending that if you are going to have an always visible control for switching between light and dark mode, it should be a two-state toggle that alternates between _system_ and _whatever the current opposite of system is_, not a tri-state one (system, light, dark).
