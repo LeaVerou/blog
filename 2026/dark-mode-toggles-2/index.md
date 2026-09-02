@@ -38,9 +38,14 @@ What I didn’t mention was that I had been meaning to write this article for ye
 What finally pushed me to write it ^[during a [CSS WG meeting](https://wiki.csswg.org/planning/berlin-2026/) where I was presenting several topics no less!] was that [Bramus](https://bram.us) argued that some [Modern Web Guidance](https://developer.chrome.com/docs/modern-web-guidance) I had written on this was incorrect.
 He assumed it was an oversight, that I simply hadn't thought of all the implications.
 On the contrary, my recommendation had been the result of some _very_ careful consideration, combined with my [HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction) background.
-Surely, if I explained my reasoning well, he would see it.
+_Surely, if I explained my reasoning well, he would see it!_
 
-I tried to convince him through discussion (in person — we were both in Berlin at the time!) to no avail so I figured a blog post would help me better present the argument.
+I tried to convince him through discussion (in person, as we were both in Berlin at the time) to no avail.
+My conclusion was that I must be doing a poor job explaining my reasoning,
+and that a blog post was in order to explain it properly.
+_Surely, after that he would be convinced!_
+
+And thus, one of my most successful blog posts was born.
 
 ## Reactions
 
