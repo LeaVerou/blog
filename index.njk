@@ -1,14 +1,12 @@
 ---
-title: "Blog"
+layout: page.njk
+pagination:
+  data: collections.blogPosts
+  size: 15
 override:tags: []
-layout: "page.njk"
-pagination: {
-	data: collections.published,
-	size: 15
-}
-permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+title: Blog
 ---
-
 {% include "_yearly.njk" %}
 
 {% import "_posts.njk" as posts with context %}
