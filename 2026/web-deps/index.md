@@ -250,7 +250,7 @@ _This doesn't scale._
 The creator of htmx [reached the same conclusion](https://htmx.org/essays/vendoring/#:~:text=On%20the%20other,on%20and%20on.), and committed to _not_ using dependencies so that their users can vendor htmx.
 This is an _awful_ compromise that no library author should be forced into.
 
-### Specifiers are essential abstraction { #specifiers }
+### Specifiers are an essential abstraction { #specifiers }
 
 **Second, any path-based solution breaks encapsulation.**
 There is a reason why we reference packages using specifiers like `vue` or `lit` instead of URLs to the actual files.
@@ -504,7 +504,7 @@ Which brings me to my next point.
 
 How could we retrofit specifiers into the web platform?
 We can't just start accepting specifiers in places designed for URLs — `<link rel=stylesheet href="foo">` or `@import url('foo');` already have an established meaning: they are relative URLs to the file called `foo`.
-**ESM avoided this by designing imports with specifier disambiuguation from the get go.**
+**ESM avoided this by designing imports with specifier disambiguation from the get go.**
 
 The solutions are to either add one-off ESM-like specifier-first referencing syntax in every part of the platform that may want to import any resource from a dependency (CSS files, `<script src>`, CSS `@import`, CSS `url()`, SVG `<use>` etc etc),
 or to design a new URL scheme (`specifier:`?) to reference them everywhere (which is what I [proposed](https://github.com/whatwg/html/issues/12163) a while ago).
@@ -528,13 +528,12 @@ This was actually [part of the original import map work](https://github.com/WICG
 In 2022, external import maps were prototyped in WebKit (Safari), which prompted [a new WHATWG issue](https://github.com/whatwg/html/issues/8355).
 Unfortunately, it appears that progress has since stalled once more.
 
-A [JS API to manage import maps](https://github.com/whatwg/html/issues/12217) could also be another way forwards for this.
-
 #### Import maps without HTML?
 
 External import maps do alleviate some of the core pain points, but are still globally managed in HTML, which hinders composability and requires heavier tooling.
 
-[What if import maps could be imported into JS code?]() this would eliminate the dependency on HTML altogether, allowing for scripts to localize their own import info,
+What if import maps could be imported into JS code?
+This would eliminate the dependency on HTML altogether, allowing for scripts to localize their own import info,
 and for the graph to be progressively composed instead of globally managed.
 
 Originally, I was [thinking](https://es.discourse.group/t/bringing-import-maps-to-js-import-importmap-json-with-type-importmap/2481) of an import attribute (e.g. via `import "map.json" with { type: "importmap" }`), but perhaps the path of least resistance might be a [JS API](https://github.com/whatwg/html/issues/12217).
@@ -566,7 +565,7 @@ Without a way to figure out what depends on what, transitive dependencies will s
 The current system relies on reading and parsing thousands of `package.json` files to build the dependency graph.
 This is reasonable for a JS runtime where the cost of file reads is negligible, but not for a browser where HTTP roundtrips are costly.
 And even if it were, this does not account for any tree-shaking.
-I’m not sure what the solution might be here, except perhaps moving this to the server’s provenance too, like compression.
+I’m not sure what the solution might be here, except perhaps moving this to the server’s purview too, like compression.
 
 ----
 
