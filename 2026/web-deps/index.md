@@ -566,7 +566,7 @@ Without a way to figure out what depends on what, transitive dependencies will s
 The current system relies on reading and parsing thousands of `package.json` files to build the dependency graph.
 This is reasonable for a JS runtime where the cost of file reads is negligible, but not for a browser where HTTP roundtrips are costly.
 And even if it were, this does not account for any tree-shaking.
-I’m not sure what the solution might be here, except perhaps moving this to the server as well, like compression.
+I’m not sure what the solution might be here, except perhaps moving this to the server’s provenance too, like compression.
 
 ----
 
