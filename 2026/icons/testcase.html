@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Icon system testcase</title>
+	<style>
+		@import url('icon-tokens.css');
+		@import url('icons.css');
+		@import url('styles.css');
+
+		body {
+			font-family: system-ui;
+		}
+
+		button {
+			:where(&) {
+				--icon-start: var(--icon);
+			}
+
+			&:hover {
+				--icon-start: var(--icon-hover, var(--icon));
+			}
+
+			&.danger {
+				--icon: var(--icon-trash-outlined);
+
+				&:hover {
+					--icon: var(--icon-trash);
+				}
+			}
+		}
+	</style>
+</head>
+<body>
+	<button>No icon</button>
+	<button style="--icon: var(--icon-github)">Ad hoc icon</button>
+	<button class="danger">Default icon</button>
+	<button class="danger">With <strong>inline <em>style</em></strong></button>
+	<button style="--icon: var(--icon-github); --icon-hover: var(--icon-link-external);">GitHub to link</button>
+</body>
+</html>
