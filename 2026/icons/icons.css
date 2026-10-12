@@ -12,7 +12,7 @@
 		--icon-start: inherit;
 		content: "";
 		display: inline-block;
-		vertical-align: calc(0.5em - 0.47lh);
+		vertical-align: calc(0.5em - 0.48lh);
 		width: 1em;
 		height: 1em;
 		margin-inline-end: .3em;
@@ -27,7 +27,7 @@
 		--icon-end: inherit;
 		content: "";
 		display: inline-block;
-		vertical-align: calc(0.5em - 0.47lh);
+		vertical-align: calc(0.5em - 0.48lh);
 		width: 1em;
 		height: 1em;
 		background: currentColor;
