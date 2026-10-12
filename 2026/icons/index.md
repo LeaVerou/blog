@@ -3,7 +3,6 @@ title: The best way to use icons in Web UIs
 toc: true
 image: "images/image.png"
 date: 2026-10-11
-draft: true
 tags:
   - icons
   - css
