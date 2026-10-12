@@ -240,6 +240,16 @@ but everything applies identically to `--icon-end`/`::after` and any additional 
 }
 ```
 
+<article class="note">
+
+#### Why not use `aspect-ratio`?
+
+You may be wondering why I'm specifying the size twice instead of `width: 1em; aspect-ratio: 1`.
+Flex items stretch by default, and a stretched size is definite, so `aspect-ratio` is ignored.
+Since icons so often live in buttons, and buttons are so often `display: flex`, an explicit `height` is far more robust.
+Grid happens to be fine (`align-self: normal` behaves as `start` for items with an aspect ratio), but flex has no such exception.
+</article>
+
 Unfortunately, you need to repeat the pseudo-element contents for every type of pseudo-element you want to be able to support icons on.
 [Mixins](#mixins) will eventually fix that.
 
@@ -364,6 +374,7 @@ The styles above are a start, but we can do better:
 - **Customizable color and size**: Rather than hardcoding `currentColor` and `1em`, read them from custom properties with those as fallbacks: `background-color: var(--icon-style-color, currentColor)` and `width: var(--icon-style-size, 1em)` (same for `height`). Since they inherit, you can style every icon in a subtree by setting them on an ancestor, without ever touching the pseudo-element. The `--icon-style-` prefix keeps them from colliding with the icons themselves, which are also `--icon-*`.
 - **Preserve in forced colors mode**: `forced-color-adjust: none;` to keep the mask fill in forced-colors mode. `currentColor` will still follow the forced text color.
 - **Don’t get in the way of pointer interactions**: `pointer-events: none` so that it doesn't trap clicks it shouldn’t.
+- **Don’t shrink in flex containers**: `flex: none`. An empty pseudo-element has a zero minimum size, so in a flex button it is the first thing to shrink when the label is long, and it can shrink all the way to zero. An icon's size is a design decision, not something layout pressure should negotiate.
 - **Vertical centering**: I add `vertical-align: calc(0.5em - 0.47lh);` to center the icons and nudge them a tiny bit upwards (our eyes weigh the space above the icon more than the space below it, so if something is perfectly centered mathematically, it will look a bit low). With a customizable size, that becomes `calc(1em - 0.47lh - var(--icon-style-size, 1em) / 2)`, so that the icon's center stays put as it grows.
 - **Spacing from text**: `margin-inline-end: var(--icon-style-spacing, .3em);` to add a bit of space between the icon and the content (`margin-inline-start` for `::after`). Make sure to remove it for standalone icons.
 - **Accessibility**: The pseudo-element has no text, so assistive technology ignores it entirely, which is exactly what we want for an icon next to a label. Icon-only controls still need a name, and we can let the icon provide one via [alternative text for generated content](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content#alternative_text_string_counter_attr): `content: "" / var(--icon-style-alt, "")`, so that `<button style="--icon: var(--icon-trash); --icon-style-alt: 'Delete'">` is announced as "Delete". `aria-label` on the control itself still works, of course.
@@ -405,6 +416,7 @@ html-demo pre {
 		background-color: var(--icon-style-color, currentColor);
 		mask: var(--icon-start) no-repeat center / contain;
 		pointer-events: none;
+		flex: none;
 		forced-color-adjust: none;
 	}
 }
@@ -518,6 +530,7 @@ At this point our demo works _almost_ perfectly!
 		background-color: var(--icon-style-color, currentColor);
 		mask: var(--icon-start) no-repeat center / contain;
 		pointer-events: none;
+		flex: none;
 		forced-color-adjust: none;
 	}
 }
@@ -658,6 +671,7 @@ Putting it all together, here is the final demo, with both workarounds applied:
 		background-color: var(--icon-style-color, currentColor);
 		mask: var(--icon-start) no-repeat center / contain;
 		pointer-events: none;
+		flex: none;
 		forced-color-adjust: none;
 	}
 }
@@ -924,6 +938,7 @@ With `@mixin` we can just do:
 	background-color: currentColor;
 	mask: no-repeat center / contain;
 	pointer-events: none;
+	flex: none;
 }
 
 @mixin --icon-start {
