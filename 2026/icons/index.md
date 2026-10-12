@@ -992,3 +992,13 @@ And then we can use them all over the place:
 /* and so on… */
 ```
 
+## Use it today via `@nudeui/icons`!
+
+I published a package that puts together everything from this post, polish and warts included.
+It contains no icons, just the icon system.
+You'd just include it and then you can use `--icon-start` and `--icon-end` in your styles.
+It also includes the `.icon`, `.icon-start`, and `.icon-end` classes.
+It does not wrap its contents in a layer to give you maximum choice, but I'd recommend importing it in a layer anyway.
+
+<a class="cta" href="https://www.npmjs.com/package/@nudeui/icons" target="_blank">@nudeui/icons</a>
+
