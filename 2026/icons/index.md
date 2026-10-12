@@ -64,7 +64,7 @@ I still think it’s superior to inline SVG in HTML, and it baffles me why it is
 
 ## A user-centered icon system
 
-Per the principles outlined in [my user effort article](../user-effort), a good icon system should:
+Per the principles outlined in [my user effort article](../../2025/user-effort), a good icon system should:
 1. **keep syntax close to the minimum necessary to declare intent**, and
 2. **make simple things easy, complex things possible, and the transition from one to the other smooth (no usability cliffs)**
 
