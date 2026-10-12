@@ -8,6 +8,7 @@ tags:
   - css
   - ui-design
   - design-systems
+nutshell: What if I told you, you could use CSS to *insert* and *tweak* icons without touching any HTML? And that it could be more flexible and maintainable than what you’ve been using?
 ---
 
 <script src="https://esm.sh/nudeui@0.0.5/html-demo?raw" type="module"></script>
@@ -460,7 +461,7 @@ button {
 If you're viewing the demo in Chrome or Firefox, it should work as expected.
 If you're viewing the demo in Safari, you’ll already know that it’s severely broken.
 
-<video src="safari-1.mov" autoplay loop loading="lazy"></video>
+<video src="images/safari-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
 
 My research on this resulted in filing not one, but two Safari bug reports.
 The good news is that all have workarounds.
@@ -593,6 +594,8 @@ Can you spot the bug that remains?
 
 There are two buttons that change their icon on hover: _Default icon_ and _Github to link_.
 The former works, the latter doesn’t. WAT?!
+
+<video src="images/safari-2.mp4" autoplay muted loop playsinline preload="metadata"></video>
 
 So, there _is_ a difference between them: `.danger` sets `--icon` on hover, whereas _Github to link_ sets `--icon-start` directly, via `--icon-hover`.
 And `--icon-start` is registered as non-inheriting, which is quite relevant here.
