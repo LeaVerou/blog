@@ -144,8 +144,9 @@ button.delete {
 
 	&:hover {
 		background: var(--color-danger);
-		color: contrast-color(var(--color-danger));
-		/* icon should adapt automatically */
+		/* See https://lea.verou.me/blog/2024/contrast-color/
+			for making it adapt automatically */
+		color: var(--color-danger-text);
 	}
 }
 
@@ -240,7 +241,7 @@ but everything applies identically to `--icon-end`/`::after` and any additional 
 ```
 
 Unfortunately, you need to repeat the pseudo-element contents for every type of pseudo-element you want to be able to support icons on.
-[Mixins](#the-north-star) will eventually fix that.
+[Mixins](#mixins) will eventually fix that.
 
 ### Restricting it to only elements that actually have an icon
 
@@ -351,6 +352,7 @@ One way to deal with this is to specify a `content` value that becomes <abbr tit
 
 This will resolve `content` to a transparent image if `--icon-start` is defined, and to `unset` → `none` if it is not,
 which will effectively remove the pseudo-element.
+And yes, `image-set()` is [Baseline Widely Available](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/image/image-set).
 It doesn't remove any of the other properties, so it still cannot compose with other `::before` styles,
 so don't apply it so broadly it can clash with other elements that may have `::before` styles.
 
@@ -625,6 +627,102 @@ Conveniently, `@property` is allowed inside conditional rules, and when a proper
 
 The layer means any unlayered declaration wins over the reset, even zero-specificity ones like `:where(button) { --icon-start: var(--icon) }`.
 
+## Demo
+
+Putting it all together, here is the final demo, with both workarounds applied:
+
+<html-demo isolate="iframe" buttons="open codepen">
+
+```html
+<link rel="stylesheet" href="icon-tokens.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Icon system */
+/* Icon defs on :root */
+@import url("icon-tokens.css");
+
+@property --icon-start {
+	syntax: '*';
+	inherits: false;
+}
+
+@container style(--icon-start) {
+	::before {
+		--icon-start: inherit;
+		content: "" / var(--icon-style-alt, "");
+		display: inline-block;
+		vertical-align: calc(1em - 0.47lh - var(--icon-style-size, 1em) / 2);
+		width: var(--icon-style-size, 1em);
+		height: var(--icon-style-size, 1em);
+		margin-inline-end: var(--icon-style-spacing, .3em);
+		background-color: var(--icon-style-color, currentColor);
+		mask: var(--icon-start) no-repeat center / contain;
+		pointer-events: none;
+		forced-color-adjust: none;
+	}
+}
+
+/* Workaround for https://bugs.webkit.org/show_bug.cgi?id=301609
+   A zero-duration animation on the pseudo-elements forces WebKit
+   to re-resolve style, this time against the correct container.
+   Must be outside the @container block (which is false on the first pass). */
+@keyframes webkit-301609 {}
+
+/* Safari 18+ only */
+@supports ((-webkit-nbsp-mode: normal) or (-webkit-touch-callout: none) or (font: -apple-system-body)) and (content-visibility: auto) {
+	@layer webkit-301609-fix {
+		::before, ::after {
+			animation: webkit-301609 0s;
+		}
+	}
+
+	/* Workaround for https://bugs.webkit.org/show_bug.cgi?id=325900
+	   `inherit` on non-inherited registered properties is unreliable,
+	   so register them as inherited and reset them on descendants instead. */
+	@property --icon-start {
+		syntax: '*';
+		inherits: true;
+	}
+
+	@layer webkit-325900-fix {
+		@container style(--icon-start) {
+			* {
+				--icon-start: initial;
+			}
+		}
+	}
+}
+</style>
+<style>
+/* Button styles (relevant subset) */
+button {
+	:where(&) {
+		/* Redirect --icon to something more specific */
+		--icon-start: var(--icon);
+	}
+
+	&:hover {
+		--icon-start: var(--icon-hover, var(--icon));
+	}
+
+	&.danger {
+		--icon: var(--icon-trash-outlined);
+
+		&:hover {
+			--icon: var(--icon-trash);
+		}
+	}
+}
+</style>
+
+<button>No icon</button>
+<button style="--icon: var(--icon-github)">One-off icon</button>
+<button class="danger">Default icon</button>
+<button class="danger">With <strong>inline <em>style</em></strong></button>
+<button style="--icon: var(--icon-github); --icon-hover: var(--icon-link-external);">GitHub to link</button>
+```
+</html-demo>
+
 ## Using remote icons
 
 When using icons from SVG files it’s important to remember that **any relative URL will resolve relative to the CSS file that *uses* the icon, not the one it’s defined in**.
@@ -648,14 +746,14 @@ The obvious downside is DX: there is *a lot* more boilerplate to define an icon 
 The earlier syntax can be managed by hand, even for many icons.
 This starts requiring a build step after a dozen or so.
 
-Additionally, registered properties are currently global and don't work in shadow roots, so that may not fit every use case.
+Additionally, registered properties are currently global and [don't work in shadow roots](https://github.com/w3c/csswg-drafts/issues/10541), so that may not fit every use case.
 
 Another option might be to go through all `--icon-*` properties in `:root` and register them via JS:
 
 ```js
 const cs = getComputedStyle(document.documentElement);
-const iconTokens = [...cs].filter(p => p.startsWith("--icon-"));
-for (let name of cs) {
+const iconTokens = [...cs].filter(p => p.startsWith("--icon-") && !p.startsWith("--icon-style"));
+for (let name of iconTokens) {
 	if (!name.startsWith("--icon-")) continue;
 	const initialValue = cs.getPropertyValue(name);
 
@@ -809,7 +907,7 @@ For the icon above it would look like this:
 @property --icon-caret <image> = url("icons/caret.svg");
 ```
 
-### `@mixin` will allow us to centralize pseudo-element styles
+### `@mixin` will allow us to centralize pseudo-element styles { #mixins }
 
 Currently, we have to repeat a lot of styles between the different pseudo-elements.
 If we want to also have a fallback class that doesn't depend on style queries, we need to repeat them four times!
