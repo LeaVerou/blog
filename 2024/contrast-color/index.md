@@ -2,6 +2,7 @@
 title: "On compliance vs readability: Generating text colors with CSS"
 toc: true
 date: 2024-05-17
+date_updated: 2026-10-11
 tags:
   - css
   - color
@@ -198,6 +199,13 @@ color: oklch(from var(--color) var(--l) 0 h);
 
 One worry might be that if L gets close enough to the threshold we could get a number between <var>0</var> - <var>1</var>,
 but in my experiments this never happened, presumably since precision is finite.
+
+**Update (October 2026)** Since [`sign()` is Baseline 2025](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sign) we can simplify this expression further:
+```css
+--l-threshold: 0.623;
+--l: max(0, sign(var(--l-threshold) - l));
+color: oklch(from var(--color) var(--l) 0 h);
+```
 
 ### Fallback for browsers that don’t support RCS
 
