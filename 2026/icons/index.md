@@ -16,7 +16,8 @@ nutshell: What if I told you, you could use CSS to *insert* and *tweak* icons wi
 ---
 
 <script src="https://esm.sh/nudeui@0.0.5/html-demo?raw" type="module"></script>
-<!-- <script src="http://localhost:8002/nudeui/nudeui/components/html-demo/html-demo.js" type="module"></script> -->
+
+<a class="cta" href="#demo">TL;DR? Jump to demo</a>
 
 I've always had a soft spot for icons[^1].
 Not only do they add polish to a UI, they can also tangibly improve usability.
