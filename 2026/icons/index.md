@@ -181,7 +181,14 @@ But how many of your icons fall in that category?
 
 ## How it works
 
-### The core idea
+The core idea can be summarized as:
+- Icons are first-class design tokens stored in `--icon-[name]` properties that hold `<image>` values (embedded or remote)
+- Icons are inserted via pseudo-elements.
+- The icon is applied as a mask to a square with `background` equal to the icon color.
+- The system uses general CSS custom properties like `--icon`, `--icon-start`, and `--icon-end` for flexibility and reusability.
+- Style queries + `@property` for conditional icon insertion based on these custom properties.
+
+### Rendering and referencing icons
 
 Icons are inserted via pseudo-elements, which use the icon to mask a square with `background` equal to the icon color.
 
@@ -452,6 +459,8 @@ button {
 
 If you're viewing the demo in Chrome or Firefox, it should work as expected.
 If you're viewing the demo in Safari, you’ll already know that it’s severely broken.
+
+<video src="safari-1.mov" autoplay loop loading="lazy"></video>
 
 My research on this resulted in filing not one, but two Safari bug reports.
 The good news is that all have workarounds.
