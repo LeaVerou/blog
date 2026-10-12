@@ -189,6 +189,8 @@ The ratio of $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}}$ is <
 This means that $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}} - 1$ will be a negative number for <var>L</var> < <var>L<sub>threshold</sub></var> and a positive one for <var>L</var> > <var>L<sub>threshold</sub></var>.
 Then all we need to do is multiply that expression by a huge (in magnitude) negative number so that when it's negative the result is guaranteed to be over <var>1</var>.
 
+## The formula
+
 Putting it all together, it looks like this:
 
 ```css
@@ -210,6 +212,9 @@ color: oklch(from var(--color) var(--l) 0 h);
 ### Fallback for browsers that don’t support RCS
 
 The last piece of the puzzle is to provide a fallback for browsers that don’t support RCS.
+
+**Update (October 2026)** RCS is now [Baseline 2024](https://web-platform-dx.github.io/web-features-explorer/features/relative-color/), and supported in [93.5% of browsers](https://caniuse.com/css-relative-colors), so I unless you have an unusually wide browser support target, I think you can skip this.
+
 We can use `@supports` with any color property and any relative color value as the test, e.g.:
 
 ```css
