@@ -387,7 +387,7 @@ The styles above are a start, but we can do better:
 - **Preserve in forced colors mode**: `forced-color-adjust: none;` to keep the mask fill in forced-colors mode. `currentColor` will still follow the forced text color.
 - **Don’t get in the way of pointer interactions**: `pointer-events: none` so that it doesn't trap clicks it shouldn’t.
 - **Don’t shrink in flex containers**: `flex: none`. An empty pseudo-element has a zero minimum size, so in a flex button it is the first thing to shrink when the label is long, and it can shrink all the way to zero. An icon's size is a design decision, not something layout pressure should negotiate.
-- **Vertical centering**: I add `vertical-align: calc(size/2 - 0.48lh);` to center the icons and nudge them a tiny bit upwards (our eyes weigh the space above the icon more than the space below it, so if something is perfectly centered mathematically, it will look a bit low). With a customizable size, that becomes `calc(var(--icon-style-size, 1em) / 2 - 0.48lh)`, so that the icon's center stays put as it grows.
+- **Vertical centering**: I add `vertical-align: calc(0.5cap - size / 2 - 0.02em);` to [center the icons on the cap height](https://blog.kizu.dev/cap-height-align/) and nudge them a tiny bit upwards (our eyes weigh the space above the icon more than the space below it, so if something is perfectly centered mathematically, it will look a bit low). With a customizable size and offset, that becomes `calc(0.5cap - var(--icon-style-size, 1em) / 2 + var(--icon-style-voffset, -0.02em))`, so that the icon's center stays put as it grows.
 - **Spacing from text**: `margin-inline-end: var(--icon-style-spacing, .3em);` to add a bit of space between the icon and the content (`margin-inline-start` for `::after`). Make sure to remove it for standalone icons.
 - **Accessibility**: The pseudo-element has no text, so assistive technology ignores it entirely, which is exactly what we want for an icon next to a label. Icon-only controls still need a name, and we can let the icon provide one via [alternative text for generated content](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content#alternative_text_string_counter_attr): `content: "" / var(--icon-style-alt, "")`, so that `<button style="--icon: var(--icon-trash); --icon-style-alt: 'Delete'">` is announced as "Delete". `aria-label` on the control itself still works, of course.
 
@@ -421,7 +421,12 @@ html-demo pre {
 		--icon-start: inherit;
 		content: "" / var(--icon-style-alt, "");
 		display: inline-block;
-		vertical-align: calc(var(--icon-style-size, 1em) / 2 - 0.48lh);
+		overflow: hidden;
+		/* Centers the icon on the cap height: https://blog.kizu.dev/cap-height-align/
+		   overflow: hidden makes the box's baseline its bottom edge (clip does not). */
+		vertical-align: calc(
+			0.5cap - var(--icon-style-size, 1em) / 2 + var(--icon-style-voffset, -0.02em)
+		);
 		width: var(--icon-style-size, 1em);
 		height: var(--icon-style-size, 1em);
 		margin-inline-end: var(--icon-style-spacing, .3em);
@@ -537,7 +542,12 @@ At this point our demo works _almost_ perfectly!
 		--icon-start: inherit;
 		content: "" / var(--icon-style-alt, "");
 		display: inline-block;
-		vertical-align: calc(var(--icon-style-size, 1em) / 2 - 0.48lh);
+		overflow: hidden;
+		/* Centers the icon on the cap height: https://blog.kizu.dev/cap-height-align/
+		   overflow: hidden makes the box's baseline its bottom edge (clip does not). */
+		vertical-align: calc(
+			0.5cap - var(--icon-style-size, 1em) / 2 + var(--icon-style-voffset, -0.02em)
+		);
 		width: var(--icon-style-size, 1em);
 		height: var(--icon-style-size, 1em);
 		margin-inline-end: var(--icon-style-spacing, .3em);
@@ -680,7 +690,12 @@ Putting it all together, here is the final demo, with both workarounds applied:
 		--icon-start: inherit;
 		content: "" / var(--icon-style-alt, "");
 		display: inline-block;
-		vertical-align: calc(var(--icon-style-size, 1em) / 2 - 0.48lh);
+		overflow: hidden;
+		/* Centers the icon on the cap height: https://blog.kizu.dev/cap-height-align/
+		   overflow: hidden makes the box's baseline its bottom edge (clip does not). */
+		vertical-align: calc(
+			0.5cap - var(--icon-style-size, 1em) / 2 + var(--icon-style-voffset, -0.02em)
+		);
 		width: var(--icon-style-size, 1em);
 		height: var(--icon-style-size, 1em);
 		margin-inline-end: var(--icon-style-spacing, .3em);
@@ -948,7 +963,8 @@ With `@mixin` we can just do:
 @mixin --icon {
 	content: "";
 	display: inline-block;
-	vertical-align: calc(0.5em - 0.48lh);
+	overflow: hidden;
+	vertical-align: calc(0.5cap - 0.5em - 0.02em);
 	width: 1em;
 	height: 1em;
 	background-color: currentColor;
