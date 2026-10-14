@@ -773,7 +773,8 @@ button {
 When using icons from SVG files it’s important to remember that **any relative URL will resolve relative to the CSS file that *uses* the icon, not the one it’s defined in**.
 In practice, this forces you to use root-relative URLs (e.g. `url('/assets/icons/trash.svg')`), otherwise you'll have random breakage in any nontrivial project structure.
 
-An alternative is to register the icon properties as `<image>` via `@property` and specify their values via `initial-value`:
+Registered properties are *supposed* to fix this: the computed value of a registered `<url>` or `<image>` is an absolute URL, [resolved against the stylesheet that declared it](https://drafts.css-houdini.org/css-properties-values-api/#calculation-of-computed-values).
+So in theory, you could register the icon properties as `<image>` via `@property` and specify their values via `initial-value`:
 
 ```css
 @property --icon-caret {
@@ -783,12 +784,33 @@ An alternative is to register the icon properties as `<image>` via `@property` a
 }
 ```
 
-This is also better for other reasons:
+This would also be better for other reasons:
 - There won't be hundreds of `--icon-…` variables in dev tools for `:root`
 - You can even override it temporarily with another icon for a specific context, and reset it wherever via `--icon-caret: initial;`
 
-The obvious downside is DX: there is *a lot* more boilerplate to define an icon this way.
-The earlier syntax can be managed by hand, even for many icons.
+Unfortunately, **in practice this only works in Firefox**.
+I put together [a test page](https://experiments.verou.me/registered-property-urls/) that tries four different syntaxes, with the URL either in `initial-value` or declared on `:root`, and the results are all over the place:
+- **Firefox** gets everything right.
+- **Safari** resolves URLs in `initial-value` against the document, regardless of syntax. Values declared on `:root` work with every syntax.
+- **Chrome** has the same `initial-value` bug, and *additionally*, values declared on `:root` only work when the syntax *starts* with `<url>`: `<url>` and `<url> | <image>` work, but `<image>` and `<image> | <url>` resolve against the document.
+
+So today, the only thing that works everywhere is to register the icon properties with a syntax that starts with `<url>`, and *still* declare the actual icons on `:root`:
+
+```css
+@property --icon-caret {
+	syntax: "<url> | <image> | none";
+	inherits: true;
+	initial-value: none;
+}
+
+:root {
+	--icon-caret: url("icons/caret.svg");
+}
+```
+
+This loses most of the benefits above, but it does make relative URLs work.
+The obvious downside is DX: each icon now needs to be in two places, and there is *a lot* more boilerplate.
+The plain `:root` declarations can be managed by hand, even for many icons.
 This starts requiring a build step after a dozen or so.
 
 Additionally, registered properties are currently global and [don't work in shadow roots](https://github.com/w3c/csswg-drafts/issues/10541), so that may not fit every use case.
@@ -799,30 +821,7 @@ Another option might be to go through all `--icon-*` properties in `:root` and r
 const cs = getComputedStyle(document.documentElement);
 const iconTokens = [...cs].filter(p => p.startsWith("--icon-") && !p.startsWith("--icon-style"));
 for (let name of iconTokens) {
-	if (!name.startsWith("--icon-")) continue;
-	const initialValue = cs.getPropertyValue(name);
-
-	CSS.registerProperty({name, inherits: true, syntax: "<image>", initialValue });
-}
-```
-
-An even cleaner option, if you know which stylesheet includes the icon tokens (and it's same-origin) is to use the CSS OM to actually edit it, so that the `:root` declarations are **removed** once you register the properties:
-
-```js
-const sheet = [...document.styleSheets].find(s => s.href?.endsWith("/icon-tokens.css"));
-
-// Copy, since we modify the sheet while iterating
-for (let { style } of [...sheet.cssRules]) {
-	for (let name of [...style]) {
-		if (!name.startsWith("--icon-")) continue;
-
-		sheet.insertRule(`@property ${name} {
-			syntax: "<image>";
-			inherits: true;
-			initial-value: ${style.getPropertyValue(name)};
-		}`);
-		style.removeProperty(name);
-	}
+	CSS.registerProperty({ name, inherits: true, syntax: "<url> | <image> | none", initialValue: "none" });
 }
 ```
 
