@@ -3,8 +3,11 @@ title: "Blog"
 override:tags: []
 layout: "page.njk"
 pagination: {
-	data: collections.published,
+	data: collections.published.blog,
 	size: 15
+}
+eleventyImport: {
+	collections: ["published"]
 }
 permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---

@@ -35,7 +35,7 @@ However, tags are no panacea, there are several issues with them as well.
 ### Tag aliases
 
 First, there were many tags that were **synonyms of each other**, and posts were fragmented across them, or had to include both (e.g. [JS](/blog/tags/js/) and [Javascript](/blog/tags/javascript)).
-I addressed this by defining [aliases]({{ site.repo_file }}/data/tag_aliases.json) in a global data file, and using Eleventy to [dynamically build Netlify redirects]({{ site.repo_file }}/redirects.njk) for them.
+I addressed this by defining [aliases](https://github.com/LeaVerou/data/blob/321e9deb916aadad01517e282a212aa93e155fb8/tag_aliases.json) in a global data file, and using Eleventy to [dynamically build Netlify redirects]({{ site.repo_file }}/redirects.njk) for them.
 {% raw %}
 ```njk { data-file="redirects.njk" }
 # Tag aliases

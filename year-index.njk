@@ -1,10 +1,13 @@
 ---
+layout: "page.njk"
 pagination:
-  data: collections.postsByYear
+  data: collections.postsByYear.blog
   size: 1
   alias: year
 permalink: /blog/{{ year }}/
 override:tags: []
+eleventyImport:
+  collections: ["postsByYear"]
 eleventyComputed:
   title: "Posts from {{ year }}"
 ---
@@ -12,4 +15,4 @@ eleventyComputed:
 {% include "_yearly.njk" %}
 
 {% import "_posts.njk" as posts %}
-{{ posts.list(collections.postsByYear[ year ], {style: "compact"}) }}
+{{ posts.list(collections.postsByYear[siteArea][ year ], {style: "compact"}) }}
