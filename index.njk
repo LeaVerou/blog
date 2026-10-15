@@ -1,12 +1,17 @@
 ---
-layout: page.njk
-pagination:
-  data: collections.blogPosts
-  size: 15
+title: "Blog"
 override:tags: []
-permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
-title: Blog
+layout: "page.njk"
+pagination: {
+	data: collections.published.blog,
+	size: 15
+}
+eleventyImport: {
+	collections: ["published"]
+}
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
 ---
+
 {% include "_yearly.njk" %}
 
 {% import "_posts.njk" as posts with context %}

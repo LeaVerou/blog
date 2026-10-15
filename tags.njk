@@ -1,0 +1,28 @@
+---js
+{
+	pagination: {
+		data: "collections.postsByTag.blog",
+		size: 1,
+		before: function(paginationData, fullData) {
+			// Filter out orphan tags. siteArea is not computed yet here, so take the blog from the path.
+			let blog = fullData.page.filePathStem.split("/")[1];
+			return paginationData.filter(tag => fullData.collections.postsByTag[blog][tag].length > 1);
+		},
+		alias: "tag",
+	},
+	permalink: "/blog/tags/{{ tag }}/",
+	layout: "page.njk",
+	"override:tags": [],
+	eleventyImport: {
+		collections: ["postsByTag"],
+	},
+	eleventyComputed: {
+		title: "{{ collections.postsByTag[siteArea][ tag ].length | pluralize('post') }} on {{ tag | format_tag }}"
+	}
+}
+---
+
+{% set taglist = collections.postsByTag[siteArea][ tag ] %}
+{% set post_style = "compact" if taglist.length > 10 %}
+{% import "_posts.njk" as posts with context %}
+{{ posts.list(taglist, {style: post_style }) }}
