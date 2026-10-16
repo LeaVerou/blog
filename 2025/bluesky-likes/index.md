@@ -25,12 +25,9 @@ social_posts:
 <figcaption>
 
 Just want the components? Here you go:
-<a href="https://projects.verou.me/bluesky-likes/" target="_blank" class="small cta">
-<i class="fa-brands fa-bluesky"></i> Demo</a>
-<a href="https://github.com/LeaVerou/bluesky-likes" target="_blank" class="small cta">
-<i class="fa-brands fa-github"></i> Repo</a>
-<a href="https://www.npmjs.com/package/bluesky-likes" target="_blank" class="small cta">
-<i class="fa-brands fa-npm"></i> NPM</a>
+<a href="https://projects.verou.me/bluesky-likes/" target="_blank" class="small cta" style="--icon: var(--icon-bluesky)">Demo</a>
+<a href="https://github.com/LeaVerou/bluesky-likes" target="_blank" class="small cta" style="--icon: var(--icon-github)">Repo</a>
+<a href="https://www.npmjs.com/package/bluesky-likes" target="_blank" class="small cta" style="--icon: var(--icon-npm)">NPM</a>
 </figcaption>
 </figure>
 
@@ -561,12 +558,9 @@ Some tasks are definitely necessary, e.g. accessibility, i18n, performance, etc,
 but there comes a point where you’re [petting](https://theoatmeal.com/comics/creativity_petting).
 
 So here they are:
-<a href="https://projects.verou.me/bluesky-likes/" target="_blank" class="cta">
-<i class="fa-brands fa-bluesky"></i> Demo</a>
-<a href="https://github.com/LeaVerou/bluesky-likes" target="_blank" class="cta">
-<i class="fa-brands fa-github"></i> Repo</a>
-<a href="https://www.npmjs.com/package/bluesky-likes" target="_blank" class="cta">
-<i class="fa-brands fa-npm"></i> NPM</a>
+<a href="https://projects.verou.me/bluesky-likes/" target="_blank" class="cta" style="--icon: var(--icon-bluesky)">Demo</a>
+<a href="https://github.com/LeaVerou/bluesky-likes" target="_blank" class="cta" style="--icon: var(--icon-github)">Repo</a>
+<a href="https://www.npmjs.com/package/bluesky-likes" target="_blank" class="cta" style="--icon: var(--icon-npm)">NPM</a>
 
 They’re far from perfect.
 Yes, they could be improved in a [number of ways](https://github.com/LeaVerou/bluesky-likes/issues).
