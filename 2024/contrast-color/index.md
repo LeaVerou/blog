@@ -490,7 +490,7 @@ You can even turn this into a utility class that you can combine with different 
 }
 ```
 
-### Tracking WCAG 2.0 contrast ratios more closely { #xyz-wcag }
+## Tracking WCAG 2.0 contrast ratios more closely { #xyz-wcag }
 
 When colors have sufficiently different lightness values (as happens with white or black text),
 humans disregard chromatic contrast (the contrast that hue/colorfulness provide)
