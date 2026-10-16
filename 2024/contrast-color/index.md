@@ -498,14 +498,14 @@ and basically only use lightness contrast to determine readability.
 This is why L can be such a good predictor of whether white or black text works best.
 
 But while OkLCh lightness is meant to closely track human lightness perception, many use cases require strict WCAG 2.0 compliance, due to legal or organizational requirements.
-WCAG 2 color contrast guidelines actually use relative luminance rather than lightness (L) to determine readability.
+WCAG 2 color contrast guidelines actually use [relative luminance](https://www.w3.org/TR/WCAG21/#dfn-relative-luminance) rather than lightness (L) to determine readability.
 
 If you absolutely need to meet WCAG, fear not, you can still use this!
-Turns out, relative luminance is just the Y component in the XYZ D65 color space, which is natively supported in CSS.
+Turns out, relative luminance is just the Y component in the [XYZ D65 color space](https://en.wikipedia.org/wiki/CIE_1931_color_space), which is [natively supported in CSS](https://www.w3.org/TR/css-color-4/#predefined-xyz).
 
 So, instead of doing the math in `oklch()`, we'll just do them in `color(xyz)` (or `color(xyz-d65)`, same thing).
 
-The WCAG contrast formula is:
+The [WCAG contrast formula](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio) is:
 
 $$
 \text{Contrast} = \frac{L_1 + 0.05}{L_2 + 0.05}
@@ -519,7 +519,7 @@ $$
 \frac{1.05}{Y + 0.05} = \frac{Y + 0.05}{0.05} \Rightarrow Y = \sqrt{0.05 \times 1.05} - 0.05 \approx 0.179129
 $$
 
-One complication is that `white` is not `color(xyz 1 1 1)` but `color(xyz 0.9505 1 1.089)`, but aside from that it's pretty straightforward:
+One complication is that `white` is not `color(xyz 1 1 1)` but `color(xyz 0.9505 1 1.089)` (the [D65 white point](https://en.wikipedia.org/wiki/Illuminant_D65)), but aside from that it's pretty straightforward:
 
 ```css
 --wcag-y-threshold: 0.17913;
@@ -531,11 +531,13 @@ This also has the advantage that it more closely tracks `contrast-color()` as cu
 The big downside being the well-known problems with the WCAG 2 contrast algorithm, established above.
 
 <article class="warning">
-This guarantees passing WCAG AA. It does not guarantee WCAG AAA, since AAA (7:1) is unreachable for Y in (0.1, 0.3) with either white or black.
+
+This guarantees passing [WCAG AA](https://www.w3.org/TR/WCAG21/#contrast-minimum). It does not guarantee [WCAG AAA](https://www.w3.org/TR/WCAG21/#contrast-enhanced), since AAA (7:1) is unreachable for Y in (0.1, 0.3) with either white or black.
 That's inherent to WCAG, not to this code.
 </article>
 
 <article class="warning">
+
 If you don't have a hard requirement to meet WCAG 2.0 contrast ratios, I would not recommend using this as it produces suboptimal results compared to the `oklch()` formula.
 </article>
 
