@@ -494,7 +494,7 @@ You can even turn this into a utility class that you can combine with different 
 }
 ```
 
-### Tracking WCAG 2.0 contrast ratios more closely
+### Tracking WCAG 2.0 contrast ratios more closely { #xyz-wcag }
 
 When colors have sufficiently different lightness values (as happens with white or black text),
 humans disregard chromatic contrast (the contrast that hue/colorfulness provide)
@@ -526,13 +526,18 @@ $$
 One complication is that `white` is not `color(xyz 1 1 1)` but `color(xyz 0.9505 1 1.089)`, but aside from that it's pretty straightforward:
 
 ```css
---wcag-y-threshold: 0.18;
+--wcag-y-threshold: 0.17913;
 --y: max(0, sign(var(--wcag-y-threshold) - y));
 color: color(from var(--color) xyz-d65 calc(var(--y) * 0.9505) var(--y) calc(var(--y) * 1.089));
 ```
 
 This also has the advantage that it more closely tracks `contrast-color()` as currently implemented in browsers.
 The big downside being the well-known problems with the WCAG 2 contrast algorithm, established above.
+
+<article class="warning">
+This guarantees passing WCAG AA. It does not guarantee WCAG AAA, since AAA (7:1) is unreachable for Y in (0.1, 0.3) with either white or black.
+That's inherent to WCAG, not to this code.
+</article>
 
 <article class="warning">
 If you don't have a hard requirement to meet WCAG 2.0 contrast ratios, I would not recommend using this as it produces suboptimal results compared to the `oklch()` formula.
