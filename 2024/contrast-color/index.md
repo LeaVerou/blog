@@ -1,5 +1,5 @@
 ---
-title: "On compliance vs readability: Generating text colors with CSS"
+title: "On automatically generating contrasting text colors with CSS"
 toc: true
 date: 2024-05-17
 date_updated: 2026-10-16
@@ -15,13 +15,9 @@ social_posts:
   linkedin: https://www.linkedin.com/posts/leaverou_on-compliance-vs-readability-generating-activity-7196918480657379328-uPNF
   twitter: https://twitter.com/LeaVerou/status/1791155547128856874
   threads: https://www.threads.net/@leaverou/post/C7CZyVDLHDu?hl=en
+nutshell: "How to emulate CSS `contrast-color()` using older CSS features, and the nasty dilemma between compliance and readability that the current state of the platform forces us into."
 ---
 
-<div class=nutshell>
-
-Can we emulate the upcoming CSS [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color) function via CSS features that have already widely shipped?
-And if so, what are the tradeoffs involved and how to best balance them?
-</div>
 
 ## Relative Colors
 
