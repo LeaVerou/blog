@@ -71,7 +71,7 @@ I would like to thank the following people for their help in fleshing out the su
 <details>
 <summary>
 
-### What’s new this year? { .icon-before style="--icon: var(--icon-sparkles);" }
+### What’s new this year? { style="--icon-start: var(--icon-sparkles);" }
 </summary>
 
 We spent a lot of time thinking about which features we are asking about and why.
@@ -97,7 +97,7 @@ Last but not least, we introduced browser support icons for each feature, per po
 <details>
 <summary>
 
-### Can I edit my responses? { .icon-before style="--icon: var(--icon-pen-to-square);" }
+### Can I edit my responses? { style="--icon-start: var(--icon-pen-to-square);" }
 </summary>
 
 **Absolutely!** Do not worry about filling it out perfectly in one go.
@@ -111,7 +111,7 @@ so you can have it open in a browser tab and revisit it periodically.
 <details>
 <summary>
 
-### Why are there JS questions in an HTML survey? { .icon-before style="--icon: var(--icon-js);" }
+### Why are there JS questions in an HTML survey? { style="--icon-start: var(--icon-js);" }
 </summary>
 
 This question comes up a lot every year.
@@ -140,7 +140,7 @@ There is also a question at the end, where you can select that you only write HT
 <details>
 <summary>
 
-### Why are some features included that are early stage proposals with no browser support? { .icon-before style="--icon: var(--icon-flask);" }
+### Why are some features included that are early stage proposals with no browser support? { style="--icon-start: var(--icon-flask);" }
 </summary>
 
 While proposals with no browser support are not good candidates for immediate prioritization by browsers,
@@ -159,7 +159,7 @@ We are hoping this will also help prevent cases where participants confuse a new
 <details>
 <summary>
 
-### Is the survey only available in English? { .icon-before style="--icon: var(--icon-language);" }
+### Is the survey only available in English? { style="--icon-start: var(--icon-language);" }
 </summary>
 
 Absolutely not! Localization has been an integral part of these surveys since the beginning.
@@ -185,12 +185,12 @@ If you are a native speaker of a language that is not yet complete, please consi
 <details>
 <summary>
 
-### I found a bug, what should I do? { .icon-before style="--icon: var(--icon-bug);" }
+### I found a bug, what should I do? { style="--icon-start: var(--icon-bug);" }
 </summary>
 
 Please file an issue so we can fix it!
 
-- [File content issue](https://github.com/Devographics/surveys/issues/new){ .icon-after style="--icon: var(--icon-arrow-up-right-from-square);" }
-- [File technical issue](https://github.com/Devographics/Monorepo/issues/new){ .icon-after style="--icon: var(--icon-arrow-up-right-from-square);" }
+- [File content issue](https://github.com/Devographics/surveys/issues/new){ style="--icon-end: var(--icon-arrow-up-right-from-square);" }
+- [File technical issue](https://github.com/Devographics/Monorepo/issues/new){ style="--icon-end: var(--icon-arrow-up-right-from-square);" }
 
 </details>

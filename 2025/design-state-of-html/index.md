@@ -183,8 +183,8 @@ or reply on
 	{% if loop.index > 1 %}, {% if loop.last %} or{% else %}{% endif %}{% endif %}
 	<a href="{{ url }}" class="{{ service }}"
 		title="{{ social[service].name }} post"
-		style="--color: {{ social[service].color }}"
-		target="_blank"><i class="fa-brands fa-{{ social[service].icon }}"></i> {{ social[service].name }}</a>
+		style="--color: {{ social[service].color }}; --icon-start: var(--icon-{{ social[service].icon }})"
+		target="_blank">{{ social[service].name }}</a>
 {%- endfor %}.
 {% else %}
 or ping me on any of my socials.
