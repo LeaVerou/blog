@@ -1,4 +1,5 @@
 ---
+layout: "page.njk"
 title: All tags
 permalink: "blog/tags/index.html"
 override:tags: []
@@ -8,7 +9,7 @@ override:tags: []
 
 <ol class="tags-index subtle-markers">
 {% set orphan_count = 0 %}
-{% for tag, posts in collections.postsByTag %}
+{% for tag, posts in collections.postsByTag[siteArea] %}
 	{% if posts.length > 1 %}
 	<li>{{ tags.one(tag) }}
 		<span class="post-count">({{ posts.length }} posts)</span>
@@ -26,7 +27,7 @@ override:tags: []
 <p>The following tags are only used by a single post.</p>
 
 <ol class="tags-index subtle-markers">
-{% for tag, posts in collections.postsByTag %}
+{% for tag, posts in collections.postsByTag[siteArea] %}
 	{% if posts.length === 1 %}
 	<li>
 		<a href="{{ posts[0].url }}">{{ tag | format_tag }}</a>

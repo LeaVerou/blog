@@ -17,9 +17,6 @@ export default {
 				return typeof data.disqus !== "string"? data.postUrlStem : data.disqus;
 			}
 		},
-		is_post: data => {
-			return data.tags.includes("blog");
-		},
 		is_old_post: data => {
 			if (!data.is_post) {
 				return false;
