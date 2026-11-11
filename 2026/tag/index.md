@@ -10,7 +10,10 @@ tags:
 
 <article class="note" style="--label: 'Context'">
 
-I had the great honor of being elected to the TAG by the W3C membership in [2020](https://lea.verou.me/2020/11/tag/) and again in [2022](https://lea.verou.me/2022/11/tag-2/), serving two terms from 2021 to 2025. After a two-year break, this year I’m running to return. The W3C Technical Architecture Group (TAG) is the Working Group that ensures that Web Platform technologies are usable and follow consistent design principles, whether they are created inside or outside W3C. It advocates for the needs of everyone who uses the Web and everyone who works on the Web. If you work for a company that is a [W3C Member](https://www.w3.org/Consortium/Member/List), please consider encouraging your AC rep to vote for me! My candidate statement follows.
+I had the great honor of being elected to the TAG by the W3C membership in [2020](https://lea.verou.me/2020/11/tag/) and again in [2022](https://lea.verou.me/2022/11/tag-2/), serving two terms from 2021 to 2025.
+After a two-year break, this year I’m running to return, thanks to Google, Microsoft, and OpenJS Foundation pooling resources to make it possible. 💙
+
+The W3C Technical Architecture Group (TAG) is the Working Group that ensures that Web Platform technologies are usable and follow consistent design principles, whether they are created inside or outside W3C. It advocates for the needs of everyone who uses the Web and everyone who works on the Web. If you work for a company that is a [W3C Member](https://www.w3.org/Consortium/Member/List), please consider encouraging your AC rep to vote for me! My candidate statement follows.
 </article>
 
 I'm [Lea](https://lea.verou.me), and I'm running to return to the TAG, where I served two terms from 2021 to 2025. It was some of the most fulfilling work of my career. The only reason I did not run in 2024 is that the job takes hundreds of hours a year, which as an independent I could not sustain pro bono. This year, in recognition of my service, Google, Microsoft, and the OpenJS Foundation have pooled resources to **fully fund my participation**, so I can finally commit the time the job deserves while **remaining independent**.
