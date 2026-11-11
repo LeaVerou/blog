@@ -15,6 +15,7 @@ After a two-year break, this year I’m running to return, thanks to Google, Mic
 The W3C Technical Architecture Group (TAG) is the Working Group that ensures that Web Platform technologies are usable and follow consistent design principles, whether they are created inside or outside W3C. It advocates for the needs of everyone who uses the Web and everyone who works on the Web.
 
 If you work for a company that is a [W3C Member](https://www.w3.org/Consortium/Member/List), please **consider encouraging your AC rep to vote for me**!
+(Ask me if you don't know who that is)
 
 My candidate statement follows.
 </article>
