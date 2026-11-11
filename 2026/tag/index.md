@@ -8,6 +8,14 @@ tags:
 image: images/w3ctag-july2022.jpg
 ---
 
+
+<figure>
+  <img src="images/w3ctag-july2022.jpg" alt="">
+  <figcaption>Group photo of the W3C TAG in July 2022 with me to the left of Sir Tim Berners-Lee, inventor of the Web and TAG chair emeritus.
+  Photo credit: Dan Appelquist
+  </figcaption>
+</figure>
+
 <article class="note" style="--label: 'Context'">
 
 I had the great honor of being elected to the TAG by the W3C membership in [2020](https://lea.verou.me/2020/11/tag/) and again in [2022](https://lea.verou.me/2022/11/tag-2/), serving two terms from 2021 to 2025.
@@ -40,12 +48,5 @@ Expanding the **gap analysis** work I began last term is the first step, and my 
 The biggest change since my last term is that **a growing share of the code targeting the web platform is written by AI agents**, and a growing share of the Web is consumed by them. The TAG should treat this as an **architecture question** and answer it with principles and evidence, not enthusiasm or alarm. Many of the principles that make APIs robust and usable for humans also benefit agents, but the differences expose new tradeoffs that deserve careful architectural attention. And none of this changes what the Web is for: user agency, privacy, accessibility, and interoperability apply no matter who, or what, writes the code, and defending them is the TAG's job.
 
 I am not employed by a browser vendor or a big tech company, and my funders do not direct, approve, or veto my positions. I remain free to disagree with any of them, in public, on any proposal. My only agenda is **a web platform that lives up to its potential** and remains **owned by no one**. I've spent four years helping the TAG improve the Web. I want to help it shape the Web's future, and for the first time, I have the resources to see it through.
-
-<figure>
-  <img src="images/w3ctag-july2022.jpg" alt="">
-  <figcaption>Group photo of the W3C TAG in July 2022 with me to the left of Sir Tim Berners-Lee, inventor of the Web and TAG chair emeritus.
-  Photo credit: Dan Appelquist
-  </figcaption>
-</figure>
 
 *I would like to thank the OpenJS Foundation, Google, and Microsoft for fully funding my TAG participation in the event that I am elected, and OpenJS Foundation and Bocoup for partly funding it during my previous terms.*
