@@ -1,0 +1,36 @@
+:host, :root {
+	font-family: system-ui;
+}
+
+button {
+	background: buttonface;
+	color: buttontext;
+	border: none;
+	padding: .4em .8em;
+	border-radius: .25em;
+	font: inherit;
+	font-weight: 500;
+
+	:where(&) {
+		--icon-start: var(--icon);
+	}
+
+	&:hover {
+		background: hsl(212 100% 50%);
+		background: accentcolor;
+		color: white;
+		--icon-start: var(--icon-hover, var(--icon));
+	}
+
+	&.danger {
+		background: hsl(0 100% 90%);
+		color: black;
+		--icon: var(--icon-trash-outlined);
+
+		&:hover {
+			background: hsl(0 100% 40%);
+			color: white;
+			--icon: var(--icon-trash);
+		}
+	}
+}

@@ -1,7 +1,7 @@
 ---
 title: State of HTML 2023 now open!
 date: 2023-09-22
-edited: 2023-09-26
+date_updated: 2023-09-26
 image: images/logo.png
 toc: true
 social_posts:

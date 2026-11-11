@@ -1,7 +1,8 @@
 ---
-title: "On compliance vs readability: Generating text colors with CSS"
+title: "On automatically generating contrasting text colors with CSS"
 toc: true
 date: 2024-05-17
+date_updated: 2026-10-16
 tags:
   - css
   - color
@@ -14,13 +15,9 @@ social_posts:
   linkedin: https://www.linkedin.com/posts/leaverou_on-compliance-vs-readability-generating-activity-7196918480657379328-uPNF
   twitter: https://twitter.com/LeaVerou/status/1791155547128856874
   threads: https://www.threads.net/@leaverou/post/C7CZyVDLHDu?hl=en
+nutshell: "How to emulate CSS `contrast-color()` using older CSS features, and the nasty dilemma between compliance and readability that the current state of the platform forces us into."
 ---
 
-<div class=nutshell>
-
-Can we emulate the upcoming CSS [`contrast-color()`](https://drafts.csswg.org/css-color-5/#contrast-color) function via CSS features that have already widely shipped?
-And if so, what are the tradeoffs involved and how to best balance them?
-</div>
 
 ## Relative Colors
 
@@ -188,6 +185,8 @@ The ratio of $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}}$ is <
 This means that $\frac{\displaystyle L}{\displaystyle L_{\mathrm{threshold}}} - 1$ will be a negative number for <var>L</var> < <var>L<sub>threshold</sub></var> and a positive one for <var>L</var> > <var>L<sub>threshold</sub></var>.
 Then all we need to do is multiply that expression by a huge (in magnitude) negative number so that when it's negative the result is guaranteed to be over <var>1</var>.
 
+## The formula
+
 Putting it all together, it looks like this:
 
 ```css
@@ -199,9 +198,19 @@ color: oklch(from var(--color) var(--l) 0 h);
 One worry might be that if L gets close enough to the threshold we could get a number between <var>0</var> - <var>1</var>,
 but in my experiments this never happened, presumably since precision is finite.
 
+**Update (October 2026)** Since [`sign()` is Baseline 2025](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sign) we can simplify this expression further:
+```css
+--l-threshold: 0.623;
+--l: max(0, sign(var(--l-threshold) - l));
+color: oklch(from var(--color) var(--l) 0 h);
+```
+
 ### Fallback for browsers that don’t support RCS
 
 The last piece of the puzzle is to provide a fallback for browsers that don’t support RCS.
+
+**Update (October 2026)** RCS is now [Baseline 2024](https://web-platform-dx.github.io/web-features-explorer/features/relative-color/), and supported in [93.5% of browsers](https://caniuse.com/css-relative-colors), so I unless you have an unusually wide browser support target, I think you can skip this.
+
 We can use `@supports` with any color property and any relative color value as the test, e.g.:
 
 ```css
@@ -481,6 +490,57 @@ You can even turn this into a utility class that you can combine with different 
 }
 ```
 
+## Tracking WCAG 2.0 contrast ratios more closely { #xyz-wcag }
+
+When colors have sufficiently different lightness values (as happens with white or black text),
+humans disregard chromatic contrast (the contrast that hue/colorfulness provide)
+and basically only use lightness contrast to determine readability.
+This is why L can be such a good predictor of whether white or black text works best.
+
+But while OkLCh lightness is meant to closely track human lightness perception, many use cases require strict WCAG 2.0 compliance, due to legal or organizational requirements.
+WCAG 2 color contrast guidelines actually use [relative luminance](https://www.w3.org/TR/WCAG21/#dfn-relative-luminance) rather than lightness (L) to determine readability.
+
+If you absolutely need to meet WCAG, fear not, you can still use this!
+Turns out, relative luminance is just the Y component in the [XYZ D65 color space](https://en.wikipedia.org/wiki/CIE_1931_color_space), which is [natively supported in CSS](https://www.w3.org/TR/css-color-4/#predefined-xyz).
+
+So, instead of doing the math in `oklch()`, we'll just do them in `color(xyz)` (or `color(xyz-d65)`, same thing).
+
+The [WCAG contrast formula](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio) is:
+
+$$
+\text{Contrast} = \frac{L_1 + 0.05}{L_2 + 0.05}
+$$
+
+where \(L_1\) is the relative luminance of the lighter color and \(L_2\) is the relative luminance of the darker color.
+
+Solving for the threshold where white and black tie, we get:
+
+$$
+\frac{1.05}{Y + 0.05} = \frac{Y + 0.05}{0.05} \Rightarrow Y = \sqrt{0.05 \times 1.05} - 0.05 \approx 0.179129
+$$
+
+One complication is that `white` is not `color(xyz 1 1 1)` but `color(xyz 0.9505 1 1.089)` (the [D65 white point](https://en.wikipedia.org/wiki/Illuminant_D65)), but aside from that it's pretty straightforward:
+
+```css
+--wcag-y-threshold: 0.17913;
+--y: max(0, sign(var(--wcag-y-threshold) - y));
+color: color(from var(--color) xyz-d65 calc(var(--y) * 0.9505) var(--y) calc(var(--y) * 1.089));
+```
+
+This also has the advantage that it more closely tracks `contrast-color()` as currently implemented in browsers.
+The big downside being the well-known problems with the WCAG 2 contrast algorithm, established above.
+
+<article class="warning">
+
+This guarantees passing [WCAG AA](https://www.w3.org/TR/WCAG21/#contrast-minimum). It does not guarantee [WCAG AAA](https://www.w3.org/TR/WCAG21/#contrast-enhanced), since AAA (7:1) is unreachable for Y in (0.1, 0.3) with either white or black.
+That's inherent to WCAG, not to this code.
+</article>
+
+<article class="warning">
+
+If you don't have a hard requirement to meet WCAG 2.0 contrast ratios, I would not recommend using this as it produces suboptimal results compared to the `oklch()` formula.
+</article>
+
 ## Conclusion & Future work
 
 Putting it all together, including a fallback, as well as a "fall forward" that uses `contrast-color()`,
@@ -506,49 +566,13 @@ the utility class could look like this:
 ```
 
 This is only a start.
-I can imagine many directions for improvement such as:
-- Since RCS allows us to do math with *any* of the color components
-in *any* color space, I wonder if there is a better formula that still be implemented in CSS and balances readability and compliance even better.
-E.g. I’ve had some chats with [Andrew Somers](https://github.com/Myndex) (creator of APCA) right before publishing this,
-which suggest that doing math on luminance (the Y component of XYZ) instead could be a promising direction.
-- We currently only calculate thresholds for white and black text.
-However, in real designs, we rarely want pure black text,
-which is why `contrast-color()` only guarantees a *“very light or very dark color”* unless the `max` keyword is used.
+I can imagine many directions for improvement.
+
+For example, we currently only calculate thresholds for white and black text.
+However, in real designs, we rarely want pure black text.
 How would this extend to darker tints of the background color?
 
-## Addendum
-
-As often happens, after publishing this blog post, a ton of folks reached out to share all sorts of related work in the space.
-I thought I’d share some of the most interesting findings here.
-
-### Using luminance instead of Lightness
-
-When colors have sufficiently different lightness values (as happens with white or black text),
-humans disregard chromatic contrast (the contrast that hue/colorfulness provide)
-and basically only use lightness contrast to determine readability.
-This is why L can be such a good predictor of whether white or black text works best.
-
-Another measure, luminance, is basically the color’s Y component in the XYZ color space,
-and a good threshold for flipping to black text is when Y > 0.36.
-This gives us another method for computing a text color:
-
-```css
---y-threshold: 0.36;
---y: clamp(0, (y / var(--y-threshold) - 1) * -infinity, 1);
-color: color(from var(--color) xyz-d65 var(--y) var(--y) var(--y));
-```
-
-As you can see in [this demo by Lloyd Kupchanko](https://blackorwhite.lloydk.ca/), using <var>Y<sub>threshold</sub></var> > 36%
-very closely predicts the best text color as determined by APCA.
-
-In my tests ([codepen](https://codepen.io/leaverou/pen/ExzVOME)) it appeared to work as well as the <var>L<sub>threshold</sub></var> method,
-i.e. it was a struggle to find colors where they disagree.
-However, [after this blog post, Lloyd added](https://twitter.com/lkupchanko/status/1791558925206409553) various <var>L<sub>threshold</sub></var> boundaries to his demo,
-and it appears that indeed, <var>L<sub>threshold</sub></var> has a wider range where it disagrees with APCA than <var>Y<sub>threshold</sub></var> does.
-
-Given this, **my recommendation would be to use the <var>Y<sub>threshold</sub></var> method if you need to flip between black and white text,
-and the <var>L<sub>threshold</sub></var> method if you need to customize the text color further** (e.g. have a very dark color instead of black).
-
+<!--
 ### Browser bug & workarounds
 
 About a week after publishing this post, I discovered a browser bug with `color-mix()` and RCS,
@@ -574,8 +598,9 @@ The downside is that right now, this would restrict the set of browsers this wor
 ```
 This completely fixes it, since if the property is registered, by the time the color hits RCS, it’s just a resolved color value.
 `@property` is currently [supported](https://caniuse.com/mdn-css_at-rules_property) by a much wider set of browsers than RCS, so this workaround doesn’t hurt compatiblity at all.
+-->
 
-### Useful resources
+## Addendum: Useful resources
 
 Many people have shared useful resources on the topic, such as:
 - [Black or White?](https://blackorwhite.lloydk.ca/): Compare different contrast algorithms for picking between black or white
