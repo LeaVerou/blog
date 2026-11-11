@@ -1,7 +1,6 @@
 ---
 title: "Position Statement for the 2026 W3C TAG Election"
 date: 2026-11-11
-draft: true
 tags:
   - "personal"
   - "web-standards"
