@@ -11,7 +11,9 @@ image: images/w3ctag-july2022.jpg
 
 <figure>
   <img src="images/w3ctag-july2022.jpg" alt="">
-  <figcaption>Group photo of the W3C TAG in July 2022 with me to the left of [Sir Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) (inventor of the Web and TAG chair emeritus).
+  <figcaption>
+
+  Group photo of the W3C TAG in July 2022 with me to the left of [Sir Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee) (inventor of the Web and TAG chair emeritus).
   Photo credit: Dan Appelquist
   </figcaption>
 </figure>
