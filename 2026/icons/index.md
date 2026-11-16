@@ -12,6 +12,7 @@ social_posts:
   bluesky: https://bsky.app/profile/lea.verou.me/post/3mxnvik6qss2q
   twitter: https://x.com/LeaVerou/status/2109532730950132062
   mastodon: https://front-end.social/@leaverou/117426537275498055
+  linkedin: https://lnkd.in/p/gqjBJthW
 nutshell: What if I told you, you could use CSS to *insert* and *tweak* icons without touching any HTML? And that it could be more flexible and maintainable than what you’ve been using?
 ---
 
