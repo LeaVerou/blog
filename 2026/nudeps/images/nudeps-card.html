@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nudeps card</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600..900;1,600..900&display=swap">
+<style>
+:root {
+	--color-stroke: #523431;
+	--color-body: #eab67d;
+	--color-highlight: #fce0b8;
+	--color-paper: #fff8ec;
+	--color-blue: #6f9dc8;
+	--color-red: #d04f4d;
+	--color-green: #4f8f2f;
+	--color-muted: #9a756a;
+	--font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background:
+		radial-gradient(var(--color-highlight) 1.5px, transparent 2px) 0 0 / 22px 22px,
+		var(--color-paper);
+	font: 600 17px/1.3 Nunito, ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+	color: var(--color-stroke);
+}
+
+/* 1200 × 630 (standard social card), centered on a full-page background so the crop is flexible */
+.card {
+	box-sizing: border-box;
+	width: 1200px;
+	height: 630px;
+	padding: 28px 40px;
+	display: grid;
+	grid-template-columns: 310px 1fr;
+	gap: 40px;
+	align-items: center;
+}
+
+.brand {
+	display: grid;
+	justify-items: center;
+	text-align: center;
+
+	.logo {
+		width: 290px;
+		margin-block-end: 20px;
+	}
+
+	.wordmark {
+		width: 250px;
+	}
+
+	p {
+		margin: 4px 0 0;
+		font-size: 21px;
+		font-weight: 800;
+		line-height: 1.2;
+		text-wrap: balance;
+	}
+}
+
+h1 {
+	margin: 0 0 20px;
+	font-size: 46px;
+	font-weight: 900;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+
+	em {
+		font-style: normal;
+		position: relative;
+		isolation: isolate;
+
+		/* Marker underline: a thin tilted band, its edges roughened by the #marker noise filter */
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 72% -10px auto -8px;
+			height: 10px;
+			z-index: -1;
+			border-radius: 2px 7px 4px 9px;
+			background: var(--color-body);
+			rotate: -0.7deg;
+			filter: url(#marker);
+		}
+	}
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 13px;
+	counter-reset: step;
+}
+
+/* Chunky outline + hard offset shadow, same language as the wordmark */
+li,
+.terminal,
+.browser {
+	border: 3px solid var(--color-stroke);
+	border-radius: 12px;
+	box-shadow: 3px 4px 0 var(--color-stroke);
+	background: white;
+}
+
+li {
+	counter-increment: step;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 15px 18px 15px 14px;
+
+	&::before {
+		content: counter(step);
+		flex: none;
+		width: 34px;
+		aspect-ratio: 1;
+		display: grid;
+		place-items: center;
+		border-radius: 50%;
+		background: var(--color-stroke);
+		color: var(--color-highlight);
+		font-size: 19px;
+		font-weight: 900;
+	}
+
+}
+
+/* Side label of a command */
+:is(li, .terminal .line) > span {
+	margin-inline-start: auto;
+	color: var(--color-muted);
+	font-size: 17px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+code {
+	font: 700 22px/1.4 var(--font-mono);
+	white-space: nowrap;
+
+	.cmd {
+		color: var(--color-red);
+	}
+
+	.kw {
+		color: #3f77ad;
+	}
+
+	.str {
+		color: var(--color-green);
+	}
+
+	.dim {
+		color: var(--color-muted);
+	}
+}
+
+.then {
+	margin: 20px 0 8px;
+	color: var(--color-muted);
+	font-size: 19px;
+	font-weight: 800;
+}
+
+.result {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 20px;
+	align-items: center;
+}
+
+/* Everyday use: terminal on top, flowing into the browser below */
+.usage {
+	display: grid;
+	gap: 34px;
+}
+
+.terminal {
+	position: relative;
+
+	.bar {
+		background: var(--color-body);
+	}
+
+	.line {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 11px 18px;
+		border-radius: 0 0 9px 9px;
+		background: #6e4a44;
+		color: var(--color-paper);
+	}
+
+	.dim,
+	.line > span {
+		color: #d3b3a8;
+	}
+
+	.cmd {
+		color: var(--color-body);
+	}
+
+	&::after {
+		content: "↓";
+		position: absolute;
+		inset: calc(100% + 9px) auto auto 20px;
+		color: var(--color-stroke);
+		font-size: 26px;
+		font-weight: 900;
+		line-height: 1;
+	}
+}
+
+/* Window title bar with traffic lights */
+.bar {
+	display: flex;
+	gap: 7px;
+	padding: 8px 12px;
+	border-radius: 9px 9px 0 0;
+	border-block-end: 3px solid var(--color-stroke);
+	background: var(--color-blue);
+
+	i {
+		width: 11px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		--dot: #e85a58;
+		background: var(--dot);
+		/* A slightly darker rim keeps the dots from fringing against the colored bar */
+		box-shadow: 0 0 0 1px color-mix(in oklab, var(--dot), black 20%);
+
+		&:nth-child(2) {
+			--dot: #fcc355;
+		}
+
+		&:nth-child(3) {
+			--dot: #6fbc4b;
+		}
+	}
+}
+
+.browser {
+	position: relative;
+
+	code {
+		display: block;
+		padding: 13px 18px 15px;
+	}
+
+	.sticker {
+		position: absolute;
+		inset: -15px -20px auto auto;
+		rotate: 7deg;
+		padding: 3px 12px;
+		border: 3px solid var(--color-stroke);
+		border-radius: 99px;
+		background: #6fbc4b;
+		color: white;
+		font-size: 15px;
+		font-weight: 900;
+		text-shadow: 0 1px 0 var(--color-stroke);
+	}
+}
+
+blockquote {
+	margin: 0;
+	text-align: end;
+	font-size: 24px;
+	font-weight: 800;
+	font-style: italic;
+	line-height: 1.25;
+	text-wrap: balance;
+
+	footer {
+		margin-block-start: 3px;
+		color: var(--color-muted);
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+	}
+}
+
+.nos {
+	margin: 18px 0 0;
+	font-size: 20px;
+	font-weight: 800;
+	white-space: nowrap;
+
+	s {
+		position: relative;
+		text-decoration: none;
+		margin-inline-end: 14px;
+
+		/* Quick pen flick: blunt start, tapered end, bent and roughened by a noise filter (different per word) */
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 40% -6px auto -4px;
+			height: 4px;
+			border-radius: 2px 100% 100% 2px / 2px 50% 50% 2px;
+			background: var(--color-red);
+			rotate: -1deg;
+			filter: url(#pen-1);
+		}
+
+		&:nth-of-type(2)::after {
+			rotate: 0.5deg;
+			filter: url(#pen-2);
+		}
+
+		&:nth-of-type(3)::after {
+			rotate: -1.5deg;
+			filter: url(#pen-3);
+		}
+	}
+
+	b {
+		font-weight: 900;
+		margin-inline-start: 10px;
+
+		&::before {
+			content: "✓";
+			margin-inline-end: 6px;
+			color: var(--color-green);
+			font-size: 1.15em;
+		}
+	}
+}
+</style>
+</head>
+<body>
+
+<!-- Noise filters that make the highlight and strikethroughs look hand-drawn -->
+<svg width="0" height="0" style="position: absolute">
+	<filter id="marker" x="-5%" y="-50%" width="110%" height="200%">
+		<feTurbulence type="fractalNoise" baseFrequency="0.03 0.2" numOctaves="2" seed="4" />
+		<feDisplacementMap in="SourceGraphic" scale="5" xChannelSelector="R" yChannelSelector="G" />
+	</filter>
+	<filter id="pen-1" x="-10%" y="-300%" width="120%" height="700%">
+		<feTurbulence type="fractalNoise" baseFrequency="0.02 0.1" numOctaves="2" seed="1" />
+		<feDisplacementMap in="SourceGraphic" scale="4" xChannelSelector="R" yChannelSelector="G" />
+	</filter>
+	<filter id="pen-2" x="-10%" y="-300%" width="120%" height="700%">
+		<feTurbulence type="fractalNoise" baseFrequency="0.02 0.1" numOctaves="2" seed="7" />
+		<feDisplacementMap in="SourceGraphic" scale="4" xChannelSelector="R" yChannelSelector="G" />
+	</filter>
+	<filter id="pen-3" x="-10%" y="-300%" width="120%" height="700%">
+		<feTurbulence type="fractalNoise" baseFrequency="0.02 0.1" numOctaves="2" seed="13" />
+		<feDisplacementMap in="SourceGraphic" scale="4" xChannelSelector="R" yChannelSelector="G" />
+	</filter>
+</svg>
+
+<div class="card">
+	<div class="brand">
+		<img class="logo" src="https://nudeps.dev/logo.svg" alt="">
+		<img class="wordmark" src="https://nudeps.dev/wordmark.svg" alt="Nudeps">
+		<p>Bundler-like imports, none of the baggage</p>
+	</div>
+
+	<div class="steps">
+		<h1>Two steps, then <em>forget it’s there</em></h1>
+
+		<ol>
+			<li>
+				<code>npx nudeps <span class="cmd">install</span></code>
+				<span>once per project</span>
+			</li>
+			<li>
+				<code><span class="dim">&lt;</span><span class="kw">script</span> src=<span class="str">"/importmap.js"</span><span class="dim">&gt;&lt;/</span><span class="kw">script</span><span class="dim">&gt;</span></code>
+				<span>once per page</span>
+			</li>
+		</ol>
+
+		<p class="then">From then on:</p>
+
+		<div class="result">
+			<div class="usage">
+				<div class="terminal">
+					<div class="bar"><i></i><i></i><i></i></div>
+					<div class="line">
+						<code><span class="dim">$</span> <span class="cmd">npm install</span> vue</code>
+						<span>like you always have</span>
+					</div>
+				</div>
+
+				<div class="browser">
+					<div class="bar"><i></i><i></i><i></i></div>
+					<code><span class="kw">import</span> { createApp } <span class="kw">from</span> <span class="str">"vue"</span>;</code>
+					<div class="sticker">Just works ✓</div>
+				</div>
+			</div>
+
+			<blockquote>
+				“I was shocked to realize I was done.”
+				<footer>— Sam Littlefair, early tester</footer>
+			</blockquote>
+		</div>
+
+		<p class="nos"><s>Bundler</s><s>Watcher</s><s>CDN</s><b>Local-first</b><b>Your code stays untouched</b></p>
+	</div>
+</div>
+
+</body>
+</html>
