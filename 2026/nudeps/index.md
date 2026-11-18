@@ -4,10 +4,9 @@ date: 2026-11-18
 toc: true
 nutshell: Bundlers are currently the only way to use dependencies without losing our sanity, but introduce complexity and overhead. Today, I’m releasing a new type of lightweight build tool that challenges that.
 image: "images/image.png"
-draft: true
 ---
 
-<a href="images/nudeps-card.html" target="_blank"><img src="images/image.png" alt="Teaser image for Nudeps. Follow link for machine readable format."></a>
+<a href="images/nudeps-card.html" target="_blank"><img src="images/image.png" alt="Teaser image for Nudeps. Follow link for machine readable format." style="border: 1px solid #eab67d"></a>
 
 ## The goal is light-build, not no-build
 
