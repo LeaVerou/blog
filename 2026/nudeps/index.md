@@ -6,6 +6,8 @@ nutshell: Bundlers are currently the only way to use dependencies without losing
 image: "images/image.png"
 social_posts:
   mastodon: https://front-end.social/@leaverou/117643704705649759
+  bluesky: https://bsky.app/profile/lea.verou.me/post/3n2ogdf3zmc2x
+  twitter: https://x.com/LeaVerou/status/2123443866653126977
 ---
 
 <a href="images/nudeps-card.html" target="_blank"><img src="images/image.png" alt="Teaser image for Nudeps. Follow link for machine readable format." style="border: 1px solid #eab67d"></a>
