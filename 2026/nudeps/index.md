@@ -1,6 +1,6 @@
 ---
 title: "Nudeps: bundler-like imports, none of the baggage"
-date: 2026-11-18
+date: 2026-11-19
 toc: true
 nutshell: Bundlers are currently the only way to use dependencies without losing our sanity, but introduce complexity and overhead. Today, I’m releasing a new type of lightweight build tool that challenges that.
 image: "images/image.png"
