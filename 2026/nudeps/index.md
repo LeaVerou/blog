@@ -4,6 +4,8 @@ date: 2026-11-19
 toc: true
 nutshell: Bundlers are currently the only way to use dependencies without losing our sanity, but introduce complexity and overhead. Today, I’m releasing a new type of lightweight build tool that challenges that.
 image: "images/image.png"
+social_posts:
+  mastodon: https://front-end.social/@leaverou/117643704705649759
 ---
 
 <a href="images/nudeps-card.html" target="_blank"><img src="images/image.png" alt="Teaser image for Nudeps. Follow link for machine readable format." style="border: 1px solid #eab67d"></a>
@@ -92,7 +94,7 @@ Import maps currently have to be inline in the HTML of every page, which would r
 
 Package managers like npm already give you the file structure and let you manage versioning, that structure just [can't be deployed as-is to the web](../web-deps/#path-based-solutions).
 
-When you install Nudeps via `npx nudeps install`, it does two things:
+Installing Nudeps via `npx nudeps install` does a few things, most notably:
 1. Adds Nudeps to your `devDependencies`
 2. Adds two `package.json` scripts that run `npx nudeps`: `dependencies`, so Nudeps re-runs itself every time you `npm install` or `npm uninstall`, and `prepare`, so a fresh clone is ready too.
 
